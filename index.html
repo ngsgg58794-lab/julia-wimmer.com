@@ -46,6 +46,10 @@ a:focus-visible{outline:3px solid #16171A;outline-offset:3px}
 .mail{text-decoration:none;background-image:linear-gradient(var(--accent),var(--accent));background-repeat:no-repeat;background-position:0 96%;background-size:100% 6px;transition:background-size .2s ease}
 .mail:hover{background-size:100% 100%}
 
+.page{position:relative}
+.page::before{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.04;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+@media (max-width:900px){.note{display:none}}
+@media print{.page::before{display:none}}
 .js .rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
 .js .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
@@ -55,7 +59,7 @@ a:focus-visible{outline:3px solid #16171A;outline-offset:3px}
 <script>document.documentElement.className="js"</script>
 </head>
 <body>
-<div style="--accent: #D93A17; background:#EBEAE5; color:#16171A; font-family:'Instrument Sans',system-ui,sans-serif; font-size:17px; line-height:1.6; overflow-x:clip; min-height:100%">
+<div class="page" style="--accent: #D93A17; --accent-deep:#B52D0D; background:#EBEAE5; color:#16171A; font-family:'Instrument Sans',system-ui,sans-serif; font-size:17px; line-height:1.6; overflow-x:clip; min-height:100%">
 
 <header style="display:flex; flex-wrap:wrap; gap:12px 32px; align-items:center; justify-content:space-between; padding:26px clamp(20px,5vw,72px)">
 <a class="display" href="#top" style="font-size:22px; font-weight:800; letter-spacing:-0.02em; text-decoration:none">Julia Wimmer</a>
@@ -114,11 +118,12 @@ a:focus-visible{outline:3px solid #16171A;outline-offset:3px}
 
 <div class="rv" style="display:flex; flex-wrap:wrap; gap:8px 40px; padding:28px 0; border-top:1.5px solid #16171A">
 <p class="display" style="flex:0 0 170px; font-size:22px; font-weight:600">2026 – now</p>
-<div style="flex:1 1 320px; min-width:0"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">Founder, Pink Shark Design</h3><p style="max-width:640px; margin-top:6px">My own small studio. I build apps for the fun of it and try out new things with AI. Innensicht is one of them.</p></div>
+<div style="flex:1 1 320px; min-width:0"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">Founder, Pink Shark Design</h3><p style="max-width:640px; margin-top:6px">My own small studio. I build apps for the fun of it and try out new things with AI. <span style="position:relative; display:inline-block; padding:0 6px; margin:0 2px">Innensicht<svg viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true" style="position:absolute; left:-10px; top:-7px; width:calc(100% + 20px); height:calc(100% + 14px); overflow:visible"><path d="M14 6 C 40 -3, 90 1, 97 19 C 101 36, 50 42, 14 35 C -6 30, -3 8, 46 4" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg></span> is one of them.</p></div>
 </div>
-<div class="rv" style="display:flex; flex-wrap:wrap; gap:8px 40px; padding:28px 0; border-top:1.5px solid #16171A">
+<div class="rv" style="position:relative; display:flex; flex-wrap:wrap; gap:8px 40px; padding:28px 0; border-top:1.5px solid #16171A">
 <p class="display" style="flex:0 0 170px; font-size:22px; font-weight:600">2018 – now</p>
 <div style="flex:1 1 320px; min-width:0"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">Product Owner &#8594; UX Designer, Valtech Mobility</h3><p style="max-width:640px; margin-top:6px">Senior Consultant. Connected mobility products for premium car brands. Designer for 6+ years, Product Owner for 2. In-car services, expert tools and mobility services, for OEMs and startups.</p></div>
+<div class="note" aria-hidden="true" style="position:absolute; right:5%; top:20px; display:flex; align-items:flex-start; gap:6px"><svg viewBox="0 0 80 40" width="80" height="40" style="display:block; margin-top:2px; overflow:visible"><path d="M76 30 C 56 36, 26 30, 8 10 M8 10 L 9 24 M8 10 L 22 12" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="hand" style="font-size:28px; color:var(--accent); transform:rotate(-3deg); margin-top:10px">the switch</p></div>
 </div>
 <div class="rv" style="display:flex; flex-wrap:wrap; gap:8px 40px; padding:28px 0; border-top:1.5px solid #16171A">
 <p class="display" style="flex:0 0 170px; font-size:22px; font-weight:600">2023 – 2026</p>
@@ -138,24 +143,24 @@ a:focus-visible{outline:3px solid #16171A;outline-offset:3px}
 </div>
 </section>
 
-<section aria-label="What you get" style="padding:0 clamp(20px,5vw,72px) 128px">
+<section aria-label="What you get" class="onacc" style="background:var(--accent-deep); color:#EBEAE5; padding:104px clamp(20px,5vw,72px) 112px; margin-bottom:128px">
 <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 28px; margin-bottom:36px">
 <h2 class="display" style="font-size:clamp(36px,5vw,64px); font-weight:800; letter-spacing:-0.03em">What you get</h2>
-<p class="hand" style="font-size:30px; color:var(--accent); transform:rotate(-1.5deg)">if I join your team</p>
+<p class="hand" style="font-size:30px; color:#EBEAE5; transform:rotate(-1.5deg)">if I join your team</p>
 </div>
 <div style="display:flex; flex-wrap:wrap; gap:0 64px; max-width:1200px">
-<div class="rv" style="flex:1 1 400px; min-width:0; padding:26px 0; border-top:1.5px dashed #16171A"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">Speed</h3><p style="margin-top:6px">I get a topic quickly, I learn fast and I execute fast. No long ramp-up.</p></div>
-<div class="rv" style="flex:1 1 400px; min-width:0; padding:26px 0; border-top:1.5px dashed #16171A"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">Structure &amp; overview</h3><p style="margin-top:6px">I turn complexity into clear plans and keep the big picture in view.</p></div>
-<div class="rv" style="flex:1 1 400px; min-width:0; padding:26px 0; border-top:1.5px dashed #16171A"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">Range</h3><p style="margin-top:6px">Design, product, tech and business in one person. Fewer handoffs, less friction.</p></div>
-<div class="rv" style="flex:1 1 400px; min-width:0; padding:26px 0; border-top:1.5px dashed #16171A"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">Solutions, fast</h3><p style="margin-top:6px">I find a way forward and decide instead of getting stuck.</p></div>
-<div class="rv" style="flex:1 1 400px; min-width:0; padding:26px 0; border-top:1.5px dashed #16171A"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">Results</h3><p style="margin-top:6px">I ship. Remote-first, efficient and dependable.</p></div>
-<div class="rv" style="flex:1 1 400px; min-width:0; padding:26px 0; border-top:1.5px dashed #16171A"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">Calm &amp; warmth</h3><p style="margin-top:6px">I keep the team steady under pressure and bring people together.</p></div>
+<div class="rv" style="flex:1 1 400px; min-width:0; padding:26px 0; border-top:1.5px dashed rgba(235,234,229,.55)"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">Speed</h3><p style="margin-top:6px">I get a topic quickly, I learn fast and I execute fast. No long ramp-up.</p></div>
+<div class="rv" style="flex:1 1 400px; min-width:0; padding:26px 0; border-top:1.5px dashed rgba(235,234,229,.55)"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">Structure &amp; overview</h3><p style="margin-top:6px">I turn complexity into clear plans and keep the big picture in view.</p></div>
+<div class="rv" style="flex:1 1 400px; min-width:0; padding:26px 0; border-top:1.5px dashed rgba(235,234,229,.55)"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">Range</h3><p style="margin-top:6px">Design, product, tech and business in one person. Fewer handoffs, less friction.</p></div>
+<div class="rv" style="flex:1 1 400px; min-width:0; padding:26px 0; border-top:1.5px dashed rgba(235,234,229,.55)"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">Solutions, fast</h3><p style="margin-top:6px">I find a way forward and decide instead of getting stuck.</p></div>
+<div class="rv" style="flex:1 1 400px; min-width:0; padding:26px 0; border-top:1.5px dashed rgba(235,234,229,.55)"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">Results</h3><p style="margin-top:6px">I ship. Remote-first, efficient and dependable.</p></div>
+<div class="rv" style="flex:1 1 400px; min-width:0; padding:26px 0; border-top:1.5px dashed rgba(235,234,229,.55)"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">Calm &amp; warmth</h3><p style="margin-top:6px">I keep the team steady under pressure and bring people together.</p></div>
 </div>
 </section>
 
 <section id="work" style="padding:0 clamp(20px,5vw,72px) 128px">
 <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 28px; margin-bottom:40px">
-<h2 class="display" style="font-size:clamp(36px,5vw,64px); font-weight:800; letter-spacing:-0.03em">Selected work</h2>
+<h2 class="display" style="font-size:clamp(36px,5vw,64px); font-weight:800; letter-spacing:-0.03em"><span style="position:relative; display:inline-block">Selected work<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true" style="position:absolute; left:0; bottom:-.14em; width:100%; height:.2em; overflow:visible"><path d="M3 11 C 40 2, 70 18, 110 9 S 190 3, 230 11 S 280 14, 297 7" fill="none" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg></span></h2>
 <p class="hand" style="font-size:30px; color:var(--accent); transform:rotate(-1.5deg)">tap a project for the full story</p>
 </div>
 
