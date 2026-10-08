@@ -50,6 +50,7 @@ a:focus-visible{outline:3px solid #16171A;outline-offset:3px}
 .page::before{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.04;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 @media (max-width:900px){.note{display:none!important}}
 @media print{.page::before{display:none}}
+mark.mk{color:inherit;background:linear-gradient(transparent 56%,rgba(217,58,23,.30) 56%,rgba(217,58,23,.30) 94%,transparent 94%);padding:0 .1em;margin:0 -.1em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .js .rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
 .js .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){.js .rv{opacity:1;transform:none;transition:none}}
@@ -105,9 +106,9 @@ a:focus-visible{outline:3px solid #16171A;outline-offset:3px}
 
 <section style="padding:128px clamp(20px,5vw,72px) 136px">
 <p class="hand" style="font-size:32px; color:var(--accent); transform:rotate(-1.5deg); transform-origin:left; margin-bottom:28px">What I care about</p>
-<p class="display" style="max-width:1020px; font-size:clamp(30px,4.8vw,68px); line-height:1.06; font-weight:800; letter-spacing:-0.025em">A truck driver wearing gloves needs big buttons, not a nice animation.</p>
-<p class="display" style="max-width:760px; margin-top:44px; margin-left:clamp(0px,9vw,140px); font-size:clamp(22px,2.6vw,34px); line-height:1.25; font-weight:600">I would rather leave a feature out than build it halfway.</p>
-<p class="display" style="max-width:700px; margin-top:36px; margin-left:clamp(0px,17vw,260px); font-size:clamp(22px,2.6vw,34px); line-height:1.25; font-weight:600; color:var(--accent)">First it has to fit the use case, then it can look fancy.</p>
+<p class="display" style="max-width:1020px; font-size:clamp(30px,4.8vw,68px); line-height:1.06; font-weight:800; letter-spacing:-0.025em">A truck driver wearing gloves needs <mark class="mk">big buttons</mark>, not a nice animation.</p>
+<p class="display" style="max-width:760px; margin-top:44px; margin-left:clamp(0px,9vw,140px); font-size:clamp(22px,2.6vw,34px); line-height:1.25; font-weight:600">I would rather <mark class="mk">leave a feature out</mark> than build it halfway.</p>
+<p class="display" style="max-width:700px; margin-top:36px; margin-left:clamp(0px,17vw,260px); font-size:clamp(22px,2.6vw,34px); line-height:1.25; font-weight:600">First it has to <mark class="mk">fit the use case</mark>, then it can look fancy.</p>
 </section>
 
 <section id="path" style="padding:0 clamp(20px,5vw,72px) 136px">
@@ -116,30 +117,31 @@ a:focus-visible{outline:3px solid #16171A;outline-offset:3px}
 <p class="hand" style="font-size:30px; color:var(--accent); transform:rotate(-1.5deg)">project manager, product owner, designer, founder</p>
 </div>
 
+<div style="max-width:1400px">
 <div class="rv" style="display:flex; flex-wrap:wrap; gap:8px 40px; padding:28px 0; border-top:1.5px solid #16171A">
 <p class="display" style="flex:0 0 170px; font-size:22px; font-weight:600">2026 – now</p>
-<div style="flex:1 1 320px; min-width:0"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">Founder, Pink Shark Design</h3><p style="max-width:640px; margin-top:6px">My own small studio. I build apps for the fun of it and try out new <span style="position:relative; display:inline-block">things with AI<svg viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true" style="position:absolute; left:-10px; top:-7px; width:calc(100% + 20px); height:calc(100% + 14px); overflow:visible"><path d="M14 6 C 40 -3, 90 1, 97 19 C 101 36, 50 42, 14 35 C -6 30, -3 8, 46 4" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg></span>. Innensicht is one of them.</p></div>
+<div style="flex:1 1 320px; min-width:0"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">Founder, Pink Shark Design</h3><p style="max-width:760px; margin-top:6px">My own small studio. I build apps for the fun of it and try out new <span style="position:relative; display:inline-block">things with AI<svg viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true" style="position:absolute; left:-10px; top:-7px; width:calc(100% + 20px); height:calc(100% + 14px); overflow:visible"><path d="M14 6 C 40 -3, 90 1, 97 19 C 101 36, 50 42, 14 35 C -6 30, -3 8, 46 4" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg></span>. Innensicht is one of them.</p></div>
 </div>
-<div class="rv" style="position:relative; display:flex; flex-wrap:wrap; gap:8px 40px; padding:28px 0; border-top:1.5px solid #16171A">
+<div class="rv" style="display:flex; flex-wrap:wrap; gap:8px 40px; padding:28px 0; border-top:1.5px solid #16171A">
 <p class="display" style="flex:0 0 170px; font-size:22px; font-weight:600">2018 – now</p>
-<div style="flex:1 1 320px; min-width:0"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">Product Owner &#8594; UX Designer, Valtech Mobility</h3><p style="max-width:640px; margin-top:6px">Senior Consultant. Connected mobility products for premium car brands. Designer for 6+ years, Product Owner for 2. In-car services, expert tools and mobility services, for OEMs and startups.</p></div>
-<div class="note" aria-hidden="true" style="position:absolute; right:5%; top:20px; display:flex; align-items:flex-start; gap:6px"><svg viewBox="0 0 80 40" width="80" height="40" style="display:block; margin-top:2px; overflow:visible"><path d="M76 30 C 56 36, 26 30, 8 10 M8 10 L 9 24 M8 10 L 22 12" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg><p class="hand" style="font-size:28px; color:var(--accent); transform:rotate(-3deg); margin-top:10px">the switch</p></div>
+<div style="flex:1 1 320px; min-width:0"><h3 class="display" style="position:relative; width:fit-content; font-size:26px; font-weight:800; line-height:1.2">Product Owner &#8594; UX Designer, Valtech Mobility<span class="note" aria-hidden="true" style="display:inline-flex; align-items:flex-start; gap:6px; position:absolute; left:100%; top:-10px; margin-left:20px; white-space:nowrap"><svg viewBox="0 0 80 40" width="64" height="32" style="display:block; margin-top:6px; overflow:visible"><path d="M76 30 C 56 36, 26 30, 8 10 M8 10 L 9 24 M8 10 L 22 12" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="hand" style="font-size:28px; color:var(--accent); transform:rotate(-3deg); display:inline-block; margin-top:10px; font-weight:700">the switch</span></span></h3><p style="max-width:760px; margin-top:6px">Senior Consultant. Connected mobility products for premium car brands. Designer for 6+ years, Product Owner for 2. In-car services, expert tools and mobility services, for OEMs and startups.</p></div>
 </div>
 <div class="rv" style="display:flex; flex-wrap:wrap; gap:8px 40px; padding:28px 0; border-top:1.5px solid #16171A">
 <p class="display" style="flex:0 0 170px; font-size:22px; font-weight:600">2023 – 2026</p>
-<div style="flex:1 1 320px; min-width:0"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">Co-Founder &amp; CEO, 2gether App</h3><p style="max-width:640px; margin-top:6px">I co-founded and led the startup, next to my job at Valtech. We released a native iOS and Android social media app. I owned the product from concept and design to release.</p></div>
+<div style="flex:1 1 320px; min-width:0"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">Co-Founder &amp; CEO, 2gether App</h3><p style="max-width:760px; margin-top:6px">I co-founded and led the startup, next to my job at Valtech. We released a native iOS and Android social media app. I owned the product from concept and design to release.</p></div>
 </div>
 <div class="rv" style="display:flex; flex-wrap:wrap; gap:8px 40px; padding:28px 0; border-top:1.5px solid #16171A">
 <p class="display" style="flex:0 0 170px; font-size:22px; font-weight:600">2012 – 2018</p>
-<div style="flex:1 1 320px; min-width:0"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">IT Project Manager, Audi AG</h3><p style="max-width:640px; margin-top:6px">Managed cross-functional teams delivering connected-car services.</p></div>
+<div style="flex:1 1 320px; min-width:0"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">IT Project Manager, Audi AG</h3><p style="max-width:760px; margin-top:6px">Managed cross-functional teams delivering connected-car services.</p></div>
 </div>
 <div class="rv" style="display:flex; flex-wrap:wrap; gap:8px 40px; padding:28px 0; border-top:1.5px solid #16171A">
 <p class="display" style="flex:0 0 170px; font-size:22px; font-weight:600">2011 – 2012</p>
-<div style="flex:1 1 320px; min-width:0"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">IT Consultant, WK IT</h3><p style="max-width:640px; margin-top:6px">Drove internal restructuring and supported strategic purchasing.</p></div>
+<div style="flex:1 1 320px; min-width:0"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">IT Consultant, WK IT</h3><p style="max-width:760px; margin-top:6px">Drove internal restructuring and supported strategic purchasing.</p></div>
 </div>
 <div class="rv" style="display:flex; flex-wrap:wrap; gap:8px 40px; padding:28px 0; border-top:1.5px solid #16171A; border-bottom:1.5px solid #16171A">
 <p class="display" style="flex:0 0 170px; font-size:22px; font-weight:600">2007 – 2011</p>
-<div style="flex:1 1 320px; min-width:0"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">B.A. Business Administration</h3><p style="max-width:640px; margin-top:6px">Grade 1.7, University of applied sciences Landshut.</p></div>
+<div style="flex:1 1 320px; min-width:0"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">B.A. Business Administration</h3><p style="max-width:760px; margin-top:6px">Grade 1.7, University of applied sciences Landshut.</p></div>
+</div>
 </div>
 </section>
 
@@ -241,11 +243,7 @@ a:focus-visible{outline:3px solid #16171A;outline-offset:3px}
 
 <section style="padding:0 clamp(20px,5vw,72px) 136px">
 <h2 class="display" style="font-size:clamp(36px,5vw,64px); font-weight:800; letter-spacing:-0.03em; margin-bottom:40px">Core skills</h2>
-<div style="display:flex; flex-direction:column; gap:44px; max-width:1100px">
-<div><span class="lbl">Design</span><div style="display:flex; flex-wrap:wrap; gap:14px 12px"><span class="chip">E2E Design</span><span class="chip">Concepts</span><span class="chip">UX writing</span><span class="chip">Wireframes</span><span class="chip">Prototypes</span><span class="chip">Design Systems</span><span class="chip">Information Architecture</span><span class="chip">Customer journey</span><span class="chip">Accessibility</span><span class="chip">HMI</span><span class="chip">In-car UX</span><span class="chip">User research</span><span class="chip">Information hierarchy</span><span class="chip">Cognitive load reduction</span><span class="chip">Complex enterprise &amp; tool UIs</span><span class="chip">Personalization &amp; adaptive systems</span></div></div>
-<div><span class="lbl">Product &amp; delivery</span><div style="display:flex; flex-wrap:wrap; gap:14px 12px"><span class="chip">Product Ownership</span><span class="chip">Roadmapping</span><span class="chip">Project planning &amp; scoping</span><span class="chip">Budget awareness</span><span class="chip">End-to-end delivery</span><span class="chip">Agile</span><span class="chip">Workflow Optimization</span><span class="chip">Competitive analysis</span><span class="chip">Market research</span><span class="chip">Stakeholder management</span><span class="chip">Developer handover</span></div></div>
-<div><span class="lbl">AI</span><div style="display:flex; flex-wrap:wrap; gap:14px 12px"><span class="chip">AI UX</span><span class="chip">AI-assisted workflows</span><span class="chip">AI-assisted development</span></div></div>
-</div>
+<div style="display:flex; flex-wrap:wrap; gap:14px 12px; max-width:1100px"><span class="chip">E2E Design</span><span class="chip">Concepts</span><span class="chip">UX writing</span><span class="chip">Wireframes</span><span class="chip">Prototypes</span><span class="chip">Design Systems</span><span class="chip">Information Architecture</span><span class="chip">Customer journey</span><span class="chip">Accessibility</span><span class="chip">HMI</span><span class="chip">In-car UX</span><span class="chip">User research</span><span class="chip">Information hierarchy</span><span class="chip">Cognitive load reduction</span><span class="chip">Complex enterprise &amp; tool UIs</span><span class="chip">Personalization &amp; adaptive systems</span><span class="chip">Product Ownership</span><span class="chip">Roadmapping</span><span class="chip">Project planning &amp; scoping</span><span class="chip">Budget awareness</span><span class="chip">End-to-end delivery</span><span class="chip">Agile</span><span class="chip">Workflow Optimization</span><span class="chip">Competitive analysis</span><span class="chip">Market research</span><span class="chip">Stakeholder management</span><span class="chip">Developer handover</span><span class="chip">AI UX</span><span class="chip">AI-assisted workflows</span><span class="chip">AI-assisted development</span></div>
 <p class="hand" style="font-size:30px; color:var(--accent); margin:56px 0 18px; transform:rotate(-1deg); transform-origin:left">Tools I work in</p>
 <div style="display:flex; flex-wrap:wrap; gap:10px">
 <span class="tag">Figma</span>
