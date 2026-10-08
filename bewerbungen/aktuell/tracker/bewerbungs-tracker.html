@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bewerbungs-Tracker</title>
+<style>
+  :root{
+    --bg:#15171c;
+    --panel:#1c1f26;
+    --line:#2a2e37;
+    --text:#e8e9ec;
+    --muted:#8b909c;
+    --open:#5b8def;
+    --reject:#e0596b;
+    --done:#4cb87d;
+    --interview:#e6b325;
+    --excluded:#8b909c;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:'IBM Plex Sans',ui-sans-serif,system-ui,sans-serif;
+    padding:20px 14px 60px;
+  }
+  h1{
+    font-size:1.15rem;
+    font-weight:600;
+    margin:0 0 2px;
+    letter-spacing:-0.01em;
+  }
+  .sub{
+    color:var(--muted);
+    font-size:0.8rem;
+    margin-bottom:18px;
+  }
+  .stats{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:6px;
+    margin-bottom:20px;
+  }
+  .stat{
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:10px 8px;
+    text-align:center;
+  }
+  .stat .num{
+    font-size:1.3rem;
+    font-weight:700;
+    font-variant-numeric:tabular-nums;
+  }
+  .stat .lbl{
+    font-size:0.62rem;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+    margin-top:2px;
+  }
+  .stat.open .num{color:var(--open);}
+  .stat.reject .num{color:var(--reject);}
+  .stat.interview .num{color:var(--interview);}
+  .stat.done .num{color:var(--done);}
+  .stat.excluded .num{color:var(--excluded);}
+
+  .tabs{
+    display:flex;
+    gap:6px;
+    overflow-x:auto;
+    margin-bottom:14px;
+    padding-bottom:2px;
+  }
+  .tab{
+    flex:none;
+    background:var(--panel);
+    border:1px solid var(--line);
+    color:var(--muted);
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:0.75rem;
+    cursor:pointer;
+    white-space:nowrap;
+  }
+  .tab.active{
+    color:var(--text);
+    border-color:currentColor;
+  }
+  .tab[data-f="offen"].active{color:var(--open);border-color:var(--open);}
+  .tab[data-f="reject"].active{color:var(--reject);border-color:var(--reject);}
+  .tab[data-f="interview"].active{color:var(--interview);border-color:var(--interview);}
+  .tab[data-f="done"].active{color:var(--done);border-color:var(--done);}
+  .tab[data-f="excluded"].active{color:var(--excluded);border-color:var(--excluded);}
+
+  .list{
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+  }
+  .row{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-left:3px solid var(--muted);
+    border-radius:8px;
+    padding:9px 12px;
+  }
+  .row.offen{border-left-color:var(--open);}
+  .row.reject{border-left-color:var(--reject);}
+  .row.done{border-left-color:var(--done);}
+  .row.excluded{border-left-color:var(--excluded);opacity:0.65;}
+  .row.interview{border-left-color:var(--interview);}
+
+  .dot{
+    width:7px;height:7px;border-radius:50%;flex:none;
+    background:var(--muted);
+  }
+  .row.offen .dot{background:var(--open);}
+  .row.reject .dot{background:var(--reject);}
+  .row.interview .dot{background:var(--interview);}
+  .row.done .dot{background:var(--done);}
+  .row.excluded .dot{background:var(--excluded);}
+
+  .name{
+    flex:1;
+    font-size:0.85rem;
+    font-weight:500;
+  }
+  .at-badge{
+    flex:none;
+    background:#c8102e22;
+    color:#ff6b81;
+    border:1px solid #c8102e55;
+    font-size:0.62rem;
+    font-weight:700;
+    padding:2px 6px;
+    border-radius:5px;
+    letter-spacing:0.03em;
+  }
+  .note{
+    font-size:0.68rem;
+    color:var(--muted);
+    text-align:right;
+  }
+  .hint{
+    margin-top:22px;
+    background:var(--panel);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:12px 14px;
+    font-size:0.75rem;
+    color:var(--muted);
+    line-height:1.5;
+  }
+  .hint b{color:var(--text);}
+</style>
+</head>
+<body>
+
+<h1>Bewerbungs-Tracker</h1>
+<div class="sub">Aus Mail-Screenshots ausgewertet · "bestätigt" = explizite Absage im Text, "vermutet" = Formulierungsmuster</div>
+
+<div class="stats">
+  <div class="stat open"><div class="num" id="cOpen">0</div><div class="lbl">Offen</div></div>
+  <div class="stat reject"><div class="num" id="cReject">0</div><div class="lbl">Absage</div></div>
+  <div class="stat interview"><div class="num" id="cInt">0</div><div class="lbl">Gespräch</div></div>
+  <div class="stat done"><div class="num" id="cDone">0</div><div class="lbl">Bearb.</div></div>
+  <div class="stat excluded"><div class="num" id="cExcl">0</div><div class="lbl">Kein AT</div></div>
+</div>
+
+<div class="tabs">
+  <div class="tab active" data-f="all">Alle</div>
+  <div class="tab" data-f="offen">Offen</div>
+  <div class="tab" data-f="reject">Absage</div>
+  <div class="tab" data-f="interview">Gespräch</div>
+  <div class="tab" data-f="done">Bearbeitet</div>
+  <div class="tab" data-f="excluded">Nicht beworben</div>
+  <div class="tab" data-f="at">🇦🇹 Österreich</div>
+</div>
+
+<div class="list" id="list"></div>
+
+<div class="hint">
+  <b>17 Firmen mit Sitz in Österreich</b> jetzt im 🇦🇹-Filter, davon 11 neu aus deiner Initiativbewerbungs-Runde vom 07.08. (Mohemian, SWARCO, Dynatrace, DragDropr, Mimirio, ParityQC, M-Tech, icoserve, Cloudflight, Cropster, Clockstone, Synedra, fonio.ai, Peschke, Thirdman, Austria Email, Compax – alle noch offen).<br><br>
+  4 Empfänger ohne erkennbaren Standort (Monoclara, NP-ID, D2 Digital, Empatic) sowie StudySmarter und Apheris (beide Deutschland) ohne Badge.
+</div>
+
+<script>
+const data = [
+  // Bearbeitet mit Claude
+  {n:"Linear", s:"reject", note:'"won’t be moving forward" – bestätigt'},
+
+  // Bestätigte Absagen (explizit im Mailtext)
+  {n:"werkhaus GmbH & Co. KG", s:"reject", note:"nach Telefonat abgesagt – kein Homeoffice möglich", at:true},
+  {n:"lemlist / lempire", s:"reject", note:'"decided not to move forward" – bestätigt'},
+  {n:"Bending Spoons", s:"reject", note:'"won’t be moving forward" – bestätigt (kam bis Task-Phase)'},
+  {n:"Avatr GmbH / AVATR", s:"reject", note:'"decided not to move forward" – bestätigt'},
+  {n:"Cosuno", s:"reject", note:'"regret to inform you" – bestätigt'},
+  {n:"Entain", s:"reject", note:'"Unfortunately..." – bestätigt (Rolle in Wien)', at:true},
+  {n:"GitLab", s:"reject", note:'"position no longer..." – bestätigt'},
+  {n:"Instaffo → zollsoft GmbH", s:"reject", note:'"Jetzt weitere Chancen entdecken" – bestätigt'},
+  {n:"Instaffo → PDR.cloud GmbH", s:"reject", note:'"Jetzt weitere Chancen entdecken" – bestätigt'},
+
+  // Vermutete Absagen (Muster im Betreff/Text, nicht 100% eindeutig)
+  {n:"Serrala Group", s:"reject", note:'"big thank you..." – vermutet'},
+  {n:"tirol kliniken (IT-Projektleiter:in)", s:"reject", note:"Dank-Formulierung – vermutet", at:true},
+  {n:"BestSolution.at EDV Systemhaus", s:"reject", note:'"...leider..." – vermutet, Sitz Innsbruck (+ Initiativbewerbung 07.08.)', at:true},
+  {n:"refurbed", s:"reject", note:'"große Zahl starker Bewerbungen" – vermutet, Sitz Wien (+ Initiativbewerbung 07.08.)', at:true},
+  {n:"Product People", s:"reject", note:"Abschluss-Formulierung – vermutet"},
+  {n:"HelloFresh", s:"reject", note:'Betreff "Your feedback from..." – vermutet'},
+  {n:"MED-EL", s:"reject", note:'"Nach eingehender Prüfung..." – vermutet'},
+  {n:"Hostaway", s:"reject", note:'"will not be able to offer you an interview" – bestätigt'},
+  {n:"Canonical – Developer Experience", s:"reject", note:"Update-Mail, Muster – vermutet"},
+  {n:"Canonical – Infrastructure", s:"reject", note:"Update-Mail, Muster – vermutet"},
+  {n:"Canonical – Design Systems", s:"reject", note:"Update-Mail, Muster – vermutet"},
+  {n:"Toggl", s:"reject", note:"Update-Mail, Muster – vermutet"},
+
+  // Geprüft, nicht beworben – Remote-AT nicht möglich
+  {n:"Typeform", s:"excluded", note:"Remote-AT nicht bestätigt"},
+  {n:"Quadcode", s:"excluded", note:"AT nicht in Länderliste"},
+  {n:"Doctolib", s:"excluded", note:"nur Hybrid"},
+  {n:"Personio", s:"excluded", note:"nur Hybrid, Büro-Standorte"},
+  {n:"N26", s:"excluded", note:"AT nicht gelistet"},
+  {n:"Photoroom", s:"excluded", note:"AT nicht gelistet"},
+  {n:"TheyDo", s:"excluded", note:"aktuell keine offene Rolle"},
+
+  // Offen / Status unklar (nur Eingangsbestätigung erkennbar)
+  {n:"Secfix", s:"reject", note:'"won’t be moving forward" – bestätigt'},
+  {n:"Releaf (via Workable)", s:"offen"},
+  {n:"The Moore Group (RecruitPro)", s:"offen"},
+  {n:"Axmed", s:"reject", note:"abgesagt"},
+  {n:"ZOE", s:"reject", note:"abgesagt"},
+  {n:"shopware AG – Senior Product & Experience Designer", s:"reject", note:"abgesagt. Standort Schöppingen, Deutschland – On-site/Remote/Hybrid gemischt ausgeschrieben"},
+  {n:"Codekeeper – Product Specialist", s:"offen", note:"remote, keine Länderangabe"},
+  {n:"praella (Shopify Platinum Partner) – Senior eCommerce UI/UX Designer", s:"offen", note:"⚠️ ausgeschrieben als \"Serbien\" – AT-Eligibility unklar"},
+  {n:"Outframe – Remote Product Designer, Mid/Sr", s:"offen", note:"⚠️ ausgeschrieben als \"Litauen\" – AT-Eligibility unklar"},
+  {n:"Planck Technologies – User Experience Designer", s:"offen", note:"⚠️ ausgeschrieben als \"Portugal\" – AT-Eligibility unklar"},
+  {n:"Toptal – Senior Product Manager", s:"offen"},
+  {n:"plehn media", s:"reject", note:'"nicht mit deiner Bewerbung fortfahren" – bestätigt'},
+  {n:"OLX", s:"reject", note:"abgesagt"},
+  {n:"Jimdo", s:"offen"},
+  {n:"kununu", s:"reject", at:true, note:"abgesagt – Sitz Wien"},
+  {n:"Ashby – Design Engineer, EU", s:"reject", note:'"we don’t see an ideal fit" – bestätigt. ⚠️ AT war ohnehin nicht in Länderliste'},
+  {n:"BeReal – Product Designer", s:"reject", note:"abgesagt. ⚠️ Location: Paris, remote – evtl. FR-gebunden"},
+  {n:"Peppy – Senior Product Designer (Mobile App)", s:"offen", note:"⚠️ als UK-Rolle ausgeschrieben"},
+  {n:"Jobgether – UI/UX Designer", s:"offen", note:"⚠️ Partner-Firma sucht explizit \"based in United Kingdom\" – vermutlich nicht AT-fähig"},
+  {n:"Jobgether – Senior Product Designer (m/w/d)", s:"offen", note:"⚠️ Partner-Firma sucht explizit \"based in Switzerland\" – vermutlich nicht AT-fähig"},
+  {n:"GVOC – UX/UI Designer", s:"offen", note:"⚠️ als UK-Rolle ausgeschrieben"},
+  {n:"Zebra People – Senior Product Designer", s:"offen", note:"⚠️ Recruiting-Agentur, als UK-Rolle ausgeschrieben"},
+  {n:"Smartcat – Senior Product Builder", s:"offen", note:"⚠️ ausgeschrieben als \"Serbia – Remote\" – AT-Eligibility unklar"},
+  {n:"UnitedHealth Group – Senior Product Designer", s:"offen"},
+  {n:"RemoFirst – Senior Product Designer", s:"offen", note:"remote weltweit"},
+  {n:"Mercor – Design Expert", s:"offen"},
+  {n:"EverAI – Senior Product Manager (Full Remote – Europe)", s:"reject", note:'"decided not to move forward" – bestätigt'},
+  {n:"WunderGraph", s:"reject", note:'Gespräch am 01.09. lief gut, aber "decided not to proceed" – andere Kandidat:innen passten näher zu Anforderungen'},
+  {n:"TeleClinic – (andere Rolle als Senior PM Patient Experience)", s:"offen", note:"Deutschland, remote"},
+  {n:"n8n – Senior Product Manager, Enterprise", s:"reject", note:'"decided to move on... with some other talents" – bestätigt'},
+  {n:"Hospitable – Staff Product Manager", s:"offen", note:"Remote USA/Europe"},
+  {n:"Remote.com – Senior Product Designer", s:"reject", note:'"will unfortunately not be proceeding" – bestätigt'},
+  {n:"Camunda – Product Manager, Self Managed Service", s:"reject", note:'"unable to shortlist you for next steps" – bestätigt. fully remote, 75+ Länder'},
+  {n:"Bjak", s:"offen", note:"mehrfach beworben"},
+  {n:"Proalpha", s:"offen"},
+  {n:"MetaFlow (Lukas Rodomski)", s:"offen"},
+  {n:"Zabel Global", s:"offen"},
+  {n:"Information Design One", s:"offen", note:"2 Rollen"},
+  {n:"Helsing.ai", s:"offen"},
+  {n:"dexter health", s:"offen"},
+  {n:"MetaFlow (Charlotte Benedikt)", s:"offen"},
+  {n:"Ceartas", s:"offen"},
+  {n:"AeroVect", s:"offen"},
+  {n:"Digitale Leute School", s:"offen"},
+  {n:"edix.fa / Workflo", s:"offen"},
+  {n:"Jobgether", s:"offen", note:"2 Rollen"},
+  {n:"Fundraise Up", s:"offen"},
+  {n:"Lodgify", s:"offen"},
+  {n:"Deel – Staff Product Designer, Design System", s:"reject", note:'"will not be advancing your application" – bestätigt'},
+  {n:"Deel – Senior Product Designer", s:"offen"},
+  {n:"Huspy", s:"reject", note:'"decided to move forward with other candidates whose profiles more closely match..." – bestätigt'},
+  {n:"CUJU", s:"offen"},
+  {n:"Automattic", s:"offen"},
+  {n:"Recare Deutschland", s:"offen", note:"2 Rollen"},
+  {n:"Finom", s:"reject", note:'"will not be moving forward" – bestätigt'},
+  {n:"Partyhat", s:"offen"},
+  {n:"Staffomatic", s:"offen"},
+  {n:"EUROPACE AG", s:"offen"},
+  {n:"Jobgether – Senior Mobile Game UI/UX Artist", s:"offen", note:"explizit \"based in Austria\"", at:true},
+  {n:"Tangible – Senior UX/UI Designer", s:"offen", note:"⚠️ als UK-Rolle ausgeschrieben, zudem Zeitarbeit (befristet)"},
+  {n:"Revolut – Senior Product Designer", s:"reject", note:'"decided not to move forward" – bestätigt (via Thrill-Plattform). ⚠️ Revolut listet meist nur bestimmte Remote-Länder (UK/DE/IE/PL/PT/RO/LT) – AT unsicher'},
+  {n:"Digitale Leute (Jessica Hess)", s:"offen"},
+  {n:"AIOS Medical", s:"offen"},
+  {n:"Everyman Health", s:"reject", note:'"Thanks for your application... Unfortunately" – bestätigt (Head of Design)'},
+  {n:"DocMorris", s:"offen"},
+  {n:"PandaDoc", s:"reject", note:"abgesagt"},
+  {n:"MED-EL – Product Manager PM_12606", s:"reject", note:"abgesagt – Sitz Innsbruck", at:true},
+
+  // Initiativbewerbungen 07.08. (Massen-BCC, noch keine Antwort)
+  {n:"Mohemian", s:"offen", note:"Initiativbewerbung 07.08. – Sitz Innsbruck", at:true},
+  {n:"SWARCO AG", s:"offen", note:"Initiativbewerbung 07.08. – Sitz Tirol", at:true},
+  {n:"Dynatrace", s:"offen", note:"Initiativbewerbung 07.08. – Engineering-HQ Linz", at:true},
+  {n:"DragDropr", s:"offen", note:"Initiativbewerbung 07.08. – Sitz Ried im Innkreis", at:true},
+  {n:"Mimirio", s:"offen", note:"Initiativbewerbung 07.08. – Sitz Wien", at:true},
+  {n:"ParityQC", s:"reject", note:'"we currently do not have a suitable job position..." – bestätigt. Initiativbewerbung 07.08. – Sitz Innsbruck', at:true},
+  {n:"M-Tech", s:"offen", note:"Initiativbewerbung 07.08. – .at-Domain", at:true},
+  {n:"icoserve (Siemens Healthineers)", s:"offen", note:"Initiativbewerbung 07.08. – Sitz Innsbruck", at:true},
+  {n:"Cloudflight", s:"offen", note:"Initiativbewerbung 07.08. – Sitz Linz", at:true},
+  {n:"Cropster", s:"offen", note:"Initiativbewerbung 07.08. – Sitz Innsbruck", at:true},
+  {n:"Clockstone", s:"offen", note:"Initiativbewerbung 07.08. – Sitz Wien", at:true},
+  {n:"Synedra", s:"reject", note:"aktuell keine passende Stelle – Sitz Innsbruck (Datenspeicherung angefragt)", at:true},
+  {n:"fonio.ai", s:"offen", note:"Initiativbewerbung 07.08. – Sitz Wien", at:true},
+  {n:"Loxone – UI/UX Designer", s:"offen", note:"⚠️ Vor Ort in Rohrbach, Oberösterreich – kein Remote!", at:true},
+  {n:"Simple Life App – Senior Product Designer", s:"reject", note:'"decided to move forward with other candidates" – bestätigt'},
+  {n:"Digis (Fiverr) – Senior UX/UI Designer with German C1", s:"offen", note:"Europe, Middle East & Africa, remote"},
+  {n:"CURA Cosmetics Group – Senior Product Manager (Judith Williams Cosmetics)", s:"reject", note:"abgesagt – fachlich zu wenig Konsumgüter-Erfahrung. Sitz Innsbruck", at:true},
+  {n:"CURA Cosmetics Group – Webshop Solutions Manager", s:"offen", note:"wird noch geprüft. Sitz Innsbruck", at:true},
+  {n:"paddy – Founding Product Designer", s:"reject", note:"abgesagt"},
+  {n:"Keen Software House – Senior UX Designer (Space Engineers Franchise)", s:"offen", note:"Follow-up-Mail \"Tell us a bit more!\" erhalten – positives Signal"},
+  {n:"The Agile Monkeys (Nodi) – Product UI/UX & Brand Designer", s:"offen"},
+  {n:"OpenProject GmbH – Senior UI/UX Designer", s:"offen"},
+  {n:"Experts Inside – Projektleiter Microsoft 365 & KI", s:"reject", note:"abgesagt (Gabriel Wernbacher). ⚠️ Projektleiter-Rolle, kein Design/PM-Profil – Ausreißer"},
+  {n:"ElevenLabs – Product Designer", s:"offen"},
+  {n:"Flipper – Product Owner, Senior", s:"reject", note:'"we regret to in..." – bestätigt'},
+  {n:"Cyclops", s:"offen"},
+  {n:"EWOR GmbH – Sustainability UI/UX & Brand Designer", s:"offen", note:"100% remote"},
+  {n:"n8n – AI Product Manager", s:"offen", note:"andere Rolle als bereits abgesagte Senior PM Enterprise"},
+  {n:"ATSP GmbH – Marketing Allrounder (50-70%)", s:"reject", note:"abgesagt – andere Bewerber:innen passten besser zu Anforderungen. Sitz Innsbruck", at:true},
+  {n:"Peschke", s:"reject", note:"Initiativbewerbung 07.08. – Team vollständig besetzt, bestätigt – .at-Domain", at:true},
+  {n:"Thirdman", s:"offen", note:"Initiativbewerbung 07.08. – .at-Domain", at:true},
+  {n:"Austria Email", s:"offen", note:"Initiativbewerbung 07.08. – .at-Domain", at:true},
+  {n:"Compax", s:"offen", note:"Initiativbewerbung 07.08. – .at-Domain", at:true},
+  {n:"Monoclara", s:"offen", note:"Initiativbewerbung 07.08. – Standort unklar"},
+  {n:"NP-ID", s:"offen", note:"Initiativbewerbung 07.08. – Standort unklar"},
+  {n:"D2 Digital", s:"offen", note:"Initiativbewerbung 07.08. – Standort unklar"},
+  {n:"Empatic", s:"offen", note:"Initiativbewerbung 07.08. – Standort unklar"},
+  {n:"StudySmarter", s:"offen", note:"Initiativbewerbung 07.08. – Sitz München, DE"},
+  {n:"Apheris", s:"offen", note:"Initiativbewerbung 07.08. – Sitz Berlin, DE"},
+
+  // Letzter Mail-Batch (02.10.)
+  {n:"Morpho – Product Manager (Protocol)", s:"reject", note:'"there isn’t an ideal fit at this time" – bestätigt'},
+  {n:"Fluxon – Senior Product Designer", s:"reject", note:'"decided to move forward with other candidates" – bestätigt'},
+  {n:"Nord Security – Product Manager | NordPass", s:"offen", note:"Eingangsbestätigung"},
+  {n:"Nord Security – UX/UI Designer | Mid-Senior | Apps | Saily", s:"offen", note:"Eingangsbestätigung"},
+  {n:"Nord Security – Web Designer | Mid-Senior | Marketing Design Team", s:"offen", note:"Eingangsbestätigung"},
+  {n:"HyperHug – Technical UI Designer", s:"offen", note:"Eingangsbestätigung"},
+  {n:"Elegant Networks PTE. LTD. (anyIP) – Senior Product Manager, Customer Data", s:"offen", note:"Eingangsbestätigung"},
+  {n:"EUROPEAN DYNAMICS – UX/UI Designer", s:"offen", note:"via Workable, eingereicht"},
+  {n:"FindTutors – UX/UI Designer (Practical Tutoring & Private Lessons)", s:"offen", note:"⚠️ Mail verweist auf separaten Bewerbungslink – Bewerbung ggf. noch nicht vollständig eingereicht"},
+  {n:"Kooku Recruiting GmbH – Chief UX Designer (m/w/d), HR SaaS, Full Remote DE", s:"offen", note:"via Workable, eingereicht"},
+  {n:"triveous – UI/UX Designer (India, Fulltime, Remote)", s:"offen", note:"eingereicht. ⚠️ Rolle in Indien ausgeschrieben – AT-Eligibility fraglich"},
+  {n:"People Can Fly", s:"offen", note:"Eingangsbestätigung"},
+  {n:"MVC Resources – Senior UI/UX Designer", s:"offen", note:"Eingangsbestätigung"},
+  {n:"Donorbox – Senior Product Designer", s:"offen", note:"via Greenhouse, Eingangsbestätigung"},
+  {n:"Base360 & The Flex – Product Designer", s:"offen", note:"Eingangsbestätigung"},
+  {n:"Cteleport – UX/UI Designer (B2B Travel App, Remote)", s:"offen", note:"Eingangsbestätigung"},
+  {n:"Jobgether – UX Designer (Mid Level)", s:"offen", note:"wird geprüft"},
+  {n:"Jobgether – UI/UX Director", s:"offen", note:"wird geprüft"},
+  {n:"Teroxx – Product Owner", s:"offen", note:"Eingangsbestätigung"},
+];
+
+const list = document.getElementById('list');
+const counts = {offen:0, reject:0, interview:0, done:0, excluded:0};
+data.forEach(d => counts[d.s]++);
+document.getElementById('cOpen').textContent = counts.offen;
+document.getElementById('cReject').textContent = counts.reject;
+document.getElementById('cInt').textContent = counts.interview;
+document.getElementById('cDone').textContent = counts.done;
+document.getElementById('cExcl').textContent = counts.excluded;
+
+function render(filter){
+  list.innerHTML = '';
+  data.filter(d => filter==='all' || (filter==='at' ? d.at : d.s===filter)).forEach(d=>{
+    const row = document.createElement('div');
+    row.className = 'row ' + d.s;
+    row.innerHTML = `<div class="dot"></div><div class="name">${d.n}</div>${d.at ? '<div class="at-badge">AT</div>' : ''}${d.note ? `<div class="note">${d.note}</div>` : ''}`;
+    list.appendChild(row);
+  });
+}
+render('all');
+
+document.querySelectorAll('.tab').forEach(t=>{
+  t.addEventListener('click', ()=>{
+    document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    render(t.dataset.f);
+  });
+});
+</script>
+</body>
+</html>
