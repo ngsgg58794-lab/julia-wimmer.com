@@ -48,7 +48,7 @@ a:focus-visible{outline:3px solid #16171A;outline-offset:3px}
 
 .page{position:relative}
 .page::before{content:"";position:fixed;inset:0;z-index:60;pointer-events:none;opacity:.04;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .9 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-@media (max-width:900px){.note{display:none}}
+@media (max-width:900px){.note{display:none!important}}
 @media print{.page::before{display:none}}
 .js .rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
 .js .rv.in{opacity:1;transform:none}
@@ -118,7 +118,7 @@ a:focus-visible{outline:3px solid #16171A;outline-offset:3px}
 
 <div class="rv" style="display:flex; flex-wrap:wrap; gap:8px 40px; padding:28px 0; border-top:1.5px solid #16171A">
 <p class="display" style="flex:0 0 170px; font-size:22px; font-weight:600">2026 – now</p>
-<div style="flex:1 1 320px; min-width:0"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">Founder, Pink Shark Design</h3><p style="max-width:640px; margin-top:6px">My own small studio. I build apps for the fun of it and try out new things with AI. <span style="position:relative; display:inline-block; padding:0 6px; margin:0 2px">Innensicht<svg viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true" style="position:absolute; left:-10px; top:-7px; width:calc(100% + 20px); height:calc(100% + 14px); overflow:visible"><path d="M14 6 C 40 -3, 90 1, 97 19 C 101 36, 50 42, 14 35 C -6 30, -3 8, 46 4" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg></span> is one of them.</p></div>
+<div style="flex:1 1 320px; min-width:0"><h3 class="display" style="font-size:26px; font-weight:800; line-height:1.2">Founder, Pink Shark Design</h3><p style="max-width:640px; margin-top:6px">My own small studio. I build apps for the fun of it and try out new <span style="position:relative; display:inline-block">things with AI<svg viewBox="0 0 100 40" preserveAspectRatio="none" aria-hidden="true" style="position:absolute; left:-10px; top:-7px; width:calc(100% + 20px); height:calc(100% + 14px); overflow:visible"><path d="M14 6 C 40 -3, 90 1, 97 19 C 101 36, 50 42, 14 35 C -6 30, -3 8, 46 4" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg></span>. Innensicht is one of them.</p></div>
 </div>
 <div class="rv" style="position:relative; display:flex; flex-wrap:wrap; gap:8px 40px; padding:28px 0; border-top:1.5px solid #16171A">
 <p class="display" style="flex:0 0 170px; font-size:22px; font-weight:600">2018 – now</p>
