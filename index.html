@@ -78,9 +78,7 @@ mark.mk{color:inherit;background:linear-gradient(transparent 56%,rgba(217,58,23,
 .stt{display:block;font-size:clamp(26px,3vw,calc(42px*var(--s)));font-weight:800;letter-spacing:-.025em;line-height:1.05;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
 .shb:hover .stt{transform:translateX(8px)}
 .sth{display:block;font-size:calc(24px*var(--s));line-height:1.1;color:var(--ac);transform:rotate(-1deg);transform-origin:left;margin-top:6px}
-.pv{display:flex;flex-wrap:wrap;gap:6px 8px;margin-top:14px;max-height:120px;overflow:hidden;transition:max-height .45s ease,opacity .3s ease,margin .45s ease}
-.pv span{font-size:calc(13px*var(--s));font-weight:500;padding:2px 11px;border:1.2px dashed currentColor;border-radius:999px;opacity:.72;line-height:1.5}
-.shb[aria-expanded="true"] .pv,.skb[aria-expanded="true"] .skp{max-height:0;opacity:0;margin-top:0}
+.skb[aria-expanded="true"] .skp{max-height:0;opacity:0;margin-top:0}
 .sg{flex:0 0 calc(48px*var(--s));width:calc(48px*var(--s));height:calc(48px*var(--s));display:inline-flex;align-items:center;justify-content:center;border:1.5px solid currentColor;border-radius:50%;transition:transform .45s cubic-bezier(.2,.7,.2,1),background-color .25s ease,color .25s ease,border-color .25s ease}
 .sg svg{width:45%;height:45%}
 .sg path{fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round}
@@ -116,8 +114,8 @@ button[aria-expanded="true"] .sg{transform:rotate(45deg);background:var(--ac);bo
 .ovb:focus-visible{outline:3px solid #16171A;outline-offset:3px}
 .sec .acc:focus-visible{outline-offset:4px}
 #what-you-get .acc:focus-visible{outline-color:#EBEAE5}
-@media print{.js .pnl{display:block}.js .pnl>.pin{visibility:visible;opacity:1}.pv,.skp,.ovbar{display:none}}
-@media (prefers-reduced-motion:reduce){.js .pnl,.js .pnl>.pin,.sg,.stt,.skl,.pv,.skp{transition:none}.pop{animation:none}.shb:hover .sic path,.shb:hover .sic circle{animation:none}}
+@media print{.js .pnl{display:block}.js .pnl>.pin{visibility:visible;opacity:1}.skp,.ovbar{display:none}}
+@media (prefers-reduced-motion:reduce){.js .pnl,.js .pnl>.pin,.sg,.stt,.skl,.skp{transition:none}.pop{animation:none}.shb:hover .sic path,.shb:hover .sic circle{animation:none}}
 
 [hidden]{display:none!important}
 </style>
@@ -171,7 +169,7 @@ button[aria-expanded="true"] .sg{transform:rotate(45deg);background:var(--ac);bo
 </div>
 
 <section id="path" class="sec" style="">
-<h2 class="sh"><button class="acc shb" type="button" aria-expanded="true" aria-controls="path-body"><svg class="sic" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M5 38 C 14 8, 26 44, 43 10"/><circle pathLength="1" cx="5" cy="38" r="2.5"/><circle pathLength="1" cx="43" cy="10" r="2.5"/></svg><span class="stx"><span class="display stt">My path</span><span class="hand sth">project manager, product owner, designer, founder</span><span class="pv"><span>Audi</span><span>Valtech</span><span>2gether</span><span>Pink Shark Design</span><span>B.A. Business Admin</span></span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
+<h2 class="sh"><button class="acc shb" type="button" aria-expanded="true" aria-controls="path-body"><svg class="sic" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M5 38 C 14 8, 26 44, 43 10"/><circle pathLength="1" cx="5" cy="38" r="2.5"/><circle pathLength="1" cx="43" cy="10" r="2.5"/></svg><span class="stx"><span class="display stt">My path</span><span class="hand sth">project manager, product owner, designer, founder</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
 <div id="path-body" class="pnl open"><div class="pin"><div class="pad">
 
 <div style="max-width:calc(1400px*var(--s))">
@@ -204,7 +202,7 @@ button[aria-expanded="true"] .sg{transform:rotate(45deg);background:var(--ac);bo
 </section>
 
 <section id="what-you-get" class="sec onacc" aria-label="What you get" style="background:var(--accent-deep); color:#EBEAE5;">
-<h2 class="sh"><button class="acc shb" type="button" aria-expanded="false" aria-controls="what-you-get-body"><svg class="sic" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M24 4 L28 19 L43 24 L28 29 L24 44 L20 29 L5 24 L20 19 Z"/></svg><span class="stx"><span class="display stt">What you get</span><span class="hand sth">if I join your team</span><span class="pv"><span>Speed</span><span>Structure</span><span>Range</span><span>Solutions, fast</span><span>Results</span><span>Calm &amp; warmth</span></span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
+<h2 class="sh"><button class="acc shb" type="button" aria-expanded="false" aria-controls="what-you-get-body"><svg class="sic" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M24 4 L28 19 L43 24 L28 29 L24 44 L20 29 L5 24 L20 19 Z"/></svg><span class="stx"><span class="display stt">What you get</span><span class="hand sth">if I join your team</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
 <div id="what-you-get-body" class="pnl"><div class="pin"><div class="pad">
 <div style="display:flex; flex-wrap:wrap; gap:0 64px; max-width:calc(1200px*var(--s))">
 <div class="rv" style="flex:1 1 calc(400px*var(--s)); min-width:0; padding:26px 0; border-top:1.5px dashed rgba(235,234,229,.55)"><h3 class="display" style="font-size:calc(21px*var(--s)); font-weight:800; line-height:1.25">Speed</h3><p style="margin-top:6px">I get a topic quickly, I learn fast and I execute fast. No long ramp-up.</p></div>
@@ -218,7 +216,7 @@ button[aria-expanded="true"] .sg{transform:rotate(45deg);background:var(--ac);bo
 </section>
 
 <section id="work" class="sec" style="">
-<h2 class="sh"><button class="acc shb" type="button" aria-expanded="false" aria-controls="work-body"><svg class="sic" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M6 9 H42 V39 H6 Z M6 31 L16 21 L25 29 L31 24 L42 33"/><circle pathLength="1" cx="34" cy="16" r="2.5"/></svg><span class="stx"><span class="display stt">Selected work</span><span class="hand sth">tap a project for the full story</span><span class="pv"><span>InCar Services</span><span>Expert Tools</span><span>2gether</span><span>Innensicht</span></span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
+<h2 class="sh"><button class="acc shb" type="button" aria-expanded="false" aria-controls="work-body"><svg class="sic" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M6 9 H42 V39 H6 Z M6 31 L16 21 L25 29 L31 24 L42 33"/><circle pathLength="1" cx="34" cy="16" r="2.5"/></svg><span class="stx"><span class="display stt">Selected work</span><span class="hand sth">tap a project for the full story</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
 <div id="work-body" class="pnl"><div class="pin"><div class="pad">
 
 <div style="border-top:1.5px solid #16171A">
@@ -298,7 +296,7 @@ button[aria-expanded="true"] .sg{transform:rotate(45deg);background:var(--ac);bo
 </section>
 
 <section id="skills" class="sec" style="background:#F1DCD2;">
-<h2 class="sh"><button class="acc shb" type="button" aria-expanded="false" aria-controls="skills-body"><svg class="sic" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M7 14 H41 M7 24 H29 M7 34 H35"/><circle pathLength="1" cx="40" cy="24" r="2"/><circle pathLength="1" cx="42" cy="34" r="2"/></svg><span class="stx"><span class="display stt">Skills &amp; tools</span><span class="hand sth">by area, from product to people</span><span class="pv"><span>36 skills</span><span>23 tools</span><span>3 languages</span><span>4 certificates</span></span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
+<h2 class="sh"><button class="acc shb" type="button" aria-expanded="false" aria-controls="skills-body"><svg class="sic" viewBox="0 0 48 48" aria-hidden="true"><path pathLength="1" d="M7 14 H41 M7 24 H29 M7 34 H35"/><circle pathLength="1" cx="40" cy="24" r="2"/><circle pathLength="1" cx="42" cy="34" r="2"/></svg><span class="stx"><span class="display stt">Skills &amp; tools</span><span class="hand sth">by area, from product to people</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
 <div id="skills-body" class="pnl"><div class="pin"><div class="pad">
 <div style="max-width:calc(1400px*var(--s)); border-bottom:1.5px solid #16171A">
 <div class="rv sk"><h3 style="margin:0;font:inherit"><button class="acc skb" type="button" aria-expanded="false" aria-controls="sk1"><span class="display skl">Skills</span><span class="hand skc">36</span><span class="skp">Product &amp; business · Process &amp; organisation · Product design &amp; UX …</span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h3><div id="sk1" class="pnl"><div class="pin"><div class="krows">
