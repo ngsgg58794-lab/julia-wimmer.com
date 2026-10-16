@@ -47,6 +47,9 @@ a:focus-visible{outline:3px solid #16171A;outline-offset:3px}
 .mail:hover{background-size:100% 100%}
 
 .page{position:relative;--s:1}
+.langs{position:absolute;right:calc(16px*var(--s));bottom:calc(9px*var(--s));display:flex;gap:clamp(5px,.6vw,12px);--st:clamp(34px,3.1vw,74px)}
+.stamp{position:relative;display:inline-flex;align-items:center;justify-content:center;width:var(--st);height:var(--st);font-family:'Caveat','Bradley Hand',cursive;font-weight:700;font-size:calc(var(--st)*.52);line-height:1;color:#16171A}
+.stamp svg{position:absolute;left:-3px;top:-3px;width:calc(100% + 6px);height:calc(100% + 6px);overflow:visible}
 @media (min-width:1600px){.page{--s:1.12}}
 @media (min-width:1920px){.page{--s:1.28}}
 @media (min-width:2400px){.page{--s:1.5}}
@@ -70,6 +73,7 @@ mark.mk{color:inherit;background:linear-gradient(transparent 56%,rgba(217,58,23,
 <nav class="nav" aria-label="Main" style="display:flex; flex-wrap:wrap; gap:6px 28px; font-size:calc(16px*var(--s))">
 <a href="#path">Path</a>
 <a href="#work">Work</a>
+<a href="#skills">Skills</a>
 <a href="#contact">Contact</a>
 </nav>
 </header>
@@ -79,7 +83,7 @@ mark.mk{color:inherit;background:linear-gradient(transparent 56%,rgba(217,58,23,
 <p class="hand" style="font-size:calc(38px*var(--s)); line-height:1; color:var(--accent); transform:rotate(-2deg); transform-origin:left; margin-bottom:18px">Hi, I'm Julia.</p>
 <h1 class="display" style="font-size:var(--h); line-height:.98; font-weight:800; letter-spacing:-0.035em">I bring user,<br>business and tech<br>views <span style="position:relative; display:inline-block">together<svg viewBox="0 0 300 24" preserveAspectRatio="none" aria-hidden="true" style="position:absolute; left:-2%; bottom:-.1em; width:104%; height:.26em; overflow:visible"><path d="M3 15 C 50 3, 92 21, 142 10 S 232 5, 297 13" fill="none" stroke="var(--accent)" stroke-width="6" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg></span>.</h1>
 <p style="max-width:max(calc(var(--h)*7.5), min(100%, calc(560px*var(--s)))); font-size:calc(20px*var(--s)); line-height:1.55; margin-top:44px">I started in IT consulting, then spent six years at Audi running the project and portfolio side of connected-car services. At Valtech I became a Product Owner and later a designer. On the side I co-founded an app, and these days I love to experiment and build things with AI. That made me a <span style="white-space:nowrap">T-shaped</span> all-rounder: deep in UX and product design, broad across project management, product, tech and business, with consistently strong feedback on whatever I take on.</p>
-<p style="max-width:max(calc(var(--h)*7.5), min(100%, calc(560px*var(--s)))); margin-top:20px; color:#4A4C52">Looking for Product Design, UX, Product Management, Product Owner or Project Management roles. Fully remote, anywhere in Europe.</p>
+<p style="max-width:max(calc(var(--h)*7.5), min(100%, calc(560px*var(--s)))); margin-top:20px; color:#4A4C52">Looking for Product Design &amp; Product Management roles. Fully remote, anywhere in Europe.</p>
 <div style="margin-top:36px">
 <a class="cta" href="#contact">Write me <span aria-hidden="true">&#8594;</span></a>
 </div>
@@ -91,6 +95,7 @@ mark.mk{color:inherit;background:linear-gradient(transparent 56%,rgba(217,58,23,
 <div style="background:#FBFAF7; padding:calc(14px*var(--s)) calc(14px*var(--s)) calc(64px*var(--s)); box-shadow:0 1px 0 rgba(22,23,26,.08), 0 22px 44px -20px rgba(22,23,26,.5)">
 <img src="img/portrait.jpeg" alt="Portrait of Julia Wimmer" style="display:block; width:100%; aspect-ratio:2/3; object-fit:cover; object-position:50% 30%">
 <p class="hand" style="position:absolute; left:calc(22px*var(--s)); bottom:calc(14px*var(--s)); font-size:calc(34px*var(--s)); line-height:1">Julia</p>
+<div class="langs" role="img" aria-label="Languages: German, English, Spanish"><span class="stamp" style="transform:rotate(-5deg)">DE<svg viewBox="0 0 40 40" preserveAspectRatio="none" aria-hidden="true"><path d="M21 2.5 C 32 2, 38.5 10, 37.5 21 C 36.5 32, 27 38.5, 18.5 37.5 C 8 36.5, 2 28, 3 19 C 4 9, 12 3.5, 24 4.5" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg></span><span class="stamp" style="transform:rotate(3deg)">EN<svg viewBox="0 0 40 40" preserveAspectRatio="none" aria-hidden="true"><path d="M21 2.5 C 32 2, 38.5 10, 37.5 21 C 36.5 32, 27 38.5, 18.5 37.5 C 8 36.5, 2 28, 3 19 C 4 9, 12 3.5, 24 4.5" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg></span><span class="stamp" style="transform:rotate(-2deg)">ES<svg viewBox="0 0 40 40" preserveAspectRatio="none" aria-hidden="true"><path d="M21 2.5 C 32 2, 38.5 10, 37.5 21 C 36.5 32, 27 38.5, 18.5 37.5 C 8 36.5, 2 28, 3 19 C 4 9, 12 3.5, 24 4.5" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke"></path></svg></span></div>
 </div>
 </div>
 <div class="hand" style="position:absolute; left:0; bottom:0; display:flex; align-items:center; gap:10px; font-size:calc(32px*var(--s)); color:var(--accent); transform:rotate(-3deg)">
@@ -101,13 +106,7 @@ mark.mk{color:inherit;background:linear-gradient(transparent 56%,rgba(217,58,23,
 </div>
 </section>
 
-<section aria-label="At a glance" style="display:flex; flex-wrap:wrap; gap:20px 64px; padding:26px clamp(20px,5vw,calc(72px*var(--s))); border-top:1.5px dashed #16171A; border-bottom:1.5px dashed #16171A">
-<div><p style="font-size:calc(14px*var(--s)); color:#4A4C52">Workstyle</p><p class="display" style="font-size:calc(24px*var(--s)); font-weight:600">Remote first</p></div>
-<div><p style="font-size:calc(14px*var(--s)); color:#4A4C52">Languages</p><p class="display" style="font-size:calc(24px*var(--s)); font-weight:600">DE &#183; EN &#183; ES</p></div>
-<div><p style="font-size:calc(14px*var(--s)); color:#4A4C52">Location</p><p class="display" style="font-size:calc(24px*var(--s)); font-weight:600">Germany &#183; Austria</p></div>
-</section>
-
-<section id="path" style="padding:104px clamp(20px,5vw,calc(72px*var(--s))) 136px">
+<section id="path" style="padding:0 clamp(20px,5vw,calc(72px*var(--s))) 136px">
 <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 28px; margin-bottom:40px">
 <h2 class="display" style="font-size:clamp(36px,5vw,calc(64px*var(--s))); font-weight:800; letter-spacing:-0.03em">My path</h2>
 <p class="hand" style="font-size:calc(30px*var(--s)); color:var(--accent); transform:rotate(-1.5deg)">project manager, product owner, designer, founder</p>
@@ -237,7 +236,7 @@ mark.mk{color:inherit;background:linear-gradient(transparent 56%,rgba(217,58,23,
 </div>
 </section>
 
-<section style="padding:0 clamp(20px,5vw,calc(72px*var(--s))) 136px">
+<section id="skills" style="padding:0 clamp(20px,5vw,calc(72px*var(--s))) 136px">
 <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 28px; margin-bottom:40px">
 <h2 class="display" style="font-size:clamp(36px,5vw,calc(64px*var(--s))); font-weight:800; letter-spacing:-0.03em">Core skills</h2>
 <p class="hand" style="font-size:calc(30px*var(--s)); color:var(--accent); transform:rotate(-1.5deg)">by area, from product to people</p>
@@ -245,11 +244,11 @@ mark.mk{color:inherit;background:linear-gradient(transparent 56%,rgba(217,58,23,
 <div style="max-width:calc(1400px*var(--s)); border-bottom:1.5px solid #16171A">
 <div class="rv" style="display:flex; flex-wrap:wrap; gap:14px 40px; padding:22px 0; border-top:1.5px solid #16171A"><p class="display" style="flex:0 0 calc(230px*var(--s)); font-size:calc(22px*var(--s)); font-weight:800; line-height:1.2">Product &amp; project</p><div style="flex:1 1 calc(320px*var(--s)); min-width:0; display:flex; flex-wrap:wrap; gap:14px 12px"><span class="chip">Product Ownership</span><span class="chip">Roadmapping</span><span class="chip">Requirements analysis</span><span class="chip">Project planning &amp; scoping</span><span class="chip">Portfolio management</span><span class="chip">Agile delivery</span><span class="chip">End-to-end delivery</span><span class="chip">Developer handover</span><span class="chip">Stakeholder management</span><span class="chip">Steering committees &amp; decision papers</span></div></div>
 <div class="rv" style="display:flex; flex-wrap:wrap; gap:14px 40px; padding:22px 0; border-top:1.5px solid #16171A"><p class="display" style="flex:0 0 calc(230px*var(--s)); font-size:calc(22px*var(--s)); font-weight:800; line-height:1.2">Budget &amp; business</p><div style="flex:1 1 calc(320px*var(--s)); min-width:0; display:flex; flex-wrap:wrap; gap:14px 12px"><span class="chip">Budget &amp; cost control</span><span class="chip">Cost accounting &amp; controlling</span><span class="chip">Competitive analysis</span><span class="chip">Market research</span><span class="chip">Supplier market analysis</span><span class="chip">Presales &amp; proposals</span><span class="chip">Pitching</span><span class="chip">Procurement &amp; logistics basics</span></div></div>
-<div class="rv" style="display:flex; flex-wrap:wrap; gap:14px 40px; padding:22px 0; border-top:1.5px solid #16171A"><p class="display" style="flex:0 0 calc(230px*var(--s)); font-size:calc(22px*var(--s)); font-weight:800; line-height:1.2">Process &amp; organisation</p><div style="flex:1 1 calc(320px*var(--s)); min-width:0; display:flex; flex-wrap:wrap; gap:14px 12px"><span class="chip">Workflow definition &amp; optimization</span><span class="chip">Process design</span><span class="chip">Knowledge management</span><span class="chip">Documentation</span><span class="chip">Confluence &amp; Jira setup</span><span class="chip">Transformation initiatives</span><span class="chip">IT service management</span><span class="chip">Information security projects</span><span class="chip">IAM (Identity &amp; Access Management)</span></div></div>
+<div class="rv" style="display:flex; flex-wrap:wrap; gap:14px 40px; padding:22px 0; border-top:1.5px solid #16171A"><p class="display" style="flex:0 0 calc(230px*var(--s)); font-size:calc(22px*var(--s)); font-weight:800; line-height:1.2">Process &amp; organisation</p><div style="flex:1 1 calc(320px*var(--s)); min-width:0; display:flex; flex-wrap:wrap; gap:14px 12px"><span class="chip">Workflow definition &amp; optimization</span><span class="chip">Process design</span><span class="chip">Knowledge management</span><span class="chip">Documentation</span><span class="chip">Confluence &amp; Jira setup</span><span class="chip">Transformation initiatives</span><span class="chip">IT service management (ITIL 3)</span><span class="chip">Information security projects</span><span class="chip">IAM (Identity &amp; Access Management)</span></div></div>
 <div class="rv" style="display:flex; flex-wrap:wrap; gap:14px 40px; padding:22px 0; border-top:1.5px solid #16171A"><p class="display" style="flex:0 0 calc(230px*var(--s)); font-size:calc(22px*var(--s)); font-weight:800; line-height:1.2">Product design &amp; UX</p><div style="flex:1 1 calc(320px*var(--s)); min-width:0; display:flex; flex-wrap:wrap; gap:14px 12px"><span class="chip">E2E Design</span><span class="chip">Design Thinking</span><span class="chip">User research</span><span class="chip">Customer journey</span><span class="chip">Wireframes &amp; prototypes</span><span class="chip">Design Systems</span><span class="chip">Information Architecture</span><span class="chip">Accessibility (WCAG)</span><span class="chip">UX writing</span><span class="chip">HMI &amp; in-car UX</span><span class="chip">Complex enterprise &amp; tool UIs</span><span class="chip">Personalization &amp; adaptive systems</span><span class="chip">Heuristic evaluation</span><span class="chip">Concepts</span><span class="chip">Information hierarchy</span><span class="chip">Cognitive load reduction</span><span class="chip">Usability testing</span><span class="chip">HMI prototyping</span></div></div>
 <div class="rv" style="display:flex; flex-wrap:wrap; gap:14px 40px; padding:22px 0; border-top:1.5px solid #16171A"><p class="display" style="flex:0 0 calc(230px*var(--s)); font-size:calc(22px*var(--s)); font-weight:800; line-height:1.2">AI &amp; tech</p><div style="flex:1 1 calc(320px*var(--s)); min-width:0; display:flex; flex-wrap:wrap; gap:14px 12px"><span class="chip">AI UX</span><span class="chip">AI-assisted workflows</span><span class="chip">AI-assisted development</span><span class="chip">AI team setup</span><span class="chip">Mobile app delivery (iOS, Android)</span></div></div>
 <div class="rv" style="display:flex; flex-wrap:wrap; gap:14px 40px; padding:22px 0; border-top:1.5px solid #16171A"><p class="display" style="flex:0 0 calc(230px*var(--s)); font-size:calc(22px*var(--s)); font-weight:800; line-height:1.2">People &amp; communication</p><div style="flex:1 1 calc(320px*var(--s)); min-width:0; display:flex; flex-wrap:wrap; gap:14px 12px"><span class="chip">Facilitation &amp; moderation</span><span class="chip">Presentations for top management</span><span class="chip">Mediation (university course)</span><span class="chip">Team enablement &amp; knowledge sharing</span></div></div>
-<div class="rv" style="display:flex; flex-wrap:wrap; gap:14px 40px; padding:22px 0; border-top:1.5px solid #16171A"><p class="display" style="flex:0 0 calc(230px*var(--s)); font-size:calc(22px*var(--s)); font-weight:800; line-height:1.2">Languages</p><div style="flex:1 1 calc(320px*var(--s)); min-width:0; display:flex; flex-wrap:wrap; gap:14px 12px"><span class="chip">German (native)</span><span class="chip">English (C1)</span><span class="chip">Spanish (B1)</span></div></div>
+<div class="rv" style="display:flex; flex-wrap:wrap; gap:14px 40px; padding:22px 0; border-top:1.5px solid #16171A"><p class="display" style="flex:0 0 calc(230px*var(--s)); font-size:calc(22px*var(--s)); font-weight:800; line-height:1.2">Languages</p><div style="flex:1 1 calc(320px*var(--s)); min-width:0; display:flex; flex-wrap:wrap; gap:14px 12px"><span class="chip">German (native)</span><span class="chip">English (C1, UNIcert III)</span><span class="chip">Spanish (B1, UNIcert II)</span></div></div>
 </div>
 <p class="hand" style="font-size:calc(30px*var(--s)); color:var(--accent); margin:56px 0 18px; transform:rotate(-1deg); transform-origin:left">Tools I work in</p>
 <div style="display:flex; flex-wrap:wrap; gap:10px">
@@ -260,6 +259,13 @@ mark.mk{color:inherit;background:linear-gradient(transparent 56%,rgba(217,58,23,
 <span class="tag">Microsoft 365</span>
 <span class="tag">Claude</span>
 <span class="tag">Claude Code</span>
+</div>
+<p class="hand" style="font-size:calc(30px*var(--s)); color:var(--accent); margin:56px 0 18px; transform:rotate(-1deg); transform-origin:left">Certificates</p>
+<div style="max-width:calc(1400px*var(--s)); border-bottom:1.5px solid #16171A">
+<div class="rv" style="display:flex; flex-wrap:wrap; gap:6px 40px; padding:18px 0; border-top:1.5px solid #16171A"><p class="display" style="flex:0 0 calc(170px*var(--s)); font-size:calc(22px*var(--s)); font-weight:600">2026</p><div style="flex:1 1 calc(320px*var(--s)); min-width:0"><p class="display" style="font-size:calc(22px*var(--s)); font-weight:800; line-height:1.25">Certified Professional in Automotive Human-Machine Interaction</p><p style="color:#4A4C52">London School of Business and Administration (LSBA)</p></div></div>
+<div class="rv" style="display:flex; flex-wrap:wrap; gap:6px 40px; padding:18px 0; border-top:1.5px solid #16171A"><p class="display" style="flex:0 0 calc(170px*var(--s)); font-size:calc(22px*var(--s)); font-weight:600">2024</p><div style="flex:1 1 calc(320px*var(--s)); min-width:0"><p class="display" style="font-size:calc(22px*var(--s)); font-weight:800; line-height:1.25">Online courses</p><p style="color:#4A4C52">Udemy: Accessibility &amp; WCAG, UX Design Critique, Responsive UX/UI in Figma, UX/UI Design Principles, UX Writing</p></div></div>
+<div class="rv" style="display:flex; flex-wrap:wrap; gap:6px 40px; padding:18px 0; border-top:1.5px solid #16171A"><p class="display" style="flex:0 0 calc(170px*var(--s)); font-size:calc(22px*var(--s)); font-weight:600">2022</p><div style="flex:1 1 calc(320px*var(--s)); min-width:0"><p class="display" style="font-size:calc(22px*var(--s)); font-weight:800; line-height:1.25">Certified UX &amp; Usability Professional</p><p style="color:#4A4C52">Experience Design Institut (XDi)</p></div></div>
+<div class="rv" style="display:flex; flex-wrap:wrap; gap:6px 40px; padding:18px 0; border-top:1.5px solid #16171A"><p class="display" style="flex:0 0 calc(170px*var(--s)); font-size:calc(22px*var(--s)); font-weight:600">2012</p><div style="flex:1 1 calc(320px*var(--s)); min-width:0"><p class="display" style="font-size:calc(22px*var(--s)); font-weight:800; line-height:1.25">ITIL® Version 3 Foundation</p><p style="color:#4A4C52">TÜV SÜD Akademie</p></div></div>
 </div>
 </section>
 
