@@ -9,7 +9,7 @@
 <meta property="og:description" content="UX and product designer with a focus on digitalization and AI: team workflows, Jira &amp; Confluence, AI tools and rollout. 15 years in connected mobility.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://juliawimmer.de/img/portrait.jpeg">
-<meta name="theme-color" content="#F2F3EF">
+<meta name="theme-color" content="#0C0D0B">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -20,8 +20,8 @@
 /* Concept: a technical data sheet. Title block, revision table, parts list,
    callouts with leader lines. One ink, one process magenta, a measuring grid. */
 :root{
-  --paper:#F2F3EF; --paper-2:#E7E9E3; --ink:#0E0F0C; --grey:#55584F; --line:rgba(14,15,12,.16);
-  --mag:#D6006F; --mag-soft:rgba(214,0,111,.12);
+  --paper:#0C0D0B; --paper-2:#151613; --ink:#ECEDE8; --grey:#9A9D94; --line:rgba(236,237,232,.13);
+  --mag:#FF2E93; --mag-soft:rgba(255,46,147,.10);
   --gut:clamp(16px,4.4vw,72px);
   --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
   --sans:'Archivo',system-ui,sans-serif;
@@ -66,7 +66,7 @@ a{color:inherit}
 
 /* hero */
 .hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,30%);gap:48px 72px;padding-top:clamp(40px,6vw,96px);padding-bottom:clamp(48px,6vw,96px);
-  background-image:linear-gradient(rgba(14,15,12,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(14,15,12,.07) 1px,transparent 1px);background-size:32px 32px;background-position:-1px -1px}
+  background-image:linear-gradient(rgba(236,237,232,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(236,237,232,.045) 1px,transparent 1px);background-size:32px 32px;background-position:-1px -1px}
 .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:96px;background:linear-gradient(transparent,var(--paper));pointer-events:none}
 .hero>*{position:relative;z-index:1}
 .hi{display:flex;align-items:center;gap:12px;margin-bottom:22px}
@@ -150,7 +150,7 @@ button[aria-expanded="true"] .sg svg{transform:rotate(45deg)}
 .rev .r{font-family:var(--mono);font-size:.8125rem;color:var(--mag);padding-top:4px}
 .rev .d{font-family:var(--mono);font-size:.8125rem;padding-top:4px}
 .rev h3{font-size:1.3125rem;font-weight:750;line-height:1.25;font-stretch:90%}
-.rev p.t{max-width:46em;margin-top:6px;color:#2A2C27}
+.rev p.t{max-width:46em;margin-top:6px;color:#C4C6BF}
 .callout{display:inline-flex;align-items:center;gap:8px;margin-left:14px;vertical-align:middle;color:var(--mag);white-space:nowrap}
 .callout::before{content:"";width:36px;height:1px;background:var(--mag)}
 .callout::after{content:"";order:-1;width:6px;height:6px;border-radius:50%;background:var(--mag);margin-right:-8px}
@@ -177,7 +177,7 @@ button[aria-expanded="true"] .sg svg{transform:rotate(45deg)}
 .ch .pn{font-family:var(--mono);font-size:.8125rem;color:var(--mag);padding-top:6px}
 .ch .ttl{display:block;font-size:clamp(1.6rem,3vw,2.6rem);line-height:.95;font-stretch:72%;font-weight:800;text-transform:uppercase}
 .ch .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
-.ch .ds{display:block;font-size:1rem;color:#2A2C27;max-width:34em}
+.ch .ds{display:block;font-size:1rem;color:#C4C6BF;max-width:34em}
 .ch .pm{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--ink);font-family:var(--mono);font-size:1.25rem;line-height:1;transition:background-color .2s ease,color .2s ease}
 .case .acc[aria-expanded="true"] .pm{background:var(--mag);border-color:var(--mag);color:#fff}
 .tag{display:inline-block;padding:4px 8px;border:1px solid var(--ink);font-family:var(--mono);font-size:.6875rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;line-height:1.3}
@@ -237,6 +237,49 @@ button[aria-expanded="true"] .sg svg{transform:rotate(45deg)}
 @media print{.js .pnl{display:block}.js .pnl>.pin{visibility:visible;opacity:1}.skp,.ovbar,.hero::after{display:none}.js .rv{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .pnl,.js .pnl>.pin,.sg,.sg svg,.stt,.js .rv,.shb::after{transition:none}.js .rv{opacity:1;transform:none}.pop{animation:none}}
 [hidden]{display:none!important}
+/* ---- dark preview additions ---- */
+#what-you-get{background:var(--paper-2);color:var(--ink);border-top-color:var(--ink)}
+#contact{background:var(--paper-2);color:var(--ink)}
+.mail:hover{color:#0C0D0B}
+.mock{mix-blend-mode:normal}
+.shb{pointer-events:none;cursor:default}.shb .sg{display:none}.shb::after{width:100%}
+.skb{pointer-events:none}.skb .sg,.skb .skp{display:none}
+.cta{background:var(--mag);color:#0C0D0B}.cta:hover{background:var(--ink)}
+.navcta{background:var(--mag);color:#0C0D0B!important}.navcta span{color:#0C0D0B!important}
+.navcta:hover{background:var(--ink)!important}
+h1 .m{color:var(--mag)}
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--mag);color:#0C0D0B}
+.stats>div{padding:28px 24px 30px var(--gut);border-left:1px solid rgba(12,13,11,.25)}
+.stats>div:first-child{border-left:0}
+.stats>div+div{padding-left:28px}
+.stats b{display:block;font-size:clamp(2.6rem,6vw,5.2rem);line-height:.9;font-stretch:68%;font-weight:850}
+.stats .mono{display:block;margin-top:10px;color:#0C0D0B}
+@media (max-width:1000px){.stats{grid-template-columns:1fr 1fr}.stats>div{padding:22px var(--gut)}.stats>div:nth-child(odd){border-left:0}.stats>div:nth-child(n+3){border-top:1px solid rgba(12,13,11,.25)}.stats>div+div{padding-left:var(--gut)}}
+/* marquee */
+.marq{border-bottom:1px solid var(--line);overflow:hidden}
+.ml{flex:0 0 auto;color:var(--grey);padding:22px 0}
+.mt{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.mr{display:flex;width:max-content;animation:mq 40s linear infinite}
+.mr span{font-size:clamp(1.6rem,3vw,2.6rem);font-stretch:70%;font-weight:800;text-transform:uppercase;color:#5E615A;padding:14px 0;white-space:nowrap}
+.mr i{font-style:normal;color:var(--mag);font-size:clamp(1.6rem,3vw,2.6rem);font-weight:800;padding:14px 28px}
+@keyframes mq{to{transform:translateX(-33.333%)}}
+@media (max-width:600px){.ml{display:none}}
+@media (prefers-reduced-motion:reduce){.mr{animation:none}}
+/* numbered list (what you get) */
+.nls{border-top:1px solid var(--line)}
+.nl{display:grid;grid-template-columns:5.5rem minmax(0,1fr) minmax(0,1.2fr);gap:8px 24px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line)}
+.nl .nn{color:var(--mag)}
+.nl h3{font-size:clamp(1.5rem,2.6vw,2.2rem);line-height:1;font-stretch:72%;font-weight:800;text-transform:uppercase}
+.nl p{color:#C4C6BF;max-width:34em}
+@media (max-width:820px){.nl{grid-template-columns:3rem minmax(0,1fr)}.nl p{grid-column:2}}
+/* floating CTA */
+.fab{position:fixed;right:20px;bottom:20px;z-index:50;display:inline-flex;align-items:center;gap:10px;padding:14px 20px;background:var(--mag);color:#0C0D0B;font-weight:700;text-decoration:none;box-shadow:0 10px 30px -10px rgba(255,46,147,.6);transition:transform .2s ease,background-color .2s ease}
+.fab:hover{transform:translateY(-2px);background:var(--ink)}
+.js .fab{opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
+.js .fab.on{opacity:1;transform:none;pointer-events:auto}
+@media (max-width:600px){.fab{right:12px;bottom:12px;padding:12px 16px}}
+@media print{.fab,.marq{display:none}}
 </style>
 <script>document.documentElement.className="js"</script>
 </head>
@@ -254,7 +297,7 @@ button[aria-expanded="true"] .sg svg{transform:rotate(45deg)}
 <a href="#what-you-get"><span>02</span>What you get</a>
 <a href="#work"><span>03</span>Work</a>
 <a href="#skills"><span>04</span>Skills</a>
-<a href="#contact"><span>05</span>Contact</a>
+<a href="#contact" class="navcta"><span>05</span>Contact</a>
 </nav>
 </header>
 
@@ -262,7 +305,7 @@ button[aria-expanded="true"] .sg svg{transform:rotate(45deg)}
 <section id="top" class="hero wrap">
 <div>
 <p class="hi mono m">Hi, I'm Julia.</p>
-<h1><span class="v">I bring user,<sup aria-hidden="true">01</sup></span><br><span class="v">business<sup aria-hidden="true">02</sup></span> <span class="v">and tech<sup aria-hidden="true">03</sup></span><br>views together<span class="m">.</span></h1>
+<h1><span class="v">I bring user,<sup aria-hidden="true">01</sup></span><br><span class="v">business<sup aria-hidden="true">02</sup></span> <span class="v">and tech<sup aria-hidden="true">03</sup></span><br>views <span class="m">together.</span></h1>
 <p class="lead">I started in IT consulting, then spent six years at Audi running the project and portfolio side of connected-car services. At Valtech I became a Product Owner and later a designer, and I reshaped how our design team works: workflows, Jira and Confluence, and AI tools in everyday work. On the side I co-founded an app, and I build things with AI. That made me a <span style="white-space:nowrap">T-shaped</span> all-rounder: deep in UX and product design, broad across digitalization, AI, process and business, with consistently strong feedback on whatever I take on.</p>
 <p class="look"><span class="mono">Status</span><span>Looking for Design, Digitalization &amp; AI roles. Remote-first, or hybrid around Innsbruck.</span></p>
 <div><a class="cta" href="#contact">Write me <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></div>
@@ -281,13 +324,16 @@ button[aria-expanded="true"] .sg svg{transform:rotate(45deg)}
 </figure>
 </section>
 
-<div class="ovbar wrap" id="overview">
-<p class="mono">Pick what you want to see ↓</p>
-<button class="ovb" id="toggleAll" type="button">Open all</button>
+<div class="stats" role="list">
+<div role="listitem"><b>15</b><span class="mono">years in IT</span></div>
+<div role="listitem"><b>9</b><span class="mono">years project manager &amp; product owner</span></div>
+<div role="listitem"><b>6+</b><span class="mono">years UX designer</span></div>
+<div role="listitem"><b>3+</b><span class="mono">years founder</span></div>
 </div>
+<div class="marq" aria-label="Project manager, product owner, designer, founder, AI lover"><div class="mt" aria-hidden="true"><div class="mr"><span>Project manager</span><i>/</i><span>Product owner</span><i>/</i><span>Designer</span><i>/</i><span>Founder</span><i>/</i><span>AI lover</span><i>/</i><span>Project manager</span><i>/</i><span>Product owner</span><i>/</i><span>Designer</span><i>/</i><span>Founder</span><i>/</i><span>AI lover</span><i>/</i><span>Project manager</span><i>/</i><span>Product owner</span><i>/</i><span>Designer</span><i>/</i><span>Founder</span><i>/</i><span>AI lover</span><i>/</i></div></div></div>
 
 <section id="path" class="sec wrap">
-<h2 class="sh"><button class="acc shb" type="button" aria-expanded="true" aria-controls="path-body"><span class="sno">§ 01</span><span><span class="stt">My path</span><span class="sth mono">project manager, product owner, designer, founder</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
+<h2 class="sh"><button class="acc shb" type="button" aria-expanded="true" aria-controls="path-body"><span class="sno">§ 01</span><span><span class="stt">My path</span><span class="sth mono">project manager, product owner, designer, founder, AI lover</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
 <div id="path-body" class="pnl open"><div class="pin"><div class="pad">
 <div class="rev indent">
 <div class="hd mono" aria-hidden="true"><span>Rev.</span><span>Date</span><span>Description</span></div>
@@ -304,13 +350,13 @@ button[aria-expanded="true"] .sg svg{transform:rotate(45deg)}
 <section id="what-you-get" class="sec wrap" aria-label="What you get">
 <h2 class="sh"><button class="acc shb" type="button" aria-expanded="false" aria-controls="what-you-get-body"><span class="sno">§ 02</span><span><span class="stt">What you get</span><span class="sth mono">if I join your team</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
 <div id="what-you-get-body" class="pnl"><div class="pin"><div class="pad">
-<div class="mx">
-<div class="rv"><span class="k mono">A</span><h3>Speed</h3><p>I get a topic quickly, I learn fast and I execute fast. No long ramp-up.</p></div>
-<div class="rv"><span class="k mono">B</span><h3>Structure &amp; overview</h3><p>I turn complexity into clear plans and keep the big picture in view.</p></div>
-<div class="rv"><span class="k mono">C</span><h3>Range</h3><p>Design, product, tech and business in one person. Fewer handoffs, less friction.</p></div>
-<div class="rv"><span class="k mono">D</span><h3>Solutions, fast</h3><p>I find a way forward and decide instead of getting stuck.</p></div>
-<div class="rv"><span class="k mono">E</span><h3>Results</h3><p>I ship. Remote-first, efficient and dependable.</p></div>
-<div class="rv"><span class="k mono">F</span><h3>Calm &amp; warmth</h3><p>I keep the team steady under pressure and bring people together.</p></div>
+<div class="nls">
+<div class="nl rv"><span class="nn mono">01</span><h3>Speed</h3><p>I get a topic quickly, I learn fast and I execute fast. No long ramp-up.</p></div>
+<div class="nl rv"><span class="nn mono">02</span><h3>Structure &amp; overview</h3><p>I turn complexity into clear plans and keep the big picture in view.</p></div>
+<div class="nl rv"><span class="nn mono">03</span><h3>Range</h3><p>Design, product, tech and business in one person. Fewer handoffs, less friction.</p></div>
+<div class="nl rv"><span class="nn mono">04</span><h3>Solutions, fast</h3><p>I find a way forward and decide instead of getting stuck.</p></div>
+<div class="nl rv"><span class="nn mono">05</span><h3>Results</h3><p>I ship. Remote-first, efficient and dependable.</p></div>
+<div class="nl rv"><span class="nn mono">06</span><h3>Calm &amp; warmth</h3><p>I keep the team steady under pressure and bring people together.</p></div>
 </div>
 </div></div></div>
 </section>
@@ -451,6 +497,8 @@ button[aria-expanded="true"] .sg svg{transform:rotate(45deg)}
 </div>
 </footer>
 
+<a class="fab" href="#contact">Write me <svg width="16" height="11" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></a>
+
 <script>
 (function(){
 var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
@@ -481,12 +529,15 @@ if(all)all.addEventListener('click',function(){
 function openFor(id){var b=document.querySelector('button.shb[aria-controls="'+id+'-body"]');if(b&&b.getAttribute('aria-expanded')!=='true')setOpen(b,true);}
 document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){openFor(a.getAttribute('href').slice(1));});});
 if(location.hash)openFor(location.hash.slice(1));
-var first=document.querySelector('button.shb[aria-controls="path-body"]');if(first)setOpen(first,true);
+document.querySelectorAll('button.shb,button.skb').forEach(function(b){setOpen(b,true);});
 var rv=document.querySelectorAll('.rv');
 if('IntersectionObserver' in window){
   var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.15});
   rv.forEach(function(el){if(!el.closest('.pnl'))io.observe(el);});
 }else{rv.forEach(function(el){el.classList.add('in');});}
+var fb=document.querySelector('.fab'),hero=document.getElementById('top'),ct=document.getElementById('contact');
+function fabSync(){var hb=hero.getBoundingClientRect().bottom,cb=ct.getBoundingClientRect().top;fb.classList.toggle('on',hb<0&&cb>innerHeight*.6);}
+addEventListener('scroll',fabSync,{passive:true});fabSync();
 })();
 </script>
 </body>
