@@ -9,7 +9,7 @@
 <meta property="og:description" content="UX and product designer with a focus on digitalization and AI: team workflows, Jira &amp; Confluence, AI tools and rollout. 15 years in connected mobility.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://juliawimmer.de/img/portrait.jpeg">
-<meta name="theme-color" content="#0C0D0B">
+<meta name="theme-color" content="#F2F3EF">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -20,8 +20,8 @@
 /* Concept: a technical data sheet. Title block, revision table, parts list,
    callouts with leader lines. One ink, one process magenta, a measuring grid. */
 :root{
-  --paper:#0C0D0B; --paper-2:#151613; --ink:#ECEDE8; --grey:#9A9D94; --line:rgba(236,237,232,.13);
-  --mag:#FF2E93; --mag-soft:rgba(255,46,147,.10);
+  --paper:#F2F3EF; --paper-2:#E7E9E3; --ink:#0E0F0C; --grey:#55584F; --line:rgba(14,15,12,.16);
+  --mag:#D6006F; --mag-soft:rgba(214,0,111,.12);
   --gut:clamp(16px,4.4vw,72px);
   --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
   --sans:'Archivo',system-ui,sans-serif;
@@ -66,7 +66,7 @@ a{color:inherit}
 
 /* hero */
 .hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,30%);gap:48px 72px;padding-top:clamp(40px,6vw,96px);padding-bottom:clamp(48px,6vw,96px);
-  background-image:linear-gradient(rgba(236,237,232,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(236,237,232,.045) 1px,transparent 1px);background-size:32px 32px;background-position:-1px -1px}
+  background-image:linear-gradient(rgba(14,15,12,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(14,15,12,.07) 1px,transparent 1px);background-size:32px 32px;background-position:-1px -1px}
 .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:96px;background:linear-gradient(transparent,var(--paper));pointer-events:none}
 .hero>*{position:relative;z-index:1}
 .hi{display:flex;align-items:center;gap:12px;margin-bottom:22px}
@@ -150,7 +150,7 @@ button[aria-expanded="true"] .sg svg{transform:rotate(45deg)}
 .rev .r{font-family:var(--mono);font-size:.8125rem;color:var(--mag);padding-top:4px}
 .rev .d{font-family:var(--mono);font-size:.8125rem;padding-top:4px}
 .rev h3{font-size:1.3125rem;font-weight:750;line-height:1.25;font-stretch:90%}
-.rev p.t{max-width:46em;margin-top:6px;color:#C4C6BF}
+.rev p.t{max-width:46em;margin-top:6px;color:#2A2C27}
 .callout{display:inline-flex;align-items:center;gap:8px;margin-left:14px;vertical-align:middle;color:var(--mag);white-space:nowrap}
 .callout::before{content:"";width:36px;height:1px;background:var(--mag)}
 .callout::after{content:"";order:-1;width:6px;height:6px;border-radius:50%;background:var(--mag);margin-right:-8px}
@@ -177,7 +177,7 @@ button[aria-expanded="true"] .sg svg{transform:rotate(45deg)}
 .ch .pn{font-family:var(--mono);font-size:.8125rem;color:var(--mag);padding-top:6px}
 .ch .ttl{display:block;font-size:clamp(1.6rem,3vw,2.6rem);line-height:.95;font-stretch:72%;font-weight:800;text-transform:uppercase}
 .ch .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:16px}
-.ch .ds{display:block;font-size:1rem;color:#C4C6BF;max-width:34em}
+.ch .ds{display:block;font-size:1rem;color:#2A2C27;max-width:34em}
 .ch .pm{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--ink);font-family:var(--mono);font-size:1.25rem;line-height:1;transition:background-color .2s ease,color .2s ease}
 .case .acc[aria-expanded="true"] .pm{background:var(--mag);border-color:var(--mag);color:#fff}
 .tag{display:inline-block;padding:4px 8px;border:1px solid var(--ink);font-family:var(--mono);font-size:.6875rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;line-height:1.3}
@@ -239,29 +239,30 @@ button[aria-expanded="true"] .sg svg{transform:rotate(45deg)}
 [hidden]{display:none!important}
 /* ---- dark preview additions ---- */
 #what-you-get{background:var(--paper-2);color:var(--ink);border-top-color:var(--ink)}
-#contact{background:var(--paper-2);color:var(--ink)}
-.mail:hover{color:#0C0D0B}
+#what-you-get .sth{color:var(--grey)}
+#what-you-get .sno{color:var(--mag)}
+.mail:hover{color:var(--ink)}
 .mock{mix-blend-mode:normal}
 .shb{pointer-events:none;cursor:default}.shb .sg{display:none}.shb::after{width:100%}
 .skb{pointer-events:none}.skb .sg,.skb .skp{display:none}
-.cta{background:var(--mag);color:#0C0D0B}.cta:hover{background:var(--ink)}
-.navcta{background:var(--mag);color:#0C0D0B!important}.navcta span{color:#0C0D0B!important}
+.cta{background:var(--mag);color:#fff}.cta:hover{background:var(--ink)}
+.navcta{background:var(--mag);color:#fff!important}.navcta span{color:#fff!important}
 .navcta:hover{background:var(--ink)!important}
 h1 .m{color:var(--mag)}
 /* stats */
-.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--mag);color:#0C0D0B}
-.stats>div{padding:28px 24px 30px var(--gut);border-left:1px solid rgba(12,13,11,.25)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--mag);color:#fff}
+.stats>div{padding:28px 24px 30px var(--gut);border-left:1px solid rgba(255,255,255,.3)}
 .stats>div:first-child{border-left:0}
 .stats>div+div{padding-left:28px}
 .stats b{display:block;font-size:clamp(2.6rem,6vw,5.2rem);line-height:.9;font-stretch:68%;font-weight:850}
-.stats .mono{display:block;margin-top:10px;color:#0C0D0B}
-@media (max-width:1000px){.stats{grid-template-columns:1fr 1fr}.stats>div{padding:22px var(--gut)}.stats>div:nth-child(odd){border-left:0}.stats>div:nth-child(n+3){border-top:1px solid rgba(12,13,11,.25)}.stats>div+div{padding-left:var(--gut)}}
+.stats .mono{display:block;margin-top:10px;color:#fff}
+@media (max-width:1000px){.stats{grid-template-columns:1fr 1fr}.stats>div{padding:22px var(--gut)}.stats>div:nth-child(odd){border-left:0}.stats>div:nth-child(n+3){border-top:1px solid rgba(255,255,255,.3)}.stats>div+div{padding-left:var(--gut)}}
 /* marquee */
 .marq{border-bottom:1px solid var(--line);overflow:hidden}
 .ml{flex:0 0 auto;color:var(--grey);padding:22px 0}
 .mt{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
 .mr{display:flex;width:max-content;animation:mq 40s linear infinite}
-.mr span{font-size:clamp(1.6rem,3vw,2.6rem);font-stretch:70%;font-weight:800;text-transform:uppercase;color:#5E615A;padding:14px 0;white-space:nowrap}
+.mr span{font-size:clamp(1.6rem,3vw,2.6rem);font-stretch:70%;font-weight:800;text-transform:uppercase;color:#A9ACA3;padding:14px 0;white-space:nowrap}
 .mr i{font-style:normal;color:var(--mag);font-size:clamp(1.6rem,3vw,2.6rem);font-weight:800;padding:14px 28px}
 @keyframes mq{to{transform:translateX(-33.333%)}}
 @media (max-width:600px){.ml{display:none}}
@@ -271,10 +272,10 @@ h1 .m{color:var(--mag)}
 .nl{display:grid;grid-template-columns:5.5rem minmax(0,1fr) minmax(0,1.2fr);gap:8px 24px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line)}
 .nl .nn{color:var(--mag)}
 .nl h3{font-size:clamp(1.5rem,2.6vw,2.2rem);line-height:1;font-stretch:72%;font-weight:800;text-transform:uppercase}
-.nl p{color:#C4C6BF;max-width:34em}
+.nl p{color:#2A2C27;max-width:34em}
 @media (max-width:820px){.nl{grid-template-columns:3rem minmax(0,1fr)}.nl p{grid-column:2}}
 /* floating CTA */
-.fab{position:fixed;right:20px;bottom:20px;z-index:50;display:inline-flex;align-items:center;gap:10px;padding:14px 20px;background:var(--mag);color:#0C0D0B;font-weight:700;text-decoration:none;box-shadow:0 10px 30px -10px rgba(255,46,147,.6);transition:transform .2s ease,background-color .2s ease}
+.fab{position:fixed;right:20px;bottom:20px;z-index:50;display:inline-flex;align-items:center;gap:10px;padding:14px 20px;background:var(--mag);color:#fff;font-weight:700;text-decoration:none;box-shadow:0 10px 30px -12px rgba(214,0,111,.55);transition:transform .2s ease,background-color .2s ease}
 .fab:hover{transform:translateY(-2px);background:var(--ink)}
 .js .fab{opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
 .js .fab.on{opacity:1;transform:none;pointer-events:auto}
@@ -325,7 +326,7 @@ h1 .m{color:var(--mag)}
 </section>
 
 <div class="stats" role="list">
-<div role="listitem"><b>15</b><span class="mono">years in IT</span></div>
+<div role="listitem"><b>15</b><span class="mono">years in IT &amp; connected mobility</span></div>
 <div role="listitem"><b>9</b><span class="mono">years project manager &amp; product owner</span></div>
 <div role="listitem"><b>6+</b><span class="mono">years UX designer</span></div>
 <div role="listitem"><b>3+</b><span class="mono">years founder</span></div>
@@ -458,10 +459,10 @@ h1 .m{color:var(--mag)}
 <div class="krow rv"><p class="kl">Product &amp; business</p><div class="kc"><span class="tag">Product Ownership</span><span class="tag">Roadmapping</span><span class="tag">Requirements analysis</span><span class="tag">Project planning &amp; scoping</span><span class="tag">Portfolio management</span><span class="tag">Agile delivery</span><span class="tag">Developer handover</span><span class="tag">Stakeholder management</span><span class="tag">Steering committees &amp; decision papers</span><span class="tag">Budget &amp; cost control</span><span class="tag">Presales &amp; proposals</span><span class="tag">Pitching</span></div></div>
 <div class="krow rv"><p class="kl">People &amp; communication</p><div class="kc"><span class="tag">Mediation (university course)</span><span class="tag">Team enablement &amp; knowledge sharing</span></div></div>
 </div></div></div></div>
-<div class="rv sk"><h3 style="margin:0;font:inherit"><button class="acc skb" type="button" aria-expanded="false" aria-controls="sk2"><span class="skn">04.2</span><span class="skl">Tools</span><span class="skc">23</span><span class="skp">Design &amp; prototyping · Product &amp; collaboration · AI …</span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h3><div id="sk2" class="pnl"><div class="pin"><div class="krows">
+<div class="rv sk"><h3 style="margin:0;font:inherit"><button class="acc skb" type="button" aria-expanded="false" aria-controls="sk2"><span class="skn">04.2</span><span class="skl">Tools</span><span class="skc">25</span><span class="skp">Design &amp; prototyping · Product &amp; collaboration · AI …</span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h3><div id="sk2" class="pnl"><div class="pin"><div class="krows">
 <div class="krow rv"><p class="kl">Design &amp; prototyping</p><div class="kc"><span class="tag">Figma</span><span class="tag">Figma Make</span><span class="tag">ProtoPie</span><span class="tag">Canva</span><span class="tag">Adobe Creative Cloud</span></div></div>
 <div class="krow rv"><p class="kl">Product &amp; collaboration</p><div class="kc"><span class="tag">Miro</span><span class="tag">Jira</span><span class="tag">Confluence</span><span class="tag">Notion</span><span class="tag">Microsoft 365</span></div></div>
-<div class="krow rv"><p class="kl">AI</p><div class="kc"><span class="tag">Claude</span><span class="tag">Claude Code</span><span class="tag">ChatGPT</span><span class="tag">Lovable</span><span class="tag">Figma AI</span></div></div>
+<div class="krow rv"><p class="kl">AI</p><div class="kc"><span class="tag">Claude</span><span class="tag">Claude Code</span><span class="tag">ChatGPT</span><span class="tag">Lovable</span><span class="tag">Figma AI</span><span class="tag">Microsoft Copilot</span><span class="tag">Atlassian Rovo</span></div></div>
 <div class="krow rv"><p class="kl">Build &amp; ship</p><div class="kc"><span class="tag">GitHub</span><span class="tag">Visual Studio Code</span><span class="tag">Xcode</span><span class="tag">Android Studio</span><span class="tag">Expo</span><span class="tag">Tolgee</span><span class="tag">App Store Connect</span><span class="tag">Google Play Console</span></div></div>
 </div></div></div></div>
 <div class="rv sk"><h3 style="margin:0;font:inherit"><button class="acc skb" type="button" aria-expanded="false" aria-controls="sk3"><span class="skn">04.3</span><span class="skl">Languages</span><span class="skc">3</span><span class="skp">German · English · Spanish</span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h3><div id="sk3" class="pnl"><div class="pin"><div class="krows">
