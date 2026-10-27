@@ -65,7 +65,7 @@ a{color:inherit}
 }
 
 /* hero */
-.hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,30%);gap:48px 72px;padding-top:clamp(40px,6vw,96px);padding-bottom:clamp(48px,6vw,96px);
+.hero{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,30%);gap:48px 72px;padding-top:clamp(56px,8vw,136px);padding-bottom:clamp(72px,8vw,136px);
   background-image:linear-gradient(rgba(14,15,12,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(14,15,12,.07) 1px,transparent 1px);background-size:32px 32px;background-position:-1px -1px}
 .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:96px;background:linear-gradient(transparent,var(--paper));pointer-events:none}
 .hero>*{position:relative;z-index:1}
@@ -74,10 +74,10 @@ a{color:inherit}
 h1{font-size:clamp(2.9rem,8.2vw,7.4rem);line-height:.86;font-stretch:68%;font-weight:850;text-transform:uppercase;letter-spacing:-.012em}
 h1 .v{position:relative;white-space:nowrap}
 h1 sup{display:inline-block;vertical-align:top;margin:.12em 0 0 .1em;font-family:var(--mono);font-size:max(.11em,10px);font-weight:500;letter-spacing:0;color:var(--mag);line-height:1}
-.lead{max-width:36em;font-size:1.125rem;line-height:1.6;margin-top:36px;background:var(--paper);box-shadow:0 0 0 10px var(--paper)}
-.look{display:inline-flex;gap:12px;align-items:baseline;margin-top:28px;padding:10px 14px;border:1px solid var(--ink);background:var(--paper)}
+.lead{max-width:34em;font-size:1.125rem;line-height:1.7;margin-top:48px;background:var(--paper);box-shadow:0 0 0 10px var(--paper)}
+.look{display:inline-flex;gap:12px;align-items:baseline;margin-top:36px;padding:10px 14px;border:1px solid var(--ink);background:var(--paper)}
 .look .mono{color:var(--mag)}
-.cta{display:inline-flex;align-items:center;gap:14px;min-height:52px;margin-top:32px;padding:0 22px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:700;transition:background-color .15s ease}
+.cta{display:inline-flex;align-items:center;gap:14px;min-height:52px;margin-top:40px;padding:0 22px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:700;transition:background-color .15s ease}
 .cta:hover{background:var(--mag)}
 .cta svg{transition:transform .2s ease}
 .cta:hover svg{transform:translateX(4px)}
@@ -117,7 +117,7 @@ h1 sup{display:inline-block;vertical-align:top;margin:.12em 0 0 .1em;font-family
 .acc{display:block;width:100%;background:none;border:0;padding:0;margin:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
 .sec{border-top:1px solid var(--ink);counter-increment:sec}
 .sh{margin:0;font:inherit}
-.shb{position:relative;display:grid;grid-template-columns:5.5rem minmax(0,1fr) auto;align-items:center;gap:8px 24px;padding-top:26px;padding-bottom:26px}
+.shb{position:relative;display:grid;grid-template-columns:5.5rem minmax(0,1fr) auto;align-items:center;gap:8px 24px;padding-top:clamp(36px,4.5vw,56px);padding-bottom:clamp(36px,4.5vw,56px)}
 .shb::after{content:"";position:absolute;left:0;top:-1px;height:3px;width:0;background:var(--mag);transition:width .5s cubic-bezier(.2,.7,.2,1)}
 .shb:hover::after,.shb[aria-expanded="true"]::after{width:100%}
 .sno{font-family:var(--mono);font-size:.8125rem;color:var(--mag)}
@@ -129,7 +129,7 @@ h1 sup{display:inline-block;vertical-align:top;margin:.12em 0 0 .1em;font-family
 .sg path{fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:square}
 button[aria-expanded="true"] .sg{background:var(--mag);border-color:var(--mag);color:#fff}
 button[aria-expanded="true"] .sg svg{transform:rotate(45deg)}
-.pnl>.pin>.pad{padding:0 0 72px}
+.pnl>.pin>.pad{padding:8px 0 clamp(80px,9vw,128px)}
 .js .pnl{display:grid;grid-template-rows:0fr;transition:grid-template-rows .55s cubic-bezier(.2,.7,.2,1)}
 .js .pnl.open{grid-template-rows:1fr}
 .js .pnl>.pin{min-height:0;overflow:hidden;visibility:hidden;opacity:0;transition:opacity .3s ease,visibility 0s linear .55s}
@@ -145,7 +145,7 @@ button[aria-expanded="true"] .sg svg{transform:rotate(45deg)}
 .rev{border-top:1px solid var(--ink)}
 .rev .hd,.rev .row{display:grid;grid-template-columns:4.5rem 9rem minmax(0,1fr);gap:6px 24px}
 .rev .hd{padding:8px 0;color:var(--grey);border-bottom:1px solid var(--ink)}
-.rev .row{padding:24px 0;border-bottom:1px solid var(--line)}
+.rev .row{padding:34px 0;border-bottom:1px solid var(--line)}
 .rev .row:last-child{border-bottom-color:var(--ink)}
 .rev .r{font-family:var(--mono);font-size:.8125rem;color:var(--mag);padding-top:4px}
 .rev .d{font-family:var(--mono);font-size:.8125rem;padding-top:4px}
@@ -172,7 +172,7 @@ button[aria-expanded="true"] .sg svg{transform:rotate(45deg)}
 /* work */
 .case{border-top:1px solid var(--ink)}
 .case:last-child{border-bottom:1px solid var(--ink)}
-.ch{display:grid;grid-template-columns:5.5rem minmax(0,1.1fr) minmax(0,1fr) auto;gap:16px 24px;align-items:start;padding:32px 0;transition:background-color .2s ease}
+.ch{display:grid;grid-template-columns:5.5rem minmax(0,1.1fr) minmax(0,1fr) auto;gap:16px 24px;align-items:start;padding:40px 0;transition:background-color .2s ease}
 .case .acc:hover .ch{background:linear-gradient(90deg,var(--mag-soft),transparent 70%)}
 .ch .pn{font-family:var(--mono);font-size:.8125rem;color:var(--mag);padding-top:6px}
 .ch .ttl{display:block;font-size:clamp(1.6rem,3vw,2.6rem);line-height:.95;font-stretch:72%;font-weight:800;text-transform:uppercase}
@@ -243,7 +243,7 @@ button[aria-expanded="true"] .sg svg{transform:rotate(45deg)}
 #what-you-get .sno{color:var(--mag)}
 .mail:hover{color:var(--ink)}
 .mock{mix-blend-mode:normal}
-.shb{pointer-events:none;cursor:default}.shb .sg{display:none}.shb::after{width:100%}
+.shb.fx{pointer-events:none;cursor:default}.shb.fx .sg{display:none}.shb.fx::after{width:100%}
 .skb{pointer-events:none}.skb .sg,.skb .skp{display:none}
 .cta{background:var(--mag);color:#fff}.cta:hover{background:var(--ink)}
 .navcta{background:var(--mag);color:#fff!important}.navcta span{color:#fff!important}
@@ -251,25 +251,15 @@ button[aria-expanded="true"] .sg svg{transform:rotate(45deg)}
 h1 .m{color:var(--mag)}
 /* stats */
 .stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));background:var(--mag);color:#fff}
-.stats>div{padding:28px 24px 30px var(--gut);border-left:1px solid rgba(255,255,255,.3)}
+.stats>div{padding:40px 24px 42px var(--gut);border-left:1px solid rgba(255,255,255,.3)}
 .stats>div:first-child{border-left:0}
 .stats>div+div{padding-left:28px}
 .stats b{display:block;font-size:clamp(2.6rem,6vw,5.2rem);line-height:.9;font-stretch:68%;font-weight:850}
 .stats .mono{display:block;margin-top:10px;color:#fff}
 @media (max-width:1000px){.stats{grid-template-columns:1fr 1fr}.stats>div{padding:22px var(--gut)}.stats>div:nth-child(odd){border-left:0}.stats>div:nth-child(n+3){border-top:1px solid rgba(255,255,255,.3)}.stats>div+div{padding-left:var(--gut)}}
-/* marquee */
-.marq{border-bottom:1px solid var(--line);overflow:hidden}
-.ml{flex:0 0 auto;color:var(--grey);padding:22px 0}
-.mt{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.mr{display:flex;width:max-content;animation:mq 40s linear infinite}
-.mr span{font-size:clamp(1.6rem,3vw,2.6rem);font-stretch:70%;font-weight:800;text-transform:uppercase;color:#A9ACA3;padding:14px 0;white-space:nowrap}
-.mr i{font-style:normal;color:var(--mag);font-size:clamp(1.6rem,3vw,2.6rem);font-weight:800;padding:14px 28px}
-@keyframes mq{to{transform:translateX(-33.333%)}}
-@media (max-width:600px){.ml{display:none}}
-@media (prefers-reduced-motion:reduce){.mr{animation:none}}
 /* numbered list (what you get) */
 .nls{border-top:1px solid var(--line)}
-.nl{display:grid;grid-template-columns:5.5rem minmax(0,1fr) minmax(0,1.2fr);gap:8px 24px;align-items:baseline;padding:26px 0;border-bottom:1px solid var(--line)}
+.nl{display:grid;grid-template-columns:5.5rem minmax(0,1fr) minmax(0,1.2fr);gap:8px 24px;align-items:baseline;padding:38px 0;border-bottom:1px solid var(--line)}
 .nl .nn{color:var(--mag)}
 .nl h3{font-size:clamp(1.5rem,2.6vw,2.2rem);line-height:1;font-stretch:72%;font-weight:800;text-transform:uppercase}
 .nl p{color:#2A2C27;max-width:34em}
@@ -280,7 +270,7 @@ h1 .m{color:var(--mag)}
 #enjoy .sno{color:#FF4FA3}
 #enjoy :focus-visible{outline-color:#FF4FA3}
 .jy{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid rgba(242,243,239,.3);border-left:1px solid rgba(242,243,239,.3)}
-.jc{position:relative;display:flex;flex-direction:column;padding:28px 24px 26px;border-right:1px solid rgba(242,243,239,.3);border-bottom:1px solid rgba(242,243,239,.3)}
+.jc{position:relative;display:flex;flex-direction:column;padding:36px 28px 32px;border-right:1px solid rgba(242,243,239,.3);border-bottom:1px solid rgba(242,243,239,.3)}
 .jc::before{content:"";position:absolute;left:-1px;right:-1px;top:-1px;height:3px;background:var(--mag);transform:scaleX(0);transform-origin:left;transition:transform .45s cubic-bezier(.2,.7,.2,1)}
 .jc:hover::before{transform:none}
 .jc .k{color:#FF4FA3}
@@ -312,7 +302,7 @@ h1 .m{color:var(--mag)}
 .js .fab{opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .3s ease,transform .3s ease}
 .js .fab.on{opacity:1;transform:none;pointer-events:auto}
 @media (max-width:600px){.fab{right:12px;bottom:12px;padding:12px 16px}}
-@media print{.fab,.marq{display:none}}
+@media print{.fab{display:none}}
 </style>
 <script>document.documentElement.className="js"</script>
 </head>
@@ -364,10 +354,9 @@ h1 .m{color:var(--mag)}
 <div role="listitem"><b>6+</b><span class="mono">years UX designer</span></div>
 <div role="listitem"><b>3+</b><span class="mono">years founder</span></div>
 </div>
-<div class="marq" aria-label="Project manager, product owner, designer, founder, AI lover"><div class="mt" aria-hidden="true"><div class="mr"><span>Project manager</span><i>/</i><span>Product owner</span><i>/</i><span>Designer</span><i>/</i><span>Founder</span><i>/</i><span>AI lover</span><i>/</i><span>Project manager</span><i>/</i><span>Product owner</span><i>/</i><span>Designer</span><i>/</i><span>Founder</span><i>/</i><span>AI lover</span><i>/</i><span>Project manager</span><i>/</i><span>Product owner</span><i>/</i><span>Designer</span><i>/</i><span>Founder</span><i>/</i><span>AI lover</span><i>/</i></div></div></div>
 
 <section id="path" class="sec wrap">
-<h2 class="sh"><button class="acc shb" type="button" aria-expanded="true" aria-controls="path-body"><span class="sno">§ 01</span><span><span class="stt">My path</span><span class="sth mono">project manager, product owner, designer, founder, AI lover</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
+<h2 class="sh"><button class="acc shb fx" type="button" aria-expanded="true" aria-controls="path-body"><span class="sno">§ 01</span><span><span class="stt">My path</span><span class="sth mono">project manager, product owner, designer, founder, AI lover</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
 <div id="path-body" class="pnl open"><div class="pin"><div class="pad">
 <div class="rev indent">
 <div class="hd mono" aria-hidden="true"><span>Rev.</span><span>Date</span><span>Description</span></div>
@@ -382,7 +371,7 @@ h1 .m{color:var(--mag)}
 </section>
 
 <section id="enjoy" class="sec wrap">
-<h2 class="sh"><button class="acc shb" type="button" aria-expanded="false" aria-controls="enjoy-body"><span class="sno">§ 02</span><span><span class="stt">What I enjoy</span><span class="sth mono">the work that gives me energy</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
+<h2 class="sh"><button class="acc shb fx" type="button" aria-expanded="false" aria-controls="enjoy-body"><span class="sno">§ 02</span><span><span class="stt">What I enjoy</span><span class="sth mono">the work that gives me energy</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
 <div id="enjoy-body" class="pnl"><div class="pin"><div class="pad">
 <div class="jy">
 <div class="jc rv"><span class="k mono">01</span><div class="jm j1" aria-hidden="true"><i style="--x:0px;--y:0px;--sx:-10px;--sy:14px;--r:40deg;--d:0"></i><i style="--x:21px;--y:0px;--sx:8px;--sy:-12px;--r:-25deg;--d:1"></i><i style="--x:42px;--y:0px;--sx:14px;--sy:10px;--r:60deg;--d:2"></i><i style="--x:0px;--y:21px;--sx:-14px;--sy:-6px;--r:-50deg;--d:3"></i><i class="m" style="--x:21px;--y:21px;--sx:0px;--sy:0px;--r:45deg;--d:4"></i><i style="--x:42px;--y:21px;--sx:12px;--sy:16px;--r:20deg;--d:5"></i><i style="--x:0px;--y:42px;--sx:6px;--sy:12px;--r:70deg;--d:6"></i><i style="--x:21px;--y:42px;--sx:-12px;--sy:8px;--r:-35deg;--d:7"></i><i style="--x:42px;--y:42px;--sx:16px;--sy:-10px;--r:15deg;--d:8"></i></div><h3>Structuring</h3><p>Taking something messy and building a system that people actually want to use: boards, spaces, workflows, decisions.</p><a class="ref mono" href="#p-01">Ref. <span>P-01 Team workflows</span> &#8595;</a></div>
@@ -394,7 +383,7 @@ h1 .m{color:var(--mag)}
 </section>
 
 <section id="what-you-get" class="sec wrap" aria-label="What you get">
-<h2 class="sh"><button class="acc shb" type="button" aria-expanded="false" aria-controls="what-you-get-body"><span class="sno">§ 03</span><span><span class="stt">What you get</span><span class="sth mono">if I join your team</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
+<h2 class="sh"><button class="acc shb fx" type="button" aria-expanded="false" aria-controls="what-you-get-body"><span class="sno">§ 03</span><span><span class="stt">What you get</span><span class="sth mono">if I join your team</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
 <div id="what-you-get-body" class="pnl"><div class="pin"><div class="pad">
 <div class="nls">
 <div class="nl rv"><span class="nn mono">01</span><h3>Speed</h3><p>I get a topic quickly, I learn fast and I execute fast. No long ramp-up.</p></div>
@@ -572,11 +561,13 @@ if(all)all.addEventListener('click',function(){
   var open=all.textContent==='Open all';
   document.querySelectorAll('button.acc').forEach(function(b){setOpen(b,open);});
 });
-function openFor(id){var b=document.querySelector('button.shb[aria-controls="'+id+'-body"]');if(b&&b.getAttribute('aria-expanded')!=='true')setOpen(b,true);
-  var c=document.getElementById(id),cb=c&&c.classList.contains('case')&&c.querySelector('button.acc');if(cb&&cb.getAttribute('aria-expanded')!=='true')setOpen(cb,true);}
-document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(){openFor(a.getAttribute('href').slice(1));});});
+function openFor(id){var t=document.getElementById(id);if(!t)return false;var hid=!!t.closest('.pnl:not(.open)');
+  var sc=t.closest('section'),b=sc&&sc.querySelector('button.shb');if(b&&b.getAttribute('aria-expanded')!=='true')setOpen(b,true);
+  var cb=t.classList.contains('case')&&t.querySelector('button.acc');if(cb&&cb.getAttribute('aria-expanded')!=='true')setOpen(cb,true);
+  if(hid)setTimeout(function(){t.scrollIntoView({behavior:reduce?'auto':'smooth'});},reduce?0:560);return hid;}
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var id=a.getAttribute('href').slice(1);if(openFor(id)){e.preventDefault();history.replaceState(null,'','#'+id);}});});
 if(location.hash)openFor(location.hash.slice(1));
-document.querySelectorAll('button.shb,button.skb').forEach(function(b){setOpen(b,true);});
+document.querySelectorAll('button.shb.fx,button.skb').forEach(function(b){setOpen(b,true);});
 var rv=document.querySelectorAll('.rv');
 if('IntersectionObserver' in window){
   var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});},{threshold:.15});
