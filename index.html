@@ -329,6 +329,92 @@ h1 .m{color:var(--mag)}
 .js .fab.on{opacity:1;transform:none;pointer-events:auto}
 @media (max-width:600px){.fab{right:12px;bottom:12px;padding:12px 16px}}
 @media print{.fab{display:none}}
+/* case figures: rebuilt from scratch, no client material */
+.dg{margin:40px 0 0;padding-top:18px;border-top:1px solid var(--ink)}
+.dg+.dg{margin-top:36px}
+.dgh{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 16px}
+.dgh h4{margin:0;font-size:1.25rem;line-height:1;font-stretch:72%;font-weight:800;text-transform:uppercase}
+.dgh .mono{color:var(--grey);font-size:.6875rem}
+.dlg .dgn{margin-top:10px;font-size:.9375rem;color:var(--grey)}
+.dlg .tbr,.dlg .flow,.dlg .ads ol{list-style:none;margin:0;padding:0;max-width:none}
+.dlg .tbr li,.dlg .flow li,.dlg .ads li{margin:0}
+.troot{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;margin-top:18px;padding:12px 16px;background:var(--ink);color:var(--paper);font-weight:700}
+.troot .mono{color:#A6A99F;font-size:.6875rem}
+.dlg .tbr{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-left:1px solid var(--ink)}
+.dlg .tbr li{padding:12px 12px 16px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink);font-weight:650;font-size:.9375rem;line-height:1.25}
+.tbr li::before{content:attr(data-n);display:block;margin-bottom:8px;font-family:var(--mono);font-size:.6875rem;font-weight:500;color:var(--mag)}
+.tin{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin-top:12px}
+.tin .mono{margin-right:4px;color:var(--grey);font-size:.6875rem}
+@media (max-width:760px){.dlg .tbr{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:420px){.dlg .tbr{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.dlg .flow{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:28px;margin-top:18px}
+.dlg .flow li{position:relative;padding:12px 14px 14px;border:1px solid var(--ink);background:var(--paper)}
+.flow li+li::before{content:"";position:absolute;left:-29px;top:50%;width:28px;height:1px;background:var(--ink)}
+.flow li+li::after{content:"";position:absolute;left:-7px;top:calc(50% - 4px);border:4px solid transparent;border-left:6px solid var(--ink);border-right:0}
+.flow b{display:block;font-family:var(--mono);font-size:.6875rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--grey)}
+.flow li>span{display:block;margin-top:6px;font-weight:650;font-size:.9375rem;line-height:1.3}
+.dlg .flow .auto{background:var(--mag);border-color:var(--mag);color:#fff}
+.dlg .flow .src{background:var(--ink);color:var(--paper)}
+.flow .auto b{color:#fff}.flow .src b{color:#A6A99F}
+@media (max-width:700px){.dlg .flow{grid-auto-flow:row;gap:22px}.flow li+li::before{left:24px;top:-23px;width:1px;height:22px}.flow li+li::after{left:20px;top:-7px;border:4px solid transparent;border-top:6px solid var(--ink);border-bottom:0}}
+.lay{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:18px;border-top:1px solid var(--ink);border-left:1px solid var(--ink)}
+.lay>div{min-width:0;padding:16px 18px 18px;border-right:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.lay .mono{font-size:.6875rem;color:var(--mag)}
+.lay h5{margin:8px 0 0;font-size:1.25rem;line-height:1;font-stretch:72%;font-weight:800;text-transform:uppercase}
+.dlg .lay ul{margin-top:10px;padding-left:18px;font-size:.9375rem}
+.dlg .lay li{margin-bottom:4px}
+.lyr-a{background:var(--ink);color:var(--paper)}
+.lay .lyr-a .mono{color:#FF4FA3}
+.dlg .lyr-a li::marker{color:#FF4FA3}
+.sk-a,.sk-b{margin-top:14px;padding:10px;border:1px solid currentColor;border-radius:8px}
+.sk-a{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sk-a span{grid-column:1/-1;font-family:var(--mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:#A6A99F}
+.sk-a i{display:grid;place-items:center;min-height:54px;background:var(--paper);color:var(--ink);font-style:normal;font-weight:800;font-stretch:80%;text-transform:uppercase}
+.sk-a i:first-of-type{background:var(--mag);color:#fff}
+.sk-b{display:grid;gap:4px}
+.sk-b i{display:grid;grid-template-columns:8px 1fr 2.2rem;gap:8px;align-items:center;height:12px}
+.sk-b i::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ink)}
+.sk-b i.w::before{background:var(--mag)}
+.sk-b i::after{content:"";grid-column:2/-1;height:4px;background:linear-gradient(90deg,var(--ink) var(--l,60%),transparent 0) left/100% 100% no-repeat,linear-gradient(90deg,transparent calc(100% - 2.2rem),rgba(14,15,12,.35) 0)}
+.base{grid-column:1/-1;display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;background:var(--paper-2)}
+.base span{font-weight:650}
+.cut{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;margin-top:12px;padding:10px 14px;border:1px dashed var(--ink)}
+.cut .mono{font-size:.6875rem;color:var(--mag)}
+@media (max-width:640px){.lay{grid-template-columns:1fr}}
+.ad{display:grid;grid-template-columns:minmax(0,15rem) minmax(0,1fr);gap:24px 32px;align-items:start;margin-top:20px}
+@media (max-width:760px){.ad{grid-template-columns:1fr}.ads{order:-1}}
+.adp{display:flex;border:1px solid var(--ink)}
+.adp button{flex:1;min-height:44px;padding:8px;border:0;background:none;color:inherit;font:inherit;font-size:.875rem;font-weight:700;cursor:pointer;transition:background-color .15s ease,color .15s ease}
+.adp button+button{border-left:1px solid var(--ink)}
+.adp button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.adr{min-width:0;margin:18px 0 0;padding:0;border:0}
+.adr legend{padding:0;margin-bottom:8px;font-family:var(--mono);font-size:.6875rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.adr>div{display:flex;border:1px solid var(--ink)}
+.adr label{position:relative;flex:1;cursor:pointer}
+.adr label+label{border-left:1px solid var(--ink)}
+.adr input{position:absolute;inset:0;width:100%;height:100%;margin:0;opacity:0;cursor:pointer}
+.adr label span{display:grid;place-items:center;min-height:40px;padding:4px;font-size:.8125rem;font-weight:600;transition:background-color .15s ease,color .15s ease}
+.adr input:checked+span{background:var(--mag);color:#fff}
+.adr input:focus-visible+span{outline:2px solid var(--mag);outline-offset:2px}
+.ads{min-width:0;min-height:320px;padding:14px 18px 18px;background:var(--ink);color:var(--paper);border-radius:14px;box-shadow:0 0 0 6px var(--paper-2),0 0 0 7px var(--ink)}
+.ads .bar{display:flex;justify-content:space-between;gap:12px;padding-bottom:10px;border-bottom:1px solid rgba(242,243,239,.18);font-family:var(--mono);font-size:.6875rem;letter-spacing:.08em;text-transform:uppercase;color:#A6A99F}
+.ads .ban{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px 12px;margin-top:12px;padding:10px 12px;background:var(--mag);color:#fff;font-size:.875rem;font-weight:650;line-height:1.35}
+.ads .ban i{font-style:normal;font-family:var(--mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid #fff;padding:3px 8px;margin-left:6px}
+.ads .tip{display:inline-block;margin-top:12px;padding:4px 10px;border:1px solid #FF4FA3;color:#FF4FA3;font-family:var(--mono);font-size:.6875rem;letter-spacing:.05em;text-transform:uppercase}
+.ads .hd{margin-top:16px;font-family:var(--mono);font-size:.6875rem;letter-spacing:.08em;text-transform:uppercase;color:#A6A99F}
+.dlg .ads ol{margin-top:6px}
+.ads li{display:grid;grid-template-columns:1.6rem minmax(0,1fr);gap:10px;padding:10px 0;border-top:1px solid rgba(242,243,239,.14)}
+.ads li:first-child{border-top:0}
+.ads .n{padding-top:3px;font-family:var(--mono);font-size:.75rem;color:#FF4FA3}
+.ads .t{display:block;font-weight:750;line-height:1.15}
+.ads.d0 .t{font-size:1.75rem;font-stretch:80%;font-weight:800}
+.ads.d1 .t{font-size:1.25rem}
+.ads.d2 .t{font-size:1rem}
+.ads .am{display:block;margin-top:4px;font-size:.875rem;color:#D4D6CF}
+.ads .f{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.ads .f span{padding:2px 6px;border:1px solid rgba(242,243,239,.4);font-family:var(--mono);font-size:.625rem;letter-spacing:.05em;text-transform:uppercase}
+.ads .ft{margin-top:14px;padding-top:10px;border-top:1px dashed rgba(242,243,239,.3);font-size:.8125rem;color:#A6A99F}
+.dlg .ads p{max-width:none}
 </style>
 <script>document.documentElement.className="js"</script>
 </head>
@@ -438,6 +524,20 @@ h1 .m{color:var(--mag)}
 <h3 id="dp-01-t" class="dt">Team workflows &amp; AI rollout</h3>
 <div class="tags"><span class="tag">Digitalization</span><span class="tag">AI adoption</span><span class="tag">Jira &amp; Confluence</span><span class="tag">Valtech, internal</span></div>
 <p class="dsum">I restructured the UX design team's Jira board and Confluence space with workflows, automations, templates and permissions that fit the team and the company, and set up a ticket workflow for one of my projects that the whole company used. I evaluated AI tools for our design workflow and, when Claude was rolled out company-wide, worked out how to bring our brand and design system into it.</p>
+<figure class="dg">
+<figcaption class="dgh"><h4>One space for everything</h4><span class="mono">Fig. 01.1 · simplified, no client material</span></figcaption>
+<div class="troot"><span>UX design team</span><span class="mono">Confluence space + Jira board</span></div>
+<ul class="tbr"><li data-n="01">Client projects</li><li data-n="02">Pitches</li><li data-n="03">Admin</li><li data-n="04">Organisation</li><li data-n="05">Skill development</li><li data-n="06">Training</li></ul>
+<div class="tin"><span class="mono">Built in:</span><span class="tag">Workflows</span><span class="tag">Automations</span><span class="tag">Templates</span><span class="tag">Permissions</span></div>
+</figure>
+<figure class="dg">
+<figcaption class="dgh"><h4>Requests from the whole company</h4><span class="mono">Fig. 01.2 · simplified</span></figcaption>
+<ol class="flow"><li><b>Anyone</b><span>Submits a request as a ticket</span></li><li class="auto"><b>Automation</b><span>Creates the subtasks</span></li><li><b>Project team</b><span>Works through the subtasks</span></li><li><b>Done</b><span>Request closed in one place</span></li></ol>
+</figure>
+<figure class="dg">
+<figcaption class="dgh"><h4>Brand and design system in Claude</h4><span class="mono">Fig. 01.3 · simplified</span></figcaption>
+<ol class="flow"><li class="src"><b>Source of truth</b><span>Figma</span></li><li><b>Input</b><span>Brand guidelines &amp; design system</span></li><li class="auto"><b>AI</b><span>Claude Design</span></li><li><b>Output</b><span>Documents in the corporate design, ready for clients</span></li></ol>
+</figure>
 <div class="csg">
 <div><span class="lbl">Context &amp; problem</span><p>The UX design team already had a Jira board and a Confluence space, but they were unstructured and had no workflow that fit how the team or the company worked. Client projects and pitches sat next to admin, organisation, skill development and training without a clear system. At the same time, more and more AI tools promised to speed up design work, without a clear view of which ones were usable and worth bringing into the workflow.</p></div>
 <div><span class="lbl">My role</span><p>I reworked the team's tooling from the ground up: the structure of the Confluence space and the Jira board, workflows, automations, templates and permissions. For one of my projects I set up a Jira workflow that everyone in the company could use to submit requests. On the AI side, I tested and analysed external tools for the design team, and after the company-wide Claude rollout I worked out how to bring our brand guidelines and design system into Claude Design.</p></div>
@@ -451,6 +551,15 @@ h1 .m{color:var(--mag)}
 <h3 id="dp-02-t" class="dt">Expert Tools &amp; Mobility Services</h3>
 <div class="tags"><span class="tag">Complex UI</span><span class="tag">Fleet</span><span class="tag">Autonomous</span><span class="tag">Confidential</span></div>
 <p class="dsum">UX for a truck manufacturer's workshop tool: inspections, vehicle analysis and step-by-step repair manuals. It has to work with gloves on and make sense to fleet managers. I also did UI work on autonomous-vehicle services for startups.</p>
+<figure class="dg">
+<figcaption class="dgh"><h4>One data model, two layers</h4><span class="mono">Fig. 02.1 · simplified, no client material</span></figcaption>
+<div class="lay">
+<div class="lyr-a"><span class="mono">Layer A · Workshop technician</span><h5>Do the next step</h5><ul><li>One repair step at a time, stripped down</li><li>Large touch targets, works with gloves</li><li>High contrast</li></ul><div class="sk-a" aria-hidden="true"><span>Step 3 of 8</span><i>Done</i><i>Help</i></div></div>
+<div><span class="mono">Layer B · Fleet manager</span><h5>See the whole fleet</h5><ul><li>Vehicle status at a glance</li><li>Maintenance activities</li><li>Overview, not step by step</li></ul><div class="sk-b" aria-hidden="true"><i style="--l:70%"></i><i class="w" style="--l:45%"></i><i style="--l:82%"></i><i style="--l:60%"></i><i class="w" style="--l:35%"></i><i style="--l:74%"></i></div></div>
+<div class="base"><span class="mono">↑ Both layers read the same data</span><span>Inspections · Vehicle analysis · Repair manuals</span></div>
+</div>
+<div class="cut"><span class="mono">✕ Cut on purpose</span><span>Lower-frequency features that would have slowed down the repair flow</span></div>
+</figure>
 <div class="csg">
 <div><span class="lbl">Context &amp; problem</span><p>The client, a truck manufacturer, wanted to introduce a tool on a tablet used by workshop technicians during vehicle servicing. The existing workflows for inspections, diagnostics and repair guidance were complex, time-consuming and not optimized for real workshop conditions. The challenge was to design a tool that supports technicians wearing protective gloves, while also addressing the information needs of fleet and operations managers who require a broader overview of vehicle status and maintenance activities. Balancing these very different user groups without overcomplicating the experience was the core design challenge.</p></div>
 <div><span class="lbl">My role</span><p>As the sole UX/UI Designer on the project, I worked directly with the OEM's Product Owner and development team throughout the product design process. I collaborated closely with developers to ensure technical feasibility and smooth implementation while aligning design decisions with business priorities.</p></div>
@@ -503,7 +612,20 @@ h1 .m{color:var(--mag)}
 <div class="dh"><span class="pn mono">P-05</span><button class="dx" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
 <h3 id="dp-05-t" class="dt">InCar Services</h3>
 <div class="tags"><span class="tag">UX Concept</span><span class="tag">In-Car</span><span class="tag">OEM</span><span class="tag">Confidential</span></div>
-<p class="dsum">Services for connected cars, for OEMs like Volkswagen, Audi, Lamborghini, Bentley, Renault and Nissan. Two examples: a smart assistant for van drivers that learns their habits and preferences, and an EV service to reserve parking and pay for parking or charging right from the car.</p>
+<p class="dsum">Services for connected cars, for several automotive OEMs. Two examples: a smart assistant for van drivers that learns their habits and preferences, and an EV service to reserve parking and pay for parking or charging right from the car.</p>
+<figure class="dg" id="adapt">
+<figcaption class="dgh"><h4>Try it: one assistant, two travel styles</h4><span class="mono">Fig. 05.1 · interactive</span></figcaption>
+<p class="dgn">Rebuilt from scratch to show the idea, not the pitch material. The trip and all content are made-up examples. Pick a travel style or move the three variables yourself.</p>
+<div class="ad">
+<div>
+<div class="adp" role="group" aria-label="Travel style"><button type="button" data-p="0,0,2" aria-pressed="true">Spontaneous</button><button type="button" data-p="2,2,1" aria-pressed="false">Family</button></div>
+<fieldset class="adr"><legend>Planning depth</legend><div><label><input type="radio" name="ad-0" value="0" checked><span>Low</span></label><label><input type="radio" name="ad-0" value="1"><span>Mid</span></label><label><input type="radio" name="ad-0" value="2"><span>High</span></label></div></fieldset>
+<fieldset class="adr"><legend>Information density</legend><div><label><input type="radio" name="ad-1" value="0" checked><span>Low</span></label><label><input type="radio" name="ad-1" value="1"><span>Mid</span></label><label><input type="radio" name="ad-1" value="2"><span>High</span></label></div></fieldset>
+<fieldset class="adr"><legend>Proactivity</legend><div><label><input type="radio" name="ad-2" value="0"><span>Low</span></label><label><input type="radio" name="ad-2" value="1"><span>Mid</span></label><label><input type="radio" name="ad-2" value="2" checked><span>High</span></label></div></fieldset>
+</div>
+<div class="ads d0" aria-live="polite"></div>
+</div>
+</figure>
 <div class="csg">
 <div><span class="lbl">Context &amp; problem</span><p>As part of a connected mobility pitch for OEMs, we explored a smart assistant for van drivers that personalizes the travel experience based on habits, preferences and context. The core idea was to support "van life" users who expect very different things from their journeys: from highly spontaneous travelers who want freedom without planning or logistics overhead, to families traveling with children who need structure, predictability and detailed organization. The challenge was not just personalization, but designing a system that could intelligently reduce cognitive load by taking over planning and coordination tasks, without overwhelming users or forcing them into rigid workflows.</p></div>
 <div><span class="lbl">My role</span><p style="margin-bottom:10px">My contributions included:</p><ul><li>User research and synthesis</li><li>Definition of key personas and behavioral patterns</li><li>Customer journey mapping across different travel styles</li><li>UX concept development for the smart assistant</li><li>Wireframing key interaction flows</li><li>Creation of the pitch presentation (storytelling, structure and visual narrative)</li></ul></div>
@@ -613,6 +735,29 @@ if('IntersectionObserver' in window){
 var jc=document.querySelectorAll('.jc');
 if(reduce||!('IntersectionObserver' in window))jc.forEach(function(el){el.classList.add('on');});
 else{var jo=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');jo.unobserve(x.target);}});},{threshold:.5});jc.forEach(function(el){jo.observe(el);});}
+var ad=document.getElementById('adapt');
+if(ad){
+  var scr=ad.querySelector('.ads'),pre=ad.querySelectorAll('.adp button');
+  var PLAN=[{h:'Right now',i:[['Open road, heading south','Lakeside spot suggested on the way',['Swim spot','Free parking']]]},
+    {h:"Today's goal",i:[['Lake Garda','Arrive around 14:30 · 3 h 10 min',['Campsite free','Charger on site']]]},
+    {h:"Today's plan · 3 stops",i:[['Brenner rest stop','10:30 · 45 min break',['Playground','Charger','Toilets']],['Lunch in Rovereto','12:45 · 1 h',['Kids menu','Parking reserved']],['Campsite in Riva','15:00 · check-in',['Pool','Pitch 42']]]}];
+  var LV=['Low','Mid','High'];
+  function val(k){var c=ad.querySelector('input[name="ad-'+k+'"]:checked');return c?+c.value:0;}
+  function draw(){
+    var p=val(0),d=val(1),r=val(2),pl=PLAN[p],h='<div class="bar"><span>Van assistant</span><span>09:40</span></div>';
+    if(r===2)h+='<div class="ban"><span>Charging spot reserved on your route.</span><span><i>Keep</i><i>Undo</i></span></div>';
+    if(r===1)h+='<span class="tip">Tip: charger on your route</span>';
+    h+='<p class="hd">'+pl.h+'</p><ol>';
+    pl.i.forEach(function(it,n){h+='<li><span class="n">'+(pl.i.length>1?'0'+(n+1):'→')+'</span><div><span class="t">'+it[0]+'</span>'+(d>0?'<span class="am">'+it[1]+'</span>':'')+(d>1?'<span class="f">'+it[2].map(function(x){return '<span>'+x+'</span>';}).join('')+'</span>':'')+'</div></li>';});
+    h+='</ol><p class="ft">'+(r===2?'Handled in the background: route, charging, parking payment.':r===1?'Suggestions only, you decide.':'Quiet mode. Ask me anytime.')+'</p>';
+    scr.className='ads d'+d;scr.innerHTML=h;
+    var cur=[p,d,r].join(',');pre.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-p')===cur?'true':'false');});
+    scr.setAttribute('aria-label','Example screen. Planning depth '+LV[p]+', information density '+LV[d]+', proactivity '+LV[r]);
+  }
+  pre.forEach(function(b){b.addEventListener('click',function(){b.getAttribute('data-p').split(',').forEach(function(v,k){var x=ad.querySelector('input[name="ad-'+k+'"][value="'+v+'"]');if(x)x.checked=true;});draw();});});
+  ad.querySelectorAll('input').forEach(function(x){x.addEventListener('change',draw);});
+  draw();
+}
 var fb=document.querySelector('.fab'),hero=document.getElementById('top'),ct=document.getElementById('contact');
 function fabSync(){var hb=hero.getBoundingClientRect().bottom,cb=ct.getBoundingClientRect().top;fb.classList.toggle('on',hb<0&&cb>innerHeight*.6);}
 addEventListener('scroll',fabSync,{passive:true});fabSync();
