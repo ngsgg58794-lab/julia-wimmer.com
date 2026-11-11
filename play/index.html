@@ -317,14 +317,14 @@ en:{
   canvas:'3D world. Drive with the arrow keys or open the list of all stations.',
   iKick:'A 3D game for recruiters',
   iH:'Get to know <span class="m">Julia.</span>',
-  iLead:'Drive along my path: from school in Landau an der Isar via Landshut and Ingolstadt to Munich, and on to Innsbruck. The stations stand right at the road. Left and right of it, 30 boxes are waiting: drive into one and a thought bubble tells you something about me.',
+  iLead:'Drive along my path: from school in Landau an der Isar via Landshut and Ingolstadt to Munich, and on to Innsbruck. The stations stand right at the road. South of Munich three areas are waiting to be explored: Business, Design and Tech. 30 boxes in total: drive into one and a thought bubble tells you something about me.',
   iHow:[['Keyboard','Arrow keys or W A S D'],['Mouse & touch','Tap or hold where you want to go'],['No time?','Open the list and skip the driving']],
   iStart:'Start driving',iList:'Open the list instead',
   iNo3d:'3D is not available in this browser. You can open all stations from the list.',
   hint:'Arrow keys / WASD, or tap where you want to go',
   nxAll:'INN · test report',
   toastAll:'Everything found. Drive to INN for your test report.',
-  rev:'Rev.',
+  rev:'Rev.',ar:{b:'Business',d:'Design',t:'Tech',p:'Personal'},arOf:(n,a,b)=>n+' · '+a+' of '+b,
   st:{
     o:['2007 · Landau a.d. Isar','Abitur','Gymnasium Landau an der Isar, class of 2007.','My path starts here.'],
     a:['2007 – 2011 · Landshut','B.A. Business Administration','Grade 1.7, University of applied sciences Landshut.','Business first, design later. That is why cost, process and organisation are part of how I think.'],
@@ -398,14 +398,14 @@ de:{
   canvas:'3D-Welt. Fahre mit den Pfeiltasten oder öffne die Liste aller Stationen.',
   iKick:'Ein 3D-Spiel für Recruiter:innen',
   iH:'Lern <span class="m">Julia</span> kennen.',
-  iLead:'Fahr meinen Weg ab: von der Schule in Landau an der Isar über Landshut und Ingolstadt nach München und weiter nach Innsbruck. Die Stationen stehen direkt an der Straße. Links und rechts davon warten 30 Kisten: Fahr hinein und eine Gedankenwolke verrät dir etwas über mich.',
+  iLead:'Fahr meinen Weg ab: von der Schule in Landau an der Isar über Landshut und Ingolstadt nach München und weiter nach Innsbruck. Die Stationen stehen direkt an der Straße. Südlich von München warten drei Bereiche zum Erkunden: Business, Design und Tech. Insgesamt 30 Kisten: Fahr hinein und eine Gedankenwolke verrät dir etwas über mich.',
   iHow:[['Tastatur','Pfeiltasten oder W A S D'],['Maus & Touch','Tippen oder halten, wohin du willst'],['Keine Zeit?','Liste öffnen und das Fahren überspringen']],
   iStart:'Losfahren',iList:'Lieber die Liste öffnen',
   iNo3d:'3D ist in diesem Browser nicht verfügbar. Du kannst alle Stationen über die Liste öffnen.',
   hint:'Pfeiltasten / WASD, oder tippen, wohin du willst',
   nxAll:'INN · Prüfbericht',
   toastAll:'Alles gefunden. Fahr nach INN für deinen Prüfbericht.',
-  rev:'Rev.',
+  rev:'Rev.',ar:{b:'Business',d:'Design',t:'Tech',p:'Persönlich'},arOf:(n,a,b)=>n+' · '+a+' von '+b,
   st:{
     o:['2007 · Landau a.d. Isar','Abitur','Gymnasium Landau an der Isar, Abschluss 2007.','Hier beginnt mein Weg.'],
     a:['2007 – 2011 · Landshut','B.A. Betriebswirtschaft','Note 1,7, Hochschule Landshut.','Erst BWL, dann Design. Deshalb denke ich Kosten, Prozesse und Organisation mit.'],
@@ -485,8 +485,10 @@ const ST=[
 const PATH=['o','a','b','c','d'];
 const ROAD=[[0,186],[0,176],[-10,150],[9,118],[-9,84],[10,50],[2,6],[-22,-18],[-20,-46],[6,-64],[14,-86],[0,-106],[0,-120]];
 const START={x:0,z:176,h:Math.PI},GATE={x:0,z:-108},ZMAX=185;
-// boxes: spread evenly over the whole map, there from the start
-const FP=[[12,166],[44,-98],[-25,28],[-47,-67],[32,87],[-40,99],[17,-31],[43,25],[-44,158],[-55,-15],[1,-77],[41,131],[-11,68],[-10,132],[44,-62],[20,52],[-17,-25],[7,1],[-9,101],[-28,-90],[18,113],[-41,69],[-19,-57],[-31,0],[-16,166],[-41,-39],[-37,129],[33,-8],[2,29],[16,140]];
+// boxes: the personal ones (p) lie along the path, the rest in three areas south of Munich
+const AREA={b:{n:'BUSINESS',x:42,z:-45,r:23,c:'#0E0F0C'},d:{n:'DESIGN',x:-50,z:-22,r:23,c:'#D6006F'},t:{n:'TECH',x:-42,z:-84,r:23,c:'#2F5BE0'}};
+const FP=[[57,-45],[-59,-85],[-46,-6],[-56,-39],[24,-44],[41,-27],[42,-62],[37,-41],[12,166],[-10,132],[-25,-77],[-33,-28],[18,113],[-11,68],[20,52],[2,29],[-38,-101],[-46,-67],[-52,-98],[-67,-18],[53,-32],[54,-58],[29,-33],[-47,-28],[-35,-13],[-36,-87],[-47,-80],[45,-50],[-59,-8],[48,-40]];
+const AR='btddbbbbpptdpppptttdbbbddttbdb'; // area of every box, same order as the texts in F
 const NF=30;
 const GLYPH=['#','*','~','i','>>','<>','OK','♥','ES','INN','AI','T','RPM','SEA','♪',':)','IT','4','★','−','6Y','PO','2G','HMI','DS','0€','×3','JC','UX','15'];
 
@@ -501,6 +503,8 @@ function reset(){S={panel:{t:'intro'},started:false,seen:{},found:{},allToast:fa
 reset();
 const nSeen=()=>ST.filter(s=>S.seen[s.id]).length;
 const nFound=()=>Object.keys(S.found).length;
+const nArea=k=>{let n=0;for(let i=0;i<NF;i++)if(AR[i]===k&&S.found[i])n++;return n;};
+const tArea=k=>AR.split(k).length-1;
 const nextF=()=>{for(let i=0;i<NF;i++)if(!S.found[i])return i;return -1;};
 const allDone=()=>nSeen()===ST.length&&nFound()===NF;
 
@@ -539,7 +543,7 @@ function pList(){
     '<div class="row"><button class="btn" type="button" data-a="rep">'+esc(t('rep'))+' '+ARROW+'</button>'+(W&&S.started?'<button class="btn ghost" type="button" data-a="close">'+esc(t('back'))+'</button>':W?'<button class="btn ghost" type="button" data-a="start">'+esc(t('iStart'))+'</button>':'')+'</div>';
 }
 function pReport(){
-  const full=allDone(),log=[t('rL1')(nSeen(),ST.length),t('rL2')(nFound(),NF)];
+  const full=allDone(),log=[t('rL1')(nSeen(),ST.length),t('rL2')(nFound(),NF)].concat(['b','d','t','p'].map(k=>t('arOf')(t('ar')[k],nArea(k),tArea(k))));
   return '<p class="kick mono m">'+esc(S.panel.gate?t('rKickA'):t('rKickB'))+'</p><h1 tabindex="-1" id="h">'+(full?t('rH'):t('rHPart'))+'</h1><p class="lead">'+esc(t('rLead'))+'</p>'+
     '<div class="row"><a class="btn mag" href="mailto:mail@juliawimmer.de?subject='+encodeURIComponent(t('rSubject'))+'">'+esc(t('rMail'))+' '+ARROW+'</a>'+
     '<a class="btn ghost" href="https://www.linkedin.com/in/julia-wimmer-ux" target="_blank" rel="noopener">LinkedIn ↗</a>'+
@@ -579,7 +583,7 @@ let bubT;function hideBub(){clearTimeout(bubT);$('#bub').hidden=true;}
 function bubble(kick,text,ms){const e=$('#bub');$('#toast').hidden=true;e.hidden=true;e.innerHTML='<small class="mono">'+esc(kick)+'</small>'+esc(text);void e.offsetWidth;e.hidden=false;
   clearTimeout(bubT);bubT=setTimeout(()=>{e.hidden=true;},ms);}
 function later(key,msg){if(S[key])return;S[key]=true;const s0=S;setTimeout(()=>{if(S===s0&&!S.panel){hideBub();toast(msg);}},3200);}
-function collect(i){S.found[i]=true;shell();if(W)W.sync();bubble(t('fKick')(nFound(),NF),t('F')[i][3],3000);
+function collect(i){S.found[i]=true;shell();if(W)W.sync();const k=AR[i];bubble(t('arOf')(t('ar')[k],nArea(k),tArea(k))+(nArea(k)===tArea(k)?' ✓':''),t('F')[i][3],3000);
   if(allDone())later('allToast',t('toastAll'));}
 function visit(id){const k=ST.find(x=>x.id===id).k;S.seen[id]=true;shell();if(W)W.sync();
   bubble(t('rev')+' '+k+' · '+t('st')[id][0],t('sb')[id],3000);
@@ -656,8 +660,8 @@ async function makeWorld(){
     const s=new THREE.Sprite(new THREE.SpriteMaterial({map:tx}));s.scale.set(w||7,(w||7)*232/512,1);return s;
   }
 
-  function glyphTex(txt,mag){const c=document.createElement('canvas');c.width=c.height=128;const g=c.getContext('2d');g.fillStyle=mag?'#D6006F':'#0E0F0C';g.fillRect(0,0,128,128);
-    g.strokeStyle='#F2F3EF';g.lineWidth=6;g.strokeRect(9,9,110,110);g.fillStyle='#fff';g.textAlign='center';g.textBaseline='middle';
+  function glyphTex(txt,mag,area){const c=document.createElement('canvas');c.width=c.height=128;const g=c.getContext('2d'),pp=area==='p';g.fillStyle=pp?'#fff':area?AREA[area].c:mag?'#D6006F':'#0E0F0C';g.fillRect(0,0,128,128);
+    g.strokeStyle=pp?'#0E0F0C':'#F2F3EF';g.lineWidth=6;g.strokeRect(9,9,110,110);g.fillStyle=pp?'#0E0F0C':'#fff';g.textAlign='center';g.textBaseline='middle';
     g.font='800 '+(txt.length>2?46:txt.length>1?60:88)+'px Archivo,system-ui,sans-serif';g.fillText(txt,64,68);const tx=new THREE.CanvasTexture(c);tx.colorSpace=THREE.SRGBColorSpace;return tx;}
   // a name board on the front of a building, so every station reads as what it is
   function sign(txt,w,x,y,z,g,mag){
@@ -700,11 +704,22 @@ async function makeWorld(){
   const tokens=[];
   for(let i=0;i<NF;i++){
     const x=FP[i][0],z=FP[i][1];
-    const m=new THREE.Mesh(qGeo,new THREE.MeshBasicMaterial({map:glyphTex(GLYPH[i],i%2===0)}));m.position.set(x,2.3,z);scene.add(m);
+    const m=new THREE.Mesh(qGeo,new THREE.MeshBasicMaterial({map:glyphTex(GLYPH[i],false,AR[i])}));m.position.set(x,2.3,z);scene.add(m);
     const sh=new THREE.Mesh(new THREE.CircleGeometry(1.3,20),new THREE.MeshBasicMaterial({color:INK,transparent:true,opacity:.16}));sh.rotation.x=-Math.PI/2;sh.position.set(x,.07,z);scene.add(sh);
     tokens.push({i,x,z,m,sh,inside:false});
   }
 
+  // the three areas: tinted ground, a border and a board that counts the boxes found there
+  const zones=Object.keys(AREA).map(k=>{const a=AREA[k],col=new THREE.Color(a.c);
+    const d=new THREE.Mesh(new THREE.CircleGeometry(a.r,56),new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:.1,depthWrite:false}));d.rotation.x=-Math.PI/2;d.position.set(a.x,.02,a.z);scene.add(d);
+    const r=new THREE.Mesh(new THREE.RingGeometry(a.r-.5,a.r,72),new THREE.MeshBasicMaterial({color:col,transparent:true,opacity:.85,side:THREE.DoubleSide}));r.rotation.x=-Math.PI/2;r.position.set(a.x,.04,a.z);scene.add(r);
+    const c=document.createElement('canvas');c.width=512;c.height=232;const g=c.getContext('2d'),tx=new THREE.CanvasTexture(c);tx.colorSpace=THREE.SRGBColorSpace;
+    const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:tx}));sp.scale.set(13,13*232/512,1);sp.position.set(a.x,10.5,a.z);scene.add(sp);
+    cyl(.12,.12,8,6,INK,a.x,4,a.z);
+    let last=-1;const draw=n=>{if(n===last)return;last=n;const tot=tArea(k);g.fillStyle=a.c;g.fillRect(0,0,512,232);g.strokeStyle='#F2F3EF';g.lineWidth=8;g.strokeRect(10,10,492,212);
+      g.textAlign='center';g.fillStyle='#fff';g.font='500 40px "IBM Plex Mono",ui-monospace,monospace';g.fillText(n+' / '+tot+(n===tot?' ✓':''),256,66);
+      let fs=118;do{g.font='800 '+fs+'px Archivo,system-ui,sans-serif';fs-=6;}while(g.measureText(a.n).width>440&&fs>40);g.fillText(a.n,256,182);tx.needsUpdate=true;};
+    return {k,draw};});
   // Munich, Innsbruck, mountains, trees
   {const g=new THREE.Group();g.position.set(0,0,ZMAX+9);scene.add(g);
     for(let i=0;i<14;i++){const w=4+rnd()*5,h=3+rnd()*5,x=(i<7?-1:1)*(12+rnd()*46),z=rnd()*16;box(w,h,4+rnd()*4,i%4===0?INK:i%3===0?PAPER2:WHITE,x,h/2,z,g);}
@@ -723,7 +738,7 @@ async function makeWorld(){
   for(let i=0;i<15;i++){const z=-118+i*21,f=Math.max(0,1-i/11);[-1,1].forEach(s=>mount(s*(84+rnd()*14),z+(rnd()-.5)*10,12+rnd()*8*f+4,8+30*f*f+rnd()*6));}
   {const N=170,cone=new THREE.InstancedMesh(new THREE.ConeGeometry(1.25,3.8,6),M(TREE),N),trunk=new THREE.InstancedMesh(new THREE.CylinderGeometry(.22,.22,1.2,5),M(INK),N),o=new THREE.Object3D();let n=0,guard=0;
     while(n<N&&guard++<4000){const x=-74+rnd()*148,z=-116+rnd()*(ZMAX+112);
-      if(roadDist(x,z)<10||ST.some(s=>Math.hypot(s.x-x,s.z-z)<s.r+9)||tokens.some(q=>Math.hypot(q.x-x,q.z-z)<4)||(z<-98&&Math.abs(x)<34)||Math.hypot(x-32,z-10)<9)continue;
+      if(roadDist(x,z)<10||ST.some(s=>Math.hypot(s.x-x,s.z-z)<s.r+9)||tokens.some(q=>Math.hypot(q.x-x,q.z-z)<4)||(z<-98&&Math.abs(x)<34)||Math.hypot(x-32,z-10)<9||Object.values(AREA).some(a=>Math.hypot(a.x-x,a.z-z)<a.r+1))continue;
       const sc=.7+rnd()*.9;o.position.set(x,1.2+1.9*sc,z);o.scale.setScalar(sc);o.rotation.y=rnd()*3;o.updateMatrix();cone.setMatrixAt(n,o.matrix);
       o.position.set(x,.6,z);o.scale.setScalar(1);o.updateMatrix();trunk.setMatrixAt(n,o.matrix);n++;}
     cone.count=trunk.count=n;scene.add(cone,trunk);}
@@ -820,7 +835,8 @@ async function makeWorld(){
   return {
     stop(){car.v=0;target=null;mark.visible=false;down=false;for(const k in keys)keys[k]=false;},
     sync(){for(const s of stations){s.ring.material.opacity=S.seen[s.id]?.12:.55;s.ring.material.color.set(S.seen[s.id]?INK:MAG);}
-      for(const q of tokens){const v=!S.found[q.i];q.m.visible=v;q.sh.visible=v;}},
+      for(const q of tokens){const v=!S.found[q.i];q.m.visible=v;q.sh.visible=v;}
+      for(const z of zones)z.draw(nArea(z.k));},
     reset(){car.x=START.x;car.z=START.z;car.h=START.h;car.v=0;camH=car.h;target=null;mark.visible=false;gateIn=false;stations.forEach(s=>s.inside=false);tokens.forEach(q=>q.inside=false);this.sync();},
     // for tests
     car,tokens,stations
