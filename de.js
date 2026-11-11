@@ -51,7 +51,6 @@ window.JW_DE={
 "B.A. Business Administration": "B.A. Betriebswirtschaft",
 "Grade 1.7, University of applied sciences Landshut.": "Note 1,7, Hochschule Landshut.",
 "Selected work": "Ausgewählte Projekte",
-"five projects, tap one for the full story": "fünf Projekte, tippe eines an für die ganze Geschichte",
 "Team workflows & AI rollout": "Team-Workflows & KI-Einführung",
 "Digitalization": "Digitalisierung",
 "AI adoption": "KI-Einführung",
@@ -62,7 +61,6 @@ window.JW_DE={
 "Founder": "Gründerin",
 "AI": "KI",
 "UX Concept": "UX-Konzept",
-"All five seen. Let’s talk →": "Alle fünf gesehen. Lass uns reden →",
 "Valtech, internal": "Valtech, intern",
 "I restructured the UX design team's Jira board and Confluence space with workflows, automations, templates and permissions that fit the team and the company, and set up a ticket workflow for one of my projects that the whole company used. I evaluated AI tools for our design workflow and, when Claude was rolled out company-wide, worked out how to bring our brand and design system into it.": "Ich habe Jira-Board und Confluence-Space des UX-Design-Teams neu strukturiert: mit Workflows, Automatisierungen, Vorlagen und Rechten, die zu Team und Firma passen. Für eines meiner Projekte habe ich einen Ticket-Workflow aufgesetzt, den die ganze Firma genutzt hat. Ich habe KI-Tools für unseren Design-Workflow bewertet und nach der firmenweiten Einführung von Claude erarbeitet, wie Marke und Designsystem dort hineinkommen.",
 "One space for everything": "Ein Ort für alles",
@@ -146,7 +144,6 @@ window.JW_DE={
 "Proof that a designer without a traditional engineering background can own the entire build when directing AI-assisted development with a clear product and design vision. The bottleneck shifted from \"can I code this\" to \"can I make the right product and design decisions fast\", which is where the actual value of the afternoon went.": "Der Beweis, dass eine Designerin ohne klassischen Engineering-Hintergrund den ganzen Build verantworten kann, wenn sie KI-gestützte Entwicklung mit einer klaren Produkt- und Designvision steuert. Der Engpass hat sich verschoben: von „Kann ich das programmieren?“ zu „Treffe ich schnell die richtigen Produkt- und Designentscheidungen?“. Genau dort lag der eigentliche Wert des Nachmittags.",
 "Services for connected cars, for several automotive OEMs. Two examples: a smart assistant for van drivers that learns their habits and preferences, and an EV service to reserve parking and pay for parking or charging right from the car.": "Services für vernetzte Fahrzeuge, für mehrere Automobilhersteller (OEMs). Zwei Beispiele: ein smarter Assistent für Van-Fahrer:innen, der Gewohnheiten und Vorlieben lernt, und ein EV-Service, mit dem man direkt aus dem Auto Parkplätze reserviert und Parken oder Laden bezahlt.",
 "Try it: one assistant, two travel styles": "Probier es aus: ein Assistent, zwei Reisestile",
-"Fig. 05.1 · interactive": "Abb. 05.1 · interaktiv",
 "Rebuilt from scratch to show the idea, not the pitch material. The trip and all content are made-up examples. Pick a travel style or move the three variables yourself.": "Von Grund auf neu gebaut, um die Idee zu zeigen, nicht das Pitch-Material. Die Reise und alle Inhalte sind erfundene Beispiele. Wähle einen Reisestil oder verstelle die drei Variablen selbst.",
 "Spontaneous": "Spontan",
 "Family": "Familie",
@@ -334,7 +331,6 @@ window.JW_DE={
 "lines of code": "Zeilen Code",
 "15,800": "15.800",
 "How I built it": "So habe ich sie gebaut",
-"Case study": "Fallstudie",
 "Stack": "Stack",
 "Platforms": "Plattformen",
 "Data": "Daten",
@@ -375,5 +371,9 @@ window.JW_DE={
 "Ship": "Veröffentlichen",
 "Store listing, screenshots, privacy pages and review are part of the job. An app counts when it is live.": "Store-Eintrag, Screenshots, Datenschutzseiten und Prüfung gehören dazu. Eine App zählt, wenn sie live ist.",
 "My private playground, not a company. I build apps for the fun of it to train my AI skills. Four are live in the app stores, all built with Claude Code.": "Meine private Spielwiese, keine Firma. Ich baue Apps aus Freude und trainiere so meine KI-Skills. Vier sind live in den App-Stores, alle mit Claude Code gebaut.",
-"See the apps ↓": "Zu den Apps ↓"
+"See the apps ↓": "Zu den Apps ↓",
+"four projects, tap one for the full story": "vier Projekte, tippe eines an für die ganze Geschichte",
+"All four seen. Let’s talk →": "Alle vier gesehen. Lass uns reden →",
+"Fig. 04.1 · interactive": "Abb. 04.1 · interaktiv",
+"Full story": "Ganze Geschichte"
 };
