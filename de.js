@@ -1,8 +1,6 @@
 /* German texts for index.html. Key = English text on the page. */
 window.JW_DE={
-"Field": "Bereich",
 "Design · Digitalization · AI": "Design · Digitalisierung · KI",
-"Location": "Standort",
 "Munich → Innsbruck": "München → Innsbruck",
 "Path": "Weg",
 "Work": "Projekte",
@@ -346,5 +344,6 @@ window.JW_DE={
 "Apps built with Claude Code": "Apps, gebaut mit Claude Code",
 "four private apps, live in the stores, four tech stacks": "vier private Apps, live in den Stores, vier Tech-Stacks",
 "the work that gives me energy · hover or tap for details": "die Arbeit, die mir Energie gibt · Details per Hover oder Tippen",
-"if I join your team · hover or tap for details": "wenn ich in dein Team komme · Details per Hover oder Tippen"
+"if I join your team · hover or tap for details": "wenn ich in dein Team komme · Details per Hover oder Tippen",
+"Menu": "Menü"
 };
