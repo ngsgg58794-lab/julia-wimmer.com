@@ -24,7 +24,7 @@ window.JW_DE={
 "all-rounder: deep in UX and product design, broad across digitalization, AI, process and business.": "Allrounderin: tief in UX und Product Design, breit in Digitalisierung, KI, Prozessen und Business.",
 "Looking for Design, Digitalization & AI roles. Remote-first, or hybrid around Innsbruck.": "Ich suche Stellen in Design, Digitalisierung & KI. Remote-first oder hybrid rund um Innsbruck.",
 "Write me": "Schreib mir",
-"Test drive · 3 min game": "Probefahrt · 3-Min.-Spiel",
+"Test drive · 3D game": "Probefahrt · 3D-Spiel",
 "Fig. 01 — Julia": "Abb. 01 — Julia",
 "Munich": "München",
 "My path": "Mein Weg",
