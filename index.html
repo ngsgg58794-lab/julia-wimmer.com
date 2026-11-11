@@ -249,6 +249,39 @@ html:has(.dlg[open]){overflow:hidden}
 .kt .cu{color:var(--grey)}
 .kt a{text-decoration-color:var(--mag);text-underline-offset:3px}
 
+/* apps built with Claude Code: one data sheet per app */
+.apin{max-width:44rem;font-size:1.0625rem}
+.apk{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));max-width:44rem;margin-top:28px;border:1px solid var(--ink)}
+.apk>div{padding:14px 16px;border-left:1px solid var(--ink)}.apk>div:first-child{border-left:0}
+.apk b{display:block;font-size:clamp(1.6rem,2.6vw,2.2rem);line-height:.95;font-stretch:68%;font-weight:850;color:var(--mag)}
+.apk .mono{display:block;margin-top:6px;font-size:.6875rem;color:var(--grey)}
+.apg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:40px}
+.ap{display:flex;flex-direction:column;border:1px solid var(--ink);background:#FBFBF8}
+.aph{display:flex;gap:18px;align-items:flex-start;padding:22px 24px 18px}
+.aph img{flex:0 0 auto;width:64px;height:64px;border-radius:22%;border:1px solid var(--line)}
+.aph h3{margin-top:4px;font-size:1.6rem;line-height:1;font-stretch:72%;font-weight:800;text-transform:uppercase}
+.aph p{margin-top:8px;font-size:.9375rem;line-height:1.5}
+.apl{display:flex;flex-wrap:wrap;gap:8px;padding:0 24px 20px}
+.apl a{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:6px 14px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);font-weight:700;font-size:.875rem;text-decoration:none;transition:background-color .15s ease,border-color .15s ease,color .15s ease}
+.apl a:hover{background:var(--mag);border-color:var(--mag)}
+.apl a[href^="#"]{background:none;color:var(--ink)}.apl a[href^="#"]:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.aps{margin:0;border-top:1px solid var(--ink)}
+.aps>div{display:grid;grid-template-columns:6.5rem minmax(0,1fr);gap:12px;padding:9px 24px;border-bottom:1px solid var(--line)}
+.aps dt{font-family:var(--mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mag);padding-top:3px}
+.aps dd{margin:0;font-size:.9375rem;line-height:1.45}
+.apb{margin-top:auto;padding:18px 24px 22px;background:var(--paper-2)}
+.apb h4{margin:0;color:var(--grey)}
+.apb p{margin-top:8px;font-size:.9375rem;line-height:1.55}
+.hb{margin-top:48px}
+.hb h3{font-size:1.5rem;line-height:1;font-stretch:72%;font-weight:800;text-transform:uppercase}
+.hb ol{list-style:none;margin:20px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--ink);counter-reset:hb}
+.hb li{position:relative;padding:18px 18px 20px;border-left:1px solid var(--ink);counter-increment:hb}.hb li:first-child{border-left:0}
+.hb li::before{content:"0" counter(hb);display:block;font-family:var(--mono);font-size:.6875rem;color:var(--mag);margin-bottom:10px}
+.hb li b{display:block;font-weight:800;font-stretch:72%;text-transform:uppercase;font-size:1.0625rem}
+.hb li span{display:block;margin-top:6px;font-size:.9375rem;line-height:1.5}
+@media (max-width:1000px){.apg{grid-template-columns:1fr}.hb ol{grid-template-columns:1fr 1fr}.hb li:nth-child(odd){border-left:0}.hb li:nth-child(n+3){border-top:1px solid var(--ink)}}
+@media (max-width:560px){.apk{grid-template-columns:1fr 1fr}.apk>div:nth-child(odd){border-left:0}.apk>div:nth-child(n+3){border-top:1px solid var(--ink)}.aph{padding:18px 16px 14px;gap:14px}.aph img{width:52px;height:52px}.apl{padding:0 16px 16px}.aps>div{grid-template-columns:5.5rem minmax(0,1fr);padding:9px 16px}.apb{padding:16px}.hb ol{grid-template-columns:1fr}.hb li{border-left:0}.hb li+li{border-top:1px solid var(--ink)}}
+
 /* contact */
 #contact{background:var(--ink);color:var(--paper);padding-top:clamp(72px,10vw,140px)}
 #contact h2{font-size:clamp(2.6rem,8vw,7rem);line-height:.84;font-stretch:66%;font-weight:850;text-transform:uppercase;letter-spacing:-.01em;max-width:12ch}
@@ -544,10 +577,11 @@ h1 .lni{display:inline-block}
 <nav class="nav" aria-label="Main">
 <a href="#path"><span>01</span>Path</a>
 <a href="#work"><span>02</span>Work</a>
-<a href="#enjoy"><span>03</span>What I enjoy</a>
-<a href="#what-you-get"><span>04</span>What you get</a>
-<a href="#skills"><span>05</span>Skills</a>
-<a href="#contact" class="navcta"><span>06</span>Contact</a>
+<a href="#apps"><span>03</span>Apps</a>
+<a href="#enjoy"><span>04</span>What I enjoy</a>
+<a href="#what-you-get"><span>05</span>What you get</a>
+<a href="#skills"><span>06</span>Skills</a>
+<a href="#contact" class="navcta"><span>07</span>Contact</a>
 </nav>
 
 <main>
@@ -731,8 +765,26 @@ h1 .lni{display:inline-block}
 </div></dialog>
 </section>
 
+<section id="apps" class="sec wrap">
+<h2 class="sh"><button class="acc shb fx" type="button" aria-expanded="false" aria-controls="apps-body"><span class="sno">§ 03</span><span><span class="stt">Apps in the stores</span><span class="sth mono">four apps, four tech stacks, all built with Claude Code</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
+<div id="apps-body" class="pnl"><div class="pin"><div class="pad">
+<p class="apin indent rv">Private projects, built for fun and to train AI-assisted development. I set the product and design direction, Claude Code writes the code. All four are free, need no account and keep your data on the device.</p>
+<div class="apk indent rv" role="list"><div role="listitem"><b>4</b><span class="mono">apps live</span></div><div role="listitem"><b>4</b><span class="mono">tech stacks</span></div><div role="listitem"><b>7</b><span class="mono">store listings</span></div><div role="listitem"><b>15,800</b><span class="mono">lines of code</span></div></div>
+<div class="apg">
+<article class="ap rv"><header class="aph"><img src="img/app-innensicht.webp" alt="" width="64" height="64" loading="lazy"><div><span class="pn mono">A-01</span><h3>Innensicht</h3><p>Self-reflection with 37 inner-parts cards and a three-stage emotion wheel.</p></div></header><div class="apl"><a href="https://apps.apple.com/app/id6811421257" rel="noopener">App Store <span aria-hidden="true">&#8599;</span></a><a href="https://play.google.com/store/apps/details?id=com.pinksharkdesign.innensicht" rel="noopener">Google Play <span aria-hidden="true">&#8599;</span></a><a href="#p-04">Case study <span aria-hidden="true">&#8593;</span></a></div><dl class="aps"><div><dt>Stack</dt><dd>React Native 0.86 · Expo SDK 57 · TypeScript</dd></div><div><dt>Platforms</dt><dd>iOS 16.4+ · Android</dd></div><div><dt>Native</dt><dd>Widgets, Apple Health, Face ID, reminders, PDF export</dd></div><div><dt>Data</dt><dd>On the device only. No server, no account</dd></div><div><dt>Languages</dt><dd>German, English</dd></div><div><dt>Size</dt><dd>About 11,400 lines in 92 files</dd></div><div><dt>Released</dt><dd>September 2026 · now v1.4</dd></div></dl><div class="apb"><h4 class="mono">How I built it</h4><p>Brand, screens and code are all directed through Claude Code, with no hand-off between design and build. A rules file in the repository (colour palette, platform guards, release steps) gives every session the same context. Builds and store uploads run through Expo EAS.</p></div></article>
+<article class="ap rv"><header class="aph"><img src="img/app-stimmig.webp" alt="" width="64" height="64" loading="lazy"><div><span class="pn mono">A-02</span><h3>stimmig</h3><p>Find the exact word for a feeling: 6 base feelings, 36 nuances, 72 words.</p></div></header><div class="apl"><a href="https://apps.apple.com/app/id6811810458" rel="noopener">App Store <span aria-hidden="true">&#8599;</span></a></div><dl class="aps"><div><dt>Stack</dt><dd>Swift · SwiftUI, fully native</dd></div><div><dt>Platforms</dt><dd>iOS 16+</dd></div><div><dt>Native</dt><dd>Widgets, Siri and Control Center, Apple Health, Swift Charts, Face ID</dd></div><div><dt>Data</dt><dd>On the device only. No server, no account</dd></div><div><dt>Languages</dt><dd>German</dd></div><div><dt>Size</dt><dd>About 2,600 lines in 29 files</dd></div><div><dt>Released</dt><dd>October 2026 · v1.1</dd></div></dl><div class="apb"><h4 class="mono">How I built it</h4><p>Built natively in SwiftUI to use what the iPhone offers: home and lock screen widgets, Siri and a Control Center button. Claude Code wrote the Swift, I steered product, design and the store release.</p></div></article>
+<article class="ap rv"><header class="aph"><img src="img/app-klarwurf.webp" alt="" width="64" height="64" loading="lazy"><div><span class="pn mono">A-03</span><h3>KlarWurf</h3><p>A calm decision helper: flip a coin, ask the pendulum or draw a card.</p></div></header><div class="apl"><a href="https://apps.apple.com/app/id6815393035" rel="noopener">App Store <span aria-hidden="true">&#8599;</span></a><a href="https://play.google.com/store/apps/details?id=com.klarwurf.app" rel="noopener">Google Play <span aria-hidden="true">&#8599;</span></a></div><dl class="aps"><div><dt>Stack</dt><dd>React 19 · Vite · TypeScript · Tailwind CSS · Capacitor 8</dd></div><div><dt>Platforms</dt><dd>iOS 17+ · Android</dd></div><div><dt>Native</dt><dd>Haptics</dd></div><div><dt>Data</dt><dd>On the device only. Works offline</dd></div><div><dt>Size</dt><dd>About 700 lines</dd></div><div><dt>Released</dt><dd>September 2026 · v1.0</dd></div></dl><div class="apb"><h4 class="mono">How I built it</h4><p>One web codebase, packaged for both stores with Capacitor. From the first commit to store-ready in two days.</p></div></article>
+<article class="ap rv"><header class="aph"><img src="img/app-calmdrop.webp" alt="" width="64" height="64" loading="lazy"><div><span class="pn mono">A-04</span><h3>Calmdrop</h3><p>Empty your head by voice: speak your tasks and the app sorts them into categories.</p></div></header><div class="apl"><a href="https://apps.apple.com/app/id6816083293" rel="noopener">App Store <span aria-hidden="true">&#8599;</span></a><a href="https://play.google.com/store/apps/details?id=de.juliawimmer.calmdrop" rel="noopener">Google Play <span aria-hidden="true">&#8599;</span></a></div><dl class="aps"><div><dt>Stack</dt><dd>Flutter · Dart</dd></div><div><dt>Platforms</dt><dd>iOS 15+ · Android</dd></div><div><dt>Native</dt><dd>Speech recognition of iOS and Android</dd></div><div><dt>Data</dt><dd>Tasks stay on the device. No account</dd></div><div><dt>Languages</dt><dd>German, English</dd></div><div><dt>Size</dt><dd>About 1,100 lines, with automated tests</dd></div><div><dt>Released</dt><dd>October 2026 · v1.0</dd></div></dl><div class="apb"><h4 class="mono">How I built it</h4><p>Uses the native speech recognition instead of the web API, because it is more reliable. Sorting works with keywords in German and English, without cloud AI. Builds run automatically through Codemagic. Renamed before launch after a trademark check.</p></div></article>
+</div>
+<div class="hb indent rv">
+<h3>How I build with Claude Code</h3>
+<ol><li><b>Scope</b><span>One clear use case per app. What does not serve it stays out.</span></li><li><b>Design in code</b><span>I describe screens, flows and tone. Claude Code builds them, I check the result and refine.</span></li><li><b>Small steps</b><span>Work happens in small commits and pull requests, so every step can be checked and undone.</span></li><li><b>Ship</b><span>Store listing, screenshots, privacy pages and review are part of the job. An app counts when it is live.</span></li></ol>
+</div>
+</div></div></div>
+</section>
+
 <section id="enjoy" class="sec wrap">
-<h2 class="sh"><button class="acc shb fx" type="button" aria-expanded="false" aria-controls="enjoy-body"><span class="sno">§ 03</span><span><span class="stt">What I enjoy</span><span class="sth mono">the work that gives me energy</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
+<h2 class="sh"><button class="acc shb fx" type="button" aria-expanded="false" aria-controls="enjoy-body"><span class="sno">§ 04</span><span><span class="stt">What I enjoy</span><span class="sth mono">the work that gives me energy</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
 <div id="enjoy-body" class="pnl"><div class="pin"><div class="pad">
 <div class="jy">
 <div class="jc rv"><span class="k mono">01</span><div class="jm j1" aria-hidden="true"><i style="--x:0px;--y:0px;--sx:-10px;--sy:14px;--r:40deg;--d:0"></i><i style="--x:21px;--y:0px;--sx:8px;--sy:-12px;--r:-25deg;--d:1"></i><i style="--x:42px;--y:0px;--sx:14px;--sy:10px;--r:60deg;--d:2"></i><i style="--x:0px;--y:21px;--sx:-14px;--sy:-6px;--r:-50deg;--d:3"></i><i class="m" style="--x:21px;--y:21px;--sx:0px;--sy:0px;--r:45deg;--d:4"></i><i style="--x:42px;--y:21px;--sx:12px;--sy:16px;--r:20deg;--d:5"></i><i style="--x:0px;--y:42px;--sx:6px;--sy:12px;--r:70deg;--d:6"></i><i style="--x:21px;--y:42px;--sx:-12px;--sy:8px;--r:-35deg;--d:7"></i><i style="--x:42px;--y:42px;--sx:16px;--sy:-10px;--r:15deg;--d:8"></i></div><h3>Structuring</h3><p>Taking something messy and building a system that people actually want to use: boards, spaces, workflows, decisions.</p><a class="ref mono" href="#p-01">Ref. <span>P-01 Team workflows</span> &#8593;</a></div>
@@ -744,7 +796,7 @@ h1 .lni{display:inline-block}
 </section>
 
 <section id="what-you-get" class="sec wrap" aria-label="What you get">
-<h2 class="sh"><button class="acc shb fx" type="button" aria-expanded="false" aria-controls="what-you-get-body"><span class="sno">§ 04</span><span><span class="stt">What you get</span><span class="sth mono">if I join your team</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
+<h2 class="sh"><button class="acc shb fx" type="button" aria-expanded="false" aria-controls="what-you-get-body"><span class="sno">§ 05</span><span><span class="stt">What you get</span><span class="sth mono">if I join your team</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
 <div id="what-you-get-body" class="pnl"><div class="pin"><div class="pad">
 <div class="gy indent">
 <div class="gb rv"><span class="gn" aria-hidden="true">01</span><h3>Speed</h3><p>I get a topic quickly, I learn fast and I execute fast. No long ramp-up.</p><a class="gr mono" href="#p-04">Proof <span>Innensicht: first version in one afternoon</span> &#8593;</a></div>
@@ -758,28 +810,28 @@ h1 .lni{display:inline-block}
 </section>
 
 <section id="skills" class="sec wrap">
-<h2 class="sh"><button class="acc shb" type="button" aria-expanded="false" aria-controls="skills-body"><span class="sno">§ 05</span><span><span class="stt">Skills &amp; tools</span><span class="sth mono">by area, from product to people</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
+<h2 class="sh"><button class="acc shb" type="button" aria-expanded="false" aria-controls="skills-body"><span class="sno">§ 06</span><span><span class="stt">Skills &amp; tools</span><span class="sth mono">by area, from product to people</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
 <div id="skills-body" class="pnl"><div class="pin"><div class="pad">
 <div style="border-bottom:1px solid var(--ink)">
-<div class="rv sk"><h3 style="margin:0;font:inherit"><button class="acc skb" type="button" aria-expanded="false" aria-controls="sk1"><span class="skn">05.1</span><span class="skl">Skills</span><span class="skc">40</span><span class="skp">Product design &amp; UX · AI &amp; digitalization · Process &amp; organisation …</span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h3><div id="sk1" class="pnl"><div class="pin"><div class="krows">
+<div class="rv sk"><h3 style="margin:0;font:inherit"><button class="acc skb" type="button" aria-expanded="false" aria-controls="sk1"><span class="skn">06.1</span><span class="skl">Skills</span><span class="skc">40</span><span class="skp">Product design &amp; UX · AI &amp; digitalization · Process &amp; organisation …</span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h3><div id="sk1" class="pnl"><div class="pin"><div class="krows">
 <div class="krow rv"><p class="kl">Product design &amp; UX</p><div class="kc"><span class="tag" data-r="ux">E2E Design</span><span class="tag" data-r="ux po">User research</span><span class="tag" data-r="ux po">Customer journey</span><span class="tag" data-r="ux">Wireframes &amp; prototypes</span><span class="tag" data-r="ux">Design Systems</span><span class="tag" data-r="ux dig">Information Architecture</span><span class="tag" data-r="ux">Accessibility (WCAG)</span><span class="tag" data-r="ux">UX writing</span><span class="tag" data-r="ux">HMI &amp; in-car UX</span><span class="tag" data-r="ux dig">Complex enterprise &amp; tool UIs</span><span class="tag" data-r="ux ai">Personalization &amp; adaptive systems</span><span class="tag" data-r="ux">Cognitive load reduction</span><span class="tag" data-r="ux">Usability testing</span></div></div>
 <div class="krow rv"><p class="kl">AI &amp; digitalization</p><div class="kc"><span class="tag" data-r="ux ai">AI UX</span><span class="tag" data-r="ai dig">AI-assisted workflows</span><span class="tag" data-r="ai">AI-assisted development</span><span class="tag" data-r="ai dig">AI team setup</span><span class="tag" data-r="ai dig">AI tool evaluation</span><span class="tag" data-r="ai dig">AI rollout &amp; enablement</span><span class="tag" data-r="po">Mobile app delivery (iOS, Android)</span></div></div>
 <div class="krow rv"><p class="kl">Process &amp; organisation</p><div class="kc"><span class="tag" data-r="dig">Workflow definition &amp; optimization</span><span class="tag" data-r="dig">Process design</span><span class="tag" data-r="dig ai">Knowledge management</span><span class="tag" data-r="dig">IAM (Identity &amp; Access Management)</span><span class="tag" data-r="dig po">Jira &amp; Confluence setup</span><span class="tag" data-r="dig ai">Workflow automation</span></div></div>
 <div class="krow rv"><p class="kl">Product &amp; business</p><div class="kc"><span class="tag" data-r="po">Product Ownership</span><span class="tag" data-r="po">Roadmapping</span><span class="tag" data-r="po dig">Requirements analysis</span><span class="tag" data-r="po dig">Project planning &amp; scoping</span><span class="tag" data-r="po">Portfolio management</span><span class="tag" data-r="po">Agile delivery</span><span class="tag" data-r="po ux">Developer handover</span><span class="tag" data-r="po dig">Stakeholder management</span><span class="tag" data-r="po">Steering committees &amp; decision papers</span><span class="tag" data-r="po">Budget &amp; cost control</span><span class="tag" data-r="po">Presales &amp; proposals</span><span class="tag" data-r="po ux">Pitching</span></div></div>
 <div class="krow rv"><p class="kl">People &amp; communication</p><div class="kc"><span class="tag" data-r="po dig">Mediation (university course)</span><span class="tag" data-r="ai dig">Team enablement &amp; knowledge sharing</span></div></div>
 </div></div></div></div>
-<div class="rv sk"><h3 style="margin:0;font:inherit"><button class="acc skb" type="button" aria-expanded="false" aria-controls="sk2"><span class="skn">05.2</span><span class="skl">Tools</span><span class="skc">25</span><span class="skp">Design &amp; prototyping · Product &amp; collaboration · AI …</span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h3><div id="sk2" class="pnl"><div class="pin"><div class="krows">
+<div class="rv sk"><h3 style="margin:0;font:inherit"><button class="acc skb" type="button" aria-expanded="false" aria-controls="sk2"><span class="skn">06.2</span><span class="skl">Tools</span><span class="skc">25</span><span class="skp">Design &amp; prototyping · Product &amp; collaboration · AI …</span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h3><div id="sk2" class="pnl"><div class="pin"><div class="krows">
 <div class="krow rv"><p class="kl">Design &amp; prototyping</p><div class="kc"><span class="tag" data-r="ux">Figma</span><span class="tag" data-r="ux ai">Figma Make</span><span class="tag" data-r="ux">ProtoPie</span><span class="tag" data-r="ux">Canva</span><span class="tag" data-r="ux">Adobe Creative Cloud</span></div></div>
 <div class="krow rv"><p class="kl">Product &amp; collaboration</p><div class="kc"><span class="tag" data-r="ux po dig">Miro</span><span class="tag" data-r="po dig">Jira</span><span class="tag" data-r="po dig">Confluence</span><span class="tag" data-r="po dig">Notion</span><span class="tag" data-r="dig">Microsoft 365</span></div></div>
 <div class="krow rv"><p class="kl">AI</p><div class="kc"><span class="tag" data-r="ai">Claude</span><span class="tag" data-r="ai">Claude Code</span><span class="tag" data-r="ai">ChatGPT</span><span class="tag" data-r="ai">Lovable</span><span class="tag" data-r="ai ux">Figma AI</span><span class="tag" data-r="ai dig">Microsoft Copilot</span><span class="tag" data-r="ai dig">Atlassian Rovo</span></div></div>
 <div class="krow rv"><p class="kl">Build &amp; ship</p><div class="kc"><span class="tag" data-r="ai">GitHub</span><span class="tag" data-r="ai">Visual Studio Code</span><span class="tag" data-r="po">Xcode</span><span class="tag" data-r="po">Android Studio</span><span class="tag" data-r="ai">Expo</span><span class="tag" data-r="po">Tolgee</span><span class="tag" data-r="po">App Store Connect</span><span class="tag" data-r="po">Google Play Console</span></div></div>
 </div></div></div></div>
-<div class="rv sk"><h3 style="margin:0;font:inherit"><button class="acc skb" type="button" aria-expanded="false" aria-controls="sk3"><span class="skn">05.3</span><span class="skl">Languages</span><span class="skc">3</span><span class="skp">German · English · Spanish</span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h3><div id="sk3" class="pnl"><div class="pin"><div class="krows">
+<div class="rv sk"><h3 style="margin:0;font:inherit"><button class="acc skb" type="button" aria-expanded="false" aria-controls="sk3"><span class="skn">06.3</span><span class="skl">Languages</span><span class="skc">3</span><span class="skp">German · English · Spanish</span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h3><div id="sk3" class="pnl"><div class="pin"><div class="krows">
 <div class="krow rv"><p class="kl">German</p><div class="kc"><span class="tag">Native</span></div></div>
 <div class="krow rv"><p class="kl">English</p><div class="kc"><span class="tag">C1</span><span class="tag">UNIcert III</span></div></div>
 <div class="krow rv"><p class="kl">Spanish</p><div class="kc"><span class="tag">B1</span><span class="tag">UNIcert II</span></div></div>
 </div></div></div></div>
-<div class="rv sk"><h3 style="margin:0;font:inherit"><button class="acc skb" type="button" aria-expanded="false" aria-controls="sk4"><span class="skn">05.4</span><span class="skl">Certificates</span><span class="skc">8</span><span class="skp">INU KI Kompetenzpass (in progress) · AI Fluency · Claude Code · Claude 101 · Automotive HMI · UX &amp; Usability …</span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h3><div id="sk4" class="pnl"><div class="pin"><div class="krows">
+<div class="rv sk"><h3 style="margin:0;font:inherit"><button class="acc skb" type="button" aria-expanded="false" aria-controls="sk4"><span class="skn">06.4</span><span class="skl">Certificates</span><span class="skc">8</span><span class="skp">INU KI Kompetenzpass (in progress) · AI Fluency · Claude Code · Claude 101 · Automotive HMI · UX &amp; Usability …</span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h3><div id="sk4" class="pnl"><div class="pin"><div class="krows">
 <div class="krow rv"><p class="kl mono">2026</p><div class="kc kt"><p class="ct">INU KI Kompetenzpass <span class="tag" style="margin-left:6px;vertical-align:2px;border-color:var(--mag);color:var(--mag)">In progress</span></p><p class="cu">INU &#8211; Innovative University of Applied Sciences · responsible use of AI at work, with final test · KI Snack Week 2026</p></div></div>
 <div class="krow rv"><p class="kl mono">2026</p><div class="kc kt"><p class="ct">AI Fluency: Framework &amp; Foundations</p><p class="cu">Claude Academy (Anthropic) · <a href="https://academy.claude.com/verify/83e57224066fcc03b572ccbe9e305bd1">verify <span aria-hidden="true">&#8599;</span></a></p></div></div>
 <div class="krow rv"><p class="kl mono">2026</p><div class="kc kt"><p class="ct">Claude Code in Action</p><p class="cu">Claude Academy (Anthropic) · <a href="https://academy.claude.com/verify/3699ef0074211d97a0f993e170873396">verify <span aria-hidden="true">&#8599;</span></a></p></div></div>
@@ -795,7 +847,7 @@ h1 .lni{display:inline-block}
 </main>
 
 <footer id="contact" class="wrap">
-<p class="mono" style="color:#FF4FA3;margin-bottom:24px">§ 06 — Hi again.</p>
+<p class="mono" style="color:#FF4FA3;margin-bottom:24px">§ 07 — Hi again.</p>
 <div class="cgrid">
 <div>
 <h2>Want to work together<span style="color:#FF4FA3">?</span></h2>
@@ -979,7 +1031,7 @@ function setLang(l){
   ['aria-label','alt'].forEach(function(a){Array.prototype.forEach.call(document.querySelectorAll('['+a+']'),function(e){var v=e.getAttribute(a);if(d[v]!=null){trs.push({n:e,a:a,v:v});e.setAttribute(a,d[v]);}});});
 }
 function wantLang(l){if(l===LANG)return;if(l!=='de'||window.JW_DE){setLang(l);return;}
-  var sc=document.createElement('script');sc.src='de.js?v=1';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
+  var sc=document.createElement('script');sc.src='de.js?v=2';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
 Array.prototype.forEach.call(lgb,function(b){b.addEventListener('click',function(){wantLang(b.getAttribute('data-lang'));});});
 if(/[?&]lang=de\b/.test(location.search))wantLang('de');
 })();
