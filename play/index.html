@@ -1,0 +1,630 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Test drive · Julia Wimmer</title>
+<meta name="description" content="A three-minute game for recruiters: four short stops between Munich and Innsbruck to get to know Julia Wimmer, UX and product designer with a focus on digitalization and AI.">
+<meta property="og:title" content="Take Julia for a test drive">
+<meta property="og:description" content="A three-minute game for recruiters: four short stops, each one shows how Julia works.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://juliawimmer.de/img/portrait.jpeg">
+<meta name="theme-color" content="#F2F3EF">
+<link rel="icon" href="../favicon.svg?v=2" type="image/svg+xml">
+<link rel="icon" href="../favicon.png?v=2" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png?v=2">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+/* Same data-sheet look as the main page: one ink, one process magenta, a measuring grid. */
+:root{
+  --paper:#F2F3EF; --paper-2:#E7E9E3; --ink:#0E0F0C; --grey:#55584F; --line:rgba(14,15,12,.16);
+  --mag:#D6006F; --mag-soft:rgba(214,0,111,.12); --ok:#0B6B3A;
+  --gut:clamp(16px,4.4vw,72px);
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  --sans:'Archivo',system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;display:flex;flex-direction:column;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:1.0625rem;line-height:1.55;overflow-x:clip}
+h1,h2,h3,p,ol,ul,dl,dd{margin:0}
+ol,ul{padding:0;list-style:none}
+a{color:inherit}
+button{font:inherit;color:inherit;-webkit-tap-highlight-color:transparent}
+:focus-visible{outline:2px solid var(--mag);outline-offset:3px}
+[tabindex="-1"]:focus{outline:0}
+::selection{background:var(--mag);color:#fff}
+.mono{font-family:var(--mono);font-size:.75rem;line-height:1.4;letter-spacing:.04em;text-transform:uppercase;font-weight:500}
+.m{color:var(--mag)}
+.grey{color:var(--grey)}
+
+/* title block */
+.tb{display:grid;grid-template-columns:1.2fr 1.4fr 1fr .8fr;border-bottom:1px solid var(--ink)}
+.tb>*{padding:12px 16px;border-left:1px solid var(--ink);min-width:0}
+.tb>*:first-child{border-left:0;padding-left:var(--gut)}
+.tb>*:last-child{padding-right:var(--gut)}
+.tb small{display:block;font-family:var(--mono);font-size:.625rem;letter-spacing:.08em;text-transform:uppercase;color:var(--grey);margin-bottom:2px}
+.tb b{display:block;font-weight:700;font-size:.9375rem;line-height:1.25}
+.tb a{text-decoration:none}
+.tb a:hover b{color:var(--mag)}
+.lg{display:flex!important;margin-top:3px}
+.lg button{min-width:2.6rem;padding:3px 10px;border:1px solid var(--ink);background:none;font-family:var(--mono);font-size:.75rem;font-weight:500;cursor:pointer}
+.lg button+button{margin-left:-1px}
+.lg button:hover{background:var(--ink);color:var(--paper)}
+.lg button[aria-pressed="true"]{background:var(--mag);border-color:var(--mag);color:#fff;position:relative}
+@media (max-width:720px){
+  .tb{grid-template-columns:1fr 1fr}
+  .tb>*:nth-child(3){border-left:0;padding-left:var(--gut)}
+  .tb>*:nth-child(n+3){border-top:1px solid var(--ink)}
+  .tb>*:nth-child(2){padding-right:var(--gut)}
+  .tb b{font-size:.8125rem}
+}
+
+/* route = progress */
+.rt{padding:18px var(--gut) 14px;border-bottom:1px solid var(--ink)}
+.rt ol{position:relative;display:flex;justify-content:space-between;max-width:880px;margin:0 auto}
+.rt ol::before{content:"";position:absolute;left:8px;right:8px;top:7px;height:2px;background:repeating-linear-gradient(90deg,var(--ink) 0 10px,transparent 10px 16px)}
+.rt li{position:relative;display:flex;flex-direction:column;align-items:center;gap:6px;width:16px;white-space:nowrap}
+.rt li:first-child{align-items:flex-start}
+.rt li:last-child{align-items:flex-end}
+.rt i{display:block;width:16px;height:16px;border-radius:50%;border:2px solid var(--ink);background:var(--paper);transition:background-color .25s ease,border-color .25s ease,transform .25s ease}
+.rt li.done i{background:var(--ink)}
+.rt li.cur i{background:var(--mag);border-color:var(--mag);transform:scale(1.25)}
+.rt li.cur span{color:var(--mag)}
+@media (max-width:560px){.rt li:not(:first-child):not(:last-child):not(.cur) span{visibility:hidden}}
+
+/* stage */
+main{flex:1;padding:clamp(28px,4.5vw,56px) var(--gut) 64px;
+  background-image:linear-gradient(rgba(14,15,12,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(14,15,12,.06) 1px,transparent 1px);background-size:32px 32px;background-position:-1px -1px}
+#stage{max-width:880px;margin:0 auto}
+.scr{animation:in .35s ease both}
+@keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.kick{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.kick::before{content:"";width:28px;height:1px;background:var(--mag)}
+h1,h2.big{font-size:clamp(2.2rem,6.4vw,4.4rem);line-height:.9;font-stretch:68%;font-weight:850;text-transform:uppercase;letter-spacing:-.012em}
+h2.big{font-size:clamp(1.8rem,4.6vw,3rem)}
+.lead{max-width:36em;margin-top:18px;font-size:1.0625rem}
+.task{max-width:38em;margin-top:12px}
+.row{display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px;margin-top:26px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:52px;padding:0 22px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);font-weight:700;text-decoration:none;cursor:pointer;transition:background-color .15s ease,border-color .15s ease,color .15s ease}
+.btn:hover{background:var(--mag);border-color:var(--mag)}
+.btn.mag{background:var(--mag);border-color:var(--mag);color:#fff}
+.btn.mag:hover{background:var(--ink);border-color:var(--ink)}
+.btn.ghost{background:var(--paper);color:var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.btn svg{flex:none}
+.lnk{background:none;border:0;padding:8px 0;font-family:var(--mono);font-size:.75rem;letter-spacing:.04em;text-transform:uppercase;font-weight:500;color:var(--grey);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.lnk:hover{color:var(--mag)}
+.card{margin-top:24px;padding:clamp(16px,2.6vw,26px);border:1px solid var(--ink);background:var(--paper)}
+.st{min-height:1.4em;margin-top:14px;color:var(--grey)}
+.st.bad{color:var(--mag)}
+.st.good{color:var(--ok)}
+.note{margin-top:10px;color:var(--grey)}
+.shake{animation:shake .3s ease}
+@keyframes shake{25%{transform:translateX(-5px)}75%{transform:translateX(5px)}}
+
+/* intro */
+.pre{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:30px;border:1px solid var(--ink);background:var(--paper)}
+.pre li{padding:14px 16px;border-left:1px solid var(--line)}
+.pre li:first-child{border-left:0}
+.pre b{display:block;font-stretch:72%;font-weight:800;text-transform:uppercase;font-size:1.125rem;line-height:1.15;margin-top:4px}
+@media (max-width:640px){.pre{grid-template-columns:1fr 1fr}.pre li:nth-child(3){border-left:0}.pre li:nth-child(n+3){border-top:1px solid var(--line)}}
+
+/* stop 1: path */
+.rev{border-top:1px solid var(--ink)}
+.rev li{display:grid;grid-template-columns:2.2rem 7.2rem 1fr;gap:10px;align-items:baseline;padding:9px 0;border-bottom:1px solid var(--line);min-height:2.7rem}
+.rev .r{font-family:var(--mono);font-size:.75rem;color:var(--mag);font-weight:500}
+.rev .d{font-family:var(--mono);font-size:.75rem;color:var(--grey)}
+.rev .h{font-weight:700;line-height:1.3}
+.rev li.e .h{color:var(--line);font-weight:400}
+.rev li.new{animation:flash .6s ease}
+@keyframes flash{from{background:var(--mag-soft)}to{background:transparent}}
+.pool{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{padding:10px 14px;border:1px solid var(--ink);background:var(--paper);font-weight:600;font-size:.9375rem;line-height:1.25;text-align:left;cursor:pointer;box-shadow:3px 3px 0 var(--ink);transition:transform .12s ease,box-shadow .12s ease}
+.chip:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--mag)}
+.chip:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+@media (max-width:520px){.rev li{grid-template-columns:1.6rem 1fr}.rev .d{grid-column:2;grid-row:2}.rev .h{grid-column:2}}
+
+/* stop 2: chaos */
+.tk{position:relative;max-width:24rem;margin:6px auto 30px}
+.tk::before,.tk::after{content:"";position:absolute;inset:0;border:1px solid var(--ink);background:var(--paper-2)}
+.tk::before{transform:rotate(-3deg) translate(-4px,5px)}
+.tk::after{transform:rotate(2.2deg) translate(5px,3px)}
+.tk.last::before,.tk.last::after{display:none}
+.tk>div{position:relative;z-index:1;padding:16px 18px;border:1px solid var(--ink);background:#fff;transform:rotate(-.8deg)}
+.tk b{display:block;margin-top:6px;font-size:1.125rem;line-height:1.3}
+.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.col{display:flex;flex-direction:column;gap:8px;min-height:104px;padding:12px;border:1px solid var(--ink);background:var(--paper);text-align:left;cursor:pointer;transition:background-color .15s ease,color .15s ease}
+@media (hover:hover){.col:hover:not(:disabled){background:var(--ink);color:var(--paper)}}
+.col:disabled{cursor:default}
+.col b{font-stretch:72%;font-weight:800;text-transform:uppercase;font-size:1.0625rem;line-height:1.1;hyphens:manual;overflow-wrap:anywhere}
+.col .n{font-family:var(--mono);font-size:.6875rem;opacity:.7}
+.col .bars{display:flex;flex-direction:column;gap:3px;margin-top:auto}
+.col .bars i{display:block;height:5px;background:var(--mag);animation:grow .3s ease both}
+@keyframes grow{from{transform:scaleX(0);transform-origin:left}to{transform:none;transform-origin:left}}
+.auto{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:16px;padding:12px 14px;border:1px dashed var(--mag);background:var(--mag-soft)}
+.auto p{flex:1 1 14rem;font-size:.9375rem}
+@media (max-width:520px){.cols{gap:6px}.col{padding:10px 8px}.col b{font-size:.9375rem}}
+
+/* stop 3: gloves */
+.tab{position:relative;max-width:26rem;margin:0 auto;padding:14px;border:2px solid var(--ink);border-radius:14px;background:var(--ink);touch-action:manipulation;user-select:none;-webkit-user-select:none}
+.scrn{position:relative;min-height:264px;display:flex;flex-direction:column;gap:10px;padding:12px;border-radius:4px;background:#C9CCC4;overflow:hidden}
+.scrn.b{background:#fff}
+.do{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.do b{font-stretch:72%;font-weight:800;text-transform:uppercase;font-size:1.25rem;line-height:1.1}
+.do b em{font-style:normal;color:var(--mag)}
+.ga{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:auto}
+.ga button{height:26px;padding:0;border:1px solid #8D9188;background:#B9BCB4;color:#55584F;font-size:.6875rem;cursor:pointer}
+.gb{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:auto}
+.gb button{height:112px;padding:0;border:2px solid var(--ink);background:var(--paper);font-stretch:72%;font-weight:800;text-transform:uppercase;font-size:1.25rem;cursor:pointer}
+.gb button.pri{background:var(--ink);color:#fff}
+.stepb{padding:10px 12px;border-left:4px solid var(--mag);background:var(--paper);font-weight:600}
+.ga button.hit,.gb button.hit{background:var(--ok);border-color:var(--ok);color:#fff}
+.ga button.miss,.gb button.miss{background:var(--mag);border-color:var(--mag);color:#fff}
+.blob{position:absolute;width:68px;height:68px;margin:-34px 0 0 -34px;border-radius:50%;background:rgba(214,0,111,.28);border:1.5px solid var(--mag);pointer-events:none;animation:blob .6s ease both}
+@keyframes blob{from{transform:scale(.6);opacity:1}to{transform:scale(1.1);opacity:0}}
+.mid{margin:auto 0;text-align:center}
+.mid p{margin-bottom:14px;font-weight:600}
+.cmp{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--ink);margin-top:16px}
+.cmp div{padding:14px 16px}
+.cmp div+div{border-left:1px solid var(--ink);background:var(--ink);color:var(--paper)}
+.cmp b{display:block;font-stretch:68%;font-weight:850;font-size:2.6rem;line-height:1}
+.cmp div+div b{color:#FF4FA3}
+
+/* stop 4: fact or bluff */
+.q{margin-top:6px;font-size:clamp(1.25rem,3vw,1.625rem);font-weight:700;line-height:1.3;min-height:3.9em}
+.fb{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.fb .btn{min-height:64px;font-stretch:72%;font-weight:800;text-transform:uppercase;font-size:1.25rem}
+.ans{margin-top:18px;padding:14px 16px;border-left:4px solid var(--ok);background:var(--paper-2)}
+.ans.no{border-left-color:var(--mag)}
+.ans b{display:block;margin-bottom:4px}
+.dots{display:flex;gap:5px}
+.dots i{width:18px;height:5px;background:var(--line)}
+.dots i.y{background:var(--ok)}
+.dots i.x{background:var(--mag)}
+.dots i.c{background:var(--ink)}
+
+/* unlocked facts */
+.un{margin-top:24px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);padding:clamp(18px,2.8vw,28px);animation:in .4s ease both}
+.un .mono{color:#FF4FA3}
+.un h3{margin:8px 0 10px;font-stretch:72%;font-weight:800;text-transform:uppercase;font-size:clamp(1.4rem,3.4vw,2rem);line-height:1.05}
+.un p{max-width:40em}
+.un p+p{margin-top:10px}
+.un a{color:#FF4FA3;text-underline-offset:3px}
+.un .res{margin-top:14px;padding-top:12px;border-top:1px solid rgba(242,243,239,.25);font-family:var(--mono);font-size:.8125rem}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:14px 0 4px}
+.stats b{display:block;font-stretch:68%;font-weight:850;font-size:2.4rem;line-height:1;color:#FF4FA3}
+.stats span{display:block;margin-top:4px;font-family:var(--mono);font-size:.6875rem;line-height:1.35;text-transform:uppercase;letter-spacing:.03em}
+@media (max-width:560px){.stats{grid-template-columns:1fr 1fr}}
+.un .btn{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.un .btn:hover{background:var(--mag);border-color:var(--mag);color:#fff}
+
+/* report */
+.rep{margin-top:26px;border:1px solid var(--ink);background:var(--paper)}
+.rep .hd{display:flex;justify-content:space-between;gap:12px;padding:10px 16px;border-bottom:1px solid var(--ink);background:var(--ink);color:var(--paper)}
+.rep dl{display:grid;grid-template-columns:1fr 1fr}
+.rep dl>div{padding:12px 16px;border-bottom:1px solid var(--line)}
+.rep dl>div:nth-child(odd){border-right:1px solid var(--line)}
+.rep dt{font-family:var(--mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mag);margin-bottom:2px}
+.rep dd{font-weight:600;line-height:1.35}
+.rep ul{padding:14px 16px;display:grid;gap:8px}
+.rep ul li{display:grid;grid-template-columns:1.6rem 1fr;gap:6px}
+.rep ul li::before{content:"✓";color:var(--ok);font-weight:800}
+.rep ul li.sk::before{content:"·";color:var(--grey)}
+.rep h3{padding:12px 16px 0;font-family:var(--mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mag);font-weight:500}
+@media (max-width:560px){.rep dl{grid-template-columns:1fr}.rep dl>div:nth-child(odd){border-right:0}}
+
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 24px;padding:14px var(--gut);border-top:1px solid var(--ink);color:var(--grey)}
+footer a{text-underline-offset:3px}
+noscript p{max-width:880px;margin:0 auto;padding:20px;border:1px solid var(--ink);background:var(--paper)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style>
+</head>
+<body>
+<header>
+<div class="tb">
+<a href="../" id="home"><small data-t="tbName">Name</small><b>Julia Wimmer</b></a>
+<div><small data-t="tbDoc">Document</small><b data-t="tbDocV">Test drive</b></div>
+<div><small data-t="tbDur">Duration</small><b data-t="tbDurV">About 3 minutes</b></div>
+<div><small data-t="tbLang">Language</small><b class="lg" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button><button type="button" data-lang="de" aria-pressed="false" lang="de">DE</button></b></div>
+</div>
+<nav class="rt" aria-label="Progress"><ol id="rt"></ol></nav>
+</header>
+
+<main>
+<div id="stage"></div>
+<noscript><p>This little game needs JavaScript. Everything it shows is also on <a href="../">juliawimmer.de</a>.</p></noscript>
+</main>
+
+<footer class="mono">
+<p>&#169; 2026 Julia Wimmer</p>
+<p><a href="../" id="back" data-t="back">Back to juliawimmer.de</a></p>
+</footer>
+
+<script>
+(function(){
+'use strict';
+var ARROW='<svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>';
+
+/* ---------- texts ---------- */
+var TX={
+en:{
+  title:'Test drive · Julia Wimmer',
+  tbName:'Name',tbDoc:'Document',tbDocV:'Test drive',tbDur:'Duration',tbDurV:'About 3 minutes',tbLang:'Language',
+  back:'Back to juliawimmer.de',
+  rt:['MUC','Path','Structure','Gloves','Facts','INN'],
+  stopOf:function(n){return 'Stop '+n+' of 4';},
+  skip:'Skip this stop',next:'Next stop',toReport:'To the test report',unlocked:'Unlocked',
+  // intro
+  iKick:'A game for recruiters',
+  iH:'Take me for a <span class="m">test drive.</span>',
+  iLead:'Four short stops between Munich and Innsbruck. At each one you try something I do at work and unlock the facts behind it. No sign-up, nothing is stored.',
+  iPre:[['Stop 1','Sort my path'],['Stop 2','Tidy the chaos'],['Stop 3','Tap with gloves'],['Stop 4','Fact or bluff']],
+  iStart:'Start the drive',iRead:'Rather read? Go to the site',
+  // stop 1
+  s1H:'Put my path in order.',
+  s1T:'Six stations, shuffled. Tap them from the earliest to the latest.',
+  s1Empty:'?',
+  s1Bad:'Not yet. Something else started earlier.',
+  s1Good:function(n){return n+' of 6 placed.';},
+  path:[
+    ['2007 – 2011','B.A. Business Administration'],
+    ['2011 – 2012','IT Consultant, WK IT'],
+    ['2012 – 2018','Process & Systems Integrator, Audi AG'],
+    ['2018 – now','Product Owner → UX Designer, Valtech Mobility'],
+    ['2023 – 2026','Co-Founder & CEO, 2gether App'],
+    ['2026 – now','Personal projects: building with AI, for fun']],
+  s1UH:'From project manager to designer and AI lover',
+  s1U:'Business degree first, then IT, product, design and my own startup. That is why I bring user, business and tech views together.',
+  stats:[['15','years in IT & connected mobility'],['9','years project manager & product owner'],['6+','years UX designer'],['3','years founder']],
+  s1Res:function(m){return m?'Your result: '+m+' wrong tap'+(m>1?'s':'')+' on the way.':'Your result: no wrong tap. You read CVs for a living.';},
+  s1Link:'Full path on the site',
+  // stop 2
+  s2H:'Tidy the chaos.',
+  s2T:'A team board without structure. Sort each ticket into the right area.',
+  s2Tk:function(a,b){return 'Ticket '+a+' of '+b;},
+  s2Cols:['Client projects','Pitches','Training'],
+  s2Tix:[['Prototype for the user test',0],['Slides for the new-client pitch',1],['Figma workshop for new colleagues',2],['Hand over specs to the developers',0],['Collect case studies for the pitch deck',1],['Onboarding plan for the working student',2],['Review of the customer journey',0],['Accessibility basics session',2]],
+  s2Bad:'Wrong area. Try another one.',
+  s2Good:'Sorted.',
+  s2AutoP:'You have seen the pattern. I would not do this by hand a fourth time.',
+  s2AutoB:'Automate the rest',
+  s2Running:'Automation is running …',
+  s2Note:'Example tickets, invented.',
+  s2UH:'Structuring is what I enjoy most',
+  s2U:'Taking something messy and building a system that people actually use. At Valtech I restructured the UX design team’s Jira board and Confluence space with workflows, automations, templates and permissions. For one of my projects the whole company submitted requests as tickets, and the subtasks were created automatically.',
+  s2ResA:function(n){return 'Your result: '+n+' sorted by hand, then automated. Same call I would make.';},
+  s2ResM:'Your result: all 8 sorted by hand. Thorough. I would have automated it after the third.',
+  s2Link:'Case P-01: Team workflows & AI rollout',
+  // stop 3
+  s3H:'Tap with gloves on.',
+  s3T:'You are a workshop technician with work gloves. Your tap lands somewhere inside the pink circle, not exactly where you aim.',
+  s3Tap:'Tap',s3VA:'Version A',s3VB:'Version B',
+  s3A:['Diag','Log','Scan','Info','Menu','Help','List','Note','Back','Done','Edit','Next'],
+  s3Targets:['Done','Help','Next'],
+  s3Step:'Step 3 of 8',
+  s3Miss:'Missed. Try again.',s3Hit:'Got it.',s3Give:'Three misses. Moving on, that is the point.',
+  s3MidP:function(m){return 'Version A: '+m+' missed tap'+(m===1?'':'s')+'. Now the same task after a redesign.';},
+  s3MidB:'Try version B',
+  s3Note:'Demo, simplified. No client material.',
+  s3UH:'Design for real conditions, not for the screenshot',
+  s3U:'For a truck manufacturer’s workshop tool I designed the technician layer: one repair step at a time, large touch targets, high contrast, usable with gloves. Fleet managers got their own overview on the same data. Lower-frequency features were cut on purpose.',
+  s3CA:'missed taps, version A',s3CB:'missed taps, version B',
+  s3Link:'Case P-02: Expert Tools & Mobility Services',
+  // stop 4
+  s4H:'Fact or bluff?',
+  s4T:'Six statements about me. Some are true, some are not.',
+  fact:'Fact',bluff:'Bluff',
+  s4Right:'Right.',s4Wrong:'Not quite.',
+  s4Next:'Next statement',
+  s4Q:[
+    ['Julia started her career as a designer.',false,'Bluff. Business degree (grade 1.7), then IT consulting and six years at Audi on connected-car projects. Design came after that.'],
+    ['She has four apps live in the app stores, all built with Claude Code.',true,'Fact. Innensicht, stimmig, KlarWurf and Calmdrop. Private projects, built for fun: she sets the product and design direction, Claude Code writes the code.'],
+    ['She speaks two languages.',false,'Bluff. Three: German (native), English (C1) and Spanish (B1).'],
+    ['For the workshop tool she designed every feature the client could think of.',false,'Bluff. She deliberately cut lower-frequency features that would have slowed down the repair flow.'],
+    ['She holds three Claude Academy certificates from Anthropic.',true,'Fact. AI Fluency, Claude Code in Action and Claude 101, all 2026. They are course completion badges.'],
+    ['She is only looking for jobs in Munich.',false,'Bluff. Remote-first, or hybrid around Innsbruck. She is moving from Munich to Innsbruck.']],
+  s4UH:'AI is part of how I work',
+  s4U:'I test AI tools, build apps with Claude Code and help teams use AI in their daily work. At Valtech I evaluated AI tools for the design team and brought our brand guidelines and design system into Claude, with Figma as the source of truth.',
+  s4Res:function(n){return 'Your result: '+n+' of 6 correct.';},
+  s4Link:'The four apps',
+  // report
+  rKick:'Arrived in Innsbruck',
+  rH:'Test drive <span class="m">complete.</span>',
+  rLead:'This is what you found out. If it fits what you are hiring for, I would like to hear from you.',
+  rHd:'Test report',rRev:'Rev. 2026-11',
+  rFacts:[['Role','UX & product designer · Digitalization & AI'],['Experience','15 years in IT & connected mobility'],['Now','Senior Consultant, Valtech Mobility'],['Looking for','Design, Digitalization & AI roles'],['Where','Remote-first, or hybrid around Innsbruck'],['Languages','German native · English C1 · Spanish B1']],
+  rLog:'Your drive',
+  rSkipped:'skipped',
+  rL1:function(m){return 'Path sorted, '+(m?m+' wrong tap'+(m>1?'s':''):'no wrong tap');},
+  rL2:function(a){return a?'Chaos tidied, then automated':'Chaos tidied, all by hand';},
+  rL3:function(a,b){return 'Gloves: '+a+' missed in version A, '+b+' in version B';},
+  rL4:function(n){return 'Fact or bluff: '+n+' of 6 correct';},
+  rN:['Path','Structure','Gloves','Fact or bluff'],
+  rMail:'Write me',rSubject:'Interview: I took the test drive',
+  rSite:'See the full profile',rAgain:'Drive again'
+},
+de:{
+  title:'Probefahrt · Julia Wimmer',
+  tbName:'Name',tbDoc:'Dokument',tbDocV:'Probefahrt',tbDur:'Dauer',tbDurV:'Etwa 3 Minuten',tbLang:'Sprache',
+  back:'Zurück zu juliawimmer.de',
+  rt:['MUC','Weg','Struktur','Handschuhe','Fakten','INN'],
+  stopOf:function(n){return 'Stopp '+n+' von 4';},
+  skip:'Stopp überspringen',next:'Nächster Stopp',toReport:'Zum Prüfbericht',unlocked:'Freigeschaltet',
+  iKick:'Ein Spiel für Recruiter:innen',
+  iH:'Mach eine <span class="m">Probefahrt</span> mit mir.',
+  iLead:'Vier kurze Stopps zwischen München und Innsbruck. An jedem probierst du etwas aus, das ich im Job mache, und schaltest die Fakten dazu frei. Keine Anmeldung, nichts wird gespeichert.',
+  iPre:[['Stopp 1','Meinen Weg ordnen'],['Stopp 2','Chaos aufräumen'],['Stopp 3','Tippen mit Handschuhen'],['Stopp 4','Fakt oder Bluff']],
+  iStart:'Fahrt starten',iRead:'Lieber lesen? Zur Website',
+  s1H:'Bring meinen Weg in die richtige Reihenfolge.',
+  s1T:'Sechs Stationen, gemischt. Tippe sie von der frühesten bis zur spätesten an.',
+  s1Empty:'?',
+  s1Bad:'Noch nicht. Etwas anderes hat früher begonnen.',
+  s1Good:function(n){return n+' von 6 gesetzt.';},
+  path:[
+    ['2007 – 2011','B.A. Betriebswirtschaft'],
+    ['2011 – 2012','IT-Beraterin, WK IT'],
+    ['2012 – 2018','Prozess- und Systemintegratorin, Audi AG'],
+    ['2018 – heute','Product Owner → UX Designerin, Valtech Mobility'],
+    ['2023 – 2026','Mitgründerin & CEO, 2gether App'],
+    ['2026 – heute','Private Projekte: Bauen mit KI, aus Spaß']],
+  s1UH:'Von der Projektmanagerin zur Designerin und AI Lover',
+  s1U:'Erst BWL, dann IT, Produkt, Design und ein eigenes Startup. Deshalb vereine ich User-, Business- und Tech-Sicht.',
+  stats:[['15','Jahre in der IT & Connected Mobility'],['9','Jahre Project Manager & Product Owner'],['6+','Jahre UX Designerin'],['3','Jahre Gründerin']],
+  s1Res:function(m){return m?'Dein Ergebnis: '+m+(m>1?' falsche Tipps':' falscher Tipp')+' unterwegs.':'Dein Ergebnis: kein falscher Tipp. Man merkt, dass du Lebensläufe liest.';},
+  s1Link:'Ganzer Weg auf der Website',
+  s2H:'Räum das Chaos auf.',
+  s2T:'Ein Team-Board ohne Struktur. Sortiere jedes Ticket in den richtigen Bereich.',
+  s2Tk:function(a,b){return 'Ticket '+a+' von '+b;},
+  s2Cols:['Kunden\u00ADprojekte','Pitches','Training'],
+  s2Tix:[['Prototyp für den Nutzertest',0],['Folien für den Neukunden-Pitch',1],['Figma-Workshop für neue Kolleg:innen',2],['Specs an die Entwicklung übergeben',0],['Fallstudien für das Pitch-Deck sammeln',1],['Onboarding-Plan für den Werkstudenten',2],['Review der Customer Journey',0],['Session zu Accessibility-Grundlagen',2]],
+  s2Bad:'Falscher Bereich. Probier einen anderen.',
+  s2Good:'Einsortiert.',
+  s2AutoP:'Das Muster kennst du jetzt. Ein viertes Mal würde ich das nicht von Hand machen.',
+  s2AutoB:'Den Rest automatisieren',
+  s2Running:'Automatisierung läuft …',
+  s2Note:'Beispiel-Tickets, erfunden.',
+  s2UH:'Strukturieren macht mir am meisten Spaß',
+  s2U:'Aus etwas Unübersichtlichem ein System machen, das Menschen wirklich nutzen. Bei Valtech habe ich Jira-Board und Confluence-Space des UX-Design-Teams neu strukturiert, mit Workflows, Automatisierungen, Vorlagen und Rechten. Für eines meiner Projekte hat die ganze Firma Anfragen als Tickets eingestellt, die Subtasks entstanden automatisch.',
+  s2ResA:function(n){return 'Dein Ergebnis: '+n+' von Hand sortiert, dann automatisiert. So hätte ich es auch gemacht.';},
+  s2ResM:'Dein Ergebnis: alle 8 von Hand sortiert. Gründlich. Ich hätte nach dem dritten automatisiert.',
+  s2Link:'Case P-01: Team workflows & AI rollout',
+  s3H:'Tippe mit Handschuhen.',
+  s3T:'Du bist Werkstatt-Techniker:in mit Arbeitshandschuhen. Dein Tipp landet irgendwo im pinken Kreis, nicht genau dort, wo du zielst.',
+  s3Tap:'Tippe auf',s3VA:'Version A',s3VB:'Version B',
+  s3A:['Diag','Log','Scan','Info','Menu','Help','List','Note','Back','Done','Edit','Next'],
+  s3Targets:['Done','Help','Next'],
+  s3Step:'Schritt 3 von 8',
+  s3Miss:'Daneben. Noch einmal.',s3Hit:'Getroffen.',s3Give:'Drei Fehlversuche. Weiter, genau darum geht es.',
+  s3MidP:function(m){return 'Version A: '+m+(m===1?' Fehltipp':' Fehltipps')+'. Jetzt dieselbe Aufgabe nach dem Redesign.';},
+  s3MidB:'Version B testen',
+  s3Note:'Demo, vereinfacht. Kein Kundenmaterial.',
+  s3UH:'Gestalten für echte Bedingungen, nicht für den Screenshot',
+  s3U:'Für das Werkstatt-Tool eines Lkw-Herstellers habe ich die Ebene für Techniker:innen gestaltet: ein Reparaturschritt nach dem anderen, große Touch-Ziele, hoher Kontrast, bedienbar mit Handschuhen. Flottenmanager:innen bekamen einen eigenen Überblick auf denselben Daten. Selten genutzte Funktionen wurden bewusst gestrichen.',
+  s3CA:'Fehltipps, Version A',s3CB:'Fehltipps, Version B',
+  s3Link:'Case P-02: Expert Tools & Mobility Services',
+  s4H:'Fakt oder Bluff?',
+  s4T:'Sechs Aussagen über mich. Manche stimmen, manche nicht.',
+  fact:'Fakt',bluff:'Bluff',
+  s4Right:'Richtig.',s4Wrong:'Nicht ganz.',
+  s4Next:'Nächste Aussage',
+  s4Q:[
+    ['Julia hat ihre Karriere als Designerin begonnen.',false,'Bluff. BWL-Studium (Note 1,7), dann IT-Beratung und sechs Jahre bei Audi in Connected-Car-Projekten. Design kam danach.'],
+    ['Sie hat vier Apps live in den App-Stores, alle mit Claude Code gebaut.',true,'Fakt. Innensicht, stimmig, KlarWurf und Calmdrop. Private Projekte, aus Spaß gebaut: Sie gibt Produkt- und Designrichtung vor, Claude Code schreibt den Code.'],
+    ['Sie spricht zwei Sprachen.',false,'Bluff. Drei: Deutsch (Muttersprache), Englisch (C1) und Spanisch (B1).'],
+    ['Für das Werkstatt-Tool hat sie jede Funktion gestaltet, die dem Kunden einfiel.',false,'Bluff. Sie hat selten genutzte Funktionen bewusst gestrichen, weil sie den Reparaturablauf gebremst hätten.'],
+    ['Sie hat drei Claude-Academy-Zertifikate von Anthropic.',true,'Fakt. AI Fluency, Claude Code in Action und Claude 101, alle 2026. Es sind Abschluss-Badges der Kurse.'],
+    ['Sie sucht nur Stellen in München.',false,'Bluff. Remote-first oder hybrid rund um Innsbruck. Sie zieht von München nach Innsbruck.']],
+  s4UH:'KI gehört zu meiner Arbeitsweise',
+  s4U:'Ich teste KI-Tools, baue Apps mit Claude Code und helfe Teams, KI im Alltag zu nutzen. Bei Valtech habe ich KI-Tools für das Design-Team bewertet und unsere Brand Guidelines und unser Designsystem in Claude überführt, mit Figma als Source of Truth.',
+  s4Res:function(n){return 'Dein Ergebnis: '+n+' von 6 richtig.';},
+  s4Link:'Die vier Apps',
+  rKick:'Angekommen in Innsbruck',
+  rH:'Probefahrt <span class="m">abgeschlossen.</span>',
+  rLead:'Das hast du herausgefunden. Wenn es zu deiner Stelle passt, freue ich mich über eine Nachricht.',
+  rHd:'Prüfbericht',rRev:'Rev. 2026-11',
+  rFacts:[['Rolle','UX- & Product-Designerin · Digitalisierung & KI'],['Erfahrung','15 Jahre in der IT & Connected Mobility'],['Aktuell','Senior Consultant, Valtech Mobility'],['Ich suche','Stellen in Design, Digitalisierung & KI'],['Wo','Remote-first oder hybrid rund um Innsbruck'],['Sprachen','Deutsch Muttersprache · Englisch C1 · Spanisch B1']],
+  rLog:'Deine Fahrt',
+  rSkipped:'übersprungen',
+  rL1:function(m){return 'Weg sortiert, '+(m?m+(m>1?' falsche Tipps':' falscher Tipp'):'kein falscher Tipp');},
+  rL2:function(a){return a?'Chaos aufgeräumt, dann automatisiert':'Chaos aufgeräumt, alles von Hand';},
+  rL3:function(a,b){return 'Handschuhe: '+a+' Fehltipps in Version A, '+b+' in Version B';},
+  rL4:function(n){return 'Fakt oder Bluff: '+n+' von 6 richtig';},
+  rN:['Weg','Struktur','Handschuhe','Fakt oder Bluff'],
+  rMail:'Schreib mir',rSubject:'Interview: Probefahrt gemacht',
+  rSite:'Zum ganzen Profil',rAgain:'Noch eine Runde'
+}};
+
+/* ---------- state ---------- */
+var L='en',S,stage=document.getElementById('stage'),rt=document.getElementById('rt');
+var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+function t(k){return TX[L][k];}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function site(hash){return '../'+(L==='de'?'?lang=de':'')+(hash||'');}
+function shuffle(n){var a=[],i,j,x;for(i=0;i<n;i++)a.push(i);
+  do{for(i=n-1;i>0;i--){j=Math.floor(Math.random()*(i+1));x=a[i];a[i]=a[j];a[j]=x;}}while(a.every(function(v,k){return v===k;}));
+  return a;}
+function reset(){S={scr:0,done:[false,false,false,false,false],skip:[false,false,false,false,false],
+  p:{order:shuffle(6),n:0,miss:0,msg:'',bad:false},
+  c:{i:0,counts:[0,0,0],hand:0,auto:false,running:false,msg:'',bad:false},
+  g:{ver:'A',task:0,tm:0,missA:0,missB:0,mid:false,msg:'',bad:false},
+  b:{i:0,right:0,res:[],ans:null}};}
+reset();
+
+/* ---------- shell ---------- */
+function shell(){
+  document.documentElement.lang=L;document.title=t('title');
+  Array.prototype.forEach.call(document.querySelectorAll('[data-t]'),function(e){e.textContent=t(e.getAttribute('data-t'));});
+  Array.prototype.forEach.call(document.querySelectorAll('.lg button'),function(b){b.setAttribute('aria-pressed',b.getAttribute('data-lang')===L?'true':'false');});
+  document.getElementById('home').href=site();document.getElementById('back').href=site();
+  rt.innerHTML=t('rt').map(function(n,i){
+    var c=i<S.scr||(i===S.scr&&S.scr===5)?'done':'';if(i===S.scr)c+=' cur';
+    return '<li class="'+c+'"'+(i===S.scr?' aria-current="step"':'')+'><i aria-hidden="true"></i><span class="mono">'+esc(n)+'</span></li>';}).join('');
+}
+function head(n,h,task){
+  return '<p class="kick mono m">'+esc(t('stopOf')(n))+'</p><h2 class="big" tabindex="-1" id="h">'+esc(h)+'</h2>'+(S.done[n]?'':'<p class="task">'+esc(task)+'</p>');
+}
+function unlocked(n,h,body,res,link,hash){
+  var last=n===4;
+  return '<section class="un" aria-live="polite"><p class="mono">'+esc(t('unlocked'))+'</p><h3>'+esc(h)+'</h3>'+body+
+    (res&&!S.skip[n]?'<p class="res">'+esc(res)+'</p>':'')+
+    '<div class="row"><button class="btn" type="button" data-a="next">'+esc(last?t('toReport'):t('next'))+' '+ARROW+'</button>'+
+    '<a href="'+site(hash)+'" target="_blank" rel="noopener">'+esc(link)+' ↗</a></div></section>';
+}
+function skipBtn(){return '<div class="row"><button class="lnk" type="button" data-a="skip">'+esc(t('skip'))+'</button></div>';}
+function status(o){return '<p class="st mono'+(o.msg?(o.bad?' bad':' good'):'')+'" role="status">'+esc(o.msg||'')+'</p>';}
+
+/* ---------- screens ---------- */
+function intro(){
+  return '<p class="kick mono m">'+esc(t('iKick'))+'</p><h1 tabindex="-1" id="h">'+t('iH')+'</h1><p class="lead">'+esc(t('iLead'))+'</p>'+
+    '<ol class="pre">'+t('iPre').map(function(p){return '<li><span class="mono m">'+esc(p[0])+'</span><b>'+esc(p[1])+'</b></li>';}).join('')+'</ol>'+
+    '<div class="row"><button class="btn mag" type="button" data-a="next">'+esc(t('iStart'))+' '+ARROW+'</button>'+
+    '<a class="lnk" href="'+site()+'">'+esc(t('iRead'))+'</a></div>';
+}
+function s1(){
+  var p=S.p,P=t('path'),h=head(1,t('s1H'),t('s1T'));
+  h+='<div class="card"><ol class="rev">'+P.map(function(r,i){
+    var on=i<p.n;return '<li class="'+(on?(i===p.n-1&&!S.done[1]?'new':''):'e')+'"><span class="r">'+String.fromCharCode(65+i)+'</span><span class="d">'+(on?esc(r[0]):'')+'</span><span class="h">'+(on?esc(r[1]):esc(t('s1Empty')))+'</span></li>';}).join('')+'</ol>';
+  if(!S.done[1]){
+    h+='<div class="pool">'+p.order.filter(function(i){return i>=p.n;}).map(function(i){return '<button class="chip" type="button" data-p="'+i+'">'+esc(P[i][1])+'</button>';}).join('')+'</div>'+status(p);
+  }
+  h+='</div>';
+  if(S.done[1])h+=unlocked(1,t('s1UH'),'<div class="stats">'+t('stats').map(function(s){return '<div><b>'+s[0]+'</b><span>'+esc(s[1])+'</span></div>';}).join('')+'</div><p>'+esc(t('s1U'))+'</p>',t('s1Res')(p.miss),t('s1Link'),'#path');
+  else h+=skipBtn();
+  return h;
+}
+function s2(){
+  var c=S.c,X=t('s2Tix'),C=t('s2Cols'),h=head(2,t('s2H'),t('s2T'));
+  h+='<div class="card">';
+  if(!S.done[2]&&c.i<X.length)h+='<div class="tk'+(c.i===X.length-1?' last':'')+'"><div><span class="mono m">'+esc(t('s2Tk')(c.i+1,X.length))+'</span><b>'+esc(X[c.i][0])+'</b></div></div>';
+  h+='<div class="cols">'+C.map(function(n,i){
+    var bars='';for(var k=0;k<c.counts[i];k++)bars+='<i></i>';
+    return '<button class="col" type="button" data-c="'+i+'"'+(S.done[2]||c.running?' disabled':'')+'><b>'+esc(n)+'</b><span class="n">'+c.counts[i]+'</span><span class="bars" aria-hidden="true">'+bars+'</span></button>';}).join('')+'</div>';
+  if(!S.done[2]){
+    if(c.hand>=3&&!c.running)h+='<div class="auto"><p>'+esc(t('s2AutoP'))+'</p><button class="btn mag" type="button" data-a="auto">⚡ '+esc(t('s2AutoB'))+'</button></div>';
+    h+=status(c)+'<p class="note mono">'+esc(t('s2Note'))+'</p>';
+  }
+  h+='</div>';
+  if(S.done[2])h+=unlocked(2,t('s2UH'),'<p>'+esc(t('s2U'))+'</p>',c.auto?t('s2ResA')(c.hand):t('s2ResM'),t('s2Link'),'#work');
+  else h+=skipBtn();
+  return h;
+}
+function s3(){
+  var g=S.g,T=t('s3Targets'),h=head(3,t('s3H'),t('s3T'));
+  if(!S.done[3]){
+    h+='<div class="card"><div class="tab"><div class="scrn'+(g.ver==='B'?' b':'')+'" id="scrn">';
+    if(g.mid)h+='<div class="mid"><p>'+esc(t('s3MidP')(g.missA))+'</p><button class="btn mag" type="button" data-a="verB">'+esc(t('s3MidB'))+' '+ARROW+'</button></div>';
+    else{
+      h+='<div class="do"><b>'+esc(t('s3Tap'))+': <em>'+esc(T[g.task])+'</em></b><span class="mono grey">'+esc(g.ver==='A'?t('s3VA'):t('s3VB'))+' · '+(g.task+1)+'/3</span></div>';
+      if(g.ver==='A')h+='<div class="ga" id="pad">'+t('s3A').map(function(n){return '<button type="button" data-g="'+n+'">'+n+'</button>';}).join('')+'</div>';
+      else h+='<div class="stepb">'+esc(t('s3Step'))+'</div><div class="gb" id="pad">'+['Help','Done','Next'].map(function(n){return '<button type="button" data-g="'+n+'"'+(n===T[g.task]?' class="pri"':'')+'>'+n+'</button>';}).join('')+'</div>';
+    }
+    h+='</div></div>'+status(g)+'<p class="note mono">'+esc(t('s3Note'))+'</p></div>'+skipBtn();
+  }else{
+    h+=unlocked(3,t('s3UH'),'<p>'+esc(t('s3U'))+'</p>'+(S.skip[3]?'':'<div class="cmp"><div><b>'+g.missA+'</b><span class="mono">'+esc(t('s3CA'))+'</span></div><div><b>'+g.missB+'</b><span class="mono">'+esc(t('s3CB'))+'</span></div></div>'),'',t('s3Link'),'#work');
+  }
+  return h;
+}
+function s4(){
+  var b=S.b,Q=t('s4Q'),h=head(4,t('s4H'),t('s4T'));
+  if(!S.done[4]){
+    var q=Q[b.i],dots='';
+    for(var k=0;k<Q.length;k++)dots+='<i class="'+(k<b.res.length?(b.res[k]?'y':'x'):(k===b.i?'c':''))+'"></i>';
+    h+='<div class="card"><div class="do"><span class="mono m">'+(b.i+1)+' / '+Q.length+'</span><span class="dots" aria-hidden="true">'+dots+'</span></div><p class="q">'+esc(q[0])+'</p>';
+    if(b.ans===null)h+='<div class="fb"><button class="btn ghost" type="button" data-f="1">'+esc(t('fact'))+'</button><button class="btn ghost" type="button" data-f="0">'+esc(t('bluff'))+'</button></div>';
+    else h+='<div class="ans'+(b.ans?'':' no')+'" role="status"><b>'+esc(b.ans?t('s4Right'):t('s4Wrong'))+'</b>'+esc(q[2])+'</div><div class="row"><button class="btn" type="button" data-a="q">'+esc(b.i<Q.length-1?t('s4Next'):t('unlocked'))+' '+ARROW+'</button></div>';
+    h+='</div>'+(b.ans===null?skipBtn():'');
+  }else{
+    h+=unlocked(4,t('s4UH'),'<p>'+esc(t('s4U'))+'</p>',t('s4Res')(b.right),t('s4Link'),'#apps');
+  }
+  return h;
+}
+function report(){
+  var N=t('rN'),log=[t('rL1')(S.p.miss),t('rL2')(S.c.auto),t('rL3')(S.g.missA,S.g.missB),t('rL4')(S.b.right)];
+  return '<p class="kick mono m">'+esc(t('rKick'))+'</p><h1 tabindex="-1" id="h">'+t('rH')+'</h1><p class="lead">'+esc(t('rLead'))+'</p>'+
+    '<div class="row"><a class="btn mag" href="mailto:mail@juliawimmer.de?subject='+encodeURIComponent(t('rSubject'))+'">'+esc(t('rMail'))+' '+ARROW+'</a>'+
+    '<a class="btn ghost" href="https://www.linkedin.com/in/julia-wimmer-ux" target="_blank" rel="noopener">LinkedIn ↗</a>'+
+    '<a class="btn ghost" href="'+site()+'">'+esc(t('rSite'))+'</a></div>'+
+    '<div class="rep"><div class="hd mono"><span>'+esc(t('rHd'))+' · Julia Wimmer</span><span>'+esc(t('rRev'))+'</span></div>'+
+    '<dl>'+t('rFacts').map(function(f){return '<div><dt>'+esc(f[0])+'</dt><dd>'+esc(f[1])+'</dd></div>';}).join('')+'</dl>'+
+    '<h3>'+esc(t('rLog'))+'</h3><ul>'+log.map(function(l,i){return S.skip[i+1]?'<li class="sk">'+esc(N[i])+': '+esc(t('rSkipped'))+'</li>':'<li>'+esc(l)+'</li>';}).join('')+'</ul></div>'+
+    '<div class="row"><button class="lnk" type="button" data-a="again">'+esc(t('rAgain'))+'</button></div>';
+}
+var SCR=[intro,s1,s2,s3,s4,report];
+function render(focus){
+  shell();
+  stage.innerHTML='<div class="'+(focus?'scr':'')+'">'+SCR[S.scr]()+'</div>';
+  if(focus){var h=document.getElementById('h');if(h){h.focus({preventScroll:true});}
+    var y=stage.getBoundingClientRect().top+window.pageYOffset-90;if(window.pageYOffset>y)window.scrollTo(0,Math.max(0,y));}
+}
+function finish(n){S.done[n]=true;render(false);
+  var u=stage.querySelector('.un');if(u){var r=u.getBoundingClientRect();
+    if(r.top>window.innerHeight*0.6||r.top<0)window.scrollTo({top:r.top+window.pageYOffset-80,behavior:reduce?'auto':'smooth'});
+    var b=u.querySelector('button');if(b)b.focus({preventScroll:true});}}
+
+/* ---------- actions ---------- */
+function shakeEl(el){if(!el)return;el.classList.remove('shake');void el.offsetWidth;el.classList.add('shake');}
+function autoRun(){
+  var c=S.c,X=t('s2Tix');
+  if(c.i>=X.length){c.running=false;c.msg='';finish(2);return;}
+  c.counts[X[c.i][1]]++;c.i++;render(false);
+  setTimeout(autoRun,reduce?0:260);
+}
+function gloveTap(e){
+  var g=S.g,pad=document.getElementById('pad'),scrn=document.getElementById('scrn');if(!pad||g.mid||g.lock)return;
+  var btn=null,x,y;
+  if(e.detail===0&&e.target.closest('[data-g]')){btn=e.target.closest('[data-g]');} // keyboard: no glove
+  else{
+    var a=Math.random()*Math.PI*2,r=34*Math.sqrt(Math.random());x=e.clientX+Math.cos(a)*r;y=e.clientY+Math.sin(a)*r;
+    var sr=scrn.getBoundingClientRect(),bl=document.createElement('span');bl.className='blob';bl.style.left=(x-sr.left)+'px';bl.style.top=(y-sr.top)+'px';
+    scrn.appendChild(bl);setTimeout(function(){if(bl.parentNode)bl.parentNode.removeChild(bl);},650);
+    Array.prototype.forEach.call(pad.querySelectorAll('[data-g]'),function(b){var q=b.getBoundingClientRect();if(x>=q.left&&x<=q.right&&y>=q.top&&y<=q.bottom)btn=b;});
+  }
+  var ok=btn&&btn.getAttribute('data-g')===t('s3Targets')[g.task],st=stage.querySelector('.st');
+  function say(m,bad){g.msg=m;g.bad=bad;if(st){st.textContent=m;st.className='st mono '+(bad?'bad':'good');}}
+  if(btn)btn.classList.add(ok?'hit':'miss');
+  if(ok){say(t('s3Hit'),false);}
+  else{g.tm++;if(g.ver==='A')g.missA++;else g.missB++;
+    if(g.tm<3){say(t('s3Miss'),true);if(btn)setTimeout(function(){btn.classList.remove('miss');},350);shakeEl(pad);return;}
+    say(t('s3Give'),true);}
+  g.lock=true;
+  setTimeout(function(){g.lock=false;g.tm=0;g.task++;
+    if(g.task>2){if(g.ver==='A'){g.mid=true;g.msg='';render(false);var b=stage.querySelector('[data-a="verB"]');if(b)b.focus({preventScroll:true});}else{g.msg='';finish(3);}}
+    else render(false);
+  },ok?450:900);
+}
+stage.addEventListener('click',function(e){
+  var el=e.target.closest('button,a');
+  if(S.scr===3&&!S.done[3]&&e.target.closest('#scrn')&&!(el&&el.hasAttribute('data-a'))){gloveTap(e);return;}
+  if(!el||el.tagName==='A')return;
+  var a=el.getAttribute('data-a');
+  if(a==='next'){S.scr=Math.min(5,S.scr+1);render(true);return;}
+  if(a==='again'){reset();render(true);return;}
+  if(a==='skip'){S.skip[S.scr]=true;if(S.scr===1)S.p.n=6;finish(S.scr);return;}
+  if(a==='auto'){S.c.auto=true;S.c.running=true;S.c.bad=false;S.c.msg=t('s2Running');autoRun();return;}
+  if(a==='verB'){var g=S.g;g.ver='B';g.task=0;g.tm=0;g.mid=false;g.msg='';render(false);return;}
+  if(a==='q'){var b=S.b;if(b.i<t('s4Q').length-1){b.i++;b.ans=null;render(false);var q=stage.querySelector('[data-f]');if(q)q.focus({preventScroll:true});}else finish(4);return;}
+  if(el.hasAttribute('data-p')){var p=S.p,i=+el.getAttribute('data-p');
+    if(i===p.n){p.n++;p.bad=false;p.msg=t('s1Good')(p.n);if(p.n===6){p.msg='';finish(1);}else{render(false);var c=stage.querySelector('.chip');if(c)c.focus({preventScroll:true});}}
+    else{p.miss++;p.bad=true;p.msg=t('s1Bad');var st=stage.querySelector('.st');if(st){st.textContent=p.msg;st.className='st mono bad';}shakeEl(el);}
+    return;}
+  if(el.hasAttribute('data-c')){var c2=S.c,X=t('s2Tix'),k=+el.getAttribute('data-c');if(c2.running||c2.i>=X.length)return;
+    if(k===X[c2.i][1]){c2.counts[k]++;c2.i++;c2.hand++;c2.bad=false;c2.msg=t('s2Good');
+      if(c2.i>=X.length){c2.msg='';finish(2);}else{render(false);var nb=stage.querySelector('[data-c="'+k+'"]');if(nb)nb.focus({preventScroll:true});}}
+    else{c2.bad=true;c2.msg=t('s2Bad');var s2t=stage.querySelector('.st');if(s2t){s2t.textContent=c2.msg;s2t.className='st mono bad';}shakeEl(stage.querySelector('.tk'));}
+    return;}
+  if(el.hasAttribute('data-f')){var bb=S.b,q2=t('s4Q')[bb.i],ok=(el.getAttribute('data-f')==='1')===q2[1];
+    bb.ans=ok;bb.res.push(ok);if(ok)bb.right++;render(false);var n2=stage.querySelector('[data-a="q"]');if(n2)n2.focus({preventScroll:true});return;}
+});
+Array.prototype.forEach.call(document.querySelectorAll('.lg button'),function(b){b.addEventListener('click',function(){
+  var l=b.getAttribute('data-lang');if(l===L)return;L=l;
+  // messages are stored as text, so clear them on a language switch
+  S.p.msg=S.c.running?S.p.msg:'';if(!S.c.running)S.c.msg='';else S.c.msg=t('s2Running');S.g.msg='';S.p.msg='';
+  render(false);});});
+if(/[?&]lang=de\b/.test(location.search))L='de';
+render(false);
+})();
+</script>
+</body>
+</html>
