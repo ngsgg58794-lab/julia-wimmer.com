@@ -357,6 +357,40 @@ h1 .m{color:var(--mag)}
 @media (max-width:1000px){.jy{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.jy{grid-template-columns:1fr}.jm{margin-top:18px}}
 @media (prefers-reduced-motion:reduce){.jm i,.j2 path,.jc::before{transition:none}}
+/* compact cards: only the headline, details on hover (desktop) or tap (touch) */
+.jc,.gb{cursor:pointer}
+.jc{padding:26px 26px 24px}
+.jc h3{margin-top:18px}
+.jm{margin-top:20px}
+.gb{flex-direction:row;flex-wrap:wrap;align-items:center;gap:0 18px;padding:18px 22px}
+.gb h3{margin-top:0;flex:1 1 auto}
+.gb .dd{flex:1 0 100%}
+.jc::after,.gb::after{content:"+";position:absolute;right:16px;top:12px;font-family:var(--mono);font-size:1rem;line-height:1;color:var(--mag);transition:transform .3s ease}
+.jc::after{color:#FF4FA3}
+.jc.open::after,.gb.open::after{transform:rotate(45deg)}
+.dd{display:grid;grid-template-rows:0fr;transition:grid-template-rows .35s cubic-bezier(.2,.7,.2,1)}
+.ddi{min-height:0;overflow:hidden;display:flex;flex-direction:column}
+.open>.dd{grid-template-rows:1fr}
+.ddt{display:none}
+.jc .ddi p{margin-top:14px}.jc .ref{margin-top:0;padding-top:14px}
+.gb .ddi p{margin-top:12px}.gb .gr{margin-top:0;padding-top:12px}
+@media (min-width:1200px) and (hover:hover){
+  .jc{height:13.5rem}.gb{height:7.25rem}
+  .js .gb.rv.in:hover,.gb:hover{transform:none;box-shadow:none}
+  .jc::after,.gb::after{transition:opacity .2s ease}
+  .jc:hover::after,.jc:focus-within::after,.gb:hover::after,.gb:focus-within::after{opacity:0}
+  .dd{position:absolute;inset:-1px;z-index:1;display:block;padding:20px 24px;background:var(--mag);color:#fff;overflow:auto;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .22s ease,transform .3s cubic-bezier(.2,.7,.2,1)}
+  .gb .dd{padding:13px 20px;inset:-1px}
+  .jc:hover>.dd,.jc:focus-within>.dd,.jc.open>.dd,.gb:hover>.dd,.gb:focus-within>.dd,.gb.open>.dd{opacity:1;transform:none;pointer-events:auto}
+  .ddi{overflow:visible;height:100%}
+  .ddt{display:block;font-family:var(--mono);font-size:.6875rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;opacity:.85}
+  .jc .ddi p{margin-top:10px;color:#fff;font-size:.9375rem;line-height:1.5}
+  .gb .ddi p{margin-top:4px;color:#fff;font-size:.875rem;line-height:1.4}
+  .jc .ref,.jc a.ref:hover{margin-top:auto;color:#fff}
+  .gb .gr{margin-top:auto;padding-top:4px;color:#fff}.gb .gr span,.gb .gr:hover span{color:#fff;text-decoration-color:#fff}
+}
+@media (max-width:600px){.jc{flex-direction:row;flex-wrap:wrap;align-items:center;gap:0 16px;padding:18px 20px}.jc .k{flex:1 0 100%}.jm{margin-top:12px;transform:scale(.75);transform-origin:left center;margin-right:-14px}.jc h3{margin-top:12px;flex:1 1 0}.jc .dd{flex:1 0 100%}}
+@media (prefers-reduced-motion:reduce){.dd{transition:none}}
 /* floating CTA */
 .fab{position:fixed;right:20px;bottom:20px;z-index:50;display:inline-flex;align-items:center;gap:10px;padding:14px 20px;background:var(--mag);color:#fff;font-weight:700;text-decoration:none;box-shadow:0 10px 30px -12px rgba(214,0,111,.55);transition:transform .2s ease,background-color .2s ease}
 .fab:hover{transform:translateY(-2px);background:var(--ink)}
@@ -766,27 +800,27 @@ h1 .lni{display:inline-block}
 </section>
 
 <section id="enjoy" class="sec wrap">
-<h2 class="sh"><button class="acc shb fx" type="button" aria-expanded="false" aria-controls="enjoy-body"><span class="sno">§ 03</span><span><span class="stt">What I enjoy</span><span class="sth mono">the work that gives me energy</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
+<h2 class="sh"><button class="acc shb fx" type="button" aria-expanded="false" aria-controls="enjoy-body"><span class="sno">§ 03</span><span><span class="stt">What I enjoy</span><span class="sth mono">the work that gives me energy · hover or tap for details</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
 <div id="enjoy-body" class="pnl"><div class="pin"><div class="pad">
 <div class="jy">
-<div class="jc rv"><span class="k mono">01</span><div class="jm j1" aria-hidden="true"><i style="--x:0px;--y:0px;--sx:-10px;--sy:14px;--r:40deg;--d:0"></i><i style="--x:21px;--y:0px;--sx:8px;--sy:-12px;--r:-25deg;--d:1"></i><i style="--x:42px;--y:0px;--sx:14px;--sy:10px;--r:60deg;--d:2"></i><i style="--x:0px;--y:21px;--sx:-14px;--sy:-6px;--r:-50deg;--d:3"></i><i class="m" style="--x:21px;--y:21px;--sx:0px;--sy:0px;--r:45deg;--d:4"></i><i style="--x:42px;--y:21px;--sx:12px;--sy:16px;--r:20deg;--d:5"></i><i style="--x:0px;--y:42px;--sx:6px;--sy:12px;--r:70deg;--d:6"></i><i style="--x:21px;--y:42px;--sx:-12px;--sy:8px;--r:-35deg;--d:7"></i><i style="--x:42px;--y:42px;--sx:16px;--sy:-10px;--r:15deg;--d:8"></i></div><h3>Structuring</h3><p>Taking something messy and building a system that people actually want to use: boards, spaces, workflows, decisions.</p><a class="ref mono" href="#p-01">Ref. <span>P-01 Team workflows</span> &#8593;</a></div>
-<div class="jc rv"><span class="k mono">02</span><div class="jm j2" aria-hidden="true"><svg viewBox="0 0 56 56"><path fill="#F2F3EF" class="s1" d="M24 8Q24 30 46 30Q24 30 24 52Q24 30 2 30Q24 30 24 8Z"/><path fill="#D6006F" class="s2" d="M47 0Q47 8 55 8Q47 8 47 16Q47 8 39 8Q47 8 47 0Z"/><path fill="#F2F3EF" class="s3" d="M48 39Q48 44 53 44Q48 44 48 49Q48 44 43 44Q48 44 48 39Z"/></svg></div><h3>Trying new things</h3><p>New tools, new methods, new fields. I would rather build a quick test than talk about it for weeks.</p><a class="ref mono" href="#a-01">Ref. <span>A-01 Innensicht</span> &#8595;</a></div>
-<div class="jc rv"><span class="k mono">03</span><div class="jm j3" aria-hidden="true"><i></i><i class="m"></i></div><h3>Adapting to people &amp; projects</h3><p>Every team, user and project is different. I adapt the approach to fit them, not the other way round.</p><a class="ref mono" href="#p-02">Ref. <span>P-02 Expert Tools</span> &#8593;</a></div>
-<div class="jc rv"><span class="k mono">04</span><div class="jm j4" aria-hidden="true"><i style="left:2px;--h:18px;--d:0"></i><i style="left:16px;--h:30px;--d:1"></i><i style="left:30px;--h:24px;--d:2"></i><i class="m" style="left:44px;--h:52px;--d:3"></i></div><h3>Making information intuitive</h3><p>Complex topics, shown so that people get them at a glance and can decide. From decision papers to pitches.</p><span class="ref mono">Ref. this page</span></div>
+<div class="jc rv"><span class="k mono">01</span><div class="jm j1" aria-hidden="true"><i style="--x:0px;--y:0px;--sx:-10px;--sy:14px;--r:40deg;--d:0"></i><i style="--x:21px;--y:0px;--sx:8px;--sy:-12px;--r:-25deg;--d:1"></i><i style="--x:42px;--y:0px;--sx:14px;--sy:10px;--r:60deg;--d:2"></i><i style="--x:0px;--y:21px;--sx:-14px;--sy:-6px;--r:-50deg;--d:3"></i><i class="m" style="--x:21px;--y:21px;--sx:0px;--sy:0px;--r:45deg;--d:4"></i><i style="--x:42px;--y:21px;--sx:12px;--sy:16px;--r:20deg;--d:5"></i><i style="--x:0px;--y:42px;--sx:6px;--sy:12px;--r:70deg;--d:6"></i><i style="--x:21px;--y:42px;--sx:-12px;--sy:8px;--r:-35deg;--d:7"></i><i style="--x:42px;--y:42px;--sx:16px;--sy:-10px;--r:15deg;--d:8"></i></div><h3>Structuring</h3><div class="dd"><div class="ddi"><b class="ddt">Structuring</b><p>Taking something messy and building a system that people actually want to use: boards, spaces, workflows, decisions.</p><a class="ref mono" href="#p-01">Ref. <span>P-01 Team workflows</span> &#8593;</a></div></div></div>
+<div class="jc rv"><span class="k mono">02</span><div class="jm j2" aria-hidden="true"><svg viewBox="0 0 56 56"><path fill="#F2F3EF" class="s1" d="M24 8Q24 30 46 30Q24 30 24 52Q24 30 2 30Q24 30 24 8Z"/><path fill="#D6006F" class="s2" d="M47 0Q47 8 55 8Q47 8 47 16Q47 8 39 8Q47 8 47 0Z"/><path fill="#F2F3EF" class="s3" d="M48 39Q48 44 53 44Q48 44 48 49Q48 44 43 44Q48 44 48 39Z"/></svg></div><h3>Trying new things</h3><div class="dd"><div class="ddi"><b class="ddt">Trying new things</b><p>New tools, new methods, new fields. I would rather build a quick test than talk about it for weeks.</p><a class="ref mono" href="#a-01">Ref. <span>A-01 Innensicht</span> &#8595;</a></div></div></div>
+<div class="jc rv"><span class="k mono">03</span><div class="jm j3" aria-hidden="true"><i></i><i class="m"></i></div><h3>Adapting to people &amp; projects</h3><div class="dd"><div class="ddi"><b class="ddt">Adapting to people &amp; projects</b><p>Every team, user and project is different. I adapt the approach to fit them, not the other way round.</p><a class="ref mono" href="#p-02">Ref. <span>P-02 Expert Tools</span> &#8593;</a></div></div></div>
+<div class="jc rv"><span class="k mono">04</span><div class="jm j4" aria-hidden="true"><i style="left:2px;--h:18px;--d:0"></i><i style="left:16px;--h:30px;--d:1"></i><i style="left:30px;--h:24px;--d:2"></i><i class="m" style="left:44px;--h:52px;--d:3"></i></div><h3>Making information intuitive</h3><div class="dd"><div class="ddi"><b class="ddt">Making information intuitive</b><p>Complex topics, shown so that people get them at a glance and can decide. From decision papers to pitches.</p><span class="ref mono">Ref. this page</span></div></div></div>
 </div>
 </div></div></div>
 </section>
 
 <section id="what-you-get" class="sec wrap" aria-label="What you get">
-<h2 class="sh"><button class="acc shb fx" type="button" aria-expanded="false" aria-controls="what-you-get-body"><span class="sno">§ 04</span><span><span class="stt">What you get</span><span class="sth mono">if I join your team</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
+<h2 class="sh"><button class="acc shb fx" type="button" aria-expanded="false" aria-controls="what-you-get-body"><span class="sno">§ 04</span><span><span class="stt">What you get</span><span class="sth mono">if I join your team · hover or tap for details</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
 <div id="what-you-get-body" class="pnl"><div class="pin"><div class="pad">
 <div class="gy indent">
-<div class="gb rv"><span class="gn" aria-hidden="true">01</span><h3>Speed</h3><p>I get a topic quickly, I learn fast and I execute fast. No long ramp-up.</p><a class="gr mono" href="#a-01">Proof <span>Innensicht: first version in one afternoon</span> &#8595;</a></div>
-<div class="gb rv"><span class="gn" aria-hidden="true">02</span><h3>Structure &amp; overview</h3><p>I turn complexity into clear plans and keep the big picture in view.</p><a class="gr mono" href="#p-01">Proof <span>One Jira &amp; Confluence setup for a whole team</span> &#8593;</a></div>
-<div class="gb rv"><span class="gn" aria-hidden="true">03</span><h3>Range</h3><p>Design, product, tech and business in one person. Fewer handoffs, less friction.</p><a class="gr mono" href="#path">Proof <span>Business degree, Audi, product owner, designer, founder</span> &#8593;</a></div>
-<div class="gb rv"><span class="gn" aria-hidden="true">04</span><h3>Solutions, fast</h3><p>I find a way forward and decide instead of getting stuck.</p><a class="gr mono" href="#p-02">Proof <span>Two user groups, one tool, features cut on purpose</span> &#8593;</a></div>
-<div class="gb rv"><span class="gn" aria-hidden="true">05</span><h3>Results</h3><p>I ship. Remote-first, efficient and dependable.</p><a class="gr mono" href="#p-03">Proof <span>Two apps released for iOS and Android</span> &#8593;</a></div>
-<div class="gb rv"><span class="gn" aria-hidden="true">06</span><h3>Calm &amp; warmth</h3><p>I keep the team steady under pressure and bring people together.</p><a class="gr mono" href="#contact">Proof <span>Reference letter, Valtech 2026, on request</span> &#8595;</a></div>
+<div class="gb rv"><span class="gn" aria-hidden="true">01</span><h3>Speed</h3><div class="dd"><div class="ddi"><b class="ddt">Speed</b><p>I get a topic quickly, I learn fast and I execute fast. No long ramp-up.</p><a class="gr mono" href="#a-01">Proof <span>Innensicht: first version in one afternoon</span> &#8595;</a></div></div></div>
+<div class="gb rv"><span class="gn" aria-hidden="true">02</span><h3>Structure &amp; overview</h3><div class="dd"><div class="ddi"><b class="ddt">Structure &amp; overview</b><p>I turn complexity into clear plans and keep the big picture in view.</p><a class="gr mono" href="#p-01">Proof <span>One Jira &amp; Confluence setup for a whole team</span> &#8593;</a></div></div></div>
+<div class="gb rv"><span class="gn" aria-hidden="true">03</span><h3>Range</h3><div class="dd"><div class="ddi"><b class="ddt">Range</b><p>Design, product, tech and business in one person. Fewer handoffs, less friction.</p><a class="gr mono" href="#path">Proof <span>Business degree, Audi, product owner, designer, founder</span> &#8593;</a></div></div></div>
+<div class="gb rv"><span class="gn" aria-hidden="true">04</span><h3>Solutions, fast</h3><div class="dd"><div class="ddi"><b class="ddt">Solutions, fast</b><p>I find a way forward and decide instead of getting stuck.</p><a class="gr mono" href="#p-02">Proof <span>Two user groups, one tool, features cut on purpose</span> &#8593;</a></div></div></div>
+<div class="gb rv"><span class="gn" aria-hidden="true">05</span><h3>Results</h3><div class="dd"><div class="ddi"><b class="ddt">Results</b><p>I ship. Remote-first, efficient and dependable.</p><a class="gr mono" href="#p-03">Proof <span>Two apps released for iOS and Android</span> &#8593;</a></div></div></div>
+<div class="gb rv"><span class="gn" aria-hidden="true">06</span><h3>Calm &amp; warmth</h3><div class="dd"><div class="ddi"><b class="ddt">Calm &amp; warmth</b><p>I keep the team steady under pressure and bring people together.</p><a class="gr mono" href="#contact">Proof <span>Reference letter, Valtech 2026, on request</span> &#8595;</a></div></div></div>
 </div>
 </div></div></div>
 </section>
@@ -905,6 +939,10 @@ if('IntersectionObserver' in window){
     el.classList.add('in');io.unobserve(el);});},{threshold:.15});
   rv.forEach(function(el){io.observe(el);});
 }else{rv.forEach(function(el){el.classList.add('in');});}
+Array.prototype.forEach.call(document.querySelectorAll('.jc,.gb'),function(c){c.tabIndex=0;c.setAttribute('aria-expanded','false');
+  function tg(){var o=!c.classList.contains('open');c.classList.toggle('open',o);c.setAttribute('aria-expanded',o?'true':'false');}
+  c.addEventListener('click',function(e){if(!e.target.closest('a'))tg();});
+  c.addEventListener('keydown',function(e){if(e.target===c&&(e.key==='Enter'||e.key===' ')){e.preventDefault();tg();}});});
 var jc=document.querySelectorAll('.jc');
 if(reduce||!('IntersectionObserver' in window))jc.forEach(function(el){el.classList.add('on');});
 else{var jo=new IntersectionObserver(function(es){es.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');jo.unobserve(x.target);}});},{threshold:.5});jc.forEach(function(el){jo.observe(el);});}
@@ -995,7 +1033,7 @@ function setLang(l){
   ['aria-label','alt'].forEach(function(a){Array.prototype.forEach.call(document.querySelectorAll('['+a+']'),function(e){var v=e.getAttribute(a);if(d[v]!=null){trs.push({n:e,a:a,v:v});e.setAttribute(a,d[v]);}});});
 }
 function wantLang(l){if(l===LANG)return;if(l!=='de'||window.JW_DE){setLang(l);return;}
-  var sc=document.createElement('script');sc.src='de.js?v=5';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
+  var sc=document.createElement('script');sc.src='de.js?v=6';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
 Array.prototype.forEach.call(lgb,function(b){b.addEventListener('click',function(){wantLang(b.getAttribute('data-lang'));});});
 if(/[?&]lang=de\b/.test(location.search))wantLang('de');
 })();
