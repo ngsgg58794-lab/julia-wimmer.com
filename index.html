@@ -86,6 +86,8 @@ h1 sup{display:inline-block;vertical-align:top;margin:.12em 0 0 .1em;font-family
 .look .mono{color:var(--mag)}
 .cta{display:inline-flex;align-items:center;gap:14px;min-height:52px;padding:0 22px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:700;transition:background-color .15s ease}
 .cta:hover{background:var(--mag)}
+.cta.play{background:var(--paper);color:var(--ink);border:1px solid var(--ink)}
+.cta.play:hover{background:var(--mag);border-color:var(--mag);color:#fff}
 .cta svg{transition:transform .2s ease}
 .cta:hover svg{transform:translateX(4px)}
 
@@ -598,7 +600,8 @@ h1 .lni{display:inline-block}
 </div>
 <p class="lead">From project manager to designer and AI lover. Along the way I found what I enjoy most: structuring complex workflows and information, and turning them into something anyone can understand. Today I&#8217;m a <span style="white-space:nowrap">T-shaped</span> all-rounder: deep in UX and product design, broad across digitalization, AI, process and business.</p>
 <div class="hrow"><p class="look"><span class="mono">Status</span><span>Looking for Design, Digitalization &amp; AI roles. Remote-first, or hybrid around Innsbruck.</span></p>
-<a class="cta" href="#contact">Write me <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></div>
+<a class="cta" href="#contact">Write me <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+<a class="cta play" href="play/">Test drive · 3 min game <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></div>
 </div>
 
 <figure class="fig">
@@ -1023,6 +1026,7 @@ function setLang(l){
   LANG=l;document.documentElement.lang=l;document.title=l==='de'?T('@title'):ttl;
   Array.prototype.forEach.call(lgb,function(b){b.setAttribute('aria-pressed',b.getAttribute('data-lang')===l?'true':'false');});
   relang.forEach(function(f){f();});
+  var pl=document.querySelector('.play');if(pl)pl.setAttribute('href',l==='de'?'play/?lang=de':'play/');
   if(l!=='de')return;
   var d=window.JW_DE,w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null),n;
   while((n=w.nextNode())){var v=n.nodeValue,k=v.replace(/\s+/g,' ').trim();if(!k||d[k]==null||/^(SCRIPT|STYLE)$/.test(n.parentNode.nodeName))continue;
@@ -1030,7 +1034,7 @@ function setLang(l){
   ['aria-label','alt'].forEach(function(a){Array.prototype.forEach.call(document.querySelectorAll('['+a+']'),function(e){var v=e.getAttribute(a);if(d[v]!=null){trs.push({n:e,a:a,v:v});e.setAttribute(a,d[v]);}});});
 }
 function wantLang(l){if(l===LANG)return;if(l!=='de'||window.JW_DE){setLang(l);return;}
-  var sc=document.createElement('script');sc.src='de.js?v=4';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
+  var sc=document.createElement('script');sc.src='de.js?v=5';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
 Array.prototype.forEach.call(lgb,function(b){b.addEventListener('click',function(){wantLang(b.getAttribute('data-lang'));});});
 if(/[?&]lang=de\b/.test(location.search))wantLang('de');
 })();
