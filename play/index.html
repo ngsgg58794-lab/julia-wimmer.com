@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Test drive · Julia Wimmer</title>
+<title>Game: Get to know Julia · Julia Wimmer</title>
 <meta name="description" content="A small 3D game for recruiters: follow Julia Wimmer's path to Munich, then explore on the way to Innsbruck. Julia is a UX and product designer with a focus on digitalization and AI.">
-<meta property="og:title" content="Take Julia for a test drive">
+<meta property="og:title" content="Game: Get to know Julia">
 <meta property="og:description" content="A small 3D game for recruiters: follow Julia's path to Munich, then explore and get to know her.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://juliawimmer.de/img/portrait.jpeg">
@@ -239,6 +239,12 @@ body{display:block;overflow:hidden;overscroll-behavior:none}
 .nx{position:fixed;top:74px;left:50%;transform:translateX(-50%);z-index:4;display:flex;align-items:center;gap:10px;padding:8px 14px;border:1px solid var(--ink);background:var(--paper);white-space:nowrap}
 .nx #arr{display:inline-block;color:var(--mag);font-size:1.125rem;line-height:1;font-family:var(--sans);font-weight:800}
 .hint{position:fixed;left:50%;bottom:86px;transform:translateX(-50%);z-index:4;max-width:calc(100% - 32px);padding:10px 14px;background:var(--ink);color:var(--paper);text-align:center}
+.bub{position:fixed;left:50%;bottom:54%;transform:translateX(-50%);z-index:5;width:max-content;max-width:min(360px,calc(100% - 40px));padding:12px 22px 14px;background:#fff;color:var(--ink);border:2px solid var(--ink);border-radius:30px;font-weight:700;font-size:17px;line-height:1.3;text-align:center;box-shadow:4px 4px 0 var(--ink);pointer-events:none;animation:bub .28s ease-out}
+.bub small{display:block;margin-bottom:3px;font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--mag)}
+.bub::before,.bub::after{content:"";position:absolute;left:50%;background:#fff;border:2px solid var(--ink);border-radius:50%}
+.bub::before{width:16px;height:16px;bottom:-26px;margin-left:-16px}
+.bub::after{width:9px;height:9px;bottom:-41px;margin-left:-5px}
+@keyframes bub{from{opacity:0;transform:translateX(-50%) translateY(10px) scale(.92)}to{opacity:1;transform:translateX(-50%)}}
 .toast{position:fixed;left:50%;top:124px;transform:translateX(-50%);z-index:6;max-width:calc(100% - 32px);padding:12px 16px;background:var(--mag);color:#fff;font-weight:700;text-align:center}
 .dock{position:fixed;right:16px;bottom:16px;z-index:4;display:flex;gap:8px}
 .dock .btn{min-height:46px;padding:0 16px;font-size:.9375rem}
@@ -289,6 +295,7 @@ body{display:block;overflow:hidden;overscroll-behavior:none}
 <div class="nx mono" id="nx" hidden><span id="arr" aria-hidden="true">↑</span><span id="nxt"></span></div>
 <div class="hint mono" id="hint" hidden></div>
 <div class="toast" id="toast" role="status" hidden></div>
+<div class="bub" id="bub" role="status" hidden></div>
 <div class="dock" id="dock" hidden>
 <button class="btn ghost" type="button" id="bList"></button>
 <button class="btn" type="button" id="bRep"></button>
@@ -304,12 +311,12 @@ const $=s=>document.querySelector(s);
 /* ---------- texts ---------- */
 const TX={
 en:{
-  title:'Test drive · Julia Wimmer',
+  title:'Game: Get to know Julia · Julia Wimmer',
   tbName:'Name',tbLang:'Language',hSt:'Stations',hQ:'Finds',
   list:'All stations',rep:'Test report',drive:'Drive on',back:'Back to the road',unlocked:'Unlocked',
   canvas:'3D world. Drive with the arrow keys or open the list of all stations.',
   iKick:'A 3D game for recruiters',
-  iH:'Take me for a <span class="m">test drive.</span>',
+  iH:'Get to know <span class="m">Julia.</span>',
   iLead:'First you drive through my path: from school in Landau an der Isar via Landshut and Ingolstadt to Munich. The five stations stand right at the road. After Munich the map opens up: explore mini games, more stations and 16 finds that tell you something about me, all the way to Innsbruck.',
   iHow:[['Keyboard','Arrow keys or W A S D'],['Mouse & touch','Tap or hold where you want to go'],['No time?','Open the list and skip the driving']],
   iStart:'Start driving',iList:'Open the list instead',
@@ -320,7 +327,7 @@ en:{
   toastPath:'Path complete. Now explore: 16 finds and more stations are waiting off the road.',
   rev:'Rev.',
   st:{
-    o:['Landau a.d. Isar','Abitur','School in Landau an der Isar, Lower Bavaria. My path starts here.',''],
+    o:['2007 · Landau a.d. Isar','Abitur','Gymnasium Landau an der Isar, class of 2007.','My path starts here.'],
     a:['2007 – 2011 · Landshut','B.A. Business Administration','Grade 1.7, University of applied sciences Landshut.','Business first, design later. That is why cost, process and organisation are part of how I think.'],
     b:['2011 – 2012 · Ingolstadt','IT Consultant, WK IT','Drove internal restructuring and supported strategic purchasing.',''],
     c:['2012 – 2018 · Ingolstadt','Process & Systems Integrator, Audi AG','Prepared steering committees and product decisions for the cross-brand connected-car project. Built cost transparency and a portfolio management process for budget control.',''],
@@ -362,22 +369,22 @@ en:{
   // fact or bluff
   fKick:(a,b)=>'Find '+a+' of '+b,fNext:'Next find',
   F:[
-    ['What I enjoy','Structuring','Taking something messy and building a system that people actually want to use: boards, spaces, workflows, decisions.'],
-    ['What I enjoy','Trying new things','New tools, new methods, new fields. I would rather build a quick test than talk about it for weeks.'],
-    ['What I enjoy','Adapting to people & projects','Every team, user and project is different. I adapt the approach to fit them, not the other way round.'],
-    ['What I enjoy','Making information intuitive','Complex topics, shown so that people get them at a glance and can decide. From decision papers to pitches.'],
-    ['What you get','Speed','I get a topic quickly, I learn fast and I execute fast. No long ramp-up.'],
-    ['What you get','Range','Design, product, tech and business in one person. Fewer handoffs, less friction.'],
-    ['What you get','Results','I ship. Remote-first, efficient and dependable.'],
-    ['What you get','Calm & warmth','I keep the team steady under pressure and bring people together.'],
-    ['About me','Three languages','German is my native language, my English is C1 and my Spanish B1.'],
-    ['About me','Munich → Innsbruck','I am moving from Munich to Innsbruck. I am looking for Design, Digitalization & AI roles, remote-first or hybrid around Innsbruck.'],
-    ['About me','AI lover','I build with Claude and Claude Code. Claude Academy 2026: AI Fluency, Claude Code in Action and Claude 101, all three as course completion badges.'],
-    ['About me','T-shaped all-rounder','Deep in UX and product design, broad across digitalization, AI, process and business.'],
-    ['Personal','Motorcycle','I love riding my motorcycle.'],
-    ['Personal','Travel','I love traveling, especially to Southeast Asia.'],
-    ['Personal','Live music','I love live music.'],
-    ['Personal','Positivity','I do not like negativity. In every situation there is something good.']],
+    ['What I enjoy','Structuring','Taking something messy and building a system that people actually want to use: boards, spaces, workflows, decisions.','Julia loves turning chaos into structure.'],
+    ['What I enjoy','Trying new things','New tools, new methods, new fields. I would rather build a quick test than talk about it for weeks.','Julia loves trying new tools and methods.'],
+    ['What I enjoy','Adapting to people & projects','Every team, user and project is different. I adapt the approach to fit them, not the other way round.','Julia is very good at adapting to people and projects.'],
+    ['What I enjoy','Making information intuitive','Complex topics, shown so that people get them at a glance and can decide. From decision papers to pitches.','Julia is very good at making complex things easy to grasp.'],
+    ['What you get','Speed','I get a topic quickly, I learn fast and I execute fast. No long ramp-up.','Julia is very good at getting up to speed fast.'],
+    ['What you get','Range','Design, product, tech and business in one person. Fewer handoffs, less friction.','Julia is very good at connecting design, product, tech and business.'],
+    ['What you get','Results','I ship. Remote-first, efficient and dependable.','Julia loves getting things done.'],
+    ['What you get','Calm & warmth','I keep the team steady under pressure and bring people together.','Julia is very good at keeping a team calm under pressure.'],
+    ['About me','Three languages','German is my native language, my English is C1 and my Spanish B1.','Julia speaks German, English and Spanish.'],
+    ['About me','Munich → Innsbruck','I am moving from Munich to Innsbruck. I am looking for Design, Digitalization & AI roles, remote-first or hybrid around Innsbruck.','Julia is moving from Munich to Innsbruck.'],
+    ['About me','AI lover','I build with Claude and Claude Code. Claude Academy 2026: AI Fluency, Claude Code in Action and Claude 101, all three as course completion badges.','Julia loves building with AI.'],
+    ['About me','T-shaped all-rounder','Deep in UX and product design, broad across digitalization, AI, process and business.','Julia is deep in UX and broad in everything around it.'],
+    ['Personal','Motorcycle','I love riding my motorcycle, a Yamaha naked bike.','Julia loves riding her Yamaha naked bike.'],
+    ['Personal','Travel','I love traveling, especially to Southeast Asia. My favorite country is Thailand.','Julia loves traveling. Her favorite country is Thailand.'],
+    ['Personal','Live music','I love live music, especially rock and Latin.','Julia loves live music, especially rock and Latin.'],
+    ['Personal','Optimism','I believe there is something good in every situation.','Julia finds something good in every situation.']],
   qKick:(a,b)=>'Fact or bluff · '+a+' of '+b,qSum:(r,n)=>r+' of '+n+' right. Now you know me better than most.',
   fact:'Fact',bluff:'Bluff',qRight:'Right.',qWrong:'Not quite.',qNext:'Next question',qLater:'Later',
   Q:[
@@ -395,10 +402,10 @@ en:{
     ['Her apps store your data in the cloud.',false,'Bluff. All four are free, need no account and keep your data on the device.']],
   // list
   lH:'All stations',lLead:'Open any station directly, with or without driving.',
-  lQ:(a,b)=>'Finds: open the next one ('+a+' of '+b+' found)',lQDone:'All 16 finds collected',
+  lQ:(a,b)=>'Finds: open the next one ('+a+' of '+b+' found)',lQDone:'All 16 finds collected',lQLock:(a,b)=>'Finds unlock after the path ('+a+' of '+b+' path stations)',
   // report
   rKickA:'Arrived in Innsbruck',rKickB:'Test report',
-  rH:'Test drive <span class="m">complete.</span>',rHPart:'Your test report <span class="m">so far.</span>',
+  rH:'Now you <span class="m">know Julia.</span>',rHPart:'Your test report <span class="m">so far.</span>',
   rLead:'This is what you found out. If it fits what you are hiring for, I would like to hear from you.',
   rHd:'Test report',rRev:'Rev. 2026-11',
   stats:[['15','years in IT & connected mobility'],['9','years project manager & product owner'],['6+','years UX designer'],['3','years founder']],
@@ -408,16 +415,16 @@ en:{
   rL2:(a,b)=>a+' of '+b+' finds collected',rLq:(r,a)=>'Fact or bluff: '+r+' of '+a+' right',
   rL3:a=>a?'Chaos tidied, then automated':'Chaos tidied, all by hand',
   rL4:(a,b)=>'Gloves: '+a+' missed in version A, '+b+' in version B',
-  rMail:'Write me',rSubject:'Interview: I took the test drive',
+  rMail:'Write me',rSubject:'Interview: I played your game',
   rSite:'See the full profile',rAgain:'Start again',rMore:'Keep exploring'
 },
 de:{
-  title:'Probefahrt · Julia Wimmer',
+  title:'Spiel: Lern Julia kennen · Julia Wimmer',
   tbName:'Name',tbLang:'Sprache',hSt:'Stationen',hQ:'Fundstücke',
   list:'Alle Stationen',rep:'Prüfbericht',drive:'Weiterfahren',back:'Zurück auf die Straße',unlocked:'Freigeschaltet',
   canvas:'3D-Welt. Fahre mit den Pfeiltasten oder öffne die Liste aller Stationen.',
   iKick:'Ein 3D-Spiel für Recruiter:innen',
-  iH:'Mach eine <span class="m">Probefahrt</span> mit mir.',
+  iH:'Lern <span class="m">Julia</span> kennen.',
   iLead:'Zuerst fährst du meinen Weg ab: von der Schule in Landau an der Isar über Landshut und Ingolstadt nach München. Die fünf Stationen stehen direkt an der Straße. Nach München öffnet sich die Karte: Erkunde Minispiele, weitere Stationen und 16 Fundstücke, die dir etwas über mich verraten, bis nach Innsbruck.',
   iHow:[['Tastatur','Pfeiltasten oder W A S D'],['Maus & Touch','Tippen oder halten, wohin du willst'],['Keine Zeit?','Liste öffnen und das Fahren überspringen']],
   iStart:'Losfahren',iList:'Lieber die Liste öffnen',
@@ -428,7 +435,7 @@ de:{
   toastPath:'Weg geschafft. Jetzt erkunden: 16 Fundstücke und weitere Stationen warten abseits der Straße.',
   rev:'Rev.',
   st:{
-    o:['Landau a.d. Isar','Abitur','Schule in Landau an der Isar, Niederbayern. Hier beginnt mein Weg.',''],
+    o:['2007 · Landau a.d. Isar','Abitur','Gymnasium Landau an der Isar, Abschluss 2007.','Hier beginnt mein Weg.'],
     a:['2007 – 2011 · Landshut','B.A. Betriebswirtschaft','Note 1,7, Hochschule Landshut.','Erst BWL, dann Design. Deshalb denke ich Kosten, Prozesse und Organisation mit.'],
     b:['2011 – 2012 · Ingolstadt','IT-Beraterin, WK IT','Interne Restrukturierung vorangetrieben und den strategischen Einkauf unterstützt.',''],
     c:['2012 – 2018 · Ingolstadt','Prozess- und Systemintegratorin, Audi AG','Gremien und Produktentscheidungen im markenübergreifenden Projekt Connected Car vorbereitet. Kostentransparenz und einen Portfoliomanagementprozess für die Budgetsteuerung aufgebaut.',''],
@@ -467,22 +474,22 @@ de:{
   s3CA:'Fehltipps, Version A',s3CB:'Fehltipps, Version B',
   fKick:(a,b)=>'Fundstück '+a+' von '+b,fNext:'Nächstes Fundstück',
   F:[
-    ['Was mir Spaß macht','Strukturieren','Etwas Unübersichtliches nehmen und daraus ein System bauen, das Menschen wirklich nutzen wollen: Boards, Spaces, Workflows, Entscheidungen.'],
-    ['Was mir Spaß macht','Neues ausprobieren','Neue Tools, neue Methoden, neue Themen. Ich baue lieber einen schnellen Test, als wochenlang darüber zu reden.'],
-    ['Was mir Spaß macht','Anpassen an Menschen & Projekte','Jedes Team, jede Nutzerin und jedes Projekt ist anders. Ich passe den Ansatz an sie an, nicht umgekehrt.'],
-    ['Was mir Spaß macht','Informationen intuitiv aufbereiten','Komplexe Themen so zeigen, dass man sie auf einen Blick versteht und entscheiden kann. Von Entscheidungsvorlagen bis Pitches.'],
-    ['Was du bekommst','Tempo','Ich erfasse ein Thema schnell, lerne schnell und setze schnell um. Keine lange Einarbeitung.'],
-    ['Was du bekommst','Bandbreite','Design, Produkt, Technik und Business in einer Person. Weniger Übergaben, weniger Reibung.'],
-    ['Was du bekommst','Ergebnisse','Ich liefere. Remote-first, effizient und verlässlich.'],
-    ['Was du bekommst','Ruhe & Wärme','Ich halte das Team unter Druck stabil und bringe Menschen zusammen.'],
-    ['Über mich','Drei Sprachen','Deutsch ist meine Muttersprache, mein Englisch ist C1 und mein Spanisch B1.'],
-    ['Über mich','München → Innsbruck','Ich ziehe von München nach Innsbruck. Ich suche Stellen in Design, Digitalisierung & KI, remote-first oder hybrid rund um Innsbruck.'],
-    ['Über mich','AI Lover','Ich baue mit Claude und Claude Code. Claude Academy 2026: AI Fluency, Claude Code in Action und Claude 101, alle drei als Abschluss-Badges der Kurse.'],
-    ['Über mich','T-shaped Allrounderin','Tief in UX und Product Design, breit in Digitalisierung, KI, Prozessen und Business.'],
-    ['Persönlich','Motorrad','Ich liebe es, Motorrad zu fahren.'],
-    ['Persönlich','Reisen','Ich liebe es zu reisen, besonders nach Südostasien.'],
-    ['Persönlich','Livemusik','Ich liebe Livemusik.'],
-    ['Persönlich','Positivität','Negativität mag ich nicht. In jeder Situation steckt etwas Gutes.']],
+    ['Was mir Spaß macht','Strukturieren','Etwas Unübersichtliches nehmen und daraus ein System bauen, das Menschen wirklich nutzen wollen: Boards, Spaces, Workflows, Entscheidungen.','Julia liebt es, aus Chaos Struktur zu machen.'],
+    ['Was mir Spaß macht','Neues ausprobieren','Neue Tools, neue Methoden, neue Themen. Ich baue lieber einen schnellen Test, als wochenlang darüber zu reden.','Julia liebt es, neue Tools und Methoden auszuprobieren.'],
+    ['Was mir Spaß macht','Anpassen an Menschen & Projekte','Jedes Team, jede Nutzerin und jedes Projekt ist anders. Ich passe den Ansatz an sie an, nicht umgekehrt.','Julia kann sich sehr gut auf Menschen und Projekte einstellen.'],
+    ['Was mir Spaß macht','Informationen intuitiv aufbereiten','Komplexe Themen so zeigen, dass man sie auf einen Blick versteht und entscheiden kann. Von Entscheidungsvorlagen bis Pitches.','Julia kann Komplexes sehr gut verständlich machen.'],
+    ['Was du bekommst','Tempo','Ich erfasse ein Thema schnell, lerne schnell und setze schnell um. Keine lange Einarbeitung.','Julia arbeitet sich sehr schnell in Neues ein.'],
+    ['Was du bekommst','Bandbreite','Design, Produkt, Technik und Business in einer Person. Weniger Übergaben, weniger Reibung.','Julia verbindet sehr gut Design, Produkt, Technik und Business.'],
+    ['Was du bekommst','Ergebnisse','Ich liefere. Remote-first, effizient und verlässlich.','Julia liebt es, Dinge fertigzubringen.'],
+    ['Was du bekommst','Ruhe & Wärme','Ich halte das Team unter Druck stabil und bringe Menschen zusammen.','Julia hält ein Team auch unter Druck ruhig.'],
+    ['Über mich','Drei Sprachen','Deutsch ist meine Muttersprache, mein Englisch ist C1 und mein Spanisch B1.','Julia spricht Deutsch, Englisch und Spanisch.'],
+    ['Über mich','München → Innsbruck','Ich ziehe von München nach Innsbruck. Ich suche Stellen in Design, Digitalisierung & KI, remote-first oder hybrid rund um Innsbruck.','Julia zieht von München nach Innsbruck.'],
+    ['Über mich','AI Lover','Ich baue mit Claude und Claude Code. Claude Academy 2026: AI Fluency, Claude Code in Action und Claude 101, alle drei als Abschluss-Badges der Kurse.','Julia liebt es, mit KI zu bauen.'],
+    ['Über mich','T-shaped Allrounderin','Tief in UX und Product Design, breit in Digitalisierung, KI, Prozessen und Business.','Julia ist tief in UX und breit in allem drumherum.'],
+    ['Persönlich','Motorrad','Ich liebe es, Motorrad zu fahren. Meins ist ein Yamaha Naked Bike.','Julia liebt es, ihr Yamaha Naked Bike zu fahren.'],
+    ['Persönlich','Reisen','Ich liebe es zu reisen, besonders nach Südostasien. Mein Lieblingsland ist Thailand.','Julia liebt Reisen. Ihr Lieblingsland ist Thailand.'],
+    ['Persönlich','Livemusik','Ich liebe Livemusik, vor allem Rock und Latin.','Julia liebt Livemusik, vor allem Rock und Latin.'],
+    ['Persönlich','Optimismus','Ich glaube, dass in jeder Situation etwas Gutes steckt.','Julia findet in jeder Situation etwas Gutes.']],
   qKick:(a,b)=>'Fakt oder Bluff · '+a+' von '+b,qSum:(r,n)=>r+' von '+n+' richtig. Jetzt kennst du mich besser als die meisten.',
   fact:'Fakt',bluff:'Bluff',qRight:'Richtig.',qWrong:'Nicht ganz.',qNext:'Nächste Frage',qLater:'Später',
   Q:[
@@ -499,9 +506,9 @@ de:{
     ['Sie hat die unternehmensweite Claude-Einführung bei Valtech geleitet.',false,'Bluff, und sie würde es nicht behaupten. Nach der Einführung hat sie Brand Guidelines und Designsystem in Claude überführt, mit Figma als Source of Truth.'],
     ['Ihre Apps speichern deine Daten in der Cloud.',false,'Bluff. Alle vier sind kostenlos, brauchen kein Konto und speichern die Daten nur auf dem Gerät.']],
   lH:'Alle Stationen',lLead:'Öffne jede Station direkt, mit oder ohne Fahren.',
-  lQ:(a,b)=>'Fundstücke: das nächste öffnen ('+a+' von '+b+' gefunden)',lQDone:'Alle 16 Fundstücke gesammelt',
+  lQ:(a,b)=>'Fundstücke: das nächste öffnen ('+a+' von '+b+' gefunden)',lQDone:'Alle 16 Fundstücke gesammelt',lQLock:(a,b)=>'Fundstücke gibt es nach dem Weg ('+a+' von '+b+' Wegstationen)',
   rKickA:'Angekommen in Innsbruck',rKickB:'Prüfbericht',
-  rH:'Probefahrt <span class="m">abgeschlossen.</span>',rHPart:'Dein Prüfbericht <span class="m">bis hierher.</span>',
+  rH:'Jetzt <span class="m">kennst du Julia.</span>',rHPart:'Dein Prüfbericht <span class="m">bis hierher.</span>',
   rLead:'Das hast du herausgefunden. Wenn es zu deiner Stelle passt, freue ich mich über eine Nachricht.',
   rHd:'Prüfbericht',rRev:'Rev. 2026-11',
   stats:[['15','Jahre in der IT & Connected Mobility'],['9','Jahre Project Manager & Product Owner'],['6+','Jahre UX Designerin'],['3','Jahre Gründerin']],
@@ -511,14 +518,14 @@ de:{
   rL2:(a,b)=>a+' von '+b+' Fundstücken gesammelt',rLq:(r,a)=>'Fakt oder Bluff: '+r+' von '+a+' richtig',
   rL3:a=>a?'Chaos aufgeräumt, dann automatisiert':'Chaos aufgeräumt, alles von Hand',
   rL4:(a,b)=>'Handschuhe: '+a+' Fehltipps in Version A, '+b+' in Version B',
-  rMail:'Schreib mir',rSubject:'Interview: Probefahrt gemacht',
+  rMail:'Schreib mir',rSubject:'Interview: Spiel gespielt',
   rSite:'Zum ganzen Profil',rAgain:'Neu starten',rMore:'Weiter erkunden'
 }};
 
 /* ---------- world data ---------- */
 // path stations (PATH) stand right at the road and are passed in this order, the rest is free exploration
 const ST=[
-  {id:'o',k:'A',sub:'LANDAU A.D. ISAR',x:-0.2,z:152.1,r:5},
+  {id:'o',k:'A',sub:'LANDAU/ISAR · 2007',x:-0.2,z:152.1,r:5},
   {id:'a',k:'B',sub:'LANDSHUT · 2007–11',x:-2,z:117.9,r:6},
   {id:'b',k:'C',sub:'INGOLSTADT · 2011–12',x:1.2,z:85,r:5},
   {id:'c',k:'D',sub:'INGOLSTADT · 2012–18',x:-3.2,z:49.4,r:8},
@@ -631,7 +638,7 @@ function pList(){
   const nq=nextF();
   return '<p class="kick mono m">'+nSeen()+' / '+ST.length+' · '+nFound()+' / '+NF+'</p><h2 class="big" tabindex="-1" id="h">'+esc(t('lH'))+'</h2><p class="task">'+esc(t('lLead'))+'</p>'+
     '<ul class="ls">'+ST.map(s=>'<li><button type="button" data-st="'+s.id+'"><span class="mono m">'+s.k+'</span><b>'+esc(t('st')[s.id][1])+'</b><span class="ck" aria-hidden="true">'+(S.seen[s.id]?'✓':'')+'</span></button></li>').join('')+
-    '<li><button type="button" data-a="nextf"'+(nq<0?' disabled':'')+'><span class="mono m">+</span><b>'+esc(nq<0?t('lQDone'):t('lQ')(nFound(),NF))+'</b><span class="ck" aria-hidden="true">'+(nq<0?'✓':'')+'</span></button></li></ul>'+
+    '<li><button type="button" data-a="nextf"'+(nq<0||!pathDone()?' disabled':'')+'><span class="mono m">+</span><b>'+esc(nq<0?t('lQDone'):!pathDone()?t('lQLock')(PATH.filter(id=>S.seen[id]).length,PATH.length):t('lQ')(nFound(),NF))+'</b><span class="ck" aria-hidden="true">'+(nq<0?'✓':'')+'</span></button></li></ul>'+
     '<div class="row"><button class="btn" type="button" data-a="rep">'+esc(t('rep'))+' '+ARROW+'</button>'+(W&&S.started?'<button class="btn ghost" type="button" data-a="close">'+esc(t('back'))+'</button>':W?'<button class="btn ghost" type="button" data-a="start">'+esc(t('iStart'))+'</button>':'')+'</div>';
 }
 function pReport(){
@@ -666,7 +673,7 @@ function render(focus){
   pan.innerHTML=panelHTML();pan.className='pan';
   if(focus){pan.scrollTop=0;ov.scrollTop=0;const h=$('#h');if(h)h.focus({preventScroll:true});}
 }
-function openPanel(p){if(p.t==='st'&&p.id[0]!=='p')S.seen[p.id]=true;if(p.t==='f')S.found[p.i]=true;S.panel=p;if(W)W.stop();render(true);if(W)W.sync();}
+function openPanel(p){if(p.t==='st'&&p.id[0]!=='p')S.seen[p.id]=true;if(p.t==='f')S.found[p.i]=true;S.panel=p;hideBub();if(W)W.stop();render(true);if(W)W.sync();}
 function closePanel(){
   if(!W||!S.started){S.panel={t:S.started||!W?'list':'intro'};render(true);return;}
   S.panel=null;render(false);W.sync();$('#c').focus({preventScroll:true});
@@ -674,6 +681,12 @@ function closePanel(){
   else if(pathDone()&&!S.pathToast){S.pathToast=true;toast(t('toastPath'));}
 }
 let toastT;function toast(m){const e=$('#toast');e.textContent=m;e.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>{e.hidden=true;},5200);}
+let bubT;function hideBub(){clearTimeout(bubT);$('#bub').hidden=true;}
+// a find collected while driving: no panel, just a short thought bubble above the van
+function collect(i){S.found[i]=true;shell();if(W)W.sync();$('#toast').hidden=true; // never stack toast and bubble on small screens
+  const e=$('#bub');e.hidden=true;e.innerHTML='<small class="mono">'+esc(t('fKick')(nFound(),NF))+'</small>'+esc(t('F')[i][3]);void e.offsetWidth;e.hidden=false;
+  clearTimeout(bubT);bubT=setTimeout(()=>{e.hidden=true;},5200);
+  if(allDone()&&!S.allToast){S.allToast=true;setTimeout(()=>{if(!S.panel){hideBub();toast(t('toastAll'));}},3200);}}
 function finishGame(id){S.seen[id]=true;render(false);if(W)W.sync();const u=pan.querySelector('.un');if(u){u.scrollIntoView({block:'nearest',behavior:reduce?'auto':'smooth'});}const b=pan.querySelector('[data-a="close"]');if(b)b.focus({preventScroll:true});}
 
 /* ---------- mini game logic ---------- */
@@ -719,8 +732,8 @@ pan.addEventListener('click',e=>{
   if(a==='close'){closePanel();return;}
   if(a==='list'){openPanel({t:'list'});return;}
   if(a==='rep'){openPanel({t:'rep'});return;}
-  if(a==='again'){reset();if(W){W.reset();}render(true);return;}
-  if(a==='nextf'){const i=nextF();if(i>=0)openPanel({t:'f',i});return;}
+  if(a==='again'){reset();hideBub();if(W){W.reset();}render(true);return;}
+  if(a==='nextf'){const i=nextF();if(i>=0&&pathDone())openPanel({t:'f',i});return;}
   if(a==='qnext'){S.qi++;render(false);const n=pan.querySelector('[data-f],[data-a="close"]');if(n)n.focus({preventScroll:true});return;}
   if(a==='skip'){const id=S.panel.id;if(id==='p2')S.g.skip=true;finishGame(id);return;}
   if(a==='auto'){S.c.auto=true;S.c.running=true;S.c.bad=false;S.c.msg=t('s2Running');autoRun();return;}
@@ -900,7 +913,7 @@ async function makeWorld(){
       if(d<rt&&!s.inside){s.inside=true;openPanel({t:'st',id:s.id});return;}
       if(d>rt+2.5)s.inside=false;}
     if(pathDone())for(const q of tokens){if(S.found[q.i])continue;const d=Math.hypot(car.x-q.x,car.z-q.z);
-      if(d<3.4&&!q.inside){q.inside=true;openPanel({t:'f',i:q.i});return;}
+      if(d<3.4&&!q.inside){q.inside=true;collect(q.i);return;}
       if(d>6)q.inside=false;}
     const ing=car.z<GATE.z+3&&Math.abs(car.x-GATE.x)<7;
     if(ing&&!gateIn){gateIn=true;openPanel({t:'rep',gate:true});}else if(car.z>GATE.z+9)gateIn=false;
