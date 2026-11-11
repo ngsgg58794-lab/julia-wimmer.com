@@ -476,6 +476,40 @@ h1 .lni{display:inline-block}
 @keyframes march{to{background-position:16px 0}}
 @keyframes trip{0%{left:0;opacity:0}12%{opacity:1}85%{opacity:1}100%{left:calc(100% - 8px);opacity:0}}
 @media print{.prog,.xh{display:none}.nav{position:static}.js .shb .stt,.js #contact h2{clip-path:none;transform:none}.js .shb .sth,.js .shb .sno{opacity:1}}
+/* ---- play layer: role match + seen stamps ---- */
+.rm,.wkp{display:none}
+.js .rm{display:block;max-width:60rem;margin:0 0 32px calc(5.5rem + 24px);padding:20px 22px 22px;border:1px solid var(--ink);background:var(--paper-2)}
+@media (max-width:820px){.js .rm{margin-left:0;padding:16px}}
+.rm .rq{color:var(--mag)}
+.rm h3{margin-top:8px;font-size:1.5rem;line-height:1;font-stretch:72%;font-weight:800;text-transform:uppercase}
+.rmb{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.rmb button{min-height:44px;padding:8px 16px;border:1px solid var(--ink);background:var(--paper);color:var(--ink);font:inherit;font-size:.9375rem;font-weight:700;cursor:pointer;transition:transform .2s cubic-bezier(.2,.7,.2,1),box-shadow .2s cubic-bezier(.2,.7,.2,1),background-color .2s ease,color .2s ease}
+.rmb button:hover,.rmb button[aria-pressed="true"]{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--mag)}
+.rmb button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.rmt{display:block;margin-top:18px;color:var(--grey)}
+.rmt b{color:var(--ink);font-weight:500}
+:is(#sk1,#sk2) .kc .tag{transition:opacity .3s ease,background-color .3s ease,color .3s ease,border-color .3s ease}
+[data-role] :is(#sk1,#sk2) .kc .tag:not(.hit){opacity:.28}
+:is(#sk1,#sk2) .kc .tag.hit{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+[data-role] :is(#sk1,#sk2) .krow:not(:has(.hit)) .kl{opacity:.35}
+.ph::after{content:"Seen \2713";position:absolute;z-index:3;left:16px;top:18px;padding:3px 8px;border:2px solid var(--mag);background:rgba(251,251,248,.9);color:var(--mag);font-family:var(--mono);font-size:.6875rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;line-height:1.3;opacity:0;transform:rotate(-8deg) scale(2.4);pointer-events:none}
+.ph.seen::after{opacity:1;transform:rotate(-8deg);transition:transform .4s cubic-bezier(.3,1.7,.5,1),opacity .15s ease}
+.js .wkp{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:48px}
+.wkd{display:flex;gap:5px}
+.wkd i{width:14px;height:14px;border:1px solid var(--ink);transition:background-color .3s ease,border-color .3s ease,transform .4s cubic-bezier(.3,1.7,.5,1)}
+.wkd i.on{background:var(--mag);border-color:var(--mag);transform:rotate(90deg)}
+.wkt{color:var(--grey)}
+.wka{padding:8px 14px;background:var(--mag);color:#fff;text-decoration:none;transition:background-color .15s ease}
+.wka:hover{background:var(--ink)}
+.cf{position:fixed;z-index:70;width:0;height:0;pointer-events:none}
+.cf i{position:absolute;left:-4px;top:-4px;width:8px;height:8px}
+@media (prefers-reduced-motion:no-preference){
+  :is(#sk1,#sk2) .kc .tag.hit{animation:hit .4s cubic-bezier(.3,1.7,.5,1) both;animation-delay:calc(var(--i,0)*16ms)}
+  .wka{animation:fadeup .5s ease both}
+}
+@keyframes hit{from{scale:.85}}
+@media (prefers-reduced-motion:reduce){.ph.seen::after,.wkd i,.rmb button{transition:none}}
+@media print{.rm,.wkp,.ph::after{display:none!important}}
 </style>
 <script>document.documentElement.className="js"</script>
 </head>
@@ -581,6 +615,7 @@ h1 .lni{display:inline-block}
 <button class="ph rv" type="button" id="p-04" data-dlg="dp-04" aria-haspopup="dialog"><span class="pi"><img src="img/innensicht-banner.webp" alt="" loading="lazy" style="object-position:22% 50%"></span><span class="pc"><span class="pn mono">P-04</span><span class="ttl">Innensicht, built with Claude Code</span><span class="tags"><span class="tag">AI</span><span class="tag">Builder</span><span class="tag">End-to-end</span></span></span></button>
 <button class="ph rv" type="button" id="p-05" data-dlg="dp-05" aria-haspopup="dialog"><span class="pi" style="background-color:var(--paper-2);background-image:linear-gradient(rgba(14,15,12,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(14,15,12,.07) 1px,transparent 1px);background-size:16px 16px"><svg viewBox="0 0 160 120" aria-hidden="true"><path d="M22 92C52 92 50 40 80 40s30 44 58 30" fill="none" stroke="#0E0F0C" stroke-width="2" stroke-dasharray="7 5"/><circle cx="22" cy="92" r="6" fill="#F2F3EF" stroke="#0E0F0C" stroke-width="2"/><circle cx="138" cy="70" r="7" fill="#D6006F"/><g transform="translate(66 22)"><rect width="30" height="14" fill="#0E0F0C"/><rect x="20" y="3" width="7" height="5" fill="#F2F3EF"/><circle cx="7" cy="16" r="3.5" fill="#0E0F0C"/><circle cx="23" cy="16" r="3.5" fill="#0E0F0C"/></g></svg></span><span class="pc"><span class="pn mono">P-05</span><span class="ttl">InCar Services</span><span class="tags"><span class="tag">UX Concept</span><span class="tag">In-Car</span><span class="tag">OEM</span></span></span></button>
 </div>
+<div class="wkp"><span class="wkd" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="wkt mono" role="status">0 / 5 opened</span><a class="wka mono" href="#contact" hidden>All five seen. Let&#8217;s talk &#8594;</a></div>
 </div></div></div>
 <dialog id="dp-01" class="dlg" aria-labelledby="dp-01-t"><div class="din">
 <div class="dh"><span class="pn mono">P-01</span><button class="dx" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
@@ -702,19 +737,25 @@ h1 .lni{display:inline-block}
 <section id="skills" class="sec wrap">
 <h2 class="sh"><button class="acc shb" type="button" aria-expanded="false" aria-controls="skills-body"><span class="sno">§ 05</span><span><span class="stt">Skills &amp; tools</span><span class="sth mono">by area, from product to people</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
 <div id="skills-body" class="pnl"><div class="pin"><div class="pad">
+<div class="rm rv" id="rolematch">
+<p class="rq mono">Try it</p>
+<h3>What are you hiring for?</h3>
+<div class="rmb" role="group" aria-label="Role"><button type="button" data-role="ux" aria-pressed="false">UX &amp; product design</button><button type="button" data-role="ai" aria-pressed="false">AI enablement</button><button type="button" data-role="po" aria-pressed="false">Product owner</button><button type="button" data-role="dig" aria-pressed="false">Digitalization &amp; process</button><button type="button" data-role="" aria-pressed="true">Show all</button></div>
+<span class="rmt mono" role="status">Pick a role. Matching skills and tools light up.</span>
+</div>
 <div style="border-bottom:1px solid var(--ink)">
 <div class="rv sk"><h3 style="margin:0;font:inherit"><button class="acc skb" type="button" aria-expanded="false" aria-controls="sk1"><span class="skn">04.1</span><span class="skl">Skills</span><span class="skc">40</span><span class="skp">Product design &amp; UX · AI &amp; digitalization · Process &amp; organisation …</span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h3><div id="sk1" class="pnl"><div class="pin"><div class="krows">
-<div class="krow rv"><p class="kl">Product design &amp; UX</p><div class="kc"><span class="tag">E2E Design</span><span class="tag">User research</span><span class="tag">Customer journey</span><span class="tag">Wireframes &amp; prototypes</span><span class="tag">Design Systems</span><span class="tag">Information Architecture</span><span class="tag">Accessibility (WCAG)</span><span class="tag">UX writing</span><span class="tag">HMI &amp; in-car UX</span><span class="tag">Complex enterprise &amp; tool UIs</span><span class="tag">Personalization &amp; adaptive systems</span><span class="tag">Cognitive load reduction</span><span class="tag">Usability testing</span></div></div>
-<div class="krow rv"><p class="kl">AI &amp; digitalization</p><div class="kc"><span class="tag">AI UX</span><span class="tag">AI-assisted workflows</span><span class="tag">AI-assisted development</span><span class="tag">AI team setup</span><span class="tag">AI tool evaluation</span><span class="tag">AI rollout &amp; enablement</span><span class="tag">Mobile app delivery (iOS, Android)</span></div></div>
-<div class="krow rv"><p class="kl">Process &amp; organisation</p><div class="kc"><span class="tag">Workflow definition &amp; optimization</span><span class="tag">Process design</span><span class="tag">Knowledge management</span><span class="tag">IAM (Identity &amp; Access Management)</span><span class="tag">Jira &amp; Confluence setup</span><span class="tag">Workflow automation</span></div></div>
-<div class="krow rv"><p class="kl">Product &amp; business</p><div class="kc"><span class="tag">Product Ownership</span><span class="tag">Roadmapping</span><span class="tag">Requirements analysis</span><span class="tag">Project planning &amp; scoping</span><span class="tag">Portfolio management</span><span class="tag">Agile delivery</span><span class="tag">Developer handover</span><span class="tag">Stakeholder management</span><span class="tag">Steering committees &amp; decision papers</span><span class="tag">Budget &amp; cost control</span><span class="tag">Presales &amp; proposals</span><span class="tag">Pitching</span></div></div>
-<div class="krow rv"><p class="kl">People &amp; communication</p><div class="kc"><span class="tag">Mediation (university course)</span><span class="tag">Team enablement &amp; knowledge sharing</span></div></div>
+<div class="krow rv"><p class="kl">Product design &amp; UX</p><div class="kc"><span class="tag" data-r="ux">E2E Design</span><span class="tag" data-r="ux po">User research</span><span class="tag" data-r="ux po">Customer journey</span><span class="tag" data-r="ux">Wireframes &amp; prototypes</span><span class="tag" data-r="ux">Design Systems</span><span class="tag" data-r="ux dig">Information Architecture</span><span class="tag" data-r="ux">Accessibility (WCAG)</span><span class="tag" data-r="ux">UX writing</span><span class="tag" data-r="ux">HMI &amp; in-car UX</span><span class="tag" data-r="ux dig">Complex enterprise &amp; tool UIs</span><span class="tag" data-r="ux ai">Personalization &amp; adaptive systems</span><span class="tag" data-r="ux">Cognitive load reduction</span><span class="tag" data-r="ux">Usability testing</span></div></div>
+<div class="krow rv"><p class="kl">AI &amp; digitalization</p><div class="kc"><span class="tag" data-r="ux ai">AI UX</span><span class="tag" data-r="ai dig">AI-assisted workflows</span><span class="tag" data-r="ai">AI-assisted development</span><span class="tag" data-r="ai dig">AI team setup</span><span class="tag" data-r="ai dig">AI tool evaluation</span><span class="tag" data-r="ai dig">AI rollout &amp; enablement</span><span class="tag" data-r="po">Mobile app delivery (iOS, Android)</span></div></div>
+<div class="krow rv"><p class="kl">Process &amp; organisation</p><div class="kc"><span class="tag" data-r="dig">Workflow definition &amp; optimization</span><span class="tag" data-r="dig">Process design</span><span class="tag" data-r="dig ai">Knowledge management</span><span class="tag" data-r="dig">IAM (Identity &amp; Access Management)</span><span class="tag" data-r="dig po">Jira &amp; Confluence setup</span><span class="tag" data-r="dig ai">Workflow automation</span></div></div>
+<div class="krow rv"><p class="kl">Product &amp; business</p><div class="kc"><span class="tag" data-r="po">Product Ownership</span><span class="tag" data-r="po">Roadmapping</span><span class="tag" data-r="po dig">Requirements analysis</span><span class="tag" data-r="po dig">Project planning &amp; scoping</span><span class="tag" data-r="po">Portfolio management</span><span class="tag" data-r="po">Agile delivery</span><span class="tag" data-r="po ux">Developer handover</span><span class="tag" data-r="po dig">Stakeholder management</span><span class="tag" data-r="po">Steering committees &amp; decision papers</span><span class="tag" data-r="po">Budget &amp; cost control</span><span class="tag" data-r="po">Presales &amp; proposals</span><span class="tag" data-r="po ux">Pitching</span></div></div>
+<div class="krow rv"><p class="kl">People &amp; communication</p><div class="kc"><span class="tag" data-r="po dig">Mediation (university course)</span><span class="tag" data-r="ai dig">Team enablement &amp; knowledge sharing</span></div></div>
 </div></div></div></div>
 <div class="rv sk"><h3 style="margin:0;font:inherit"><button class="acc skb" type="button" aria-expanded="false" aria-controls="sk2"><span class="skn">04.2</span><span class="skl">Tools</span><span class="skc">25</span><span class="skp">Design &amp; prototyping · Product &amp; collaboration · AI …</span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h3><div id="sk2" class="pnl"><div class="pin"><div class="krows">
-<div class="krow rv"><p class="kl">Design &amp; prototyping</p><div class="kc"><span class="tag">Figma</span><span class="tag">Figma Make</span><span class="tag">ProtoPie</span><span class="tag">Canva</span><span class="tag">Adobe Creative Cloud</span></div></div>
-<div class="krow rv"><p class="kl">Product &amp; collaboration</p><div class="kc"><span class="tag">Miro</span><span class="tag">Jira</span><span class="tag">Confluence</span><span class="tag">Notion</span><span class="tag">Microsoft 365</span></div></div>
-<div class="krow rv"><p class="kl">AI</p><div class="kc"><span class="tag">Claude</span><span class="tag">Claude Code</span><span class="tag">ChatGPT</span><span class="tag">Lovable</span><span class="tag">Figma AI</span><span class="tag">Microsoft Copilot</span><span class="tag">Atlassian Rovo</span></div></div>
-<div class="krow rv"><p class="kl">Build &amp; ship</p><div class="kc"><span class="tag">GitHub</span><span class="tag">Visual Studio Code</span><span class="tag">Xcode</span><span class="tag">Android Studio</span><span class="tag">Expo</span><span class="tag">Tolgee</span><span class="tag">App Store Connect</span><span class="tag">Google Play Console</span></div></div>
+<div class="krow rv"><p class="kl">Design &amp; prototyping</p><div class="kc"><span class="tag" data-r="ux">Figma</span><span class="tag" data-r="ux ai">Figma Make</span><span class="tag" data-r="ux">ProtoPie</span><span class="tag" data-r="ux">Canva</span><span class="tag" data-r="ux">Adobe Creative Cloud</span></div></div>
+<div class="krow rv"><p class="kl">Product &amp; collaboration</p><div class="kc"><span class="tag" data-r="ux po dig">Miro</span><span class="tag" data-r="po dig">Jira</span><span class="tag" data-r="po dig">Confluence</span><span class="tag" data-r="po dig">Notion</span><span class="tag" data-r="dig">Microsoft 365</span></div></div>
+<div class="krow rv"><p class="kl">AI</p><div class="kc"><span class="tag" data-r="ai">Claude</span><span class="tag" data-r="ai">Claude Code</span><span class="tag" data-r="ai">ChatGPT</span><span class="tag" data-r="ai">Lovable</span><span class="tag" data-r="ai ux">Figma AI</span><span class="tag" data-r="ai dig">Microsoft Copilot</span><span class="tag" data-r="ai dig">Atlassian Rovo</span></div></div>
+<div class="krow rv"><p class="kl">Build &amp; ship</p><div class="kc"><span class="tag" data-r="ai">GitHub</span><span class="tag" data-r="ai">Visual Studio Code</span><span class="tag" data-r="po">Xcode</span><span class="tag" data-r="po">Android Studio</span><span class="tag" data-r="ai">Expo</span><span class="tag" data-r="po">Tolgee</span><span class="tag" data-r="po">App Store Connect</span><span class="tag" data-r="po">Google Play Console</span></div></div>
 </div></div></div></div>
 <div class="rv sk"><h3 style="margin:0;font:inherit"><button class="acc skb" type="button" aria-expanded="false" aria-controls="sk3"><span class="skn">04.3</span><span class="skl">Languages</span><span class="skc">3</span><span class="skp">German · English · Spanish</span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h3><div id="sk3" class="pnl"><div class="pin"><div class="krows">
 <div class="krow rv"><p class="kl">German</p><div class="kc"><span class="tag">Native</span></div></div>
@@ -857,6 +898,34 @@ if(!reduce&&window.matchMedia&&matchMedia('(hover:hover) and (pointer:fine)').ma
   document.querySelectorAll('.ph').forEach(function(c){
     c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--ry',(((e.clientX-r.left)/r.width-.5)*10).toFixed(2)+'deg');c.style.setProperty('--rx',((.5-(e.clientY-r.top)/r.height)*10).toFixed(2)+'deg');c.classList.add('tilt');});
     c.addEventListener('pointerleave',function(){c.classList.remove('tilt');});});
+}
+var phs=Array.prototype.slice.call(document.querySelectorAll('.ph[data-dlg]')),wkp=document.querySelector('.wkp'),seen={};
+function burst(el){if(reduce||!el||!el.animate)return;var r=el.getBoundingClientRect(),box=document.createElement('div');box.className='cf';box.style.left=(r.left+r.width/2)+'px';box.style.top=(r.top+r.height/3)+'px';document.body.appendChild(box);
+  for(var i=0;i<32;i++){var c=document.createElement('i');c.style.background=i%3?'#D6006F':'#0E0F0C';box.appendChild(c);var a=Math.random()*Math.PI*2,d=70+Math.random()*170;
+    c.animate([{transform:'translate(0,0) rotate(0deg)',opacity:1},{transform:'translate('+(Math.cos(a)*d).toFixed(0)+'px,'+(Math.sin(a)*d-70).toFixed(0)+'px) rotate('+(Math.random()*540-270).toFixed(0)+'deg)',opacity:0}],{duration:900+Math.random()*600,easing:'cubic-bezier(.1,.7,.3,1)',fill:'forwards'});}
+  setTimeout(function(){box.remove();},1700);}
+if(wkp&&phs.length){
+  var dots=wkp.querySelectorAll('.wkd i'),wkt=wkp.querySelector('.wkt'),wka=wkp.querySelector('.wka');
+  try{(sessionStorage.getItem('jw-seen')||'').split(',').forEach(function(id){if(id)seen[id]=1;});}catch(e){}
+  function seenSync(){var n=0;phs.forEach(function(c){var on=!!seen[c.getAttribute('data-dlg')];c.classList.toggle('seen',on);if(on)n++;});
+    Array.prototype.forEach.call(dots,function(d,i){d.classList.toggle('on',i<n);});
+    wkt.textContent=n+' / '+phs.length+' opened';wka.hidden=n<phs.length;return n;}
+  document.querySelectorAll('.dlg').forEach(function(d){d.addEventListener('close',function(){if(seen[d.id])return;seen[d.id]=1;
+    try{sessionStorage.setItem('jw-seen',Object.keys(seen).join(','));}catch(e){}
+    if(seenSync()===phs.length)burst(document.querySelector('.ph[data-dlg="'+d.id+'"]'));});});
+  seenSync();
+}
+var rm=document.getElementById('rolematch');
+if(rm){
+  var skS=document.getElementById('skills'),rb=rm.querySelectorAll('button'),rtx=rm.querySelector('.rmt'),rdef=rtx.textContent;
+  var grp=[['sk1','skills'],['sk2','tools']].map(function(g){return {n:g[1],t:Array.prototype.slice.call(document.querySelectorAll('#'+g[0]+' .kc .tag'))};});
+  function pick(b){var role=b.getAttribute('data-role'),parts=[],i=0;
+    Array.prototype.forEach.call(rb,function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+    if(role)skS.setAttribute('data-role',role);else skS.removeAttribute('data-role');
+    grp.forEach(function(g){var h=0;g.t.forEach(function(t){t.classList.remove('hit');if(role&&(' '+(t.getAttribute('data-r')||'')+' ').indexOf(' '+role+' ')>=0){h++;t.style.setProperty('--i',i++);void t.offsetWidth;t.classList.add('hit');}});
+      parts.push('<b>'+h+'</b> '+g.n);});
+    if(role)rtx.innerHTML=parts.join(' · ')+' for this role';else rtx.textContent=rdef;}
+  Array.prototype.forEach.call(rb,function(b){b.addEventListener('click',function(){pick(b.getAttribute('aria-pressed')==='true'?rb[rb.length-1]:b);});});
 }
 })();
 </script>
