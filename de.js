@@ -41,7 +41,6 @@ window.JW_DE={
 "Description": "Beschreibung",
 "2026 – now": "2026 – heute",
 "Personal projects: building with AI, for fun": "Private Projekte: Bauen mit KI, aus Spaß",
-"My private playground, not a company. I build apps for the fun of it and train my AI skills by trying out new things. Innensicht is one of them.": "Meine private Spielwiese, keine Firma. Ich baue Apps aus Freude, probiere Neues aus und trainiere so meine KI-Skills. Innensicht ist eine davon.",
 "2018 – now": "2018 – heute",
 "Connected mobility for OEMs and startups: in-car services, expert tools, mobility services. My responsibilities include client projects, pitches and presales, design systems, workflow definitions, IAM and AI team setup.": "Connected Mobility für OEMs und Startups: In-Car-Services, Expert Tools, Mobility Services. Zu meinen Aufgaben gehören Kundenprojekte, Pitches und Presales, Design Systems, Workflow-Definitionen, IAM und KI-Team-Setup.",
 "I co-founded and led the startup, next to my job at Valtech. We released a native iOS and Android social media app. I owned the product from concept and design to release.": "Ich habe das Startup mitgegründet und geleitet, neben meinem Job bei Valtech. Wir haben eine native Social-Media-App für iOS und Android veröffentlicht. Ich habe das Produkt verantwortet, von Konzept und Design bis zum Release.",
@@ -374,5 +373,7 @@ window.JW_DE={
 "Small steps": "Kleine Schritte",
 "Work happens in small commits and pull requests, so every step can be checked and undone.": "Gearbeitet wird in kleinen Commits und Pull Requests, so lässt sich jeder Schritt prüfen und zurücknehmen.",
 "Ship": "Veröffentlichen",
-"Store listing, screenshots, privacy pages and review are part of the job. An app counts when it is live.": "Store-Eintrag, Screenshots, Datenschutzseiten und Prüfung gehören dazu. Eine App zählt, wenn sie live ist."
+"Store listing, screenshots, privacy pages and review are part of the job. An app counts when it is live.": "Store-Eintrag, Screenshots, Datenschutzseiten und Prüfung gehören dazu. Eine App zählt, wenn sie live ist.",
+"My private playground, not a company. I build apps for the fun of it to train my AI skills. Four are live in the app stores, all built with Claude Code.": "Meine private Spielwiese, keine Firma. Ich baue Apps aus Freude und trainiere so meine KI-Skills. Vier sind live in den App-Stores, alle mit Claude Code gebaut.",
+"See the apps ↓": "Zu den Apps ↓"
 };
