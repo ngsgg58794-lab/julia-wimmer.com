@@ -156,7 +156,6 @@ window.JW_DE={
 "The central decision was to reject a \"feature-based app\" model in favor of a behavior-driven assistant that adapts to mindset rather than trip type. Rather than building separate flows for spontaneous and family-style travel, which would have fragmented the product into two apps, we designed one adaptive system that dynamically adjusts three variables: planning depth, information density and proactivity. The guiding principle: only show what's needed for this journey style, and handle everything else invisibly in the background.": "Die zentrale Entscheidung: kein „Feature-basiertes App“-Modell, sondern ein verhaltensgesteuerter Assistent, der sich an die Haltung anpasst statt an die Art der Reise. Statt getrennte Abläufe für spontanes Reisen und Familienreisen zu bauen, was das Produkt in zwei Apps zerlegt hätte, haben wir ein adaptives System gestaltet, das drei Variablen dynamisch anpasst: Planungstiefe, Informationsdichte und Proaktivität. Das Leitprinzip: nur zeigen, was dieser Reisestil braucht, und alles andere unsichtbar im Hintergrund erledigen.",
 "The concept was presented to OEM stakeholders as part of the pitch and was well received. It validated that a single adaptive system could credibly replace multiple rigid, mode-specific interfaces. As with most pre-sales concept work, I don't have visibility into whether it progressed further internally. What it did produce was a reusable model (personas, adaptive UX logic and a pitch narrative) for framing personalization as cognitive-load reduction in future connected-mobility work.": "Das Konzept wurde im Pitch den OEM-Stakeholdern vorgestellt und kam gut an. Es hat gezeigt, dass ein einziges adaptives System mehrere starre, modusspezifische Oberflächen glaubwürdig ersetzen kann. Wie bei den meisten Presales-Konzepten weiß ich nicht, ob es intern weiterverfolgt wurde. Entstanden ist ein wiederverwendbares Modell (Personas, adaptive UX-Logik und Pitch-Erzählung), um Personalisierung in künftigen Connected-Mobility-Projekten als Senkung kognitiver Last zu rahmen.",
 "The most important insight was that good personalization isn't about adding options, it's about removing decisions. Spontaneous travelers need trust and invisibility of the system; structured travelers need control and clarity. The real UX challenge was balancing both without splitting the product into separate apps. It reinforced mental load reduction as a primary UX metric in mobility contexts, where users are already cognitively occupied.": "Die wichtigste Erkenntnis: Gute Personalisierung heißt nicht, Optionen hinzuzufügen, sondern Entscheidungen abzunehmen. Spontane Reisende brauchen Vertrauen und ein unsichtbares System, strukturierte Reisende brauchen Kontrolle und Klarheit. Die eigentliche UX-Aufgabe war, beides auszubalancieren, ohne das Produkt in getrennte Apps zu teilen. Das hat die Senkung mentaler Last als zentrale UX-Kennzahl im Mobilitätskontext bestätigt, wo Nutzer:innen kognitiv ohnehin gefordert sind.",
-"the work that gives me energy": "die Arbeit, die mir Energie gibt",
 "Structuring": "Strukturieren",
 "Taking something messy and building a system that people actually want to use: boards, spaces, workflows, decisions.": "Etwas Unübersichtliches nehmen und daraus ein System bauen, das Menschen wirklich nutzen wollen: Boards, Spaces, Workflows, Entscheidungen.",
 "P-01 Team workflows": "P-01 Team-Workflows",
@@ -167,7 +166,6 @@ window.JW_DE={
 "Making information intuitive": "Informationen intuitiv aufbereiten",
 "Complex topics, shown so that people get them at a glance and can decide. From decision papers to pitches.": "Komplexe Themen so zeigen, dass man sie auf einen Blick versteht und entscheiden kann. Von Entscheidungsvorlagen bis Pitches.",
 "Ref. this page": "Ref. diese Seite",
-"if I join your team": "wenn ich in dein Team komme",
 "Speed": "Tempo",
 "I get a topic quickly, I learn fast and I execute fast. No long ramp-up.": "Ich erfasse ein Thema schnell, lerne schnell und setze schnell um. Keine lange Einarbeitung.",
 "Proof": "Beleg",
@@ -346,5 +344,7 @@ window.JW_DE={
 "four projects and four apps, tap one for the full story": "vier Projekte und vier Apps, tippe eines an für die ganze Geschichte",
 "All seen. Let’s talk →": "Alles gesehen. Lass uns reden →",
 "Apps built with Claude Code": "Apps, gebaut mit Claude Code",
-"four private apps, live in the stores, four tech stacks": "vier private Apps, live in den Stores, vier Tech-Stacks"
+"four private apps, live in the stores, four tech stacks": "vier private Apps, live in den Stores, vier Tech-Stacks",
+"the work that gives me energy · hover or tap for details": "die Arbeit, die mir Energie gibt · Details per Hover oder Tippen",
+"if I join your team · hover or tap for details": "wenn ich in dein Team komme · Details per Hover oder Tippen"
 };
