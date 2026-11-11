@@ -86,8 +86,14 @@ h1 sup{display:inline-block;vertical-align:top;margin:.12em 0 0 .1em;font-family
 .look .mono{color:var(--mag)}
 .cta{display:inline-flex;align-items:center;gap:14px;min-height:52px;padding:0 22px;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:700;transition:background-color .15s ease}
 .cta:hover{background:var(--mag)}
-.cta.play{background:var(--paper);color:var(--ink);border:1px solid var(--ink)}
+.cta.play{background:var(--ink);color:var(--paper);border:1px solid var(--ink)}
 .cta.play:hover{background:var(--mag);border-color:var(--mag);color:#fff}
+.gband{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:18px 40px;padding-top:30px;padding-bottom:30px;background:var(--ink);color:var(--paper)}
+.gband p{margin:0}
+.gband .gk{margin-bottom:8px;font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:#FF4FA3}
+.gband .gt{font-weight:800;font-size:clamp(1.3rem,2.4vw,1.9rem);line-height:1.15}
+.gband .gt span{display:block;font-weight:500;font-size:1rem;line-height:1.4;margin-top:6px;opacity:.85}
+.gband .cta:hover{background:var(--paper);color:var(--ink)}
 .cta svg{transition:transform .2s ease}
 .cta:hover svg{transform:translateX(4px)}
 
@@ -607,6 +613,7 @@ h1 .lni{display:inline-block}
 <a href="#enjoy"><span>03</span>What I enjoy</a>
 <a href="#what-you-get"><span>04</span>What you get</a>
 <a href="#skills"><span>05</span>Skills</a>
+<a href="play/" data-play><span aria-hidden="true">&#9654;</span>Game</a>
 <a href="#contact" class="navcta"><span>06</span>Contact</a>
 </nav>
 <b class="lg" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button><button type="button" data-lang="de" aria-pressed="false" lang="de">DE</button></b>
@@ -627,7 +634,7 @@ h1 .lni{display:inline-block}
 <p class="lead">Along the way I found what I enjoy most: structuring complex workflows and information, and turning them into something anyone can understand. Today I&#8217;m a <span style="white-space:nowrap">T-shaped</span> all-rounder: deep in UX and product design, broad across digitalization, AI, process and business.</p>
 <div class="hrow"><p class="look"><span class="mono">Status</span><span>Looking for Design, Digitalization &amp; AI roles. Remote-first, or hybrid around Innsbruck.</span></p>
 <a class="cta" href="#contact">Write me <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
-<a class="cta play" href="play/">Game: Get to know Julia <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></div>
+<a class="cta play" data-play href="play/">Game: Get to know Julia <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></div>
 </div>
 
 <figure class="fig">
@@ -823,6 +830,11 @@ h1 .lni{display:inline-block}
 <div class="apb"><h4 class="mono">How I built it</h4><p>Uses the native speech recognition instead of the web API, because it is more reliable. Sorting works with keywords in German and English, without cloud AI. Builds run automatically through Codemagic. Renamed before launch after a trademark check.</p></div>
 </div></dialog>
 </section>
+
+<aside class="gband wrap" aria-label="Game">
+<div><p class="gk mono">3D game</p><p class="gt">Rather play than read?<span>Drive along my path and collect 30 facts about me.</span></p></div>
+<a class="cta" data-play href="play/">Game: Get to know Julia <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+</aside>
 
 <section id="enjoy" class="sec wrap">
 <h2 class="sh"><button class="acc shb fx" type="button" aria-expanded="false" aria-controls="enjoy-body"><span class="sno">§ 03</span><span><span class="stt">What I enjoy</span><span class="sth mono">the work that gives me energy · hover or tap for details</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
@@ -1055,7 +1067,7 @@ function setLang(l){
   LANG=l;document.documentElement.lang=l;document.title=l==='de'?T('@title'):ttl;
   Array.prototype.forEach.call(lgb,function(b){b.setAttribute('aria-pressed',b.getAttribute('data-lang')===l?'true':'false');});
   relang.forEach(function(f){f();});
-  var pl=document.querySelector('.play');if(pl)pl.setAttribute('href',l==='de'?'play/?lang=de':'play/');
+  Array.prototype.forEach.call(document.querySelectorAll('[data-play]'),function(pl){pl.setAttribute('href',l==='de'?'play/?lang=de':'play/');});
   if(l!=='de')return;
   var d=window.JW_DE,w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null),n;
   while((n=w.nextNode())){var v=n.nodeValue,k=v.replace(/\s+/g,' ').trim();if(!k||d[k]==null||/^(SCRIPT|STYLE)$/.test(n.parentNode.nodeName))continue;
