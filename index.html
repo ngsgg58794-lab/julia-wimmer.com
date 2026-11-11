@@ -66,7 +66,7 @@ a{color:inherit}
   .tb>*:nth-child(n+3){border-top:1px solid var(--ink)}
   .tb>*:nth-child(2){padding-right:var(--gut)}
   .tb b{font-size:.8125rem}
-  h1{font-size:12.4vw}
+  h1{font-size:11.4vw}
 }
 
 /* hero */
@@ -617,15 +617,14 @@ h1 .lni{display:inline-block}
 <section id="top" class="hero wrap">
 <div class="xh" aria-hidden="true"><i></i><i></i><span class="mono"></span></div>
 <div>
-<p class="hi mono m">Hi, I'm Julia <span>· UX &amp; product designer · Digitalization &amp; AI</span></p>
-<h1><span class="ln"><span class="lni" style="--l:0"><span class="v">I bring user,<sup aria-hidden="true">01</sup></span></span></span> <span class="ln"><span class="lni" style="--l:1"><span class="v">business<sup aria-hidden="true">02</sup></span> <span class="v">and tech<sup aria-hidden="true">03</sup></span></span></span> <span class="ln"><span class="lni" style="--l:2">views <span class="m">together.</span></span></span></h1>
+<h1><span class="ln"><span class="lni" style="--l:0">Hi, I&#8217;m Julia!</span></span> <span class="ln"><span class="lni" style="--l:1"><span class="v">Project manager,<sup aria-hidden="true">01</sup></span></span></span> <span class="ln"><span class="lni" style="--l:2"><span class="v">designer<sup aria-hidden="true">02</sup></span> and</span></span> <span class="ln"><span class="lni" style="--l:3"><span class="v m">AI lover.<sup aria-hidden="true">03</sup></span></span></span></h1>
 <div class="stats" role="list">
 <div role="listitem"><b>15</b><span class="mono">years in IT &amp; connected mobility</span></div>
 <div role="listitem"><b>9</b><span class="mono">years project manager &amp; product owner</span></div>
 <div role="listitem"><b>6+</b><span class="mono">years UX designer</span></div>
 <div role="listitem"><b>3</b><span class="mono">years founder</span></div>
 </div>
-<p class="lead">From project manager to designer and AI lover. Along the way I found what I enjoy most: structuring complex workflows and information, and turning them into something anyone can understand. Today I&#8217;m a <span style="white-space:nowrap">T-shaped</span> all-rounder: deep in UX and product design, broad across digitalization, AI, process and business.</p>
+<p class="lead">Along the way I found what I enjoy most: structuring complex workflows and information, and turning them into something anyone can understand. Today I&#8217;m a <span style="white-space:nowrap">T-shaped</span> all-rounder: deep in UX and product design, broad across digitalization, AI, process and business.</p>
 <div class="hrow"><p class="look"><span class="mono">Status</span><span>Looking for Design, Digitalization &amp; AI roles. Remote-first, or hybrid around Innsbruck.</span></p>
 <a class="cta" href="#contact">Write me <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
 <a class="cta play" href="play/">Test drive · 3 min game <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></div>
@@ -1064,7 +1063,7 @@ function setLang(l){
   ['aria-label','alt'].forEach(function(a){Array.prototype.forEach.call(document.querySelectorAll('['+a+']'),function(e){var v=e.getAttribute(a);if(d[v]!=null){trs.push({n:e,a:a,v:v});e.setAttribute(a,d[v]);}});});
 }
 function wantLang(l){if(l===LANG)return;if(l!=='de'||window.JW_DE){setLang(l);return;}
-  var sc=document.createElement('script');sc.src='de.js?v=7';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
+  var sc=document.createElement('script');sc.src='de.js?v=8';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
 Array.prototype.forEach.call(lgb,function(b){b.addEventListener('click',function(){wantLang(b.getAttribute('data-lang'));});});
 if(/[?&]lang=de\b/.test(location.search))wantLang('de');
 })();
