@@ -626,7 +626,7 @@ h1 .lni{display:inline-block}
 <div id="path-body" class="pnl open"><div class="pin"><div class="pad">
 <div class="rev indent">
 <div class="hd mono" aria-hidden="true"><span>Rev.</span><span>Date</span><span>Description</span></div>
-<div class="row rv"><span class="r">F</span><p class="d">2026 – now</p><div><h3>Personal projects: building with AI, for fun</h3><p class="t">My private playground, not a company. I build apps for the fun of it and train my AI skills by trying out new things. Innensicht is one of them.</p></div></div>
+<div class="row rv"><span class="r">F</span><p class="d">2026 – now</p><div><h3>Personal projects: building with AI, for fun</h3><p class="t">My private playground, not a company. I build apps for the fun of it to train my AI skills. Four are live in the app stores, all built with Claude Code. <a href="#apps">See the apps &#8595;</a></p></div></div>
 <div class="row rv"><span class="r">E</span><p class="d">2018 – now</p><div><h3>Senior Consultant: Product Owner &#8594; UX Designer, Valtech Mobility</h3><p class="t">Connected mobility for OEMs and startups: in-car services, expert tools, mobility services. My responsibilities include client projects, pitches and presales, design systems, workflow definitions, IAM and AI team setup.</p></div></div>
 <div class="row rv"><span class="r">D</span><p class="d">2023 – 2026</p><div><h3>Co-Founder &amp; CEO, 2gether App</h3><p class="t">I co-founded and led the startup, next to my job at Valtech. We released a native iOS and Android social media app. I owned the product from concept and design to release.</p></div></div>
 <div class="row rv"><span class="r">C</span><p class="d">2012 – 2018</p><div><h3>Process &amp; Systems Integrator, Audi AG</h3><p class="t">Prepared steering committees and product decisions for the cross-brand connected-car project. Built cost transparency and a portfolio management process for budget control.</p></div></div>
@@ -1031,7 +1031,7 @@ function setLang(l){
   ['aria-label','alt'].forEach(function(a){Array.prototype.forEach.call(document.querySelectorAll('['+a+']'),function(e){var v=e.getAttribute(a);if(d[v]!=null){trs.push({n:e,a:a,v:v});e.setAttribute(a,d[v]);}});});
 }
 function wantLang(l){if(l===LANG)return;if(l!=='de'||window.JW_DE){setLang(l);return;}
-  var sc=document.createElement('script');sc.src='de.js?v=2';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
+  var sc=document.createElement('script');sc.src='de.js?v=3';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
 Array.prototype.forEach.call(lgb,function(b){b.addEventListener('click',function(){wantLang(b.getAttribute('data-lang'));});});
 if(/[?&]lang=de\b/.test(location.search))wantLang('de');
 })();
