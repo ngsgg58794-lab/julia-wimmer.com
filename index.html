@@ -322,6 +322,7 @@ h1 .m{color:var(--mag)}
 .gr{margin-top:auto;padding-top:18px;color:var(--mag);text-decoration:none;font-size:.6875rem}
 .gr span{color:var(--ink);text-decoration:underline;text-decoration-color:var(--mag);text-underline-offset:4px}
 .gr:hover span{color:var(--mag)}
+@media (max-width:1199px){.gy{gap:14px}}
 @media (max-width:1000px){.gy{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.gy{grid-template-columns:1fr;gap:14px}.gb{padding:18px 20px 20px}.gn{font-size:2.1rem}}
 @media (prefers-reduced-motion:reduce){.gb,.gn{transition:none}}
@@ -375,20 +376,25 @@ h1 .m{color:var(--mag)}
 .jc .ddi p{margin-top:14px}.jc .ref{margin-top:0;padding-top:14px}
 .gb .ddi p{margin-top:12px}.gb .gr{margin-top:0;padding-top:12px}
 @media (min-width:1200px) and (hover:hover){
-  .jc{height:13.5rem}.gb{height:7.25rem}
+  .jc{height:13.5rem}
+  .gy{grid-template-columns:repeat(6,minmax(0,1fr));gap:0}
+  .gb{height:13.5rem;flex-direction:column;flex-wrap:nowrap;align-items:flex-start;gap:0;padding:26px 22px 22px;margin-right:-1px}
+  .gb h3{flex:0 0 auto;margin-top:20px;font-size:clamp(1.15rem,1.5vw,1.4rem)}
+  .gb:last-child{margin-right:0}
   .js .gb.rv.in:hover,.gb:hover{transform:none;box-shadow:none}
   .jc::after,.gb::after{transition:opacity .2s ease}
   .jc:hover::after,.jc:focus-within::after,.gb:hover::after,.gb:focus-within::after{opacity:0}
   .dd{position:absolute;inset:-1px;z-index:1;display:block;padding:20px 24px;background:var(--mag);color:#fff;overflow:auto;opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity .22s ease,transform .3s cubic-bezier(.2,.7,.2,1)}
-  .gb .dd{padding:13px 20px;inset:-1px}
+  .gb .dd{padding:20px 20px 18px;inset:-1px}
   .jc:hover>.dd,.jc:focus-within>.dd,.jc.open>.dd,.gb:hover>.dd,.gb:focus-within>.dd,.gb.open>.dd{opacity:1;transform:none;pointer-events:auto}
   .ddi{overflow:visible;height:100%}
   .ddt{display:block;font-family:var(--mono);font-size:.6875rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;opacity:.85}
   .jc .ddi p{margin-top:10px;color:#fff;font-size:.9375rem;line-height:1.5}
-  .gb .ddi p{margin-top:4px;color:#fff;font-size:.875rem;line-height:1.4}
+  .gb .ddi p{margin-top:10px;color:#fff;font-size:.875rem;line-height:1.45}
   .jc .ref,.jc a.ref:hover{margin-top:auto;color:#fff}
-  .gb .gr{margin-top:auto;padding-top:4px;color:#fff}.gb .gr span,.gb .gr:hover span{color:#fff;text-decoration-color:#fff}
+  .gb .gr{margin-top:auto;padding-top:8px;color:#fff;line-height:1.5}.gb .gr span,.gb .gr:hover span{color:#fff;text-decoration-color:#fff}
 }
+@media (min-width:1200px) and (max-width:1399px) and (hover:hover){.gb .ddi p{font-size:.8125rem}.gb .dd{padding:18px 16px 16px}}
 @media (max-width:600px){.jc{flex-direction:row;flex-wrap:wrap;align-items:center;gap:0 16px;padding:18px 20px}.jc .k{flex:1 0 100%}.jm{margin-top:12px;transform:scale(.75);transform-origin:left center;margin-right:-14px}.jc h3{margin-top:12px;flex:1 1 0}.jc .dd{flex:1 0 100%}}
 @media (prefers-reduced-motion:reduce){.dd{transition:none}}
 /* floating CTA */
@@ -814,7 +820,7 @@ h1 .lni{display:inline-block}
 <section id="what-you-get" class="sec wrap" aria-label="What you get">
 <h2 class="sh"><button class="acc shb fx" type="button" aria-expanded="false" aria-controls="what-you-get-body"><span class="sno">§ 04</span><span><span class="stt">What you get</span><span class="sth mono">if I join your team · hover or tap for details</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
 <div id="what-you-get-body" class="pnl"><div class="pin"><div class="pad">
-<div class="gy indent">
+<div class="gy">
 <div class="gb rv"><span class="gn" aria-hidden="true">01</span><h3>Speed</h3><div class="dd"><div class="ddi"><b class="ddt">Speed</b><p>I get a topic quickly, I learn fast and I execute fast. No long ramp-up.</p><a class="gr mono" href="#a-01">Proof <span>Innensicht: first version in one afternoon</span> &#8595;</a></div></div></div>
 <div class="gb rv"><span class="gn" aria-hidden="true">02</span><h3>Structure &amp; overview</h3><div class="dd"><div class="ddi"><b class="ddt">Structure &amp; overview</b><p>I turn complexity into clear plans and keep the big picture in view.</p><a class="gr mono" href="#p-01">Proof <span>One Jira &amp; Confluence setup for a whole team</span> &#8593;</a></div></div></div>
 <div class="gb rv"><span class="gn" aria-hidden="true">03</span><h3>Range</h3><div class="dd"><div class="ddi"><b class="ddt">Range</b><p>Design, product, tech and business in one person. Fewer handoffs, less friction.</p><a class="gr mono" href="#path">Proof <span>Business degree, Audi, product owner, designer, founder</span> &#8593;</a></div></div></div>
