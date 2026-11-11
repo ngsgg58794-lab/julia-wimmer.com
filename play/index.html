@@ -286,7 +286,7 @@ body{display:block;overflow:hidden;overscroll-behavior:none}
 <header class="hud">
 <div class="tb">
 <a href="../" id="home"><small data-t="tbName">Name</small><b>Julia Wimmer</b></a>
-<div><small data-t="hSt">Stations</small><b id="hs">0 / 10</b></div>
+<div><small data-t="hSt">Stations</small><b id="hs">0 / 7</b></div>
 <div><small data-t="hQ">Fact or bluff</small><b id="hb">0 / 12</b></div>
 <div><small data-t="tbLang">Language</small><b class="lg" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button><button type="button" data-lang="de" aria-pressed="false" lang="de">DE</button></b></div>
 </div>
@@ -312,19 +312,19 @@ const $=s=>document.querySelector(s);
 const TX={
 en:{
   title:'Game: Get to know Julia · Julia Wimmer',
-  tbName:'Name',tbLang:'Language',hSt:'Stations',hQ:'Finds',
+  tbName:'Name',tbLang:'Language',hSt:'Stations',hQ:'Boxes',
   list:'All stations',rep:'Test report',drive:'Drive on',back:'Back to the road',unlocked:'Unlocked',
   canvas:'3D world. Drive with the arrow keys or open the list of all stations.',
   iKick:'A 3D game for recruiters',
   iH:'Get to know <span class="m">Julia.</span>',
-  iLead:'First you drive through my path: from school in Landau an der Isar via Landshut and Ingolstadt to Munich. The five stations stand right at the road. After Munich the map opens up: explore mini games, more stations and 16 finds that tell you something about me, all the way to Innsbruck.',
+  iLead:'First you drive through my path: from school in Landau an der Isar via Landshut and Ingolstadt to Munich. The five stations stand right at the road. After Munich the map opens up: 30 boxes are scattered all the way to Innsbruck. Drive into one and a thought bubble tells you something about me.',
   iHow:[['Keyboard','Arrow keys or W A S D'],['Mouse & touch','Tap or hold where you want to go'],['No time?','Open the list and skip the driving']],
   iStart:'Start driving',iList:'Open the list instead',
   iNo3d:'3D is not available in this browser. You can open all stations from the list.',
   hint:'Arrow keys / WASD, or tap where you want to go',
   nxAll:'INN · test report',
   toastAll:'Everything found. Drive to INN for your test report.',
-  toastPath:'Path complete. Now explore: 16 finds and more stations are waiting off the road.',
+  toastPath:'Path complete. Now explore: 30 boxes are waiting off the road.',
   rev:'Rev.',
   st:{
     o:['2007 · Landau a.d. Isar','Abitur','Gymnasium Landau an der Isar, class of 2007.','My path starts here.'],
@@ -332,42 +332,19 @@ en:{
     b:['2011 – 2012 · Ingolstadt','IT Consultant, WK IT','Drove internal restructuring and supported strategic purchasing.',''],
     c:['2012 – 2018 · Ingolstadt','Process & Systems Integrator, Audi AG','Prepared steering committees and product decisions for the cross-brand connected-car project. Built cost transparency and a portfolio management process for budget control.',''],
     d:['2018 – now · Munich','Senior Consultant: Product Owner → UX Designer, Valtech Mobility','Connected mobility for OEMs and startups: in-car services, expert tools, mobility services. My responsibilities include client projects, pitches and presales, design systems, workflow definitions, IAM and AI team setup.','Product Owner for 2 years, then UX Designer for 6+.'],
-    p1:['Mini game · P-01','Tidy the chaos','',''],
-    p2:['Mini game · P-02','Tap with gloves on','',''],
-    q:['Optional · just for fun','Fact or bluff?','Twelve statements about me. Some are true, some are not.',''],
     e:['2023 – 2026','Co-Founder & CEO, 2gether App','I co-founded and led the startup, next to my job at Valtech. We released a native iOS and Android social media app. I owned the product from concept and design to release.',''],
     f:['2026 – now','Personal projects: building with AI, for fun','My private playground, not a company. I build apps for the fun of it to train my AI skills. Four are live in the app stores, all built with Claude Code.','']
   },
+  sb:{o:'Julia finishes school with the Abitur at Gymnasium Landau an der Isar.',
+    a:'Julia studies Business Administration in Landshut. B.A., grade 1.7.',
+    b:'Julia starts her career as an IT consultant at WK IT in Ingolstadt.',
+    c:'Julia spends six years at Audi in Ingolstadt, on connected-car projects.',
+    d:'Julia joins Valtech Mobility in Munich: first Product Owner, then UX Designer.',
+    e:'Julia co-founds the 2gether app and leads it as CEO, next to her job.',
+    f:'Julia builds apps with AI for fun. Four are live in the app stores.'},
   apps:[['Innensicht','Self-reflection with 37 inner-parts cards and a three-stage emotion wheel.'],['stimmig','Find the exact word for a feeling: 6 base feelings, 36 nuances, 72 words.'],['KlarWurf','A calm decision helper: flip a coin, ask the pendulum or draw a card.'],['Calmdrop','Empty your head by voice: speak your tasks and the app sorts them into categories.']],
-  lnk:{o:['Full path on the site','#path'],a:['Full path on the site','#path'],b:['Full path on the site','#path'],c:['Full path on the site','#path'],d:['Selected work','#work'],e:['Case P-03: 2gether','#work'],f:['The four apps','#apps'],p1:['Case P-01: Team workflows & AI rollout','#work'],p2:['Case P-02: Expert Tools & Mobility Services','#work']},
-  skipGame:'Skip the game',
-  // chaos
-  s2T:'A team board without structure. Sort each ticket into the right area.',
-  s2Tk:(a,b)=>'Ticket '+a+' of '+b,
-  s2Cols:['Client projects','Pitches','Training'],
-  s2Tix:[['Prototype for the user test',0],['Slides for the new-client pitch',1],['Figma workshop for new colleagues',2],['Hand over specs to the developers',0],['Collect case studies for the pitch deck',1],['Onboarding plan for the working student',2],['Review of the customer journey',0],['Accessibility basics session',2]],
-  s2Bad:'Wrong area. Try another one.',s2Good:'Sorted.',
-  s2AutoP:'You have seen the pattern. I would not do this by hand a fourth time.',
-  s2AutoB:'Automate the rest',s2Running:'Automation is running …',
-  s2Note:'Example tickets, invented.',
-  s2UH:'Structuring is what I enjoy most',
-  s2U:'Taking something messy and building a system that people actually use. At Valtech I restructured the UX design team’s Jira board and Confluence space with workflows, automations, templates and permissions. For one of my projects the whole company submitted requests as tickets, and the subtasks were created automatically.',
-  s2ResA:n=>'Your result: '+n+' sorted by hand, then automated. Same call I would make.',
-  s2ResM:'Your result: all 8 sorted by hand. Thorough. I would have automated it after the third.',
-  // gloves
-  s3T:'You are a workshop technician with work gloves. Your tap lands somewhere inside the pink circle, not exactly where you aim.',
-  s3Tap:'Tap',s3VA:'Version A',s3VB:'Version B',
-  s3A:['Diag','Log','Scan','Info','Menu','Help','List','Note','Back','Done','Edit','Next'],
-  s3Targets:['Done','Help','Next'],s3Step:'Step 3 of 8',
-  s3Miss:'Missed. Try again.',s3Hit:'Got it.',s3Give:'Three misses. Moving on, that is the point.',
-  s3MidP:m=>'Version A: '+m+' missed tap'+(m===1?'':'s')+'. Now the same task after a redesign.',
-  s3MidB:'Try version B',
-  s3Note:'Demo, simplified. No client material.',
-  s3UH:'Design for real conditions, not for the screenshot',
-  s3U:'For a truck manufacturer’s workshop tool I designed the technician layer: one repair step at a time, large touch targets, high contrast, usable with gloves. Fleet managers got their own overview on the same data. Lower-frequency features were cut on purpose.',
-  s3CA:'missed taps, version A',s3CB:'missed taps, version B',
-  // fact or bluff
-  fKick:(a,b)=>'Find '+a+' of '+b,fNext:'Next find',
+  lnk:{o:['Full path on the site','#path'],a:['Full path on the site','#path'],b:['Full path on the site','#path'],c:['Full path on the site','#path'],d:['Selected work','#work'],e:['Case P-03: 2gether','#work'],f:['The four apps','#apps']},
+  fKick:(a,b)=>'Box '+a+' of '+b,fNext:'Next box',
   F:[
     ['What I enjoy','Structuring','Taking something messy and building a system that people actually want to use: boards, spaces, workflows, decisions.','Julia loves turning chaos into structure.'],
     ['What I enjoy','Trying new things','New tools, new methods, new fields. I would rather build a quick test than talk about it for weeks.','Julia loves trying new tools and methods.'],
@@ -384,25 +361,24 @@ en:{
     ['Personal','Motorcycle','I love riding my motorcycle, a Yamaha naked bike.','Julia loves riding her Yamaha naked bike.'],
     ['Personal','Travel','I love traveling, especially to Southeast Asia. My favorite country is Thailand.','Julia loves traveling. Her favorite country is Thailand.'],
     ['Personal','Live music','I love live music, especially rock and Latin.','Julia loves live music, especially rock and Latin.'],
-    ['Personal','Optimism','I believe there is something good in every situation.','Julia finds something good in every situation.']],
-  qKick:(a,b)=>'Fact or bluff · '+a+' of '+b,qSum:(r,n)=>r+' of '+n+' right. Now you know me better than most.',
-  fact:'Fact',bluff:'Bluff',qRight:'Right.',qWrong:'Not quite.',qNext:'Next question',qLater:'Later',
-  Q:[
-    ['Julia started her career as a designer.',false,'Bluff. She started as an IT consultant, then spent six years at Audi. Design came after that.'],
-    ['She has four apps live in the app stores, all built with Claude Code.',true,'Fact. Innensicht, stimmig, KlarWurf and Calmdrop. Private projects, built for fun: she sets the product and design direction, Claude Code writes the code.'],
-    ['She speaks two languages.',false,'Bluff. Three: German (native), English (C1) and Spanish (B1).'],
-    ['For the workshop tool she designed every feature the client could think of.',false,'Bluff. She deliberately cut lower-frequency features that would have slowed down the repair flow.'],
-    ['She holds three Claude Academy certificates from Anthropic.',true,'Fact. AI Fluency, Claude Code in Action and Claude 101, all 2026. They are course completion badges.'],
-    ['She is only looking for jobs in Munich.',false,'Bluff. Remote-first, or hybrid around Innsbruck. She is moving from Munich to Innsbruck.'],
-    ['She spent six years at Audi on connected-car projects.',true,'Fact. As Process & Systems Integrator she prepared steering committees and product decisions and built a portfolio management process for budget control.'],
-    ['She was a Product Owner before she became a UX designer.',true,'Fact. Two years as Product Owner at Valtech Mobility, then more than six as UX Designer.'],
-    ['She quit her job to found her startup.',false,'Bluff. She co-founded and led 2gether next to her job at Valtech, from 2023 to 2026.'],
-    ['She holds a certificate in automotive human-machine interaction.',true,'Fact. Certified Professional in Automotive Human-Machine Interaction, London School of Business and Administration, 2026.'],
-    ['She led the company-wide Claude rollout at Valtech.',false,'Bluff, and she would not claim it. After the rollout she brought the brand guidelines and the design system into Claude, with Figma as the source of truth.'],
-    ['Her apps store your data in the cloud.',false,'Bluff. All four are free, need no account and keep your data on the device.']],
+    ['Personal','Optimism','I believe there is something good in every situation.','Julia finds something good in every situation.'],
+    ['Career','Started in IT','','Julia started as an IT consultant, not as a designer.'],
+    ['Projects','Four apps','','Julia has four apps live in the app stores, all built with Claude Code.'],
+    ['AI','Claude Academy','','Julia has three Claude Academy badges: AI Fluency, Claude Code in Action and Claude 101.'],
+    ['How I work','Less is more','','Julia is very good at cutting features nobody needs.'],
+    ['Career','Six years at Audi','','Julia spent six years at Audi on connected-car projects.'],
+    ['Career','Product Owner first','','Julia was Product Owner before she became a UX designer.'],
+    ['Projects','Founder','','Julia co-founded a startup next to her job.'],
+    ['Career','Automotive HMI','','Julia is certified in Automotive Human-Machine Interaction.'],
+    ['AI','Design system in Claude','','Julia moved brand guidelines and a design system into Claude.'],
+    ['Projects','Privacy first','','Julia builds apps that keep your data on your device.'],
+    ['How I work','Automation','','Julia likes to automate what she has done three times by hand.'],
+    ['How I work','Jira & Confluence','','Julia rebuilt the Jira board and Confluence space of her UX team.'],
+    ['How I work','Real conditions','','Julia designs for real conditions, like tapping with work gloves on.'],
+    ['Career','15 years','','Julia has 15 years of experience in IT and connected mobility.']],
   // list
   lH:'All stations',lLead:'Open any station directly, with or without driving.',
-  lQ:(a,b)=>'Finds: open the next one ('+a+' of '+b+' found)',lQDone:'All 16 finds collected',lQLock:(a,b)=>'Finds unlock after the path ('+a+' of '+b+' path stations)',
+  lQ:(a,b)=>'Boxes: open the next one ('+a+' of '+b+' collected)',lQDone:'All 30 boxes collected',lQLock:(a,b)=>'Boxes unlock after the path ('+a+' of '+b+' path stations)',
   // report
   rKickA:'Arrived in Innsbruck',rKickB:'Test report',
   rH:'Now you <span class="m">know Julia.</span>',rHPart:'Your test report <span class="m">so far.</span>',
@@ -412,27 +388,25 @@ en:{
   rFacts:[['Role','UX & product designer · Digitalization & AI'],['Experience','15 years in IT & connected mobility'],['Now','Senior Consultant, Valtech Mobility'],['Looking for','Design, Digitalization & AI roles'],['Where','Remote-first, or hybrid around Innsbruck'],['Languages','German native · English C1 · Spanish B1']],
   rLog:'Your drive',
   rL1:(a,b)=>a+' of '+b+' stations visited',
-  rL2:(a,b)=>a+' of '+b+' finds collected',rLq:(r,a)=>'Fact or bluff: '+r+' of '+a+' right',
-  rL3:a=>a?'Chaos tidied, then automated':'Chaos tidied, all by hand',
-  rL4:(a,b)=>'Gloves: '+a+' missed in version A, '+b+' in version B',
+  rL2:(a,b)=>a+' of '+b+' boxes collected',
   rMail:'Write me',rSubject:'Interview: I played your game',
   rSite:'See the full profile',rAgain:'Start again',rMore:'Keep exploring'
 },
 de:{
   title:'Spiel: Lern Julia kennen · Julia Wimmer',
-  tbName:'Name',tbLang:'Sprache',hSt:'Stationen',hQ:'Fundstücke',
+  tbName:'Name',tbLang:'Sprache',hSt:'Stationen',hQ:'Kisten',
   list:'Alle Stationen',rep:'Prüfbericht',drive:'Weiterfahren',back:'Zurück auf die Straße',unlocked:'Freigeschaltet',
   canvas:'3D-Welt. Fahre mit den Pfeiltasten oder öffne die Liste aller Stationen.',
   iKick:'Ein 3D-Spiel für Recruiter:innen',
   iH:'Lern <span class="m">Julia</span> kennen.',
-  iLead:'Zuerst fährst du meinen Weg ab: von der Schule in Landau an der Isar über Landshut und Ingolstadt nach München. Die fünf Stationen stehen direkt an der Straße. Nach München öffnet sich die Karte: Erkunde Minispiele, weitere Stationen und 16 Fundstücke, die dir etwas über mich verraten, bis nach Innsbruck.',
+  iLead:'Zuerst fährst du meinen Weg ab: von der Schule in Landau an der Isar über Landshut und Ingolstadt nach München. Die fünf Stationen stehen direkt an der Straße. Nach München öffnet sich die Karte: 30 Kisten liegen verstreut bis nach Innsbruck. Fahr hinein und eine Gedankenwolke verrät dir etwas über mich.',
   iHow:[['Tastatur','Pfeiltasten oder W A S D'],['Maus & Touch','Tippen oder halten, wohin du willst'],['Keine Zeit?','Liste öffnen und das Fahren überspringen']],
   iStart:'Losfahren',iList:'Lieber die Liste öffnen',
   iNo3d:'3D ist in diesem Browser nicht verfügbar. Du kannst alle Stationen über die Liste öffnen.',
   hint:'Pfeiltasten / WASD, oder tippen, wohin du willst',
   nxAll:'INN · Prüfbericht',
   toastAll:'Alles gefunden. Fahr nach INN für deinen Prüfbericht.',
-  toastPath:'Weg geschafft. Jetzt erkunden: 16 Fundstücke und weitere Stationen warten abseits der Straße.',
+  toastPath:'Weg geschafft. Jetzt erkunden: 30 Kisten warten abseits der Straße.',
   rev:'Rev.',
   st:{
     o:['2007 · Landau a.d. Isar','Abitur','Gymnasium Landau an der Isar, Abschluss 2007.','Hier beginnt mein Weg.'],
@@ -440,39 +414,19 @@ de:{
     b:['2011 – 2012 · Ingolstadt','IT-Beraterin, WK IT','Interne Restrukturierung vorangetrieben und den strategischen Einkauf unterstützt.',''],
     c:['2012 – 2018 · Ingolstadt','Prozess- und Systemintegratorin, Audi AG','Gremien und Produktentscheidungen im markenübergreifenden Projekt Connected Car vorbereitet. Kostentransparenz und einen Portfoliomanagementprozess für die Budgetsteuerung aufgebaut.',''],
     d:['2018 – heute · München','Senior Consultant: Product Owner → UX Designerin, Valtech Mobility','Connected Mobility für OEMs und Startups: In-Car-Services, Expert Tools, Mobility Services. Zu meinen Aufgaben gehören Kundenprojekte, Pitches und Presales, Design Systems, Workflow-Definitionen, IAM und KI-Team-Setup.','2 Jahre Product Owner, dann 6+ Jahre UX Designerin.'],
-    p1:['Minispiel · P-01','Räum das Chaos auf','',''],
-    p2:['Minispiel · P-02','Tippe mit Handschuhen','',''],
-    q:['Freiwillig · nur zum Spaß','Fakt oder Bluff?','Zwölf Aussagen über mich. Manche stimmen, manche nicht.',''],
     e:['2023 – 2026','Mitgründerin & CEO, 2gether App','Ich habe das Startup mitgegründet und geleitet, neben meinem Job bei Valtech. Wir haben eine native Social-Media-App für iOS und Android veröffentlicht. Ich habe das Produkt verantwortet, von Konzept und Design bis zum Release.',''],
     f:['2026 – heute','Private Projekte: Bauen mit KI, aus Spaß','Meine private Spielwiese, keine Firma. Ich baue Apps aus Freude und trainiere so meine KI-Skills. Vier sind live in den App-Stores, alle mit Claude Code gebaut.','']
   },
+  sb:{o:'Julia macht ihr Abitur am Gymnasium Landau an der Isar.',
+    a:'Julia studiert Betriebswirtschaft in Landshut. B.A., Note 1,7.',
+    b:'Julia startet als IT-Beraterin bei WK IT in Ingolstadt.',
+    c:'Julia arbeitet sechs Jahre bei Audi in Ingolstadt an Connected-Car-Projekten.',
+    d:'Julia kommt zu Valtech Mobility nach München: erst Product Owner, dann UX Designerin.',
+    e:'Julia gründet die 2gether App mit und führt sie als CEO, neben ihrem Job.',
+    f:'Julia baut zum Spaß Apps mit KI. Vier sind live in den App-Stores.'},
   apps:[['Innensicht','Selbstreflexion mit 37 Karten zu inneren Anteilen und einem dreistufigen Emotionsrad.'],['stimmig','Das genaue Wort für ein Gefühl finden: 6 Grundgefühle, 36 Nuancen, 72 Worte.'],['KlarWurf','Eine ruhige Entscheidungshilfe: Münze werfen, Pendel befragen oder eine Karte ziehen.'],['Calmdrop','Den Kopf per Stimme leeren: Aufgaben einsprechen, die App sortiert sie in Kategorien.']],
-  lnk:{o:['Ganzer Weg auf der Website','#path'],a:['Ganzer Weg auf der Website','#path'],b:['Ganzer Weg auf der Website','#path'],c:['Ganzer Weg auf der Website','#path'],d:['Ausgewählte Projekte','#work'],e:['Case P-03: 2gether','#work'],f:['Die vier Apps','#apps'],p1:['Case P-01: Team workflows & AI rollout','#work'],p2:['Case P-02: Expert Tools & Mobility Services','#work']},
-  skipGame:'Spiel überspringen',
-  s2T:'Ein Team-Board ohne Struktur. Sortiere jedes Ticket in den richtigen Bereich.',
-  s2Tk:(a,b)=>'Ticket '+a+' von '+b,
-  s2Cols:['Kunden­projekte','Pitches','Training'],
-  s2Tix:[['Prototyp für den Nutzertest',0],['Folien für den Neukunden-Pitch',1],['Figma-Workshop für neue Kolleg:innen',2],['Specs an die Entwicklung übergeben',0],['Fallstudien für das Pitch-Deck sammeln',1],['Onboarding-Plan für den Werkstudenten',2],['Review der Customer Journey',0],['Session zu Accessibility-Grundlagen',2]],
-  s2Bad:'Falscher Bereich. Probier einen anderen.',s2Good:'Einsortiert.',
-  s2AutoP:'Das Muster kennst du jetzt. Ein viertes Mal würde ich das nicht von Hand machen.',
-  s2AutoB:'Den Rest automatisieren',s2Running:'Automatisierung läuft …',
-  s2Note:'Beispiel-Tickets, erfunden.',
-  s2UH:'Strukturieren macht mir am meisten Spaß',
-  s2U:'Aus etwas Unübersichtlichem ein System machen, das Menschen wirklich nutzen. Bei Valtech habe ich Jira-Board und Confluence-Space des UX-Design-Teams neu strukturiert, mit Workflows, Automatisierungen, Vorlagen und Rechten. Für eines meiner Projekte hat die ganze Firma Anfragen als Tickets eingestellt, die Subtasks entstanden automatisch.',
-  s2ResA:n=>'Dein Ergebnis: '+n+' von Hand sortiert, dann automatisiert. So hätte ich es auch gemacht.',
-  s2ResM:'Dein Ergebnis: alle 8 von Hand sortiert. Gründlich. Ich hätte nach dem dritten automatisiert.',
-  s3T:'Du bist Werkstatt-Techniker:in mit Arbeitshandschuhen. Dein Tipp landet irgendwo im pinken Kreis, nicht genau dort, wo du zielst.',
-  s3Tap:'Tippe auf',s3VA:'Version A',s3VB:'Version B',
-  s3A:['Diag','Log','Scan','Info','Menu','Help','List','Note','Back','Done','Edit','Next'],
-  s3Targets:['Done','Help','Next'],s3Step:'Schritt 3 von 8',
-  s3Miss:'Daneben. Noch einmal.',s3Hit:'Getroffen.',s3Give:'Drei Fehlversuche. Weiter, genau darum geht es.',
-  s3MidP:m=>'Version A: '+m+(m===1?' Fehltipp':' Fehltipps')+'. Jetzt dieselbe Aufgabe nach dem Redesign.',
-  s3MidB:'Version B testen',
-  s3Note:'Demo, vereinfacht. Kein Kundenmaterial.',
-  s3UH:'Gestalten für echte Bedingungen, nicht für den Screenshot',
-  s3U:'Für das Werkstatt-Tool eines Lkw-Herstellers habe ich die Ebene für Techniker:innen gestaltet: ein Reparaturschritt nach dem anderen, große Touch-Ziele, hoher Kontrast, bedienbar mit Handschuhen. Flottenmanager:innen bekamen einen eigenen Überblick auf denselben Daten. Selten genutzte Funktionen wurden bewusst gestrichen.',
-  s3CA:'Fehltipps, Version A',s3CB:'Fehltipps, Version B',
-  fKick:(a,b)=>'Fundstück '+a+' von '+b,fNext:'Nächstes Fundstück',
+  lnk:{o:['Ganzer Weg auf der Website','#path'],a:['Ganzer Weg auf der Website','#path'],b:['Ganzer Weg auf der Website','#path'],c:['Ganzer Weg auf der Website','#path'],d:['Ausgewählte Projekte','#work'],e:['Case P-03: 2gether','#work'],f:['Die vier Apps','#apps']},
+  fKick:(a,b)=>'Kiste '+a+' von '+b,fNext:'Nächste Kiste',
   F:[
     ['Was mir Spaß macht','Strukturieren','Etwas Unübersichtliches nehmen und daraus ein System bauen, das Menschen wirklich nutzen wollen: Boards, Spaces, Workflows, Entscheidungen.','Julia liebt es, aus Chaos Struktur zu machen.'],
     ['Was mir Spaß macht','Neues ausprobieren','Neue Tools, neue Methoden, neue Themen. Ich baue lieber einen schnellen Test, als wochenlang darüber zu reden.','Julia liebt es, neue Tools und Methoden auszuprobieren.'],
@@ -489,24 +443,23 @@ de:{
     ['Persönlich','Motorrad','Ich liebe es, Motorrad zu fahren. Meins ist ein Yamaha Naked Bike.','Julia liebt es, ihr Yamaha Naked Bike zu fahren.'],
     ['Persönlich','Reisen','Ich liebe es zu reisen, besonders nach Südostasien. Mein Lieblingsland ist Thailand.','Julia liebt Reisen. Ihr Lieblingsland ist Thailand.'],
     ['Persönlich','Livemusik','Ich liebe Livemusik, vor allem Rock und Latin.','Julia liebt Livemusik, vor allem Rock und Latin.'],
-    ['Persönlich','Optimismus','Ich glaube, dass in jeder Situation etwas Gutes steckt.','Julia findet in jeder Situation etwas Gutes.']],
-  qKick:(a,b)=>'Fakt oder Bluff · '+a+' von '+b,qSum:(r,n)=>r+' von '+n+' richtig. Jetzt kennst du mich besser als die meisten.',
-  fact:'Fakt',bluff:'Bluff',qRight:'Richtig.',qWrong:'Nicht ganz.',qNext:'Nächste Frage',qLater:'Später',
-  Q:[
-    ['Julia hat ihre Karriere als Designerin begonnen.',false,'Bluff. Sie hat als IT-Beraterin angefangen und war dann sechs Jahre bei Audi. Design kam danach.'],
-    ['Sie hat vier Apps live in den App-Stores, alle mit Claude Code gebaut.',true,'Fakt. Innensicht, stimmig, KlarWurf und Calmdrop. Private Projekte, aus Spaß gebaut: Sie gibt Produkt und Design vor, Claude Code schreibt den Code.'],
-    ['Sie spricht zwei Sprachen.',false,'Bluff. Drei: Deutsch (Muttersprache), Englisch (C1) und Spanisch (B1).'],
-    ['Für das Werkstatt-Tool hat sie jede Funktion gestaltet, die dem Kunden einfiel.',false,'Bluff. Sie hat selten genutzte Funktionen bewusst gestrichen, weil sie den Reparaturablauf gebremst hätten.'],
-    ['Sie hat drei Claude-Academy-Zertifikate von Anthropic.',true,'Fakt. AI Fluency, Claude Code in Action und Claude 101, alle 2026. Es sind Abschluss-Badges der Kurse.'],
-    ['Sie sucht nur Stellen in München.',false,'Bluff. Remote-first oder hybrid rund um Innsbruck. Sie zieht von München nach Innsbruck.'],
-    ['Sie war sechs Jahre bei Audi in Connected-Car-Projekten.',true,'Fakt. Als Prozess- und Systemintegratorin hat sie Gremien und Produktentscheidungen vorbereitet und einen Portfoliomanagementprozess für die Budgetsteuerung aufgebaut.'],
-    ['Sie war Product Owner, bevor sie UX Designerin wurde.',true,'Fakt. Zwei Jahre Product Owner bei Valtech Mobility, danach mehr als sechs Jahre UX Designerin.'],
-    ['Sie hat für ihr Startup den Job gekündigt.',false,'Bluff. Sie hat 2gether neben ihrem Job bei Valtech mitgegründet und geleitet, von 2023 bis 2026.'],
-    ['Sie hat ein Zertifikat in Automotive Human-Machine Interaction.',true,'Fakt. Certified Professional in Automotive Human-Machine Interaction, London School of Business and Administration, 2026.'],
-    ['Sie hat die unternehmensweite Claude-Einführung bei Valtech geleitet.',false,'Bluff, und sie würde es nicht behaupten. Nach der Einführung hat sie Brand Guidelines und Designsystem in Claude überführt, mit Figma als Source of Truth.'],
-    ['Ihre Apps speichern deine Daten in der Cloud.',false,'Bluff. Alle vier sind kostenlos, brauchen kein Konto und speichern die Daten nur auf dem Gerät.']],
+    ['Persönlich','Optimismus','Ich glaube, dass in jeder Situation etwas Gutes steckt.','Julia findet in jeder Situation etwas Gutes.'],
+    ['Werdegang','Start in der IT','','Julia hat als IT-Beraterin angefangen, nicht als Designerin.'],
+    ['Projekte','Vier Apps','','Julia hat vier Apps live in den App-Stores, alle mit Claude Code gebaut.'],
+    ['KI','Claude Academy','','Julia hat drei Claude-Academy-Badges: AI Fluency, Claude Code in Action und Claude 101.'],
+    ['Arbeitsweise','Weniger ist mehr','','Julia streicht sehr gut Funktionen, die niemand braucht.'],
+    ['Werdegang','Sechs Jahre Audi','','Julia war sechs Jahre bei Audi in Connected-Car-Projekten.'],
+    ['Werdegang','Erst Product Owner','','Julia war Product Owner, bevor sie UX Designerin wurde.'],
+    ['Projekte','Gründerin','','Julia hat neben ihrem Job ein Startup mitgegründet.'],
+    ['Werdegang','Automotive HMI','','Julia ist zertifiziert in Automotive Human-Machine Interaction.'],
+    ['KI','Designsystem in Claude','','Julia hat Brand Guidelines und ein Designsystem in Claude überführt.'],
+    ['Projekte','Daten bleiben bei dir','','Julia baut Apps, die deine Daten nur auf dem Gerät speichern.'],
+    ['Arbeitsweise','Automatisieren','','Julia automatisiert gern, was sie dreimal von Hand gemacht hat.'],
+    ['Arbeitsweise','Jira & Confluence','','Julia hat Jira-Board und Confluence-Space ihres UX-Teams neu aufgebaut.'],
+    ['Arbeitsweise','Echte Bedingungen','','Julia gestaltet für echte Bedingungen, zum Beispiel Tippen mit Arbeitshandschuhen.'],
+    ['Werdegang','15 Jahre','','Julia hat 15 Jahre Erfahrung in IT und Connected Mobility.']],
   lH:'Alle Stationen',lLead:'Öffne jede Station direkt, mit oder ohne Fahren.',
-  lQ:(a,b)=>'Fundstücke: das nächste öffnen ('+a+' von '+b+' gefunden)',lQDone:'Alle 16 Fundstücke gesammelt',lQLock:(a,b)=>'Fundstücke gibt es nach dem Weg ('+a+' von '+b+' Wegstationen)',
+  lQ:(a,b)=>'Kisten: die nächste öffnen ('+a+' von '+b+' gesammelt)',lQDone:'Alle 30 Kisten gesammelt',lQLock:(a,b)=>'Kisten gibt es nach dem Weg ('+a+' von '+b+' Wegstationen)',
   rKickA:'Angekommen in Innsbruck',rKickB:'Prüfbericht',
   rH:'Jetzt <span class="m">kennst du Julia.</span>',rHPart:'Dein Prüfbericht <span class="m">bis hierher.</span>',
   rLead:'Das hast du herausgefunden. Wenn es zu deiner Stelle passt, freue ich mich über eine Nachricht.',
@@ -515,9 +468,7 @@ de:{
   rFacts:[['Rolle','UX- & Product-Designerin · Digitalisierung & KI'],['Erfahrung','15 Jahre in der IT & Connected Mobility'],['Aktuell','Senior Consultant, Valtech Mobility'],['Ich suche','Stellen in Design, Digitalisierung & KI'],['Wo','Remote-first oder hybrid rund um Innsbruck'],['Sprachen','Deutsch Muttersprache · Englisch C1 · Spanisch B1']],
   rLog:'Deine Fahrt',
   rL1:(a,b)=>a+' von '+b+' Stationen besucht',
-  rL2:(a,b)=>a+' von '+b+' Fundstücken gesammelt',rLq:(r,a)=>'Fakt oder Bluff: '+r+' von '+a+' richtig',
-  rL3:a=>a?'Chaos aufgeräumt, dann automatisiert':'Chaos aufgeräumt, alles von Hand',
-  rL4:(a,b)=>'Handschuhe: '+a+' Fehltipps in Version A, '+b+' in Version B',
+  rL2:(a,b)=>a+' von '+b+' Kisten gesammelt',
   rMail:'Schreib mir',rSubject:'Interview: Spiel gespielt',
   rSite:'Zum ganzen Profil',rAgain:'Neu starten',rMore:'Weiter erkunden'
 }};
@@ -530,19 +481,16 @@ const ST=[
   {id:'b',k:'C',sub:'INGOLSTADT · 2011–12',x:1.2,z:85,r:5},
   {id:'c',k:'D',sub:'INGOLSTADT · 2012–18',x:-3.2,z:49.4,r:8},
   {id:'d',k:'E',sub:'MUNICH · 2018–NOW',x:17,z:14.9,r:6},
-  {id:'p1',k:'P-01',sub:'MINI GAME',x:-40,z:-16,r:5},
-  {id:'p2',k:'P-02',sub:'MINI GAME',x:-38,z:-50,r:7},
-  {id:'q',k:'?',sub:'FACT OR BLUFF',x:38,z:-26,r:5},
-  {id:'e',k:'F',sub:'2023–2026',x:28,z:-60,r:5},
-  {id:'f',k:'G',sub:'2026–NOW',x:-8,z:-90,r:5}
+  {id:'e',k:'F',sub:'2GETHER · 2023–26',x:28,z:-60,r:5},
+  {id:'f',k:'G',sub:'APPS · 2026–NOW',x:-8,z:-90,r:5}
 ];
 const PATH=['o','a','b','c','d'];
 const ROAD=[[0,186],[0,176],[-10,150],[9,118],[-9,84],[10,50],[2,6],[-22,-18],[-20,-46],[6,-64],[14,-86],[0,-106],[0,-120]];
 const START={x:0,z:176,h:Math.PI},GATE={x:0,z:-108},ZMAX=185;
-// finds: all in the exploration zone south of Munich, the last four are the personal ones
-const FP=[[46,-7],[-26,-8],[-62,-25],[6,-29],[-35,-32],[47,-45],[17,-47],[-62,-63],[57,-68],[-29,-68],[34,-77],[-45,-97],[8,-8],[-12,-40],[4,-76],[56,-97]];
-const NQ=12,NF=16;
-const GLYPH=['#','*','~','i','>>','<>','OK','♥','ES','INN','AI','T','RPM','SEA','♪',':)'];
+// boxes: all in the exploration zone south of Munich, spread evenly
+const FP=[[9,-8],[-40,-98],[55,-92],[-60,-28],[13,-60],[-28,-57],[-29,-5],[49,-54],[43,-5],[21,-92],[-59,-60],[-8,-33],[27,-33],[-9,-75],[-34,-31],[-54,-4],[37,-74],[-42,-76],[-48,-44],[-24,-87],[10,-41],[55,-72],[27,-15],[-7,-15],[39,-98],[7,-81],[-42,-16],[13,-24],[41,-41],[21,-74]];
+const NF=30;
+const GLYPH=['#','*','~','i','>>','<>','OK','♥','ES','INN','AI','T','RPM','SEA','♪',':)','IT','4','★','−','6Y','PO','2G','HMI','DS','0€','×3','JC','UX','15'];
 
 /* ---------- state ---------- */
 let L=/[?&]lang=de\b/.test(location.search)?'de':'en';
@@ -551,13 +499,9 @@ const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'
 const site=h=>'../'+(L==='de'?'?lang=de':'')+(h||'');
 const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
 let S,W=null; // W = 3D world, null when 3D is not available
-function reset(){S={panel:{t:'intro'},started:false,seen:{},found:{},ans:{},qi:0,allToast:false,pathToast:false,
-  c:{i:0,counts:[0,0,0],hand:0,auto:false,running:false,msg:'',bad:false},
-  g:{ver:'A',task:0,tm:0,missA:0,missB:0,mid:false,msg:'',bad:false,lock:false,skip:false}};}
+function reset(){S={panel:{t:'intro'},started:false,seen:{},found:{},allToast:false,pathToast:false};}
 reset();
 const nSeen=()=>ST.filter(s=>S.seen[s.id]).length;
-const nAns=()=>Object.keys(S.ans).length;
-const nRight=()=>Object.values(S.ans).filter(Boolean).length;
 const nFound=()=>Object.keys(S.found).length;
 const nextF=()=>{for(let i=0;i<NF;i++)if(!S.found[i])return i;return -1;};
 const allDone=()=>nSeen()===ST.length&&nFound()===NF;
@@ -580,58 +524,14 @@ function pIntro(){
 }
 function pStation(id){
   const s=t('st')[id],k=ST.find(x=>x.id===id).k;
-  let h='<p class="kick mono m">'+(id[0]==='p'||id==='q'?esc(s[0]):esc(t('rev'))+' '+k+' · '+esc(s[0]))+'</p><h2 class="big" tabindex="-1" id="h">'+esc(s[1])+'</h2>';
-  if(id==='p1')return h+pChaos();
-  if(id==='p2')return h+pGlove();
-  if(id==='q')return h+pQuiz();
+  let h='<p class="kick mono m">'+esc(t('rev'))+' '+k+' · '+esc(s[0])+'</p><h2 class="big" tabindex="-1" id="h">'+esc(s[1])+'</h2>';
   h+='<p class="lead">'+esc(s[2])+'</p>'+(s[3]?'<p class="lead2">'+esc(s[3])+'</p>':'');
   if(id==='f')h+='<ul class="apps">'+t('apps').map(a=>'<li><b>'+esc(a[0])+'</b><span>'+esc(a[1])+'</span></li>').join('')+'</ul>';
   return h+foot(id);
 }
-function unlocked(id,hd,body,res){
-  return '<section class="un"><p class="mono">'+esc(t('unlocked'))+'</p><h3>'+esc(hd)+'</h3>'+body+(res?'<p class="res">'+esc(res)+'</p>':'')+'</section>'+foot(id);
-}
-function pChaos(){
-  const c=S.c,X=t('s2Tix'),C=t('s2Cols'),done=!!S.seen.p1;
-  let h=done?'':'<p class="task">'+esc(t('s2T'))+'</p>';
-  h+='<div class="card">';
-  if(!done&&c.i<X.length)h+='<div class="tk'+(c.i===X.length-1?' last':'')+'"><div><span class="mono m">'+esc(t('s2Tk')(c.i+1,X.length))+'</span><b>'+esc(X[c.i][0])+'</b></div></div>';
-  h+='<div class="cols">'+C.map((n,i)=>{let bars='';for(let k=0;k<c.counts[i];k++)bars+='<i></i>';
-    return '<button class="col" type="button" data-c="'+i+'"'+(done||c.running?' disabled':'')+'><b>'+esc(n)+'</b><span class="n">'+c.counts[i]+'</span><span class="bars" aria-hidden="true">'+bars+'</span></button>';}).join('')+'</div>';
-  if(!done){
-    if(c.hand>=3&&!c.running)h+='<div class="auto"><p>'+esc(t('s2AutoP'))+'</p><button class="btn mag" type="button" data-a="auto">⚡ '+esc(t('s2AutoB'))+'</button></div>';
-    h+=status(c)+'<p class="note mono">'+esc(t('s2Note'))+'</p>';
-  }
-  h+='</div>';
-  if(done)h+=unlocked('p1',t('s2UH'),'<p>'+esc(t('s2U'))+'</p>',c.i>=X.length?(c.auto?t('s2ResA')(c.hand):t('s2ResM')):'');
-  else h+='<div class="row"><button class="lnk" type="button" data-a="skip">'+esc(t('skipGame'))+'</button></div>';
-  return h;
-}
-function pGlove(){
-  const g=S.g,T=t('s3Targets'),done=!!S.seen.p2;
-  if(done)return unlocked('p2',t('s3UH'),'<p>'+esc(t('s3U'))+'</p>'+(g.skip?'':'<div class="cmp"><div><b>'+g.missA+'</b><span class="mono">'+esc(t('s3CA'))+'</span></div><div><b>'+g.missB+'</b><span class="mono">'+esc(t('s3CB'))+'</span></div></div>'),'');
-  let h='<p class="task">'+esc(t('s3T'))+'</p><div class="card"><div class="tab"><div class="scrn'+(g.ver==='B'?' b':'')+'" id="scrn">';
-  if(g.mid)h+='<div class="mid"><p>'+esc(t('s3MidP')(g.missA))+'</p><button class="btn mag" type="button" data-a="verB">'+esc(t('s3MidB'))+' '+ARROW+'</button></div>';
-  else{
-    h+='<div class="do"><b>'+esc(t('s3Tap'))+': <em>'+esc(T[g.task])+'</em></b><span class="mono grey">'+esc(g.ver==='A'?t('s3VA'):t('s3VB'))+' · '+(g.task+1)+'/3</span></div>';
-    if(g.ver==='A')h+='<div class="ga" id="pad">'+t('s3A').map(n=>'<button type="button" data-g="'+n+'">'+n+'</button>').join('')+'</div>';
-    else h+='<div class="stepb">'+esc(t('s3Step'))+'</div><div class="gb" id="pad">'+['Help','Done','Next'].map(n=>'<button type="button" data-g="'+n+'"'+(n===T[g.task]?' class="pri"':'')+'>'+n+'</button>').join('')+'</div>';
-  }
-  return h+'</div></div>'+status(g)+'<p class="note mono">'+esc(t('s3Note'))+'</p></div><div class="row"><button class="lnk" type="button" data-a="skip">'+esc(t('skipGame'))+'</button></div>';
-}
-function pQuiz(){
-  const Q=t('Q'),i=S.qi;
-  if(i>=NQ)return '<p class="lead">'+esc(t('qSum')(nRight(),NQ))+'</p>'+foot('q');
-  const q=Q[i],a=S.ans[i];
-  let dots='';for(let k=0;k<NQ;k++)dots+='<i class="'+(k in S.ans?(S.ans[k]?'y':'x'):(k===i?'c':''))+'"></i>';
-  let h='<div class="card"><div class="do"><span class="mono m">'+(i+1)+' / '+NQ+'</span><span class="dots" aria-hidden="true">'+dots+'</span></div><p class="q">'+esc(q[0])+'</p>';
-  if(a===undefined)h+='<div class="fb"><button class="btn ghost" type="button" data-f="1">'+esc(t('fact'))+'</button><button class="btn ghost" type="button" data-f="0">'+esc(t('bluff'))+'</button></div>';
-  else h+='<div class="ans'+(a?'':' no')+'" role="status"><b>'+esc(a?t('qRight'):t('qWrong'))+'</b>'+esc(q[2])+'</div><div class="row"><button class="btn" type="button" data-a="qnext">'+esc(t('qNext'))+' '+ARROW+'</button></div>';
-  return h+'</div>'+foot('q','<button class="btn ghost" type="button" data-a="close">'+esc(W?t('drive'):t('list'))+'</button>');
-}
 function pF(i){
   const f=t('F')[i],more=nextF()>=0&&(!W||!S.started)?'<button class="btn ghost" type="button" data-a="nextf">'+esc(t('fNext'))+'</button>':'';
-  return '<div class="fhead"><span class="gly" aria-hidden="true">'+esc(GLYPH[i])+'</span><p class="kick mono m">'+esc(t('fKick')(nFound(),NF))+' · '+esc(f[0])+'</p></div><h2 class="big" tabindex="-1" id="h">'+esc(f[1])+'</h2><p class="lead">'+esc(f[2])+'</p>'+
+  return '<div class="fhead"><span class="gly" aria-hidden="true">'+esc(GLYPH[i])+'</span><p class="kick mono m">'+esc(t('fKick')(nFound(),NF))+' · '+esc(f[0])+'</p></div><h2 class="big" tabindex="-1" id="h">'+esc(f[1])+'</h2><p class="lead">'+esc(f[2]||f[3])+'</p>'+
     '<div class="row"><button class="btn mag" type="button" data-a="close">'+esc(W?t('drive'):t('list'))+' '+ARROW+'</button>'+more+'</div>';
 }
 function pList(){
@@ -643,9 +543,6 @@ function pList(){
 }
 function pReport(){
   const full=allDone(),log=[t('rL1')(nSeen(),ST.length),t('rL2')(nFound(),NF)];
-  if(nAns())log.push(t('rLq')(nRight(),nAns()));
-  if(S.seen.p1&&S.c.i>=t('s2Tix').length)log.push(t('rL3')(S.c.auto));
-  if(S.seen.p2&&!S.g.skip)log.push(t('rL4')(S.g.missA,S.g.missB));
   return '<p class="kick mono m">'+esc(S.panel.gate?t('rKickA'):t('rKickB'))+'</p><h1 tabindex="-1" id="h">'+(full?t('rH'):t('rHPart'))+'</h1><p class="lead">'+esc(t('rLead'))+'</p>'+
     '<div class="row"><a class="btn mag" href="mailto:mail@juliawimmer.de?subject='+encodeURIComponent(t('rSubject'))+'">'+esc(t('rMail'))+' '+ARROW+'</a>'+
     '<a class="btn ghost" href="https://www.linkedin.com/in/julia-wimmer-ux" target="_blank" rel="noopener">LinkedIn ↗</a>'+
@@ -673,59 +570,27 @@ function render(focus){
   pan.innerHTML=panelHTML();pan.className='pan';
   if(focus){pan.scrollTop=0;ov.scrollTop=0;const h=$('#h');if(h)h.focus({preventScroll:true});}
 }
-function openPanel(p){if(p.t==='st'&&p.id[0]!=='p')S.seen[p.id]=true;if(p.t==='f')S.found[p.i]=true;S.panel=p;hideBub();if(W)W.stop();render(true);if(W)W.sync();}
+function openPanel(p){if(p.t==='st')S.seen[p.id]=true;if(p.t==='f')S.found[p.i]=true;S.panel=p;hideBub();if(W)W.stop();render(true);if(W)W.sync();}
 function closePanel(){
   if(!W||!S.started){S.panel={t:S.started||!W?'list':'intro'};render(true);return;}
   S.panel=null;render(false);W.sync();$('#c').focus({preventScroll:true});
   if(allDone()&&!S.allToast){S.allToast=true;toast(t('toastAll'));}
-  else if(pathDone()&&!S.pathToast){S.pathToast=true;toast(t('toastPath'));}
 }
 let toastT;function toast(m){const e=$('#toast');e.textContent=m;e.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>{e.hidden=true;},5200);}
 let bubT;function hideBub(){clearTimeout(bubT);$('#bub').hidden=true;}
-// a find collected while driving: no panel, just a short thought bubble above the van
-function collect(i){S.found[i]=true;shell();if(W)W.sync();$('#toast').hidden=true; // never stack toast and bubble on small screens
-  const e=$('#bub');e.hidden=true;e.innerHTML='<small class="mono">'+esc(t('fKick')(nFound(),NF))+'</small>'+esc(t('F')[i][3]);void e.offsetWidth;e.hidden=false;
-  clearTimeout(bubT);bubT=setTimeout(()=>{e.hidden=true;},5200);
-  if(allDone()&&!S.allToast){S.allToast=true;setTimeout(()=>{if(!S.panel){hideBub();toast(t('toastAll'));}},3200);}}
-function finishGame(id){S.seen[id]=true;render(false);if(W)W.sync();const u=pan.querySelector('.un');if(u){u.scrollIntoView({block:'nearest',behavior:reduce?'auto':'smooth'});}const b=pan.querySelector('[data-a="close"]');if(b)b.focus({preventScroll:true});}
-
-/* ---------- mini game logic ---------- */
-function shakeEl(el){if(!el)return;el.classList.remove('shake');void el.offsetWidth;el.classList.add('shake');}
-function autoRun(){
-  const c=S.c,X=t('s2Tix');
-  if(!S.panel||S.panel.id!=='p1'){c.running=false;return;}
-  if(c.i>=X.length){c.running=false;c.msg='';finishGame('p1');return;}
-  c.counts[X[c.i][1]]++;c.i++;render(false);setTimeout(autoRun,reduce?0:260);
-}
-function gloveTap(e){
-  const g=S.g,pad=$('#pad'),scrn=$('#scrn');if(!pad||g.mid||g.lock)return;
-  let btn=null;
-  if(e.detail===0&&e.target.closest('[data-g]'))btn=e.target.closest('[data-g]'); // keyboard: no glove
-  else{
-    const a=Math.random()*Math.PI*2,r=34*Math.sqrt(Math.random()),x=e.clientX+Math.cos(a)*r,y=e.clientY+Math.sin(a)*r;
-    const sr=scrn.getBoundingClientRect(),bl=document.createElement('span');bl.className='blob';bl.style.left=(x-sr.left)+'px';bl.style.top=(y-sr.top)+'px';
-    scrn.appendChild(bl);setTimeout(()=>bl.remove(),650);
-    pad.querySelectorAll('[data-g]').forEach(b=>{const q=b.getBoundingClientRect();if(x>=q.left&&x<=q.right&&y>=q.top&&y<=q.bottom)btn=b;});
-  }
-  const ok=btn&&btn.getAttribute('data-g')===t('s3Targets')[g.task],st=pan.querySelector('.st');
-  const say=(m,bad)=>{g.msg=m;g.bad=bad;if(st){st.textContent=m;st.className='st mono '+(bad?'bad':'good');}};
-  if(btn)btn.classList.add(ok?'hit':'miss');
-  if(ok)say(t('s3Hit'),false);
-  else{g.tm++;if(g.ver==='A')g.missA++;else g.missB++;
-    if(g.tm<3){say(t('s3Miss'),true);if(btn)setTimeout(()=>btn.classList.remove('miss'),350);shakeEl(pad);return;}
-    say(t('s3Give'),true);}
-  g.lock=true;
-  setTimeout(()=>{g.lock=false;g.tm=0;g.task++;
-    if(!S.panel||S.panel.id!=='p2')return;
-    if(g.task>2){if(g.ver==='A'){g.mid=true;g.msg='';render(false);const b=pan.querySelector('[data-a="verB"]');if(b)b.focus({preventScroll:true});}else{g.msg='';finishGame('p2');}}
-    else render(false);
-  },ok?450:900);
-}
+// while driving nothing opens a panel: boxes and stations answer with a short thought bubble above the van
+function bubble(kick,text,ms){const e=$('#bub');$('#toast').hidden=true;e.hidden=true;e.innerHTML='<small class="mono">'+esc(kick)+'</small>'+esc(text);void e.offsetWidth;e.hidden=false;
+  clearTimeout(bubT);bubT=setTimeout(()=>{e.hidden=true;},ms);}
+function later(key,msg){if(S[key])return;S[key]=true;const s0=S;setTimeout(()=>{if(S===s0&&!S.panel){hideBub();toast(msg);}},3600);}
+function collect(i){S.found[i]=true;shell();if(W)W.sync();bubble(t('fKick')(nFound(),NF),t('F')[i][3],5200);
+  if(allDone())later('allToast',t('toastAll'));}
+function visit(id){const k=ST.find(x=>x.id===id).k,first=!S.seen[id];S.seen[id]=true;shell();if(W)W.sync();
+  bubble(t('rev')+' '+k+' · '+t('st')[id][0],t('sb')[id],7000);
+  if(allDone())later('allToast',t('toastAll'));else if(first&&pathDone())later('pathToast',t('toastPath'));}
 
 /* ---------- panel actions ---------- */
 pan.addEventListener('click',e=>{
   const el=e.target.closest('button,a');
-  if(S.panel&&S.panel.id==='p2'&&!S.seen.p2&&e.target.closest('#scrn')&&!(el&&el.hasAttribute('data-a'))){gloveTap(e);return;}
   if(!el||el.tagName==='A')return;
   const a=el.getAttribute('data-a');
   if(a==='start'){S.started=true;S.panel=null;render(false);W.sync();$('#c').focus({preventScroll:true});const h=$('#hint');h.hidden=false;setTimeout(()=>{h.hidden=true;},7000);return;}
@@ -734,23 +599,13 @@ pan.addEventListener('click',e=>{
   if(a==='rep'){openPanel({t:'rep'});return;}
   if(a==='again'){reset();hideBub();if(W){W.reset();}render(true);return;}
   if(a==='nextf'){const i=nextF();if(i>=0&&pathDone())openPanel({t:'f',i});return;}
-  if(a==='qnext'){S.qi++;render(false);const n=pan.querySelector('[data-f],[data-a="close"]');if(n)n.focus({preventScroll:true});return;}
-  if(a==='skip'){const id=S.panel.id;if(id==='p2')S.g.skip=true;finishGame(id);return;}
-  if(a==='auto'){S.c.auto=true;S.c.running=true;S.c.bad=false;S.c.msg=t('s2Running');autoRun();return;}
-  if(a==='verB'){const g=S.g;g.ver='B';g.task=0;g.tm=0;g.mid=false;g.msg='';render(false);return;}
   if(el.hasAttribute('data-st')){openPanel({t:'st',id:el.getAttribute('data-st')});return;}
-  if(el.hasAttribute('data-c')){const c=S.c,X=t('s2Tix'),k=+el.getAttribute('data-c');if(c.running||c.i>=X.length)return;
-    if(k===X[c.i][1]){c.counts[k]++;c.i++;c.hand++;c.bad=false;c.msg=t('s2Good');
-      if(c.i>=X.length){c.msg='';finishGame('p1');}else{render(false);const nb=pan.querySelector('[data-c="'+k+'"]');if(nb)nb.focus({preventScroll:true});}}
-    else{c.bad=true;c.msg=t('s2Bad');const s=pan.querySelector('.st');if(s){s.textContent=c.msg;s.className='st mono bad';}shakeEl(pan.querySelector('.tk'));}
-    return;}
-  if(el.hasAttribute('data-f')){const i=S.qi;S.ans[i]=(el.getAttribute('data-f')==='1')===t('Q')[i][1];render(false);const n=pan.querySelector('[data-a="qnext"]');if(n)n.focus({preventScroll:true});return;}
 });
 $('#bList').addEventListener('click',()=>openPanel({t:'list'}));
 $('#bRep').addEventListener('click',()=>openPanel({t:'rep'}));
 document.querySelectorAll('.lg button').forEach(b=>b.addEventListener('click',()=>{
   const l=b.getAttribute('data-lang');if(l===L)return;L=l;
-  S.c.msg=S.c.running?t('s2Running'):'';S.g.msg='';render(false);}));
+  hideBub();render(false);}));
 addEventListener('keydown',e=>{if(e.key==='Escape'&&S.panel&&S.started&&W)closePanel();});
 
 /* ---------- 3D world ---------- */
@@ -819,13 +674,8 @@ async function makeWorld(){
       box(3,.8,1.5,MAG,3.5,.8,5.4,g);box(1.5,.6,1.3,INK,3.3,1.5,5.4,g);cyl(1,1,6.5,8,PAPER2,-7.6,3.25,-1,g);},
     d(g){box(8,3.2,6,WHITE,0,1.6,0,g);box(6,3,5,INK,1.2,4.7,-.4,g);box(4,2.6,4,WHITE,-.8,7.5,.2,g);box(1.6,1.6,1.6,MAG,-.8,9.6,.2,g);
       for(let i=-3;i<=3;i+=1.5)box(.8,1.6,.1,INK,i,1.7,3.02,g);},
-    p1(g){cyl(.2,.2,5.4,6,INK,-3.6,2.7,0,g);cyl(.2,.2,5.4,6,INK,3.6,2.7,0,g);box(8.4,4.4,.3,WHITE,0,4,0,g);box(8.8,.3,.5,INK,0,6.3,0,g);
-      const cs=[MAG,INK,GREY,MAG,GREY,INK,MAG,GREY,INK];for(let i=0;i<9;i++){const n=box(1.5,.9,.1,cs[i],-2.6+(i%3)*2.6+(rnd()-.5)*.6,5.3-Math.floor(i/3)*1.25+(rnd()-.5)*.3,.21,g);n.rotation.z=(rnd()-.5)*.5;}},
-    p2(g){box(11,5,7,WHITE,0,2.5,-1,g);box(11.4,.6,7.4,INK,0,5.3,-1,g);box(4.6,3.8,.2,INK,-2.4,1.9,2.52,g);box(2.4,1.2,.2,MAG,3.2,3.6,2.52,g);
-      box(2.6,2.6,2.4,MAG,-2.4,1.9,5.4,g);box(2.6,1.4,3.4,PAPER2,-2.4,1.3,8.2,g);[[-3.6,4.8],[-1.2,4.8],[-3.6,8.6],[-1.2,8.6]].forEach(p=>{const w=cyl(.6,.6,.5,10,INK,p[0],.6,p[1],g);w.rotation.z=Math.PI/2;});},
     e(g){const a=box(3,6,.5,INK,-1.9,3.3,0,g);a.rotation.z=.16;const s1=box(2.5,5.2,.1,MAG,-1.9,3.3,.3,g);s1.rotation.z=.16;
       const b=box(3,6,.5,INK,1.9,3.3,.2,g);b.rotation.z=-.16;const s2=box(2.5,5.2,.1,WHITE,1.9,3.3,.5,g);s2.rotation.z=-.16;box(8,.6,3,PAPER2,0,.3,0,g);},
-    q(g){box(7,.6,5,PAPER2,0,.3,0,g);box(5,3,3,WHITE,0,2.1,0,g);box(5.6,.5,3.6,INK,0,3.85,0,g);const m=new THREE.Mesh(new THREE.BoxGeometry(2.6,2.6,2.6),new THREE.MeshBasicMaterial({map:glyphTex('?',true)}));m.position.set(0,6,0);m.rotation.y=.6;g.add(m);},
     f(g){box(8,.6,5,PAPER2,0,.3,0,g);[[MAG,-2.3,1.9,0],[INK,.1,1.9,.3],[WHITE,2.5,1.9,0],[GREY,-1,4.5,.1]].forEach((p,i)=>{const m=box(2.3,2.3,2.3,p[0],p[1],p[2],p[3],g);m.rotation.y=(i-1.5)*.18;});}
   };
   const stations=ST.map(s=>{
@@ -839,7 +689,7 @@ async function makeWorld(){
     return {...s,lb,ring,inside:false};
   });
 
-  // finds: floating cubes, each with its own sign
+  // boxes: floating cubes, each with its own sign
   const qGeo=new THREE.BoxGeometry(1.9,1.9,1.9);
   const tokens=[];
   for(let i=0;i<NF;i++){
@@ -895,6 +745,7 @@ async function makeWorld(){
   const up=()=>{down=false;};cv.addEventListener('pointerup',up);cv.addEventListener('pointercancel',up);
   const wrap=a=>{while(a>Math.PI)a-=2*Math.PI;while(a<-Math.PI)a+=2*Math.PI;return a;};
 
+  let slowT=0; // after a station bubble the van rolls slowly for a moment, so there is time to read
   function step(dt){
     let thr=0,steer=0;
     if(keys.u||keys.d||keys.l||keys.r){thr=(keys.u?1:0)-(keys.d?.6:0);steer=(keys.l?1:0)-(keys.r?1:0);if(car.v<-.5)steer=-steer;}
@@ -902,6 +753,7 @@ async function makeWorld(){
       if(dist<2.8||(tAge>5&&dist<9&&!down)){target=null;mark.visible=false;}
       else{const diff=wrap(Math.atan2(dx,dz)-car.h),ad=Math.abs(diff);steer=Math.max(-1,Math.min(1,diff*2.4));
         thr=ad>1.9?.4:ad>1?.65:1;if(dist<7&&ad>1)thr=.28;if(dist<10&&!down)thr*=Math.max(.4,dist/10);}}
+    if(performance.now()<slowT&&thr>.3)thr=.3;
     car.v+=thr*30*dt;car.v-=car.v*(thr?1.5:3.2)*dt;if(Math.abs(car.v)<.05&&!thr)car.v=0;
     car.h=wrap(car.h+steer*2*dt*Math.max(-1,Math.min(1,car.v/5)));
     let nx=car.x+Math.sin(car.h)*car.v*dt,nz=car.z+Math.cos(car.h)*car.v*dt;
@@ -910,7 +762,7 @@ async function makeWorld(){
   }
   function triggers(){
     for(const s of stations){const d=Math.hypot(car.x-s.x,car.z-s.z),rt=s.r+5.6;
-      if(d<rt&&!s.inside){s.inside=true;openPanel({t:'st',id:s.id});return;}
+      if(d<rt&&!s.inside){s.inside=true;visit(s.id);slowT=performance.now()+2600;return;}
       if(d>rt+2.5)s.inside=false;}
     if(pathDone())for(const q of tokens){if(S.found[q.i])continue;const d=Math.hypot(car.x-q.x,car.z-q.z);
       if(d<3.4&&!q.inside){q.inside=true;collect(q.i);return;}
