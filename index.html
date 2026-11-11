@@ -49,6 +49,11 @@ a{color:inherit}
 .tb small{display:block;font-family:var(--mono);font-size:.625rem;letter-spacing:.08em;text-transform:uppercase;color:var(--grey);margin-bottom:2px}
 .tb b{display:block;font-weight:700;font-size:.9375rem;line-height:1.25}
 .tb a{text-decoration:none}
+.lg{display:flex!important;gap:0;margin-top:3px}
+.lg button{min-width:2.6rem;padding:3px 10px;border:1px solid var(--ink);background:none;color:inherit;font:inherit;font-family:var(--mono);font-size:.75rem;font-weight:500;cursor:pointer;transition:background-color .15s ease,color .15s ease}
+.lg button+button{margin-left:-1px}
+.lg button:hover{background:var(--ink);color:var(--paper)}
+.lg button[aria-pressed="true"]{background:var(--mag);border-color:var(--mag);color:#fff;position:relative}
 .nav{display:flex;border-bottom:1px solid var(--ink);overflow-x:auto;scrollbar-width:none}
 .nav::-webkit-scrollbar{display:none}
 .nav a{flex:1 0 auto;display:flex;gap:10px;align-items:baseline;padding:12px 16px;text-decoration:none;font-weight:600;font-size:.9375rem;border-left:1px solid var(--line);transition:background-color .15s ease,color .15s ease}
@@ -500,10 +505,6 @@ h1 .lni{display:inline-block}
 .rmt b{color:var(--ink);font-weight:500}
 .rml{display:inline-flex;gap:16px}.rml[hidden]{display:none}
 .rml a{color:var(--mag);text-underline-offset:4px}
-.js [data-role] .ph.rv.in:not(.mt){opacity:.4}
-.js [data-role] .ph.rv.in:not(.mt):hover,.js [data-role] .ph.rv.in:not(.mt):focus-visible{opacity:1}
-.ph .pn i{font-style:normal;display:none;margin-left:8px;padding:1px 6px;background:var(--mag);color:#fff}
-.ph.mt .pn i{display:inline-block}
 :is(#sk1,#sk2) .kc .tag{transition:opacity .3s ease,background-color .3s ease,color .3s ease,border-color .3s ease}
 [data-role] :is(#sk1,#sk2) .kc .tag:not(.hit){opacity:.28}
 :is(#sk1,#sk2) .kc .tag.hit{background:var(--ink);color:var(--paper);border-color:var(--ink)}
@@ -537,7 +538,7 @@ h1 .lni{display:inline-block}
 <a href="#top"><small>Name</small><b>Julia Wimmer</b></a>
 <div><small>Field</small><b>Design · Digitalization · AI</b></div>
 <div><small>Location</small><b>Munich → Innsbruck</b></div>
-<div><small>Rev.</small><b>2026-11</b></div>
+<div><small>Language</small><b class="lg" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button><button type="button" data-lang="de" aria-pressed="false" lang="de">DE</button></b></div>
 </div>
 </header>
 <nav class="nav" aria-label="Main">
@@ -583,7 +584,7 @@ h1 .lni{display:inline-block}
 <div><p class="rq mono">Try it · this page adapts to you</p>
 <h2>What are you hiring for?</h2></div>
 <div><div class="rmb" role="group" aria-label="Role"><button type="button" data-role="ux" aria-pressed="false">UX &amp; product design</button><button type="button" data-role="ai" aria-pressed="false">AI enablement</button><button type="button" data-role="dig" aria-pressed="false">Digitalization &amp; process</button><button type="button" data-role="po" aria-pressed="false">Product owner</button><button type="button" data-role="" aria-pressed="true">Show all</button></div>
-<p class="rmt mono"><span class="rmx" role="status">Pick a role. Matching projects, skills and tools light up.</span><span class="rml" hidden><a href="#work">Projects &#8595;</a><a href="#skills">Skills &amp; tools &#8595;</a></span></p></div>
+<p class="rmt mono"><span class="rmx" role="status">Pick a role. Matching skills and tools light up.</span><span class="rml" hidden><a href="#skills">Skills &amp; tools &#8595;</a></span></p></div>
 </div>
 
 <section id="path" class="sec wrap">
@@ -591,7 +592,7 @@ h1 .lni{display:inline-block}
 <div id="path-body" class="pnl open"><div class="pin"><div class="pad">
 <div class="rev indent">
 <div class="hd mono" aria-hidden="true"><span>Rev.</span><span>Date</span><span>Description</span></div>
-<div class="row rv"><span class="r">F</span><p class="d">2026 – now</p><div><h3>Founder, Pink Shark Design</h3><p class="t">My own small studio. I build apps for the fun of it and try out new things with AI. Innensicht is one of them.</p></div></div>
+<div class="row rv"><span class="r">F</span><p class="d">2026 – now</p><div><h3>Personal projects: building with AI, for fun</h3><p class="t">My private playground, not a company. I build apps for the fun of it and train my AI skills by trying out new things. Innensicht is one of them.</p></div></div>
 <div class="row rv"><span class="r">E</span><p class="d">2018 – now</p><div><h3>Senior Consultant: Product Owner &#8594; UX Designer, Valtech Mobility</h3><p class="t">Connected mobility for OEMs and startups: in-car services, expert tools, mobility services. My responsibilities include client projects, pitches and presales, design systems, workflow definitions, IAM and AI team setup.</p></div></div>
 <div class="row rv"><span class="r">D</span><p class="d">2023 – 2026</p><div><h3>Co-Founder &amp; CEO, 2gether App</h3><p class="t">I co-founded and led the startup, next to my job at Valtech. We released a native iOS and Android social media app. I owned the product from concept and design to release.</p></div></div>
 <div class="row rv"><span class="r">C</span><p class="d">2012 – 2018</p><div><h3>Process &amp; Systems Integrator, Audi AG</h3><p class="t">Prepared steering committees and product decisions for the cross-brand connected-car project. Built cost transparency and a portfolio management process for budget control.</p></div></div>
@@ -605,11 +606,11 @@ h1 .lni{display:inline-block}
 <h2 class="sh"><button class="acc shb fx" type="button" aria-expanded="false" aria-controls="work-body"><span class="sno">§ 02</span><span><span class="stt">Selected work</span><span class="sth mono">five projects, tap one for the full story</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
 <div id="work-body" class="pnl"><div class="pin"><div class="pad">
 <div class="wk">
-<button class="ph rv" type="button" id="p-01" data-r="ai dig" data-dlg="dp-01" aria-haspopup="dialog"><span class="pi" style="background-color:var(--paper-2);background-image:linear-gradient(rgba(14,15,12,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(14,15,12,.07) 1px,transparent 1px);background-size:16px 16px"><svg viewBox="0 0 160 120" aria-hidden="true"><g fill="none" stroke="#0E0F0C" stroke-width="1.5"><rect x="22" y="22" width="34" height="78"/><rect x="63" y="22" width="34" height="78"/><rect x="104" y="22" width="34" height="78"/></g><g fill="#0E0F0C"><rect x="27" y="30" width="24" height="12"/><rect x="27" y="47" width="24" height="12"/><rect x="27" y="64" width="24" height="12"/><rect x="68" y="30" width="24" height="12"/><rect x="109" y="30" width="24" height="12"/><rect x="109" y="47" width="24" height="12"/></g><rect x="68" y="47" width="24" height="12" fill="#D6006F"/><path d="M80 59v12M74 65l6 6 6-6" fill="none" stroke="#D6006F" stroke-width="1.5"/></svg></span><span class="pc"><span class="pn mono">P-01<i>Match</i></span><span class="ttl">Team workflows &amp; AI rollout</span><span class="tags"><span class="tag">Digitalization</span><span class="tag">AI adoption</span><span class="tag">Jira &amp; Confluence</span></span></span></button>
-<button class="ph rv" type="button" id="p-02" data-r="ux dig" data-dlg="dp-02" aria-haspopup="dialog"><span class="pi" style="background-color:var(--paper-2);background-image:linear-gradient(rgba(14,15,12,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(14,15,12,.07) 1px,transparent 1px);background-size:16px 16px"><svg viewBox="0 0 160 120" aria-hidden="true"><rect x="34" y="18" width="92" height="84" rx="6" fill="#F2F3EF" stroke="#0E0F0C" stroke-width="1.5"/><g fill="#0E0F0C"><rect x="44" y="28" width="34" height="30"/><rect x="82" y="28" width="34" height="30"/><rect x="44" y="62" width="34" height="30"/></g><rect x="82" y="62" width="34" height="30" fill="#D6006F"/><circle cx="99" cy="77" r="5" fill="#F2F3EF"/></svg></span><span class="pc"><span class="pn mono">P-02<i>Match</i></span><span class="ttl">Expert Tools &amp; Mobility Services</span><span class="tags"><span class="tag">Complex UI</span><span class="tag">Fleet</span><span class="tag">Autonomous</span></span></span></button>
-<button class="ph rv" type="button" id="p-03" data-r="po ux" data-dlg="dp-03" aria-haspopup="dialog"><span class="pi"><img src="img/gether-thumb.webp" alt="" loading="lazy" style="object-fit:contain;padding:6%"></span><span class="pc"><span class="pn mono">P-03<i>Match</i></span><span class="ttl">2gether, a social app</span><span class="tags"><span class="tag">Founder</span><span class="tag">End-to-End</span></span></span></button>
-<button class="ph rv" type="button" id="p-04" data-r="ai ux" data-dlg="dp-04" aria-haspopup="dialog"><span class="pi"><img src="img/innensicht-banner.webp" alt="" loading="lazy" style="object-position:22% 50%"></span><span class="pc"><span class="pn mono">P-04<i>Match</i></span><span class="ttl">Innensicht, built with Claude Code</span><span class="tags"><span class="tag">AI</span><span class="tag">Builder</span><span class="tag">End-to-end</span></span></span></button>
-<button class="ph rv" type="button" id="p-05" data-r="ux ai" data-dlg="dp-05" aria-haspopup="dialog"><span class="pi" style="background-color:var(--paper-2);background-image:linear-gradient(rgba(14,15,12,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(14,15,12,.07) 1px,transparent 1px);background-size:16px 16px"><svg viewBox="0 0 160 120" aria-hidden="true"><path d="M22 92C52 92 50 40 80 40s30 44 58 30" fill="none" stroke="#0E0F0C" stroke-width="2" stroke-dasharray="7 5"/><circle cx="22" cy="92" r="6" fill="#F2F3EF" stroke="#0E0F0C" stroke-width="2"/><circle cx="138" cy="70" r="7" fill="#D6006F"/><g transform="translate(66 22)"><rect width="30" height="14" fill="#0E0F0C"/><rect x="20" y="3" width="7" height="5" fill="#F2F3EF"/><circle cx="7" cy="16" r="3.5" fill="#0E0F0C"/><circle cx="23" cy="16" r="3.5" fill="#0E0F0C"/></g></svg></span><span class="pc"><span class="pn mono">P-05<i>Match</i></span><span class="ttl">InCar Services</span><span class="tags"><span class="tag">UX Concept</span><span class="tag">In-Car</span><span class="tag">OEM</span></span></span></button>
+<button class="ph rv" type="button" id="p-01" data-dlg="dp-01" aria-haspopup="dialog"><span class="pi" style="background-color:var(--paper-2);background-image:linear-gradient(rgba(14,15,12,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(14,15,12,.07) 1px,transparent 1px);background-size:16px 16px"><svg viewBox="0 0 160 120" aria-hidden="true"><g fill="none" stroke="#0E0F0C" stroke-width="1.5"><rect x="22" y="22" width="34" height="78"/><rect x="63" y="22" width="34" height="78"/><rect x="104" y="22" width="34" height="78"/></g><g fill="#0E0F0C"><rect x="27" y="30" width="24" height="12"/><rect x="27" y="47" width="24" height="12"/><rect x="27" y="64" width="24" height="12"/><rect x="68" y="30" width="24" height="12"/><rect x="109" y="30" width="24" height="12"/><rect x="109" y="47" width="24" height="12"/></g><rect x="68" y="47" width="24" height="12" fill="#D6006F"/><path d="M80 59v12M74 65l6 6 6-6" fill="none" stroke="#D6006F" stroke-width="1.5"/></svg></span><span class="pc"><span class="pn mono">P-01</span><span class="ttl">Team workflows &amp; AI rollout</span><span class="tags"><span class="tag">Digitalization</span><span class="tag">AI adoption</span><span class="tag">Jira &amp; Confluence</span></span></span></button>
+<button class="ph rv" type="button" id="p-02" data-dlg="dp-02" aria-haspopup="dialog"><span class="pi" style="background-color:var(--paper-2);background-image:linear-gradient(rgba(14,15,12,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(14,15,12,.07) 1px,transparent 1px);background-size:16px 16px"><svg viewBox="0 0 160 120" aria-hidden="true"><rect x="34" y="18" width="92" height="84" rx="6" fill="#F2F3EF" stroke="#0E0F0C" stroke-width="1.5"/><g fill="#0E0F0C"><rect x="44" y="28" width="34" height="30"/><rect x="82" y="28" width="34" height="30"/><rect x="44" y="62" width="34" height="30"/></g><rect x="82" y="62" width="34" height="30" fill="#D6006F"/><circle cx="99" cy="77" r="5" fill="#F2F3EF"/></svg></span><span class="pc"><span class="pn mono">P-02</span><span class="ttl">Expert Tools &amp; Mobility Services</span><span class="tags"><span class="tag">Complex UI</span><span class="tag">Fleet</span><span class="tag">Autonomous</span></span></span></button>
+<button class="ph rv" type="button" id="p-03" data-dlg="dp-03" aria-haspopup="dialog"><span class="pi"><img src="img/gether-thumb.webp" alt="" loading="lazy" style="object-fit:contain;padding:6%"></span><span class="pc"><span class="pn mono">P-03</span><span class="ttl">2gether, a social app</span><span class="tags"><span class="tag">Founder</span><span class="tag">End-to-End</span></span></span></button>
+<button class="ph rv" type="button" id="p-04" data-dlg="dp-04" aria-haspopup="dialog"><span class="pi"><img src="img/innensicht-banner.webp" alt="" loading="lazy" style="object-position:22% 50%"></span><span class="pc"><span class="pn mono">P-04</span><span class="ttl">Innensicht, built with Claude Code</span><span class="tags"><span class="tag">AI</span><span class="tag">Builder</span><span class="tag">End-to-end</span></span></span></button>
+<button class="ph rv" type="button" id="p-05" data-dlg="dp-05" aria-haspopup="dialog"><span class="pi" style="background-color:var(--paper-2);background-image:linear-gradient(rgba(14,15,12,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(14,15,12,.07) 1px,transparent 1px);background-size:16px 16px"><svg viewBox="0 0 160 120" aria-hidden="true"><path d="M22 92C52 92 50 40 80 40s30 44 58 30" fill="none" stroke="#0E0F0C" stroke-width="2" stroke-dasharray="7 5"/><circle cx="22" cy="92" r="6" fill="#F2F3EF" stroke="#0E0F0C" stroke-width="2"/><circle cx="138" cy="70" r="7" fill="#D6006F"/><g transform="translate(66 22)"><rect width="30" height="14" fill="#0E0F0C"/><rect x="20" y="3" width="7" height="5" fill="#F2F3EF"/><circle cx="7" cy="16" r="3.5" fill="#0E0F0C"/><circle cx="23" cy="16" r="3.5" fill="#0E0F0C"/></g></svg></span><span class="pc"><span class="pn mono">P-05</span><span class="ttl">InCar Services</span><span class="tags"><span class="tag">UX Concept</span><span class="tag">In-Car</span><span class="tag">OEM</span></span></span></button>
 </div>
 <div class="wkp"><span class="wkd" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="wkt mono" role="status">0 / 5 opened</span><a class="wka mono" href="#contact" hidden>All five seen. Let&#8217;s talk &#8594;</a></div>
 </div></div></div>
@@ -682,7 +683,7 @@ h1 .lni{display:inline-block}
 <dialog id="dp-04" class="dlg" aria-labelledby="dp-04-t"><div class="din">
 <div class="dh"><span class="pn mono">P-04</span><button class="dx" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
 <h3 id="dp-04-t" class="dt">Innensicht, built with Claude Code</h3>
-<div class="tags"><span class="tag">Builder</span><span class="tag">Hands-on</span><span class="tag">End-to-end</span><span class="tag">AI</span><span class="tag">Pink Shark Design</span></div>
+<div class="tags"><span class="tag">Builder</span><span class="tag">Hands-on</span><span class="tag">End-to-end</span><span class="tag">AI</span><span class="tag">Personal project</span></div>
 <p class="dsum">A React Native app for self-reflection. It has 37 swipeable "inner parts" cards, a three-stage emotion wheel and a history that stays private on the device. I designed and built it entirely with Claude Code, without Figma, and published it in the App Store and on Google Play. The first version took one afternoon.</p>
 <div class="csg">
 <div><span class="lbl">Context &amp; problem</span><p>Innensicht is a personal project: a mobile app for emotional self-reflection, combining a swipeable deck of 37 "inner parts" cards with a three-stage emotion wheel and private, on-device history. Beyond the product itself, I wanted to test something for myself: could I, as a solo designer with no engineering team, take an idea all the way to a real, submitted App Store build using only AI-assisted development?</p></div>
@@ -806,7 +807,7 @@ h1 .lni{display:inline-block}
 <dl class="qf rv" aria-label="Julia in short">
 <div><dt>Role</dt><dd>UX &amp; product designer · Digitalization &amp; AI</dd></div>
 <div><dt>Experience</dt><dd>15 years in IT &amp; connected mobility</dd></div>
-<div><dt>Now</dt><dd>Senior Consultant, Valtech Mobility · Founder, Pink Shark Design</dd></div>
+<div><dt>Now</dt><dd>Senior Consultant, Valtech Mobility</dd></div>
 <div><dt>Looking for</dt><dd>Design, Digitalization &amp; AI roles</dd></div>
 <div><dt>Where</dt><dd>Remote-first, or hybrid around Innsbruck</dd></div>
 <div><dt>Languages</dt><dd>German native · English C1 · Spanish B1</dd></div>
@@ -824,6 +825,8 @@ h1 .lni{display:inline-block}
 <script>
 (function(){
 var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches;
+var LANG='en',relang=[];
+function T(s){var d=window.JW_DE;return LANG==='de'&&d&&d[s]!=null?d[s]:s;}
 function own(p,sel){return Array.prototype.filter.call(p.querySelectorAll(sel),function(el){return el.closest('.pnl')===p;});}
 function setOpen(b,open,init){
   b.setAttribute('aria-expanded',open?'true':'false');
@@ -880,19 +883,19 @@ if(ad){
   var LV=['Low','Mid','High'];
   function val(k){var c=ad.querySelector('input[name="ad-'+k+'"]:checked');return c?+c.value:0;}
   function draw(){
-    var p=val(0),d=val(1),r=val(2),pl=PLAN[p],h='<div class="bar"><span>Van assistant</span><span>09:40</span></div>';
-    if(r===2)h+='<div class="ban"><span>Charging spot reserved on your route.</span><span><i>Keep</i><i>Undo</i></span></div>';
-    if(r===1)h+='<span class="tip">Tip: charger on your route</span>';
-    h+='<p class="hd">'+pl.h+'</p><ol>';
-    pl.i.forEach(function(it,n){h+='<li><span class="n">'+(pl.i.length>1?'0'+(n+1):'→')+'</span><div><span class="t">'+it[0]+'</span>'+(d>0?'<span class="am">'+it[1]+'</span>':'')+(d>1?'<span class="f">'+it[2].map(function(x){return '<span>'+x+'</span>';}).join('')+'</span>':'')+'</div></li>';});
-    h+='</ol><p class="ft">'+(r===2?'Handled in the background: route, charging, parking payment.':r===1?'Suggestions only, you decide.':'Quiet mode. Ask me anytime.')+'</p>';
+    var p=val(0),d=val(1),r=val(2),pl=PLAN[p],h='<div class="bar"><span>'+T('Van assistant')+'</span><span>09:40</span></div>';
+    if(r===2)h+='<div class="ban"><span>'+T('Charging spot reserved on your route.')+'</span><span><i>'+T('Keep')+'</i><i>'+T('Undo')+'</i></span></div>';
+    if(r===1)h+='<span class="tip">'+T('Tip: charger on your route')+'</span>';
+    h+='<p class="hd">'+T(pl.h)+'</p><ol>';
+    pl.i.forEach(function(it,n){h+='<li><span class="n">'+(pl.i.length>1?'0'+(n+1):'→')+'</span><div><span class="t">'+T(it[0])+'</span>'+(d>0?'<span class="am">'+T(it[1])+'</span>':'')+(d>1?'<span class="f">'+it[2].map(function(x){return '<span>'+T(x)+'</span>';}).join('')+'</span>':'')+'</div></li>';});
+    h+='</ol><p class="ft">'+T(r===2?'Handled in the background: route, charging, parking payment.':r===1?'Suggestions only, you decide.':'Quiet mode. Ask me anytime.')+'</p>';
     scr.className='ads d'+d;scr.innerHTML=h;
     var cur=[p,d,r].join(',');pre.forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-p')===cur?'true':'false');});
-    scr.setAttribute('aria-label','Example screen. Planning depth '+LV[p]+', information density '+LV[d]+', proactivity '+LV[r]);
+    scr.setAttribute('aria-label',T('Example screen.')+' '+T('Planning depth')+' '+T(LV[p])+', '+T('information density')+' '+T(LV[d])+', '+T('proactivity')+' '+T(LV[r]));
   }
   pre.forEach(function(b){b.addEventListener('click',function(){b.getAttribute('data-p').split(',').forEach(function(v,k){var x=ad.querySelector('input[name="ad-'+k+'"][value="'+v+'"]');if(x)x.checked=true;});draw();});});
   ad.querySelectorAll('input').forEach(function(x){x.addEventListener('change',draw);});
-  draw();
+  draw();relang.push(draw);
 }
 var fb=document.querySelector('.fab'),hero=document.getElementById('top'),ct=document.getElementById('contact');
 function fabSync(){var hb=hero.getBoundingClientRect().bottom,cb=ct.getBoundingClientRect().top;fb.classList.toggle('on',hb<0&&cb>innerHeight*.6);}
@@ -938,32 +941,47 @@ if(wkp&&phs.length){
   try{(sessionStorage.getItem('jw-seen')||'').split(',').forEach(function(id){if(id)seen[id]=1;});}catch(e){}
   function seenSync(){var n=0;phs.forEach(function(c){var on=!!seen[c.getAttribute('data-dlg')];c.classList.toggle('seen',on);if(on)n++;});
     Array.prototype.forEach.call(dots,function(d,i){d.classList.toggle('on',i<n);});
-    wkt.textContent=n+' / '+phs.length+' opened';wka.hidden=n<phs.length;return n;}
+    wkt.textContent=n+' / '+phs.length+' '+T('opened');wka.hidden=n<phs.length;return n;}
   document.querySelectorAll('.dlg').forEach(function(d){d.addEventListener('close',function(){if(seen[d.id])return;seen[d.id]=1;
     try{sessionStorage.setItem('jw-seen',Object.keys(seen).join(','));}catch(e){}
     if(seenSync()===phs.length)burst(document.querySelector('.ph[data-dlg="'+d.id+'"]'));});});
-  seenSync();
+  seenSync();relang.push(seenSync);
 }
 var rm=document.getElementById('rolematch');
 if(rm){
   var rb=rm.querySelectorAll('button'),rtx=rm.querySelector('.rmx'),rml=rm.querySelector('.rml'),rdef=rtx.textContent,mail=document.querySelector('a.mail'),mhref=mail&&mail.getAttribute('href');
   var grp=[['sk1','skill'],['sk2','tool']].map(function(g){return {n:g[1],t:Array.prototype.slice.call(document.querySelectorAll('#'+g[0]+' .kc .tag'))};});
   function has(el,role){return (' '+(el.getAttribute('data-r')||'')+' ').indexOf(' '+role+' ')>=0;}
-  function pick(b,quiet){var role=b.getAttribute('data-role'),parts=[],i=0,pn=0;
+  function pick(b,quiet){var role=b.getAttribute('data-role'),parts=[],i=0;
     Array.prototype.forEach.call(rb,function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
     if(role)document.body.setAttribute('data-role',role);else document.body.removeAttribute('data-role');
-    phs.forEach(function(c){var on=!!role&&has(c,role);c.classList.toggle('mt',on);if(on)pn++;});
-    parts.push('<b>'+pn+'</b> project'+(pn===1?'':'s'));
     grp.forEach(function(g){var h=0;g.t.forEach(function(t){t.classList.remove('hit');if(role&&has(t,role)){h++;t.style.setProperty('--i',i++);void t.offsetWidth;t.classList.add('hit');}});
-      parts.push('<b>'+h+'</b> '+g.n+'s');});
-    if(role)rtx.innerHTML=parts.join(' · ')+' match';else rtx.textContent=rdef;
+      parts.push('<b>'+h+'</b> '+T(g.n+'s'));});
+    if(role)rtx.innerHTML=parts.join(' · ')+' '+T('match');else rtx.textContent=T(rdef);
     rml.hidden=!role;
-    if(mail)mail.setAttribute('href',role?mhref+'?subject='+encodeURIComponent('Interview: '+b.textContent+' role'):mhref);
+    if(mail)mail.setAttribute('href',role?mhref+'?subject='+encodeURIComponent(T('Interview: ')+T(b._l)+T(' role')):mhref);
     if(role){var sb=document.querySelector('#skills button.shb');if(sb&&sb.getAttribute('aria-expanded')!=='true')setOpen(sb,true);}
     if(!quiet)try{sessionStorage.setItem('jw-role',role);}catch(e){}}
-  Array.prototype.forEach.call(rb,function(b){b.addEventListener('click',function(){pick(b.getAttribute('aria-pressed')==='true'?rb[rb.length-1]:b);});});
+  Array.prototype.forEach.call(rb,function(b){b._l=b.textContent;b.addEventListener('click',function(){pick(b.getAttribute('aria-pressed')==='true'?rb[rb.length-1]:b);});});
+  relang.push(function(){pick(rm.querySelector('.rmb button[aria-pressed="true"]')||rb[rb.length-1],true);});
   try{var sr=sessionStorage.getItem('jw-role');if(sr)Array.prototype.forEach.call(rb,function(b){if(b.getAttribute('data-role')===sr)pick(b,true);});}catch(e){}
 }
+var lgb=document.querySelectorAll('.lg button'),trs=[],ttl=document.title;
+function setLang(l){
+  trs.forEach(function(r){if(r.a)r.n.setAttribute(r.a,r.v);else r.n.nodeValue=r.v;});trs=[];
+  LANG=l;document.documentElement.lang=l;document.title=l==='de'?T('@title'):ttl;
+  Array.prototype.forEach.call(lgb,function(b){b.setAttribute('aria-pressed',b.getAttribute('data-lang')===l?'true':'false');});
+  relang.forEach(function(f){f();});
+  if(l!=='de')return;
+  var d=window.JW_DE,w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null),n;
+  while((n=w.nextNode())){var v=n.nodeValue,k=v.replace(/\s+/g,' ').trim();if(!k||d[k]==null||/^(SCRIPT|STYLE)$/.test(n.parentNode.nodeName))continue;
+    trs.push({n:n,v:v});n.nodeValue=/^\s*/.exec(v)[0]+d[k]+/\s*$/.exec(v)[0];}
+  ['aria-label','alt'].forEach(function(a){Array.prototype.forEach.call(document.querySelectorAll('['+a+']'),function(e){var v=e.getAttribute(a);if(d[v]!=null){trs.push({n:e,a:a,v:v});e.setAttribute(a,d[v]);}});});
+}
+function wantLang(l){if(l===LANG)return;if(l!=='de'||window.JW_DE){setLang(l);return;}
+  var sc=document.createElement('script');sc.src='de.js?v=1';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
+Array.prototype.forEach.call(lgb,function(b){b.addEventListener('click',function(){wantLang(b.getAttribute('data-lang'));});});
+if(/[?&]lang=de\b/.test(location.search))wantLang('de');
 })();
 </script>
 </body>
