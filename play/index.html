@@ -578,11 +578,11 @@ let bubT;function hideBub(){clearTimeout(bubT);$('#bub').hidden=true;}
 // while driving nothing opens a panel: boxes and stations answer with a short thought bubble above the motorcycle
 function bubble(kick,text,ms){const e=$('#bub');$('#toast').hidden=true;e.hidden=true;e.innerHTML='<small class="mono">'+esc(kick)+'</small>'+esc(text);void e.offsetWidth;e.hidden=false;
   clearTimeout(bubT);bubT=setTimeout(()=>{e.hidden=true;},ms);}
-function later(key,msg){if(S[key])return;S[key]=true;const s0=S;setTimeout(()=>{if(S===s0&&!S.panel){hideBub();toast(msg);}},3600);}
-function collect(i){S.found[i]=true;shell();if(W)W.sync();bubble(t('fKick')(nFound(),NF),t('F')[i][3],5200);
+function later(key,msg){if(S[key])return;S[key]=true;const s0=S;setTimeout(()=>{if(S===s0&&!S.panel){hideBub();toast(msg);}},3200);}
+function collect(i){S.found[i]=true;shell();if(W)W.sync();bubble(t('fKick')(nFound(),NF),t('F')[i][3],3000);
   if(allDone())later('allToast',t('toastAll'));}
 function visit(id){const k=ST.find(x=>x.id===id).k;S.seen[id]=true;shell();if(W)W.sync();
-  bubble(t('rev')+' '+k+' · '+t('st')[id][0],t('sb')[id],7000);
+  bubble(t('rev')+' '+k+' · '+t('st')[id][0],t('sb')[id],3000);
   if(allDone())later('allToast',t('toastAll'));}
 
 /* ---------- panel actions ---------- */
