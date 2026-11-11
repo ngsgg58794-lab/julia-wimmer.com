@@ -239,7 +239,7 @@ body{display:block;overflow:hidden;overscroll-behavior:none}
 .nx{position:fixed;top:74px;left:50%;transform:translateX(-50%);z-index:4;display:flex;align-items:center;gap:10px;padding:8px 14px;border:1px solid var(--ink);background:var(--paper);white-space:nowrap}
 .nx #arr{display:inline-block;color:var(--mag);font-size:1.125rem;line-height:1;font-family:var(--sans);font-weight:800}
 .hint{position:fixed;left:50%;bottom:86px;transform:translateX(-50%);z-index:4;max-width:calc(100% - 32px);padding:10px 14px;background:var(--ink);color:var(--paper);text-align:center}
-.bub{position:fixed;left:50%;bottom:54%;transform:translateX(-50%);z-index:5;width:max-content;max-width:min(360px,calc(100% - 40px));padding:12px 22px 14px;background:#fff;color:var(--ink);border:2px solid var(--ink);border-radius:30px;font-weight:700;font-size:17px;line-height:1.3;text-align:center;box-shadow:4px 4px 0 var(--ink);pointer-events:none;animation:bub .28s ease-out}
+.bub{position:fixed;left:50%;bottom:49%;transform:translateX(-50%);z-index:5;width:max-content;max-width:min(360px,calc(100% - 40px));padding:12px 22px 14px;background:#fff;color:var(--ink);border:2px solid var(--ink);border-radius:30px;font-weight:700;font-size:17px;line-height:1.3;text-align:center;box-shadow:4px 4px 0 var(--ink);pointer-events:none;animation:bub .28s ease-out}
 .bub small{display:block;margin-bottom:3px;font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--mag)}
 .bub::before,.bub::after{content:"";position:absolute;left:50%;background:#fff;border:2px solid var(--ink);border-radius:50%}
 .bub::before{width:16px;height:16px;bottom:-26px;margin-left:-16px}
@@ -474,13 +474,13 @@ de:{
 /* ---------- world data ---------- */
 // path stations (PATH) stand right at the road and are passed in this order
 const ST=[
-  {id:'o',k:'A',sub:'LANDAU/ISAR · 2007',x:-0.2,z:152.1,r:5},
-  {id:'a',k:'B',sub:'LANDSHUT · 2007–11',x:-2,z:117.9,r:6},
-  {id:'b',k:'C',sub:'INGOLSTADT · 2011–12',x:1.2,z:85,r:5},
-  {id:'c',k:'D',sub:'INGOLSTADT · 2012–18',x:-3.2,z:49.4,r:8},
-  {id:'d',k:'E',sub:'MUNICH · 2018–NOW',x:17,z:14.9,r:6},
-  {id:'e',k:'F',sub:'2GETHER · 2023–26',x:28,z:-60,r:5},
-  {id:'f',k:'G',sub:'APPS · 2026–NOW',x:-8,z:-90,r:5}
+  {id:'o',top:9.3,k:'A',yr:'2007',sub:'ABITUR',sign:'SCHOOL',x:-0.2,z:152.1,r:5},
+  {id:'a',top:9,k:'B',yr:'2007–11',sub:'B.A. · LANDSHUT',sign:'UNIVERSITY',x:-2,z:117.9,r:6},
+  {id:'b',top:9.7,k:'C',yr:'2011–12',sub:'WK IT · INGOLSTADT',sign:'WK IT',x:1.2,z:85,r:5},
+  {id:'c',top:7.3,k:'D',yr:'2012–18',sub:'AUDI · INGOLSTADT',sign:'AUDI',x:-3.2,z:49.4,r:8},
+  {id:'d',top:10.5,k:'E',yr:'2018–now',sub:'VALTECH · MUNICH',sign:'VALTECH',x:17,z:14.9,r:6},
+  {id:'e',top:6.6,k:'F',yr:'2023–26',sub:'2GETHER APP',x:28,z:-60,r:5},
+  {id:'f',top:5.8,k:'G',yr:'2026–now',sub:'AI APPS',x:-8,z:-90,r:5}
 ];
 const PATH=['o','a','b','c','d'];
 const ROAD=[[0,186],[0,176],[-10,150],[9,118],[-9,84],[10,50],[2,6],[-22,-18],[-20,-46],[6,-64],[14,-86],[0,-106],[0,-120]];
@@ -575,7 +575,7 @@ function closePanel(){
 }
 let toastT;function toast(m){const e=$('#toast');e.textContent=m;e.hidden=false;clearTimeout(toastT);toastT=setTimeout(()=>{e.hidden=true;},5200);}
 let bubT;function hideBub(){clearTimeout(bubT);$('#bub').hidden=true;}
-// while driving nothing opens a panel: boxes and stations answer with a short thought bubble above the van
+// while driving nothing opens a panel: boxes and stations answer with a short thought bubble above the motorcycle
 function bubble(kick,text,ms){const e=$('#bub');$('#toast').hidden=true;e.hidden=true;e.innerHTML='<small class="mono">'+esc(kick)+'</small>'+esc(text);void e.offsetWidth;e.hidden=false;
   clearTimeout(bubT);bubT=setTimeout(()=>{e.hidden=true;},ms);}
 function later(key,msg){if(S[key])return;S[key]=true;const s0=S;setTimeout(()=>{if(S===s0&&!S.panel){hideBub();toast(msg);}},3600);}
@@ -651,7 +651,7 @@ async function makeWorld(){
     const c=document.createElement('canvas');c.width=512;c.height=232;const g=c.getContext('2d');
     g.fillStyle='#F2F3EF';g.fillRect(0,0,512,232);g.strokeStyle='#0E0F0C';g.lineWidth=10;g.strokeRect(5,5,502,222);
     g.textAlign='center';g.fillStyle='#D6006F';g.font='500 38px "IBM Plex Mono",ui-monospace,monospace';g.fillText(small,256,62);
-    g.fillStyle='#0E0F0C';g.font='800 128px Archivo,system-ui,sans-serif';g.fillText(big,256,186);
+    g.fillStyle='#0E0F0C';let fs=128;do{g.font='800 '+fs+'px Archivo,system-ui,sans-serif';fs-=6;}while(g.measureText(big).width>452&&fs>40);g.fillText(big,256,186);
     const tx=new THREE.CanvasTexture(c);tx.colorSpace=THREE.SRGBColorSpace;
     const s=new THREE.Sprite(new THREE.SpriteMaterial({map:tx}));s.scale.set(w||7,(w||7)*232/512,1);return s;
   }
@@ -659,18 +659,27 @@ async function makeWorld(){
   function glyphTex(txt,mag){const c=document.createElement('canvas');c.width=c.height=128;const g=c.getContext('2d');g.fillStyle=mag?'#D6006F':'#0E0F0C';g.fillRect(0,0,128,128);
     g.strokeStyle='#F2F3EF';g.lineWidth=6;g.strokeRect(9,9,110,110);g.fillStyle='#fff';g.textAlign='center';g.textBaseline='middle';
     g.font='800 '+(txt.length>2?46:txt.length>1?60:88)+'px Archivo,system-ui,sans-serif';g.fillText(txt,64,68);const tx=new THREE.CanvasTexture(c);tx.colorSpace=THREE.SRGBColorSpace;return tx;}
+  // a name board on the front of a building, so every station reads as what it is
+  function sign(txt,w,x,y,z,g,mag){
+    const c=document.createElement('canvas');c.width=512;c.height=112;const q=c.getContext('2d');q.fillStyle=mag?'#D6006F':'#0E0F0C';q.fillRect(0,0,512,112);
+    q.fillStyle='#fff';q.textAlign='center';q.textBaseline='middle';let fs=84;do{q.font='800 '+fs+'px Archivo,system-ui,sans-serif';fs-=4;}while(q.measureText(txt).width>460&&fs>30);q.fillText(txt,256,60);
+    const tx=new THREE.CanvasTexture(c);tx.colorSpace=THREE.SRGBColorSpace;const m=new THREE.Mesh(new THREE.PlaneGeometry(w,w*112/512),new THREE.MeshBasicMaterial({map:tx}));m.position.set(x,y,z);g.add(m);return m;}
+  const disc=(r,c,x,y,z,g)=>{const m=new THREE.Mesh(new THREE.CircleGeometry(r,20),new THREE.MeshBasicMaterial({color:c}));m.position.set(x,y,z);g.add(m);return m;};
   // stations
+  const S_={};ST.forEach(s=>{S_[s.id]=s.sign;});
   const build={
     o(g){box(8,.6,6,PAPER2,0,.3,0,g);box(6.4,3.4,4.4,WHITE,0,2.3,-.4,g);box(6.8,.5,4.8,INK,0,4.25,-.4,g);box(2,6.6,2,WHITE,-2.2,3.9,-.4,g);
-      const r=cyl(0,1.7,2,4,MAG,-2.2,8.2,-.4,g);r.rotation.y=Math.PI/4;for(let i=-.2;i<=2.4;i+=1.3)box(.8,1.2,.1,INK,i,2.5,1.82,g);},
-    a(g){box(9,1,7,PAPER2,0,.5,0,g);for(let i=-3;i<=3;i+=2)cyl(.45,.45,4.4,8,WHITE,i,3.2,2.6,g);box(8,3.8,4.6,WHITE,0,2.9,-.6,g);
+      const r=cyl(0,1.7,2,4,MAG,-2.2,8.2,-.4,g);r.rotation.y=Math.PI/4;for(let i=-.2;i<=2.4;i+=1.3)box(.8,1.2,.1,INK,i,2.2,1.82,g);
+      disc(.72,INK,-2.2,6.1,.61,g);disc(.58,WHITE,-2.2,6.1,.62,g);box(.08,.42,.02,INK,-2.2,6.28,.64,g);box(.3,.08,.02,INK,-2.07,6.1,.64,g);
+      sign(S_.o,3.6,1,3.55,1.83,g);box(.9,1.5,.1,MAG,-2.2,1.35,.62,g);cyl(.05,.05,3,6,INK,3.6,1.8,2.4,g);box(.9,.55,.04,MAG,4.08,3,2.4,g);},
+    a(g){box(9,1,7,PAPER2,0,.5,0,g);for(let i=-3;i<=3;i+=2)cyl(.45,.45,4.4,8,WHITE,i,3.2,2.6,g);box(8,3.8,4.6,WHITE,0,2.9,-.6,g);box(8,.5,1.2,PAPER2,0,.75,3.6,g);box(7,.25,1,PAPER2,0,.4,4.5,g);sign(S_.a,5.6,0,5.05,3.12,g);
       const r=cyl(3.2,3.2,9,3,INK,0,6.9,0,g);r.rotation.z=Math.PI/2;r.rotation.x=Math.PI/2;r.scale.set(.62,1,1);},
     b(g){box(6,5,5,WHITE,0,2.5,0,g);box(6.2,.5,5.2,INK,0,5.2,0,g);box(2.4,3,2.4,PAPER2,-1,6.9,0,g);cyl(.08,.08,4,6,INK,1.6,7.4,1,g);box(.5,.5,.5,MAG,1.6,9.4,1,g);
-      for(let i=-2;i<=2;i+=2)box(1.1,1.3,.1,INK,i,3,2.52,g);},
+      for(let i=-2;i<=2;i+=2){box(1.1,1,.1,INK,i,2.9,2.52,g);box(1.1,1,.1,INK,i,1.4,2.52,g);}sign(S_.b,3.6,0,4.35,2.53,g);},
     c(g){box(13,4.2,7,WHITE,0,2.1,0,g);for(let i=-4.3;i<=4.4;i+=4.3){const r=cyl(2.3,2.3,7,3,INK,i,4.9,0,g);r.rotation.x=Math.PI/2;r.rotation.y=Math.PI/2;r.scale.set(.45,1,1);}
-      box(3,.8,1.5,MAG,3.5,.8,5.4,g);box(1.5,.6,1.3,INK,3.3,1.5,5.4,g);cyl(1,1,6.5,8,PAPER2,-7.6,3.25,-1,g);},
+      sign(S_.c,5.2,-2.6,2.9,3.53,g);box(2.2,2.4,.1,INK,3.6,1.2,3.52,g);box(3,.8,1.5,MAG,3.5,.8,5.4,g);box(1.5,.6,1.3,INK,3.3,1.5,5.4,g);cyl(1,1,6.5,8,PAPER2,-7.6,3.25,-1,g);},
     d(g){box(8,3.2,6,WHITE,0,1.6,0,g);box(6,3,5,INK,1.2,4.7,-.4,g);box(4,2.6,4,WHITE,-.8,7.5,.2,g);box(1.6,1.6,1.6,MAG,-.8,9.6,.2,g);
-      for(let i=-3;i<=3;i+=1.5)box(.8,1.6,.1,INK,i,1.7,3.02,g);},
+      for(let i=-3;i<=3;i+=1.5)box(.8,1.6,.1,INK,i,1.7,3.02,g);sign(S_.d,5.2,1.2,5.1,2.13,g,true);for(let i=-2.2;i<=.7;i+=1.4)box(.9,1.2,.1,0x9FB4C0,i,7.6,2.22,g);},
     e(g){const a=box(3,6,.5,INK,-1.9,3.3,0,g);a.rotation.z=.16;const s1=box(2.5,5.2,.1,MAG,-1.9,3.3,.3,g);s1.rotation.z=.16;
       const b=box(3,6,.5,INK,1.9,3.3,.2,g);b.rotation.z=-.16;const s2=box(2.5,5.2,.1,WHITE,1.9,3.3,.5,g);s2.rotation.z=-.16;box(8,.6,3,PAPER2,0,.3,0,g);},
     f(g){box(8,.6,5,PAPER2,0,.3,0,g);[[MAG,-2.3,1.9,0],[INK,.1,1.9,.3],[WHITE,2.5,1.9,0],[GREY,-1,4.5,.1]].forEach((p,i)=>{const m=box(2.3,2.3,2.3,p[0],p[1],p[2],p[3],g);m.rotation.y=(i-1.5)*.18;});}
@@ -680,10 +689,10 @@ async function makeWorld(){
     // face the nearest point of the road
     let bi=0,bd=1e9;RP.forEach((p,i)=>{const d=Math.hypot(p.x-s.x,p.z-s.z);if(d<bd){bd=d;bi=i;}});
     g.rotation.y=Math.atan2(RP[bi].x-s.x,RP[bi].z-s.z);build[s.id](g);scene.add(g);
-    const lb=label(s.k,s.sub,s.k.length>1?8:6.4);lb.position.set(s.x,13.2,s.z);scene.add(lb);
+    const lb=label(s.yr.toUpperCase(),s.k+' · '+s.sub,8);lb.position.set(s.x,s.top+2,s.z);scene.add(lb); // year right above the roof
     const ring=new THREE.Mesh(new THREE.RingGeometry(s.r+5.4,s.r+6,48),new THREE.MeshBasicMaterial({color:MAG,transparent:true,opacity:.55,side:THREE.DoubleSide}));
     ring.rotation.x=-Math.PI/2;ring.position.set(s.x,.05,s.z);scene.add(ring);
-    return {...s,lb,ring,inside:false};
+    return {...s,lb,ring,inside:false,face:g.rotation.y};
   });
 
   // boxes: floating cubes, each with its own sign
@@ -719,16 +728,26 @@ async function makeWorld(){
       o.position.set(x,.6,z);o.scale.setScalar(1);o.updateMatrix();trunk.setMatrixAt(n,o.matrix);n++;}
     cone.count=trunk.count=n;scene.add(cone,trunk);}
 
-  // the van
+  // the motorcycle: a naked bike with rider (the group keeps the name "van", it is the vehicle)
   const van=new THREE.Group();scene.add(van);
-  box(2.3,1.1,4.6,INK,0,1.05,0,van);box(2.2,1.2,3.3,WHITE,0,2.15,-.55,van);box(2.32,.34,4.62,MAG,0,1.5,0,van);
-  box(1.9,.8,.1,0x9FB4C0,0,2.2,1.12,van);box(.5,.3,.1,WHITE,-.75,1.1,2.31,van);box(.5,.3,.1,WHITE,.75,1.1,2.31,van);
-  [[-1.2,1.5],[1.2,1.5],[-1.2,-1.5],[1.2,-1.5]].forEach(p=>{const w=cyl(.55,.55,.45,12,0x2A2B27,p[0],.55,p[1],van);w.rotation.z=Math.PI/2;});
-  const shadow=new THREE.Mesh(new THREE.CircleGeometry(2.6,24),new THREE.MeshBasicMaterial({color:INK,transparent:true,opacity:.18}));shadow.rotation.x=-Math.PI/2;shadow.scale.set(.75,1.15,1);scene.add(shadow);
+  {const DK=0x2A2B27,b=new THREE.Group();b.scale.setScalar(1.3);van.add(b);
+    [1.25,-1.25].forEach(z=>{const w=cyl(.62,.62,.3,18,DK,0,.62,z,b);w.rotation.z=Math.PI/2;const r=cyl(.4,.4,.32,14,MAG,0,.62,z,b);r.rotation.z=Math.PI/2;const h=cyl(.14,.14,.36,8,DK,0,.62,z,b);h.rotation.z=Math.PI/2;});
+    [-.17,.17].forEach(x=>{const f=box(.1,1.25,.1,GREY,x,1.12,1.07,b);f.rotation.x=-.33;const a=box(.09,.09,1.15,GREY,x,.68,-.72,b);a.rotation.x=.06;});
+    box(.5,.56,.85,DK,0,.82,.12,b);box(.42,.2,.5,GREY,0,.5,.2,b);                       // engine
+    box(.56,.46,.95,MAG,0,1.36,.28,b);box(.6,.1,.5,INK,0,1.6,.3,b);                      // tank
+    box(.44,.14,.95,INK,0,1.3,-.6,b);const tl=box(.3,.2,.55,MAG,0,1.43,-1.12,b);tl.rotation.x=.28;box(.2,.1,.06,0xFF3B30,0,1.5,-1.4,b); // seat, tail, rear light
+    box(.36,.26,.24,INK,0,1.52,.98,b);box(.26,.12,.05,WHITE,0,1.5,1.11,b);               // headlight
+    box(1.04,.07,.07,INK,0,1.78,.8,b);box(.16,.1,.1,DK,-.5,1.78,.8,b);box(.16,.1,.1,DK,.5,1.78,.8,b); // handlebar
+    const ex=cyl(.09,.13,1,8,GREY,.3,.56,-.5,b);ex.rotation.x=Math.PI/2;
+    // rider
+    box(.5,.34,.75,INK,0,1.56,-.38,b);[-.3,.3].forEach(x=>{const l=box(.2,.7,.22,INK,x,1.2,-.05,b);l.rotation.x=-.5;const a=box(.15,.15,.85,INK,x*1.05,2.02,.42,b);a.rotation.x=.42;});
+    const to=box(.56,.9,.4,INK,0,2.08,-.22,b);to.rotation.x=.32;box(.5,.3,.1,MAG,0,2.2,-.44,b).rotation.x=.32;
+    const he=new THREE.Mesh(new THREE.SphereGeometry(.31,12,10),M(MAG));he.position.set(0,2.68,.02);b.add(he);box(.4,.15,.12,INK,0,2.68,.26,b);}
+  const shadow=new THREE.Mesh(new THREE.CircleGeometry(2.6,24),new THREE.MeshBasicMaterial({color:INK,transparent:true,opacity:.18}));shadow.rotation.x=-Math.PI/2;shadow.scale.set(.42,1.05,1);scene.add(shadow);
   const mark=new THREE.Mesh(new THREE.RingGeometry(.9,1.25,28),new THREE.MeshBasicMaterial({color:MAG,side:THREE.DoubleSide}));mark.rotation.x=-Math.PI/2;mark.position.y=.08;mark.visible=false;scene.add(mark);
 
   // driving
-  const car={x:START.x,z:START.z,h:START.h,v:0};let camH=car.h,target=null,tAge=0,gateIn=false;
+  const car={x:START.x,z:START.z,h:START.h,v:0};let leanT=0,lean=0;let camH=car.h,target=null,tAge=0,gateIn=false;
   const keys={};const KM={ArrowUp:'u',KeyW:'u',ArrowDown:'d',KeyS:'d',ArrowLeft:'l',KeyA:'l',ArrowRight:'r',KeyD:'r'};
   addEventListener('keydown',e=>{const k=KM[e.code];if(!k||S.panel||!S.started||e.target.closest('button,a,input'))return;keys[k]=true;target=null;mark.visible=false;e.preventDefault();});
   addEventListener('keyup',e=>{const k=KM[e.code];if(k)keys[k]=false;});
@@ -742,7 +761,7 @@ async function makeWorld(){
   const up=()=>{down=false;};cv.addEventListener('pointerup',up);cv.addEventListener('pointercancel',up);
   const wrap=a=>{while(a>Math.PI)a-=2*Math.PI;while(a<-Math.PI)a+=2*Math.PI;return a;};
 
-  let slowT=0; // after a station bubble the van rolls slowly for a moment, so there is time to read
+  let slowT=0; // after a station bubble the bike rolls slowly for a moment, so there is time to read
   function step(dt){
     let thr=0,steer=0;
     if(keys.u||keys.d||keys.l||keys.r){thr=(keys.u?1:0)-(keys.d?.6:0);steer=(keys.l?1:0)-(keys.r?1:0);if(car.v<-.5)steer=-steer;}
@@ -750,6 +769,7 @@ async function makeWorld(){
       if(dist<2.8||(tAge>5&&dist<9&&!down)){target=null;mark.visible=false;}
       else{const diff=wrap(Math.atan2(dx,dz)-car.h),ad=Math.abs(diff);steer=Math.max(-1,Math.min(1,diff*2.4));
         thr=ad>1.9?.4:ad>1?.65:1;if(dist<7&&ad>1)thr=.28;if(dist<10&&!down)thr*=Math.max(.4,dist/10);}}
+    leanT=steer*Math.max(-1,Math.min(1,car.v/9));
     if(performance.now()<slowT&&thr>.3)thr=.3;
     car.v+=thr*30*dt;car.v-=car.v*(thr?1.5:3.2)*dt;if(Math.abs(car.v)<.05&&!thr)car.v=0;
     car.h=wrap(car.h+steer*2*dt*Math.max(-1,Math.min(1,car.v/5)));
@@ -785,11 +805,12 @@ async function makeWorld(){
     const dt=Math.min(.05,(now-last)/1000);last=now;tt+=dt;
     if(!S.panel&&S.started){step(dt);triggers();hud(dt);}
     van.position.set(car.x,Math.abs(car.v)>1&&!reduce?Math.sin(tt*18)*.03:0,car.z);van.rotation.y=car.h;
+    if(S.panel||!S.started)leanT=0;lean+=(leanT-lean)*Math.min(1,7*dt);van.rotation.z=reduce?0:-lean*.5;
     shadow.position.set(car.x,.06,car.z);shadow.rotation.z=car.h;
     camH+=wrap(car.h-camH)*Math.min(1,3.2*dt);
     const port=innerWidth<innerHeight,dist=port?17:14,hgt=port?11:8.5,lift=S.panel?0:0;
     const fx=Math.sin(camH),fz=Math.cos(camH);
-    cam.position.set(car.x-fx*dist,hgt+lift,car.z-fz*dist);cam.lookAt(car.x+fx*5,1.6,car.z+fz*5);
+    cam.position.set(car.x-fx*dist,hgt+lift,car.z-fz*dist);cam.lookAt(car.x+fx*5,3.6,car.z+fz*5); // look a little higher, so the year boards above the stations stay in view
     for(const q of tokens){if(!q.m.visible)continue;q.m.rotation.y=tt*1.2+q.i;q.m.position.y=2.3+(reduce?0:Math.sin(tt*2+q.i)*.35);}
     if(mark.visible&&!reduce)mark.scale.setScalar(1+Math.sin(tt*6)*.08);
     renderer.render(scene,cam);
