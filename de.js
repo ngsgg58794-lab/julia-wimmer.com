@@ -18,7 +18,7 @@ window.JW_DE={
 "Game": "Spiel",
 "3D game": "3D-Spiel",
 "Rather play than read?": "Lieber spielen als lesen?",
-"Drive along my path and collect 30 facts about me.": "Fahr meinen Weg ab und sammle 30 Fakten über mich.",
+"Drive along my path and collect 22 facts about me.": "Fahr meinen Weg ab und sammle 22 Fakten über mich.",
 "Fig. 01 — Julia": "Abb. 01 — Julia",
 "Munich": "München",
 "My path": "Mein Weg",
