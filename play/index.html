@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Game: Get to know Julia · Julia Wimmer</title>
-<meta name="description" content="A small 3D game for recruiters: drive along Julia Wimmer's path and collect 30 facts about her. Julia is a UX and product designer with a focus on digitalization and AI.">
+<meta name="description" content="A small 3D game for recruiters: drive along Julia Wimmer's path and collect 22 facts about her. Julia is a UX and product designer with a focus on digitalization and AI.">
 <meta property="og:title" content="Game: Get to know Julia">
-<meta property="og:description" content="A small 3D game for recruiters: drive along Julia's path and collect 30 facts about her.">
+<meta property="og:description" content="A small 3D game for recruiters: drive along Julia's path and collect 22 facts about her.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://juliawimmer.de/img/portrait.jpeg">
 <meta name="theme-color" content="#F2F3EF">
@@ -238,6 +238,8 @@ body{display:block;overflow:hidden;overscroll-behavior:none}
 }
 .nx{position:fixed;top:74px;left:50%;transform:translateX(-50%);z-index:4;display:flex;align-items:center;gap:10px;padding:8px 14px;border:1px solid var(--ink);background:var(--paper);white-space:nowrap}
 .nx #arr{display:inline-block;color:var(--mag);font-size:1.125rem;line-height:1;font-family:var(--sans);font-weight:800}
+.map{position:fixed;left:14px;top:74px;z-index:4;width:92px;height:174px;border:1px solid var(--ink);box-shadow:3px 3px 0 var(--ink)}
+@media (max-width:560px){.map{left:8px;top:58px;width:60px;height:113px;box-shadow:none}}
 .hint{position:fixed;left:50%;bottom:86px;transform:translateX(-50%);z-index:4;max-width:calc(100% - 32px);padding:10px 14px;background:var(--ink);color:var(--paper);text-align:center}
 .bub{position:fixed;left:50%;bottom:49%;transform:translateX(-50%);z-index:5;width:max-content;max-width:min(360px,calc(100% - 40px));padding:12px 22px 14px;background:#fff;color:var(--ink);border:2px solid var(--ink);border-radius:30px;font-weight:700;font-size:17px;line-height:1.3;text-align:center;box-shadow:4px 4px 0 var(--ink);pointer-events:none;animation:bub .28s ease-out}
 .bub small{display:block;margin-bottom:3px;font-size:11px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--mag)}
@@ -297,6 +299,7 @@ body{display:block;overflow:hidden;overscroll-behavior:none}
 </header>
 
 <div class="nx mono" id="nx" hidden><span id="arr" aria-hidden="true">↑</span><span id="nxt"></span></div>
+<canvas class="map" id="map" width="184" height="348" aria-hidden="true" hidden></canvas>
 <div class="hint mono" id="hint" hidden></div>
 <div class="toast" id="toast" role="status" hidden></div>
 <div class="bub" id="bub" role="status" hidden></div>
@@ -322,7 +325,7 @@ en:{
   canvas:'3D world. Drive with the arrow keys or open the list of all stations.',
   iKick:'A 3D game for recruiters',
   iH:'Get to know <span class="m">Julia.</span>',
-  iLead:'Ride through my world on a motorcycle: from school in Landau an der Isar via Landshut and Ingolstadt to Munich, and on to Innsbruck. The buildings along the track show where I have been. Everything else is yours to explore: 30 boxes are scattered all over the map, some right at the track, some far out. Ride into one and a thought bubble tells you something about me.',
+  iLead:'Ride through my world on a motorcycle: from school in Landau an der Isar via Landshut and Ingolstadt to Munich, and on to Innsbruck. The buildings along the track show where I have been. Everything else is yours to explore: 22 yellow boxes are scattered all over the map, some right at the track, some far out. Ride into one and a thought bubble tells you something about me. The arrow and the mini map show you where the next one is.',
   iHow:[['Keyboard','Arrow keys or W A S D'],['Mouse & touch','Tap or hold where you want to go'],['No time?','Open the list and skip the driving']],
   iStart:'Start driving',iList:'Open the list instead',
   iNo3d:'3D is not available in this browser. You can open all stations from the list.',
@@ -330,7 +333,7 @@ en:{
   vOut:'Outside view',vIn:'Rider view',
   nxAll:'INN · test report',
   toastAll:'Everything found. Drive to INN for your test report.',
-  rev:'Rev.',ar:{b:'Business',d:'Design',t:'Tech',p:'Personal'},arOf:(n,a,b)=>n+' · '+a+' of '+b,
+  rev:'Rev.',
   st:{
     o:['2007 · Landau a.d. Isar','Abitur','Gymnasium Landau an der Isar, class of 2007.','My path starts here.'],
     a:['2007 – 2011 · Landshut','B.A. Business Administration','Grade 1.7, University of applied sciences Landshut.','Business first, design later. That is why cost, process and organisation are part of how I think.'],
@@ -351,39 +354,31 @@ en:{
   lnk:{o:['Full path on the site','#path'],a:['Full path on the site','#path'],b:['Full path on the site','#path'],c:['Full path on the site','#path'],d:['Selected work','#work'],e:['Case P-03: 2gether','#work'],f:['The four apps','#apps']},
   fKick:(a,b)=>'Box '+a+' of '+b,fNext:'Next box',
   F:[
-    ['What I enjoy','Structuring','Taking something messy and building a system that people actually want to use: boards, spaces, workflows, decisions.','Julia loves turning chaos into structure.'],
-    ['What I enjoy','Trying new things','New tools, new methods, new fields. I would rather build a quick test than talk about it for weeks.','Julia loves trying new tools and methods.'],
-    ['What I enjoy','Adapting to people & projects','Every team, user and project is different. I adapt the approach to fit them, not the other way round.','Julia is very good at adapting to people and projects.'],
-    ['What I enjoy','Making information intuitive','Complex topics, shown so that people get them at a glance and can decide. From decision papers to pitches.','Julia is very good at making complex things easy to grasp.'],
-    ['What you get','Speed','I get a topic quickly, I learn fast and I execute fast. No long ramp-up.','Julia is very good at getting up to speed fast.'],
-    ['What you get','Range','Design, product, tech and business in one person. Fewer handoffs, less friction.','Julia is very good at connecting design, product, tech and business.'],
-    ['What you get','Results','I ship. Remote-first, efficient and dependable.','Julia loves getting things done.'],
-    ['What you get','Calm & warmth','I keep the team steady under pressure and bring people together.','Julia is very good at keeping a team calm under pressure.'],
-    ['About me','Three languages','German is my native language, my English is C1 and my Spanish B1.','Julia speaks German, English and Spanish.'],
-    ['About me','Munich → Innsbruck','I am moving from Munich to Innsbruck. I am looking for Design, Digitalization & AI roles, remote-first or hybrid around Innsbruck.','Julia is moving from Munich to Innsbruck.'],
-    ['About me','AI lover','I build with Claude and Claude Code. Claude Academy 2026: AI Fluency, Claude Code in Action and Claude 101, all three as course completion badges.','Julia loves building with AI.'],
-    ['About me','T-shaped all-rounder','Deep in UX and product design, broad across digitalization, AI, process and business.','Julia is deep in UX and broad in everything around it.'],
-    ['Personal','Motorcycle','I love riding my motorcycle, a Yamaha naked bike.','Julia loves riding her Yamaha naked bike.'],
-    ['Personal','Travel','I love traveling, especially to Southeast Asia. My favorite country is Thailand.','Julia loves traveling. Her favorite country is Thailand.'],
-    ['Personal','Live music','I love live music, especially rock and Latin.','Julia loves live music, especially rock and Latin.'],
-    ['Personal','Optimism','I believe there is something good in every situation.','Julia finds something good in every situation.'],
-    ['Career','Started in IT','','Julia started as an IT consultant, not as a designer.'],
-    ['Projects','Four apps','','Julia has four apps live in the app stores, all built with Claude Code.'],
-    ['AI','Claude Academy','','Julia has three Claude Academy badges: AI Fluency, Claude Code in Action and Claude 101.'],
-    ['How I work','Less is more','','Julia is very good at cutting features nobody needs.'],
-    ['Career','Six years at Audi','','Julia spent six years at Audi on connected-car projects.'],
-    ['Career','Product Owner first','','Julia was Product Owner before she became a UX designer.'],
-    ['Projects','Founder','','Julia co-founded a startup next to her job.'],
-    ['Career','Automotive HMI','','Julia is certified in Automotive Human-Machine Interaction.'],
-    ['AI','Design system in Claude','','Julia moved brand guidelines and a design system into Claude.'],
-    ['Projects','Privacy first','','Julia builds apps that keep your data on your device.'],
-    ['How I work','Automation','','Julia likes to automate what she has done three times by hand.'],
-    ['How I work','Jira & Confluence','','Julia rebuilt the Jira board and Confluence space of her UX team.'],
-    ['How I work','Real conditions','','Julia designs for real conditions, like tapping with work gloves on.'],
-    ['Career','15 years','','Julia has 15 years of experience in IT and connected mobility.']],
+    ['What I enjoy','Structuring','','Hand Julia a mess and you get back a system that people actually want to use.'],
+    ['What I enjoy','Trying new things','','Talk about it for weeks? Julia would rather build a test today and know more tomorrow.'],
+    ['What I enjoy','Adapting to people & projects','','No one-size-fits-all: Julia adapts her approach to the team, the user and the project, never the other way round.'],
+    ['What I enjoy','Making information intuitive','','Julia makes complicated things so clear that you can decide at a glance.'],
+    ['What you get','Speed','','The first version of her app Innensicht was up and running after one afternoon. Julia is fast.'],
+    ['What you get','Range','','Design, product, tech and business: with Julia that is one person. Fewer handoffs, less friction.'],
+    ['What you get','Results','','Done beats perfectly planned. Julia delivers: remote-first, efficient, dependable.'],
+    ['What you get','Calm & warmth','','When things heat up, Julia gets calmer. And so does the team.'],
+    ['About me','Three languages','','German, English, Spanish: Julia asks in three languages what users really need.'],
+    ['About me','AI lover','','After work, Julia opens Claude Code and starts building. Vibe coding out of passion.'],
+    ['About me','T-shaped all-rounder','','T-shaped: deep in UX and product design, broad across digitalization, AI, process and business.'],
+    ['Personal','Motorcycle','','This motorcycle is real: Julia rides a Yamaha naked bike.'],
+    ['Personal','Travel','','Dream destination number one: Thailand. Julia loves traveling through Southeast Asia.'],
+    ['Personal','Live music','','Rock or Latin, as long as it is live: Julia would rather stand in front of a stage than sit on the couch.'],
+    ['Personal','Optimism','','Julia finds something good in every situation.'],
+    ['Projects','Four apps','','Four apps live in the app stores. All built by herself, all with Claude Code.'],
+    ['How I work','Less is more','','Julia’s favorite feature: the one she cut. Less is more.'],
+    ['Projects','Founder','','Co-founded a startup next to her full-time job: 2gether.'],
+    ['Career','Automotive HMI','','Julia knows cockpits not only from her motorcycle: certified in Automotive HMI.'],
+    ['AI','CI in Claude Design','','Her employer’s corporate identity now lives in Claude Design. Julia took it there.'],
+    ['How I work','Real conditions','','Julia designs for real everyday life. For example for hands in work gloves.'],
+    ['Career','15 years','','15 years in IT and connected mobility. And still as curious as on day one.']],
   // list
   lH:'All stations',lLead:'Open any station directly, with or without driving.',
-  lQ:(a,b)=>'Boxes: open the next one ('+a+' of '+b+' collected)',lQDone:'All 30 boxes collected',
+  lQ:(a,b)=>'Boxes: open the next one ('+a+' of '+b+' collected)',lQDone:'All 22 boxes collected',
   // report
   rKickA:'Arrived in Innsbruck',rKickB:'Test report',
   rH:'Now you <span class="m">know Julia.</span>',rHPart:'Your test report <span class="m">so far.</span>',
@@ -404,7 +399,7 @@ de:{
   canvas:'3D-Welt. Fahre mit den Pfeiltasten oder öffne die Liste aller Stationen.',
   iKick:'Ein 3D-Spiel für Recruiter:innen',
   iH:'Lern <span class="m">Julia</span> kennen.',
-  iLead:'Fahr mit dem Motorrad durch meine Welt: von der Schule in Landau an der Isar über Landshut und Ingolstadt nach München und weiter nach Innsbruck. Die Gebäude an der Strecke zeigen, wo ich war. Alles andere darfst du erkunden: 30 Kisten liegen über die ganze Karte verstreut, manche direkt an der Strecke, manche weit draußen. Fahr hinein und eine Gedankenwolke verrät dir etwas über mich.',
+  iLead:'Fahr mit dem Motorrad durch meine Welt: von der Schule in Landau an der Isar über Landshut und Ingolstadt nach München und weiter nach Innsbruck. Die Gebäude an der Strecke zeigen, wo ich war. Alles andere darfst du erkunden: 22 gelbe Kisten liegen über die ganze Karte verstreut, manche direkt an der Strecke, manche weit draußen. Fahr hinein und eine Gedankenwolke verrät dir etwas über mich. Pfeil und Minikarte zeigen dir, wo die nächste liegt.',
   iHow:[['Tastatur','Pfeiltasten oder W A S D'],['Maus & Touch','Tippen oder halten, wohin du willst'],['Keine Zeit?','Liste öffnen und das Fahren überspringen']],
   iStart:'Losfahren',iList:'Lieber die Liste öffnen',
   iNo3d:'3D ist in diesem Browser nicht verfügbar. Du kannst alle Stationen über die Liste öffnen.',
@@ -412,7 +407,7 @@ de:{
   vOut:'Außenansicht',vIn:'Fahrersicht',
   nxAll:'INN · Prüfbericht',
   toastAll:'Alles gefunden. Fahr nach INN für deinen Prüfbericht.',
-  rev:'Rev.',ar:{b:'Business',d:'Design',t:'Tech',p:'Persönlich'},arOf:(n,a,b)=>n+' · '+a+' von '+b,
+  rev:'Rev.',
   st:{
     o:['2007 · Landau a.d. Isar','Abitur','Gymnasium Landau an der Isar, Abschluss 2007.','Hier beginnt mein Weg.'],
     a:['2007 – 2011 · Landshut','B.A. Betriebswirtschaft','Note 1,7, Hochschule Landshut.','Erst BWL, dann Design. Deshalb denke ich Kosten, Prozesse und Organisation mit.'],
@@ -433,38 +428,30 @@ de:{
   lnk:{o:['Ganzer Weg auf der Website','#path'],a:['Ganzer Weg auf der Website','#path'],b:['Ganzer Weg auf der Website','#path'],c:['Ganzer Weg auf der Website','#path'],d:['Ausgewählte Projekte','#work'],e:['Case P-03: 2gether','#work'],f:['Die vier Apps','#apps']},
   fKick:(a,b)=>'Kiste '+a+' von '+b,fNext:'Nächste Kiste',
   F:[
-    ['Was mir Spaß macht','Strukturieren','Etwas Unübersichtliches nehmen und daraus ein System bauen, das Menschen wirklich nutzen wollen: Boards, Spaces, Workflows, Entscheidungen.','Julia liebt es, aus Chaos Struktur zu machen.'],
-    ['Was mir Spaß macht','Neues ausprobieren','Neue Tools, neue Methoden, neue Themen. Ich baue lieber einen schnellen Test, als wochenlang darüber zu reden.','Julia liebt es, neue Tools und Methoden auszuprobieren.'],
-    ['Was mir Spaß macht','Anpassen an Menschen & Projekte','Jedes Team, jede Nutzerin und jedes Projekt ist anders. Ich passe den Ansatz an sie an, nicht umgekehrt.','Julia kann sich sehr gut auf Menschen und Projekte einstellen.'],
-    ['Was mir Spaß macht','Informationen intuitiv aufbereiten','Komplexe Themen so zeigen, dass man sie auf einen Blick versteht und entscheiden kann. Von Entscheidungsvorlagen bis Pitches.','Julia kann Komplexes sehr gut verständlich machen.'],
-    ['Was du bekommst','Tempo','Ich erfasse ein Thema schnell, lerne schnell und setze schnell um. Keine lange Einarbeitung.','Julia arbeitet sich sehr schnell in Neues ein.'],
-    ['Was du bekommst','Bandbreite','Design, Produkt, Technik und Business in einer Person. Weniger Übergaben, weniger Reibung.','Julia verbindet sehr gut Design, Produkt, Technik und Business.'],
-    ['Was du bekommst','Ergebnisse','Ich liefere. Remote-first, effizient und verlässlich.','Julia liebt es, Dinge fertigzubringen.'],
-    ['Was du bekommst','Ruhe & Wärme','Ich halte das Team unter Druck stabil und bringe Menschen zusammen.','Julia hält ein Team auch unter Druck ruhig.'],
-    ['Über mich','Drei Sprachen','Deutsch ist meine Muttersprache, mein Englisch ist C1 und mein Spanisch B1.','Julia spricht Deutsch, Englisch und Spanisch.'],
-    ['Über mich','München → Innsbruck','Ich ziehe von München nach Innsbruck. Ich suche Stellen in Design, Digitalisierung & KI, remote-first oder hybrid rund um Innsbruck.','Julia zieht von München nach Innsbruck.'],
-    ['Über mich','AI Lover','Ich baue mit Claude und Claude Code. Claude Academy 2026: AI Fluency, Claude Code in Action und Claude 101, alle drei als Abschluss-Badges der Kurse.','Julia liebt es, mit KI zu bauen.'],
-    ['Über mich','T-shaped Allrounderin','Tief in UX und Product Design, breit in Digitalisierung, KI, Prozessen und Business.','Julia ist tief in UX und breit in allem drumherum.'],
-    ['Persönlich','Motorrad','Ich liebe es, Motorrad zu fahren. Meins ist ein Yamaha Naked Bike.','Julia liebt es, ihr Yamaha Naked Bike zu fahren.'],
-    ['Persönlich','Reisen','Ich liebe es zu reisen, besonders nach Südostasien. Mein Lieblingsland ist Thailand.','Julia liebt Reisen. Ihr Lieblingsland ist Thailand.'],
-    ['Persönlich','Livemusik','Ich liebe Livemusik, vor allem Rock und Latin.','Julia liebt Livemusik, vor allem Rock und Latin.'],
-    ['Persönlich','Optimismus','Ich glaube, dass in jeder Situation etwas Gutes steckt.','Julia findet in jeder Situation etwas Gutes.'],
-    ['Werdegang','Start in der IT','','Julia hat als IT-Beraterin angefangen, nicht als Designerin.'],
-    ['Projekte','Vier Apps','','Julia hat vier Apps live in den App-Stores, alle mit Claude Code gebaut.'],
-    ['KI','Claude Academy','','Julia hat drei Claude-Academy-Badges: AI Fluency, Claude Code in Action und Claude 101.'],
-    ['Arbeitsweise','Weniger ist mehr','','Julia streicht sehr gut Funktionen, die niemand braucht.'],
-    ['Werdegang','Sechs Jahre Audi','','Julia war sechs Jahre bei Audi in Connected-Car-Projekten.'],
-    ['Werdegang','Erst Product Owner','','Julia war Product Owner, bevor sie UX Designerin wurde.'],
-    ['Projekte','Gründerin','','Julia hat neben ihrem Job ein Startup mitgegründet.'],
-    ['Werdegang','Automotive HMI','','Julia ist zertifiziert in Automotive Human-Machine Interaction.'],
-    ['KI','Designsystem in Claude','','Julia hat Brand Guidelines und ein Designsystem in Claude überführt.'],
-    ['Projekte','Daten bleiben bei dir','','Julia baut Apps, die deine Daten nur auf dem Gerät speichern.'],
-    ['Arbeitsweise','Automatisieren','','Julia automatisiert gern, was sie dreimal von Hand gemacht hat.'],
-    ['Arbeitsweise','Jira & Confluence','','Julia hat Jira-Board und Confluence-Space ihres UX-Teams neu aufgebaut.'],
-    ['Arbeitsweise','Echte Bedingungen','','Julia gestaltet für echte Bedingungen, zum Beispiel Tippen mit Arbeitshandschuhen.'],
-    ['Werdegang','15 Jahre','','Julia hat 15 Jahre Erfahrung in IT und Connected Mobility.']],
+    ['Was mir Spaß macht','Strukturieren','','Gib Julia ein Chaos und du bekommst ein System zurück, das Menschen wirklich nutzen wollen.'],
+    ['Was mir Spaß macht','Neues ausprobieren','','Wochenlang diskutieren? Julia baut lieber heute einen Test und weiß morgen mehr.'],
+    ['Was mir Spaß macht','Anpassen an Menschen & Projekte','','Kein Schema F: Julia passt ihren Ansatz an Team, Nutzerin und Projekt an, nie umgekehrt.'],
+    ['Was mir Spaß macht','Informationen intuitiv aufbereiten','','Julia macht Kompliziertes so klar, dass man auf einen Blick entscheiden kann.'],
+    ['Was du bekommst','Tempo','','Die erste Version ihrer App Innensicht stand nach einem Nachmittag. Julia ist schnell.'],
+    ['Was du bekommst','Bandbreite','','Design, Produkt, Technik und Business: Bei Julia ist das eine Person. Weniger Übergaben, weniger Reibung.'],
+    ['Was du bekommst','Ergebnisse','','Fertig schlägt perfekt geplant. Julia liefert: remote-first, effizient, verlässlich.'],
+    ['Was du bekommst','Ruhe & Wärme','','Wenn es brennt, wird Julia ruhiger. Und das Team gleich mit.'],
+    ['Über mich','Drei Sprachen','','Deutsch, Englisch, Spanisch: Julia fragt in drei Sprachen nach, was Nutzer wirklich brauchen.'],
+    ['Über mich','AI Lover','','Feierabend heißt bei Julia: Claude Code auf und losbauen. Vibecoding aus Leidenschaft.'],
+    ['Über mich','T-shaped Allrounderin','','T-shaped: tief in UX und Product Design, breit in Digitalisierung, KI, Prozessen und Business.'],
+    ['Persönlich','Motorrad','','Dieses Motorrad gibt es wirklich: Julia fährt privat ein Yamaha Naked Bike.'],
+    ['Persönlich','Reisen','','Fernweh-Ziel Nummer eins: Thailand. Julia reist am liebsten durch Südostasien.'],
+    ['Persönlich','Livemusik','','Rock oder Latin, Hauptsache live: Julia steht lieber vor der Bühne als auf der Couch.'],
+    ['Persönlich','Optimismus','','Julia findet in jeder Situation etwas Gutes.'],
+    ['Projekte','Vier Apps','','Vier Apps live in den App-Stores. Alle selbst gebaut, alle mit Claude Code.'],
+    ['Arbeitsweise','Weniger ist mehr','','Julias liebstes Feature: das, das sie gestrichen hat. Weniger ist mehr.'],
+    ['Projekte','Gründerin','','Neben dem Vollzeitjob ein Startup mitgegründet: 2gether.'],
+    ['Werdegang','Automotive HMI','','Julia kennt Cockpits nicht nur vom Motorrad: zertifiziert in Automotive HMI.'],
+    ['KI','CI in Claude Design','','Das CI ihres Arbeitgebers lebt jetzt in Claude Design. Julia hat es dorthin gebracht.'],
+    ['Arbeitsweise','Echte Bedingungen','','Julia gestaltet für den echten Alltag. Zum Beispiel für Hände in Arbeitshandschuhen.'],
+    ['Werdegang','15 Jahre','','15 Jahre IT und Connected Mobility. Und immer noch neugierig wie am ersten Tag.']],
   lH:'Alle Stationen',lLead:'Öffne jede Station direkt, mit oder ohne Fahren.',
-  lQ:(a,b)=>'Kisten: die nächste öffnen ('+a+' von '+b+' gesammelt)',lQDone:'Alle 30 Kisten gesammelt',
+  lQ:(a,b)=>'Kisten: die nächste öffnen ('+a+' von '+b+' gesammelt)',lQDone:'Alle 22 Kisten gesammelt',
   rKickA:'Angekommen in Innsbruck',rKickB:'Prüfbericht',
   rH:'Jetzt <span class="m">kennst du Julia.</span>',rHPart:'Dein Prüfbericht <span class="m">bis hierher.</span>',
   rLead:'Das hast du herausgefunden. Wenn es zu deiner Stelle passt, freue ich mich über eine Nachricht.',
@@ -492,13 +479,10 @@ const ST=[
 const PATH=['o','a','b','c','d'];
 const ROAD=[[0,186],[0,176],[-10,150],[9,118],[-9,84],[10,50],[2,6],[-22,-18],[-20,-46],[6,-64],[14,-86],[0,-106],[0,-120]];
 const START={x:0,z:176,h:Math.PI},GATE={x:0,z:-108},ZMAX=185;
-// the kinds of boxes keep their colours, but they no longer have areas of their own: all boxes are mixed over the whole map
-const AREA={b:{c:'#0E0F0C'},d:{c:'#D6006F'},t:{c:'#2F5BE0'}};
-const BEACH={x:50,z:112}; // sand, palms and dogs east of the road
-const FP=[[-17,87],[57,-55],[58,20],[7,70],[26,-3],[19,160],[41,84],[17,42],[13,-97],[-40,116],[12,112],[-34,54],[-67,12],[-30,-24],[14,-61],[-15,1],[66,169],[-27,-92],[-70,94],[-69,58],[-69,143],[-67,-96],[-19,-53],[-11,139],[-28,169],[70,-93],[65,-17],[69,56],[55,121],[-69,-38]];
-const AR='btddbbbbpptdpppptttdbbbddttbdb'; // area of every box, same order as the texts in F
-const NF=30;
-const GLYPH=['#','*','~','i','>>','<>','OK','♥','ES','INN','AI','T','RPM','SEA','♪',':)','IT','4','★','−','6Y','PO','2G','HMI','DS','0€','×3','JC','UX','15'];
+const BEACH={x:50,z:112},HAY={x:-48,z:140}; // sand, palms and dogs east of the road
+const FP=[[-17,87],[57,-55],[58,20],[7,70],[26,-3],[19,160],[41,84],[17,42],[13,-97],[12,112],[-34,54],[-67,12],[-30,-24],[14,-61],[-15,1],[-27,-92],[-69,58],[-19,-53],[-11,139],[-28,169],[55,121],[-69,-38]];
+const NF=22;
+const GLYPH=['#','*','~','i','>>','<>','OK','♥','ES','AI','T','RPM','SEA','♪',':)','4','−','2G','HMI','CI','UX','15'];
 
 /* ---------- state ---------- */
 let L=/[?&]lang=de\b/.test(location.search)?'de':'en';
@@ -512,8 +496,6 @@ function reset(){S={panel:{t:'intro'},started:false,seen:{},found:{},allToast:fa
 reset();
 const nSeen=()=>ST.filter(s=>S.seen[s.id]).length;
 const nFound=()=>Object.keys(S.found).length;
-const nArea=k=>{let n=0;for(let i=0;i<NF;i++)if(AR[i]===k&&S.found[i])n++;return n;};
-const tArea=k=>AR.split(k).length-1;
 const nextF=()=>{for(let i=0;i<NF;i++)if(!S.found[i])return i;return -1;};
 const allDone=()=>nFound()===NF;
 
@@ -552,7 +534,7 @@ function pList(){
     '<div class="row"><button class="btn" type="button" data-a="rep">'+esc(t('rep'))+' '+ARROW+'</button>'+(W&&S.started?'<button class="btn ghost" type="button" data-a="close">'+esc(t('back'))+'</button>':W?'<button class="btn ghost" type="button" data-a="start">'+esc(t('iStart'))+'</button>':'')+'</div>';
 }
 function pReport(){
-  const full=allDone(),log=[t('rL2')(nFound(),NF)].concat(['b','d','t','p'].map(k=>t('arOf')(t('ar')[k],nArea(k),tArea(k))));
+  const full=allDone(),log=[t('rL2')(nFound(),NF)];
   return '<p class="kick mono m">'+esc(S.panel.gate?t('rKickA'):t('rKickB'))+'</p><h1 tabindex="-1" id="h">'+(full?t('rH'):t('rHPart'))+'</h1><p class="lead">'+esc(t('rLead'))+'</p>'+
     '<div class="row"><a class="btn mag" href="mailto:mail@juliawimmer.de?subject='+encodeURIComponent(t('rSubject'))+'">'+esc(t('rMail'))+' '+ARROW+'</a>'+
     '<a class="btn ghost" href="https://www.linkedin.com/in/julia-wimmer-ux" target="_blank" rel="noopener">LinkedIn ↗</a>'+
@@ -571,7 +553,7 @@ function shell(){
   $('#home').href=site();$('#c').setAttribute('aria-label',t('canvas'));
   $('#hb').textContent=nFound()+' / '+NF;
   $('#bList').textContent=t('list');$('#bRep').textContent=t('rep');$('#hint').textContent=t('hint');$('#bView').textContent=FPV?t('vOut'):t('vIn');document.body.classList.toggle('fp',FPV&&!!W);
-  const live=!!W&&S.started;$('#dock').hidden=!live;$('#nx').hidden=!live;
+  const live=!!W&&S.started;$('#dock').hidden=!live;$('#nx').hidden=!live;$('#map').hidden=!live;
 }
 function render(focus){
   shell();
@@ -592,7 +574,7 @@ let bubT;function hideBub(){clearTimeout(bubT);$('#bub').hidden=true;}
 function bubble(kick,text,ms){const e=$('#bub');$('#toast').hidden=true;e.hidden=true;e.innerHTML='<small class="mono">'+esc(kick)+'</small>'+esc(text);void e.offsetWidth;e.hidden=false;
   clearTimeout(bubT);bubT=setTimeout(()=>{e.hidden=true;},ms);}
 function later(key,msg){if(S[key])return;S[key]=true;const s0=S;setTimeout(()=>{if(S===s0&&!S.panel){hideBub();toast(msg);}},3200);}
-function collect(i){S.found[i]=true;shell();if(W)W.sync();const k=AR[i];bubble(t('arOf')(t('ar')[k],nArea(k),tArea(k))+(nArea(k)===tArea(k)?' ✓':''),t('F')[i][3],3000);
+function collect(i){S.found[i]=true;shell();if(W)W.sync();bubble(t('fKick')(nFound(),NF),t('F')[i][3],Math.max(3000,t('F')[i][3].length*60));
   if(allDone())later('allToast',t('toastAll'));}
 function visit(id){const k=ST.find(x=>x.id===id).k;S.seen[id]=true;shell();if(W)W.sync();
   bubble(t('rev')+' '+k+' · '+t('st')[id][0],t('sb')[id],3000);
@@ -680,7 +662,7 @@ async function makeWorld(){
 
   // terrain: flat at the road, the stations and the boxes, gentle hills everywhere else
   const sm=v=>{v=Math.max(0,Math.min(1,v));return v*v*(3-2*v);};
-  const FLAT=ST.map(s=>[s.x,s.z,s.r+9]).concat(FP.map(q=>[q[0],q[1],4.5]),[[32,10,14],[BEACH.x,BEACH.z,27],[-16,166,10]]);
+  const FLAT=ST.map(s=>[s.x,s.z,s.r+9]).concat(FP.map(q=>[q[0],q[1],4.5]),[[32,10,14],[BEACH.x,BEACH.z,27],[-16,166,10],[HAY.x,HAY.z,15]]);
   const seaF=(x,z)=>sm((x-60)/12)*sm((48-Math.abs(z-BEACH.z))/12);
   const H=(x,z)=>{const q=seaF(x,z);return q>=1?-2.6:H0(x,z)*(1-q)-2.6*q;};
   const H0=(x,z)=>{const rise=Math.max(0,Math.abs(x)-82)*.55+Math.max(0,-124-z)*.5;
@@ -688,10 +670,10 @@ async function makeWorld(){
     for(const f of FLAT){m=Math.min(m,sm((Math.hypot(f[0]-x,f[1]-z)-f[2])/12));if(m<=0)return rise;}
     return rise+m*(.5+2.3*(.5+.5*Math.sin(x*.075+1.3)*Math.cos(z*.062))+2.5*(.5+.5*Math.sin(x*.023+z*.031+2)));};
   const terrain=(()=>{const g=new THREE.PlaneGeometry(300,440,120,176);g.rotateX(-Math.PI/2);g.translate(0,0,30);
-    const P=g.attributes.position,col=new Float32Array(P.count*3),c1=new THREE.Color(0x86A95E),c2=new THREE.Color(0xA7BD72),c3=new THREE.Color(0x6E9150),sand=new THREE.Color(0xEBDCA9),c=new THREE.Color();
+    const P=g.attributes.position,col=new Float32Array(P.count*3),c1=new THREE.Color(0x86A95E),c2=new THREE.Color(0xA7BD72),c3=new THREE.Color(0x6E9150),sand=new THREE.Color(0xEBDCA9),hay=new THREE.Color(0xD8C473),c=new THREE.Color();
     for(let i=0;i<P.count;i++){const x=P.getX(i),z=P.getZ(i),h=H(x,z);P.setY(i,h);
       const n=.5+.5*Math.sin(x*.31+z*.17)*Math.cos(x*.11-z*.23);c.copy(c1).lerp(c2,n).lerp(c3,Math.min(1,h/9));
-      const bf=Math.max(sm((29-Math.hypot(x-BEACH.x,z-BEACH.z))/7),Math.min(1,seaF(x,z)*4));if(bf>0)c.lerp(sand,bf);c.toArray(col,i*3);}
+      const bf=Math.max(sm((29-Math.hypot(x-BEACH.x,z-BEACH.z))/7),Math.min(1,seaF(x,z)*4));if(bf>0)c.lerp(sand,bf);const hf=sm((15-Math.hypot(x-HAY.x,z-HAY.z))/4);if(hf>0)c.lerp(hay,hf*.85);c.toArray(col,i*3);}
     g.setAttribute('color',new THREE.BufferAttribute(col,3));g.computeVertexNormals();
     const m=new THREE.Mesh(g,new THREE.MeshLambertMaterial({vertexColors:true,polygonOffset:true,polygonOffsetFactor:2,polygonOffsetUnits:2}));m.receiveShadow=true;scene.add(m);
     const far=new THREE.Mesh(new THREE.PlaneGeometry(2400,2400),new THREE.MeshLambertMaterial({color:0x86A95E}));far.rotation.x=-Math.PI/2;far.position.y=-.6;scene.add(far);return m;})();
@@ -706,8 +688,9 @@ async function makeWorld(){
     const s=new THREE.Sprite(new THREE.SpriteMaterial({map:tx}));s.scale.set(w||7,(w||7)*232/512,1);return s;
   }
 
-  function glyphTex(txt,mag,area){const c=document.createElement('canvas');c.width=c.height=128;const g=c.getContext('2d'),pp=area==='p';g.fillStyle=pp?'#fff':area?AREA[area].c:mag?'#D6006F':'#0E0F0C';g.fillRect(0,0,128,128);
-    g.strokeStyle=pp?'#0E0F0C':'#F2F3EF';g.lineWidth=6;g.strokeRect(9,9,110,110);g.fillStyle=pp?'#0E0F0C':'#fff';g.textAlign='center';g.textBaseline='middle';
+  // every box looks the same: signal yellow with a dark sign, a colour nothing else in the world uses
+  function glyphTex(txt){const c=document.createElement('canvas');c.width=c.height=128;const g=c.getContext('2d');g.fillStyle='#FFD21F';g.fillRect(0,0,128,128);
+    g.strokeStyle='#0E0F0C';g.lineWidth=7;g.strokeRect(9,9,110,110);g.fillStyle='#0E0F0C';g.textAlign='center';g.textBaseline='middle';
     g.font='800 '+(txt.length>2?46:txt.length>1?60:88)+'px Archivo,system-ui,sans-serif';g.fillText(txt,64,68);const tx=new THREE.CanvasTexture(c);tx.colorSpace=THREE.SRGBColorSpace;return tx;}
   // a name board on the front of a building, so every station reads as what it is
   function sign(txt,w,x,y,z,g,mag){
@@ -746,17 +729,16 @@ async function makeWorld(){
   });
 
   // boxes: floating cubes, each with its own sign
-  const qGeo=new THREE.BoxGeometry(1.9,1.9,1.9),beamGeo=new THREE.CylinderGeometry(.5,.5,30,10,1,true);
+  const qGeo=new THREE.BoxGeometry(2.3,2.3,2.3),beamGeo=new THREE.CylinderGeometry(.6,.6,46,10,1,true);
   const tokens=[];
   for(let i=0;i<NF;i++){
     const x=FP[i][0],z=FP[i][1];
-    const m=new THREE.Mesh(qGeo,new THREE.MeshBasicMaterial({map:glyphTex(GLYPH[i],false,AR[i])}));m.position.set(x,2.3,z);scene.add(m);
+    const m=new THREE.Mesh(qGeo,new THREE.MeshBasicMaterial({map:glyphTex(GLYPH[i])}));m.position.set(x,2.6,z);scene.add(m);
     const sh=new THREE.Mesh(new THREE.CircleGeometry(1.3,20),new THREE.MeshBasicMaterial({color:INK,transparent:true,opacity:.16}));sh.rotation.x=-Math.PI/2;sh.position.set(x,.07,z);scene.add(sh);
-    const bm=new THREE.Mesh(beamGeo,new THREE.MeshBasicMaterial({color:AR[i]==='p'?'#ffffff':AREA[AR[i]].c,transparent:true,opacity:.2,depthWrite:false,side:THREE.DoubleSide}));bm.position.set(x,17,z);scene.add(bm);
+    const bm=new THREE.Mesh(beamGeo,new THREE.MeshBasicMaterial({color:'#FFD21F',transparent:true,opacity:.34,depthWrite:false,side:THREE.DoubleSide}));bm.position.set(x,25,z);scene.add(bm);
     tokens.push({i,x,z,m,sh,bm,inside:false});
   }
 
-  const zones=[]; // areas were removed, boxes lie everywhere
   // Munich, Innsbruck, mountains, trees
   {const g=new THREE.Group();g.position.set(0,0,ZMAX+9);scene.add(g);
     for(let i=0;i<14;i++){const w=4+rnd()*5,h=3+rnd()*5,x=(i<7?-1:1)*(12+rnd()*46),z=rnd()*16;box(w,h,4+rnd()*4,i%4===0?INK:i%3===0?PAPER2:WHITE,x,h/2,z,g);}
@@ -819,15 +801,46 @@ async function makeWorld(){
     [[34,98,1.25,.4],[38,124,1.05,2.1],[45,90,1.4,1],[52,131,1.2,3.4],[57,95,1.1,5],[30,112,1.3,4.2],[58,125,1.35,.2],[44,104,.9,2.8],[41,133,1.15,5.6]].forEach(q=>palm(q[0],q[1],q[2],q[3]));
     const ps=new THREE.Group();ps.position.set(52,0,116);scene.add(ps);cyl(.07,.07,3.4,6,WHITE,0,1.7,0,ps);const cn=cyl(0,2.3,.9,8,MAG,0,3.6,0,ps);cn.rotation.y=.3;
     box(1.3,.06,2.6,WHITE,1.7,.05,.4,ps).rotation.y=.3;box(1.3,.07,.5,MAG,1.7,.06,.4,ps).rotation.y=.3;box(1.2,.06,2.4,0x2F5BE0,-1.9,.05,-.6,ps).rotation.y=-.4;}
-  {const N=330,ga=new THREE.ConeGeometry(1.55,2.9,7),gb=new THREE.ConeGeometry(1.05,2.6,7),gt=new THREE.CylinderGeometry(.2,.28,1.3,6);ga.translate(0,2.5,0);gb.translate(0,4.3,0);gt.translate(0,.65,0);
-    const A=new THREE.InstancedMesh(ga,M(0x2F5E3B),N),B=new THREE.InstancedMesh(gb,M(0x3B7347),N),T=new THREE.InstancedMesh(gt,M(0x5A4634),N),o=new THREE.Object3D();let n=0,guard=0;
-    while(n<N&&guard++<9000){const x=-104+rnd()*208,z=-128+rnd()*(ZMAX+150);
-      if(roadDist(x,z)<9.5||ST.some(s=>Math.hypot(s.x-x,s.z-z)<s.r+9)||tokens.some(q=>Math.hypot(q.x-x,q.z-z)<4.5)||(z<-98&&Math.abs(x)<36)||(z>ZMAX-4&&Math.abs(x)<64)||Math.hypot(x-32,z-10)<11||Math.hypot(x-BEACH.x,z-BEACH.z)<31||seaF(x,z)>0||Math.hypot(x+16,z-166)<11)continue;
-      const sc=.75+rnd()*1.0;o.position.set(x,H(x,z)-.05,z);o.scale.set(sc,sc*(.9+rnd()*.35),sc);o.rotation.y=rnd()*3;o.updateMatrix();A.setMatrixAt(n,o.matrix);B.setMatrixAt(n,o.matrix);T.setMatrixAt(n,o.matrix);
-      if(Math.abs(x)<80&&z>-119&&z<ZMAX+2)trees.push([x,z,.55*sc+.35]);n++;}
-    A.count=B.count=T.count=n;scene.add(A,B,T);}
+  // ----- landscape: fewer trees, in groves, and landmarks that help to find the way -----
+  const spin=[],floaters=[];
+  {const blocked=(x,z,c)=>roadDist(x,z)<9.5||ST.some(s=>Math.hypot(s.x-x,s.z-z)<s.r+9)||tokens.some(q=>Math.hypot(q.x-x,q.z-z)<c)||(z<-98&&Math.abs(x)<36)||(z>ZMAX-4&&Math.abs(x)<64)||Math.hypot(x-32,z-10)<11||Math.hypot(x-BEACH.x,z-BEACH.z)<31||seaF(x,z)>0||Math.hypot(x+16,z-166)<11||Math.hypot(x-HAY.x,z-HAY.z)<18||trees.some(q=>Math.hypot(q[0]-x,q[1]-z)<q[2]+1.6);
+    // hay bales on a mown field near the start
+    for(let i=0;i<12;i++){const a=rnd()*6.283,r=3+Math.sqrt(rnd())*10,x=HAY.x+Math.sin(a)*r,z=HAY.z+Math.cos(a)*r;if(trees.some(q=>Math.hypot(q[0]-x,q[1]-z)<3))continue;
+      const m=cyl(.95,.95,1.5,12,0xE2C35F,x,H(x,z)+.93,z);m.rotation.z=Math.PI/2;m.rotation.y=rnd()*3;trees.push([x,z,1.05]);}
+    // wind turbines: tall, white, turning, visible from far away
+    const turbine=(x,z,ry)=>{const g=new THREE.Group();g.position.set(x,H(x,z)-.1,z);g.rotation.y=ry;scene.add(g);cyl(.28,.55,17,8,WHITE,0,8.5,0,g);box(.9,.9,2.1,WHITE,0,17.2,.2,g);
+      const hub=new THREE.Group();hub.position.set(0,17.2,1.4);g.add(hub);cyl(.45,.45,.5,8,MAG,0,0,0,hub).rotation.x=Math.PI/2;
+      for(let i=0;i<3;i++){const b=new THREE.Group();b.rotation.z=i*Math.PI*2/3;hub.add(b);box(.52,6.8,.12,WHITE,0,3.6,0,b);}spin.push(hub);trees.push([x,z,.9]);};
+    turbine(-54,32,1.2);turbine(-56,86,1.5);turbine(48,-36,-1.3);
+    // hot-air balloons high above the meadows
+    const balloon=(x,y,z,c,c2)=>{const g=new THREE.Group();g.position.set(x,y,z);scene.add(g);const b=new THREE.Mesh(new THREE.SphereGeometry(5,14,10),M(c));b.scale.y=1.15;g.add(b);
+      cyl(5.06,5.06,1.3,14,c2,0,.4,0,g);cyl(3.5,1.1,4.2,14,c,0,-6.2,0,g);box(1.6,1.3,1.6,0x8E6E47,0,-10,0,g);floaters.push({g,y,p:x});};
+    balloon(-34,36,104,MAG,WHITE);balloon(40,42,-14,WHITE,INK);balloon(-44,39,-70,0x2F5BE0,WHITE);
+    // boulders towards the mountains
+    {const gr=new THREE.DodecahedronGeometry(1,0);let n=0,guard=0;
+      while(n<22&&guard++<3000){const x=-76+rnd()*152,z=-116+rnd()*100;if(blocked(x,z,7))continue;const sc=.7+rnd()*1.4,m=new THREE.Mesh(gr,M(0x8B96A1));
+        m.position.set(x,H(x,z)+sc*.3,z);m.scale.set(sc,sc*.75,sc*(.8+rnd()*.5));m.rotation.set(rnd()*3,rnd()*3,0);scene.add(m);trees.push([x,z,sc*.95]);n++;}}
+    // trees stand in groves and leave a wide clearing around every box: firs towards the Alps, leafy trees towards Bavaria
+    const N=150,ga=new THREE.ConeGeometry(1.55,2.9,7),gb=new THREE.ConeGeometry(1.05,2.6,7),gt=new THREE.CylinderGeometry(.2,.28,1.3,6);ga.translate(0,2.5,0);gb.translate(0,4.3,0);gt.translate(0,.65,0);
+    const la=new THREE.IcosahedronGeometry(1.9,0),lb=new THREE.IcosahedronGeometry(1.25,0),lt=new THREE.CylinderGeometry(.22,.3,2.2,6);la.translate(0,3.6,0);lb.translate(1.1,2.7,.4);lt.translate(0,1.1,0);
+    const A=new THREE.InstancedMesh(ga,M(0x2F5E3B),N),B=new THREE.InstancedMesh(gb,M(0x3B7347),N),T=new THREE.InstancedMesh(gt,M(0x5A4634),N);
+    const LA=new THREE.InstancedMesh(la,M(0x6FA84A),N),LB=new THREE.InstancedMesh(lb,M(0x5C9440),N),LT=new THREE.InstancedMesh(lt,M(0x6B5138),N),o=new THREE.Object3D();
+    const grove=(x,z)=>Math.sin(x*.06+1)*Math.cos(z*.05+.4)+.6*Math.sin(x*.027-z*.036+2);
+    let n=0,nf=0,nl=0,guard=0;
+    while(n<N&&guard++<30000){const x=-104+rnd()*208,z=-128+rnd()*(ZMAX+150),out=Math.abs(x)>80;
+      if(!out&&grove(x,z)<.5)continue;if(out&&rnd()<.55)continue;if(blocked(x,z,15))continue;
+      const sc=.75+rnd()*1.0;o.position.set(x,H(x,z)-.05,z);o.scale.set(sc,sc*(.9+rnd()*.35),sc);o.rotation.y=rnd()*3;o.updateMatrix();
+      if(z<25+(rnd()-.5)*70){A.setMatrixAt(nf,o.matrix);B.setMatrixAt(nf,o.matrix);T.setMatrixAt(nf++,o.matrix);}else{LA.setMatrixAt(nl,o.matrix);LB.setMatrixAt(nl,o.matrix);LT.setMatrixAt(nl++,o.matrix);}
+      trees.push([x,z,.55*sc+.35]);n++;}
+    A.count=B.count=T.count=nf;LA.count=LB.count=LT.count=nl;scene.add(A,B,T,LA,LB,LT);}
   // everything built so far throws and catches shadows
   scene.traverse(o=>{if(o.isMesh&&o.material.isMeshLambertMaterial&&o!==terrain&&!o.receiveShadow){o.castShadow=true;o.receiveShadow=true;}else if(o.isInstancedMesh){o.castShadow=true;}});
+  // flower meadows: small dots of colour, no shadows
+  {const fg=new THREE.OctahedronGeometry(.15,0),o=new THREE.Object3D(),cols=[0xFFFFFF,0xFF7AB8,0x8E7BFF,0xFF6B3D],fm=cols.map(c=>new THREE.InstancedMesh(fg,new THREE.MeshLambertMaterial({color:c}),420)),cn=[0,0,0,0];let pt=0,guard=0;
+    while(pt<16&&guard++<600){const cx=-74+rnd()*148,cz=-110+rnd()*288;if(roadDist(cx,cz)<7||seaF(cx,cz)>0||Math.hypot(cx-BEACH.x,cz-BEACH.z)<36||Math.hypot(cx-HAY.x,cz-HAY.z)<22)continue;
+      for(let k=0;k<95;k++){const a=rnd()*6.283,r=Math.sqrt(rnd())*9,x=cx+Math.sin(a)*r,z=cz+Math.cos(a)*r,ci=(pt+(rnd()<.3?1:0))%4;if(roadDist(x,z)<5||cn[ci]>=420)continue;
+        o.position.set(x,H(x,z)+.2,z);o.rotation.y=rnd()*3;o.scale.setScalar(.8+rnd()*.6);o.updateMatrix();fm[ci].setMatrixAt(cn[ci]++,o.matrix);}pt++;}
+    fm.forEach((m,i)=>{m.count=cn[i];m.castShadow=false;scene.add(m);});}
   // ----- dogs: four play fetch on the beach, three stroll over the meadows -----
   const ball=new THREE.Mesh(new THREE.SphereGeometry(.34,12,10),M(0xFF4FA3));ball.castShadow=true;scene.add(ball);
   const bs={x:BEACH.x,z:BEACH.z,fx:BEACH.x,fz:BEACH.z,tx:BEACH.x,tz:BEACH.z,t:1};
@@ -937,13 +950,22 @@ async function makeWorld(){
     if(ing&&!gateIn){gateIn=true;openPanel({t:'rep',gate:true});}else if(car.z>GATE.z+9)gateIn=false;
   }
   const nx=$('#nx'),arr=$('#arr'),nxt=$('#nxt');let hudT=0;
+  // mini map: north of the screen is Innsbruck, yellow dots are the boxes that are still closed
+  const mp=$('#map'),mg=mp.getContext('2d');
+  function drawMap(){const w=mp.width,h=mp.height,X=x=>(x+82)/164*w,Z=z=>(z+122)/310*h;
+    mg.fillStyle='#E9EDE2';mg.fillRect(0,0,w,h);mg.fillStyle='#1F9FC9';mg.fillRect(X(64),Z(BEACH.z-44),w-X(64),Z(BEACH.z+44)-Z(BEACH.z-44));
+    mg.strokeStyle='#34373B';mg.lineWidth=6;mg.lineJoin=mg.lineCap='round';mg.beginPath();for(let i=0;i<RP.length;i+=4){const p=RP[i];i?mg.lineTo(X(p.x),Z(p.z)):mg.moveTo(X(p.x),Z(p.z));}mg.stroke();
+    mg.fillStyle='#0E0F0C';for(const s of stations)mg.fillRect(X(s.x)-5,Z(s.z)-5,10,10);
+    mg.fillStyle='#D6006F';mg.fillRect(X(GATE.x)-12,Z(GATE.z)-4,24,8);
+    for(const q of tokens){const f=S.found[q.i];mg.beginPath();mg.arc(X(q.x),Z(q.z),f?3:6.5,0,6.283);mg.fillStyle=f?'#A9AFA2':'#FFD21F';mg.fill();if(!f){mg.lineWidth=2;mg.strokeStyle='#0E0F0C';mg.stroke();}}
+    mg.save();mg.translate(X(car.x),Z(car.z));mg.rotate(Math.PI-car.h);mg.beginPath();mg.moveTo(0,-13);mg.lineTo(9,10);mg.lineTo(0,5);mg.lineTo(-9,10);mg.closePath();mg.fillStyle='#D6006F';mg.fill();mg.lineWidth=2.5;mg.strokeStyle='#fff';mg.stroke();mg.restore();}
   function hud(dt){
     hudT+=dt;if(hudT<.12)return;hudT=0;
     let tg=null,bd=1e9;
     if(!tg){for(const q of tokens){if(S.found[q.i])continue;const d=Math.hypot(car.x-q.x,car.z-q.z);if(d<bd){bd=d;tg={x:q.x,z:q.z,n:'+'};}}}
     if(!tg){tg={x:GATE.x,z:GATE.z,n:t('nxAll')};bd=Math.hypot(car.x-tg.x,car.z-tg.z);}
     const rel=wrap(Math.atan2(tg.x-car.x,tg.z-car.z)-camH);
-    arr.style.transform='rotate('+(-rel)+'rad)';nxt.textContent=tg.n+' · '+Math.round(bd)+' m';
+    arr.style.transform='rotate('+(-rel)+'rad)';nxt.textContent=tg.n+' · '+Math.round(bd)+' m';drawMap();
   }
   let baseFov=62;
   function size(){const w=innerWidth,h=innerHeight;renderer.setSize(w,h,false);cam.aspect=w/h;baseFov=w<h?78:62;cam.updateProjectionMatrix();
@@ -976,8 +998,9 @@ async function makeWorld(){
     {const f=baseFov+(reduce?0:Math.min(9,Math.abs(car.v)*.42));if(Math.abs(cam.fov-f)>.05){cam.fov+=(f-cam.fov)*Math.min(1,4*dt);cam.updateProjectionMatrix();}}
     sunSp.position.copy(cam.position).addScaledVector(SUND,800);
     for(const c of clouds){c.position.x+=dt*1.6;if(c.position.x>430)c.position.x=-430;}
+    if(!reduce){for(const h of spin)h.rotation.z+=dt*1.1;for(const f of floaters)f.g.position.y=f.y+Math.sin(tt*.5+f.p)*1.3;}
     updDogs(dt);water.position.y=-.4+(reduce?0:Math.sin(tt*.9)*.06);
-    for(const q of tokens){if(!q.m.visible)continue;q.m.rotation.y=tt*1.2+q.i;q.m.position.y=2.3+(reduce?0:Math.sin(tt*2+q.i)*.35);q.bm.material.opacity=.16+(reduce?0:.06*Math.sin(tt*2.4+q.i));}
+    for(const q of tokens){if(!q.m.visible)continue;q.m.rotation.y=tt*1.2+q.i;q.m.position.y=2.6+(reduce?0:Math.sin(tt*2+q.i)*.35);q.bm.material.opacity=.3+(reduce?0:.08*Math.sin(tt*2.4+q.i));}
     if(mark.visible&&!reduce)mark.scale.setScalar(1+Math.sin(tt*6)*.08);
     renderer.render(scene,cam);
     requestAnimationFrame(frame);
@@ -987,7 +1010,7 @@ async function makeWorld(){
     stop(){car.v=0;target=null;mark.visible=false;down=false;for(const k in keys)keys[k]=false;},
     sync(){for(const s of stations){s.ring.material.opacity=S.seen[s.id]?.12:.55;s.ring.material.color.set(S.seen[s.id]?INK:MAG);}
       for(const q of tokens){const v=!S.found[q.i];q.m.visible=v;q.sh.visible=v;q.bm.visible=v;}
-      for(const z of zones)z.draw(nArea(z.k));},
+      },
     reset(){car.x=START.x;car.z=START.z;car.h=START.h;car.v=0;camH=car.h;carY=0;pitch=0;lean=0;target=null;mark.visible=false;gateIn=false;stations.forEach(s=>s.inside=false);tokens.forEach(q=>q.inside=false);this.sync();},
     // for tests
     car,tokens,stations,dogs,scene,cam
