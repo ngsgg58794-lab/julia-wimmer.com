@@ -157,16 +157,46 @@ button[aria-expanded="true"] .sg svg{transform:rotate(45deg)}
 .indent{margin-left:calc(5.5rem + 24px)}
 @media (max-width:820px){.shb{grid-template-columns:minmax(0,1fr) auto}.sno{grid-column:1/-1}.indent{margin-left:0}}
 
+/* hero: at a glance (what I enjoy + what you get) */
+.glance{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-width:50rem;margin-top:22px;border:1px solid var(--ink);background:var(--paper)}
+.gcol{display:flex;flex-direction:column;min-width:0}
+.gcol-e{background:var(--ink);color:var(--paper)}
+.gh{padding:12px 16px 10px;font-size:.6875rem;letter-spacing:.08em;text-transform:uppercase;color:var(--mag);border-bottom:1px solid var(--ink)}
+.gcol-e .gh{color:#FF4FA3;border-bottom-color:rgba(242,243,239,.3)}
+.gl{flex:0 0 auto;border-top:1px solid var(--line)}
+.gh+.gl{border-top:0}
+.gcol-e .gl{border-top-color:rgba(242,243,239,.18)}
+.gl summary{display:grid;grid-template-columns:2rem minmax(0,1fr) 1rem;align-items:baseline;gap:8px;padding:9px 16px;cursor:pointer;list-style:none;font-weight:700;font-size:.9375rem;line-height:1.3}
+.gl summary::-webkit-details-marker{display:none}
+.gl summary:hover{background:var(--mag-soft)}
+.gcol-e .gl summary:hover{background:rgba(242,243,239,.08)}
+.gl .k{font-size:.6875rem;color:var(--mag)}
+.gcol-e .gl .k{color:#FF4FA3}
+.gp::before{content:"+";font-family:var(--mono);color:var(--mag);display:inline-block;transition:transform .25s ease}
+.gcol-e .gp::before{color:#FF4FA3}
+.gl[open] .gp::before{transform:rotate(45deg)}
+.gd{padding:0 16px 14px calc(16px + 2rem + 8px);font-size:.875rem;line-height:1.5}
+.gd p{color:#2A2C27}
+.gcol-e .gd p{color:#D4D6CF}
+.gd .gr{display:inline-block;margin-top:8px;font-size:.6875rem;color:var(--mag);text-decoration:none}
+.gcol-e .gd .gr{color:#FF4FA3}
+.gd .gr span{text-decoration:underline;text-underline-offset:3px}
+.gd span.gr{text-decoration:none}
+.gx{margin-top:auto;padding:14px 16px 12px;font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:#A6A99F;border-top:1px solid rgba(242,243,239,.18)}
+.gl summary:focus-visible{outline-offset:-3px}
+@media (max-width:640px){.glance{grid-template-columns:1fr}.gcol-e .gh{border-bottom-color:rgba(242,243,239,.3)}}
+@media (prefers-reduced-motion:reduce){.gp::before{transition:none}}
 /* path: revision table */
 .rev{border-top:1px solid var(--ink)}
 .rev .hd,.rev .row{display:grid;grid-template-columns:4.5rem 9rem minmax(0,1fr);gap:6px 24px}
 .rev .hd{padding:8px 0;color:var(--grey);border-bottom:1px solid var(--ink)}
-.rev .row{padding:34px 0;border-bottom:1px solid var(--line)}
+.rev .row{padding:22px 0;border-bottom:1px solid var(--line)}
 .rev .row:last-child{border-bottom-color:var(--ink)}
 .rev .r{font-family:var(--mono);font-size:.8125rem;color:var(--mag);padding-top:4px}
 .rev .d{font-family:var(--mono);font-size:.8125rem;padding-top:4px}
 .rev h3{font-size:1.3125rem;font-weight:750;line-height:1.25;font-stretch:90%}
 .rev p.t{max-width:46em;margin-top:6px;color:#2A2C27}
+.rev p.sub{margin-top:6px;font-family:var(--mono);font-size:.75rem;letter-spacing:.04em;color:var(--mag)}
 @media (max-width:820px){.rev .hd{display:none}.rev .row{grid-template-columns:3rem minmax(0,1fr)}.rev .d{grid-column:2}.rev .row>div{grid-column:2}}
 /* path: certificates */
 .rev.cert .row{grid-template-columns:4.5rem minmax(0,1fr);padding:18px 0}
@@ -202,13 +232,6 @@ button[aria-expanded="true"] .sg svg{transform:rotate(45deg)}
 .ph:nth-child(even)::before{background:rgba(170,173,163,.55);left:auto;right:-22px;top:-6px;margin:0;transform:rotate(38deg)}
 .pi{display:block;aspect-ratio:4/3;overflow:hidden;background:var(--paper-2);border:1px solid rgba(14,15,12,.12)}
 .pi img,.pi svg{display:block;width:100%;height:100%;object-fit:cover}
-.wk .ph.big{--rot:-.7deg;grid-column:span 2;grid-row:span 2;display:flex;flex-direction:column}
-.ph.big .pi{position:relative;flex:1 1 auto;aspect-ratio:auto;min-height:0}
-.ph.big .pi img{position:absolute;inset:0;object-position:50% 20%}
-.ph.big .pc .ttl{font-size:clamp(1.5rem,2.6vw,2.25rem)}
-.pc .pd{display:block;max-width:34em;margin-top:8px;font-size:.9375rem;line-height:1.4;color:#2A2C27}
-@media (max-width:1000px){.wk .ph.big{grid-row:auto}.ph.big .pi{flex:none;aspect-ratio:16/10}}
-@media (max-width:560px){.pc .pd{font-size:.8125rem}}
 .pc{display:block;padding:14px 2px 0}
 .pc .pn{display:block;color:var(--mag);font-size:.6875rem}
 .pc .ttl{display:block;margin-top:6px;font-size:1.125rem;line-height:1;font-stretch:72%;font-weight:800;text-transform:uppercase}
@@ -216,6 +239,9 @@ button[aria-expanded="true"] .sg svg{transform:rotate(45deg)}
 .pc .tag{font-size:.625rem;padding:3px 6px}
 @media (max-width:1000px){.wk{grid-template-columns:repeat(2,minmax(0,1fr));gap:48px 36px;max-width:40rem}}
 @media (max-width:760px){.wk{grid-template-columns:repeat(2,minmax(0,1fr));gap:40px 20px}}
+@media (min-width:1001px){.wk5{grid-template-columns:repeat(5,minmax(0,1fr));gap:44px 24px}}
+@media (max-width:1000px){.wk5>:last-child:nth-child(odd){grid-column:1/-1;justify-self:center;width:calc(50% - 18px)}}
+@media (max-width:760px){.wk5>:last-child:nth-child(odd){width:calc(50% - 10px)}}
 @media (max-width:560px){.ph{padding:8px 8px 12px}.ph::before{width:70px;height:20px;margin-left:-35px;top:-10px}.ph:nth-child(even)::before{right:-16px}.pc .ttl{font-size:.9375rem}.pc .tag{font-size:.5625rem;padding:2px 5px}}
 @media (prefers-reduced-motion:reduce){.ph{transition:none}}
 .tag{display:inline-block;padding:4px 8px;border:1px solid var(--ink);font-family:var(--mono);font-size:.6875rem;font-weight:500;letter-spacing:.05em;text-transform:uppercase;line-height:1.3}
@@ -625,11 +651,9 @@ h1 .lni{display:inline-block}
 <nav class="nav" id="nav" aria-label="Main">
 <a href="#path"><span>01</span>Path</a>
 <a href="#work"><span>02</span>Work</a>
-<a href="#enjoy"><span>03</span>What I enjoy</a>
-<a href="#what-you-get"><span>04</span>What you get</a>
-<a href="#skills"><span>05</span>Skills</a>
+<a href="#skills"><span>03</span>Skills</a>
 <a href="play/" data-play><span aria-hidden="true">&#9654;</span>Game</a>
-<a href="#contact" class="navcta"><span>06</span>Contact</a>
+<a href="#contact" class="navcta"><span>04</span>Contact</a>
 </nav>
 <b class="lg" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true" lang="en">EN</button><button type="button" data-lang="de" aria-pressed="false" lang="de">DE</button></b>
 <button class="bg" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><i></i></button>
@@ -646,7 +670,23 @@ h1 .lni{display:inline-block}
 <div role="listitem"><b>6+</b><span class="mono">years UX designer</span></div>
 <div role="listitem"><b>3</b><span class="mono">years founder</span></div>
 </div>
-<p class="lead">Along the way I found what I enjoy most: structuring complex workflows and information, and turning them into something anyone can understand. Today I&#8217;m a <span style="white-space:nowrap">T-shaped</span> all-rounder: deep in UX and product design, broad across digitalization, AI, process and business.</p>
+<div class="glance">
+<div class="gcol gcol-e"><p class="gh mono">What I enjoy</p>
+<details class="gl" name="glance"><summary><span class="k mono">01</span><span class="gt">Structuring</span><span class="gp" aria-hidden="true"></span></summary><div class="gd"><p>Taking something messy and building a system that people want to use: boards, spaces, workflows, decisions.</p><a class="gr mono" href="#p-01">Ref. <span>P-01 Team workflows</span> &#8595;</a></div></details>
+<details class="gl" name="glance"><summary><span class="k mono">02</span><span class="gt">Trying new things</span><span class="gp" aria-hidden="true"></span></summary><div class="gd"><p>New tools, new methods, new fields. I would rather build a quick test than talk about it for weeks.</p><a class="gr mono" href="#a-01">Ref. <span>A-01 Innensicht</span> &#8595;</a></div></details>
+<details class="gl" name="glance"><summary><span class="k mono">03</span><span class="gt">Adapting to people &amp; projects</span><span class="gp" aria-hidden="true"></span></summary><div class="gd"><p>Every team, user and project is different. I adapt the approach to fit them, not the other way round.</p><a class="gr mono" href="#p-02">Ref. <span>P-02 Expert Tools</span> &#8595;</a></div></details>
+<details class="gl" name="glance"><summary><span class="k mono">04</span><span class="gt">Making information intuitive</span><span class="gp" aria-hidden="true"></span></summary><div class="gd"><p>Complex topics, shown so that people get them at a glance and can decide. From decision papers to pitches.</p><a class="gr mono" href="#a-05">Ref. <span>A-05 Learning Cockpit</span> &#8595;</a></div></details>
+<p class="gx mono">Click or tap a line for details</p>
+</div>
+<div class="gcol gcol-g"><p class="gh mono">What you get</p>
+<details class="gl" name="glance"><summary><span class="k mono">01</span><span class="gt">Speed</span><span class="gp" aria-hidden="true"></span></summary><div class="gd"><p>I get a topic quickly, I learn fast and I execute fast. No long ramp-up.</p><a class="gr mono" href="#a-01">Proof <span>Innensicht: first version in one afternoon</span> &#8595;</a></div></details>
+<details class="gl" name="glance"><summary><span class="k mono">02</span><span class="gt">Structure &amp; overview</span><span class="gp" aria-hidden="true"></span></summary><div class="gd"><p>I turn complexity into clear plans and keep the big picture in view.</p><a class="gr mono" href="#p-01">Proof <span>One Jira &amp; Confluence setup for a whole team</span> &#8595;</a></div></details>
+<details class="gl" name="glance"><summary><span class="k mono">03</span><span class="gt">Range</span><span class="gp" aria-hidden="true"></span></summary><div class="gd"><p>Design, product, tech and business in one person. Fewer handoffs, less friction.</p><a class="gr mono" href="#path">Proof <span>Business degree, Audi, product owner, designer, founder</span> &#8595;</a></div></details>
+<details class="gl" name="glance"><summary><span class="k mono">04</span><span class="gt">Solutions, fast</span><span class="gp" aria-hidden="true"></span></summary><div class="gd"><p>I find a way forward and decide instead of getting stuck.</p><a class="gr mono" href="#p-02">Proof <span>Two user groups, one tool, features cut on purpose</span> &#8595;</a></div></details>
+<details class="gl" name="glance"><summary><span class="k mono">05</span><span class="gt">Results</span><span class="gp" aria-hidden="true"></span></summary><div class="gd"><p>I ship, efficiently and dependably, also remotely.</p><a class="gr mono" href="#apps">Proof <span>Five apps released, four of them on iOS and Android</span> &#8595;</a></div></details>
+<details class="gl" name="glance"><summary><span class="k mono">06</span><span class="gt">Calm &amp; warmth</span><span class="gp" aria-hidden="true"></span></summary><div class="gd"><p>I keep the team steady under pressure and bring people together.</p><a class="gr mono" href="#contact">Proof <span>Interim reference letter, Valtech 2026, on request</span> &#8595;</a></div></details>
+</div>
+</div>
 <div class="hrow"><p class="look"><span class="mono">Status</span><span>Looking for Design, Digitalization &amp; AI roles. Remote-first, or hybrid around Innsbruck.</span></p>
 <a class="cta" href="#contact">Write me <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
 <a class="cta play" data-play href="play/">Game: Get to know Julia <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></div>
@@ -669,12 +709,11 @@ h1 .lni{display:inline-block}
 <div id="path-body" class="pnl open"><div class="pin"><div class="pad">
 <div class="rev indent">
 <div class="hd mono" aria-hidden="true"><span>Rev.</span><span>Date</span><span>Description</span></div>
-<div class="row rv"><span class="r">F</span><p class="d">2026 – now</p><div><h3>Personal projects: building with AI, for fun</h3><p class="t">My private playground, not a company. I build apps for the fun of it to train my AI skills. Four are live in the app stores, all built with Claude Code. <a href="#apps">See the apps &#8595;</a></p></div></div>
-<div class="row rv"><span class="r">E</span><p class="d">2018 – now</p><div><h3>Senior Consultant: Product Owner &#8594; UX Designer, Valtech Mobility</h3><p class="t">Connected mobility for OEMs and startups: in-car services, expert tools, mobility services. My responsibilities include client projects, pitches and presales, design systems, workflow definitions, IAM and AI team setup.</p></div></div>
-<div class="row rv"><span class="r">D</span><p class="d">2023 – 2026</p><div><h3>Co-Founder &amp; CEO, 2gether App</h3><p class="t">I co-founded and led the startup, next to my job at Valtech. We released a native iOS and Android social media app. I owned the product from concept and design to release.</p></div></div>
-<div class="row rv"><span class="r">C</span><p class="d">2012 – 2018</p><div><h3>Process &amp; Systems Integrator, Audi AG</h3><p class="t">Prepared steering committees and product decisions for the cross-brand connected-car project. Built cost transparency and a portfolio management process for budget control.</p></div></div>
-<div class="row rv"><span class="r">B</span><p class="d">2011 – 2012</p><div><h3>IT Consultant, WK IT</h3><p class="t">Drove internal restructuring and supported strategic purchasing.</p></div></div>
-<div class="row rv"><span class="r">A</span><p class="d">2007 – 2011</p><div><h3>B.A. Business Administration</h3><p class="t">Grade 1.7, University of applied sciences Landshut.</p></div></div>
+<div class="row rv"><span class="r">E</span><p class="d">2018 – now</p><div><h3>Senior Consultant, Valtech Mobility</h3><p class="sub">Product Owner &#8594; UX Designer</p></div></div>
+<div class="row rv"><span class="r">D</span><p class="d">2023 – 2026</p><div><h3>Co-Founder &amp; CEO, 2gether App</h3></div></div>
+<div class="row rv"><span class="r">C</span><p class="d">2012 – 2018</p><div><h3>Process &amp; Systems Integrator, Audi AG</h3></div></div>
+<div class="row rv"><span class="r">B</span><p class="d">2011 – 2012</p><div><h3>IT Consultant, WK IT</h3></div></div>
+<div class="row rv"><span class="r">A</span><p class="d">2007 – 2011</p><div><h3>B.A. Business Administration, University of Applied Sciences Landshut</h3></div></div>
 </div>
 <div class="indent">
 <div class="wsub" id="certificates"><h3>Certificates</h3><p class="mono">AI, UX and automotive HMI · three verifiable online</p></div>
@@ -702,8 +741,8 @@ h1 .lni{display:inline-block}
 <button class="ph rv" type="button" id="p-05" data-dlg="dp-05" aria-haspopup="dialog"><span class="pi" style="background-color:var(--paper-2);background-image:linear-gradient(rgba(14,15,12,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(14,15,12,.07) 1px,transparent 1px);background-size:16px 16px"><svg viewBox="0 0 160 120" aria-hidden="true"><path d="M22 92C52 92 50 40 80 40s30 44 58 30" fill="none" stroke="#0E0F0C" stroke-width="2" stroke-dasharray="7 5"/><circle cx="22" cy="92" r="6" fill="#F2F3EF" stroke="#0E0F0C" stroke-width="2"/><circle cx="138" cy="70" r="7" fill="#D6006F"/><g transform="translate(66 22)"><rect width="30" height="14" fill="#0E0F0C"/><rect x="20" y="3" width="7" height="5" fill="#F2F3EF"/><circle cx="7" cy="16" r="3.5" fill="#0E0F0C"/><circle cx="23" cy="16" r="3.5" fill="#0E0F0C"/></g></svg></span><span class="pc"><span class="pn mono">P-04</span><span class="ttl">InCar Services</span><span class="tags"><span class="tag">UX Concept</span><span class="tag">In-Car</span><span class="tag">OEM</span></span></span></button>
 </div>
 <div class="wsub" id="apps"><h3>Built with Claude Code</h3><p class="mono">four apps live in the stores, one learning tool, all personal projects</p></div>
-<div class="wk">
-<button class="ph rv big" type="button" id="a-01" data-dlg="dp-04" aria-haspopup="dialog"><span class="pi"><img src="img/innensicht-feature.webp" alt="" loading="lazy"></span><span class="pc"><span class="pn mono">A-01 · Full case study</span><span class="ttl">Innensicht</span><span class="pd">Self-reflection with 37 inner-parts cards and a three-stage emotion wheel.</span><span class="tags"><span class="tag">React Native</span><span class="tag">iOS</span><span class="tag">Android</span></span></span></button>
+<div class="wk wk5">
+<button class="ph rv" type="button" id="a-01" data-dlg="dp-04" aria-haspopup="dialog"><span class="pi pia"><img src="img/app-innensicht.webp" alt="" loading="lazy"></span><span class="pc"><span class="pn mono">A-01</span><span class="ttl">Innensicht</span><span class="tags"><span class="tag">React Native</span><span class="tag">iOS</span><span class="tag">Android</span></span></span></button>
 <button class="ph rv" type="button" id="a-02" data-dlg="da-02" aria-haspopup="dialog"><span class="pi pia"><img src="img/app-stimmig.webp" alt="" loading="lazy"></span><span class="pc"><span class="pn mono">A-02</span><span class="ttl">stimmig</span><span class="tags"><span class="tag">SwiftUI</span><span class="tag">iOS</span></span></span></button>
 <button class="ph rv" type="button" id="a-03" data-dlg="da-03" aria-haspopup="dialog"><span class="pi pia"><img src="img/app-klarwurf.webp" alt="" loading="lazy"></span><span class="pc"><span class="pn mono">A-03</span><span class="ttl">KlarWurf</span><span class="tags"><span class="tag">React + Capacitor</span><span class="tag">iOS</span><span class="tag">Android</span></span></span></button>
 <button class="ph rv" type="button" id="a-04" data-dlg="da-04" aria-haspopup="dialog"><span class="pi pia"><img src="img/app-calmdrop.webp" alt="" loading="lazy"></span><span class="pc"><span class="pn mono">A-04</span><span class="ttl">Calmdrop</span><span class="tags"><span class="tag">Flutter</span><span class="tag">iOS</span><span class="tag">Android</span></span></span></button>
@@ -889,50 +928,24 @@ h1 .lni{display:inline-block}
 <a class="cta" data-play href="play/">Game: Get to know Julia <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
 </aside>
 
-<section id="enjoy" class="sec wrap">
-<h2 class="sh"><button class="acc shb fx" type="button" aria-expanded="false" aria-controls="enjoy-body"><span class="sno">§ 03</span><span><span class="stt">What I enjoy</span><span class="sth mono">the work that gives me energy · hover or tap for details</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
-<div id="enjoy-body" class="pnl"><div class="pin"><div class="pad">
-<div class="jy">
-<div class="jc rv"><span class="k mono">01</span><div class="jm j1" aria-hidden="true"><i style="--x:0px;--y:0px;--sx:-10px;--sy:14px;--r:40deg;--d:0"></i><i style="--x:21px;--y:0px;--sx:8px;--sy:-12px;--r:-25deg;--d:1"></i><i style="--x:42px;--y:0px;--sx:14px;--sy:10px;--r:60deg;--d:2"></i><i style="--x:0px;--y:21px;--sx:-14px;--sy:-6px;--r:-50deg;--d:3"></i><i class="m" style="--x:21px;--y:21px;--sx:0px;--sy:0px;--r:45deg;--d:4"></i><i style="--x:42px;--y:21px;--sx:12px;--sy:16px;--r:20deg;--d:5"></i><i style="--x:0px;--y:42px;--sx:6px;--sy:12px;--r:70deg;--d:6"></i><i style="--x:21px;--y:42px;--sx:-12px;--sy:8px;--r:-35deg;--d:7"></i><i style="--x:42px;--y:42px;--sx:16px;--sy:-10px;--r:15deg;--d:8"></i></div><h3>Structuring</h3><div class="dd"><div class="ddi"><b class="ddt">Structuring</b><p>Taking something messy and building a system that people want to use: boards, spaces, workflows, decisions.</p><a class="ref mono" href="#p-01">Ref. <span>P-01 Team workflows</span> &#8593;</a></div></div></div>
-<div class="jc rv"><span class="k mono">02</span><div class="jm j2" aria-hidden="true"><svg viewBox="0 0 56 56"><path fill="#F2F3EF" class="s1" d="M24 8Q24 30 46 30Q24 30 24 52Q24 30 2 30Q24 30 24 8Z"/><path fill="#D6006F" class="s2" d="M47 0Q47 8 55 8Q47 8 47 16Q47 8 39 8Q47 8 47 0Z"/><path fill="#F2F3EF" class="s3" d="M48 39Q48 44 53 44Q48 44 48 49Q48 44 43 44Q48 44 48 39Z"/></svg></div><h3>Trying new things</h3><div class="dd"><div class="ddi"><b class="ddt">Trying new things</b><p>New tools, new methods, new fields. I would rather build a quick test than talk about it for weeks.</p><a class="ref mono" href="#a-01">Ref. <span>A-01 Innensicht</span> &#8595;</a></div></div></div>
-<div class="jc rv"><span class="k mono">03</span><div class="jm j3" aria-hidden="true"><i></i><i class="m"></i></div><h3>Adapting to people &amp; projects</h3><div class="dd"><div class="ddi"><b class="ddt">Adapting to people &amp; projects</b><p>Every team, user and project is different. I adapt the approach to fit them, not the other way round.</p><a class="ref mono" href="#p-02">Ref. <span>P-02 Expert Tools</span> &#8593;</a></div></div></div>
-<div class="jc rv"><span class="k mono">04</span><div class="jm j4" aria-hidden="true"><i style="left:2px;--h:18px;--d:0"></i><i style="left:16px;--h:30px;--d:1"></i><i style="left:30px;--h:24px;--d:2"></i><i class="m" style="left:44px;--h:52px;--d:3"></i></div><h3>Making information intuitive</h3><div class="dd"><div class="ddi"><b class="ddt">Making information intuitive</b><p>Complex topics, shown so that people get them at a glance and can decide. From decision papers to pitches.</p><a class="ref mono" href="#a-05">Ref. <span>A-05 Learning Cockpit</span> &#8593;</a></div></div></div>
-</div>
-</div></div></div>
-</section>
-
-<section id="what-you-get" class="sec wrap" aria-label="What you get">
-<h2 class="sh"><button class="acc shb fx" type="button" aria-expanded="false" aria-controls="what-you-get-body"><span class="sno">§ 04</span><span><span class="stt">What you get</span><span class="sth mono">if I join your team · hover or tap for details</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
-<div id="what-you-get-body" class="pnl"><div class="pin"><div class="pad">
-<div class="gy">
-<div class="gb rv"><span class="gn" aria-hidden="true">01</span><h3>Speed</h3><div class="dd"><div class="ddi"><b class="ddt">Speed</b><p>I get a topic quickly, I learn fast and I execute fast. No long ramp-up.</p><a class="gr mono" href="#a-01">Proof <span>Innensicht: first version in one afternoon</span> &#8595;</a></div></div></div>
-<div class="gb rv"><span class="gn" aria-hidden="true">02</span><h3>Structure &amp; overview</h3><div class="dd"><div class="ddi"><b class="ddt">Structure &amp; overview</b><p>I turn complexity into clear plans and keep the big picture in view.</p><a class="gr mono" href="#p-01">Proof <span>One Jira &amp; Confluence setup for a whole team</span> &#8593;</a></div></div></div>
-<div class="gb rv"><span class="gn" aria-hidden="true">03</span><h3>Range</h3><div class="dd"><div class="ddi"><b class="ddt">Range</b><p>Design, product, tech and business in one person. Fewer handoffs, less friction.</p><a class="gr mono" href="#path">Proof <span>Business degree, Audi, product owner, designer, founder</span> &#8593;</a></div></div></div>
-<div class="gb rv"><span class="gn" aria-hidden="true">04</span><h3>Solutions, fast</h3><div class="dd"><div class="ddi"><b class="ddt">Solutions, fast</b><p>I find a way forward and decide instead of getting stuck.</p><a class="gr mono" href="#p-02">Proof <span>Two user groups, one tool, features cut on purpose</span> &#8593;</a></div></div></div>
-<div class="gb rv"><span class="gn" aria-hidden="true">05</span><h3>Results</h3><div class="dd"><div class="ddi"><b class="ddt">Results</b><p>I ship, efficiently and dependably, also remotely.</p><a class="gr mono" href="#apps">Proof <span>Five apps released, four of them on iOS and Android</span> &#8593;</a></div></div></div>
-<div class="gb rv"><span class="gn" aria-hidden="true">06</span><h3>Calm &amp; warmth</h3><div class="dd"><div class="ddi"><b class="ddt">Calm &amp; warmth</b><p>I keep the team steady under pressure and bring people together.</p><a class="gr mono" href="#contact">Proof <span>Interim reference letter, Valtech 2026, on request</span> &#8595;</a></div></div></div>
-</div>
-</div></div></div>
-</section>
-
 <section id="skills" class="sec wrap">
-<h2 class="sh"><button class="acc shb" type="button" aria-expanded="false" aria-controls="skills-body"><span class="sno">§ 05</span><span><span class="stt">Skills &amp; tools</span><span class="sth mono">by area, from product to people</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
+<h2 class="sh"><button class="acc shb" type="button" aria-expanded="false" aria-controls="skills-body"><span class="sno">§ 03</span><span><span class="stt">Skills &amp; tools</span><span class="sth mono">by area, from product to people</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
 <div id="skills-body" class="pnl"><div class="pin"><div class="pad">
 <div style="border-bottom:1px solid var(--ink)">
-<div class="rv sk"><h3 style="margin:0;font:inherit"><button class="acc skb" type="button" aria-expanded="false" aria-controls="sk1"><span class="skn">05.1</span><span class="skl">Skills</span><span class="skc">40</span><span class="skp">Product design &amp; UX · AI &amp; digitalization · Process &amp; organisation …</span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h3><div id="sk1" class="pnl"><div class="pin"><div class="krows">
+<div class="rv sk"><h3 style="margin:0;font:inherit"><button class="acc skb" type="button" aria-expanded="false" aria-controls="sk1"><span class="skn">03.1</span><span class="skl">Skills</span><span class="skc">40</span><span class="skp">Product design &amp; UX · AI &amp; digitalization · Process &amp; organisation …</span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h3><div id="sk1" class="pnl"><div class="pin"><div class="krows">
 <div class="krow rv"><p class="kl">Product design &amp; UX</p><div class="kc"><span class="tag">E2E Design</span><span class="tag">User research</span><span class="tag">Customer journey</span><span class="tag">Wireframes &amp; prototypes</span><span class="tag">Design Systems</span><span class="tag">Information Architecture</span><span class="tag">Accessibility (WCAG)</span><span class="tag">UX writing</span><span class="tag">HMI &amp; in-car UX</span><span class="tag">Complex enterprise &amp; tool UIs</span><span class="tag">Personalization &amp; adaptive systems</span><span class="tag">Cognitive load reduction</span><span class="tag">Usability testing</span></div></div>
 <div class="krow rv"><p class="kl">AI &amp; digitalization</p><div class="kc"><span class="tag">AI UX</span><span class="tag">AI-assisted workflows</span><span class="tag">AI-assisted development</span><span class="tag">AI team setup</span><span class="tag">AI tool evaluation</span><span class="tag">AI rollout &amp; enablement</span><span class="tag">Mobile app delivery (iOS, Android)</span></div></div>
 <div class="krow rv"><p class="kl">Process &amp; organisation</p><div class="kc"><span class="tag">Workflow definition &amp; optimization</span><span class="tag">Process design</span><span class="tag">Knowledge management</span><span class="tag">IAM (Identity &amp; Access Management)</span><span class="tag">Jira &amp; Confluence setup</span><span class="tag">Workflow automation</span></div></div>
 <div class="krow rv"><p class="kl">Product &amp; business</p><div class="kc"><span class="tag">Product Ownership</span><span class="tag">Roadmapping</span><span class="tag">Requirements analysis</span><span class="tag">Project planning &amp; scoping</span><span class="tag">Portfolio management</span><span class="tag">Agile delivery</span><span class="tag">Developer handover</span><span class="tag">Stakeholder management</span><span class="tag">Steering committees &amp; decision papers</span><span class="tag">Budget &amp; cost control</span><span class="tag">Presales &amp; proposals</span><span class="tag">Pitching</span></div></div>
 <div class="krow rv"><p class="kl">People &amp; communication</p><div class="kc"><span class="tag">Mediation (university course)</span><span class="tag">Team enablement &amp; knowledge sharing</span></div></div>
 </div></div></div></div>
-<div class="rv sk"><h3 style="margin:0;font:inherit"><button class="acc skb" type="button" aria-expanded="false" aria-controls="sk2"><span class="skn">05.2</span><span class="skl">Tools</span><span class="skc">25</span><span class="skp">Design &amp; prototyping · Product &amp; collaboration · AI …</span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h3><div id="sk2" class="pnl"><div class="pin"><div class="krows">
+<div class="rv sk"><h3 style="margin:0;font:inherit"><button class="acc skb" type="button" aria-expanded="false" aria-controls="sk2"><span class="skn">03.2</span><span class="skl">Tools</span><span class="skc">25</span><span class="skp">Design &amp; prototyping · Product &amp; collaboration · AI …</span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h3><div id="sk2" class="pnl"><div class="pin"><div class="krows">
 <div class="krow rv"><p class="kl">Design &amp; prototyping</p><div class="kc"><span class="tag">Figma</span><span class="tag">Figma Make</span><span class="tag">ProtoPie</span><span class="tag">Canva</span><span class="tag">Adobe Creative Cloud</span></div></div>
 <div class="krow rv"><p class="kl">Product &amp; collaboration</p><div class="kc"><span class="tag">Miro</span><span class="tag">Jira</span><span class="tag">Confluence</span><span class="tag">Notion</span><span class="tag">Microsoft 365</span></div></div>
 <div class="krow rv"><p class="kl">AI</p><div class="kc"><span class="tag">Claude</span><span class="tag">Claude Code</span><span class="tag">ChatGPT</span><span class="tag">Lovable</span><span class="tag">Figma AI</span><span class="tag">Microsoft Copilot</span><span class="tag">Atlassian Rovo</span></div></div>
 <div class="krow rv"><p class="kl">Build &amp; ship</p><div class="kc"><span class="tag">GitHub</span><span class="tag">Visual Studio Code</span><span class="tag">Xcode</span><span class="tag">Android Studio</span><span class="tag">Expo</span><span class="tag">Tolgee</span><span class="tag">App Store Connect</span><span class="tag">Google Play Console</span></div></div>
 </div></div></div></div>
-<div class="rv sk"><h3 style="margin:0;font:inherit"><button class="acc skb" type="button" aria-expanded="false" aria-controls="sk3"><span class="skn">05.3</span><span class="skl">Languages</span><span class="skc">3</span><span class="skp">German · English · Spanish</span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h3><div id="sk3" class="pnl"><div class="pin"><div class="krows">
+<div class="rv sk"><h3 style="margin:0;font:inherit"><button class="acc skb" type="button" aria-expanded="false" aria-controls="sk3"><span class="skn">03.3</span><span class="skl">Languages</span><span class="skc">3</span><span class="skp">German · English · Spanish</span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h3><div id="sk3" class="pnl"><div class="pin"><div class="krows">
 <div class="krow rv"><p class="kl">German</p><div class="kc"><span class="tag">Native</span></div></div>
 <div class="krow rv"><p class="kl">English</p><div class="kc"><span class="tag">C1</span><span class="tag">UNIcert III</span></div></div>
 <div class="krow rv"><p class="kl">Spanish</p><div class="kc"><span class="tag">B1</span><span class="tag">UNIcert II</span></div></div>
@@ -943,7 +956,7 @@ h1 .lni{display:inline-block}
 </main>
 
 <footer id="contact" class="wrap">
-<p class="mono" style="color:#FF4FA3;margin-bottom:24px">§ 06 · Hi again.</p>
+<p class="mono" style="color:#FF4FA3;margin-bottom:24px">§ 04 · Hi again.</p>
 <div class="cgrid">
 <div>
 <h2>Want to work together<span style="color:#FF4FA3">?</span></h2>
