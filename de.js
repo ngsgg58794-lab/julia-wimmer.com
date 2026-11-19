@@ -1,7 +1,6 @@
 /* German texts for index.html. Key = English text on the page. */
 window.JW_DE={
 "Design · Digitalization · AI": "Design · Digitalisierung · KI",
-"Munich → Innsbruck": "München → Innsbruck",
 "Path": "Weg",
 "Work": "Projekte",
 "What I enjoy": "Was mir Spaß macht",
@@ -20,7 +19,6 @@ window.JW_DE={
 "Rather play than read?": "Lieber spielen als lesen?",
 "Drive along my path and collect 22 facts about me.": "Fahr meinen Weg ab und sammle 22 Fakten über mich.",
 "Fig. 01 · Julia": "Abb. 01 · Julia",
-"Munich": "München",
 "My path": "Mein Weg",
 "project manager, product owner, designer, founder, AI lover": "Projektmanagerin, Product Owner, Designerin, Gründerin, AI Lover",
 "Date": "Datum",
@@ -244,11 +242,9 @@ window.JW_DE={
 "Where": "Wo",
 "Remote-first, or hybrid around Innsbruck": "Remote-first oder hybrid rund um Innsbruck",
 "German native · English C1 · Spanish B1": "Deutsch Muttersprache · Englisch C1 · Spanisch B1",
-"Munich · soon Innsbruck": "München · bald Innsbruck",
 "Main": "Hauptnavigation",
 "Portrait of Julia Wimmer": "Porträt von Julia Wimmer",
 "Languages: German, English, Spanish": "Sprachen: Deutsch, Englisch, Spanisch",
-"Munich, soon Innsbruck": "München, bald Innsbruck",
 "Close": "Schließen",
 "2gether app screens showing available friends and upcoming events": "Screens der 2gether-App mit verfügbaren Freund:innen und anstehenden Events",
 "2gether splash screen on a phone held in two hands": "Startbildschirm von 2gether auf einem Smartphone in zwei Händen",
