@@ -587,6 +587,22 @@ h1 .m{color:var(--mag)}
 .ads .f span{padding:2px 6px;border:1px solid rgba(242,243,239,.4);font-family:var(--mono);font-size:.625rem;letter-spacing:.05em;text-transform:uppercase}
 .ads .ft{margin-top:14px;padding-top:10px;border-top:1px dashed rgba(242,243,239,.3);font-size:.8125rem;color:#A6A99F}
 .dlg .ads p{max-width:none}
+/* ---- P-03 2gether: brand + launch kit ---- */
+.gbr{display:grid;grid-template-columns:minmax(0,14rem) minmax(0,1fr);gap:24px 40px;align-items:center;margin-top:18px}
+.gbr>img{display:block;width:100%;height:auto}
+.gbr .aps{margin-top:14px}
+.gsw{display:grid;grid-template-columns:3fr 1fr;gap:8px}
+.gsw i{display:flex;align-items:flex-end;justify-content:space-between;gap:6px;min-height:56px;padding:8px 10px;font-style:normal;font-family:var(--mono);font-size:.625rem;letter-spacing:.05em}
+.gsw i:first-child{background:linear-gradient(90deg,#047CA1,#00C0FD 33%,#BDEAC1 67%,#F6F98A);color:var(--ink)}
+.gsw i:first-child span:first-child{color:#F2F3EF}
+.gsw i:last-child{background:#303030;color:#F2F3EF}
+@media (max-width:640px){.gbr{grid-template-columns:1fr}.gbr>img{max-width:12rem}.gsw i{flex-wrap:wrap}}
+.kit{display:grid;gap:18px;margin-top:18px}
+.dlg .kit ul{display:flex;gap:14px;list-style:none;margin:0;padding:0;max-width:none}
+.dlg .kit li{flex:var(--r) 1 0;min-width:0;margin:0}
+.kit img{display:block;width:100%;height:auto;aspect-ratio:var(--r);object-fit:cover;background:var(--paper-2)}
+.kit .mono{display:block;margin-top:6px;color:var(--grey);font-size:.6875rem}
+@media (max-width:560px){.kit{gap:14px}.dlg .kit ul{gap:10px}}
 /* ---- motion layer: progress, sticky nav, spotlight grid, reveals ---- */
 .prog{position:fixed;inset:0 0 auto 0;height:3px;z-index:60;background:var(--mag);transform:scaleX(0);transform-origin:0 50%;pointer-events:none}
 .top{position:sticky;top:0;z-index:40;display:flex;align-items:stretch;background:var(--paper);border-bottom:1px solid var(--ink)}
@@ -793,7 +809,7 @@ html[lang="de"] .hero h1{font-stretch:100%}
 <div class="wk">
 <button class="ph rv" type="button" id="p-01" data-dlg="dp-01" aria-haspopup="dialog"><span class="pi" style="background-color:var(--paper-2);background-image:linear-gradient(rgba(14,15,12,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(14,15,12,.07) 1px,transparent 1px);background-size:16px 16px"><svg viewBox="0 0 160 120" aria-hidden="true"><g fill="none" stroke="#0E0F0C" stroke-width="1.5"><rect x="22" y="22" width="34" height="78"/><rect x="63" y="22" width="34" height="78"/><rect x="104" y="22" width="34" height="78"/></g><g fill="#0E0F0C"><rect x="27" y="30" width="24" height="12"/><rect x="27" y="47" width="24" height="12"/><rect x="27" y="64" width="24" height="12"/><rect x="68" y="30" width="24" height="12"/><rect x="109" y="30" width="24" height="12"/><rect x="109" y="47" width="24" height="12"/></g><rect x="68" y="47" width="24" height="12" fill="#D6006F"/><path d="M80 59v12M74 65l6 6 6-6" fill="none" stroke="#D6006F" stroke-width="1.5"/></svg></span><span class="pc"><span class="pn mono">P-01</span><span class="ttl">Team workflows &amp; AI rollout</span><span class="tags"><span class="tag">Digitalization</span><span class="tag">AI adoption</span><span class="tag">Jira &amp; Confluence</span></span></span></button>
 <button class="ph rv" type="button" id="p-02" data-dlg="dp-02" aria-haspopup="dialog"><span class="pi" style="background-color:var(--paper-2);background-image:linear-gradient(rgba(14,15,12,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(14,15,12,.07) 1px,transparent 1px);background-size:16px 16px"><svg viewBox="0 0 160 120" aria-hidden="true"><rect x="34" y="18" width="92" height="84" rx="6" fill="#F2F3EF" stroke="#0E0F0C" stroke-width="1.5"/><g fill="#0E0F0C"><rect x="44" y="28" width="34" height="30"/><rect x="82" y="28" width="34" height="30"/><rect x="44" y="62" width="34" height="30"/></g><rect x="82" y="62" width="34" height="30" fill="#D6006F"/><circle cx="99" cy="77" r="5" fill="#F2F3EF"/></svg></span><span class="pc"><span class="pn mono">P-02</span><span class="ttl">Expert Tools &amp; Mobility Services</span><span class="tags"><span class="tag">Complex UI</span><span class="tag">Fleet</span><span class="tag">Autonomous</span></span></span></button>
-<button class="ph rv" type="button" id="p-03" data-dlg="dp-03" aria-haspopup="dialog"><span class="pi"><img src="img/gether-thumb.webp" alt="" loading="lazy" style="object-fit:contain;padding:6%"></span><span class="pc"><span class="pn mono">P-03</span><span class="ttl">2gether, a social app</span><span class="tags"><span class="tag">Founder</span><span class="tag">End-to-End</span></span></span></button>
+<button class="ph rv" type="button" id="p-03" data-dlg="dp-03" aria-haspopup="dialog"><span class="pi"><img src="img/gether-thumb.webp" alt="" loading="lazy" style="object-fit:contain;padding:6%"></span><span class="pc"><span class="pn mono">P-03</span><span class="ttl">2gether, a social app</span><span class="tags"><span class="tag">Founder</span><span class="tag">End-to-End</span><span class="tag">iOS &amp; Android</span></span></span></button>
 <button class="ph rv" type="button" id="p-05" data-dlg="dp-05" aria-haspopup="dialog"><span class="pi" style="background-color:var(--paper-2);background-image:linear-gradient(rgba(14,15,12,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(14,15,12,.07) 1px,transparent 1px);background-size:16px 16px"><svg viewBox="0 0 160 120" aria-hidden="true"><path d="M22 92C52 92 50 40 80 40s30 44 58 30" fill="none" stroke="#0E0F0C" stroke-width="2" stroke-dasharray="7 5"/><circle cx="22" cy="92" r="6" fill="#F2F3EF" stroke="#0E0F0C" stroke-width="2"/><circle cx="138" cy="70" r="7" fill="#D6006F"/><g transform="translate(66 22)"><rect width="30" height="14" fill="#0E0F0C"/><rect x="20" y="3" width="7" height="5" fill="#F2F3EF"/><circle cx="7" cy="16" r="3.5" fill="#0E0F0C"/><circle cx="23" cy="16" r="3.5" fill="#0E0F0C"/></g></svg></span><span class="pc"><span class="pn mono">P-04</span><span class="ttl">InCar Services</span><span class="tags"><span class="tag">UX Concept</span><span class="tag">In-Car</span><span class="tag">OEM</span></span></span></button>
 </div>
 <div class="wsub" id="apps"><h3>Built with Claude Code</h3><p class="mono">four apps live in the stores, one learning tool, all personal projects</p></div>
@@ -858,18 +874,42 @@ html[lang="de"] .hero h1{font-stretch:100%}
 <dialog id="dp-03" class="dlg" aria-labelledby="dp-03-t"><div class="din">
 <div class="dh"><span class="pn mono">P-03</span><button class="dx" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
 <h3 id="dp-03-t" class="dt">2gether, a social app</h3>
-<div class="tags"><span class="tag">Founder</span><span class="tag">End-to-End</span></div>
-<p class="dsum">I co-founded a startup and led it. We released a social media app.</p>
-<div class="csg">
-<div><span class="lbl">Context &amp; problem</span><p>On today's social platforms it's hard to tell which of your friends have time and want to meet up right now. Plans get buried in group chats, and feeds show what happened yesterday rather than what's possible today. 2gether set out to change that with a social app built around real-time availability instead of curated content.</p></div>
-<div><span class="lbl">My role</span><p>I founded 2gether with one co-founder, who provided the funding. I was solely responsible for product and design, from the very first sketch through release and marketing. A single developer was contracted for implementation; everything else, I owned end-to-end, alongside a full-time job. Timeline: 2023–2026.</p></div>
-<div><span class="lbl">Key decision</span><p>With limited resources, one of the most important calls was resisting feature creep: keeping the product tightly focused on real-time availability rather than expanding into a broader social feature set, so the core idea could be validated with real users as early as possible.</p></div>
-<div><span class="lbl">Outcome</span><p>The app launched and organically reached several hundred users. Without budget left for marketing, growth stalled, and we've since filed for liquidation.</p></div>
-<div><span class="lbl">Learnings</span><p>Running product, design and go-to-market solo taught me how much of "shipping" is prioritization under constraint, and confirmed that even a small, dedicated budget for marketing needs to be secured before launch, not after.</p></div>
-</div>
-<div class="shots" style="display:flex;flex-wrap:wrap;align-items:center;gap:24px 40px">
+<div class="tags"><span class="tag">Founder</span><span class="tag">End-to-End</span><span class="tag">iOS &amp; Android</span><span class="tag">Brand &amp; launch</span></div>
+<p class="dsum">I co-founded a startup and led it as CEO. We released 2gether, a social app that shows which of your friends have time right now. I owned product, design, brand and launch.</p>
+<dl class="aps"><div><dt>Company</dt><dd>2gether App GmbH, Munich area, founded 2023</dd></div><div><dt>Team</dt><dd>Two co-founders, development contracted out</dd></div><div><dt>My part</dt><dd>CEO · product · UX/UI · brand · marketing · company admin</dd></div><div><dt>Platforms</dt><dd>Native apps for iOS and Android</dd></div><div><dt>Backend</dt><dd translate="no">Supabase</dd></div><div><dt>Languages</dt><dd>German, English</dd></div><div><dt>Launch</dt><dd>Autumn 2025</dd></div><div><dt>Timeline</dt><dd>2023 – 2026</dd></div></dl>
+<figure class="dg">
+<figcaption class="dgh"><h4>How 2gether works</h4><span class="mono">Fig. 03.1 · simplified</span></figcaption>
+<ol class="flow"><li class="src"><b>Status</b><span>Switch on: I have time now</span></li><li><b>Mood</b><span>Pick what you feel like: eat &amp; drink, party, sports, meet at home</span></li><li class="auto"><b>Match</b><span>See which friends are free right now</span></li><li><b>Meet</b><span>Chat, meet up or create an event</span></li></ol>
+<p class="dgn">Friends come from your phone contacts. Anyone who isn't on 2gether yet gets an invite.</p>
+</figure>
+<div class="shots" style="display:flex;flex-wrap:wrap;align-items:center;gap:24px 40px;margin-top:28px">
 <img loading="lazy" class="mock" src="img/gether-phones.webp" alt="2gether app screens showing available friends and upcoming events" style="flex:3 1 340px;min-width:0;width:auto;max-width:560px">
 <img loading="lazy" class="mock" src="img/gether-hand.webp" alt="2gether splash screen on a phone held in two hands" style="flex:2 1 240px;min-width:0;width:auto;max-width:360px">
+</div>
+<figure class="dg">
+<figcaption class="dgh"><h4>One brand, from app icon to can</h4><span class="mono">Fig. 03.2 · brand</span></figcaption>
+<div class="gbr">
+<img loading="lazy" src="img/gether-logo.webp" alt="2gether logo: a large 2 in a gradient from blue to yellow, the word gether and the claim Meet a friend. Now.">
+<div>
+<div class="gsw" aria-hidden="true"><i><span>#047CA1</span><span>#00C0FD</span><span>#BDEAC1</span><span>#F6F98A</span></i><i><span>#303030</span></i></div>
+<dl class="aps"><div><dt>Claim EN</dt><dd translate="no">Meet a friend. Now.</dd></div><div><dt>Claim DE</dt><dd translate="no">Für spontane Treffen</dd></div><div><dt>Values</dt><dd>Friendship and spontaneity</dd></div><div><dt>Look</dt><dd>Dark UI, one gradient from deep blue to soft yellow, rounded type</dd></div></dl>
+</div>
+</div>
+</figure>
+<figure class="dg">
+<figcaption class="dgh"><h4>Launch kit</h4><span class="mono">Fig. 03.3 · print &amp; merch</span></figcaption>
+<div class="kit">
+<ul><li style="--r:.7078"><img loading="lazy" src="img/gether-flyer.webp" alt="2gether flyer: a hand holds a phone with the app, headline Live status of your friends, QR code to download"><span class="mono">Flyer</span></li><li style="--r:1.4925"><img loading="lazy" src="img/gether-card.webp" alt="Front of the 2gether business card with the large 2 logo"><span class="mono">Business card</span></li></ul>
+<ul><li style="--r:1.409"><img loading="lazy" src="img/gether-can.webp" alt="2gether can label in dark grey with the claim meet friends spontaneously"><span class="mono">Can label</span></li><li style="--r:.7407"><img loading="lazy" src="img/gether-shirt.webp" alt="2gether T-shirt print with logo, phone and the line See right away who has time"><span class="mono">T-shirt print</span></li></ul>
+</div>
+<p class="dgn">Also made for the launch: App Store screenshots in German and English, postcards, address stickers, QR codes, merch for an online shop, Instagram ads and jingles.</p>
+</figure>
+<div class="csg">
+<div><span class="lbl">Context &amp; problem</span><p>On today's social platforms it's hard to tell which of your friends have time and want to meet up right now. Plans get buried in group chats, and feeds show what happened yesterday rather than what's possible today. 2gether set out to change that with a social app built around real-time availability instead of curated content.</p></div>
+<div><span class="lbl">My role</span><p>I founded 2gether with one co-founder, who provided the funding. I was solely responsible for product, design and brand, from the very first sketch through release and marketing. As managing director I also ran the company side: the GmbH, terms of use and privacy policy in German and English, bookkeeping and annual accounts with a tax advisor. A single developer was contracted for implementation; everything else, I owned end-to-end, alongside a full-time job.</p></div>
+<div><span class="lbl">Key decision</span><p>With limited resources, one of the most important calls was resisting feature creep: keeping the product tightly focused on real-time availability rather than expanding into a broader social feature set, so the core idea could be validated with real users as early as possible.</p></div>
+<div><span class="lbl">Outcome</span><p>The app launched in autumn 2025 and organically reached several hundred users. Without budget left for marketing, growth stalled, and we've since filed for liquidation.</p></div>
+<div><span class="lbl">Learnings</span><p>Running product, design and go-to-market solo taught me how much of "shipping" is prioritization under constraint, and confirmed that even a small, dedicated budget for marketing needs to be secured before launch, not after.</p></div>
 </div>
 </div></dialog>
 <dialog id="dp-04" class="dlg" aria-labelledby="dp-04-t"><div class="din">
@@ -1188,7 +1228,7 @@ function setLang(l){
   ['aria-label','alt'].forEach(function(a){Array.prototype.forEach.call(document.querySelectorAll('['+a+']'),function(e){var v=e.getAttribute(a);if(d[v]!=null){trs.push({n:e,a:a,v:v});e.setAttribute(a,d[v]);}});});
 }
 function wantLang(l){if(l===LANG)return;if(l!=='de'||window.JW_DE){setLang(l);return;}
-  var sc=document.createElement('script');sc.src='de.js?v=8';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
+  var sc=document.createElement('script');sc.src='de.js?v=9';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
 Array.prototype.forEach.call(lgb,function(b){b.addEventListener('click',function(){wantLang(b.getAttribute('data-lang'));});});
 if(/[?&]lang=de\b/.test(location.search))wantLang('de');
 })();
