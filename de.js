@@ -260,6 +260,8 @@ window.JW_DE={
 "Spanish": "Spanisch",
 "Certificates": "Zertifikate",
 "In progress": "Läuft",
+"AI Automation: Build LLM Apps & AI-Agents with n8n & APIs": "KI Automation: Erstelle LLM-Apps & AI-Agenten mit n8n & APIs",
+"Udemy · n8n workflows, AI agents, RAG chatbots with embeddings, OpenAI API, open-source LLMs, GDPR and EU AI Act": "Udemy · n8n-Workflows, KI-Agenten, RAG-Chatbots mit Embeddings, OpenAI API, Open-Source-LLMs, DSGVO und EU AI Act",
 "Manager for Applied AI Transformation (IHK)": "Manager:in für angewandte KI-Transformation (IHK)",
 "thekey.ACADEMY · recognised by IHK-Projektgesellschaft Ostbrandenburg · AI strategy, data, change, ethics, security and the EU AI Act, with IHK assessment": "thekey.ACADEMY · anerkannt von der IHK-Projektgesellschaft Ostbrandenburg · KI-Strategie, Daten, Change, Ethik, Sicherheit und EU AI Act, mit IHK-Leistungsüberprüfung",
 "INU – Innovative University of Applied Sciences · responsible use of AI at work, with final test · KI Snack Week 2026": "INU – Innovative University of Applied Sciences · verantwortungsvoller Einsatz von KI im Beruf, mit Abschlusstest · KI Snack Week 2026",
