@@ -260,6 +260,8 @@ window.JW_DE={
 "Spanish": "Spanisch",
 "Certificates": "Zertifikate",
 "In progress": "Läuft",
+"Manager for Applied AI Transformation (IHK)": "Manager:in für angewandte KI-Transformation (IHK)",
+"thekey.ACADEMY · recognised by IHK-Projektgesellschaft Ostbrandenburg · AI strategy, data, change, ethics, security and the EU AI Act, with IHK assessment": "thekey.ACADEMY · anerkannt von der IHK-Projektgesellschaft Ostbrandenburg · KI-Strategie, Daten, Change, Ethik, Sicherheit und EU AI Act, mit IHK-Leistungsüberprüfung",
 "INU – Innovative University of Applied Sciences · responsible use of AI at work, with final test · KI Snack Week 2026": "INU – Innovative University of Applied Sciences · verantwortungsvoller Einsatz von KI im Beruf, mit Abschlusstest · KI Snack Week 2026",
 "verify": "prüfen",
 "Online courses": "Online-Kurse",
