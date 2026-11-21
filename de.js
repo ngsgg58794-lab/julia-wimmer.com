@@ -421,5 +421,6 @@ window.JW_DE={
 "Management": "management",
 "Project": "Projekt-",
 "AI &": "KI &",
-"Three overlapping circles: Design, AI & Digitalization, Project Management. Julia's photo sits where all three meet.": "Drei sich überschneidende Kreise: Design, KI & Digitalisierung, Projektmanagement. Julias Foto sitzt dort, wo sich alle drei treffen."
+"Portrait of Julia Wimmer in front of three overlapping circles: Design, AI & Digitalization, Project Management.": "Porträt von Julia Wimmer vor drei sich überschneidenden Kreisen: Design, KI & Digitalisierung, Projektmanagement.",
+"At a glance": "Auf einen Blick"
 };
