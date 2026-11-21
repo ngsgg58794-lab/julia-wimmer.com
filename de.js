@@ -421,6 +421,7 @@ window.JW_DE={
 "AI &": "KI &",
 "Design, AI & Digitalization, Project Management": "Design, KI & Digitalisierung, Projektmanagement",
 "At a glance": "Auf einen Blick",
+"Automation & agents": "Automatisierung & Agenten",
 "my learning log ↓": "mein Lernlog dazu ↓",
 "Link on request": "Link auf Anfrage",
 "AI Learning Log": "KI-Lernlog",
