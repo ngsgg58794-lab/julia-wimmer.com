@@ -455,6 +455,132 @@ svg text{font-family:var(--mono);font-size:9px;fill:var(--grey);letter-spacing:.
 .foot .row{justify-content:flex-end}
 @media (max-width:760px){.foot .in{grid-template-columns:1fr}.foot .row{justify-content:flex-start}}
 
+/* ---------- module 2 ---------- */
+.lnk{background:none;border:0;padding:0;font-family:var(--mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;font-weight:500;color:var(--grey);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.lnk:hover{color:var(--mag)}
+.links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 28px}
+.links li{padding-top:10px;border-top:1px solid var(--line)}
+.links a{font-weight:750;text-decoration-color:var(--mag);text-underline-offset:3px}
+.links a:hover{color:var(--mag)}
+.links p{font-size:.9375rem;color:var(--grey);margin-top:2px;line-height:1.45}
+@media (max-width:620px){.links{grid-template-columns:1fr}}
+.area{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:20px 28px;margin-top:14px;padding:18px;border:1px solid var(--ink);background:var(--paper);box-shadow:5px 5px 0 var(--ink)}
+.area .ex{margin-top:6px;font-size:1.625rem;line-height:1;font-stretch:72%;font-weight:800;text-transform:uppercase}
+.area p.d{margin-top:10px}
+.area dl{border-top:1px solid var(--ink)}
+.area dl div{padding:9px 0;border-bottom:1px solid var(--line)}
+.area dt{font-family:var(--mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--grey)}
+.area dd{font-size:.9375rem;line-height:1.45;margin-top:2px}
+@media (max-width:760px){.area{grid-template-columns:1fr}}
+.pz{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:24px;align-items:start}
+.pzc{display:grid;gap:14px}
+.pzg .tabs{margin-top:6px}
+.pzo{padding:16px;border:1px solid var(--ink);background:var(--paper);box-shadow:5px 5px 0 var(--ink)}
+.pzp{margin-top:6px;font-family:var(--mono);font-size:clamp(2.4rem,6vw,3.4rem);line-height:1;color:var(--mag);letter-spacing:-.04em}
+.pzd{margin-top:8px;font-size:.875rem;font-weight:650;line-height:1.35}
+.pzl{margin-top:12px;border-top:1px solid var(--ink)}
+.pzl li{display:flex;justify-content:space-between;gap:10px;padding:6px 0;border-bottom:1px solid var(--line);font-size:.875rem;line-height:1.3}
+.pzl li b{font-family:var(--mono);font-weight:500;white-space:nowrap}
+@media (max-width:820px){.pz{grid-template-columns:1fr}}
+.hurd.h4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:820px){.hurd.h4{grid-template-columns:1fr 1fr}.hurd.h4 div:nth-child(3){border-left:0}.hurd.h4 div:nth-child(n+3){border-top:1px solid var(--ink)}}
+@media (max-width:620px){.hurd.h4{grid-template-columns:1fr}.hurd.h4 div{border-left:0}.hurd.h4 div:nth-child(n+2){border-top:1px solid var(--ink)}}
+.mtx{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;margin-top:16px;align-items:start}
+@media (max-width:820px){.mtx{grid-template-columns:1fr}}
+.mxw{position:relative;padding:0 0 24px 24px}
+.mxg{position:relative;aspect-ratio:1;border:1px solid var(--ink);background:var(--paper)}
+.mxg::before,.mxg::after{content:"";position:absolute;background:var(--ink);opacity:.35}
+.mxg::before{left:50%;top:0;bottom:0;width:1px}
+.mxg::after{top:50%;left:0;right:0;height:1px}
+.mxg .qd{position:absolute;display:flex;width:50%;height:50%;padding:8px 10px;font-family:var(--mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--grey);line-height:1.3;pointer-events:none}
+.mxg .qd.tl{left:0;top:0}
+.mxg .qd.tr{right:0;top:0;justify-content:flex-end;text-align:right;background:var(--mag-soft);color:var(--mag)}
+.mxg .qd.bl{left:0;bottom:0;align-items:flex-end}
+.mxg .qd.br{right:0;bottom:0;align-items:flex-end;justify-content:flex-end;text-align:right}
+.mxw .ax{position:absolute;font-family:var(--mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--grey)}
+.mxw .ax.x{left:24px;right:0;bottom:0;text-align:right}
+.mxw .ax.y{left:0;top:0;bottom:24px;writing-mode:vertical-rl;transform:rotate(180deg);text-align:right}
+.mxd{position:absolute;z-index:1;width:34px;height:34px;margin:-17px 0 0 -17px;padding:0;border-radius:50%;border:2px solid var(--ink);background:var(--paper);font-family:var(--mono);font-size:.8125rem;font-weight:500;cursor:pointer;transition:left .5s cubic-bezier(.3,1.3,.5,1),top .5s cubic-bezier(.3,1.3,.5,1),background-color .2s ease,color .2s ease}
+.mxd:hover{background:var(--paper-2)}
+.mxd[aria-pressed="true"]{z-index:2;background:var(--mag);border-color:var(--mag);color:#fff}
+.mxp{border:1px solid var(--ink);background:var(--paper);box-shadow:5px 5px 0 var(--ink)}
+.mxp .dh{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--ink)}
+.mxp .db{padding:14px 16px 16px}
+.mxp h4{font-size:1.375rem;line-height:1.05;font-stretch:72%;font-weight:800;text-transform:uppercase}
+.mxp .nt{margin-top:8px;font-size:.9375rem;line-height:1.45}
+.cr{margin-top:12px;border-top:1px solid var(--ink)}
+.cr>div{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:7px 0;border-bottom:1px solid var(--line)}
+.cr span{font-size:.875rem;font-weight:650;line-height:1.25}
+.seg{display:flex;flex:none;border:1px solid var(--ink)}
+.seg button{width:30px;height:28px;padding:0;border:0;border-left:1px solid var(--ink);background:var(--paper);font-family:var(--mono);font-size:.75rem;cursor:pointer}
+.seg button:first-child{border-left:0}
+.seg button:hover{background:var(--paper-2)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.vd{margin-top:12px;padding:10px 12px;border-left:3px solid var(--mag);background:var(--mag-soft);font-size:.9375rem;line-height:1.4}
+.vd b{display:block;font-weight:800}
+.dil{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--ink)}
+.dil div{padding:12px}
+.dil div+div{border-left:1px solid var(--ink)}
+.dil b{font-weight:800;line-height:1.2}
+.dil p{margin-top:4px;font-size:.875rem;color:var(--grey);line-height:1.4}
+.soc{max-width:600px;min-height:180px;margin:0 auto;padding:18px;border:1px solid var(--ink);background:var(--paper);box-shadow:5px 5px 0 var(--ink)}
+.soc .it{margin-top:6px;font-size:1.375rem;font-weight:750;line-height:1.25}
+.soc .row{margin-top:16px}
+.soc .fb2{margin-top:12px;padding:10px 12px;border-left:3px solid var(--ok);background:var(--ok-soft);font-size:.9375rem;line-height:1.4}
+.soc .fb2.bad{border-color:var(--mag);background:var(--mag-soft)}
+.sob{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:26px}
+.sol li{margin-top:6px;padding:6px 10px;border:1px solid var(--ink);font-size:.875rem;font-weight:600;line-height:1.3;animation:pop .35s ease}
+.sol li.x{border-style:dashed}
+@keyframes pop{from{transform:scale(.92);opacity:0}to{transform:none;opacity:1}}
+@media (max-width:520px){.sob{gap:10px}.sol li{font-size:.8125rem;padding:5px 8px}}
+.dis{margin-left:6px;border-left:2px solid var(--ink)}
+.dis li{position:relative;display:grid;grid-template-columns:3.6rem minmax(0,1fr);gap:2px 12px;padding:8px 0 12px 16px}
+.dis li::before{content:"";position:absolute;left:-8px;top:13px;width:14px;height:14px;border-radius:50%;border:2px solid var(--ink);background:var(--paper)}
+.dis li.ai::before{background:var(--mag);border-color:var(--mag)}
+.dis .y{font-family:var(--mono);font-size:.8125rem;color:var(--mag);padding-top:2px}
+.dis b{font-weight:800;line-height:1.3}
+.dis p{grid-column:2;font-size:.875rem;color:var(--grey);line-height:1.45}
+.eco{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:24px;align-items:center}
+@media (max-width:820px){.eco{grid-template-columns:1fr}}
+.eco svg{display:block;width:100%;max-width:540px;height:auto;margin:0 auto}
+.eco .ln{stroke:var(--ink);stroke-opacity:.4;stroke-width:1.2;stroke-dasharray:4 4;transition:stroke .2s ease,stroke-opacity .2s ease}
+.eco .ln.on{stroke:var(--mag);stroke-opacity:1;stroke-dasharray:none;stroke-width:2.5}
+.eco .nd{cursor:pointer}
+.eco .nd rect{fill:var(--paper);stroke:var(--ink);stroke-width:1.2;transition:fill .2s ease}
+.eco .nd text{font-family:var(--sans);font-size:14px;font-weight:700;fill:var(--ink);letter-spacing:0}
+.eco .nd text.s{font-size:11.5px;font-weight:400;fill:var(--grey)}
+.eco .nd:hover rect{fill:var(--paper-2)}
+.eco .nd[aria-pressed="true"] rect{fill:var(--mag);stroke:var(--mag)}
+.eco .nd[aria-pressed="true"] text{fill:#fff}
+.eco .nd:focus{outline:none}
+.eco .nd:focus-visible rect{stroke:var(--mag);stroke-width:3}
+.eco .ctr{cursor:default}
+.eco .ctr rect,.eco .ctr:hover rect{fill:var(--ink);stroke:var(--ink)}
+.eco .ctr text{fill:var(--paper)}
+.stp{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));border:1px solid var(--ink)}
+.stp button{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:10px 10px 12px;border:0;border-left:1px solid var(--ink);background-color:var(--paper);text-align:left;cursor:pointer;transition:background-color .15s ease,color .15s ease}
+.stp button:first-child{border-left:0}
+.stp button span{font-family:var(--mono);font-size:.6875rem;color:var(--mag)}
+.stp button b{font-size:.875rem;font-weight:700;line-height:1.2}
+.stp button.bonus{background-image:repeating-linear-gradient(135deg,transparent 0 6px,var(--mag-soft) 6px 8px)}
+.stp button:hover{background-color:var(--paper-2)}
+.stp button.seen span::after{content:" ✓"}
+.stp button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.stp button[aria-selected="true"] span{color:#ff4fa3}
+.stpp{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:18px 28px;min-height:210px;margin-top:14px;padding:18px;border:1px solid var(--ink);background:var(--paper);box-shadow:5px 5px 0 var(--ink)}
+.stpp h4{margin-top:4px;font-size:1.5rem;line-height:1;font-stretch:72%;font-weight:800;text-transform:uppercase}
+.stpp p.d{margin-top:10px}
+.stpp dl{border-top:1px solid var(--ink)}
+.stpp dl div{padding:9px 0;border-bottom:1px solid var(--line)}
+.stpp dt{font-family:var(--mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--grey)}
+.stpp dd{margin-top:2px;font-size:.9375rem;line-height:1.4;font-weight:600}
+@media (max-width:820px){.stp{grid-template-columns:repeat(4,minmax(0,1fr))}.stp button:nth-child(5){border-left:0}.stp button:nth-child(n+5){border-top:1px solid var(--ink)}.stpp{grid-template-columns:1fr}}
+.stat+.stat{margin-top:14px}
+.stat .bl{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:6px;font-size:.9375rem;font-weight:650;line-height:1.35}
+.stat .bl b{font-family:var(--mono);font-weight:500;color:var(--mag);font-size:1.25rem}
+.sbar{height:14px;border:1px solid var(--ink);background:var(--paper)}
+.sbar i{display:block;height:100%;background:var(--mag)}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{transition-duration:.01ms!important;animation:none!important}
@@ -813,21 +939,21 @@ svg text{font-family:var(--mono);font-size:9px;fill:var(--grey);letter-spacing:.
 <div class="sh"><span class="sno">1.12</span><h3>Wiederholen</h3><p>Erst Karteikarten, dann Lückentext, dann das Quiz. Dein Fortschritt bleibt in diesem Browser gespeichert.</p></div>
 
 <div id="m1-cards" style="scroll-margin-top:70px">
-<div class="row" style="justify-content:space-between;margin-bottom:12px"><h4 class="mono m">Karteikarten · antippen zum Umdrehen</h4><span class="mono grey" id="cdS">0 / 9 umgedreht</span></div>
-<div class="cards" id="cards"></div>
+<div class="row" style="justify-content:space-between;margin-bottom:12px"><h4 class="mono m">Karteikarten · antippen zum Umdrehen</h4><span class="mono grey" data-cd-s></span></div>
+<div class="cards"></div>
 </div>
 
 <div class="fig" id="m1-cloze" style="margin-top:36px;scroll-margin-top:70px">
 <div class="fh"><h4>Lückentext</h4><span class="mono grey">aus den Kursaufgaben, in meinen Worten</span></div>
 <div class="fb">
-<ol class="cz" id="cz"></ol>
-<div class="row" style="margin-top:16px"><button class="btn" type="button" id="czGo">Prüfen</button><button class="btn ghost" type="button" id="czR">Zurücksetzen</button><p class="st" id="czS" aria-live="polite"></p></div>
+<ol class="cz"></ol>
+<div class="row" style="margin-top:16px"><button class="btn" type="button" data-cz-go>Prüfen</button><button class="btn ghost" type="button" data-cz-r>Zurücksetzen</button><p class="st" data-cz-s aria-live="polite"></p></div>
 </div>
 </div>
 
 <div class="fig" id="m1-quiz" style="margin-top:36px;scroll-margin-top:70px">
-<div class="fh"><h4>Quiz Modul 1</h4><span class="mono grey" id="qzBest"></span></div>
-<div class="fb"><div class="qz" id="qz" aria-live="polite"></div></div>
+<div class="fh"><h4>Quiz Modul 1</h4><span class="mono grey" data-qz-best></span></div>
+<div class="fb"><div class="qz" aria-live="polite"></div></div>
 </div>
 </section>
 
@@ -850,13 +976,260 @@ svg text{font-family:var(--mono);font-size:9px;fill:var(--grey);letter-spacing:.
 </div></div>
 </section>
 
+<!-- ============ MODUL 2 ============ -->
+<section class="mod" id="m2" data-mod="2" aria-labelledby="m2-t" hidden>
+
+<header class="mh wrap">
+<div class="in">
+<div>
+<p class="mno" aria-hidden="true">02</p>
+<h2 class="mt" id="m2-t">KI-Anwendungsgebiete im Unternehmen</h2>
+<p class="lead">Wo KI im Unternehmen hilft, wie man gute Ideen findet und bewertet, welche Chancen und Risiken es gibt, mit wem man zusammenarbeitet und wie die Umsetzung Schritt für Schritt läuft.</p>
+</div>
+<div class="prog" aria-label="Fortschritt Modul 2">
+<p class="mono grey">Wiederholung · <span data-pc="2">0 / 4</span></p>
+<ul>
+<li data-ck="sort"><i></i><a href="#m2-chancen">Sortieren</a></li>
+<li data-ck="cards"><i></i><a href="#m2-cards">Karteikarten</a></li>
+<li data-ck="cloze"><i></i><a href="#m2-cloze">Lückentext</a></li>
+<li data-ck="quiz"><i></i><a href="#m2-quiz">Quiz</a></li>
+</ul>
+</div>
+</div>
+<nav class="in toc" aria-label="Inhalt Modul 2">
+<a href="#m2-ideen"><span>2.1</span>Ideen finden</a>
+<a href="#m2-bereiche"><span>2.2</span>Einsatzbereiche</a>
+<a href="#m2-preis"><span>2.3</span>Preis-Simulator</a>
+<a href="#m2-bewerten"><span>2.4</span>Bewerten</a>
+<a href="#m2-chancen"><span>2.5</span>Chancen &amp; Risiken</a>
+<a href="#m2-partner"><span>2.6</span>Partner</a>
+<a href="#m2-umsetzen"><span>2.7</span>Umsetzen</a>
+<a href="#m2-repeat"><span>2.8</span>Wiederholen</a>
+<a href="#m2-check"><span>2.9</span>Faktencheck</a>
+</nav>
+</header>
+
+<div class="wrap"><div class="in">
+
+<!-- 2.1 -->
+<section class="sec" id="m2-ideen">
+<div class="sh"><span class="sno">2.1</span><h3>Wie man KI-Ideen findet</h3><p>Erst wissen, wo man steht und wohin man will. Dann suchen, was KI dafür tun kann. Wer mit dem Tool anfängt, löst oft das falsche Problem.</p></div>
+<ol class="steps">
+<li><b>Ist-Analyse</b><p>Wo stehen wir? Prozesse, Daten und Engpässe kennen</p></li>
+<li><b>Ziele</b><p>Wohin wollen wir? Effizienter arbeiten, neue Geschäftsmodelle, bessere Angebote</p></li>
+<li><b>Ideen sammeln</b><p>Brainstorming im Team, externe Beratung, Verband, Beispiele anderer</p></li>
+<li><b>Bewerten</b><p>Welche Idee bringt am meisten? Mehr dazu in 2.4</p></li>
+</ol>
+<div class="fig" style="margin-top:24px">
+<div class="fh"><h4>Wo man Inspiration findet</h4><span class="mono grey">Linkliste aus dem Kurs</span></div>
+<div class="fb"><ul class="links">
+<li><a href="https://www.plattform-lernende-systeme.de/ki-landkarte.html" rel="noopener">KI-Landkarte <span aria-hidden="true">&#8599;</span></a><p>Plattform Lernende Systeme: KI-Projekte aus Forschung und Wirtschaft in Deutschland, filterbar nach Branche und Bundesland, mit Kontakten für Kooperationen.</p></li>
+<li><a href="https://www.foerderdatenbank.de/FDB/DE/Home/home.html" rel="noopener">Förderdatenbank des Bundes <span aria-hidden="true">&#8599;</span></a><p>Förderprogramme für KI-Projekte finden.</p></li>
+<li><a href="https://www.heise.de/thema/KI-Update" rel="noopener">KI-Update von heise <span aria-hidden="true">&#8599;</span></a><p>Podcast zu aktuellen Entwicklungen.</p></li>
+<li><a href="https://www.ardaudiothek.de/sendung/der-ki-podcast/94632864/" rel="noopener">Der KI-Podcast der ARD <span aria-hidden="true">&#8599;</span></a><p>Ein realistischer Blick auf KI, abseits vom Hype.</p></li>
+</ul></div>
+</div>
+<p class="key"><span class="mono">Kern</span><span>Erst Ziele und Prozesse kennen, dann Ideen suchen. Nicht umgekehrt.</span></p>
+</section>
+
+<!-- 2.2 -->
+<section class="sec" id="m2-bereiche">
+<div class="sh"><span class="sno">2.2</span><h3>Wo KI heute arbeitet</h3><p>Vier Bereiche mit je einem Beispiel aus der Praxis. Wähle einen Bereich aus.</p></div>
+<div class="tabs" role="tablist" aria-label="Bereiche" id="arT"></div>
+<article class="area" id="arP" role="tabpanel" aria-live="polite">
+<div><p class="mono grey" id="arA"></p><p class="ex" id="arE"></p><p class="d" id="arD"></p></div>
+<dl><div><dt>Weitere Einsätze</dt><dd id="arM"></dd></div><div><dt>Worauf achten</dt><dd id="arW"></dd></div></dl>
+</article>
+</section>
+
+<!-- 2.3 -->
+<section class="sec" id="m2-preis">
+<div class="sh"><span class="sno">2.3</span><h3>Gleiche Reise, anderer Preis?</h3><p>Ein Beispiel aus dem Kurs: Buchungsportale passen Preise dynamisch an. Probier aus, welche Signale den Preis bewegen können.</p></div>
+<div class="fig">
+<div class="fh"><h4>Eine Woche Karibik</h4><span class="mono grey">Abb. 2.3 · Modellrechnung</span></div>
+<div class="fb">
+<div class="pz">
+<div class="pzc" id="pzC"></div>
+<div class="pzo">
+<p class="mono grey">Angezeigter Preis</p>
+<p class="pzp" id="pzP" aria-live="polite"></p>
+<p class="pzd" id="pzD"></p>
+<ul class="pzl" id="pzL"></ul>
+</div>
+</div>
+<p class="note">Zahlen erfunden, Mechanik real. Was ein Shop sehen kann: Gerät und Browser, die ungefähre Region über die IP-Adresse, frühere Besuche über Cookies oder Login. Was er nicht sieht: dein Gesicht und deine Kreditkarte, bevor du bezahlst.</p>
+</div>
+</div>
+<div class="two" style="margin-top:20px">
+<div><div class="colh"><span class="mono" style="color:var(--ok)">Dynamischer Preis</span></div><p>Der Preis ändert sich für alle: nach Nachfrage, Saison oder Uhrzeit. Bei Flügen und Hotels Alltag.</p></div>
+<div><div class="colh"><span class="mono m">Personalisierter Preis</span></div><p>Der Preis ändert sich je nach Person. Heikel für Vertrauen und Recht: In der EU muss ein Shop seit Mai 2022 darauf hinweisen.</p></div>
+</div>
+</section>
+
+<!-- 2.4 -->
+<section class="sec" id="m2-bewerten">
+<div class="sh"><span class="sno">2.4</span><h3>Ideen bewerten und priorisieren</h3><p>Geld ist das wichtigste Kriterium, aber nicht das einzige. Wenn Kundschaft oder Team eine Lösung ablehnen oder die Daten fehlen, kommt auch der Gewinn nicht.</p></div>
+<div class="hurd h4">
+<div><span>01</span><b>Wirtschaftlicher Nutzen</b><p>Return on Investment: Geld und Zeit rein, kommt mehr zurück?</p></div>
+<div><span>02</span><b>Akzeptanz</b><p>Nutzen Team und Kundschaft die Lösung wirklich?</p></div>
+<div><span>03</span><b>Datenverfügbarkeit</b><p>Gibt es genug passende Daten, darf man sie nutzen?</p></div>
+<div><span>04</span><b>Haltung</b><p>KI zur Rationalisierung oder zur Unterstützung?</p></div>
+</div>
+
+<div class="fig" style="margin-top:28px">
+<div class="fh"><h4>Fallstudie aus dem Kurs: Haushaltsgeräte, 200 Mitarbeitende</h4><span class="mono grey">Abb. 2.4 · interaktiv</span></div>
+<div class="fb">
+<p>Sechs Ideen für ein Unternehmen ohne KI-Erfahrung. Wähle eine Idee und bewerte sie neu, der Punkt wandert mit.</p>
+<div class="mtx">
+<div class="mxw">
+<div class="mxg" id="mxG" role="group" aria-label="Priorisierungsmatrix">
+<span class="qd tl">Strategisches Projekt</span><span class="qd tr">Schneller Erfolg</span><span class="qd bl">Parken</span><span class="qd br">Nebenbei</span>
+</div>
+<span class="ax y">Nutzen &#8594;</span><span class="ax x">Machbarkeit &#8594;</span>
+</div>
+<div class="mxp" aria-live="polite">
+<div class="dh"><span class="mono grey" id="mxA"></span><button class="lnk" type="button" id="mxR">Ausgangswerte</button></div>
+<div class="db">
+<h4 id="mxT"></h4>
+<p class="nt" id="mxN"></p>
+<div class="cr" id="mxC"></div>
+<p class="vd" id="mxV"></p>
+</div>
+</div>
+</div>
+<p class="note">Machbarkeit = Durchschnitt aus Akzeptanz, Daten und Aufwand. Die Startwerte sind meine Einschätzung, der Kurs nennt den Chatbot als einfachsten Einstieg und die Trendanalyse als größten Hebel.</p>
+</div>
+</div>
+
+<div class="two" style="margin-top:24px">
+<div class="fig"><div class="fh"><h4>Wenn Daten geschützt sind</h4><span class="mono grey">z. B. Patientendaten</span></div><div class="fb"><ul class="lst">
+<li><b>Anonymisieren:</b> Personenbezug entfernen, bevor trainiert wird</li>
+<li><b>Synthetische Daten:</b> künstlich erzeugte Daten mit denselben Mustern</li>
+<li><b>Federated Learning:</b> Das Modell lernt dort, wo die Daten liegen. Sie verlassen die Klinik nicht.</li>
+<li><b>Lokal betreiben:</b> Modell im eigenen Rechenzentrum statt in fremder Cloud</li>
+</ul><p class="note">Keine Lösung: Datenschutz ignorieren. Auch nicht automatisch: ganz verzichten. Im Hochrisiko-Bereich des EU AI Act zusätzlich prüfen, ob sich der Aufwand rechnet.</p></div></div>
+<div class="fig"><div class="fh"><h4>Das Dilemma</h4><span class="mono m">Haltung</span></div><div class="fb">
+<div class="dil"><div><b>Effizienz maximieren</b><p>KI ersetzt Aufgaben, Stellen fallen weg. Wettbewerbsfähig, aber teuer für Kultur und Ruf.</p></div><div><b>KI unterstützend</b><p>KI entlastet, die Menschen bleiben. Verantwortungsvoll, aber vielleicht langsamer als die Konkurrenz.</p></div></div>
+<p class="quote" style="margin-top:14px">„Wie weit muss ich gehen, um in fünf bis zehn Jahren noch wettbewerbsfähig zu sein?“</p>
+<p class="note">Diese Frage beantwortet jedes Unternehmen selbst, am besten bevor das erste Projekt startet.</p>
+</div></div>
+</div>
+</section>
+
+<!-- 2.5 -->
+<section class="sec" id="m2-chancen">
+<div class="sh"><span class="sno">2.5</span><h3>Chance oder Risiko?</h3><p>KI kann ein Geschäftsmodell überflüssig machen oder ein neues möglich machen. Sortiere elf Aspekte, danach ein Blick auf Gewinner und Verlierer.</p></div>
+<div class="fig">
+<div class="fh"><h4>Übung: Sortieren</h4><span class="mono grey" id="soS">0 / 11</span></div>
+<div class="fb">
+<div class="soc" id="soC" aria-live="polite"></div>
+<div class="sob"><div><p class="colh"><span class="mono" style="color:var(--ok)">Chancen</span></p><ul class="sol" id="soY"></ul></div><div><p class="colh"><span class="mono m">Risiken</span></p><ul class="sol" id="soN"></ul></div></div>
+</div>
+</div>
+
+<div class="two" style="margin-top:28px;align-items:start">
+<div class="fig"><div class="fh"><h4>Disruption: Wer verdrängt wen?</h4><span class="mono grey">Abb. 2.5</span></div><div class="fb">
+<ol class="dis">
+<li><span class="y">1975</span><b>Kodak baut die erste Digitalkamera</b><p>und setzt trotzdem weiter auf Film.</p></li>
+<li><span class="y">2005</span><b>AgfaPhoto ist insolvent</b><p>Die abgespaltene Fotosparte von Agfa übersteht den Wechsel zur Digitalfotografie nicht.</p></li>
+<li><span class="y">2012</span><b>Kodak meldet Insolvenz an</b><p>Die eigene Erfindung hat das Kerngeschäft verdrängt.</p></li>
+<li class="ai"><span class="y">2020</span><b>Virtuelle Influencerin bei IKEA Japan</b><p>Imma, eine computergenerierte Figur, „wohnt“ drei Tage im Schaufenster in Tokio. Mit generativer KI werden solche Figuren billig, echte Influencer verlieren Budget.</p></li>
+<li class="ai"><span class="y">heute</span><b>Die nächste Welle</b><p>Wer KI früh sinnvoll nutzt, gewinnt Vorsprung. Wer abwartet, riskiert, was Kodak passiert ist.</p></li>
+</ol>
+</div></div>
+<div class="fig"><div class="fh"><h4>Risiko Abhängigkeit</h4><span class="mono m">oft unterschätzt</span></div><div class="fb">
+<p>Die meisten Unternehmen nutzen große Modelle aus der Cloud. Fällt der Dienst aus, stehen Prozesse still. Und in einem jungen Markt ist offen, welche Anbieter es in fünf Jahren noch gibt.</p>
+<p class="mono grey" style="margin-top:16px">Was ich daraus mitnehme</p>
+<ul class="lst" style="margin-top:4px"><li>Nicht alles auf einen Anbieter setzen</li><li>Daten, Prompts und Abläufe übertragbar halten</li><li>Einen Plan B haben, zum Beispiel ein offenes Modell</li><li>Bewusst entscheiden, nicht auf Glück hoffen</li></ul>
+</div></div>
+</div>
+</section>
+
+<!-- 2.6 -->
+<section class="sec" id="m2-partner">
+<div class="sh"><span class="sno">2.6</span><h3>Partner und Ökosysteme</h3><p>Kaum ein Unternehmen baut KI komplett allein. Ein Ökosystem ist ein Netzwerk aus Partnern, das gemeinsam schafft, was einer allein nicht kann. Tippe einen Partner an.</p></div>
+<div class="eco">
+<svg id="ecoS" viewBox="0 0 460 380" role="group" aria-label="Partner im KI-Ökosystem"></svg>
+<div class="det" style="position:static" aria-live="polite">
+<div class="dh"><span class="mono grey">Abb. 2.6 · Partner</span><span class="mono m" id="ecoK"></span></div>
+<div class="db"><h4 id="ecoT"></h4><p class="d" id="ecoD"></p><p class="ex"><b>Worauf achten</b><span id="ecoW"></span></p></div>
+</div>
+</div>
+<div class="two" style="margin-top:24px">
+<p class="key" style="margin-top:0"><span class="mono">Mythos</span><span>„Nur mit Big Tech wie Microsoft klappt KI.“ Falsch. Ökosysteme funktionieren auf vielen Ebenen: mit Hochschulen, Verbänden und kleineren Firmen.</span></p>
+<p class="key" style="margin-top:0"><span class="mono">Reihenfolge</span><span>Erst Ziele und Anforderungen klären, dann Partner suchen. Tipp aus dem Kurs: zuerst bei Hochschulen anfragen.</span></p>
+</div>
+</section>
+
+<!-- 2.7 -->
+<section class="sec" id="m2-umsetzen">
+<div class="sh"><span class="sno">2.7</span><h3>In sechs Schritten zur KI-Lösung</h3><p>Der Fahrplan aus dem Kurs, plus ein siebter Schritt, der gern vergessen wird. Tippe einen Schritt an.</p></div>
+<div class="stp" role="tablist" aria-label="Schritte" id="stpB"></div>
+<article class="stpp" role="tabpanel" aria-live="polite">
+<div><p class="mono m" id="stN"></p><h4 id="stT"></h4><p class="d" id="stD"></p></div>
+<dl><div><dt>Ergebnis</dt><dd id="stR"></dd></div><div><dt>Typischer Fehler</dt><dd id="stF"></dd></div></dl>
+</article>
+
+<h4 class="mono m" style="margin:36px 0 10px">Warum KI-Projekte scheitern</h4>
+<div class="hurd">
+<div><span>01</span><b>Keine Gesamtstrategie</b><p>Ein KI-Projekt irgendwo in der IT, ohne Blick aufs ganze Unternehmen. Laut Kurs der häufigste Grund.</p></div>
+<div><span>02</span><b>Schlechte Daten</b><p>Falsche oder einseitige Daten führen zu Fehlern und Bias. Es braucht Leute, die Daten beurteilen können.</p></div>
+<div><span>03</span><b>Keine Kontrolle</b><p>KI unbeobachtet mit Kundschaft arbeiten lassen geht schief. Ein Mensch prüft die Ergebnisse.</p></div>
+</div>
+<div class="fig" style="margin-top:20px"><div class="fh"><h4>McKinsey, State of AI, Anfang 2024</h4><span class="mono grey">Abb. 2.7</span></div><div class="fb">
+<div class="stat"><p class="bl"><span>Befragte, deren Organisation generative KI regelmäßig nutzt</span><b>65 %</b></p><div class="sbar"><i style="width:65%"></i></div></div>
+<div class="stat"><p class="bl"><span>Befragte, deren Organisation schon negative Folgen erlebt hat</span><b>44 %</b></p><div class="sbar"><i style="width:44%"></i></div></div>
+<p class="note">Häufigste Folge: ungenaue Ergebnisse, noch vor Cybersicherheit und Compliance. Gegenmittel: Datenqualität von Anfang an und Kontrolle im Betrieb.</p>
+</div></div>
+<p class="key"><span class="mono">Kern</span><span>Akzeptanz entsteht, wenn der Mensch das letzte Wort hat.</span></p>
+</section>
+
+<!-- 2.8 -->
+<section class="sec" id="m2-repeat">
+<div class="sh"><span class="sno">2.8</span><h3>Wiederholen</h3><p>Erst Karteikarten, dann Lückentext, dann das Quiz. Dein Fortschritt bleibt in diesem Browser gespeichert.</p></div>
+<div id="m2-cards" style="scroll-margin-top:70px">
+<div class="row" style="justify-content:space-between;margin-bottom:12px"><h4 class="mono m">Karteikarten · antippen zum Umdrehen</h4><span class="mono grey" data-cd-s></span></div>
+<div class="cards"></div>
+</div>
+<div class="fig" id="m2-cloze" style="margin-top:36px;scroll-margin-top:70px">
+<div class="fh"><h4>Lückentext</h4><span class="mono grey">aus den Kursaufgaben, in meinen Worten</span></div>
+<div class="fb">
+<ol class="cz"></ol>
+<div class="row" style="margin-top:16px"><button class="btn" type="button" data-cz-go>Prüfen</button><button class="btn ghost" type="button" data-cz-r>Zurücksetzen</button><p class="st" data-cz-s aria-live="polite"></p></div>
+</div>
+</div>
+<div class="fig" id="m2-quiz" style="margin-top:36px;scroll-margin-top:70px">
+<div class="fh"><h4>Quiz Modul 2</h4><span class="mono grey" data-qz-best></span></div>
+<div class="fb"><div class="qz" aria-live="polite"></div></div>
+</div>
+</section>
+
+<!-- 2.9 -->
+<section class="sec" id="m2-check">
+<div class="sh"><span class="sno">2.9</span><h3>Faktencheck</h3><p>Die Videos in Modul 2 nennen einige Zahlen und Beispiele ohne Quelle. Das habe ich nachgeprüft. Für die Prüfung merke ich mir beide Versionen.</p></div>
+<table class="fct">
+<thead><tr><th scope="col">Thema</th><th scope="col">Im Kursmaterial</th><th scope="col">Nachgeprüft</th></tr></thead>
+<tbody>
+<tr><th scope="row">KI im Brustkrebs-Screening</th><td>Mensch 92–93 %, KI 98–99 % richtig</td><td>So pauschal nicht belegt. Belegt ist KI als Unterstützung: In der schwedischen MASAI-Studie (2023) fand das Screening mit KI 20 % mehr Karzinome bei 44 % weniger Befundungsaufwand.</td></tr>
+<tr><th scope="row">Agfa</th><td>„gibt es nicht mehr“</td><td>Agfa-Gevaert gibt es noch (Bildgebung für Kliniken, Druck). Insolvent ging 2005 die abgespaltene Fotosparte AgfaPhoto. Klassisches Beispiel für Disruption ist Kodak.</td></tr>
+<tr><th scope="row">Personalisierte Preise</th><td>„häufig“ nach Smartphone und Wohnort</td><td>Technisch möglich, aber selten nachgewiesen. Eine Studie der EU-Kommission (2018) fand vor allem personalisierte Reihenfolgen von Angeboten, kaum personalisierte Preise. Seit Mai 2022 gilt in der EU eine Hinweispflicht.</td></tr>
+<tr><th scope="row">McKinsey-Studie 2024</th><td>1.000 Befragte, 65 %, 44 %</td><td>Die Prozentwerte stimmen. Befragt wurden laut McKinsey 1.363 Personen.</td></tr>
+<tr><th scope="row">„Alle aus der Garage“</th><td>Apple und Microsoft</td><td>Apple ja, Microsoft nicht: Es startete 1975 in Albuquerque. Garagen-Geschichten gibt es auch von HP, Amazon und Google.</td></tr>
+<tr><th scope="row">Bildgebung in der Medizin</th><td>„kam in den 2010er Jahren auf“</td><td>Röntgen und Mammografie gibt es seit Jahrzehnten. Neu seit den 2010ern ist die Auswertung der Bilder mit Deep Learning.</td></tr>
+</tbody>
+</table>
+</section>
+
+</div></div>
+</section>
+
 <!-- placeholder for locked modules, filled by JS -->
 <section class="mod lockp wrap" id="mx-lock" hidden aria-live="polite">
 <div class="in"><div class="box">
 <p class="mono m" id="lkN"></p>
 <h3 id="lkT"></h3>
-<p id="lkD">Diese Seite entsteht, sobald ich das Modul bearbeitet habe. Bis dahin: Modul 1 wiederholen.</p>
-<p style="margin-top:16px"><a class="btn" href="#m1">Zu Modul 1</a></p>
+<p id="lkD">Diese Seite entsteht, sobald ich das Modul bearbeitet habe. Bis dahin: das letzte Modul wiederholen.</p>
+<p style="margin-top:16px"><a class="btn" href="#m1" id="lkB">Zu Modul 1</a></p>
 </div></div>
 </section>
 </main>
@@ -891,7 +1264,7 @@ function put(k,v){DB[k]=v;save()}
 /* ---------- modules ---------- */
 var MODS=[
  {n:1,s:'Grundlagen',t:'Grundlagen der KI-Technologien',live:true,checks:['match','cards','cloze','quiz']},
- {n:2,s:'Anwendungen',t:'KI-Anwendungsgebiete im Unternehmen'},
+ {n:2,s:'Anwendungen',t:'KI-Anwendungsgebiete im Unternehmen',live:true,checks:['sort','cards','cloze','quiz']},
  {n:3,s:'Daten',t:'Datenmanagement als Basis für erfolgreiche KI-Anwendungen'},
  {n:4,s:'Strategie',t:'Strategische Implementierung von KI in Unternehmen'},
  {n:5,s:'Kultur & Change',t:'Organisatorische und kulturelle Integration von KI'},
@@ -913,10 +1286,14 @@ function showMod(n){
   var lk=$('#mx-lock');
   if(m.live){lk.hidden=true}else{lk.hidden=false;$('#lkN').textContent='Modul '+(m.n<10?'0':'')+m.n+' · folgt';$('#lkT').textContent=m.t}
 }
+var LATEST=MODS.filter(function(m){return m.live}).pop().n;
+$('#tbMod').textContent='Modul '+LATEST+' von 9';
+$('#lkB').href='#m'+LATEST;$('#lkB').textContent='Zu Modul '+LATEST;
 function route(){
   var hs=location.hash.slice(1),mm=/^m(\d)$/.exec(hs),inner=/^m(\d)-/.exec(hs);
   if(mm){showMod(+mm[1]);return}
-  showMod(inner?+inner[1]:1);
+  if(inner){var vis=!$('#m'+inner[1]).hidden;showMod(+inner[1]);var t=document.getElementById(hs);if(t&&!vis)setTimeout(function(){t.scrollIntoView({behavior:'instant',block:'start'})},0);return}
+  showMod(LATEST);
 }
 window.addEventListener('hashchange',route);route();
 $$('.rail a').forEach(function(a){a.addEventListener('click',function(e){
@@ -1179,7 +1556,74 @@ function setDec(v){
 }
 $('#decR').addEventListener('input',function(e){setDec(+e.target.value)});setDec(15);
 
-/* ---------- 1.12 cards ---------- */
+/* ---------- review components (shared by all modules) ---------- */
+function sk(base,mod){return base+(mod>1?mod:'')}
+function initCards(mod,CARDS){
+  var root=$('#m'+mod+'-cards');if(!root)return;
+  var wrap=$('.cards',root),S=$('[data-cd-s]',root),key=sk('cdSeen',mod),seen=get(key,{});
+  CARDS.forEach(function(c,i){
+    var b=h('button','card');b.type='button';b.setAttribute('aria-pressed','false');
+    b.innerHTML='<span class="fa"><span class="mono">'+(i+1<10?'0':'')+(i+1)+' · '+c[0]+'</span><b>'+c[1]+'</b><span class="hint">umdrehen ↻</span></span><span class="ba"><span class="mono">Antwort</span>'+c[2]+'</span>';
+    b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',String(on));if(on){seen[i]=1;put(key,seen);count()}});
+    wrap.appendChild(b);
+  });
+  function count(){var n=Object.keys(seen).length;S.textContent=n+' / '+CARDS.length+' umgedreht';if(n>=CARDS.length)done(mod,'cards')}
+  count();
+}
+function initCloze(mod,CZ){
+  var root=$('#m'+mod+'-cloze');if(!root)return;
+  var ol=$('.cz',root),sels=[],S=$('[data-cz-s]',root);
+  CZ.forEach(function(row,i){
+    var li=h('li');li.innerHTML='<span class="no">0'+(i+1)+'</span>';
+    row[0].split(/(\{[^}]+\})/).forEach(function(p){
+      if(p.charAt(0)==='{'){var opts=p.slice(1,-1).split('|'),s=h('select');s.dataset.r=opts[0];s.setAttribute('aria-label','Lücke');
+        s.appendChild(new Option('…',''));shuffle(opts).forEach(function(o){s.appendChild(new Option(o,o))});
+        s.addEventListener('change',function(){s.classList.remove('r','w')});li.appendChild(s);sels.push(s)}
+      else li.appendChild(document.createTextNode(p));
+    });
+    ol.appendChild(li);
+  });
+  $('[data-cz-go]',root).addEventListener('click',function(){
+    var r=0;sels.forEach(function(s){var ok=s.value===s.dataset.r;s.classList.toggle('r',ok);s.classList.toggle('w',!ok);if(ok)r++});
+    S.textContent=r+' von '+sels.length+' richtig'+(r===sels.length?'. Sitzt.':'');S.className='st '+(r===sels.length?'good':'bad');
+    if(r===sels.length)done(mod,'cloze');
+  });
+  $('[data-cz-r]',root).addEventListener('click',function(){sels.forEach(function(s){s.value='';s.classList.remove('r','w')});S.textContent=''});
+}
+function initQuiz(mod,QZ){
+  var root=$('#m'+mod+'-quiz');if(!root)return;
+  var qz=$('.qz',root),bestEl=$('[data-qz-best]',root),key=sk('qzBest',mod),qOrder,qI,qR,qRes;
+  function bestLbl(){var b=get(key,null);bestEl.textContent=b==null?QZ.length+' Fragen':'Bestwert '+b+' / '+QZ.length}
+  function qStart(){qOrder=shuffle(QZ.map(function(_,i){return i}));qI=0;qR=0;qRes=[];qShow()}
+  function qBar(){return '<div class="qbar" aria-hidden="true">'+qOrder.map(function(_,i){return '<i class="'+(qRes[i]===1?'r':qRes[i]===0?'w':i===qI?'c':'')+'"></i>'}).join('')+'</div>'}
+  function qShow(){
+    var Q=QZ[qOrder[qI]],opts=shuffle(Q[1].map(function(t,i){return {t:t,ok:i===0}}));
+    qz.innerHTML='<div class="qh"><span class="mono grey">Frage '+(qI+1)+' von '+QZ.length+'</span><span class="mono m">'+qR+' richtig</span></div>'+qBar()+'<h4>'+Q[0]+'</h4>';
+    var o=h('div','opts');
+    opts.forEach(function(op,i){var b=h('button');b.type='button';b.innerHTML='<span>'+'ABCD'.charAt(i)+'</span>'+op.t;
+      b.addEventListener('click',function(){
+        $$('button',o).forEach(function(x,j){x.disabled=true;if(opts[j].ok)x.classList.add('r')});
+        if(op.ok){qR++;qRes[qI]=1}else{b.classList.add('w');qRes[qI]=0}
+        qz.appendChild(h('p','ex','<b>'+(op.ok?'Richtig.':'Nicht ganz.')+'</b> '+Q[2]));
+        var nx=h('button','btn');nx.type='button';nx.style.marginTop='14px';nx.textContent=qI<QZ.length-1?'Weiter':'Auswertung';
+        nx.addEventListener('click',function(){qI++;if(qI<QZ.length)qShow();else qEnd()});qz.appendChild(nx);nx.focus({preventScroll:true});
+        $('.qh .m',qz).textContent=qR+' richtig';$('.qbar',qz).outerHTML=qBar();
+      });o.appendChild(b)});
+    qz.appendChild(o);
+  }
+  function qEnd(){
+    var b=get(key,0),need=Math.ceil(QZ.length*.75);if(qR>b)put(key,qR);bestLbl();
+    if(qR>=need)done(mod,'quiz');
+    var msg=qR===QZ.length?'Alles richtig. Modul '+mod+' sitzt.':qR>=need?'Stark. Die falschen Fragen oben nochmal nachlesen.':'Noch nicht ganz. Karteikarten wiederholen und nochmal.';
+    qz.innerHTML='<div class="end">'+qBar()+'<p class="big" style="margin-top:18px">'+qR+'/'+QZ.length+'</p><p style="margin-top:8px;font-weight:650">'+msg+'</p><p class="note">Ab '+need+' richtigen Antworten zählt das Quiz als gelöst.</p></div>';
+    var r=h('button','btn');r.type='button';r.style.marginTop='16px';r.textContent='Nochmal, neu gemischt';r.addEventListener('click',qStart);qz.firstChild.appendChild(r);
+  }
+  qz.innerHTML='<p>'+QZ.length+' Fragen zu Modul '+mod+', Reihenfolge und Antworten neu gemischt. Nach jeder Antwort gibt es eine kurze Erklärung.</p>';
+  var sb=h('button','btn');sb.type='button';sb.style.marginTop='14px';sb.textContent='Quiz starten';sb.addEventListener('click',qStart);qz.appendChild(sb);
+  bestLbl();
+}
+
+/* ---------- module 1 review data ---------- */
 var CARDS=[
  ['Begriffe','Wie hängen KI, ML, Deep Learning und LLM zusammen?','Wie Schalen: KI ist der Oberbegriff. Darin steckt maschinelles Lernen, darin Deep Learning, darin generative KI mit den LLMs.'],
  ['Stufen','Schwache, starke oder Superintelligenz: Was gibt es heute?','Nur schwache KI. Sie kann eine Aufgabe sehr gut. Starke KI wäre dem Menschen ebenbürtig, Superintelligenz überlegen. Beides gibt es nicht.'],
@@ -1191,43 +1635,12 @@ var CARDS=[
  ['Einführung','Vier Schritte für KI im Unternehmen?','Klein starten mit Pilot, alle Stakeholder einbinden, laufend überwachen, Mitarbeitende weiterbilden.'],
  ['Agil','Warum passen agile Methoden zu KI-Projekten?','Kurze Zyklen statt Jahresplan. So kann das Team reagieren, wenn sich die Technik ändert. Wichtig: Transparenz und Schulung gegen Widerstand.']
 ];
-var cdSeen=get('cdSeen',{}),cdWrap=$('#cards');
-CARDS.forEach(function(c,i){
-  var b=h('button','card');b.type='button';b.setAttribute('aria-pressed','false');
-  b.innerHTML='<span class="fa"><span class="mono">'+(i+1<10?'0':'')+(i+1)+' · '+c[0]+'</span><b>'+c[1]+'</b><span class="hint">umdrehen ↻</span></span><span class="ba"><span class="mono">Antwort</span>'+c[2]+'</span>';
-  b.addEventListener('click',function(){var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',String(on));if(on){cdSeen[i]=1;put('cdSeen',cdSeen);cdCount()}});
-  cdWrap.appendChild(b);
-});
-function cdCount(){var n=Object.keys(cdSeen).length;$('#cdS').textContent=n+' / '+CARDS.length+' umgedreht';if(n>=CARDS.length)done(1,'cards')}
-cdCount();
-
-/* ---------- 1.12 cloze ---------- */
 var CZ=[
  ['LLMs verarbeiten riesige Datenmengen und {erzeugen|sortieren|löschen} daraus neue Inhalte. Klassische KI-Modelle arbeiten dagegen nach festen {Regeln|Gefühlen|Zufällen} und liefern strukturierte Ergebnisse in einem Fachgebiet.'],
  ['Backpropagation verteilt den Fehler am Ausgang {rückwärts|zufällig|vorwärts} durch das Netz. So werden die {Gewichte|Pixel|Labels} Schritt für Schritt angepasst.'],
  ['KI im Recruiting kann bestehende {Vorurteile|Stärken|Gehälter} verstärken, weil sie Verzerrungen aus den Trainingsdaten übernimmt und {fortschreibt|löscht|meldet}.'],
  ['Agile Methoden verlangen mehr Eigenverantwortung. Das kann {Widerstand|Langeweile|Gewinn} auslösen. Eine schrittweise Einführung und gute {Schulungen|Verträge|Kündigungen} helfen.']
 ];
-var czOl=$('#cz'),czSel=[];
-CZ.forEach(function(row,i){
-  var li=h('li');li.innerHTML='<span class="no">0'+(i+1)+'</span>';
-  var parts=row[0].split(/(\{[^}]+\})/);
-  parts.forEach(function(p){
-    if(p.charAt(0)==='{'){var opts=p.slice(1,-1).split('|'),s=h('select');s.dataset.r=opts[0];s.setAttribute('aria-label','Lücke');
-      s.appendChild(new Option('…',''));shuffle(opts).forEach(function(o){s.appendChild(new Option(o,o))});
-      s.addEventListener('change',function(){s.classList.remove('r','w')});li.appendChild(s);czSel.push(s)}
-    else li.appendChild(document.createTextNode(p));
-  });
-  czOl.appendChild(li);
-});
-$('#czGo').addEventListener('click',function(){
-  var r=0;czSel.forEach(function(s){var ok=s.value===s.dataset.r;s.classList.toggle('r',ok);s.classList.toggle('w',!ok);if(ok)r++});
-  var S=$('#czS');S.textContent=r+' von '+czSel.length+' richtig'+(r===czSel.length?'. Sitzt.':'');S.className='st '+(r===czSel.length?'good':'bad');
-  if(r===czSel.length)done(1,'cloze');
-});
-$('#czR').addEventListener('click',function(){czSel.forEach(function(s){s.value='';s.classList.remove('r','w')});$('#czS').textContent=''});
-
-/* ---------- 1.12 quiz ---------- */
 var QZ=[
  ['Welche Art von KI gibt es heute?',['Nur schwache KI','Schwache und starke KI','Bereits Superintelligenz'],'Alle heutigen Systeme sind auf bestimmte Aufgaben spezialisiert, auch große Sprachmodelle.'],
  ['Was kennzeichnet unüberwachtes Lernen?',['Die KI findet selbst Gruppen in Daten ohne Labels','Die KI lernt aus Beispielen mit richtiger Antwort','Die KI lernt über Belohnung und Strafe'],'Ohne Labels bildet die KI Cluster. Was sie bedeuten, entscheidet der Mensch.'],
@@ -1242,37 +1655,188 @@ var QZ=[
  ['Warum passen agile Methoden zu KI-Projekten?',['Kurze Zyklen erlauben schnelle Reaktion auf neue Technik','Sie brauchen keine Planung','Sie machen Schulungen überflüssig'],'Agil heißt planen in kleinen Schritten, nicht ohne Plan.'],
  ['Was ist bei strategischen Entscheidungen der beste Weg?',['Menschliche Intuition plus datenbasierte KI-Analyse','Nur Erfahrung','Die KI entscheidet allein'],'Die Kombination nutzt beides und bleibt menschlich verantwortet.']
 ];
-var qz=$('#qz'),qOrder,qI,qR,qRes;
-function bestLbl(){var b=get('qzBest',null);$('#qzBest').textContent=b==null?QZ.length+' Fragen':'Bestwert '+b+' / '+QZ.length}
-function qStart(){qOrder=shuffle(QZ.map(function(_,i){return i}));qI=0;qR=0;qRes=[];qShow()}
-function qBar(){return '<div class="qbar" aria-hidden="true">'+qOrder.map(function(_,i){return '<i class="'+(qRes[i]===1?'r':qRes[i]===0?'w':i===qI?'c':'')+'"></i>'}).join('')+'</div>'}
-function qShow(){
-  var Q=QZ[qOrder[qI]],opts=shuffle(Q[1].map(function(t,i){return {t:t,ok:i===0}}));
-  qz.innerHTML='<div class="qh"><span class="mono grey">Frage '+(qI+1)+' von '+QZ.length+'</span><span class="mono m">'+qR+' richtig</span></div>'+qBar()+'<h4>'+Q[0]+'</h4>';
-  var o=h('div','opts');
-  opts.forEach(function(op,i){var b=h('button');b.type='button';b.innerHTML='<span>'+'ABC'.charAt(i)+'</span>'+op.t;
+initCards(1,CARDS);initCloze(1,CZ);initQuiz(1,QZ);
+
+/* ================= MODUL 2 ================= */
+/* 2.2 areas */
+var AREAS=[
+ {t:'Marketing & Vertrieb',e:'Dynamische Preise',d:'Ein Buchungsportal passt den Preis laufend an: nach Nachfrage, Saison und manchmal nach dem, was es über die Person weiß. Die KI testet, welcher Preis bei welcher Zielgruppe funktioniert.',m:'Zielgerichtete Kampagnen, Kundenanalyse, Verkaufsprognosen, automatisierte Vertriebsprozesse',w:'Personalisierte Preise empfindet Kundschaft schnell als unfair. In der EU gilt eine Hinweispflicht.'},
+ {t:'Gesundheit',e:'Brustkrebs-Screening',d:'KI wertet Mammografie-Aufnahmen aus und markiert Auffälligkeiten. Als zweite Meinung neben der Radiologin findet sie mehr Tumore und spart Befundungszeit.',m:'Diagnostik, Prognose von Krankheitsverläufen, Überwachung von Patientinnen und Patienten',w:'Gesundheitsdaten sind besonders geschützt, medizinische KI fällt im EU AI Act meist unter Hochrisiko.'},
+ {t:'Forschung',e:'Fusion und Proteine',d:'2022 steuerte eine KI von DeepMind mit der EPFL in Lausanne das Plasma in einem Fusionsreaktor. AlphaFold sagt die Form von Proteinen voraus, dafür gab es 2024 den Chemie-Nobelpreis.',m:'Selbstfahrende Labore, die neue Stoffe herstellen und analysieren, Materialforschung, Klimamodelle',w:'Was die KI vorschlägt, muss im Experiment bestätigt werden.'},
+ {t:'Produktion',e:'Vorausschauende Wartung',d:'Sensoren messen Vibration, Temperatur und Stromaufnahme. Die KI erkennt Muster, die einem Ausfall vorausgehen, und meldet rechtzeitig Wartungsbedarf.',m:'Qualitätskontrolle per Kamera, Prozessoptimierung, Bedarfsprognosen',w:'Ohne saubere Sensordaten aus der Vergangenheit lernt das Modell nichts.'}
+];
+var arT=$('#arT'),arI=0;
+AREAS.forEach(function(a,i){var b=h('button');b.type='button';b.setAttribute('role','tab');b.setAttribute('aria-controls','arP');b.textContent=a.t;b.addEventListener('click',function(){setArea(i)});arT.appendChild(b)});
+function setArea(i){arI=i;var A=AREAS[i];$$('button',arT).forEach(function(b,j){b.setAttribute('aria-selected',String(j===i))});
+  $('#arA').textContent=(i+1<10?'0':'')+(i+1)+' · '+A.t;$('#arE').textContent=A.e;$('#arD').textContent=A.d;$('#arM').textContent=A.m;$('#arW').textContent=A.w}
+arT.addEventListener('keydown',function(e){if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft')return;setArea((arI+(e.key==='ArrowRight'?1:AREAS.length-1))%AREAS.length);$$('button',arT)[arI].focus()});
+setArea(0);
+
+/* 2.3 price simulator */
+var PZ=[
+ {k:'Gerät',o:[['Neues Top-Smartphone',.07],['Günstiges Smartphone',-.04],['Laptop',0]],p:1},
+ {k:'Standort laut IP',o:[['Innenstadt München',.04],['Ländliche Region',-.03]],p:1},
+ {k:'Verlauf',o:[['Erster Besuch',0],['Dritter Besuch heute',.05]],p:1},
+ {k:'Nachfrage',o:[['Ferienzeit',.08],['Nebensaison',-.1]],p:0}
+],pzS=[0,0,0,0],BASE=1240;
+function eur(v){return v.toLocaleString('de-DE')+' €'}
+PZ.forEach(function(g,gi){
+  var d=h('div','pzg');d.innerHTML='<p class="mono grey">'+g.k+(g.p?' · persönlich':' · für alle')+'</p>';
+  var t=h('div','tabs');t.setAttribute('role','group');t.setAttribute('aria-label',g.k);
+  g.o.forEach(function(o,oi){var b=h('button');b.type='button';b.textContent=o[0];b.addEventListener('click',function(){pzS[gi]=oi;pzRender()});t.appendChild(b)});
+  d.appendChild(t);$('#pzC').appendChild(d);
+});
+function pzRender(){
+  var pers=0,dem=0,L=$('#pzL');L.innerHTML='';
+  PZ.forEach(function(g,gi){$$('.tabs',$('#pzC'))[gi].querySelectorAll('button').forEach(function(b,oi){b.setAttribute('aria-selected',String(oi===pzS[gi]))});
+    var f=g.o[pzS[gi]][1],eurv=Math.round(BASE*f/10)*10;if(g.p)pers+=eurv;else dem+=eurv;
+    var li=h('li');li.innerHTML='<span>'+g.o[pzS[gi]][0]+'</span><b>'+(eurv>0?'+':eurv<0?'−':'±')+eur(Math.abs(eurv))+'</b>';L.appendChild(li)});
+  var p=BASE+pers+dem;$('#pzP').textContent=eur(p);
+  $('#pzD').textContent='Grundpreis '+eur(BASE)+' · persönliche Signale '+(pers>=0?'+':'−')+eur(Math.abs(pers));
+}
+pzRender();
+
+/* 2.4 priority matrix */
+var CRL=['Wirtschaftlicher Nutzen','Akzeptanz bei Team und Kundschaft','Daten vorhanden','Aufwand gering'];
+var IDEAS=[
+ {t:'Service-Chatbot',a:'Kundenservice',c:[4,4,4,5],n:'Beantwortet Standardfragen rund um die Uhr und entlastet das Team. Viele fertige Lösungen am Markt.'},
+ {t:'Vorausschauende Wartung',a:'Produktion',c:[4,4,3,3],n:'Vermeidet ungeplante Stillstände der Fertigungsanlagen. Braucht Sensordaten aus der Vergangenheit.'},
+ {t:'Produktempfehlungen',a:'Vertrieb · Onlineshop',c:[3,4,4,4],n:'Mehr Umsatz pro Bestellung durch passende Vorschläge. Shopsysteme bringen das oft schon mit.'},
+ {t:'Trendanalyse für neue Geräte',a:'Forschung & Entwicklung',c:[5,4,2,2],n:'Erkennt Markttrends früh und vermeidet Fehlentwicklungen. Größter Hebel, aber Marktdaten sind lückenhaft.'},
+ {t:'Vorauswahl von Bewerbungen',a:'Personal',c:[2,2,2,2],n:'Gilt im EU AI Act als Hochrisiko: strenge Pflichten, Bias-Gefahr, skeptisches Team. Kein guter Einstieg.'},
+ {t:'Qualitätskontrolle per Kamera',a:'Produktion',c:[4,5,3,3],n:'Bilderkennung findet Kratzer und Montagefehler am Band. Zum Trainieren braucht es Fotos von Fehlern.'}
+];
+var QD={tr:['Schneller Erfolg','Zuerst umsetzen: hoher Nutzen, gut machbar.'],tl:['Strategisches Projekt','Großer Hebel, aber aufwendig. Daten aufbauen, Partner suchen, später angehen.'],br:['Nebenbei','Leicht umsetzbar, kleiner Effekt. Gut zum Lernen.'],bl:['Parken','Wenig Nutzen, schwer machbar. Später neu prüfen.']};
+var mxI=0,mxG=$('#mxG'),START=IDEAS.map(function(i){return i.c.slice()});
+function pos(v){return 8+(v-1)/4*84}
+function feas(c){return (c[1]+c[2]+c[3])/3}
+function quad(c){var y=c[0]>3,x=feas(c)>3;return (y?'t':'b')+(x?'r':'l')}
+IDEAS.forEach(function(it,i){var b=h('button','mxd');b.type='button';b.textContent=i+1;b.setAttribute('aria-label',(i+1)+': '+it.t);b.addEventListener('click',function(){mxSel(i)});mxG.appendChild(b);it.b=b});
+function mxPlace(){IDEAS.forEach(function(it){it.b.style.left=pos(feas(it.c))+'%';it.b.style.top=(100-pos(it.c[0]))+'%'})}
+function mxSel(i){
+  mxI=i;var it=IDEAS[i];IDEAS.forEach(function(x,j){x.b.setAttribute('aria-pressed',String(j===i))});
+  $('#mxA').textContent='Idee '+(i+1)+' · '+it.a;$('#mxT').textContent=it.t;$('#mxN').textContent=it.n;
+  var C=$('#mxC');C.innerHTML='';
+  CRL.forEach(function(l,k){var r=h('div');r.innerHTML='<span>'+l+'</span>';var s=h('div','seg');s.setAttribute('role','group');s.setAttribute('aria-label',l);
+    for(var v=1;v<=5;v++)(function(v){var b=h('button');b.type='button';b.textContent=v;b.setAttribute('aria-pressed',String(it.c[k]===v));b.addEventListener('click',function(){it.c[k]=v;mxSel(i);mxPlace()});s.appendChild(b)})(v);
+    r.appendChild(s);C.appendChild(r)});
+  var q=QD[quad(it.c)];$('#mxV').innerHTML='<b>'+q[0]+'</b>'+q[1];
+}
+$('#mxR').addEventListener('click',function(){IDEAS.forEach(function(it,i){it.c=START[i].slice()});mxPlace();mxSel(mxI)});
+mxPlace();mxSel(0);
+
+/* 2.5 sort */
+var SORT=[
+ ['Neue Geschäftsmodelle und Produkte','c','Mit KI entstehen Angebote, die es vorher nicht gab.'],
+ ['Prozesse automatisieren und optimieren','c','Effizienz ist der häufigste Grund für KI-Projekte.'],
+ ['Angebote passend für jede Person','c','Personalisierung macht Angebote relevanter.'],
+ ['Neue Technik früh nutzen','c','Wer früh dabei ist, kann sich vom Wettbewerb absetzen.'],
+ ['Schnellere Produktentwicklung','c','KI hilft beim Entwerfen, Simulieren und Testen.'],
+ ['Arbeitsplätze fallen weg','r','Automatisierung kann Stellen kosten und belastet Kultur und Ruf.'],
+ ['Umgang mit sensiblen Daten','r','Datenschutz verlangt hohe Sicherheitsstandards.'],
+ ['Hohe Anfangs- und laufende Kosten','r','Lizenzen, Rechenleistung, Fachleute, Pflege.'],
+ ['Abhängigkeit von Tech-Anbietern','r','Fällt die Cloud aus oder verschwindet der Anbieter, steht das Projekt.'],
+ ['Technische und organisatorische Komplexität','r','Integration in Systeme, neue Rollen, neue Abläufe.'],
+ ['Automatisierte Entscheidungen','b','Beides: schneller und einheitlich, aber ohne menschliche Kontrolle riskant.']
+];
+var soO,soI,soOk;
+function soStart(){soO=shuffle(SORT.map(function(_,i){return i}));soI=0;soOk=0;$('#soY').innerHTML='';$('#soN').innerHTML='';soShow()}
+function soShow(){
+  var C=$('#soC');$('#soS').textContent=soI+' / '+SORT.length;
+  if(soI>=SORT.length){C.innerHTML='<p class="mono m">Fertig</p><p class="it">'+soOk+' von '+SORT.length+' passend sortiert</p><p style="margin-top:8px">Fast jede Chance hat eine Kehrseite. Entscheidend ist, die Risiken bewusst zu steuern.</p>';
+    var r=h('button','btn ghost');r.type='button';r.style.marginTop='14px';r.textContent='Nochmal';r.addEventListener('click',soStart);C.appendChild(r);done(2,'sort');return}
+  var S=SORT[soO[soI]];
+  C.innerHTML='<p class="mono grey">Aspekt '+(soI+1)+' von '+SORT.length+'</p><p class="it">'+S[0]+'</p>';
+  var row=h('div','row');
+  [['c','Chance'],['r','Risiko']].forEach(function(o){var b=h('button','btn'+(o[0]==='r'?' ghost':''));b.type='button';b.textContent=o[1];
     b.addEventListener('click',function(){
-      $$('button',o).forEach(function(x,j){x.disabled=true;if(opts[j].ok)x.classList.add('r')});
-      if(op.ok){qR++;qRes[qI]=1}else{b.classList.add('w');qRes[qI]=0}
-      var ex=h('p','ex','<b>'+(op.ok?'Richtig.':'Nicht ganz.')+'</b> '+Q[2]);qz.appendChild(ex);
-      var nx=h('button','btn');nx.type='button';nx.style.marginTop='14px';nx.textContent=qI<QZ.length-1?'Weiter':'Auswertung';
-      nx.addEventListener('click',function(){qI++;if(qI<QZ.length)qShow();else qEnd()});qz.appendChild(nx);nx.focus({preventScroll:true});
-      $('.qh .m',qz).textContent=qR+' richtig';$('.qbar',qz).outerHTML=qBar();
-    });o.appendChild(b)});
-  qz.appendChild(o);
+      var ok=S[1]==='b'||S[1]===o[0];if(ok)soOk++;
+      $$('button',row).forEach(function(x){x.disabled=true});
+      var f=h('p','fb2'+(ok?'':' bad'),'<b>'+(ok?(S[1]==='b'?'Stimmt, und:':'Passt.'):'Eher '+(S[1]==='c'?'Chance':'Risiko')+'.')+'</b> '+S[2]);C.appendChild(f);
+      var li=h('li',S[1]==='b'?'x':'');li.textContent=S[0];(S[1]==='r'||(S[1]==='b'&&o[0]==='r')?$('#soN'):$('#soY')).appendChild(li);
+      var nx=h('button','btn');nx.type='button';nx.style.marginTop='12px';nx.textContent=soI<SORT.length-1?'Weiter':'Auswertung';
+      nx.addEventListener('click',function(){soI++;soShow()});C.appendChild(nx);nx.focus({preventScroll:true});
+    });row.appendChild(b)});
+  C.appendChild(row);
 }
-function qEnd(){
-  var b=get('qzBest',0);if(qR>b)put('qzBest',qR);bestLbl();
-  if(qR>=Math.ceil(QZ.length*.75))done(1,'quiz');
-  var msg=qR===QZ.length?'Alles richtig. Modul 1 sitzt.':qR>=9?'Stark. Die falschen Fragen oben nochmal nachlesen.':'Noch nicht ganz. Karteikarten wiederholen und nochmal.';
-  qz.innerHTML='<div class="end">'+qBar()+'<p class="big" style="margin-top:18px">'+qR+'/'+QZ.length+'</p><p style="margin-top:8px;font-weight:650">'+msg+'</p><p class="note">Ab 9 richtigen Antworten zählt das Quiz als gelöst.</p></div>';
-  var r=h('button','btn');r.type='button';r.style.marginTop='16px';r.textContent='Nochmal, neu gemischt';r.addEventListener('click',qStart);qz.firstChild.appendChild(r);
-}
-function qIntro(){
-  qz.innerHTML='<p>'+QZ.length+' Fragen zu Modul 1, Reihenfolge und Antworten neu gemischt. Nach jeder Antwort gibt es eine kurze Erklärung.</p>';
-  var b=h('button','btn');b.type='button';b.style.marginTop='14px';b.textContent='Quiz starten';b.addEventListener('click',qStart);qz.appendChild(b);
-}
-bestLbl();qIntro();
+soStart();
+
+/* 2.6 ecosystem */
+var ECO=[
+ {t:'Hochschulen & Forschung',l:'Hochschulen',s:'& Forschung',d:'Bringen aktuelles Wissen, Studierende und gemeinsame Forschungsprojekte. Viele suchen aktiv Partner aus der Wirtschaft und haben Fördermittel des Bundes.',w:'Forschung hat ein anderes Tempo als ein Projekt. Vorab klären, wem die Ergebnisse gehören.',k:'Tipp aus dem Kurs'},
+ {t:'Unternehmen mit gleichen Zielen',l:'Unternehmen',s:'mit gleichen Zielen',d:'Mehrere Firmen machen ein Projekt gemeinsam, teilen Aufwand und Kosten und lernen voneinander. Am besten keine direkten Konkurrenten.',w:'Klare Regeln, welche Daten geteilt werden und was jede Seite einbringt.',k:'Aufwand teilen'},
+ {t:'Verbände & Kammern',l:'Verbände',s:'& Kammern',d:'Bündeln kleine Betriebe. Ein Handwerksbetrieb mit 15 Leuten stemmt KI kaum allein, über den Verband entstehen gemeinsame Lösungen und Schulungen.',w:'Nicht warten, bis der Verband etwas anbietet, selbst die Initiative ergreifen.',k:'für kleine Betriebe'},
+ {t:'Dienstleister & Systemhäuser',l:'Dienstleister',s:'& Systemhäuser',d:'Setzen um, was intern an Know-how fehlt. Viele bauen das Thema gerade selbst auf und suchen Pilotkunden, daraus wird oft eine echte Kooperation.',w:'Wissen im eigenen Haus aufbauen, sonst bleibt es beim Dienstleister.',k:'Outsourcing'},
+ {t:'Tech-Anbieter & Plattformen',l:'Tech-Anbieter',s:'Modelle & Plattformen',d:'Liefern die großen Modelle über Schnittstellen. Beispiel Microsoft: investiert seit 2019 Milliarden in OpenAI und nutzt die Technik in Copilot und Bing.',w:'Abhängigkeit, Datenschutz und laufende Kosten im Blick behalten.',k:'Big Tech'},
+ {t:'Fördergeber',l:'Fördergeber',s:'Bund & Länder',d:'Förderprogramme senken das finanzielle Risiko, gerade für Kooperationen mit Hochschulen. Einstieg über die Förderdatenbank des Bundes.',w:'Anträge brauchen Vorlauf, Fristen früh einplanen.',k:'Finanzierung'}
+];
+var ecoS=$('#ecoS'),CX=230,CY=190,ecoN=[],ecoL=[];
+ECO.forEach(function(e,i){var a=(-90+i*60)*Math.PI/180,x=CX+152*Math.cos(a),y=CY+134*Math.sin(a);e.x=x;e.y=y;ecoL.push(el('line',{x1:CX,y1:CY,x2:x,y2:y,class:'ln'},ecoS))});
+var ctr=el('g',{class:'nd ctr'},ecoS);el('rect',{x:CX-66,y:CY-26,width:132,height:52},ctr);var ct1=el('text',{x:CX,y:CY-4,'text-anchor':'middle'},ctr);ct1.textContent='Dein';var ct2=el('text',{x:CX,y:CY+14,'text-anchor':'middle'},ctr);ct2.textContent='Unternehmen';
+ECO.forEach(function(e,i){
+  var g=el('g',{class:'nd',tabindex:0,role:'button','aria-pressed':'false','aria-label':e.t},ecoS);
+  el('rect',{x:e.x-70,y:e.y-25,width:140,height:50},g);
+  var t1=el('text',{x:e.x,y:e.y-4,'text-anchor':'middle'},g);t1.textContent=e.l;
+  var t2=el('text',{x:e.x,y:e.y+14,'text-anchor':'middle',class:'s'},g);t2.textContent=e.s;
+  g.addEventListener('click',function(){ecoSel(i)});
+  g.addEventListener('keydown',function(ev){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();ecoSel(i)}});
+  ecoN.push(g);
+});
+function ecoSel(i){var E=ECO[i];ecoN.forEach(function(g,j){g.setAttribute('aria-pressed',String(j===i))});ecoL.forEach(function(l,j){l.classList.toggle('on',j===i)});
+  $('#ecoK').textContent=E.k;$('#ecoT').textContent=E.t;$('#ecoD').textContent=E.d;$('#ecoW').textContent=E.w}
+ecoSel(0);
+
+/* 2.7 stepper */
+var STEPS=[
+ {s:'Ziel',t:'Ziel und Strategie',d:'Was will das Unternehmen erreichen: effizienter werden, wettbewerbsfähiger, ein neues Geschäftsmodell? Welche Bereiche kann KI unterstützen, und wie hebt man sich damit von der Konkurrenz ab?',r:'Kurz- und langfristige Ziele, die KI unterstützen soll',f:'Mit einem Tool anfangen statt mit einem Ziel'},
+ {s:'Ideen',t:'Analyse und Ideen',d:'Markt und Wettbewerb anschauen, eigene Prozesse prüfen, SWOT-Analyse. Dann Ideen sammeln: Brainstorming, Workshops mit internen und externen Fachleuten, Mindmapping, Design Thinking.',r:'Eine lange Liste mit Ideen',f:'Ideen sofort bewerten und damit abwürgen'},
+ {s:'Konzept',t:'Konzept und Bewertung',d:'Ideen nach Machbarkeit, Nutzen und strategischer Bedeutung bewerten und priorisieren. Für die besten Prototypen bauen und Pilotprojekte starten. Kleine, schnelle Erfolge schaffen Akzeptanz.',r:'Priorisierte Liste, Projektplan, erster Pilot',f:'Alles gleichzeitig angehen'},
+ {s:'Ressourcen',t:'Ressourcen und Schulung',d:'Technik, Personal und Budget planen, intern oder mit Dienstleistern. Schulungen aufsetzen, damit das Team die Lösung später nutzen kann, und eine Kultur fördern, die Neues zulässt.',r:'Budget, Team, Schulungsplan',f:'Schulung erst nach dem Start planen'},
+ {s:'Einführung',t:'Einführung und Integration',d:'Plan mit Meilensteinen, Lösung in Systeme und Abläufe einbauen, produktiv setzen. Spätestens jetzt braucht es Change Management, denn Arbeitsweisen ändern sich. Monitoring und Feedback einrichten.',r:'Die Lösung läuft im Arbeitsalltag',f:'Der Pilot läuft, kommt aber nie in den Betrieb'},
+ {s:'Bewertung',t:'Bewertung und Weiterentwicklung',d:'Kennzahlen messen, an Stakeholder berichten, Feedback nutzen. Die KI laufend überwachen: Trifft sie richtige Entscheidungen, wird der geplante Nutzen erreicht? Erfolgreiches skalieren. Nach dem Projekt ist vor dem Projekt.',r:'Kennzahlen und die nächste Ausbaustufe',f:'Einmal prüfen, dann unbeobachtet laufen lassen'},
+ {s:'Feiern',t:'Feiern',d:'Der Bonus-Schritt aus dem Video: Wenn die Lösung im Unternehmen angekommen ist, den Erfolg mit dem Team feiern. Das würdigt die Arbeit und macht Lust auf das nächste Projekt.',r:'Ein Team, das beim nächsten Mal wieder mitzieht',f:'Erfolge stillschweigend abhaken',bonus:1}
+];
+var stpB=$('#stpB'),stI=0;
+STEPS.forEach(function(s,i){var b=h('button',s.bonus?'bonus':'');b.type='button';b.setAttribute('role','tab');b.innerHTML='<span>'+(s.bonus?'Bonus':'0'+(i+1))+'</span><b>'+s.s+'</b>';b.addEventListener('click',function(){stSel(i)});stpB.appendChild(b)});
+function stSel(i){stI=i;var S=STEPS[i];$$('button',stpB).forEach(function(b,j){b.setAttribute('aria-selected',String(j===i));if(j===i)b.classList.add('seen')});
+  $('#stN').textContent=S.bonus?'Schritt 7 · Bonus':'Schritt '+(i+1)+' von 6';$('#stT').textContent=S.t;$('#stD').textContent=S.d;$('#stR').textContent=S.r;$('#stF').textContent=S.f}
+stpB.addEventListener('keydown',function(e){if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft')return;stSel((stI+(e.key==='ArrowRight'?1:STEPS.length-1))%STEPS.length);$$('button',stpB)[stI].focus()});
+stSel(0);
+
+/* 2.8 review data */
+initCards(2,[
+ ['Ideen','Womit beginnt die Suche nach KI-Lösungen?','Mit einer Ist-Analyse und klaren Zielen. Erst danach Ideen sammeln: Brainstorming, Beratung, Verband, KI-Landkarte.'],
+ ['Bewerten','Vier Kriterien, um KI-Ideen zu bewerten?','Wirtschaftlicher Nutzen (ROI), Akzeptanz bei Team und Kundschaft, Datenverfügbarkeit, ethische Haltung.'],
+ ['Preise','Was kann ein Shop für dynamische Preise auswerten?','Gerät und Browser, Region über die IP-Adresse, frühere Besuche. Nicht: Gesicht oder Kreditkarte vor der Zahlung.'],
+ ['Daten','Was tun, wenn Daten geschützt sind?','Alternativen suchen: anonymisieren, synthetische Daten, Federated Learning, lokale Modelle. Nicht ignorieren, nicht automatisch verzichten.'],
+ ['Disruption','Was heißt Disruption durch KI?','Bestehende Geschäftsmodelle werden überflüssig, neue entstehen. Chance und Gefahr zugleich, Beispiel Kodak.'],
+ ['Risiken','Fünf Risiken von KI im Unternehmen?','Arbeitsplatzverlust, Datenschutz, hohe Kosten, Abhängigkeit von Anbietern, Komplexität.'],
+ ['Partner','Drei Arten von Partnern?','Hochschulen und Forschung, Unternehmen mit gleichen Zielen oder Verbände, Dienstleister.'],
+ ['Ökosystem','Was ist ein KI-Ökosystem?','Ein Netzwerk aus Firmen, Forschung, Dienstleistern und Herstellern, das gemeinsam schafft, was einer allein nicht kann.'],
+ ['Umsetzung','Die sechs Schritte?','Ziel und Strategie, Analyse und Ideen, Konzept und Bewertung, Ressourcen und Schulung, Einführung, Bewertung und Weiterentwicklung. Dann feiern.'],
+ ['Scheitern','Häufigster Grund für gescheiterte KI-Projekte?','Eine fehlende Gesamtstrategie. Dazu schlechte Datenqualität und fehlende menschliche Kontrolle.']
+]);
+initCloze(2,[
+ ['Um passende {KI-Lösungen|Portale|Umfragen} zu finden, brauchst du Klarheit über Ziele und {Prozesse|Preise|Partner}. Am Anfang steht eine {Ist-Analyse|Werbekampagne|Kündigung}.'],
+ ['In der Krebsvorsorge sind die {Erkennungsraten|Kosten|Wartezeiten} mit KI teils höher als ohne. In Physik und Chemie betreiben KI-Systeme teils selbstständig {Grundlagenforschung|Fließbandproduktion|Buchhaltung}.'],
+ ['Durch KI werden manche Geschäftsmodelle {überflüssig|vorbereitet|traditionell}. Gleichzeitig entstehen ganz {neue|alte|kleine} Geschäftsmodelle.'],
+ ['Unternehmen stehen vor einem {Dilemma|Konsens|Vertrag} zwischen maximaler {Effizienzsteigerung|Führungskompetenz|Forschung} und ihrer {ethischen|wissenschaftlichen|technischen} Verantwortung gegenüber den Mitarbeitenden.'],
+ ['Ein KI-Ökosystem ist die {Zusammenarbeit|Konkurrenz|Isolation} verschiedener Akteure, um komplexe {Lösungen|Gewinne|Verträge} zu schaffen. Kleine Betriebe schließen sich am besten über {Verbände|Banken|Behörden} zusammen.']
+]);
+initQuiz(2,[
+ ['Welche Informationen kann ein Buchungsportal für Preisanpassungen nutzen?',['Smartphone-Modell und IP-Adresse','Den Gesichtsausdruck beim Anblick des Preises','Die Kreditkartendaten vor der Buchung'],'Gerät und IP-Adresse sieht jede Website. Gesicht und Kreditkarte vor dem Bezahlen nicht.'],
+ ['Die Daten für eine KI sind durch Datenschutz eingeschränkt, etwa in der Medizin. Was tun?',['Alternativen suchen: anonymisierte Daten oder datenschutzfreundliche Modelle','Die KI trotzdem einführen','Grundsätzlich auf KI verzichten'],'Datenschutz ist kein Grund zum Ignorieren und kein automatisches Aus. Es gibt Wege wie Anonymisierung oder Federated Learning.'],
+ ['Warum sind strategische Partnerschaften für KI-Projekte sinnvoll?',['Sie bringen Zugang zu spezialisierter Forschung und aktuellem Wissen','Sie garantieren den Erfolg','Sie verhindern Wettbewerb'],'Partner bringen Wissen und teilen Aufwand. Eine Garantie gibt es nicht.'],
+ ['Was kommt zuerst, bevor man eine Partnerschaft eingeht?',['Strategische Ziele und Anforderungen definieren','Einen Dienstleister auswählen','Fördermittel beantragen'],'Erst wissen, was man will. Dann den passenden Partner suchen.'],
+ ['„Ein KI-Ökosystem funktioniert nur mit großen Partnern wie Microsoft.“ Stimmt das?',['Nein, auch Hochschulen, Verbände und kleinere Firmen bilden Ökosysteme','Ja, nur Big Tech hat die Ressourcen','Ja, sonst gibt es keine Fördermittel'],'Vielfältige Partner machen flexibler. Big Tech ist eine Option, keine Pflicht.'],
+ ['Was ist entscheidend für die Verbesserung einer KI-Lösung nach der Einführung?',['Ständiges Monitoring und Anpassung bei Bedarf','Eine einmalige Prüfung nach dem Start','Nur reagieren, wenn sich jemand beschwert'],'KI muss laufend überwacht werden: Leistung, Entscheidungen, Nutzen.'],
+ ['Was ist laut Kurs der häufigste Grund für gescheiterte KI-Projekte?',['Eine fehlende umfassende KI-Strategie','Zu wenig Rechenleistung','Zu viele gute Ideen'],'Kleine Insellösungen ohne Blick aufs Ganze bringen keine nachhaltige Wirkung.'],
+ ['Warum priorisiert man Ideen in der Konzeptphase?',['Um die Ideen mit dem größten Nutzen auszuwählen','Um alle gleichzeitig umzusetzen','Um immer die billigste zuerst zu machen'],'Priorisieren heißt: Nutzen und Machbarkeit abwägen, nicht nur Kosten.'],
+ ['Ist der wirtschaftliche Nutzen das einzige Kriterium für KI-Anwendungen?',['Nein, auch Akzeptanz, Datenverfügbarkeit und Ethik zählen','Ja, der ROI entscheidet allein','Ja, wenn die Kundschaft zustimmt'],'Ohne Akzeptanz oder Daten kommt auch der wirtschaftliche Nutzen nicht.'],
+ ['Was bedeutet das Disruptionspotenzial von KI?',['Bestehende Geschäftsmodelle können überflüssig werden, neue entstehen','KI-Systeme fallen häufig aus','Preise sinken in allen Branchen'],'Disruption ist Chance und Gefahr zugleich.'],
+ ['Welches Risiko meint „Abhängigkeit“?',['Ausfälle und ungewisse Zukunft von Cloud-Anbietern','Dass Mitarbeitende zu viel am Handy sind','Dass Daten zu genau werden'],'Wer auf ein Cloud-Modell setzt, hängt an dessen Verfügbarkeit und Zukunft.'],
+ ['Wo findest du KI-Projekte aus Deutschland als Inspiration?',['Auf der KI-Landkarte der Plattform Lernende Systeme','Im Handelsregister','Beim Deutschen Wetterdienst'],'Die KI-Landkarte zeigt Projekte aus Forschung und Wirtschaft, filterbar nach Branche und Region.']
+]);
 
 })();
 </script>
