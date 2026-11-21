@@ -416,11 +416,9 @@ window.JW_DE={
 "Along the way I found what I enjoy most: structuring complex workflows and information, and turning them into something anyone can understand. Today I’m a": "Unterwegs habe ich gefunden, was mir am meisten Spaß macht: komplexe Workflows und Informationen zu strukturieren und so aufzubereiten, dass alle sie verstehen. Heute bin ich",
 "Hi, I’m Julia!": "Hi, ich bin Julia!",
 "and": "und",
-"AI & Digitalization,": "KI & Digitalisierung,",
-"Project Management.": "Projektmanagement.",
 "Management": "management",
 "Project": "Projekt-",
 "AI &": "KI &",
-"Portrait of Julia Wimmer in front of three overlapping circles: Design, AI & Digitalization, Project Management.": "Porträt von Julia Wimmer vor drei sich überschneidenden Kreisen: Design, KI & Digitalisierung, Projektmanagement.",
+"Design, AI & Digitalization, Project Management": "Design, KI & Digitalisierung, Projektmanagement",
 "At a glance": "Auf einen Blick"
 };
