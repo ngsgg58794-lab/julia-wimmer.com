@@ -581,6 +581,104 @@ svg text{font-family:var(--mono);font-size:9px;fill:var(--grey);letter-spacing:.
 .sbar{height:14px;border:1px solid var(--ink);background:var(--paper)}
 .sbar i{display:block;height:100%;background:var(--mag)}
 
+/* ---------- module 3 ---------- */
+.eco .arc{stroke-dasharray:none;stroke-opacity:.55;stroke-width:1.6}
+.eco .nd text.s{font-family:var(--mono)}
+.mtg{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;align-items:center}
+.mtg svg{display:block;width:100%;height:auto;border:1px solid var(--ink)}
+.mtd{margin-top:14px;border-top:1px solid var(--ink)}
+.mtd div{display:grid;grid-template-columns:7rem 1fr;gap:10px;padding:7px 0;border-bottom:1px solid var(--line);animation:pop .3s ease}
+.mtd dt{font-family:var(--mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--grey);padding-top:2px}
+.mtd dd{font-weight:600;font-size:.9375rem}
+@media (max-width:420px){.mtg{grid-template-columns:1fr}}
+.kv{border-top:1px solid var(--ink)}
+.kv div{padding:8px 0;border-bottom:1px solid var(--line)}
+.kv dt{font-family:var(--mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--grey)}
+.kv dd{margin-top:2px;font-size:.9375rem;font-weight:600;line-height:1.4}
+.ana svg{display:block;width:100%;height:auto}
+.sql{margin:14px 0 0;padding:14px 16px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:.875rem;line-height:1.55;white-space:pre-wrap;overflow-x:auto}
+.sql b{color:#ff4fa3;font-weight:500}
+.sql i{color:#9fe0b8;font-style:normal}
+.rtw{max-width:100%;overflow-x:auto;margin-top:12px}
+.rt{border-collapse:collapse;font-size:.875rem;min-width:100%}
+.rt caption{text-align:left;font-family:var(--mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--grey);padding-bottom:4px}
+.rt th,.rt td{padding:6px 10px;border:1px solid var(--line);text-align:left;white-space:nowrap}
+.rt th{font-family:var(--mono);font-size:.6875rem;font-weight:500;letter-spacing:.04em;background:var(--paper-2)}
+.flowd{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap}
+.flowd .src{display:grid;gap:6px;align-content:center}
+.flowd .src li{padding:5px 10px;border:1px solid var(--ink);font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.04em;background:var(--paper)}
+.flowd .arr{align-self:center;font-size:1.4rem;color:var(--mag)}
+.flowd .stp1{flex:1 1 150px;padding:12px 14px;border:1px solid var(--ink);background:var(--paper)}
+.flowd .stp1 b{display:block;font-weight:800}
+.flowd .stp1 p{font-size:.875rem;color:var(--grey);margin-top:4px;line-height:1.4}
+.flowd .stp1.ai{background:var(--ink);color:var(--paper)}
+.flowd .stp1.ai p{color:rgba(242,243,239,.75)}
+@media (max-width:760px){.flowd{flex-direction:column}.flowd .src{grid-template-columns:repeat(4,auto);justify-content:start}.flowd .arr{transform:rotate(90deg)}}
+.lane{position:relative;height:26px;margin-top:4px;border-bottom:1px solid var(--ink);overflow:hidden}
+.lane i{position:absolute;top:7px;left:-14px;width:12px;height:12px;border-radius:50%;background:var(--ink)}
+.lane.stream i{background:var(--mag);animation:flow 5s linear infinite}
+.lane.stream i:nth-child(2){animation-delay:-1s}.lane.stream i:nth-child(3){animation-delay:-2s}.lane.stream i:nth-child(4){animation-delay:-3s}.lane.stream i:nth-child(5){animation-delay:-4s}
+.lane.batch i{animation:batch 5s cubic-bezier(.6,0,.4,1) infinite}
+.lane.batch i:nth-child(1){top:7px;margin-left:0}.lane.batch i:nth-child(2){margin-left:14px}.lane.batch i:nth-child(3){margin-left:28px}.lane.batch i:nth-child(4){margin-left:42px}.lane.batch i:nth-child(5){margin-left:56px}
+@keyframes flow{from{left:-14px}to{left:100%}}
+@keyframes batch{0%,70%{left:4%}100%{left:100%}}
+.txl li{display:grid;grid-template-columns:5.2rem minmax(0,1fr) auto;gap:10px;align-items:baseline;padding:7px 8px;border-bottom:1px solid var(--line);font-size:.9375rem;transition:background-color .3s ease}
+.txl li .mono{color:var(--grey);text-transform:none}
+.txl li b{font-family:var(--mono);font-weight:500;font-size:.8125rem}
+.txl li.al{background:var(--mag-soft);box-shadow:inset 3px 0 0 var(--mag)}
+@media (max-width:420px){.txl li{grid-template-columns:1fr auto}.txl li .mono{grid-column:1/-1}}
+.clw{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:24px;align-items:start}
+@media (max-width:900px){.clw{grid-template-columns:1fr}}
+.cl td.bad{background:var(--mag-soft);color:var(--mag);font-weight:600}
+.cl td.imp{font-style:italic;color:var(--grey)}
+.cl td.irr{color:var(--grey);text-decoration:line-through;text-decoration-color:transparent}
+.cl tr.dupr td{border-top:2px dashed var(--mag)}
+.dq .stat .bl{font-size:.875rem}
+.dq .stat .bl small{display:block;font-weight:400;color:var(--grey);font-size:.75rem}
+.dq .stat .bl b{font-size:1rem}
+.dq .sbar i{transition:width .5s ease}
+.dqt{margin-top:14px;padding-top:10px;border-top:1px solid var(--ink);font-weight:650}
+.dqt b{font-family:var(--mono);font-weight:500;color:var(--mag);font-size:1.25rem}
+.clb{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:18px}
+.clb .btn{min-height:40px;font-size:.875rem;padding:0 14px}
+.laws{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--ink)}
+.laws div{padding:14px;border-left:1px solid var(--ink)}
+.laws div:first-child{border-left:0}
+.laws b{display:block;margin-top:6px;font-size:1.5rem;line-height:1;font-stretch:72%;font-weight:800;text-transform:uppercase}
+.laws p{margin-top:6px;font-size:.875rem;color:var(--grey);line-height:1.45}
+@media (max-width:900px){.laws{grid-template-columns:1fr 1fr}.laws div:nth-child(3){border-left:0}.laws div:nth-child(n+3){border-top:1px solid var(--ink)}}
+@media (max-width:520px){.laws{grid-template-columns:1fr}.laws div{border-left:0}.laws div:nth-child(n+2){border-top:1px solid var(--ink)}}
+.nl{counter-reset:n}
+.nl li{position:relative;padding:7px 0 7px 30px;border-bottom:1px solid var(--line);line-height:1.4}
+.nl li::before{counter-increment:n;content:counter(n);position:absolute;left:0;top:7px;font-family:var(--mono);font-size:.8125rem;color:var(--mag)}
+.ice{cursor:pointer}
+.ice path{fill:var(--paper);stroke:var(--ink);stroke-width:1.4;transition:fill .2s ease}
+.ice text{font-family:var(--sans);font-size:14px;font-weight:800;fill:var(--ink);letter-spacing:0;text-transform:uppercase}
+.ice text.s{font-family:var(--mono);font-size:10px;font-weight:500;fill:var(--grey)}
+.ice:hover path{fill:var(--paper-2)}
+.ice[aria-pressed="true"] path{fill:var(--mag);stroke:var(--mag)}
+.ice[aria-pressed="true"] text{fill:#fff}
+.ice:focus{outline:none}
+.ice:focus-visible path{stroke:var(--mag);stroke-width:3}
+.sob.s3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:620px){.sob.s3{grid-template-columns:1fr}}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chip{padding:6px 10px;border:1px solid var(--ink);background:var(--paper);font-size:.8125rem;font-weight:600;line-height:1.3;text-align:left;cursor:pointer;box-shadow:2px 2px 0 var(--ink);transition:transform .12s ease,box-shadow .12s ease}
+.chip:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--mag)}
+.snI{display:block;width:100%;margin-top:12px;padding:10px 12px;border:1px solid var(--ink);background:var(--paper);font:inherit;resize:vertical}
+.snI:focus{outline:2px solid var(--mag);outline-offset:1px}
+.snR{margin-top:12px;padding:14px 16px;border:1px solid var(--ink);box-shadow:5px 5px 0 var(--ink);background:var(--paper)}
+.snV span{display:inline-block;padding:2px 10px;font-family:var(--mono);font-size:.875rem;text-transform:uppercase;letter-spacing:.06em;border:1px solid currentColor}
+.snV span.p{color:#fff;background:var(--ok);border-color:var(--ok)}
+.snV span.n{color:#fff;background:var(--mag);border-color:var(--mag)}
+.snV span.z{color:var(--grey)}
+.snV small{margin-left:8px;font-family:var(--mono);color:var(--grey)}
+.snH{margin-top:10px;font-size:1.0625rem;line-height:1.7}
+.snH mark{padding:1px 3px;font-weight:700}
+.snH mark.p{background:var(--ok-soft);color:var(--ok)}
+.snH mark.n{background:var(--mag-soft);color:var(--mag)}
+.snH u{text-decoration-color:var(--mag);text-decoration-thickness:2px}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{transition-duration:.01ms!important;animation:none!important}
@@ -1223,6 +1321,403 @@ svg text{font-family:var(--mono);font-size:9px;fill:var(--grey);letter-spacing:.
 </div></div>
 </section>
 
+<!-- ============ MODUL 3 ============ -->
+<section class="mod" id="m3" data-mod="3" aria-labelledby="m3-t" hidden>
+
+<header class="mh wrap">
+<div class="in">
+<div>
+<p class="mno" aria-hidden="true">03</p>
+<h2 class="mt" id="m3-t">Datenmanagement als Basis für KI</h2>
+<p class="lead">Ohne gute Daten keine gute KI. Wie Daten durch ein Unternehmen wandern, wer sich darum kümmert, wie man sie analysiert, sauber hält und rechtssicher nutzt, und warum Kultur dabei mehr zählt als Technik.</p>
+</div>
+<div class="prog" aria-label="Fortschritt Modul 3">
+<p class="mono grey">Wiederholung · <span data-pc="3">0 / 5</span></p>
+<ul>
+<li data-ck="roles"><i></i><a href="#m3-rollen">Rollen</a></li>
+<li data-ck="ice"><i></i><a href="#m3-kultur">Eisberg</a></li>
+<li data-ck="cards"><i></i><a href="#m3-cards">Karteikarten</a></li>
+<li data-ck="cloze"><i></i><a href="#m3-cloze">Lückentext</a></li>
+<li data-ck="quiz"><i></i><a href="#m3-quiz">Quiz</a></li>
+</ul>
+</div>
+</div>
+<nav class="in toc" aria-label="Inhalt Modul 3">
+<a href="#m3-zyklus"><span>3.1</span>Lebenszyklus</a>
+<a href="#m3-strategie"><span>3.2</span>Datenstrategie</a>
+<a href="#m3-rollen"><span>3.3</span>Rollen</a>
+<a href="#m3-analyse"><span>3.4</span>Analyse &amp; SQL</a>
+<a href="#m3-integration"><span>3.5</span>Daten für KI</a>
+<a href="#m3-qualitaet"><span>3.6</span>Datenqualität</a>
+<a href="#m3-compliance"><span>3.7</span>Compliance</a>
+<a href="#m3-ethik"><span>3.8</span>Ethik &amp; Bias</a>
+<a href="#m3-vorteil"><span>3.9</span>Wettbewerbsvorteil</a>
+<a href="#m3-kultur"><span>3.10</span>Datenkultur</a>
+<a href="#m3-faelle"><span>3.11</span>Fallbeispiele</a>
+<a href="#m3-repeat"><span>3.12</span>Wiederholen</a>
+<a href="#m3-check"><span>3.13</span>Faktencheck</a>
+</nav>
+</header>
+
+<div class="wrap"><div class="in">
+
+<!-- 3.1 -->
+<section class="sec" id="m3-zyklus">
+<div class="sh"><span class="sno">3.1</span><h3>Das Leben eines Datums</h3><p>Datenmanagement ist alles, was ein Unternehmen tut, um Daten zu erfassen, zu verwalten und nutzbar zu machen: genau, zuverlässig und geschützt. Jedes Datum durchläuft sechs Phasen. Tippe eine Phase an, das Beispiel ist eine Fitnessuhr.</p></div>
+<div class="eco">
+<svg id="lcS" viewBox="0 0 440 400" role="group" aria-label="Datenlebenszyklus in sechs Phasen"></svg>
+<div class="det" style="position:static" aria-live="polite">
+<div class="dh"><span class="mono grey">Abb. 3.1 · Phase <span id="lcN">1</span> von 6</span><span class="mono m" id="lcK"></span></div>
+<div class="db"><h4 id="lcT"></h4><p class="d" id="lcD"></p><p class="ex"><b>Fitnessuhr</b><span id="lcE"></span></p><p class="ex"><b>Werkzeuge</b><span id="lcW"></span></p></div>
+</div>
+</div>
+<div class="two" style="margin-top:28px;align-items:start">
+<div>
+<h4 class="mono m" style="margin-bottom:8px">Drei Begriffe, die man kennen muss</h4>
+<ul class="lst">
+<li><b>Data Governance:</b> Regeln, Prozesse und vor allem Verantwortlichkeiten. Wer darf was mit welchen Daten, wer haftet?</li>
+<li><b>Datenarchitektur:</b> wie Daten im Unternehmen strukturiert, gespeichert und verbunden sind</li>
+<li><b>Metadaten:</b> Daten über Daten. Im Bibliothekskatalog: Thema, Autorin, Erscheinungsjahr. Beim Foto: wann und wo es entstand.</li>
+</ul>
+</div>
+<div class="fig meta">
+<div class="fh"><h4>Was ein Foto verrät</h4><span class="mono grey">Metadaten</span></div>
+<div class="fb">
+<div class="mtg">
+<svg viewBox="0 0 160 110" aria-hidden="true"><rect width="160" height="110" fill="#E7E9E3"/><circle cx="122" cy="28" r="12" fill="#D6006F"/><path d="M0 110 L46 46 L72 78 L98 40 L160 110 Z" fill="#0E0F0C"/><path d="M0 110 L46 46 L58 62 L40 110 Z" fill="#55584F"/></svg>
+<div><p>Das Bild zeigt Berge. Die Datei weiß mehr.</p><button class="btn ghost" type="button" id="mtB" aria-expanded="false" style="margin-top:10px">Metadaten zeigen</button></div>
+</div>
+<dl class="mtd" id="mtD" hidden>
+<div><dt>Aufgenommen</dt><dd>14.08.2026, 18:42</dd></div>
+<div><dt>Ort</dt><dd>45,64° N, 10,73° E · Gardasee</dd></div>
+<div><dt>Gerät</dt><dd>Smartphone, Hauptkamera</dd></div>
+<div><dt>Größe</dt><dd>4032 × 3024 px, 3,1 MB</dd></div>
+</dl>
+<p class="note">Metadaten verraten oft mehr als das Bild selbst. Deshalb entfernen viele Plattformen den Ort beim Hochladen.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 3.2 -->
+<section class="sec" id="m3-strategie">
+<div class="sh"><span class="sno">3.2</span><h3>Eine Datenstrategie aufsetzen</h3><p>Eine Strategie beschreibt, wie man ein Ziel erreicht. Ohne klares Ziel gibt es keine sinnvollen Kennzahlen, kein Budget und keine Richtung.</p></div>
+<div class="fig">
+<div class="fh"><h4>Ziele und ihre Kennzahlen</h4><span class="mono grey">Abb. 3.2</span></div>
+<div class="fb" style="padding-top:6px">
+<table class="cmp">
+<thead><tr><th scope="col">Art</th><th scope="col">Ziel</th><th scope="col">Kennzahl (KPI)</th></tr></thead>
+<tbody>
+<tr><th scope="row">Geschäft</th><td data-l="Ziel">Umsatz eines Produkts steigern</td><td data-l="KPI">Umsatz pro Monat gegenüber Vorjahr</td></tr>
+<tr><th scope="row">Geschäft</th><td data-l="Ziel">Kosten eines Prozesses senken</td><td data-l="KPI">Kosten pro Vorgang</td></tr>
+<tr><th scope="row">Geschäft</th><td data-l="Ziel">Kundenzufriedenheit verbessern</td><td data-l="KPI">Bewertungen, Beschwerdequote</td></tr>
+<tr><th scope="row">Daten</th><td data-l="Ziel">Datenqualität erhöhen</td><td data-l="KPI">Anteil vollständiger, korrekter Datensätze über die Zeit</td></tr>
+<tr><th scope="row">Daten</th><td data-l="Ziel">Daten schneller verfügbar machen</td><td data-l="KPI">Integrationszeit einer neuen Quelle</td></tr>
+<tr><th scope="row">Daten</th><td data-l="Ziel">Mehr Entscheidungen auf Datenbasis</td><td data-l="KPI">Anzahl datengestützter Entscheidungen</td></tr>
+</tbody>
+</table>
+<p class="note">Gemessen wird über Dashboards und Berichte, besprochen in festen Terminen.</p>
+</div>
+</div>
+<div class="hurd" style="margin-top:24px">
+<div><span>01</span><b>Personal</b><p>Welche Rollen in welcher Kapazität? Eigene Leute schulen, extern einstellen oder Beratung einkaufen.</p></div>
+<div><span>02</span><b>Technik</b><p>Was ist da, was fehlt? Tools je Phase des Lebenszyklus, mit Anschaffung und laufenden Lizenzen.</p></div>
+<div><span>03</span><b>Budget</b><p>Business Case: Gesamtkosten gegen Mehrwert. Und wer zahlt: die IT oder ein strategisches Budget?</p></div>
+</div>
+<div class="two" style="margin-top:24px;align-items:start">
+<div>
+<h4 class="mono m" style="margin-bottom:8px">Vorgehen</h4>
+<ul class="lst">
+<li><b>Agil statt Wasserfall:</b> Scrum und kurze Zyklen, weil im Datenumfeld ständig neue Anforderungen kommen</li>
+<li><b>Meilensteine zeigen:</b> Stakeholder sehen, was wann fertig ist. Das gibt Planungssicherheit.</li>
+<li><b>Change Management:</b> Wie offen ist das Team für Arbeit mit Daten? Das bestimmt, wie viel Überzeugungsarbeit nötig ist.</li>
+<li><b>Rechtlicher Rahmen:</b> DSGVO und je nach Land weitere Gesetze, dazu interne Richtlinien</li>
+</ul>
+</div>
+<div>
+<h4 class="mono m" style="margin-bottom:8px">Risikomanagement: erkennen, bewerten, Plan B</h4>
+<details class="ans" style="margin-top:0"><summary>Datenschutz verletzt</summary><div class="ab"><p>Zum Beispiel Daten ohne Einwilligung verarbeitet. Plan: Verarbeitung stoppen, Datenschutzbeauftragte einbinden, Meldepflicht prüfen. Bei einer Datenpanne muss die Aufsichtsbehörde in der Regel binnen 72 Stunden informiert werden.</p></div></details>
+<details class="ans" style="margin-top:8px"><summary>Technik fällt aus</summary><div class="ab"><p>Lizenzen fehlen, ein Dienst fällt aus oder das Start-up dahinter ist insolvent. Plan: Ausstiegsszenario, zweiter Anbieter, Daten in offenen Formaten halten.</p></div></details>
+<details class="ans" style="margin-top:8px"><summary>Team zieht nicht mit</summary><div class="ab"><p>Die Akzeptanz ist gering. Plan: früh einbinden, Nutzen zeigen, ein Leuchtturmprojekt mit schnellem Erfolg.</p></div></details>
+</div>
+</div>
+</section>
+
+<!-- 3.3 -->
+<section class="sec" id="m3-rollen">
+<div class="sh"><span class="sno">3.3</span><h3>Wer macht was? Vier Datenrollen</h3><p>Vier Rollen, die oft verwechselt werden. Erst die Profile, dann die Übung.</p></div>
+<div class="hurd h4">
+<div><span>DS</span><b>Data Scientist</b><p>Baut Modelle und Algorithmen, nutzt maschinelles Lernen und Statistik, oft mit unstrukturierten Daten. Beispiel: Wer kündigt bald?</p></div>
+<div><span>DE</span><b>Data Engineer</b><p>Baut und wartet die Infrastruktur: Pipelines, ETL, Spark oder Hadoop. Sorgt dafür, dass Daten aktuell ankommen.</p></div>
+<div><span>DA</span><b>Data Analyst</b><p>Wertet vorhandene Daten mit SQL und Excel aus, baut Dashboards und verständliche Berichte. Keine komplexen Modelle.</p></div>
+<div><span>DSt</span><b>Data Steward</b><p>Verwaltet und dokumentiert Daten, sorgt für Qualität, Konsistenz und die Einhaltung der Standards.</p></div>
+</div>
+<div class="fig" style="margin-top:24px">
+<div class="fh"><h4>Übung: Wer ist zuständig?</h4><span class="mono grey">8 Aufgaben</span></div>
+<div class="fb" id="m3-assign"><ol class="mx"></ol><div class="score"><p class="st" data-as-s aria-live="polite"></p><button class="btn ghost" type="button" data-as-r>Neu starten</button></div></div>
+</div>
+</section>
+
+<!-- 3.4 -->
+<section class="sec" id="m3-analyse">
+<div class="sh"><span class="sno">3.4</span><h3>Vier Arten, Daten zu analysieren</h3><p>Von „Was ist passiert?“ bis „Was sollen wir tun?“. Jede Stufe baut auf der vorigen auf. Das Beispiel ist eine Eisdiele mit zwölf Monaten Umsatz.</p></div>
+<div class="tabs" role="tablist" aria-label="Analysearten" id="anT"></div>
+<div class="fig" style="margin-top:12px">
+<div class="fh"><h4 id="anQ"></h4><span class="mono grey">Abb. 3.4 · Eisdiele, Umsatz in Tsd. €</span></div>
+<div class="fb">
+<div class="ana"><svg id="anS" viewBox="0 0 620 270" role="img" aria-labelledby="anQ"></svg></div>
+<div class="two" style="margin-top:12px;align-items:start">
+<p id="anD" aria-live="polite"></p>
+<dl class="kv"><div><dt>Methoden</dt><dd id="anM"></dd></div><div><dt>Ergebnis</dt><dd id="anR"></dd></div></dl>
+</div>
+</div>
+</div>
+
+<div class="fig" style="margin-top:28px">
+<div class="fh"><h4>SQL zum Anklicken</h4><span class="mono grey">Structured Query Language</span></div>
+<div class="fb">
+<p>SQL fragt Daten aus Datenbanken ab, filtert, zählt und verknüpft sie. Visualisiert wird danach mit anderen Tools. Wähle eine Abfrage.</p>
+<div class="tabs" role="tablist" aria-label="SQL-Abfragen" id="sqT" style="margin-top:12px"></div>
+<pre class="sql" id="sqC"></pre>
+<p class="note" id="sqN" style="margin-top:8px"></p>
+<div class="rtw"><table class="rt" id="sqR"></table></div>
+<details class="ans"><summary>Die beiden Tabellen ansehen</summary><div class="ab"><div class="two"><div class="rtw"><table class="rt" id="sqK"></table></div><div class="rtw"><table class="rt" id="sqB"></table></div></div></div></details>
+</div>
+</div>
+<p class="key"><span class="mono">Kern</span><span>Daten sind nur so gut, wie die Empfänger sie verstehen. Ein Bericht braucht eine klare Storyline: Welchen Wert haben diese Zahlen für das Unternehmen?</span></p>
+</section>
+
+<!-- 3.5 -->
+<section class="sec" id="m3-integration">
+<div class="sh"><span class="sno">3.5</span><h3>Daten für KI zusammenführen</h3><p>KI braucht viele Daten und gute Daten. Wo traditioneller Software mittlere Qualität reichte, liefert KI damit schlechte Ergebnisse.</p></div>
+<div class="flowd">
+<ul class="src"><li>Tabellen</li><li>Texte</li><li>Bilder</li><li>Sensordaten</li></ul>
+<span class="arr" aria-hidden="true">&#8594;</span>
+<div class="stp1"><b>Harmonisieren</b><p>Formate angleichen, labeln, einheitlich strukturieren</p></div>
+<span class="arr" aria-hidden="true">&#8594;</span>
+<div class="stp1"><b>Feature Engineering</b><p>Die relevanten Merkmale auswählen. Dafür braucht es Fachwissen über den Einsatzzweck.</p></div>
+<span class="arr" aria-hidden="true">&#8594;</span>
+<div class="stp1 ai"><b>KI-Modell</b><p>robuster, je vielfältiger und sauberer die Daten</p></div>
+</div>
+<div class="two" style="margin-top:24px;align-items:start">
+<div class="fig"><div class="fh"><h4>Echtzeit oder gesammelt?</h4><span class="mono grey">Abb. 3.5</span></div><div class="fb">
+<div class="lanes" aria-hidden="true">
+<p class="mono grey">Batch · einmal pro Nacht</p><div class="lane batch"><i></i><i></i><i></i><i></i><i></i></div>
+<p class="mono m" style="margin-top:12px">Streaming · laufend</p><div class="lane stream"><i></i><i></i><i></i><i></i><i></i></div>
+</div>
+<p style="margin-top:12px">Echtzeit braucht es, wo jede Sekunde zählt: Sensoren in der Produktion, Finanzmärkte, Patientenüberwachung. Typisches Werkzeug: Apache Kafka.</p>
+</div></div>
+<div class="fig"><div class="fh"><h4>KI prüft Kartenzahlungen</h4><span class="mono grey">Anomalie-Erkennung</span></div><div class="fb">
+<ol class="txl" id="txL"></ol>
+<div class="row" style="margin-top:12px"><button class="btn" type="button" id="txB">KI prüfen lassen</button><p class="st" id="txS" aria-live="polite"></p></div>
+</div></div>
+</div>
+<h4 class="mono m" style="margin:28px 0 10px">KI im Datenmanagement: die Haken</h4>
+<div class="hurd h4">
+<div><span>01</span><b>Verzerrte Daten</b><p>Sind alle relevanten Gruppen im Training vertreten?</p></div>
+<div><span>02</span><b>Erklärbarkeit</b><p>Lässt sich nachvollziehen, warum die KI so entschieden hat?</p></div>
+<div><span>03</span><b>Datenschutz</b><p>Gab es für alle Trainingsdaten eine Einwilligung?</p></div>
+<div><span>04</span><b>Umsetzung</b><p>Passende Leute, Schulungen und Budget</p></div>
+</div>
+<h4 class="mono m" style="margin:28px 0 10px">Drei Trends</h4>
+<ol class="steps">
+<li><b>KI in Datenplattformen</b><p>bereinigt, erkennt Anomalien und bereitet schneller auf</p></li>
+<li><b>Automatisierung</b><p>ganze Prozessschritte laufen ohne Handarbeit</p></li>
+<li><b>Edge Computing</b><p>Daten werden dort verarbeitet, wo sie entstehen. Weniger Verzögerung.</p></li>
+<li><b>Ziel</b><p>Daten immer schneller nutzbar machen</p></li>
+</ol>
+</section>
+
+<!-- 3.6 -->
+<section class="sec" id="m3-qualitaet">
+<div class="sh"><span class="sno">3.6</span><h3>Datenqualität: die Putzstation</h3><p>Datenqualität heißt: Wie gut erfüllen die Daten ihren Zweck? Fünf Dimensionen machen das messbar. Bereinige die Kundentabelle und schau, wie die Werte steigen.</p></div>
+<div class="fig">
+<div class="fh"><h4>Kundendaten eines Onlineshops</h4><span class="mono grey">Abb. 3.6 · interaktiv</span></div>
+<div class="fb">
+<div class="clw">
+<div class="rtw"><table class="rt cl" id="clT"></table></div>
+<div>
+<div class="dq" id="clQ"></div>
+<p class="dqt" id="clO"></p>
+</div>
+</div>
+<div class="clb" id="clB"></div>
+<p class="note" id="clN">Wähle einen Schritt. Die Reihenfolge ist egal.</p>
+</div>
+</div>
+<details class="ans"><summary>Zwei Techniken genauer: k-NN und Min-Max</summary><div class="ab">
+<p><b>k-Nearest Neighbors (k-NN):</b> Für einen fehlenden Wert sucht das Verfahren die k ähnlichsten Datensätze und übernimmt deren häufigsten Wert oder Durchschnitt. Ähnliche Punkte liegen nah beieinander. Dasselbe Prinzip klassifiziert auch neue Datenpunkte.</p>
+<p><b>Min-Max-Normalisierung:</b> bringt Werte auf eine Skala von 0 bis 1, damit große Zahlen kleine nicht übertönen. Formel: (Wert − Minimum) ÷ (Maximum − Minimum).</p>
+<p><b>Prüfen statt raten:</b> Data-Profiling-Tools messen die Qualität automatisch, Streudiagramme zeigen Ausreißer.</p>
+</div></details>
+</section>
+
+<!-- 3.7 -->
+<section class="sec" id="m3-compliance">
+<div class="sh"><span class="sno">3.7</span><h3>Compliance: welche Regeln gelten</h3><p>Welche Gesetze gelten, hängt von Region und Branche ab. Die DSGVO ist für alle in der EU der Rahmen, wenn personenbezogene Daten im Spiel sind.</p></div>
+<div class="laws">
+<div><span class="mono m">EU · seit 2018</span><b>DSGVO</b><p>Personenbezogene Daten: Datensparsamkeit, Transparenz, Löschung. Betroffene haben Rechte auf Auskunft, Berichtigung und Löschung.</p></div>
+<div><span class="mono m">Kalifornien</span><b>CCPA</b><p>Ähnlich wie die DSGVO, dazu das Recht, dem Verkauf der eigenen Daten zu widersprechen.</p></div>
+<div><span class="mono m">USA · Gesundheit</span><b>HIPAA</b><p>Regeln für Gesundheits- und Patientendaten.</p></div>
+<div><span class="mono m">USA · Börse · 2002</span><b>SOX</b><p>Nach den Skandalen um Enron und WorldCom: Chefs bestätigen Finanzberichte persönlich, interne Kontrollen, Schutz für Whistleblower.</p></div>
+</div>
+<div class="two" style="margin-top:24px;align-items:start">
+<div>
+<h4 class="mono m" style="margin-bottom:8px">Was Unternehmen tun sollten</h4>
+<ol class="nl">
+<li>Datenschutzrichtlinie erstellen: Welche Daten, wofür, wie?</li>
+<li>Kommunizieren und in die Abläufe einbauen</li>
+<li>Mitarbeitende schulen und sensibilisieren</li>
+<li>Datenschutzbeauftragte benennen, intern oder extern</li>
+<li>Laufend überwachen und regelmäßig auditieren</li>
+<li>Data Governance: Rollen, Verantwortung, Rechenschaft festlegen</li>
+</ol>
+</div>
+<div>
+<p class="key" style="margin-top:0"><span class="mono">Kern</span><span>Eine Richtlinie wirkt nur, wenn sie gelebt und kontrolliert wird. Einmal schulen reicht nicht.</span></p>
+<p class="key"><span class="mono">Alltag</span><span>Der „kleine Kampf“ zwischen Datenschutz und denen, die Daten nutzen wollen, ist normal. Best Practices anderer Unternehmen helfen, das richtige Maß zu finden.</span></p>
+</div>
+</div>
+</section>
+
+<!-- 3.8 -->
+<section class="sec" id="m3-ethik">
+<div class="sh"><span class="sno">3.8</span><h3>Ethik und Bias in Daten</h3><p>Ethikrichtlinien schaffen Vertrauen und gelten für das ganze Unternehmen, nicht nur für die IT. Vier Prinzipien: Fairness, Vertrauenswürdigkeit, Transparenz, Rechenschaft.</p></div>
+<div class="fig bias">
+<div class="fh"><h4>Die Umfrage am falschen Tag</h4><span class="mono grey">Abb. 3.8 · Modellrechnung</span></div>
+<div class="fb">
+<p>Ein Händler fragt vor dem Laden: Kleine oder große Packungen? An diesem Tag kommen vor allem Single-Haushalte vorbei. Schalte zwischen Rohdaten und Gewichtung um.</p>
+<div class="tabs" role="group" aria-label="Auswertung" style="margin-top:14px"><button type="button" aria-selected="true" data-rw="0">Rohdaten</button><button type="button" aria-selected="false" data-rw="1">Reweighting</button></div>
+<div class="bars">
+<div><p class="bl"><span>Kundschaft insgesamt</span><span class="mono grey">Singles · Familien</span></p><div class="bt"><span class="a" style="flex-basis:35%">Singles 35 %</span><span class="b" style="flex-basis:65%">Familien 65 %</span></div></div>
+<div><p class="bl"><span id="rwL">Befragte am Umfragetag</span><span class="mono grey">Singles · Familien</span></p><div class="bt"><span class="a" id="rwA"></span><span class="b" id="rwB"></span></div></div>
+<div><p class="bl"><span>Ergebnis: Wunsch nach kleinen Packungen</span><span class="mono grey">klein · groß</span></p><div class="bt res"><span class="a" id="rwC"></span><span class="b" id="rwD"></span></div></div>
+</div>
+<p class="msg" id="rwM" aria-live="polite"></p>
+</div>
+</div>
+<div class="two" style="margin-top:20px;align-items:start">
+<div><h4 class="mono m" style="margin-bottom:8px">Zwei Arten von Bias</h4><ul class="lst"><li><b>Sampling Bias:</b> Gruppen sind in der Stichprobe über- oder unterrepräsentiert, wie in der Umfrage oben</li><li><b>Measurement Bias:</b> schon beim Erfassen läuft etwas schief, etwa eine suggestive Frage oder ein falsch eingestellter Sensor</li></ul></div>
+<div><h4 class="mono m" style="margin-bottom:8px">Gegenmittel</h4><ul class="lst"><li><b>Resampling:</b> die Stichprobe neu zusammenstellen</li><li><b>Reweighting:</b> Gruppen nach ihrem echten Anteil gewichten, wie oben</li></ul></div>
+</div>
+<div class="hurd" style="margin-top:24px">
+<div><span>01</span><b>Richtlinie entwickeln</b><p>Stakeholder und ihre Interessen kennen, Mitarbeitende beteiligen</p></div>
+<div><span>02</span><b>Einführen</b><p>kommunizieren, in Geschäftsprozesse einbauen, schulen, überwachen</p></div>
+<div><span>03</span><b>Weiter denken</b><p>Kulturelle Prägung der Modelle und der ökologische Fußabdruck von Rechenzentren</p></div>
+</div>
+<p class="note">Rechenzentren brauchen viel Strom und Wasser. Nach Zahlen der Internationalen Energieagentur lag ihr Anteil 2024 bei rund 1,5 % des weltweiten Stromverbrauchs, mit stark steigender Tendenz.</p>
+</section>
+
+<!-- 3.9 -->
+<section class="sec" id="m3-vorteil">
+<div class="sh"><span class="sno">3.9</span><h3>Daten als Wettbewerbsvorteil</h3><p>Vier Wege, wie gutes Datenmanagement zum Vorsprung wird. Die Beispiele stammen aus dem Kurs.</p></div>
+<div class="laws">
+<div><span class="mono m">01</span><b>Innovation</b><p>Wer Kundendaten versteht, entwickelt passendere Angebote. Procter &amp; Gamble personalisiert Angebote, IBM simuliert Markttrends.</p></div>
+<div><span class="mono m">02</span><b>Geschäftsmodelle</b><p>Plattformen leben von Daten: LinkedIn und Facebook vermarkten zielgenaue Werbung, Airbnb und Uber vermitteln ohne eigene Wohnungen oder Autos.</p></div>
+<div><span class="mono m">03</span><b>Forschung</b><p>Daten und KI beschleunigen die Medikamentenentwicklung, etwa bei Pfizer. AlphaFold sagt Proteinstrukturen voraus.</p></div>
+<div><span class="mono m">04</span><b>Effizienz</b><p>Prozessdaten zeigen Engpässe. Softwareroboter (RPA) übernehmen Routine, Entscheidungen werden datengestützt.</p></div>
+</div>
+<details class="ans"><summary>Best Practices: sechs Bereiche</summary><div class="ab">
+<ul class="lst">
+<li><b>Datenqualität:</b> laufend überwachen, Data Profiling, Duplikate erkennen</li>
+<li><b>Integration:</b> standardisierte ETL-Prozesse, Echtzeit-Pipelines</li>
+<li><b>Governance:</b> Richtlinien, klare Rollen, Datenquellen dokumentieren</li>
+<li><b>Sicherheit und Compliance:</b> Verschlüsselung, Zugriffsrechte, Audits</li>
+<li><b>Fehlervermeidung:</b> Schulungen, Automatisierung, offene Feedbackkultur</li>
+<li><b>Strategie:</b> in moderne Technik investieren, Datenkultur fördern, langfristig planen</li>
+</ul>
+</div></details>
+</section>
+
+<!-- 3.10 -->
+<section class="sec" id="m3-kultur">
+<div class="sh"><span class="sno">3.10</span><h3>Datenkultur und das Eisbergmodell</h3><p>Kultur ist, wie man in einem Unternehmen Dinge macht. Edgar Schein beschreibt sie in drei Ebenen. Nur die Spitze ist sichtbar. Tippe eine Ebene an.</p></div>
+<div class="eco">
+<svg id="icS" viewBox="0 0 440 380" role="group" aria-label="Eisbergmodell mit drei Ebenen"></svg>
+<div class="det" style="position:static" aria-live="polite">
+<div class="dh"><span class="mono grey">Abb. 3.10 · Ebene <span id="icN">1</span> von 3</span><span class="mono m" id="icK"></span></div>
+<div class="db"><h4 id="icT"></h4><p class="d" id="icD"></p><p class="ex"><b>Bei Datenkultur</b><span id="icE"></span></p></div>
+</div>
+</div>
+<div class="fig" style="margin-top:24px">
+<div class="fh"><h4>Übung: Auf welche Ebene gehört das?</h4><span class="mono grey" data-so-s></span></div>
+<div class="fb" id="m3-ice"><div class="soc"></div><div class="sob s3"></div></div>
+</div>
+<h4 class="mono m" style="margin:28px 0 10px">So fängt man an</h4>
+<ol class="steps">
+<li><b>Aufmerksamkeit</b><p>über Daten sprechen, das Thema sichtbar machen</p></li>
+<li><b>Vorbild sein</b><p>eigene Entscheidungen mit Daten begründen</p></li>
+<li><b>Gute Beispiele zeigen</b><p>was mit Daten konkret besser lief</p></li>
+<li><b>Leuchtturmprojekt</b><p>ein sichtbarer Erfolg, auf den man verweisen kann</p></li>
+</ol>
+</section>
+
+<!-- 3.11 -->
+<section class="sec" id="m3-faelle">
+<div class="sh"><span class="sno">3.11</span><h3>Fallbeispiele aus dem Alltag</h3><p>Fünf Unternehmen, fünf Arten, Daten zu nutzen. Und jedes Mal eine ethische Frage.</p></div>
+<div class="tabs" role="tablist" aria-label="Fallbeispiele" id="csT"></div>
+<article class="area" role="tabpanel" aria-live="polite">
+<div><p class="mono grey" id="csA"></p><p class="ex" id="csE"></p><p class="d" id="csD"></p></div>
+<dl><div><dt>Welche Daten</dt><dd id="csM"></dd></div><div><dt>Ethische Frage</dt><dd id="csW"></dd></div></dl>
+</article>
+
+<div class="fig" style="margin-top:28px">
+<div class="fh"><h4>Mini-Sentimentanalyse</h4><span class="mono grey">Abb. 3.11 · Wortliste statt KI</span></div>
+<div class="fb">
+<p>Sentimentanalyse ordnet Texte als positiv, negativ oder neutral ein. Diese Mini-Version zählt nur Wörter. Probier die Beispiele, besonders das dritte, oder schreib selbst.</p>
+<div class="chips" id="snC"></div>
+<label class="sr" for="snI">Eigener Text</label>
+<textarea class="snI" id="snI" rows="2" placeholder="Eigenen Satz eingeben …"></textarea>
+<div class="snR" aria-live="polite"><p class="snV" id="snV"></p><p class="snH" id="snH"></p><p class="note" id="snN"></p></div>
+</div>
+</div>
+<div class="two" style="margin-top:20px;align-items:start">
+<div><h4 class="mono m" style="margin-bottom:8px">Wofür Unternehmen das nutzen</h4><ul class="lst"><li><b>Marktforschung:</b> Was denkt die Zielgruppe?</li><li><b>Krisenmanagement:</b> negative Stimmung früh erkennen</li><li><b>Wettbewerb:</b> Wie kommt die Konkurrenz an?</li><li><b>Produktstart:</b> vorher Erwartungen, währenddessen Reaktionen, danach Zufriedenheit</li></ul></div>
+<div><h4 class="mono m" style="margin-bottom:8px">Grenzen</h4><ul class="lst"><li><b>Ironie und Sarkasmus</b> werden oft falsch gelesen</li><li><b>Sprachen und Dialekte</b> machen es schwer</li><li><b>Datenschutz</b> gilt auch für öffentliche Posts</li></ul></div>
+</div>
+</section>
+
+<!-- 3.12 -->
+<section class="sec" id="m3-repeat">
+<div class="sh"><span class="sno">3.12</span><h3>Wiederholen</h3><p>Erst Karteikarten, dann Lückentext, dann das Quiz. Dein Fortschritt bleibt in diesem Browser gespeichert.</p></div>
+<div id="m3-cards" style="scroll-margin-top:70px">
+<div class="row" style="justify-content:space-between;margin-bottom:12px"><h4 class="mono m">Karteikarten · antippen zum Umdrehen</h4><span class="mono grey" data-cd-s></span></div>
+<div class="cards"></div>
+</div>
+<div class="fig" id="m3-cloze" style="margin-top:36px;scroll-margin-top:70px">
+<div class="fh"><h4>Lückentext</h4><span class="mono grey">aus den Kursaufgaben, in meinen Worten</span></div>
+<div class="fb">
+<ol class="cz"></ol>
+<div class="row" style="margin-top:16px"><button class="btn" type="button" data-cz-go>Prüfen</button><button class="btn ghost" type="button" data-cz-r>Zurücksetzen</button><p class="st" data-cz-s aria-live="polite"></p></div>
+</div>
+</div>
+<div class="fig" id="m3-quiz" style="margin-top:36px;scroll-margin-top:70px">
+<div class="fh"><h4>Quiz Modul 3</h4><span class="mono grey" data-qz-best></span></div>
+<div class="fb"><div class="qz" aria-live="polite"></div></div>
+</div>
+</section>
+
+<!-- 3.13 -->
+<section class="sec" id="m3-check">
+<div class="sh"><span class="sno">3.13</span><h3>Faktencheck</h3><p>Im Video zu Modul 3 gehen ein paar Begriffe durcheinander. Das habe ich nachgeprüft. Für die Prüfung merke ich mir beide Versionen.</p></div>
+<table class="fct">
+<thead><tr><th scope="col">Thema</th><th scope="col">Im Kursmaterial</th><th scope="col">Nachgeprüft</th></tr></thead>
+<tbody>
+<tr><th scope="row">Sentimentanalyse</th><td>Video: Kundschaft „in ähnliche Gruppen einteilen“</td><td>Das ist Segmentierung (Clustering). Sentimentanalyse ordnet die Stimmung eines Textes ein: positiv, negativ, neutral. Der Lesetext im Skript erklärt es richtig.</td></tr>
+<tr><th scope="row">Measurement Bias</th><td>Video: Umfrage an einem Tag mit vielen Single-Haushalten</td><td>Nach der eigenen Definition des Kurses ist das Sampling Bias: Eine Gruppe ist in der Stichprobe überrepräsentiert. Measurement Bias entsteht beim Messen selbst.</td></tr>
+<tr><th scope="row">Datenschutzbeauftragte</th><td>„schreibt die DSGVO vor“</td><td>Nicht immer. Pflicht u. a., wenn die Kerntätigkeit umfangreiche Überwachung oder sensible Daten umfasst (Art. 37 DSGVO). In Deutschland zusätzlich ab 20 Personen, die ständig automatisiert personenbezogene Daten verarbeiten (§ 38 BDSG).</td></tr>
+<tr><th scope="row">Airbnb und Uber</th><td>verkaufen Daten und leben davon</td><td>Sie verdienen an Provisionen und Servicegebühren je Buchung oder Fahrt. Daten nutzen sie für Preise, Vermittlung und Empfehlungen.</td></tr>
+<tr><th scope="row">Facebook und LinkedIn</th><td>Daten an Werbetreibende verkaufen</td><td>Verkauft werden Werbeplätze mit Zielgruppen-Auswahl. Die Rohdaten bleiben bei der Plattform.</td></tr>
+<tr><th scope="row">SOX</th><td>„im Bereich des Finanzwesens“</td><td>SOX gilt für alle an US-Börsen notierten Unternehmen, egal welcher Branche. Es regelt deren Finanzberichterstattung.</td></tr>
+<tr><th scope="row">Echtzeit-Verarbeitung</th><td>„Streaming oder Batch-Verarbeitung“</td><td>Batch ist das Gegenteil von Echtzeit: Daten werden gesammelt und später gemeinsam verarbeitet. Echtzeit heißt Streaming, etwa mit Apache Kafka.</td></tr>
+<tr><th scope="row">CCPA</th><td>kalifornisches Datenschutzgesetz</td><td>Stimmt, seit 2023 erweitert durch den CPRA, mit eigener Datenschutzbehörde in Kalifornien.</td></tr>
+</tbody>
+</table>
+</section>
+
+</div></div>
+</section>
+
 <!-- placeholder for locked modules, filled by JS -->
 <section class="mod lockp wrap" id="mx-lock" hidden aria-live="polite">
 <div class="in"><div class="box">
@@ -1265,7 +1760,7 @@ function put(k,v){DB[k]=v;save()}
 var MODS=[
  {n:1,s:'Grundlagen',t:'Grundlagen der KI-Technologien',live:true,checks:['match','cards','cloze','quiz']},
  {n:2,s:'Anwendungen',t:'KI-Anwendungsgebiete im Unternehmen',live:true,checks:['sort','cards','cloze','quiz']},
- {n:3,s:'Daten',t:'Datenmanagement als Basis für erfolgreiche KI-Anwendungen'},
+ {n:3,s:'Daten',t:'Datenmanagement als Basis für erfolgreiche KI-Anwendungen',live:true,checks:['roles','ice','cards','cloze','quiz']},
  {n:4,s:'Strategie',t:'Strategische Implementierung von KI in Unternehmen'},
  {n:5,s:'Kultur & Change',t:'Organisatorische und kulturelle Integration von KI'},
  {n:6,s:'Ethik & Recht',t:'Ethische und rechtliche Aspekte der KI-Nutzung'},
@@ -1836,6 +2331,336 @@ initQuiz(2,[
  ['Was bedeutet das Disruptionspotenzial von KI?',['Bestehende Geschäftsmodelle können überflüssig werden, neue entstehen','KI-Systeme fallen häufig aus','Preise sinken in allen Branchen'],'Disruption ist Chance und Gefahr zugleich.'],
  ['Welches Risiko meint „Abhängigkeit“?',['Ausfälle und ungewisse Zukunft von Cloud-Anbietern','Dass Mitarbeitende zu viel am Handy sind','Dass Daten zu genau werden'],'Wer auf ein Cloud-Modell setzt, hängt an dessen Verfügbarkeit und Zukunft.'],
  ['Wo findest du KI-Projekte aus Deutschland als Inspiration?',['Auf der KI-Landkarte der Plattform Lernende Systeme','Im Handelsregister','Beim Deutschen Wetterdienst'],'Die KI-Landkarte zeigt Projekte aus Forschung und Wirtschaft, filterbar nach Branche und Region.']
+]);
+
+
+/* ---------- generic exercises (assign, sort into buckets) ---------- */
+function initAssign(cfg){
+  var root=$(cfg.root);if(!root)return;
+  var ol=$('.mx',root),S=$('[data-as-s]',root),ans=get(cfg.key,{}),L={};cfg.opts.forEach(function(o){L[o[0]]=o[1]});
+  function render(){
+    ol.innerHTML='';
+    cfg.items.forEach(function(c,i){
+      var li=h('li');li.innerHTML='<span class="no">'+String.fromCharCode(65+i)+'</span><span class="tx">'+c.t+'</span>';
+      var ch=h('div','ch');ch.setAttribute('role','group');ch.setAttribute('aria-label','Antwort für '+String.fromCharCode(65+i));
+      cfg.opts.forEach(function(o){var b=h('button');b.type='button';b.textContent=o[1];b.dataset.k=o[0];b.setAttribute('aria-pressed','false');b.addEventListener('click',function(){ans[i]=o[0];put(cfg.key,ans);render()});ch.appendChild(b)});
+      li.appendChild(ch);
+      if(ans[i]){var a=ans[i],good=a===c.b,okk=(c.ok||[]).indexOf(a)>-1;
+        $$('button',ch).forEach(function(b){var k=b.dataset.k;b.disabled=true;b.setAttribute('aria-pressed',String(k===a));if(k===c.b)b.classList.add('best');else if(k===a&&okk)b.classList.add('okk')});
+        li.appendChild(h('p','fbk'+(good||okk?'':' bad'),'<b>'+(good?'Passt.':okk?'Vertretbar, am besten passt '+L[c.b]+'.':'Eher '+L[c.b]+'.')+'</b> '+c.w))}
+      ol.appendChild(li);
+    });
+    var n=Object.keys(ans).length,g=0;Object.keys(ans).forEach(function(i){var c=cfg.items[i];if(ans[i]===c.b||(c.ok||[]).indexOf(ans[i])>-1)g++});
+    S.textContent=n<cfg.items.length?n+' von '+cfg.items.length+' zugeordnet':g+' von '+cfg.items.length+' passend';
+    S.className='st'+(n===cfg.items.length?(g>=Math.ceil(cfg.items.length*.75)?' good':' bad'):'');
+    if(n===cfg.items.length)done(cfg.mod,cfg.check);
+  }
+  $('[data-as-r]',root).addEventListener('click',function(){ans={};put(cfg.key,ans);render()});
+  render();
+}
+function initSort(cfg){
+  var root=$(cfg.root);if(!root)return;
+  var C=$('.soc',root),B=$('.sob',root),S=$(cfg.status),lists={},order,idx,ok;
+  B.innerHTML='';cfg.buckets.forEach(function(b){var d=h('div');d.innerHTML='<p class="colh"><span class="mono'+(b[2]?' '+b[2]:'')+'">'+b[1]+'</span></p>';var ul=h('ul','sol');d.appendChild(ul);B.appendChild(d);lists[b[0]]=ul});
+  function start(){order=shuffle(cfg.items.map(function(_,i){return i}));idx=0;ok=0;Object.keys(lists).forEach(function(k){lists[k].innerHTML=''});show()}
+  function show(){
+    if(S)S.textContent=idx+' / '+cfg.items.length;
+    if(idx>=cfg.items.length){C.innerHTML='<p class="mono m">Fertig</p><p class="it">'+ok+' von '+cfg.items.length+' passend sortiert</p><p style="margin-top:8px">'+cfg.end+'</p>';
+      var r=h('button','btn ghost');r.type='button';r.style.marginTop='14px';r.textContent='Nochmal';r.addEventListener('click',start);C.appendChild(r);done(cfg.mod,cfg.check);return}
+    var it=cfg.items[order[idx]];
+    C.innerHTML='<p class="mono grey">'+cfg.label+' '+(idx+1)+' von '+cfg.items.length+'</p><p class="it">'+it[0]+'</p>';
+    var row=h('div','row');
+    cfg.buckets.forEach(function(b,bi){var btn=h('button','btn'+(bi?' ghost':''));btn.type='button';btn.textContent=b[1];
+      btn.addEventListener('click',function(){
+        var good=it[1]===b[0];if(good)ok++;$$('button',row).forEach(function(x){x.disabled=true});
+        var right=cfg.buckets.filter(function(x){return x[0]===it[1]})[0][1];
+        C.appendChild(h('p','fb2'+(good?'':' bad'),'<b>'+(good?'Passt.':'Eher: '+right+'.')+'</b> '+it[2]));
+        var li=h('li');li.textContent=it[0];lists[it[1]].appendChild(li);
+        var nx=h('button','btn');nx.type='button';nx.style.marginTop='12px';nx.textContent=idx<cfg.items.length-1?'Weiter':'Auswertung';
+        nx.addEventListener('click',function(){idx++;show()});C.appendChild(nx);nx.focus({preventScroll:true});
+      });row.appendChild(btn)});
+    C.appendChild(row);
+  }
+  start();
+}
+/* generic clickable ring of nodes (lifecycle) */
+function ringNodes(svg,cx,cy,rx,ry,items,onSel,opts){
+  var nodes=[],W=(opts&&opts.w)||124;opts=opts||{};
+  var step=360/items.length,P=function(deg){var a=deg*Math.PI/180;return [cx+rx*Math.cos(a),cy+ry*Math.sin(a)]};
+  items.forEach(function(e,i){var p=P(-90+i*step);e.x=p[0];e.y=p[1]});
+  if(opts.cycle){items.forEach(function(e,i){var a1=-90+i*step+step*.42,a2=-90+(i+1)*step-step*.42,p1=P(a1),p2=P(a2);
+    el('path',{d:'M'+p1[0].toFixed(1)+' '+p1[1].toFixed(1)+' A'+rx+' '+ry+' 0 0 1 '+p2[0].toFixed(1)+' '+p2[1].toFixed(1),class:'ln arc',fill:'none','marker-end':'url(#arw)'},svg)})}
+  items.forEach(function(e,i){
+    var g=el('g',{class:'nd',tabindex:0,role:'button','aria-pressed':'false','aria-label':e.t},svg);
+    el('rect',{x:e.x-W/2,y:e.y-22,width:W,height:44},g);
+    var t1=el('text',{x:e.x,y:e.y-2,'text-anchor':'middle'},g);t1.textContent=(opts.num?(i+1)+' · ':'')+e.l;
+    if(e.s){var t2=el('text',{x:e.x,y:e.y+14,'text-anchor':'middle',class:'s'},g);t2.textContent=e.s}
+    g.addEventListener('click',function(){onSel(i)});g.addEventListener('keydown',function(ev){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();onSel(i)}});
+    nodes.push(g)});
+  return nodes;
+}
+function tabsFor(container,labels,onSel){
+  labels.forEach(function(l,i){var b=h('button');b.type='button';b.setAttribute('role','tab');b.textContent=l;b.addEventListener('click',function(){onSel(i)});container.appendChild(b)});
+  container.addEventListener('keydown',function(e){if(e.key!=='ArrowRight'&&e.key!=='ArrowLeft')return;var bs=$$('button',container),cur=bs.findIndex(function(b){return b.getAttribute('aria-selected')==='true'}),n=(cur+(e.key==='ArrowRight'?1:bs.length-1))%bs.length;onSel(n);bs[n].focus()});
+  return function(i){$$('button',container).forEach(function(b,j){b.setAttribute('aria-selected',String(j===i))})};
+}
+
+/* ================= MODUL 3 ================= */
+/* 3.1 lifecycle */
+var LC=[
+ {l:'Erfassung',t:'Erfassung',k:'Daten entstehen',d:'Manuell, etwa durch Umfragen und Beobachtungen, oder automatisch durch Sensoren und Transaktionen.',e:'Der Sensor misst laufend den Puls.',w:'Formulare, Sensoren, Kassensysteme'},
+ {l:'Speicherung',t:'Speicherung',k:'Daten ablegen',d:'In relationalen Datenbanken (Tabellen mit festen Spalten) oder dokumentenorientierten Datenbanken (flexible Dokumente).',e:'Die Messwerte liegen auf der Uhr und in der Cloud des Herstellers.',w:'MySQL, PostgreSQL, MariaDB · MongoDB, Couchbase'},
+ {l:'Verarbeitung',t:'Verarbeitung',k:'ETL und Bereinigung',d:'ETL heißt Extract, Transform, Load: relevante Daten herausziehen, in die Zielstruktur bringen, ins Zielsystem laden. Danach bereinigen: Duplikate, fehlende Werte, Zusammenfassen.',e:'Aus Sekundenwerten wird ein Tagesdurchschnitt, Messfehler fliegen raus.',w:'Talend, Apache NiFi, Informatica · Deduplication-Tools'},
+ {l:'Nutzung',t:'Nutzung',k:'der eigentliche Zweck',d:'Analysen, Berichte, Dashboards und Entscheidungen. Dafür wurde der ganze Aufwand betrieben.',e:'Die App zeigt den Ruhepuls-Trend und schlägt einen Ruhetag vor.',w:'Power BI, Tableau, Qlik Sense'},
+ {l:'Archivierung',t:'Archivierung',k:'aufbewahren',d:'Wie lange Daten aufbewahrt werden müssen oder dürfen, hängt von gesetzlichen Vorgaben und Rechtsraum ab.',e:'Alte Rohdaten wandern in ein günstiges Langzeitarchiv.',w:'Archivspeicher, Datenkataloge wie Collibra oder Alation'},
+ {l:'Löschung',t:'Löschung',k:'das Ende',d:'Jedes Datum sollte ein Ende haben. Für personenbezogene Daten verlangt die DSGVO, dass sie nicht länger als nötig gespeichert werden.',e:'Kündigst du das Konto, müssen deine Gesundheitsdaten gelöscht werden.',w:'Löschkonzepte, Fristen im Datenkatalog'}
+];
+var lcS=$('#lcS');
+var defs=el('defs',{},lcS),mk=el('marker',{id:'arw',viewBox:'0 0 10 10',refX:'9',refY:'5',markerWidth:'7',markerHeight:'7',orient:'auto-start-reverse'},defs);el('path',{d:'M0 0L10 5L0 10z',fill:'#55584F'},mk);
+var lcC=el('g',{class:'nd ctr'},lcS);el('rect',{x:220-64,y:200-26,width:128,height:52},lcC);var lc1=el('text',{x:220,y:196,'text-anchor':'middle'},lcC);lc1.textContent='Beispiel';var lc2=el('text',{x:220,y:214,'text-anchor':'middle'},lcC);lc2.textContent='Fitnessuhr';
+LC.forEach(function(p,i){p.s='Phase '+(i+1)});
+var lcN=ringNodes(lcS,220,200,148,142,LC,lcSel,{cycle:1,w:120});
+function lcSel(i){var P=LC[i];lcN.forEach(function(g,j){g.setAttribute('aria-pressed',String(j===i))});$('#lcN').textContent=i+1;$('#lcK').textContent=P.k;$('#lcT').textContent=P.t;$('#lcD').textContent=P.d;$('#lcE').textContent=P.e;$('#lcW').textContent=P.w}
+lcSel(0);
+$('#mtB').addEventListener('click',function(){var d=$('#mtD'),o=d.hidden;d.hidden=!o;this.setAttribute('aria-expanded',String(o));this.textContent=o?'Metadaten verbergen':'Metadaten zeigen'});
+
+/* 3.3 roles */
+initAssign({root:'#m3-assign',key:'as3',mod:3,check:'roles',opts:[['ds','Scientist'],['de','Engineer'],['da','Analyst'],['st','Steward']],items:[
+ {t:'Baut eine Pipeline, die täglich Daten aus Shop, CRM und Lager zusammenführt',b:'de',w:'Datenpipelines und ETL sind die Kernaufgabe von Data Engineers.'},
+ {t:'Entwickelt ein Modell, das vorhersagt, wer bald kündigt',b:'ds',w:'Vorhersagemodelle mit maschinellem Lernen: klassisch Data Science.'},
+ {t:'Erstellt ein Dashboard, wie die letzte Marketingkampagne lief',b:'da',w:'Auswerten und verständlich berichten ist Data-Analyst-Arbeit.'},
+ {t:'Bereinigt doppelte Kundeneinträge und vereinheitlicht Schreibweisen',b:'st',w:'Qualität und Konsistenz der Daten verantwortet der Data Steward.'},
+ {t:'Betreibt und skaliert die Datenplattform mit Spark',b:'de',w:'Die technische Infrastruktur gehört zum Data Engineering.'},
+ {t:'Findet mit SQL heraus, welche Filiale im Quartal am meisten verkauft hat',b:'da',ok:['ds'],w:'Eine Abfrage und ein Bericht, kein Modell: Data Analyst.'},
+ {t:'Legt fest, welche Felder Pflicht sind, und dokumentiert die Datenstandards',b:'st',w:'Standards und Dokumentation: Aufgabe des Data Stewards.'},
+ {t:'Trainiert eine Bilderkennung auf Tausenden unstrukturierten Fotos',b:'ds',w:'Komplexe Modelle mit unstrukturierten Daten: Data Science.'}
+]});
+
+/* 3.4 analysis types */
+var SALES=[8,9,14,22,31,42,48,46,30,18,10,12],TEMP=[1,3,8,12,17,21,23,22,17,11,5,2],MON=['J','F','M','A','M','J','J','A','S','O','N','D'];
+function mean(a){return a.reduce(function(s,v){return s+v},0)/a.length}
+function corr(x,y){var mx=mean(x),my=mean(y),n=0,dx=0,dy=0;x.forEach(function(v,i){n+=(v-mx)*(y[i]-my);dx+=(v-mx)*(v-mx);dy+=(y[i]-my)*(y[i]-my)});return n/Math.sqrt(dx*dy)}
+var ANA=[
+ {s:'Deskriptiv',q:'Deskriptiv: Was ist passiert?',d:'Beschreibt den Datensatz, wie er ist. Lagemaße geben schnell einen Überblick.',m:'Modus, Median, Mittelwert, Häufigkeiten',r:'Ø 24.200 € pro Monat, Median 20.000 €. Spitze im Juli.'},
+ {s:'Diagnostisch',q:'Diagnostisch: Warum ist es passiert?',d:'Sucht Zusammenhänge zwischen Variablen. Hier: Temperatur und Umsatz. Achtung: Korrelation zeigt einen Zusammenhang, keine Ursache.',m:'Korrelation, Regression',r:''},
+ {s:'Prädiktiv',q:'Prädiktiv: Was wird passieren?',d:'Sagt aus historischen Daten die Zukunft voraus. Ob es so kommt, ist eine andere Frage.',m:'Zeitreihenanalyse, maschinelles Lernen',r:'Prognose nächstes Jahr: rund 8 % mehr, Juli etwa 52.000 €.'},
+ {s:'Präskriptiv',q:'Präskriptiv: Was sollen wir tun?',d:'Gibt Handlungsempfehlungen, oft über Simulationen und Szenarien, etwa zur Preisoptimierung.',m:'Simulation, Szenarien, Optimierung',r:'Sommer: zwei Aushilfen mehr. Über 25 °C: 30 % mehr Eis vorbereiten. Winter: Kaffee und Waffeln.'}
+];
+ANA[1].r='r = '+corr(TEMP,SALES).toFixed(2).replace('.',',')+': Je wärmer, desto mehr Umsatz.';
+var anS=$('#anS'),anSet=tabsFor($('#anT'),ANA.map(function(a){return a.s}),anSel);
+function anSel(i){
+  anSet(i);var A=ANA[i];$('#anQ').textContent=A.q;$('#anD').textContent=A.d;$('#anM').textContent=A.m;$('#anR').textContent=A.r;
+  while(anS.firstChild)anS.removeChild(anS.firstChild);
+  var X0=44,X1=604,Y0=236,Y1=18,max=60,bw=(X1-X0)/12;
+  function y(v){return Y0-(v/max)*(Y0-Y1)}
+  el('line',{x1:X0,y1:Y0,x2:X1,y2:Y0,stroke:'#0E0F0C'},anS);
+  [0,20,40,60].forEach(function(v){var t=el('text',{x:X0-8,y:y(v)+3,'text-anchor':'end'},anS);t.textContent=v;el('line',{x1:X0,y1:y(v),x2:X1,y2:y(v),stroke:'rgba(14,15,12,.08)'},anS)});
+  if(i===1){
+    var tx=function(t){return X0+20+(t/25)*(X1-X0-40)};
+    [0,5,10,15,20,25].forEach(function(t){var l=el('text',{x:tx(t),y:Y0+16,'text-anchor':'middle'},anS);l.textContent=t+' °C'});
+    var mt=mean(TEMP),ms=mean(SALES),b=corr(TEMP,SALES)*Math.sqrt(SALES.reduce(function(s,v){return s+(v-ms)*(v-ms)},0)/TEMP.reduce(function(s,v){return s+(v-mt)*(v-mt)},0)),a0=ms-b*mt;
+    el('line',{x1:tx(0),y1:y(a0),x2:tx(25),y2:y(a0+b*25),stroke:'#D6006F','stroke-width':2},anS);
+    TEMP.forEach(function(t,k){el('circle',{cx:tx(t),cy:y(SALES[k]),r:6,fill:'#0E0F0C',class:'pt'},anS)});
+    var lb=el('text',{x:X1,y:Y1+10,'text-anchor':'end',style:'fill:#D6006F'},anS);lb.textContent='REGRESSIONSGERADE';
+    return;
+  }
+  SALES.forEach(function(v,k){
+    var x=X0+k*bw+bw*.18,w=bw*.64;
+    el('rect',{x:x,y:y(v),width:w,height:Y0-y(v),fill:i===3&&(k>=5&&k<=7)?'#D6006F':'#0E0F0C',opacity:i===2?.35:1,class:'pt'},anS);
+    var t=el('text',{x:x+w/2,y:Y0+16,'text-anchor':'middle'},anS);t.textContent=MON[k];
+    if(i===2){var f=Math.round(v*1.08);el('rect',{x:x,y:y(f),width:w,height:Y0-y(f),fill:'none',stroke:'#D6006F','stroke-width':1.6,'stroke-dasharray':'4 3'},anS)}
+  });
+  if(i===0){var m=mean(SALES);el('line',{x1:X0,y1:y(m),x2:X1,y2:y(m),stroke:'#D6006F','stroke-width':2,'stroke-dasharray':'6 4'},anS);var l=el('text',{x:X1,y:y(m)-6,'text-anchor':'end',style:'fill:#D6006F'},anS);l.textContent='MITTELWERT 24,2';
+    var md=el('line',{x1:X0,y1:y(20),x2:X1,y2:y(20),stroke:'#55584F','stroke-width':1.2,'stroke-dasharray':'2 3'},anS);var l2=el('text',{x:X0+6,y:y(20)+12},anS);l2.textContent='MEDIAN 20'}
+  if(i===2){var l3=el('text',{x:X1,y:Y1+10,'text-anchor':'end',style:'fill:#D6006F'},anS);l3.textContent='GESTRICHELT: PROGNOSE NÄCHSTES JAHR'}
+  if(i===3){[[6,'+2 Aushilfen'],[1,'Kaffee & Waffeln'],[10,'Kaffee & Waffeln']].forEach(function(p){var k=p[0],x=X0+k*bw+bw/2;var g=el('g',{},anS);el('circle',{cx:x,cy:Y1+8,r:4,fill:'#D6006F'},g);var t=el('text',{x:x,y:Y1+24,'text-anchor':'middle',style:'fill:#D6006F'},g);t.textContent=p[1].toUpperCase()})}
+}
+anSel(0);
+
+/* 3.4 SQL */
+var KUN=[[1,'Anna','Innsbruck'],[2,'Ben','München'],[3,'Cem','Innsbruck'],[4,'Dora','Wien']];
+var BES=[[1,1,'49,90','Jan'],[2,2,'120,00','Jan'],[3,1,'15,50','Feb'],[4,3,'89,00','Feb'],[5,4,'34,00','Mär'],[6,2,'60,00','Mär']];
+var SQL=[
+ {l:'Alles',q:'SELECT *\nFROM kunden;',n:'Zeigt alle Spalten und Zeilen einer Tabelle.',h:['id','name','stadt'],r:KUN},
+ {l:'Filtern',q:"SELECT name\nFROM kunden\nWHERE stadt = 'Innsbruck';",n:'WHERE filtert Zeilen nach einer Bedingung.',h:['name'],r:[['Anna'],['Cem']]},
+ {l:'Zählen',q:'SELECT COUNT(*) AS anzahl,\n       SUM(betrag) AS summe,\n       AVG(betrag) AS schnitt\nFROM bestellungen;',n:'COUNT, SUM und AVG fassen viele Zeilen zu einer Kennzahl zusammen.',h:['anzahl','summe','schnitt'],r:[[6,'368,40','61,40']]},
+ {l:'Verknüpfen',q:'SELECT k.name, SUM(b.betrag) AS umsatz\nFROM kunden k\nJOIN bestellungen b ON b.kunde_id = k.id\nGROUP BY k.name\nORDER BY umsatz DESC;',n:'JOIN verbindet zwei Tabellen über eine gemeinsame Spalte. GROUP BY bildet eine Summe pro Person.',h:['name','umsatz'],r:[['Ben','180,00'],['Cem','89,00'],['Anna','65,40'],['Dora','34,00']]}
+];
+function fillTable(t,hd,rows){t.innerHTML='<thead><tr>'+hd.map(function(x){return '<th scope="col">'+x+'</th>'}).join('')+'</tr></thead><tbody>'+rows.map(function(r){return '<tr>'+r.map(function(c){return '<td>'+c+'</td>'}).join('')+'</tr>'}).join('')+'</tbody>'}
+function hl(q){return q.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/\b(SELECT|FROM|WHERE|JOIN|ON|GROUP BY|ORDER BY|DESC|AS|COUNT|SUM|AVG)\b/g,'<b>$1</b>').replace(/('[^']*')/g,'<i>$1</i>')}
+var sqSet=tabsFor($('#sqT'),SQL.map(function(s){return s.l}),sqSel);
+function sqSel(i){sqSet(i);var Q=SQL[i];$('#sqC').innerHTML=hl(Q.q);$('#sqN').textContent=Q.n;fillTable($('#sqR'),Q.h,Q.r)}
+fillTable($('#sqK'),['id','name','stadt'],KUN);fillTable($('#sqB'),['id','kunde_id','betrag','monat'],BES);
+$('#sqK').insertAdjacentHTML('afterbegin','<caption>kunden</caption>');$('#sqB').insertAdjacentHTML('afterbegin','<caption>bestellungen</caption>');
+sqSel(0);
+
+/* 3.5 anomaly */
+var TX=[['08:12:03','Bäckerei, Innsbruck','4,20 €'],['12:30:41','Supermarkt, Innsbruck','38,90 €'],['19:05:10','Onlineshop','59,00 €'],['21:44:02','Juwelier, Hongkong','1.890,00 €',1],['21:44:07','Elektronik, New York','2.400,00 €',1]];
+TX.forEach(function(t){var li=h('li');li.innerHTML='<span class="mono">'+t[0]+'</span><span>'+t[1]+'</span><b>'+t[2]+'</b>';if(t[3])li.dataset.a=1;$('#txL').appendChild(li)});
+$('#txB').addEventListener('click',function(){
+  var on=this.dataset.on!=='1';this.dataset.on=on?'1':'0';this.textContent=on?'Zurücksetzen':'KI prüfen lassen';
+  $$('#txL li[data-a]').forEach(function(li){li.classList.toggle('al',on)});
+  var S=$('#txS');S.textContent=on?'Auffällig: Hongkong und New York, 13.000 km in 5 Sekunden. Karte vorsorglich sperren und nachfragen.':'';S.className='st'+(on?' bad':'');
+});
+
+/* 3.6 cleaning station */
+var CL0=[
+ {n:'Anna Huber',p:'6020',o:'Innsbruck',u:1200,y:2026,f:'blau'},
+ {n:'Ben Maier',p:'80331',o:'München',u:860,y:2026,f:'grün'},
+ {n:'anna huber',p:'6020',o:'Innsbruck',u:1200,y:2026,f:'blau',dup:1},
+ {n:'Cem Yilmaz',p:'6020',o:'Innsbruk',u:null,y:2025,f:'rot'},
+ {n:'Dora Novak',p:'1010',o:'Wien',u:2300,y:2019,f:'gelb'},
+ {n:'Eva Berger',p:'8020',o:'Graz',u:640,y:2026,f:'grün'},
+ {n:'Finn Wolf',p:'6O20',o:'Innsbruck',u:1050,y:2026,f:'blau'},
+ {n:'Gül Aksoy',p:'5020',o:'Salzburg',u:null,y:2026,f:'rot'}
+];
+var CITIES=['Innsbruck','München','Wien','Graz','Salzburg'],clD,clDone,clCol;
+var CLA=[
+ {k:'dup',l:'Duplikate entfernen',n:'„anna huber“ war doppelt, nur anders geschrieben. Deduplication-Tools finden so etwas automatisch.'},
+ {k:'fill',l:'Fehlende Werte ergänzen',n:'Die fehlenden Umsätze sind mit k-NN geschätzt: Durchschnitt der drei ähnlichsten Kundinnen und Kunden. Kursiv markiert, weil geschätzt.'},
+ {k:'fix',l:'Fehler korrigieren',n:'„Innsbruk“ und die PLZ mit dem Buchstaben O sind korrigiert. Genauigkeit heißt: Daten bilden die Realität richtig ab.'},
+ {k:'upd',l:'Veraltetes aktualisieren',n:'Der Eintrag von 2019 ist bestätigt und aktualisiert. Wie alt Daten sein dürfen, legt man vorher fest.'},
+ {k:'rel',l:'Unnötige Spalte löschen',n:'Die Lieblingsfarbe braucht der Shop nicht. Weniger Daten heißt auch: Datensparsamkeit nach DSGVO.'}
+];
+function clStart(){clD=CL0.map(function(r){var c={};for(var k in r)c[k]=r[k];return c});clDone={};clCol=true;clRender();$('#clN').textContent='Wähle einen Schritt. Die Reihenfolge ist egal.'}
+function pct(a,b){return b?Math.round(a/b*100):100}
+function clRender(){
+  var hd=['Name','PLZ','Ort','Umsatz €','Stand'].concat(clCol?['Lieblingsfarbe']:[]);
+  $('#clT').innerHTML='<thead><tr>'+hd.map(function(x){return '<th scope="col">'+x+'</th>'}).join('')+'</tr></thead><tbody>'+clD.map(function(r){
+    var bad=function(c){return c?' class="bad"':''};
+    return '<tr'+(r.dup?' class="dupr"':'')+'><td'+bad(r.dup)+'>'+r.n+'</td><td'+bad(!/^\d{4,5}$/.test(r.p))+'>'+r.p+'</td><td'+bad(CITIES.indexOf(r.o)<0)+'>'+r.o+'</td><td'+(r.u==null?' class="bad"':r.imp?' class="imp"':'')+'>'+(r.u==null?'—':r.u.toLocaleString('de-DE'))+'</td><td'+bad(r.y<2025)+'>'+r.y+'</td>'+(clCol?'<td class="irr">'+r.f+'</td>':'')+'</tr>'}).join('')+'</tbody>';
+  var n=clD.length,dims=[
+    ['Vollständigkeit','alle Pflichtfelder gefüllt',pct(clD.filter(function(r){return r.u!=null}).length,n)],
+    ['Genauigkeit','PLZ und Ort stimmen',pct(clD.filter(function(r){return /^\d{4,5}$/.test(r.p)&&CITIES.indexOf(r.o)>-1}).length,n)],
+    ['Konsistenz','keine Dubletten, gleiche Schreibweise',pct(clD.filter(function(r){return !r.dup}).length,n)],
+    ['Aktualität','Stand nicht älter als ein Jahr',pct(clD.filter(function(r){return r.y>=2025}).length,n)],
+    ['Relevanz','nur Spalten, die gebraucht werden',clCol?83:100]
+  ],avg=Math.round(dims.reduce(function(s,d){return s+d[2]},0)/dims.length);
+  $('#clQ').innerHTML=dims.map(function(d){return '<div class="stat"><p class="bl"><span>'+d[0]+' <small>'+d[1]+'</small></span><b>'+d[2]+' %</b></p><div class="sbar"><i style="width:'+d[2]+'%"></i></div></div>'}).join('');
+  $('#clO').innerHTML='Gesamt <b>'+avg+' %</b>'+(avg===100?' · sauber':'');
+  var B=$('#clB');B.innerHTML='';
+  CLA.forEach(function(a){var b=h('button','btn'+(clDone[a.k]?' ghost':''));b.type='button';b.textContent=(clDone[a.k]?'✓ ':'')+a.l;b.disabled=!!clDone[a.k];b.addEventListener('click',function(){clDo(a)});B.appendChild(b)});
+  var r=h('button','lnk');r.type='button';r.textContent='Zurücksetzen';r.addEventListener('click',clStart);B.appendChild(r);
+}
+function clDo(a){
+  if(a.k==='dup')clD=clD.filter(function(r){return !r.dup});
+  if(a.k==='fill')clD.forEach(function(r){if(r.u==null){r.u=r.o.indexOf('Inns')===0?1150:980;r.imp=1}});
+  if(a.k==='fix')clD.forEach(function(r){if(r.o==='Innsbruk')r.o='Innsbruck';r.p=r.p.replace(/O/g,'0')});
+  if(a.k==='upd')clD.forEach(function(r){if(r.y<2025)r.y=2026});
+  if(a.k==='rel')clCol=false;
+  clDone[a.k]=1;clRender();$('#clN').textContent=a.n;
+}
+clStart();
+
+/* 3.8 reweighting */
+function setRw(on){
+  $$('[data-rw]').forEach(function(b){b.setAttribute('aria-selected',String(+b.dataset.rw===on))});
+  var s=on?[35,65]:[70,30],small=Math.round(s[0]*.8+s[1]*.25);
+  $('#rwL').textContent=on?'Befragte, neu gewichtet':'Befragte am Umfragetag';
+  $('#rwA').style.flexBasis=s[0]+'%';$('#rwA').textContent='Singles '+s[0]+' %';$('#rwB').style.flexBasis=s[1]+'%';$('#rwB').textContent='Familien '+s[1]+' %';
+  $('#rwC').style.flexBasis=small+'%';$('#rwC').textContent='klein '+small+' %';$('#rwD').style.flexBasis=(100-small)+'%';$('#rwD').textContent='groß '+(100-small)+' %';
+  $('#rwM').textContent=on?'Gewichtet nach dem echten Anteil kippt das Ergebnis: Die Mehrheit will große Packungen. Gewichte: Singles × 0,5, Familien × 2,2.':'Die Rohdaten sagen: kleine Packungen. Aber Singles sind doppelt so stark vertreten wie in der Kundschaft. Sampling Bias.';
+}
+$$('[data-rw]').forEach(function(b){b.addEventListener('click',function(){setRw(+b.dataset.rw)})});setRw(0);
+
+/* 3.10 iceberg */
+var ICE=[
+ {l:'Artefakte',k:'sichtbar',t:'Artefakte',d:'Alles, was man sehen, hören und erleben kann: Kleidung, Büros, Logos, Arbeitszeiten, wie Meetings ablaufen. Meist eine Folge der Ebene darunter.',e:'Dashboards in Meetings, ein Datenportal im Intranet.'},
+ {l:'Werte & Normen',k:'teils bewusst',t:'Werte und Normen',d:'Was ist uns wichtiger als anderes? Etwa Pünktlichkeit oder wie verbindlich Absprachen sind. Hier setzt man an, um Kultur dauerhaft zu ändern.',e:'Zählen Daten bei Entscheidungen, oder gewinnt das Bauchgefühl der Chefin?'},
+ {l:'Grundannahmen',k:'unsichtbar',t:'Grundannahmen',d:'Tief verwurzelte Menschenbilder: Wollen Menschen von sich aus lernen und leisten, oder müssen sie kontrolliert werden? Kaum direkt veränderbar.',e:'Wird geteiltes Wissen als Gewinn gesehen oder als Machtverlust?'}
+];
+var icS=$('#icS'),icN=[];
+el('rect',{x:0,y:96,width:440,height:284,fill:'rgba(14,15,12,.05)'},icS);
+el('line',{x1:0,y1:96,x2:440,y2:96,stroke:'#0E0F0C','stroke-dasharray':'6 4'},icS);
+var wl=el('text',{x:432,y:90,'text-anchor':'end'},icS);wl.textContent='WASSERLINIE';
+[['M148 96 L220 4 L292 96 Z',[220,66]],['M148 96 L292 96 L334 230 L106 230 Z',[220,168]],['M106 230 L334 230 L286 356 L154 356 Z',[220,294]]].forEach(function(s,i){
+  var g=el('g',{class:'ice',tabindex:0,role:'button','aria-pressed':'false','aria-label':ICE[i].t},icS);el('path',{d:s[0]},g);
+  var t=el('text',{x:s[1][0],y:s[1][1],'text-anchor':'middle'},g);t.textContent=ICE[i].l;
+  var t2=el('text',{x:s[1][0],y:s[1][1]+16,'text-anchor':'middle',class:'s'},g);t2.textContent=ICE[i].k;
+  g.addEventListener('click',function(){icSel(i)});g.addEventListener('keydown',function(ev){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();icSel(i)}});icN.push(g)});
+function icSel(i){var I=ICE[i];icN.forEach(function(g,j){g.setAttribute('aria-pressed',String(j===i))});$('#icN').textContent=i+1;$('#icK').textContent=I.k;$('#icT').textContent=I.t;$('#icD').textContent=I.d;$('#icE').textContent=I.e}
+icSel(0);
+initSort({root:'#m3-ice',status:'#m3-kultur [data-so-s]',mod:3,check:'ice',label:'Aussage',end:'Je tiefer die Ebene, desto schwerer ist sie zu ändern. Ansetzen lohnt sich bei den Werten.',buckets:[['a','Artefakt'],['w','Werte & Normen'],['g','Grundannahme','m']],items:[
+ ['Im Weekly hängt ein Dashboard an der Wand','a','Sichtbar und beobachtbar: ein Artefakt.'],
+ ['Es gibt ein Datenportal im Intranet','a','Etwas, das man sehen und benutzen kann.'],
+ ['Meetings beginnen mit den Zahlen der Woche','a','Ein beobachtbares Ritual.'],
+ ['Bei uns zählt das Argument mit Beleg, nicht die lauteste Stimme','w','Eine gelebte Norm: Was gilt als gutes Argument?'],
+ ['Fehler in Daten meldet man offen','w','Ein Wert, der Verhalten steuert.'],
+ ['Abteilungen teilen ihre Daten miteinander','w','Eine Norm der Zusammenarbeit.'],
+ ['Menschen wollen lernen und gute Arbeit machen','g','Ein Menschenbild, tief verwurzelt.'],
+ ['Wissen ist Macht, also behält man es für sich','g','Eine unausgesprochene Grundannahme.'],
+ ['Ohne Kontrolle arbeitet niemand ordentlich','g','Das Gegenbild: ein Menschenbild auf der untersten Ebene.']
+]});
+
+/* 3.11 cases */
+var CASES=[
+ {t:'Spotify',e:'Personalisierte Musik',d:'Aus dem Hörverhalten entstehen persönliche Empfehlungen und Playlists. Ziel: Man findet schneller, was gefällt, und bleibt länger.',m:'Welche Songs, wie lange, in welcher Reihenfolge, zu welcher Zeit',w:'Verweildauer als Ziel. Und: Wie viel Neues bekommt man noch zu hören?'},
+ {t:'Amazon',e:'Kundentypen erkennen',d:'Wer lange vergleicht, bekommt mehr Infos und Vergleiche. Wer schnell kauft, bekommt schnelle Angebote. Empfehlungen passen sich dem Verhalten an.',m:'Klicks, Suchdauer, gelesene Bewertungen, Käufe',w:'Wo hört hilfreiche Personalisierung auf, wo fängt Manipulation an?'},
+ {t:'Coca-Cola',e:'Stimmung zur Marke',d:'Mit Text-Mining und Sentimentanalyse wertet der Konzern Social-Media-Beiträge aus: Wie kommt eine Kampagne an, welche Assoziationen weckt die Marke?',m:'Öffentliche Posts und Kommentare zur Marke und zu Kampagnen',w:'Öffentliche Posts sind trotzdem personenbezogene Daten.'},
+ {t:'UPS',e:'Routen optimieren',d:'Die Fahrten werden ausgewertet, um die Reihenfolge der Stopps zu optimieren. Bekannt: Routen mit möglichst wenigen Linksabbiegungen. Spart Zeit und Kraftstoff.',m:'GPS der Fahrzeuge, Standzeiten, Verkehrslage, Lieferadressen',w:'Fahrzeug-Tracking ist auch Mitarbeiter-Tracking. In Deutschland hat der Betriebsrat bei solcher Technik ein Mitbestimmungsrecht.'},
+ {t:'Netflix',e:'Was gedreht wird',d:'Sehdaten fließen in Empfehlungen und in Entscheidungen über neue Serien und Formate. Laut Video ein Grund für kürzere Miniserien.',m:'Was, wie lange, wann abgebrochen, Daumen hoch oder runter',w:'Man zahlt ein Abo und liefert nebenbei die Daten für das künftige Programm.'}
+];
+var csSet=tabsFor($('#csT'),CASES.map(function(c){return c.t}),csSel);
+function csSel(i){csSet(i);var C=CASES[i];$('#csA').textContent=(i+1<10?'0':'')+(i+1)+' · '+C.t;$('#csE').textContent=C.e;$('#csD').textContent=C.d;$('#csM').textContent=C.m;$('#csW').textContent=C.w}
+csSel(0);
+
+/* 3.11 sentiment */
+var POS=['gut','super','toll','liebe','schnell','perfekt','empfehlen','empfehlenswert','lecker','genial','zufrieden','freundlich','top','schön','klasse','begeistert','prima','angenehm','hilfreich','gerne','danke','großartig','hervorragend'];
+var NEG=['schlecht','kaputt','langsam','enttäuscht','enttäuschend','teuer','ärgerlich','mies','defekt','falsch','schrecklich','furchtbar','unfreundlich','problem','probleme','leider','zurückgeschickt','nie','nervig','katastrophe','fehler'];
+var NOT=['nicht','kein','keine','kaum'];
+var SN=['Super schnell geliefert, die Qualität ist top!','Leider kaputt angekommen, der Service war unfreundlich.','Na toll, schon wieder kaputt. Super Qualität.','Nicht schlecht, aber auch nicht perfekt.','Das Paket kam am Dienstag.'];
+var SNN=['','','Ironie: Ein Mensch liest sofort, dass das negativ gemeint ist. Die Wortliste zählt „toll“ und „super“ als positiv. Genau das ist die Grenze der Sentimentanalyse.','Verneinungen drehen die Bedeutung um. Hier gleichen sie sich aus.',''];
+function senti(txt){
+  var words=txt.split(/(\s+|[.,!?;:]+)/),score=0,flip=false,out=[];
+  words.forEach(function(w){var k=w.toLowerCase();if(NOT.indexOf(k)>-1){flip=true;out.push('<u>'+w+'</u>');return}
+    var p=POS.indexOf(k)>-1,n=NEG.indexOf(k)>-1;
+    if(p||n){var v=p?1:-1;if(flip){v=-v;flip=false}score+=v;out.push('<mark class="'+(v>0?'p':'n')+'">'+w+'</mark>')}else{out.push(w.replace(/</g,'&lt;'));if(/[.,!?;:]/.test(w))flip=false}});
+  return {s:score,h:out.join('')};
+}
+function snRun(txt,note){var r=senti(txt),v=r.s>0?'positiv':r.s<0?'negativ':'neutral';$('#snV').innerHTML='<span class="'+(r.s>0?'p':r.s<0?'n':'z')+'">'+v+'</span> <small>Wert '+(r.s>0?'+':'')+r.s+'</small>';$('#snH').innerHTML=r.h||'&nbsp;';$('#snN').textContent=note||''}
+SN.forEach(function(s,i){var b=h('button','chip');b.type='button';b.textContent=(i+1)+'. '+s;b.addEventListener('click',function(){$('#snI').value=s;snRun(s,SNN[i])});$('#snC').appendChild(b)});
+$('#snI').addEventListener('input',function(){snRun(this.value,'')});
+$('#snI').value=SN[0];snRun(SN[0],'');
+
+/* 3.12 review data */
+initCards(3,[
+ ['Begriff','Was ist Datenmanagement?','Alle Strukturen, Prozesse und Standards, um Daten zu erfassen, zu verwalten und nutzbar zu machen: genau, zuverlässig und geschützt.'],
+ ['Lebenszyklus','Die sechs Phasen eines Datums?','Erfassung, Speicherung, Verarbeitung, Nutzung, Archivierung, Löschung.'],
+ ['ETL','Wofür steht ETL?','Extract, Transform, Load: Daten herausziehen, in die Zielstruktur bringen, ins Zielsystem laden.'],
+ ['Metadaten','Was sind Metadaten?','Daten über Daten. Beim Foto: Aufnahmezeit und Ort. Im Bibliothekskatalog: Autorin, Thema, Erscheinungsjahr.'],
+ ['Rollen','Die vier Datenrollen?','Data Scientist (Modelle), Data Engineer (Infrastruktur, Pipelines), Data Analyst (Berichte, SQL), Data Steward (Qualität, Standards).'],
+ ['Analyse','Vier Analysearten mit ihrer Frage?','Deskriptiv: Was ist passiert? Diagnostisch: Warum? Prädiktiv: Was wird passieren? Präskriptiv: Was sollen wir tun?'],
+ ['Qualität','Fünf Dimensionen der Datenqualität?','Vollständigkeit, Genauigkeit, Konsistenz, Aktualität, Relevanz.'],
+ ['Bias','Zwei Bias-Arten und zwei Gegenmittel?','Sampling Bias (falsche Stichprobe), Measurement Bias (Fehler beim Erfassen). Gegenmittel: Resampling, Reweighting.'],
+ ['Gesetze','Vier Regelwerke aus dem Kurs?','DSGVO (EU), CCPA (Kalifornien), HIPAA (US-Gesundheitsdaten), SOX (US-börsennotierte Unternehmen, Finanzberichte).'],
+ ['Kultur','Die drei Ebenen im Eisbergmodell?','Artefakte (sichtbar), Werte und Normen, Grundannahmen (unsichtbar). Ansetzen bei den Werten.'],
+ ['Vorteil','Vier strategische Vorteile durch Daten?','Datengetriebene Innovation, neue Geschäftsmodelle, schnellere Forschung, mehr Effizienz.'],
+ ['Trends','Drei Trends im Datenmanagement für KI?','KI in Datenplattformen, Automatisierung ganzer Prozessschritte, Edge Computing.']
+]);
+initCloze(3,[
+ ['Wie lange Daten in der Phase der {Archivierung|Visualisierung|Erfassung} bleiben, hängt von gesetzlichen Vorgaben ab. Am Ende des Lebenszyklus steht die {Löschung|Verdichtung|Analyse}.'],
+ ['Eine Datenstrategie braucht eine klare {Zielsetzung|Kontrolle|Bewertung}. Das kann ein Geschäftsziel sein wie mehr {Kundenzufriedenheit|Kostensteigerung|Bürokratie} oder ein datengetriebenes Ziel wie bessere {Datenqualität|Hardware|Werbung}.'],
+ ['Multimodale Modelle verarbeiten Text, Bilder und Videos. Das bringt eine höhere {Heterogenität|Standardisierung|Umsatzsteigerung} der Datenformate, aber auch eine höhere {Leistungsfähigkeit|Fehlerquote|Abhängigkeit} der Modelle.'],
+ ['Zur Datenbereinigung gehört das Entfernen von {Duplikaten|Prozessen|Diagnosen}, die {Normalisierung|Vorhersage|Löschung} mit Min-Max und das Ergänzen fehlender Werte mit {Imputationstechniken|Fragebögen|Vorhersagetechniken} wie k-NN.'],
+ ['Ein {Sampling|Kosten|Archiv}-Bias entsteht, wenn Gruppen in der Stichprobe über- oder unterrepräsentiert sind. Beim Measurement Bias passieren Fehler schon bei der {Erfassung|Archivierung|Löschung}.'],
+ ['Im Eisbergmodell sind die {Artefakte|Grundannahmen|Werte} sichtbar, etwa Kleidung oder Logos. Die {unsichtbare|beobachtbare|digitale} Ebene der Grundannahmen ist kaum zu ändern. Ansetzen sollte man auf der {Werteebene|Artefaktebene|Führungsebene}.'],
+ ['Bei Verzerrungen in den {Trainingsdaten|Technologien|Mitarbeitenden} geht es darum, ob alle relevanten {Gruppen|Server|Abteilungen} vertreten sind. Sonst drohen {ethische|logische|technische} Probleme.']
+]);
+initQuiz(3,[
+ ['Warum ist Datenmanagement für KI so wichtig?',['Es macht große Datenmengen erfassbar, speicherbar und analysierbar, die Grundlage jeder KI','Es hilft, Mitarbeitende zu überwachen','Es spart vor allem Speicherplatz'],'KI-Modelle lernen aus Daten. Ohne Datenmanagement keine gute KI.'],
+ ['Wer entwickelt die Datenpipelines einer neuen Datenplattform?',['Data Engineer','Data Scientist','Data Steward'],'Pipelines und Infrastruktur sind Aufgabe des Data Engineerings.'],
+ ['„Die deskriptive Analyse sagt die Zukunft voraus.“ Stimmt das?',['Nein, sie beschreibt vorhandene Daten, etwa mit Mittelwert und Median','Ja, aus historischen Trends','Ja, mit Simulationen'],'Vorhersagen macht die prädiktive Analyse.'],
+ ['Was ist die Hauptschwierigkeit bei vielfältigen Datenquellen für KI?',['Unterschiedliche Formate, lösbar durch Harmonisierung und Transformation','Zu viele Daten, also kleinere Datensätze nehmen','KI kann nur strukturierte Daten'],'Heterogene Daten müssen angeglichen werden, dann machen sie Modelle robuster.'],
+ ['Welche Maßnahme hilft laut Kurs, Risiken in der Lieferkette zu managen?',['Eine agile Vertragsgestaltung','Auf Sicherheitsbestände verzichten','Nur einen einzigen Lieferanten nutzen'],'Flexible Verträge machen anpassungsfähig. Ein einziger Lieferant erhöht das Risiko.'],
+ ['Was sichert die DSGVO-Einhaltung dauerhaft am besten?',['Eine Datenschutzrichtlinie mit laufendem Monitoring und Audits','Eine einmalige Schulung','Externe Beratung nur für die IT'],'Richtlinien wirken nur, wenn sie überprüft und durchgesetzt werden.'],
+ ['„Ethikrichtlinien für Daten betreffen vor allem die IT.“ Stimmt das?',['Nein, sie gelten für alle Bereiche, die mit Daten arbeiten','Ja, nur dort entstehen ethische Fragen','Ja, andere Bereiche wissen schon, was richtig ist'],'Fairness, Transparenz und Verantwortung betreffen das ganze Unternehmen.'],
+ ['„Metadaten beschreiben nur den Inhalt von Dokumenten.“ Stimmt das?',['Nein, sie sind Informationen über Daten, etwa Aufnahmedatum und Ort eines Fotos','Ja, sie fassen den Inhalt zusammen','Ja, sie sind eine Inhaltsangabe'],'Metadaten sind Hintergrundinformationen über die Daten selbst.'],
+ ['Wofür wird SQL hauptsächlich genutzt?',['Daten abfragen, filtern, verknüpfen und verwalten','Daten visualisieren und präsentieren','Modelle trainieren'],'Visualisiert wird mit Tools wie Power BI oder Tableau.'],
+ ['Welcher Trend steigert die Effizienz der Datenverarbeitung?',['KI in Datenplattformen automatisiert Aufbereitung und Bereinigung','Mehr manuelle Aufbereitung','Langsamere Verarbeitung gegen Fehler'],'Automatisierung und Edge Computing machen Daten schneller nutzbar.'],
+ ['Ein Dashboard kombiniert Verkaufsdaten und Prognosen. Welche zwei Rollen arbeiten zusammen?',['Data Engineer und Data Scientist','Data Analyst und Data Steward','Data Steward und Data Engineer'],'Engineering sorgt für stabile Daten, Data Science für die Prognosen.'],
+ ['Was braucht eine transparente Data Governance?',['Klare Rollen und Verantwortung, Kommunikation und Dokumentation','Nur das Management hat Zugriff','Eine KI trifft alle Datenentscheidungen'],'Governance heißt: Wer ist wofür verantwortlich, und alle wissen es.'],
+ ['Wie hilft Sentimentanalyse im Krisenmanagement?',['Sie erkennt negative Stimmung in Social Media früh','Sie zählt Kundenanfragen','Sie ersetzt die Pressestelle'],'Wer Stimmung früh sieht, kann reagieren, bevor sich Kritik ausbreitet.'],
+ ['Welche Ebene im Eisbergmodell sollte man ansprechen, um Datenkultur zu verankern?',['Werte und Normen','Nur die Artefakte','Die Grundannahmen direkt'],'Artefakte ändern allein wenig, Grundannahmen sind kaum erreichbar.']
 ]);
 
 })();
