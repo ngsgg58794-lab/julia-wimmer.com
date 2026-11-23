@@ -259,6 +259,19 @@ button[aria-expanded="true"] .sg svg{transform:rotate(45deg)}
 @media (max-width:1000px){.mx{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.mx{grid-template-columns:1fr}}
 
+/* off the clock */
+.ocl{border-top:1px solid var(--ink);padding-top:clamp(36px,4.5vw,56px);padding-bottom:clamp(56px,6vw,88px)}
+.oclh{display:grid;grid-template-columns:5.5rem minmax(0,1fr) auto;align-items:end;gap:8px 24px;margin:0 0 clamp(24px,3vw,40px);font:inherit}
+.oclh .hov{color:var(--grey);padding-bottom:4px}
+.ocg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
+.ocf{margin:0}
+.ocf .frame img{height:auto;transition:filter .45s ease}
+.ocf .cap{margin-top:6px}
+@media (max-width:1000px){.ocg{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}}
+@media (max-width:820px){.oclh{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:600px){.ocg{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(var(--gut)*-1);padding:0 var(--gut) 6px;scroll-padding:0 var(--gut);scrollbar-width:none}.ocg::-webkit-scrollbar{display:none}.ocf{flex:0 0 76%;scroll-snap-align:start}}
+@media (hover:none){.ocf .frame img{filter:none}.oclh .hov{display:none}}
+
 /* work */
 .wk{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:44px 36px;padding:14px 4px 0}
 .ph{--rot:-1.6deg;position:relative;display:block;width:100%;padding:10px 10px 16px;border:1px solid rgba(14,15,12,.1);background:#FBFBF8;color:inherit;font:inherit;text-align:left;cursor:pointer;
@@ -1135,6 +1148,16 @@ html[lang="de"] .hero h1{font-stretch:90%}
 </div>
 </div></div></div>
 </section>
+
+<section id="offclock" class="ocl wrap" aria-labelledby="ocl-t">
+<h2 class="oclh"><span class="sno">Fig. 02–05</span><span><span class="stt" id="ocl-t">Off the clock</span><span class="sth mono">Same black outfit, louder rooms</span></span><span class="hov mono" aria-hidden="true">Hover for color</span></h2>
+<div class="ocg">
+<figure class="ocf rv"><div class="frame"><i></i><img src="img/offclock-stripes.webp" alt="Julia in a black blazer, arms crossed, in front of black and white op-art stripes" width="720" height="900" loading="lazy"></div><figcaption class="cap mono"><span>Fig. 02</span><span>Op art</span></figcaption></figure>
+<figure class="ocf rv"><div class="frame"><i></i><img src="img/offclock-pink.webp" alt="Julia sitting sideways in a giant hand-shaped armchair in an all-pink room" width="720" height="900" loading="lazy"></div><figcaption class="cap mono"><span>Fig. 03</span><span>Pink room</span></figcaption></figure>
+<figure class="ocf rv"><div class="frame"><i></i><img src="img/offclock-fur.webp" alt="Julia lounging on a light blue fur sofa below a furry version of The Scream" width="720" height="900" loading="lazy"></div><figcaption class="cap mono"><span>Fig. 04</span><span>Fur room</span></figcaption></figure>
+<figure class="ocf rv"><div class="frame"><i></i><img src="img/offclock-light.webp" alt="Julia laughing in front of a wall lit from blue to orange, her shadow in rainbow colors" width="720" height="900" loading="lazy"></div><figcaption class="cap mono"><span>Fig. 05</span><span>Light wall</span></figcaption></figure>
+</div>
+</section>
 </main>
 
 <footer id="contact" class="wrap">
@@ -1314,7 +1337,7 @@ function setLang(l){
   ['aria-label','alt'].forEach(function(a){Array.prototype.forEach.call(document.querySelectorAll('['+a+']'),function(e){var v=e.getAttribute(a);if(d[v]!=null){trs.push({n:e,a:a,v:v});e.setAttribute(a,d[v]);}});});
 }
 function wantLang(l){if(l===LANG)return;if(l!=='de'||window.JW_DE){setLang(l);return;}
-  var sc=document.createElement('script');sc.src='de.js?v=18';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
+  var sc=document.createElement('script');sc.src='de.js?v=19';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
 Array.prototype.forEach.call(lgb,function(b){b.addEventListener('click',function(){wantLang(b.getAttribute('data-lang'));});});
 if(/[?&]lang=de\b/.test(location.search))wantLang('de');
 })();
