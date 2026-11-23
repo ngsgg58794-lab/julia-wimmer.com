@@ -115,6 +115,13 @@ h1 sup{display:inline-block;vertical-align:top;margin:.12em 0 0 .1em;font-family
 .hero .look .mono{font-size:.75rem}
 .hero .hrow{margin-top:20px}
 .hero .frame img{aspect-ratio:auto;height:auto;object-fit:fill}
+/* Hero: Nahaufnahme und Ganzkörper im Wechsel, 2 Runden, Pause beim Hover, aus bei reduzierter Bewegung */
+.hero .frame img.alt{position:absolute;top:14px;left:14px;width:calc(100% - 28px);height:calc(100% - 28px);object-fit:cover;filter:none;opacity:0}
+.swap.on img.alt{animation:swapfade 12s ease-in-out 3s 2 both}
+.swap:hover img.alt{animation-play-state:paused}
+.swap .langs span:first-child{border-color:var(--ink)}
+@keyframes swapfade{0%,8%{opacity:0}16%,84%{opacity:1}92%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.swap.on img.alt{animation:none}}
 @media (min-width:1101px){
   .hero{grid-template-columns:minmax(0,1fr) clamp(340px,min(36%,calc((100vh - 190px)*.7066 + 28px)),500px);column-gap:64px;padding-top:28px;padding-bottom:44px}
   .hero h1{font-size:clamp(2.6rem,min(6vw,11vh),5.8rem)}
@@ -767,8 +774,9 @@ html[lang="de"] .hero h1{font-stretch:90%}
 </div>
 
 <figure class="fig">
-<div class="frame"><i></i>
+<div class="frame swap"><i></i>
 <img src="img/portrait.jpeg" alt="Portrait of Julia Wimmer" width="980" height="1387">
+<img class="alt" src="img/portrait-full.jpg" alt="Julia Wimmer, full length, in a black suit in front of a magenta background" width="980" height="1387" decoding="async">
 <div class="langs" role="img" aria-label="Languages: German, English, Spanish"><span>DE</span><span>EN</span><span>ES</span></div>
 </div>
 <figcaption class="cap mono"><span>Fig. 01 · Julia</span><span>DE / EN / ES</span></figcaption>
@@ -1231,6 +1239,7 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener
 if(location.hash)openFor(location.hash.slice(1));
 document.querySelectorAll('button.shb.fx,button.skb').forEach(function(b){setOpen(b,true,true);});
 var rv=Array.prototype.slice.call(document.querySelectorAll('.rv,button.shb,#contact'));
+var sw=document.querySelector('.swap');if(sw){if('IntersectionObserver' in window){var swo=new IntersectionObserver(function(es){if(es[0].isIntersecting){sw.classList.add('on');swo.disconnect();}},{threshold:.5});swo.observe(sw);}else sw.classList.add('on');}
 if('IntersectionObserver' in window){
   var io=new IntersectionObserver(function(es){var n=0;es.forEach(function(x){if(!x.isIntersecting)return;var el=x.target,d=Math.min(n++,8)*70;
     if(el.classList.contains('rv')&&!reduce){el.style.transitionDelay=d+'ms';setTimeout(function(){el.style.transitionDelay='';},d+700);}
@@ -1337,7 +1346,7 @@ function setLang(l){
   ['aria-label','alt'].forEach(function(a){Array.prototype.forEach.call(document.querySelectorAll('['+a+']'),function(e){var v=e.getAttribute(a);if(d[v]!=null){trs.push({n:e,a:a,v:v});e.setAttribute(a,d[v]);}});});
 }
 function wantLang(l){if(l===LANG)return;if(l!=='de'||window.JW_DE){setLang(l);return;}
-  var sc=document.createElement('script');sc.src='de.js?v=19';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
+  var sc=document.createElement('script');sc.src='de.js?v=20';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
 Array.prototype.forEach.call(lgb,function(b){b.addEventListener('click',function(){wantLang(b.getAttribute('data-lang'));});});
 if(/[?&]lang=de\b/.test(location.search))wantLang('de');
 })();
