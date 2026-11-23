@@ -357,6 +357,22 @@ html:has(.dlg[open]){overflow:hidden}
 .apb{margin-top:28px;padding:18px 20px 20px;background:var(--paper-2)}
 .apb h4{margin:0;color:var(--grey)}
 .apb p{margin-top:8px;font-size:.9375rem;line-height:1.55}
+.pi.pia4{grid-template-columns:repeat(2,27%);gap:10px;justify-content:center;align-content:center}
+.pi.pia4 img{width:100%}
+.dlg .apx{list-style:none;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;margin:28px 0 0;padding:0;max-width:none;background:var(--ink);border:1px solid var(--ink)}
+.dlg .apx li{display:grid;grid-template-columns:52px minmax(0,1fr);gap:14px;align-content:start;margin:0;padding:18px 18px 20px;background:var(--paper)}
+.apx img{display:block;width:52px;height:52px;border-radius:22%;box-shadow:0 8px 18px -10px rgba(14,15,12,.5)}
+.apx h4{margin:2px 0 0;font-size:1.0625rem;font-weight:800}
+.apx p{margin:8px 0 0;font-size:.9375rem;line-height:1.45}
+.apx p.mono{margin-top:4px;font-size:.6875rem;letter-spacing:.04em;text-transform:uppercase;color:var(--mag)}
+.apx .apn{font-size:.875rem;color:var(--grey)}
+.apx .apl{margin-top:14px}.apx .apl a{min-height:36px;padding:4px 12px;font-size:.8125rem}
+.csh{margin-top:56px}
+.gch img{display:block;width:min(100%,380px);height:auto;margin-top:16px;border:1px solid var(--ink)}
+.gms>div{display:flex;flex-wrap:wrap;align-items:flex-start;gap:16px;margin-top:16px}
+.gms img{display:block;min-width:0;height:auto;border:1px solid var(--ink)}
+.gms img:first-child{flex:3 1 380px}.gms img+img{flex:1 1 200px;max-width:320px}
+@media (max-width:640px){.dlg .apx{grid-template-columns:1fr}}
 @media (max-width:560px){.aps>div{grid-template-columns:5.5rem minmax(0,1fr)}.wsub{margin-top:48px}}
 
 /* contact */
@@ -750,7 +766,7 @@ html[lang="de"] .hero h1{font-stretch:90%}
 <div class="glance">
 <div class="gcol gcol-e"><p class="gh mono">What I enjoy</p>
 <div class="glr"><details class="gl" name="glance"><summary><span class="k mono">01</span><span class="gt">Structuring</span><span class="gp" aria-hidden="true"></span></summary><div class="gd"><p>Taking something messy and building a system that people want to use: boards, spaces, workflows, decisions.</p><a class="gr mono" href="#p-01">Ref. <span>P-01 Team workflows</span> &#8595;</a></div></details></div>
-<div class="glr"><details class="gl" name="glance"><summary><span class="k mono">02</span><span class="gt">Trying new things</span><span class="gp" aria-hidden="true"></span></summary><div class="gd"><p>New tools, new methods, new fields. I would rather build a quick test than talk about it for weeks.</p><a class="gr mono" href="#a-01">Ref. <span>A-01 Innensicht</span> &#8595;</a></div></details></div>
+<div class="glr"><details class="gl" name="glance"><summary><span class="k mono">02</span><span class="gt">Trying new things</span><span class="gp" aria-hidden="true"></span></summary><div class="gd"><p>New tools, new methods, new fields. I would rather build a quick test than talk about it for weeks.</p><a class="gr mono" href="#a-01">Ref. <span>A-01 Four apps, four stacks</span> &#8595;</a></div></details></div>
 <div class="glr"><details class="gl" name="glance"><summary><span class="k mono">03</span><span class="gt">Adapting to people &amp; projects</span><span class="gp" aria-hidden="true"></span></summary><div class="gd"><p>Every team, user and project is different. I adapt the approach to fit them, not the other way round.</p><a class="gr mono" href="#p-02">Ref. <span>P-02 Expert Tools</span> &#8595;</a></div></details></div>
 <div class="glr"><details class="gl" name="glance"><summary><span class="k mono">04</span><span class="gt">Making information intuitive</span><span class="gp" aria-hidden="true"></span></summary><div class="gd"><p>Complex topics, shown so that people get them at a glance and can decide. From decision papers to pitches.</p><a class="gr mono" href="#a-05">Ref. <span>A-05 Learning Cockpit</span> &#8595;</a> <a class="gr mono" href="#a-06" style="margin-left:12px">Ref. <span>A-06 AI Learning Log</span> &#8595;</a></div></details></div>
 <p class="gx mono">Click or tap a line for details</p>
@@ -787,7 +803,7 @@ html[lang="de"] .hero h1{font-stretch:90%}
 <div class="rev cert">
 <div class="row rv"><span class="r">2026</span><div><h3>Manager for Applied AI Transformation (IHK) <span class="tag" style="margin-left:6px;vertical-align:2px;border-color:var(--mag);color:var(--mag)">In progress</span></h3><p class="t">thekey.ACADEMY · recognised by IHK-Projektgesellschaft Ostbrandenburg · AI strategy, data, change, ethics, security and the EU AI Act, with IHK assessment · <a href="#a-06">my learning log &#8595;</a></p></div></div>
 <div class="row rv"><span class="r">2026</span><div><h3>INU KI Kompetenzpass <span class="tag" style="margin-left:6px;vertical-align:2px;border-color:var(--mag);color:var(--mag)">In progress</span></h3><p class="t">INU &#8211; Innovative University of Applied Sciences · responsible use of AI at work, with final test · KI Snack Week 2026</p></div></div>
-<div class="row rv"><span class="r">2026</span><div><h3>AI Automation: Build LLM Apps &amp; AI-Agents with n8n &amp; APIs <span class="tag" style="margin-left:6px;vertical-align:2px;border-color:var(--mag);color:var(--mag)">In progress</span></h3><p class="t">Udemy · n8n workflows, AI agents, RAG chatbots with embeddings, OpenAI API, open-source LLMs, GDPR and EU AI Act</p></div></div>
+<div class="row rv"><span class="r">2026</span><div><h3>AI Automation: Build LLM Apps &amp; AI-Agents with n8n &amp; APIs <span class="tag" style="margin-left:6px;vertical-align:2px;border-color:var(--mag);color:var(--mag)">In progress</span></h3><p class="t">Udemy · n8n workflows, AI agents, RAG chatbots with embeddings, OpenAI API, open-source LLMs, GDPR and EU AI Act · <a href="#a-02">my assistant Giuli &#8595;</a></p></div></div>
 <div class="row rv"><span class="r">2026</span><div><h3>AI Fluency: Framework &amp; Foundations</h3><p class="t">Claude Academy (Anthropic) · <a href="https://academy.claude.com/verify/83e57224066fcc03b572ccbe9e305bd1">verify <span aria-hidden="true">&#8599;</span></a></p></div></div>
 <div class="row rv"><span class="r">2026</span><div><h3>Claude Code in Action</h3><p class="t">Claude Academy (Anthropic) · <a href="https://academy.claude.com/verify/3699ef0074211d97a0f993e170873396">verify <span aria-hidden="true">&#8599;</span></a></p></div></div>
 <div class="row rv"><span class="r">2026</span><div><h3>Claude 101</h3><p class="t">Claude Academy (Anthropic) · <a href="https://academy.claude.com/verify/aa234ab4e1598625c6ebbb6fa53788cd">verify <span aria-hidden="true">&#8599;</span></a></p></div></div>
@@ -801,7 +817,7 @@ html[lang="de"] .hero h1{font-stretch:90%}
 </section>
 
 <section id="work" class="sec wrap">
-<h2 class="sh"><button class="acc shb fx" type="button" aria-expanded="false" aria-controls="work-body"><span class="sno">§ 02</span><span><span class="stt">Selected work</span><span class="sth mono">four projects, six builds with Claude Code, tap one for the full story</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
+<h2 class="sh"><button class="acc shb fx" type="button" aria-expanded="false" aria-controls="work-body"><span class="sno">§ 02</span><span><span class="stt">Selected work</span><span class="sth mono">four projects, six AI builds, tap one for the full story</span></span><span class="sg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span></button></h2>
 <div id="work-body" class="pnl"><div class="pin"><div class="pad">
 <div class="wk">
 <button class="ph rv" type="button" id="p-01" data-dlg="dp-01" aria-haspopup="dialog"><span class="pi" style="background-color:var(--paper-2);background-image:linear-gradient(rgba(14,15,12,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(14,15,12,.07) 1px,transparent 1px);background-size:16px 16px"><svg viewBox="0 0 160 120" aria-hidden="true"><g fill="none" stroke="#0E0F0C" stroke-width="1.5"><rect x="22" y="22" width="34" height="78"/><rect x="63" y="22" width="34" height="78"/><rect x="104" y="22" width="34" height="78"/></g><g fill="#0E0F0C"><rect x="27" y="30" width="24" height="12"/><rect x="27" y="47" width="24" height="12"/><rect x="27" y="64" width="24" height="12"/><rect x="68" y="30" width="24" height="12"/><rect x="109" y="30" width="24" height="12"/><rect x="109" y="47" width="24" height="12"/></g><rect x="68" y="47" width="24" height="12" fill="#D6006F"/><path d="M80 59v12M74 65l6 6 6-6" fill="none" stroke="#D6006F" stroke-width="1.5"/></svg></span><span class="pc"><span class="pn mono">P-01</span><span class="ttl">Team workflows &amp; AI rollout</span><span class="tags"><span class="tag">Digitalization</span><span class="tag">AI adoption</span><span class="tag">Jira &amp; Confluence</span></span></span></button>
@@ -809,12 +825,12 @@ html[lang="de"] .hero h1{font-stretch:90%}
 <button class="ph rv" type="button" id="p-03" data-dlg="dp-03" aria-haspopup="dialog"><span class="pi"><img src="img/gether-thumb.webp" alt="" loading="lazy" style="object-fit:contain;padding:6%"></span><span class="pc"><span class="pn mono">P-03</span><span class="ttl">2gether, a social app</span><span class="tags"><span class="tag">Founder</span><span class="tag">End-to-End</span><span class="tag">iOS &amp; Android</span></span></span></button>
 <button class="ph rv" type="button" id="p-05" data-dlg="dp-05" aria-haspopup="dialog"><span class="pi" style="background-color:var(--paper-2);background-image:linear-gradient(rgba(14,15,12,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(14,15,12,.07) 1px,transparent 1px);background-size:16px 16px"><svg viewBox="0 0 160 120" aria-hidden="true"><path d="M22 92C52 92 50 40 80 40s30 44 58 30" fill="none" stroke="#0E0F0C" stroke-width="2" stroke-dasharray="7 5"/><circle cx="22" cy="92" r="6" fill="#F2F3EF" stroke="#0E0F0C" stroke-width="2"/><circle cx="138" cy="70" r="7" fill="#D6006F"/><g transform="translate(66 22)"><rect width="30" height="14" fill="#0E0F0C"/><rect x="20" y="3" width="7" height="5" fill="#F2F3EF"/><circle cx="7" cy="16" r="3.5" fill="#0E0F0C"/><circle cx="23" cy="16" r="3.5" fill="#0E0F0C"/></g></svg></span><span class="pc"><span class="pn mono">P-04</span><span class="ttl">InCar Services</span><span class="tags"><span class="tag">UX Concept</span><span class="tag">In-Car</span><span class="tag">OEM</span></span></span></button>
 </div>
-<div class="wsub" id="apps"><h3>Built with Claude Code</h3><p class="mono">four apps live in the stores, two learning tools, all personal projects</p></div>
+<div class="wsub" id="apps"><h3>Built with AI</h3><p class="mono">four apps in the stores, an AI assistant, a second brain, a game and two learning tools, all personal projects</p></div>
 <div class="wk wk5">
-<button class="ph rv" type="button" id="a-01" data-dlg="dp-04" aria-haspopup="dialog"><span class="pi pia"><img src="img/app-innensicht.webp" alt="" loading="lazy"></span><span class="pc"><span class="pn mono">A-01</span><span class="ttl">Innensicht</span><span class="tags"><span class="tag">React Native</span><span class="tag">iOS</span><span class="tag">Android</span></span></span></button>
-<button class="ph rv" type="button" id="a-02" data-dlg="da-02" aria-haspopup="dialog"><span class="pi pia"><img src="img/app-stimmig.webp" alt="" loading="lazy"></span><span class="pc"><span class="pn mono">A-02</span><span class="ttl">stimmig</span><span class="tags"><span class="tag">SwiftUI</span><span class="tag">iOS</span></span></span></button>
-<button class="ph rv" type="button" id="a-03" data-dlg="da-03" aria-haspopup="dialog"><span class="pi pia"><img src="img/app-klarwurf.webp" alt="" loading="lazy"></span><span class="pc"><span class="pn mono">A-03</span><span class="ttl">KlarWurf</span><span class="tags"><span class="tag">React + Capacitor</span><span class="tag">iOS</span><span class="tag">Android</span></span></span></button>
-<button class="ph rv" type="button" id="a-04" data-dlg="da-04" aria-haspopup="dialog"><span class="pi pia"><img src="img/app-calmdrop.webp" alt="" loading="lazy"></span><span class="pc"><span class="pn mono">A-04</span><span class="ttl">Calmdrop</span><span class="tags"><span class="tag">Flutter</span><span class="tag">iOS</span><span class="tag">Android</span></span></span></button>
+<button class="ph rv" type="button" id="a-01" data-dlg="dp-04" aria-haspopup="dialog"><span class="pi pia pia4"><img src="img/app-innensicht.webp" alt="" loading="lazy"><img src="img/app-stimmig.webp" alt="" loading="lazy"><img src="img/app-klarwurf.webp" alt="" loading="lazy"><img src="img/app-calmdrop.webp" alt="" loading="lazy"></span><span class="pc"><span class="pn mono">A-01</span><span class="ttl">Four apps</span><span class="tags"><span class="tag">Claude Code</span><span class="tag">iOS</span><span class="tag">Android</span></span></span></button>
+<button class="ph rv" type="button" id="a-02" data-dlg="da-02" aria-haspopup="dialog"><span class="pi"><img src="img/giuli-thumb.webp" alt="" loading="lazy"></span><span class="pc"><span class="pn mono">A-02</span><span class="ttl">Giuli, AI assistant</span><span class="tags"><span class="tag" translate="no">n8n</span><span class="tag">AI agent</span><span class="tag">Telegram</span></span></span></button>
+<button class="ph rv" type="button" id="a-03" data-dlg="da-03" aria-haspopup="dialog"><span class="pi"><img src="img/brain-thumb.webp" alt="" loading="lazy"></span><span class="pc"><span class="pn mono">A-03</span><span class="ttl">Second Brain</span><span class="tags"><span class="tag">Supabase</span><span class="tag">RAG</span><span class="tag">Vector search</span></span></span></button>
+<button class="ph rv" type="button" id="a-04" data-dlg="da-04" aria-haspopup="dialog"><span class="pi"><img src="img/game-thumb.webp" alt="" loading="lazy"></span><span class="pc"><span class="pn mono">A-04</span><span class="ttl">Game: Get to know Julia</span><span class="tags"><span class="tag">three.js</span><span class="tag">3D</span><span class="tag">Browser</span></span></span></button>
 <button class="ph rv" type="button" id="a-05" data-dlg="da-05" aria-haspopup="dialog"><span class="pi"><img src="img/lerncockpit-thumb.webp" alt="" loading="lazy"></span><span class="pc"><span class="pn mono">A-05</span><span class="ttl">Learning Cockpit</span><span class="tags"><span class="tag">HTML + JS</span><span class="tag">Browser</span><span class="tag">Learning design</span></span></span></button>
 <button class="ph rv" type="button" id="a-06" data-dlg="da-06" aria-haspopup="dialog"><span class="pi"><img src="img/ki-lernlog-thumb.webp" alt="" loading="lazy"></span><span class="pc"><span class="pn mono">A-06</span><span class="ttl">AI Learning Log</span><span class="tags"><span class="tag">HTML + JS</span><span class="tag">Browser</span><span class="tag">In progress</span></span></span></button>
 </div>
@@ -912,10 +928,17 @@ html[lang="de"] .hero h1{font-stretch:90%}
 </div></dialog>
 <dialog id="dp-04" class="dlg" aria-labelledby="dp-04-t"><div class="din">
 <div class="dh"><span class="pn mono">A-01</span><button class="dx" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
-<h3 id="dp-04-t" class="dt">Innensicht, built with Claude Code</h3>
+<h3 id="dp-04-t" class="dt">Four apps, built with Claude Code</h3>
 <div class="tags"><span class="tag">Builder</span><span class="tag">Hands-on</span><span class="tag">End-to-end</span><span class="tag">AI</span><span class="tag">Personal project</span></div>
+<p class="dsum">Four personal apps, live in the App Store and on Google Play. Each runs on a different stack: React Native, SwiftUI, React with Capacitor and Flutter. I designed and built all four with Claude Code and took each one through store release myself.</p>
+<ul class="apx">
+<li><img src="img/app-innensicht.webp" alt="" loading="lazy"><div><h4>Innensicht</h4><p class="mono">React Native · iOS · Android</p><p>Self-reflection with 37 inner-parts cards and a three-stage emotion wheel.</p><p class="apn">Full case study below.</p><div class="apl"><a href="https://apps.apple.com/app/id6811421257" rel="noopener">App Store <span aria-hidden="true">&#8599;</span></a><a href="https://play.google.com/store/apps/details?id=com.pinksharkdesign.innensicht" rel="noopener">Google Play <span aria-hidden="true">&#8599;</span></a></div></div></li>
+<li><img src="img/app-stimmig.webp" alt="" loading="lazy"><div><h4>stimmig</h4><p class="mono">SwiftUI · iOS</p><p>Find the exact word for a feeling: 6 base feelings, 36 nuances, 72 words.</p><p class="apn">Built natively in SwiftUI to use what the iPhone offers: home and lock screen widgets, Siri and a Control Center button. Claude Code wrote the Swift, I steered product, design and the store release.</p><div class="apl"><a href="https://apps.apple.com/app/id6811810458" rel="noopener">App Store <span aria-hidden="true">&#8599;</span></a></div></div></li>
+<li><img src="img/app-klarwurf.webp" alt="" loading="lazy"><div><h4>KlarWurf</h4><p class="mono">React + Capacitor · iOS · Android</p><p>A calm decision helper: flip a coin, ask the pendulum or draw a card.</p><p class="apn">One web codebase, packaged for both stores with Capacitor. From the first commit to store-ready in two days.</p><div class="apl"><a href="https://apps.apple.com/app/id6815393035" rel="noopener">App Store <span aria-hidden="true">&#8599;</span></a><a href="https://play.google.com/store/apps/details?id=com.klarwurf.app" rel="noopener">Google Play <span aria-hidden="true">&#8599;</span></a></div></div></li>
+<li><img src="img/app-calmdrop.webp" alt="" loading="lazy"><div><h4>Calmdrop</h4><p class="mono">Flutter · iOS · Android</p><p>Empty your head by voice: speak your tasks and the app sorts them into categories.</p><p class="apn">Uses the native speech recognition instead of the web API, because it is more reliable. Sorting works with keywords in German and English, without cloud AI. Builds run automatically through Codemagic. Renamed before launch after a trademark check.</p><div class="apl"><a href="https://apps.apple.com/app/id6816083293" rel="noopener">App Store <span aria-hidden="true">&#8599;</span></a><a href="https://play.google.com/store/apps/details?id=de.juliawimmer.calmdrop" rel="noopener">Google Play <span aria-hidden="true">&#8599;</span></a></div></div></li>
+</ul>
+<div class="dg csh"><div class="dgh"><h4>Case study: Innensicht</h4><span class="mono">A-01.1</span></div></div>
 <p class="dsum">A React Native app for self-reflection. It has 37 swipeable "inner parts" cards, a three-stage emotion wheel and a history that stays private on the device. I designed and built it entirely with Claude Code, without Figma, and published it in the App Store and on Google Play. The first version took one afternoon.</p>
-<div class="apl"><a href="https://apps.apple.com/app/id6811421257" rel="noopener">App Store <span aria-hidden="true">&#8599;</span></a><a href="https://play.google.com/store/apps/details?id=com.pinksharkdesign.innensicht" rel="noopener">Google Play <span aria-hidden="true">&#8599;</span></a></div>
 <dl class="aps"><div><dt>Stack</dt><dd>React Native 0.86 · Expo SDK 57 · TypeScript</dd></div><div><dt>Platforms</dt><dd>iOS 16.4+ · Android</dd></div><div><dt translate="no">Native</dt><dd>Widgets, Apple Health, Face ID, reminders, PDF export</dd></div><div><dt>Data</dt><dd>On the device only. No server, no account</dd></div><div><dt>Languages</dt><dd>German, English</dd></div><div><dt>Size</dt><dd>About 11,400 lines in 92 files</dd></div><div><dt>Released</dt><dd>September 2026 · now v1.4</dd></div></dl>
 <div class="apb"><h4 class="mono">How I built it</h4><p>Brand, screens and code are all directed through Claude Code, with no hand-off between design and build. A rules file in the repository (colour palette, platform guards, release steps) gives every session the same context. Builds and store uploads run through Expo EAS.</p></div>
 
@@ -1011,30 +1034,73 @@ html[lang="de"] .hero h1{font-stretch:90%}
 </div></dialog>
 <dialog id="da-02" class="dlg" aria-labelledby="da-02-t"><div class="din">
 <div class="dh"><span class="pn mono">A-02</span><button class="dx" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
-<h3 id="da-02-t" class="dt">stimmig</h3>
-<div class="tags"><span class="tag">SwiftUI</span><span class="tag">iOS</span><span class="tag">Personal project</span></div>
-<p class="dsum">Find the exact word for a feeling: 6 base feelings, 36 nuances, 72 words.</p>
-<div class="apl"><a href="https://apps.apple.com/app/id6811810458" rel="noopener">App Store <span aria-hidden="true">&#8599;</span></a></div>
-<dl class="aps"><div><dt>Stack</dt><dd>Swift · SwiftUI, fully native</dd></div><div><dt>Platforms</dt><dd>iOS 16+</dd></div><div><dt translate="no">Native</dt><dd>Widgets, Siri and Control Center, Apple Health, Swift Charts, Face ID</dd></div><div><dt>Data</dt><dd>On the device only. No server, no account</dd></div><div><dt>Languages</dt><dd>German</dd></div><div><dt>Size</dt><dd>About 2,600 lines in 29 files</dd></div><div><dt>Released</dt><dd>October 2026 · v1.1</dd></div></dl>
-<div class="apb"><h4 class="mono">How I built it</h4><p>Built natively in SwiftUI to use what the iPhone offers: home and lock screen widgets, Siri and a Control Center button. Claude Code wrote the Swift, I steered product, design and the store release.</p></div>
+<h3 id="da-02-t" class="dt">Giuli, my AI assistant on Telegram</h3>
+<div class="tags"><span class="tag">AI agent</span><span class="tag">Automation</span><span class="tag">RAG</span><span class="tag" translate="no">n8n</span><span class="tag">Personal project</span></div>
+<p class="dsum">A small personal assistant that I built in n8n. I chat with Giuli on Telegram. Before answering, Giuli searches my second brain, so it knows my courses, projects and plans. Messages from anyone else are ignored.</p>
+<dl class="aps"><div><dt>Built in</dt><dd>n8n, one published workflow</dd></div><div><dt>Chat</dt><dd>Telegram bot</dd></div><div><dt>Model</dt><dd>OpenAI chat model that remembers the current conversation</dd></div><div><dt>Knowledge</dt><dd>My second brain in Supabase (A-03), searched by meaning</dd></div><div><dt>Tools</dt><dd>Look up knowledge, save new knowledge</dd></div><div><dt>Access</dt><dd>Only my own Telegram account</dd></div><div><dt>Since</dt><dd>November 2026</dd></div></dl>
+<div class="apb"><h4 class="mono">How I set it up</h4><p>Built in n8n, alongside my Udemy course on n8n and AI agents. A Telegram trigger starts the workflow, a filter lets only my account through and an AI agent answers with an OpenAI model. Its knowledge base is the Supabase vector store of my second brain, searched with OpenAI embeddings.</p></div>
+<figure class="dg">
+<figcaption class="dgh"><h4>From question to answer</h4><span class="mono">Fig. A-02.1 · simplified</span></figcaption>
+<ol class="flow"><li class="src"><b>Input</b><span>My message on Telegram</span></li><li><b>Filter</b><span>Only my account gets through</span></li><li class="auto"><b>AI agent</b><span>OpenAI model with a short chat memory</span></li><li><b>Knowledge</b><span>Looks up my second brain or saves a new note</span></li><li><b>Output</b><span>Reply on Telegram</span></li></ol>
+</figure>
+<figure class="dg lcs">
+<figcaption class="dgh"><h4>The workflow in n8n</h4><span class="mono">Fig. A-02.2 · screenshot</span></figcaption>
+<img loading="lazy" src="img/giuli-n8n.webp" alt="n8n workflow JuliasAgent: Telegram trigger, filter Only Julia, AI agent with OpenAI chat model, memory and the tools knowledge_base and save_knowledge, then the reply on Telegram">
+</figure>
+<figure class="dg gch">
+<figcaption class="dgh"><h4>A real chat</h4><span class="mono">Fig. A-02.3 · screenshot, address blacked out</span></figcaption>
+<p class="dgn">Asked in German. Giuli answers from my notes, for example which course I am taking right now.</p>
+<img loading="lazy" src="img/giuli-chat.webp" alt="Telegram chat with Giuli: asked about the move in January and the courses I am taking, Giuli answers with the IHK course on AI transformation. The street address is blacked out">
+</figure>
+<div class="csg">
+<div><span class="lbl">Context &amp; problem</span><p>My notes on courses, applications and projects sit in repositories and a database. On the go I want to ask a quick question, not search through files.</p></div>
+<div><span class="lbl">My role</span><p>Personal project. Idea, workflow and setup in n8n, connected to my second brain.</p></div>
+<div><span class="lbl">Key decision</span><p>Private by design. Right after the trigger, a filter checks who is writing, and only my account gets through. The agent never sees the whole database, only the few entries that match the question.</p></div>
+<div><span class="lbl">Outcome</span><p>Giuli is live and answers from my own notes. Claude uses the same second brain, so both assistants work from one source.</p></div>
+</div>
 </div></dialog>
 <dialog id="da-03" class="dlg" aria-labelledby="da-03-t"><div class="din">
 <div class="dh"><span class="pn mono">A-03</span><button class="dx" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
-<h3 id="da-03-t" class="dt">KlarWurf</h3>
-<div class="tags"><span class="tag">React + Capacitor</span><span class="tag">iOS</span><span class="tag">Android</span><span class="tag">Personal project</span></div>
-<p class="dsum">A calm decision helper: flip a coin, ask the pendulum or draw a card.</p>
-<div class="apl"><a href="https://apps.apple.com/app/id6815393035" rel="noopener">App Store <span aria-hidden="true">&#8599;</span></a><a href="https://play.google.com/store/apps/details?id=com.klarwurf.app" rel="noopener">Google Play <span aria-hidden="true">&#8599;</span></a></div>
-<dl class="aps"><div><dt>Stack</dt><dd>React 19 · Vite · TypeScript · Tailwind CSS · Capacitor 8</dd></div><div><dt>Platforms</dt><dd>iOS 17+ · Android</dd></div><div><dt translate="no">Native</dt><dd>Haptics</dd></div><div><dt>Data</dt><dd>On the device only. Works offline</dd></div><div><dt>Size</dt><dd>About 700 lines</dd></div><div><dt>Released</dt><dd>September 2026 · v1.0</dd></div></dl>
-<div class="apb"><h4 class="mono">How I built it</h4><p>One web codebase, packaged for both stores with Capacitor. From the first commit to store-ready in two days.</p></div>
+<h3 id="da-03-t" class="dt">Second brain with Supabase</h3>
+<div class="tags"><span class="tag">RAG</span><span class="tag">Vector search</span><span class="tag">Data</span><span class="tag">Claude Code</span><span class="tag">Personal project</span></div>
+<p class="dsum">One database for everything around my work: notes, CVs, course progress and project history. It is searchable by meaning, in German and English. Claude reads it before answering questions about me and saves new facts there. My assistant Giuli uses the same knowledge.</p>
+<dl class="aps"><div><dt>Database</dt><dd>Supabase (Postgres) with pgvector</dd></div><div><dt>Content</dt><dd>About 480 entries: my notes, CVs, website texts and the history of two repositories</dd></div><div><dt>Search</dt><dd>Hybrid: meaning (OpenAI embeddings) plus keywords</dd></div><div><dt>Automation</dt><dd>New or changed entries get their embedding automatically, through a trigger and an Edge Function</dd></div><div><dt>Connected</dt><dd>Claude through the Supabase connector (MCP), Giuli through n8n</dd></div><div><dt>Security</dt><dd>Row level security, no public access, every entry marked public, private or confidential</dd></div><div><dt>Cost</dt><dd>Embedding all content once costs less than one cent</dd></div><div><dt>Since</dt><dd>November 2026</dd></div></dl>
+<div class="apb"><h4 class="mono">How I made it</h4><p>Built with Claude Code: an import script that splits Markdown and PDFs into chunks, database functions for the hybrid search, a trigger for the embeddings and an Edge Function that calls OpenAI. I set the structure: what goes in, how it is labelled and who may read it.</p></div>
+<figure class="dg">
+<figcaption class="dgh"><h4>One brain, two assistants</h4><span class="mono">Fig. A-03.1 · simplified</span></figcaption>
+<ol class="flow"><li class="src"><b>Sources</b><span>Notes, CVs, website, git history</span></li><li><b>Import</b><span>Split into chunks by heading</span></li><li class="auto"><b>Supabase</b><span>Text, metadata and embedding per chunk</span></li><li><b>Search</b><span>Meaning plus keywords</span></li><li><b>Used by</b><span>Claude and Giuli</span></li></ol>
+<p class="dgn">New facts from my chats go back in as notes, so the brain keeps growing.</p>
+</figure>
+<figure class="dg lcs">
+<figcaption class="dgh"><h4>The table in Supabase</h4><span class="mono">Fig. A-03.2 · screenshot, content hidden</span></figcaption>
+<p class="dgn">The content is private, so I hid it. Visible: ID, embedding vector, timestamp and full-text index.</p>
+<img loading="lazy" src="img/brain-table.webp" alt="Supabase table editor with the table documents: columns id, content, metadata, embedding, created_at and fts. Content and metadata are hidden">
+</figure>
+<div class="csg">
+<div><span class="lbl">Context &amp; problem</span><p>My knowledge was spread across Markdown files, PDFs, the website and old chats. Each new AI chat started from zero and I kept explaining the same things.</p></div>
+<div><span class="lbl">My role</span><p>Personal project. Concept, data structure and access rules, built with Claude Code.</p></div>
+<div><span class="lbl">Key decision</span><p>One source for all assistants instead of a separate memory in each tool. Closed by default: no public access, only my own tools get in.</p></div>
+<div><span class="lbl">Outcome</span><p>Claude and Giuli answer from the same, current knowledge. A new fact from a chat is saved right away and can be found seconds later.</p></div>
+</div>
 </div></dialog>
 <dialog id="da-04" class="dlg" aria-labelledby="da-04-t"><div class="din">
 <div class="dh"><span class="pn mono">A-04</span><button class="dx" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button></div>
-<h3 id="da-04-t" class="dt">Calmdrop</h3>
-<div class="tags"><span class="tag">Flutter</span><span class="tag">iOS</span><span class="tag">Android</span><span class="tag">Personal project</span></div>
-<p class="dsum">Empty your head by voice: speak your tasks and the app sorts them into categories.</p>
-<div class="apl"><a href="https://apps.apple.com/app/id6816083293" rel="noopener">App Store <span aria-hidden="true">&#8599;</span></a><a href="https://play.google.com/store/apps/details?id=de.juliawimmer.calmdrop" rel="noopener">Google Play <span aria-hidden="true">&#8599;</span></a></div>
-<dl class="aps"><div><dt>Stack</dt><dd>Flutter · Dart</dd></div><div><dt>Platforms</dt><dd>iOS 15+ · Android</dd></div><div><dt translate="no">Native</dt><dd>Speech recognition of iOS and Android</dd></div><div><dt>Data</dt><dd>Tasks stay on the device. No account</dd></div><div><dt>Languages</dt><dd>German, English</dd></div><div><dt>Size</dt><dd>About 1,100 lines, with automated tests</dd></div><div><dt>Released</dt><dd>October 2026 · v1.0</dd></div></dl>
-<div class="apb"><h4 class="mono">How I built it</h4><p>Uses the native speech recognition instead of the web API, because it is more reliable. Sorting works with keywords in German and English, without cloud AI. Builds run automatically through Codemagic. Renamed before launch after a trademark check.</p></div>
+<h3 id="da-04-t" class="dt">Game: Get to know Julia</h3>
+<div class="tags"><span class="tag">Game design</span><span class="tag">3D</span><span class="tag">Information design</span><span class="tag">Claude Code</span><span class="tag">Personal project</span></div>
+<p class="dsum">A CV you can drive through. You ride a motorcycle along my path, from school in Landau an der Isar via Landshut, Ingolstadt and Munich to Innsbruck. On the way you collect 22 facts about me. At the end, a test report sums up what a recruiter needs to know.</p>
+<div class="apl"><a data-play href="play/">Play now <span aria-hidden="true">&#8594;</span></a></div>
+<dl class="aps"><div><dt>World</dt><dd>3D, 7 stations along the road, a race track, mountains and a beach</dd></div><div><dt>Content</dt><dd>22 boxes with facts about me, a minimap and an arrow to the next one</dd></div><div><dt>Controls</dt><dd>Arrow keys or WASD, tap on a phone, or skip the ride and open the list</dd></div><div><dt>Stack</dt><dd>three.js, hosted on this site, nothing is saved</dd></div><div><dt>Languages</dt><dd>German, English</dd></div></dl>
+<div class="apb"><h4 class="mono">How I made it</h4><p>Built with Claude Code over many rounds: from a 2D version with four stops to a 3D world, from a van to a motorcycle, then rider view, shadows, a race track and a beach. The concept and the look are mine, and I approved every text.</p></div>
+<figure class="dg gms">
+<figcaption class="dgh"><h4>Inside the game</h4><span class="mono">Fig. A-04.1 · screenshots</span></figcaption>
+<div><img loading="lazy" src="img/game-ride.webp" alt="Outside view: the motorcycle at the start gate, the road winds past the first station towards the mountains"><img loading="lazy" src="img/game-report.webp" alt="Test report with the key facts: years of experience, role, languages, location and a button to write me"></div>
+</figure>
+<div class="csg">
+<div><span class="lbl">Context &amp; problem</span><p>Recruiters skim a CV in seconds. I wanted something they remember and that shows how I think about users: short, playful and with a quick way out.</p></div>
+<div><span class="lbl">My role</span><p>Personal project. Concept, game design, texts and look, built with Claude Code.</p></div>
+<div><span class="lbl">Key decision</span><p>Nothing is forced. You can drive and collect boxes or open the list of all stations right away. The test report at the end shows the facts at a glance, with a button to write me.</p></div>
+<div><span class="lbl">Outcome</span><p>Live on this site in English and German, linked from the top of the page.</p></div>
+</div>
 </div></dialog>
 </section>
 
@@ -1248,7 +1314,7 @@ function setLang(l){
   ['aria-label','alt'].forEach(function(a){Array.prototype.forEach.call(document.querySelectorAll('['+a+']'),function(e){var v=e.getAttribute(a);if(d[v]!=null){trs.push({n:e,a:a,v:v});e.setAttribute(a,d[v]);}});});
 }
 function wantLang(l){if(l===LANG)return;if(l!=='de'||window.JW_DE){setLang(l);return;}
-  var sc=document.createElement('script');sc.src='de.js?v=15';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
+  var sc=document.createElement('script');sc.src='de.js?v=16';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
 Array.prototype.forEach.call(lgb,function(b){b.addEventListener('click',function(){wantLang(b.getAttribute('data-lang'));});});
 if(/[?&]lang=de\b/.test(location.search))wantLang('de');
 })();
