@@ -1064,7 +1064,7 @@ html[lang="de"] .hero h1{font-stretch:90%}
 <h3 id="da-03-t" class="dt">Second brain with Supabase</h3>
 <div class="tags"><span class="tag">RAG</span><span class="tag">Vector search</span><span class="tag">Data</span><span class="tag">Claude Code</span><span class="tag">Personal project</span></div>
 <p class="dsum">One database for everything around my work: notes, CVs, course progress and project history. It is searchable by meaning, in German and English. Claude reads it before answering questions about me and saves new facts there. My assistant Giuli uses the same knowledge.</p>
-<dl class="aps"><div><dt>Database</dt><dd>Supabase (Postgres) with pgvector</dd></div><div><dt>Content</dt><dd>About 480 entries: my notes, CVs, website texts and the history of two repositories</dd></div><div><dt>Search</dt><dd>Hybrid: meaning (OpenAI embeddings) plus keywords</dd></div><div><dt>Automation</dt><dd>New or changed entries get their embedding automatically, through a trigger and an Edge Function</dd></div><div><dt>Connected</dt><dd>Claude through the Supabase connector (MCP), Giuli through n8n</dd></div><div><dt>Security</dt><dd>Row level security, no public access, every entry marked public, private or confidential</dd></div><div><dt>Cost</dt><dd>Embedding all content once costs less than one cent</dd></div><div><dt>Since</dt><dd>November 2026</dd></div></dl>
+<dl class="aps"><div><dt>Database</dt><dd>Supabase (Postgres) with pgvector</dd></div><div><dt>Content</dt><dd>About 260 entries: my notes, CVs, website texts and the history of two repositories</dd></div><div><dt>Search</dt><dd>Hybrid: meaning (OpenAI embeddings) plus keywords</dd></div><div><dt>Automation</dt><dd>New or changed entries get their embedding automatically, through a trigger and an Edge Function</dd></div><div><dt>Connected</dt><dd>Claude through the Supabase connector (MCP), Giuli through n8n</dd></div><div><dt>Security</dt><dd>Row level security, no public access, every entry marked public, private or confidential</dd></div><div><dt>Cost</dt><dd>Embedding all content once costs less than one cent</dd></div><div><dt>Since</dt><dd>November 2026</dd></div></dl>
 <div class="apb"><h4 class="mono">How I made it</h4><p>Built with Claude Code: an import script that splits Markdown and PDFs into chunks, database functions for the hybrid search, a trigger for the embeddings and an Edge Function that calls OpenAI. I set the structure: what goes in, how it is labelled and who may read it.</p></div>
 <figure class="dg">
 <figcaption class="dgh"><h4>One brain, two assistants</h4><span class="mono">Fig. A-03.1 · simplified</span></figcaption>
@@ -1314,7 +1314,7 @@ function setLang(l){
   ['aria-label','alt'].forEach(function(a){Array.prototype.forEach.call(document.querySelectorAll('['+a+']'),function(e){var v=e.getAttribute(a);if(d[v]!=null){trs.push({n:e,a:a,v:v});e.setAttribute(a,d[v]);}});});
 }
 function wantLang(l){if(l===LANG)return;if(l!=='de'||window.JW_DE){setLang(l);return;}
-  var sc=document.createElement('script');sc.src='de.js?v=16';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
+  var sc=document.createElement('script');sc.src='de.js?v=17';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
 Array.prototype.forEach.call(lgb,function(b){b.addEventListener('click',function(){wantLang(b.getAttribute('data-lang'));});});
 if(/[?&]lang=de\b/.test(location.search))wantLang('de');
 })();
