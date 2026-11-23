@@ -268,7 +268,7 @@ window.JW_DE={
 "verify": "prüfen",
 "Online courses": "Online-Kurse",
 "Udemy: Accessibility & WCAG, UX Design Critique, Responsive UX/UI in Figma, UX/UI Design Principles, UX Writing": "Udemy: Barrierefreiheit & WCAG, UX Design Critique, Responsive UX/UI in Figma, UX/UI-Designprinzipien, UX Writing",
-"Want to work together": "Lust auf Zusammenarbeit",
+"Want to work together": "Lust auf Zusammen\u00ADarbeit",
 "Role": "Rolle",
 "UX & product designer · Digitalization & AI": "UX- & Product-Designerin · Digitalisierung & KI",
 "Experience": "Erfahrung",
