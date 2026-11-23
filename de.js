@@ -494,7 +494,7 @@ window.JW_DE={
 "One database for everything around my work: notes, CVs, course progress and project history. It is searchable by meaning, in German and English. Claude reads it before answering questions about me and saves new facts there. My assistant Giuli uses the same knowledge.": "Eine Datenbank für alles rund um meine Arbeit: Notizen, Lebensläufe, Kursfortschritt und Projektverlauf. Durchsuchbar nach Bedeutung, auf Deutsch und Englisch. Bevor Claude Fragen zu mir beantwortet, liest es darin. Neue Fakten speichert es dort. Mein Assistent Giuli nutzt dasselbe Wissen.",
 "Database": "Datenbank",
 "Supabase (Postgres) with pgvector": "Supabase (Postgres) mit pgvector",
-"About 480 entries: my notes, CVs, website texts and the history of two repositories": "Rund 480 Einträge: meine Notizen, Lebensläufe, Website-Texte und die Historie zweier Repositories",
+"About 260 entries: my notes, CVs, website texts and the history of two repositories": "Rund 260 Einträge: meine Notizen, Lebensläufe, Website-Texte und die Historie zweier Repositories",
 "Search": "Suche",
 "Hybrid: meaning (OpenAI embeddings) plus keywords": "Hybrid: Bedeutung (OpenAI-Embeddings) plus Stichworte",
 "New or changed entries get their embedding automatically, through a trigger and an Edge Function": "Neue oder geänderte Einträge bekommen ihr Embedding automatisch, über einen Trigger und eine Edge Function",
