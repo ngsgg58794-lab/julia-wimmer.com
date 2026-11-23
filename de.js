@@ -19,6 +19,7 @@ window.JW_DE={
 "Rather play than read?": "Lieber spielen als lesen?",
 "Drive along my path and collect 22 facts about me.": "Fahr meinen Weg ab und sammle 22 Fakten über mich.",
 "Fig. 01 · Julia": "Abb. 01 · Julia",
+"Julia Wimmer, full length, in a black suit in front of a magenta background": "Julia Wimmer in ganzer Größe im schwarzen Anzug vor magentafarbenem Hintergrund",
 "Fig. 02–05": "Abb. 02–05",
 "Off the clock": "Abseits vom Job",
 "Same black outfit, louder rooms": "Gleiches schwarzes Outfit, lautere Räume",
