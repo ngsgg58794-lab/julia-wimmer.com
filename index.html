@@ -704,7 +704,7 @@ h1 .lni{display:inline-block}
    Motion: name and figure rise in; pointer = depth parallax (name and figure move against each other, figure turns slightly);
    scroll = the name stays back while the figure moves on. Name size is fitted to the width by JS (--fs). ---- */
 .sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
-.hv5{--hh:max(620px,calc(100svh - 53px));--pt:clamp(18px,2.4vw,36px);--ft:calc(var(--pt) + var(--fs,10vw)*.5);--fh:calc(var(--hh) - var(--ft) - 6px);--fw:calc(var(--fh)*.3307);
+.hv5{--hh:max(620px,calc(100svh - 53px));--pt:clamp(18px,2.4vw,36px);--ft:calc(var(--pt) + var(--fs,10vw)*.5);--fh:calc(var(--hh) - var(--ft) - 6px);--fw:calc(var(--fh)*.369);
   display:grid;grid-template-columns:minmax(0,1fr) var(--fw) minmax(0,1fr);grid-template-rows:auto 1fr auto;column-gap:clamp(28px,4vw,72px);
   min-height:var(--hh);padding-top:var(--pt);padding-bottom:clamp(24px,3.2vw,48px);overflow:hidden}
 .hv5 h1{grid-column:1/-1;grid-row:1;min-width:0;align-self:start;z-index:1;font-size:var(--fs,10vw);line-height:.84;font-stretch:125%;font-weight:850;letter-spacing:-.02em;text-align:center;white-space:nowrap;
@@ -719,9 +719,8 @@ html[lang="de"] .hv5{--ft:calc(var(--pt) + var(--fs,10vw)*.66)}
 .hfp img{display:block;width:100%;height:100%;object-fit:contain;object-position:50% 100%}
 .hco{position:absolute;display:flex;align-items:center;gap:10px;color:var(--grey);white-space:nowrap}
 .hco i{position:relative;width:clamp(36px,5vw,96px);height:1px;background:var(--ink)}
-.hco i::after{content:"";position:absolute;top:-3px;width:7px;height:7px;border-radius:50%;background:var(--mag)}
-.hco-l{right:62%;top:24%}.hco-l i::after{right:-3px}.hco-l i{transform-origin:100% 50%}
-.hco-r{left:58%;top:15%}.hco-r i::after{left:-3px}.hco-r i{transform-origin:0 50%}
+.hco-l{right:61%;top:24%}.hco-l i{transform-origin:100% 50%}
+.hco-r{left:57%;top:15%}.hco-r i{transform-origin:0 50%}
 .hv5 .look{grid-column:1;grid-row:3;align-self:end;display:flex;gap:12px;align-items:baseline;max-width:27em;margin:0;padding:0;border:0;background:none;font-size:1.0625rem;line-height:1.5}
 .hv5 .look .mono{font-size:.75rem}
 .hv5 .hrow{grid-column:3;grid-row:3;align-self:end;justify-content:flex-end;margin:0}
@@ -738,7 +737,7 @@ html[lang="de"] .hv5{--ft:calc(var(--pt) + var(--fs,10vw)*.66)}
   .hv5{display:flex;flex-direction:column;min-height:0;padding-bottom:36px}
   .hv5 h1{transform:none;opacity:1}
   .hv5 .t1,.hv5 .t2{display:table;margin:0 auto}
-  .hv5 .hfig{position:relative;top:auto;left:auto;width:auto;height:min(64svh,560px);aspect-ratio:.3307;margin:calc(var(--fs2,18vw)*-.42) auto 0}
+  .hv5 .hfig{position:relative;top:auto;left:auto;width:auto;height:min(64svh,560px);aspect-ratio:.369;margin:calc(var(--fs2,18vw)*-.42) auto 0}
   .hco{display:none}
   .hv5 .look{max-width:none;margin-top:18px}
   .hv5 .hrow{justify-content:flex-start;margin-top:18px}
@@ -804,7 +803,7 @@ html[lang="de"] .hv5{--ft:calc(var(--pt) + var(--fs,10vw)*.66)}
 <div class="xh" aria-hidden="true"><i></i><i></i><span class="mono"></span></div>
 <h1><span class="htp"><span class="ln"><span class="lni" style="--l:0"><span class="t1">Hi, I&#8217;m</span> <span class="t2">Julia!</span></span></span></span> <span class="sr">Design, AI &amp; Digitalization, Project Management</span></h1>
 <figure class="hfig">
-<div class="hfp"><img src="img/portrait-cut.webp" alt="Julia Wimmer, full length, in a black suit" width="414" height="1252" fetchpriority="high"></div>
+<div class="hfp"><img src="img/portrait-cut.webp" alt="Julia Wimmer, full length, in a black suit" width="462" height="1252" fetchpriority="high"></div>
 <figcaption class="hco hco-l mono"><span>Fig. 01 · Julia</span><i></i></figcaption>
 <span class="hco hco-r mono" role="img" aria-label="Languages: German, English, Spanish"><i></i><span>DE / EN / ES</span></span>
 </figure>
