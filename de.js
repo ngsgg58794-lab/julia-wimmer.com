@@ -494,7 +494,7 @@ window.JW_DE={
 "Only my own Telegram account": "Nur mein eigener Telegram-Account",
 "Since": "Seit",
 "How I set it up": "So habe ich ihn aufgesetzt",
-"Built in n8n, alongside my Udemy course on n8n and AI agents. A Telegram trigger starts the workflow, a filter lets only my account through and an AI agent answers with an OpenAI model. Its knowledge base is the Supabase vector store of my second brain, searched with OpenAI embeddings.": "In n8n gebaut, parallel zu meinem Udemy-Kurs zu n8n und KI-Agenten. Ein Telegram-Trigger startet den Workflow, ein Filter lässt nur meinen Account durch und ein KI-Agent antwortet mit einem OpenAI-Modell. Seine Wissensbasis ist der Supabase-Vektorspeicher meines Second Brain, durchsucht mit OpenAI-Embeddings.",
+"Built in n8n. A Telegram trigger starts the workflow, a filter lets only my account through and an AI agent answers with an OpenAI model. Its knowledge base is the Supabase vector store of my second brain, searched with OpenAI embeddings.": "In n8n gebaut. Ein Telegram-Trigger startet den Workflow, ein Filter lässt nur meinen Account durch und ein KI-Agent antwortet mit einem OpenAI-Modell. Seine Wissensbasis ist der Supabase-Vektorspeicher meines Second Brain, durchsucht mit OpenAI-Embeddings.",
 "From question to answer": "Von der Frage zur Antwort",
 "Fig. A-02.1 · simplified": "Abb. A-02.1 · vereinfacht",
 "My message on Telegram": "Meine Nachricht auf Telegram",
