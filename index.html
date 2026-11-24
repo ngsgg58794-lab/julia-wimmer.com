@@ -745,10 +745,10 @@ html[lang="de"] .hv5{--ft:calc(var(--pt) + var(--fs,10vw)*.66)}
 
 /* ---- three fields as 3D wireframe orbs (2026-11-24): fly in and overlap on scroll (--fp from JS), slow spin,
    tilt with the pointer (--tx/--ty), sway on touch screens. Static Venn row without JS or with reduced motion. ---- */
-.tri{overflow-x:clip;padding-top:clamp(8px,2vw,32px);padding-bottom:clamp(36px,5vw,84px)}
-.trc{max-width:60rem;margin:0 auto;container-type:inline-size;perspective:2400px;perspective-origin:50% 30%}
+.tri{overflow-x:clip;display:flex;flex-direction:column;justify-content:center;min-height:calc(100svh - 53px);padding-top:clamp(56px,10vh,140px);padding-bottom:clamp(56px,10vh,140px)}
+.trc{width:min(100%,64rem,calc((100svh - 53px)*1.45));margin:0 auto;container-type:inline-size;perspective:2400px;perspective-origin:50% 30%}
 .trs{display:flex;justify-content:center;transform-style:preserve-3d;transform:rotateX(calc(var(--ty,0)*-12deg)) rotateY(calc(var(--tx,0)*16deg));transition:transform .5s cubic-bezier(.2,.7,.2,1)}
-.orb{--d:37.31cqi;--r:18.655cqi;--s:calc(1 - var(--fp,1));position:relative;flex:0 0 var(--d);height:var(--d);transform-style:preserve-3d;
+.orb{--d:37.31cqi;--r:calc(var(--d)/2);--s:calc(1 - var(--fp,1));position:relative;flex:0 0 var(--d);width:var(--d);height:var(--d);transform-style:preserve-3d;
   transform:translate3d(calc((var(--i) - 1)*var(--s)*46cqi),calc(var(--s)*18cqi),calc(var(--s)*-34cqi)) rotateX(calc(var(--s)*64deg)) rotateY(calc((var(--i) - 1)*var(--s)*-38deg))}
 .orb+.orb{margin-left:-5.97cqi}
 .orb::before{content:"";position:absolute;inset:0;border-radius:50%;border:1.5px solid var(--ink);background:rgba(14,15,12,.045);transition:background-color .3s ease}
@@ -768,14 +768,23 @@ html[lang="de"] .hv5{--ft:calc(var(--pt) + var(--fs,10vw)*.66)}
 .orb:first-child .orl{padding-right:8%}
 .orb:last-child .orl{padding-left:8%}
 .orb:hover .orl{transform:translateZ(var(--r))}
-.orl i{font-style:normal;font-family:var(--mono);font-size:max(10px,1.7cqi);letter-spacing:.06em;color:var(--grey)}
-.orl b{font-size:max(11px,3.1cqi);font-weight:850;font-stretch:72%;line-height:.98;text-transform:uppercase;letter-spacing:.005em}
+.orl i{font-style:normal;font-family:var(--mono);font-size:max(10px,calc(var(--d)*.0456));letter-spacing:.06em;color:var(--grey)}
+.orl b{font-size:max(11px,calc(var(--d)*.083));font-weight:850;font-stretch:72%;line-height:.98;text-transform:uppercase;letter-spacing:.005em}
 .orb.m .orl i,.orb.m .orl b{color:var(--mag)}
 @media (prefers-reduced-motion:no-preference){
   .orw{animation:orspin var(--sp,24s) linear infinite}
   .orb:nth-child(2) .orw{animation-direction:reverse}
 }
 @media (hover:none) and (prefers-reduced-motion:no-preference){.trs{animation:orsway 10s ease-in-out infinite alternate}}
+/* phones: the three fields stacked as a vertical Venn so they fill the screen */
+@media (max-width:600px){
+  .tri{min-height:calc(100svh - 33px)}
+  .trs{flex-direction:column;align-items:center}
+  .orb{--d:64cqi}
+  .orb+.orb{margin:-11cqi 0 0}
+  .orb:first-child .orl{padding:0 0 9%}
+  .orb:last-child .orl{padding:9% 0 0}
+}
 @keyframes orspin{to{transform:rotateY(360deg)}}
 @keyframes orsway{from{transform:rotateX(8deg) rotateY(-14deg)}to{transform:rotateX(-6deg) rotateY(14deg)}}
 @media (prefers-reduced-motion:reduce){.trs{transition:none}}
