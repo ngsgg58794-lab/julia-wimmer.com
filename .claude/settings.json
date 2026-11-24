@@ -1,0 +1,51 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash",
+      "Edit",
+      "Write",
+      "Read",
+      "Glob",
+      "Grep",
+      "WebFetch",
+      "WebSearch",
+      "Artifact",
+      "mcp__Supabase",
+      "mcp__github"
+    ],
+    "ask": [
+      "Bash(rm *)",
+      "Bash(rmdir *)",
+      "Bash(git rm *)",
+      "Bash(git clean *)",
+      "Bash(git reset --hard*)",
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Bash(git push --delete*)",
+      "Bash(git branch -D *)",
+      "Bash(git branch -d *)",
+      "Bash(git checkout -- *)",
+      "Bash(git restore *)",
+      "mcp__github__delete_file",
+      "mcp__Supabase__delete_branch",
+      "mcp__Supabase__delete_notebook",
+      "mcp__Supabase__delete_feedback",
+      "mcp__Supabase__reset_branch",
+      "mcp__Supabase__pause_project"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "mcp__Supabase__execute_sql|mcp__Supabase__apply_migration",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r \".tool_input.query // empty\" | grep -qiE \"\\b(delete|drop|truncate)\\b\" && echo \"{\\\"hookSpecificOutput\\\":{\\\"hookEventName\\\":\\\"PreToolUse\\\",\\\"permissionDecision\\\":\\\"ask\\\",\\\"permissionDecisionReason\\\":\\\"SQL loescht Daten: Julia fragt vorher\\\"}}\" || true",
+            "statusMessage": "Prüfe SQL auf Löschbefehle"
+          }
+        ]
+      }
+    ]
+  }
+}
