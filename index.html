@@ -1109,7 +1109,7 @@ html[lang="de"] .hv5{--ft:calc(var(--pt) + var(--fs,10vw)*.66)}
 <div class="tags"><span class="tag">AI agent</span><span class="tag">Automation</span><span class="tag">RAG</span><span class="tag" translate="no">n8n</span><span class="tag">Personal project</span></div>
 <p class="dsum">A small personal assistant that I built in n8n. I chat with Giuli on Telegram. Before answering, Giuli searches my second brain, so it knows my courses, projects and plans. Messages from anyone else are ignored.</p>
 <dl class="aps"><div><dt>Built in</dt><dd>n8n, one published workflow</dd></div><div><dt>Chat</dt><dd>Telegram bot</dd></div><div><dt>Model</dt><dd>OpenAI chat model that remembers the current conversation</dd></div><div><dt>Knowledge</dt><dd>My second brain in Supabase (A-03), searched by meaning</dd></div><div><dt>Tools</dt><dd>Look up knowledge, save new knowledge</dd></div><div><dt>Access</dt><dd>Only my own Telegram account</dd></div><div><dt>Since</dt><dd>November 2026</dd></div></dl>
-<div class="apb"><h4 class="mono">How I set it up</h4><p>Built in n8n, alongside my Udemy course on n8n and AI agents. A Telegram trigger starts the workflow, a filter lets only my account through and an AI agent answers with an OpenAI model. Its knowledge base is the Supabase vector store of my second brain, searched with OpenAI embeddings.</p></div>
+<div class="apb"><h4 class="mono">How I set it up</h4><p>Built in n8n. A Telegram trigger starts the workflow, a filter lets only my account through and an AI agent answers with an OpenAI model. Its knowledge base is the Supabase vector store of my second brain, searched with OpenAI embeddings.</p></div>
 <figure class="dg">
 <figcaption class="dgh"><h4>From question to answer</h4><span class="mono">Fig. A-02.1 · simplified</span></figcaption>
 <ol class="flow"><li class="src"><b>Input</b><span>My message on Telegram</span></li><li><b>Filter</b><span>Only my account gets through</span></li><li class="auto"><b>AI agent</b><span>OpenAI model with a short chat memory</span></li><li><b>Knowledge</b><span>Looks up my second brain or saves a new note</span></li><li><b>Output</b><span>Reply on Telegram</span></li></ol>
@@ -1415,7 +1415,7 @@ function setLang(l){
   ['aria-label','alt'].forEach(function(a){Array.prototype.forEach.call(document.querySelectorAll('['+a+']'),function(e){var v=e.getAttribute(a);if(d[v]!=null){trs.push({n:e,a:a,v:v});e.setAttribute(a,d[v]);}});});
 }
 function wantLang(l){if(l===LANG)return;if(l!=='de'||window.JW_DE){setLang(l);return;}
-  var sc=document.createElement('script');sc.src='de.js?v=25';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
+  var sc=document.createElement('script');sc.src='de.js?v=26';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
 Array.prototype.forEach.call(lgb,function(b){b.addEventListener('click',function(){wantLang(b.getAttribute('data-lang'));});});
 if(/[?&]lang=de\b/.test(location.search))wantLang('de');
 })();
