@@ -746,6 +746,7 @@ html[lang="de"] .hv5{--ft:calc(var(--pt) + var(--fs,10vw)*.66)}
 /* ---- three fields as 3D wireframe orbs (2026-11-24): fly in and overlap on scroll (--fp from JS), slow spin,
    tilt with the pointer (--tx/--ty), sway on touch screens. Static Venn row without JS or with reduced motion. ---- */
 .tri{overflow-x:clip;display:flex;flex-direction:column;justify-content:center;min-height:calc(100svh - 53px);padding-top:clamp(56px,10vh,140px);padding-bottom:clamp(56px,10vh,140px)}
+.trh{margin:0 0 clamp(36px,7vh,88px);text-align:center;font-size:clamp(2.2rem,5.4vw,4.6rem);line-height:.9;font-stretch:68%;font-weight:850;text-transform:uppercase;letter-spacing:-.01em}
 .trc{width:min(100%,64rem,calc((100svh - 53px)*1.45));margin:0 auto;container-type:inline-size;perspective:2400px;perspective-origin:50% 30%}
 .trs{display:flex;justify-content:center;transform-style:preserve-3d;transform:rotateX(calc(var(--ty,0)*-12deg)) rotateY(calc(var(--tx,0)*16deg));transition:transform .5s cubic-bezier(.2,.7,.2,1)}
 .orb{--d:37.31cqi;--r:calc(var(--d)/2);--s:calc(1 - var(--fp,1));position:relative;flex:0 0 var(--d);width:var(--d);height:var(--d);transform-style:preserve-3d;
@@ -778,10 +779,11 @@ html[lang="de"] .hv5{--ft:calc(var(--pt) + var(--fs,10vw)*.66)}
 @media (hover:none) and (prefers-reduced-motion:no-preference){.trs{animation:orsway 10s ease-in-out infinite alternate}}
 /* phones: the three fields stacked as a vertical Venn so they fill the screen */
 @media (max-width:600px){
-  .tri{min-height:calc(100svh - 33px)}
+  .tri{min-height:calc(100svh - 33px);padding-top:40px;padding-bottom:40px}
+  .trh{margin-bottom:28px}
   .trs{flex-direction:column;align-items:center}
-  .orb{--d:64cqi}
-  .orb+.orb{margin:-11cqi 0 0}
+  .orb{--d:60cqi}
+  .orb+.orb{margin:-10cqi 0 0}
   .orb:first-child .orl{padding:0 0 9%}
   .orb:last-child .orl{padding:9% 0 0}
 }
@@ -822,7 +824,8 @@ html[lang="de"] .hv5{--ft:calc(var(--pt) + var(--fs,10vw)*.66)}
 <a class="cta play" data-play href="play/">Game: Get to know Julia <svg width="18" height="12" viewBox="0 0 18 12" aria-hidden="true"><path d="M0 6h16M11 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></div>
 </section>
 
-<section id="fields" class="tri wrap" aria-label="Design, AI &amp; Digitalization, Project Management">
+<section id="fields" class="tri wrap" aria-labelledby="fields-t">
+<h2 id="fields-t" class="trh rv">What I combine</h2>
 <div class="trc"><div class="trs">
 <div class="orb" style="--i:0;--tz:-20deg;--sp:26s"><span class="orx" aria-hidden="true"><span class="orw"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><b></b><b></b><b></b></span></span><span class="orl"><i>01</i><b>Design</b></span></div>
 <div class="orb m" style="--i:1;--tz:14deg;--sp:22s"><span class="orx" aria-hidden="true"><span class="orw"><i style="--k:0"></i><i style="--k:1"></i><i style="--k:2"></i><i style="--k:3"></i><i style="--k:4"></i><i style="--k:5"></i><b></b><b></b><b></b></span></span><span class="orl"><i>02</i><b>AI &amp;<br>Digitalization</b></span></div>
@@ -1412,7 +1415,7 @@ function setLang(l){
   ['aria-label','alt'].forEach(function(a){Array.prototype.forEach.call(document.querySelectorAll('['+a+']'),function(e){var v=e.getAttribute(a);if(d[v]!=null){trs.push({n:e,a:a,v:v});e.setAttribute(a,d[v]);}});});
 }
 function wantLang(l){if(l===LANG)return;if(l!=='de'||window.JW_DE){setLang(l);return;}
-  var sc=document.createElement('script');sc.src='de.js?v=21';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
+  var sc=document.createElement('script');sc.src='de.js?v=22';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
 Array.prototype.forEach.call(lgb,function(b){b.addEventListener('click',function(){wantLang(b.getAttribute('data-lang'));});});
 if(/[?&]lang=de\b/.test(location.search))wantLang('de');
 })();

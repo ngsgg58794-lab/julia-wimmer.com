@@ -5,6 +5,7 @@ window.JW_DE={
 "Work": "Projekte",
 "What I enjoy": "Was mir Spaß macht",
 "What you get": "Was du bekommst",
+"What I combine": "Was ich verbinde",
 "Contact": "Kontakt",
 "years in IT & connected mobility": "Jahre in der IT & Connected Mobility",
 "years project manager & product owner": "Jahre Project Manager & Product Owner",
