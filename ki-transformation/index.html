@@ -772,6 +772,64 @@ svg text{font-family:var(--mono);font-size:9px;fill:var(--grey);letter-spacing:.
 .fbn:focus-visible .fbr{stroke:var(--mag);stroke-width:3}
 @media (max-width:620px){#prS text{font-size:15px}#anS text{font-size:14px}}
 
+/* ---------- module 5 ---------- */
+.hit{cursor:pointer}
+.hit:focus{outline:none}
+.hit:focus-visible rect{stroke:var(--mag);stroke-width:2}
+.cr span small{font-size:.75rem}
+.sob.s5{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media (max-width:900px){.sob.s5{grid-template-columns:1fr 1fr}}
+.blb{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.blcol{display:grid;gap:8px;align-content:start}
+.blr{display:flex;flex-direction:column;align-items:flex-start;gap:2px;padding:10px 12px;border:1px solid var(--ink);background:var(--paper);text-align:left;cursor:pointer;transition:background-color .15s ease,box-shadow .15s ease}
+.blr b{font-size:1rem;font-weight:800}
+.blr .mono{text-transform:none;font-size:.6875rem}
+.blr .bld{font-size:.875rem;line-height:1.35;margin-top:4px}
+.blr .blk{font-size:.8125rem;line-height:1.35;color:var(--grey);margin-top:4px;padding-top:4px;border-top:1px solid var(--line)}
+.blr:hover{background:var(--paper-2)}
+.blr[aria-pressed="true"]{background:var(--ink);color:var(--paper);box-shadow:4px 4px 0 var(--mag)}
+.blr[aria-pressed="true"] .mono,.blr[aria-pressed="true"] .blk{color:rgba(242,243,239,.7)}
+.blc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
+.blc .stat+.stat{margin-top:0}
+@media (max-width:760px){.blb,.blc{grid-template-columns:1fr}}
+.sqw{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:center;margin-top:16px}
+@media (max-width:820px){.sqw{grid-template-columns:1fr}}
+.sqd{display:grid;grid-template-columns:1fr 1.4fr 1fr;grid-template-rows:auto 1fr auto;gap:8px;max-width:440px;width:100%;margin:0 auto;aspect-ratio:1.25}
+.sqb{border:1px solid var(--ink);background:var(--paper);font-weight:700;font-size:.875rem;padding:10px;cursor:pointer;transition:background-color .15s ease,color .15s ease}
+.sqb:hover{background:var(--paper-2)}
+.sqb[aria-pressed="true"]{background:var(--mag);border-color:var(--mag);color:#fff}
+.sq-top{grid-column:2;grid-row:1}
+.sq-left{grid-column:1;grid-row:2}
+.sq-right{grid-column:3;grid-row:2}
+.sq-bottom{grid-column:2;grid-row:3}
+.sqc{grid-column:2;grid-row:2;display:flex;align-items:center;justify-content:center;text-align:center;border:2px solid var(--ink);background:var(--ink);color:var(--paper);padding:10px;font-size:.75rem}
+.gls{display:flex;gap:4px;align-items:flex-start}
+.glb{flex:1 1 0;display:flex;flex-direction:column;gap:4px;min-height:92px;margin-top:calc(var(--i)*16px);padding:8px;border:1px solid var(--ink);background:var(--paper);text-align:left;font-size:.8125rem;font-weight:700;line-height:1.2;cursor:pointer;transition:background-color .15s ease,color .15s ease}
+.glb .mono{font-size:.875rem;color:var(--mag)}
+.glb.lv1{background:var(--mag-soft)}
+.glb.lv2{background:rgba(214,0,111,.3)}
+.glb:hover{filter:brightness(.96)}
+.glb[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.glb[aria-pressed="true"] .mono{color:#ff4fa3}
+@media (max-width:760px){.gls{flex-direction:column;gap:4px}.glb{flex:none;min-height:0;margin-top:0;margin-left:calc(var(--i)*12px);flex-direction:row;align-items:baseline;gap:10px;width:calc(100% - var(--i)*12px)}}
+.pof{display:grid;gap:6px;margin-top:16px;counter-reset:p}
+.pof li{display:grid;grid-template-columns:2rem minmax(0,1fr) auto;gap:10px;align-items:center;padding:9px 12px;border:1px solid var(--ink);background:var(--paper);transition:opacity .3s ease}
+.pof li::before{counter-increment:p;content:counter(p);font-family:var(--mono);font-size:.75rem;color:var(--mag)}
+.pof li b{font-weight:500;font-size:.75rem}
+.pof li.gone{opacity:.45;border-style:dashed}
+.pof li.gone span{text-decoration:line-through}
+.pof li.chg{background:var(--ok-soft)}
+.pof li.ai{background:var(--ink);color:var(--paper)}
+.pof li.ai::before{content:"KI";color:#ff4fa3}
+.pst{margin-top:14px;font-size:.9375rem}
+.lad{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;align-items:end}
+.lad li{display:flex;flex-direction:column;gap:4px;padding:12px;border:1px solid var(--ink);background:var(--paper)}
+.lad li:nth-child(1){min-height:150px}.lad li:nth-child(2){min-height:180px}.lad li:nth-child(3){min-height:210px}.lad li:nth-child(4){min-height:240px;background:var(--mag-soft)}.lad li:nth-child(5){min-height:270px;background:var(--ink);color:var(--paper)}
+.lad li:nth-child(5) .mono{color:#ff4fa3}
+.lad b{font-size:1.125rem;line-height:1.1;font-stretch:72%;font-weight:800;text-transform:uppercase}
+.lad p{font-size:.8125rem;line-height:1.4}
+@media (max-width:900px){.lad{grid-template-columns:1fr}.lad li{min-height:0!important}}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{transition-duration:.01ms!important;animation:none!important}
@@ -2215,6 +2273,274 @@ svg text{font-family:var(--mono);font-size:9px;fill:var(--grey);letter-spacing:.
 </div></div>
 </section>
 
+<!-- ============ MODUL 5 ============ -->
+<section class="mod" id="m5" data-mod="5" aria-labelledby="m5-t" hidden>
+
+<header class="mh wrap">
+<div class="in">
+<div>
+<p class="mno" aria-hidden="true">05</p>
+<h2 class="mt" id="m5-t">Kultur und Change bei KI</h2>
+<p class="lead">KI verändert nicht nur Technik, sondern Arbeit, Teams und Kultur. Wie man Menschen durch den Wandel begleitet, ein KI-Team aufbaut, Konflikte früh erkennt und KI aus Sicht der Kundschaft in Prozesse bringt.</p>
+</div>
+<div class="prog" aria-label="Fortschritt Modul 5">
+<p class="mono grey">Wiederholung · <span data-pc="5">0 / 6</span></p>
+<ul>
+<li data-ck="tuck"><i></i><a href="#m5-team">Team-Uhr</a></li>
+<li data-ck="team"><i></i><a href="#m5-belbin">Belbin-Team</a></li>
+<li data-ck="glasl"><i></i><a href="#m5-konflikt">Glasl</a></li>
+<li data-ck="cards"><i></i><a href="#m5-cards">Karteikarten</a></li>
+<li data-ck="cloze"><i></i><a href="#m5-cloze">Lückentext</a></li>
+<li data-ck="quiz"><i></i><a href="#m5-quiz">Quiz</a></li>
+</ul>
+</div>
+</div>
+<nav class="in toc" aria-label="Inhalt Modul 5">
+<a href="#m5-kultur"><span>5.1</span>Kultur</a>
+<a href="#m5-3k"><span>5.2</span>3K-Modell</a>
+<a href="#m5-kurve"><span>5.3</span>Change-Kurve</a>
+<a href="#m5-team"><span>5.4</span>Team-Uhr</a>
+<a href="#m5-belbin"><span>5.5</span>KI-Team &amp; Belbin</a>
+<a href="#m5-kommunikation"><span>5.6</span>Vier Ohren</a>
+<a href="#m5-konflikt"><span>5.7</span>Glasl</a>
+<a href="#m5-prozesse"><span>5.8</span>Prozesse</a>
+<a href="#m5-kunde"><span>5.9</span>Personas</a>
+<a href="#m5-praxis"><span>5.10</span>Praxis</a>
+<a href="#m5-repeat"><span>5.11</span>Wiederholen</a>
+<a href="#m5-check"><span>5.12</span>Faktencheck</a>
+</nav>
+</header>
+
+<div class="wrap"><div class="in">
+
+<!-- 5.1 -->
+<section class="sec" id="m5-kultur">
+<div class="sh"><span class="sno">5.1</span><h3>Kultur ist der Nährboden</h3><p>Kultur entscheidet, ob ein Unternehmen Neues begrüßt oder abwehrt. Und umgekehrt verändert KI die Kultur. Beides muss man zusammen denken. Die drei Ebenen nach Edgar Schein stehen in Modul 3.</p></div>
+<div class="two" style="align-items:start">
+<div class="fig"><div class="fh"><h4>Woher die Angst kommt</h4><span class="mono m">Widerstand</span></div><div class="fb"><ul class="lst">
+<li><b>Dystopische Bilder:</b> die KI, die entscheidet und Menschen ablöst</li>
+<li><b>Sorge um den eigenen Job</b> und um die gewohnte Arbeit</li>
+<li><b>Unklare Kommunikation:</b> Man hört mehr aus den Medien als vom eigenen Unternehmen</li>
+</ul></div></div>
+<div class="fig"><div class="fh"><h4>Was hilft</h4><span class="mono" style="color:var(--ok)">Schlüsselfaktoren</span></div><div class="fb"><ul class="lst">
+<li><b>Klares Zielbild:</b> Warum KI, wofür, mit welchen Daten?</li>
+<li><b>Was ändert sich für mich?</b> Folgen für Job und Team offen ansprechen</li>
+<li><b>Führung als Vorbild:</b> zeigen, was KI kann und was nicht</li>
+<li><b>Mitmachen lassen:</b> Formate, in denen Sorgen gehört werden</li>
+</ul></div></div>
+</div>
+<p class="note"><a href="#m3-kultur">Zum Eisbergmodell in Modul 3 &#8594;</a></p>
+</section>
+
+<!-- 5.2 -->
+<section class="sec" id="m5-3k">
+<div class="sh"><span class="sno">5.2</span><h3>Motivation: Kopf, Bauch, Hand</h3><p>Das 3K-Modell nach Hugo Kehr: Menschen sind motiviert, wenn sie verstehen, warum (Kopf), es sich gut anfühlt (Bauch) und sie sich zutrauen, es zu können (Hand). Stell ein Team ein und sieh, wo Change Management ansetzen muss.</p></div>
+<div class="fig">
+<div class="fh"><h4>Wie motiviert ist das Team?</h4><span class="mono grey">Abb. 5.2 · interaktiv</span></div>
+<div class="fb">
+<div class="rdw">
+<svg id="k3S" viewBox="0 0 320 290" role="img" aria-label="Drei überlappende Kreise Kopf, Bauch und Hand"></svg>
+<div><div class="cr" id="k3C" style="margin-top:0"></div><p class="vd" id="k3V" aria-live="polite"></p></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 5.3 -->
+<section class="sec" id="m5-kurve">
+<div class="sh"><span class="sno">5.3</span><h3>Die Change-Kurve</h3><p>Veränderung verläuft nicht geradlinig, sondern in Wellen. Die Kurve nach Richard Streich zeigt die typischen Phasen. Ziel von Change Management: schneller und mit kleinerem Tief bei der Integration ankommen.</p></div>
+<div class="fig">
+<div class="fh"><h4>Sieben Phasen einer Veränderung</h4><span class="mono grey">Abb. 5.3 · tippe eine Phase an</span></div>
+<div class="fb">
+<div class="tabs" role="group" aria-label="Verlauf" style="margin-bottom:12px"><button type="button" aria-selected="true" data-cv="0">ohne Begleitung</button><button type="button" aria-selected="false" data-cv="1">mit Change Management</button></div>
+<div class="ana"><svg id="cvS" viewBox="0 0 640 270" role="group" aria-label="Change-Kurve mit sieben Phasen"></svg></div>
+<div class="area" style="margin-top:14px;box-shadow:none" aria-live="polite">
+<div><p class="mono grey" id="cvK"></p><p class="ex" id="cvT"></p><p class="d" id="cvQ"></p></div>
+<dl><div><dt>Was in der Phase passiert</dt><dd id="cvD"></dd></div><div><dt>Was hilft</dt><dd id="cvH"></dd></div></dl>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 5.4 -->
+<section class="sec" id="m5-team">
+<div class="sh"><span class="sno">5.4</span><h3>Die Team-Uhr nach Tuckman</h3><p>Ein neues KI-Team ist nicht sofort leistungsfähig. Es durchläuft Phasen, in denen Leistung und Konflikte sich gegenläufig entwickeln. Kommt jemand Neues dazu, beginnt die Uhr von vorn.</p></div>
+<div class="fig">
+<div class="fh"><h4>Leistung und Konflikte im Verlauf</h4><span class="mono grey">Abb. 5.4 · tippe eine Phase an</span></div>
+<div class="fb">
+<div class="ana"><svg id="tkS" viewBox="0 0 640 250" role="group" aria-label="Verlauf von Leistung und Konfliktpotenzial über fünf Phasen"></svg></div>
+<div class="legend" style="margin-top:6px"><span><i style="background:#0E0F0C;border-color:#0E0F0C;border-radius:0;height:3px"></i>Leistung</span><span><i style="background:#D6006F;border-color:#D6006F;border-radius:0;height:3px"></i>Konfliktpotenzial</span></div>
+<p class="vd" id="tkV" aria-live="polite" style="margin-top:12px"></p>
+</div>
+</div>
+<div class="fig" style="margin-top:24px">
+<div class="fh"><h4>Übung: Welche Phase ist das?</h4><span class="mono grey" data-so-s></span></div>
+<div class="fb" id="m5-tk"><div class="soc"></div><div class="sob s5"></div></div>
+</div>
+<h4 class="mono m" style="margin:28px 0 10px">KI dauerhaft verankern</h4>
+<div class="hurd h4">
+<div><span>01</span><b>Institutionalisieren</b><p>Raus aus dem Projektcharakter: feste Verantwortliche, ein festes Team, klare Standards</p></div>
+<div><span>02</span><b>Strategie</b><p>KI-Ziele aus der Unternehmensstrategie ableiten, echten Mehrwert für Fachbereiche zeigen</p></div>
+<div><span>03</span><b>Interdisziplinär</b><p>Fachbereiche, IT und Management einbinden, Werte mitentwickeln</p></div>
+<div><span>04</span><b>Wissen teilen</b><p>Raus aus dem Elfenbeinturm: dokumentieren, schulen, Abhängigkeit vom KI-Team senken</p></div>
+</div>
+</section>
+
+<!-- 5.5 -->
+<section class="sec" id="m5-belbin">
+<div class="sh"><span class="sno">5.5</span><h3>Ein KI-Team bauen: Belbins Rollen</h3><p>Ein KI-fähiges Team ist interdisziplinär, kommuniziert gut, passt sich an, löst Konflikte und arbeitet zusammen. Meredith Belbin beschreibt neun Teamrollen in drei Gruppen. Stell ein Team für den Kursfall zusammen: Predictive Maintenance in einem Maschinenbau-Betrieb mit 250 Leuten.</p></div>
+<div class="fig">
+<div class="fh"><h4>Team zusammenstellen</h4><span class="mono grey">Abb. 5.5 · bis zu 5 Rollen</span></div>
+<div class="fb">
+<div class="blb" id="blR"></div>
+<div class="blc" id="blC" aria-live="polite"></div>
+<p class="vd" id="blV" aria-live="polite"></p>
+</div>
+</div>
+<div class="two" style="margin-top:24px;align-items:start">
+<div><h4 class="mono m" style="margin-bottom:8px">Welche Kompetenzen der Fall braucht</h4><ul class="lst">
+<li><b>Technik:</b> maschinelles Lernen für Zeitreihen, Sensordaten, Python</li>
+<li><b>Domäne:</b> Maschinenbau, Wartung, typische Ausfallmuster</li>
+<li><b>Ethik und Recht:</b> Datenschutz, Folgen für Arbeitsplätze</li>
+<li><b>Soft Skills:</b> KI für Nicht-Fachleute erklären, Konflikte lösen</li>
+</ul></div>
+<div><h4 class="mono m" style="margin-bottom:8px">So entsteht das Team</h4><ol class="nl">
+<li>Bedarf klären: welche Kompetenzen, in welchem Umfang?</li>
+<li>Intern suchen: Skill-Übersichten, Interviews, Assessment-Center</li>
+<li>Extern ergänzen: Rekrutierung, Beratung, Hochschulen</li>
+<li>Dauerhaft weiterbilden, die Technik ändert sich ständig</li>
+<li>Eine offene Kommunikations- und Konfliktkultur schaffen</li>
+</ol></div>
+</div>
+</section>
+
+<!-- 5.6 -->
+<section class="sec" id="m5-kommunikation">
+<div class="sh"><span class="sno">5.6</span><h3>Vier Seiten einer Nachricht</h3><p>Nach Friedemann Schulz von Thun hat jede Nachricht vier Seiten. Missverständnisse entstehen, wenn jemand auf einer Seite sendet und die andere Person mit einem anderen Ohr hört. Wähle einen Satz und eine Seite.</p></div>
+<div class="fig">
+<div class="fh"><h4>Kommunikationsquadrat</h4><span class="mono grey">Abb. 5.6 · interaktiv</span></div>
+<div class="fb">
+<div class="tabs" role="tablist" aria-label="Beispielsatz" id="vqA"></div>
+<p class="quote" id="vqM" style="margin-top:16px"></p>
+<div class="sqw">
+<div class="sqd" id="vqD" role="group" aria-label="Vier Seiten"></div>
+<div class="det" style="position:static" aria-live="polite"><div class="dh"><span class="mono grey" id="vqK"></span><span class="mono m" id="vqO"></span></div><div class="db"><h4 id="vqT"></h4><p class="d" id="vqX"></p><p class="ex"><b>So kann es ankommen</b><span id="vqE"></span></p></div></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- 5.7 -->
+<section class="sec" id="m5-konflikt">
+<div class="sh"><span class="sno">5.7</span><h3>Neun Stufen der Eskalation nach Glasl</h3><p>Friedrich Glasl beschreibt Konflikte als Treppe abwärts. Auf den ersten Stufen können noch beide gewinnen, am Ende verlieren alle. Je früher man eingreift, desto leichter. Tippe eine Stufe an.</p></div>
+<div class="fig">
+<div class="fh"><h4>Die Eskalationstreppe</h4><span class="mono grey">Abb. 5.7 · im KI-Team</span></div>
+<div class="fb">
+<div class="gls" id="glS" role="group" aria-label="Neun Eskalationsstufen"></div>
+<div class="area" style="margin-top:14px;box-shadow:none" aria-live="polite">
+<div><p class="mono grey" id="glK"></p><p class="ex" id="glT"></p><p class="d" id="glD"></p></div>
+<dl><div><dt>Im KI-Team</dt><dd id="glE"></dd></div><div><dt>Was hilft</dt><dd id="glH"></dd></div></dl>
+</div>
+</div>
+</div>
+<div class="fig" style="margin-top:24px">
+<div class="fh"><h4>Übung: Wie weit ist der Konflikt?</h4><span class="mono grey" data-so-s></span></div>
+<div class="fb" id="m5-gl"><div class="soc"></div><div class="sob s3"></div></div>
+</div>
+<p class="key"><span class="mono">Kern</span><span>Konflikte gehören dazu. Wer Schulz von Thun und Glasl kennt, erkennt sie früh. Dazu helfen eine offene Konfliktkultur, Schulungen und im Ernstfall Mediation.</span></p>
+</section>
+
+<!-- 5.8 -->
+<section class="sec" id="m5-prozesse">
+<div class="sh"><span class="sno">5.8</span><h3>Erst optimieren, dann automatisieren</h3><p>KI in Prozesse bringt Effizienz, neue Produkte und Geschäftsmodelle. Aber wer einen umständlichen Prozess automatisiert, hat danach einen schnellen umständlichen Prozess. Beispiel: eine Rechnung freigeben.</p></div>
+<div class="fig">
+<div class="fh"><h4>Rechnungsfreigabe</h4><span class="mono grey">Abb. 5.8 · interaktiv</span></div>
+<div class="fb">
+<div class="tabs" role="group" aria-label="Prozessstand" id="poT"><button type="button" aria-selected="true" data-po="0">Heute</button><button type="button" aria-selected="false" data-po="1">Optimiert</button><button type="button" aria-selected="false" data-po="2">Mit KI</button></div>
+<ol class="pof" id="poF"></ol>
+<p class="vd" id="poV" aria-live="polite"></p>
+</div>
+</div>
+<ol class="steps" style="margin-top:24px">
+<li><b>Bedarf und Prozesse analysieren</b><p>Wo hakt es, welche Daten gibt es?</p></li>
+<li><b>Markt und Modelle kennen</b><p>Was kann KI hier leisten?</p></li>
+<li><b>Pilot</b><p>ausprobieren und den Mehrwert prüfen</p></li>
+<li><b>Ausweiten</b><p>schrittweise, mit Change Management</p></li>
+</ol>
+</section>
+
+<!-- 5.9 -->
+<section class="sec" id="m5-kunde">
+<div class="sh"><span class="sno">5.9</span><h3>Von außen nach innen: Personas und Touchpoints</h3><p>Statt nur auf interne Abläufe zu schauen, fragt man: Was erlebt die Kundschaft? Eine Empathiekarte sammelt, was die Zielgruppe denkt, hört, sieht und tut. Daraus wird eine Persona, und mit ihr geht man jeden Berührungspunkt durch.</p></div>
+<div class="fig">
+<div class="fh"><h4>Wasserschaden melden: zwei Personas, zwei Erlebnisse</h4><span class="mono grey">Abb. 5.9 · tippe einen Touchpoint an</span></div>
+<div class="fb">
+<div class="tabs" role="tablist" aria-label="Persona" id="psT"></div>
+<p class="pst" id="psD"></p>
+<div class="ana"><svg id="psS" viewBox="0 0 640 230" role="group" aria-label="Stimmungskurve über sieben Touchpoints"></svg></div>
+<p class="vd" id="psV" aria-live="polite"></p>
+</div>
+</div>
+<div class="laws" style="margin-top:24px">
+<div><span class="mono m">01</span><b>Empathiekarte</b><p>Was denkt, fühlt, hört, sieht, sagt und tut die Zielgruppe? Was frustriert sie, was wünscht sie sich?</p></div>
+<div><span class="mono m">02</span><b>Persona</b><p>Eine fiktive Person mit Name, Bild, Alter und Beruf, die für eine echte Kundengruppe steht.</p></div>
+<div><span class="mono m">03</span><b>Touchpoints</b><p>Jeder Berührungspunkt mit Stimmung. Die Tiefpunkte zeigen, wo KI am meisten bringt.</p></div>
+<div><span class="mono m">04</span><b>Produktdenken</b><p>Lebenszyklus, Kundenfeedback, User Experience statt nur interner Effizienz.</p></div>
+</div>
+</section>
+
+<!-- 5.10 -->
+<section class="sec" id="m5-praxis">
+<div class="sh"><span class="sno">5.10</span><h3>Wie Unternehmen anfangen</h3><p>Fünf Beispiele aus dem Kurs, sortiert nach Verbindlichkeit. Wenn KI-Projekte gelingen, entstehen neue Artefakte, die auf die Werte wirken: mehr Offenheit für die nächste Veränderung.</p></div>
+<ol class="lad">
+<li><span class="mono m">Aufmerksamkeit</span><b>KI-Tag</b><p>Regionale Stadtwerke: Schulungen zum Prompten, Modelle kennenlernen, VR-Brillen ausprobieren. Ein erster Fuß im Wasser.</p></li>
+<li><span class="mono m">Experimentieren</span><b>Lose Task-Force</b><p>Unterhaltungsbranche: Freiwillige mit etwas Zeit probieren aus, was KI in Filmproduktionen ändert.</p></li>
+<li><span class="mono m">Strukturieren</span><b>Feste Task-Force</b><p>Medienunternehmen mit Katalogproduktion: Markt prüfen, Fachwissen bündeln, feste Termine. Fotoshootings und Retusche stehen auf dem Prüfstand.</p></li>
+<li><span class="mono m">Investieren</span><b>KI-Labs</b><p>Volkswagen, Siemens: eigene Räume und Teams in voller Kapazität für Effizienz in der Produktion und neue Angebote.</p></li>
+<li><span class="mono m">Branche prägen</span><b>KI-Werkstatt</b><p>DATEV: digitale Lösungen für den ganzen Berufsstand, nicht nur für sich selbst.</p></li>
+</ol>
+<div class="two" style="margin-top:24px">
+<p class="key" style="margin-top:0"><span class="mono">Persönlich</span><span>Sachorientierte starten mit Geschichte, Begriffen und Marktüberblick. Andere zuerst mit Ethik und Recht: Was dürfen wir, was wollen wir? Beides ist ein guter Anfang. Und eine Weiterbildung wie diese.</span></p>
+<p class="key" style="margin-top:0"><span class="mono">Kern</span><span>Ein KI-Team bringt nur dann Innovation, wenn es in der Strategie verankert ist und Ressourcen und Aufmerksamkeit bekommt.</span></p>
+</div>
+</section>
+
+<!-- 5.11 -->
+<section class="sec" id="m5-repeat">
+<div class="sh"><span class="sno">5.11</span><h3>Wiederholen</h3><p>Erst Karteikarten, dann Lückentext, dann das Quiz. Dein Fortschritt bleibt in diesem Browser gespeichert.</p></div>
+<div id="m5-cards" style="scroll-margin-top:70px">
+<div class="row" style="justify-content:space-between;margin-bottom:12px"><h4 class="mono m">Karteikarten · antippen zum Umdrehen</h4><span class="mono grey" data-cd-s></span></div>
+<div class="cards"></div>
+</div>
+<div class="fig" id="m5-cloze" style="margin-top:36px;scroll-margin-top:70px">
+<div class="fh"><h4>Lückentext</h4><span class="mono grey">aus den Kursaufgaben, in meinen Worten</span></div>
+<div class="fb">
+<ol class="cz"></ol>
+<div class="row" style="margin-top:16px"><button class="btn" type="button" data-cz-go>Prüfen</button><button class="btn ghost" type="button" data-cz-r>Zurücksetzen</button><p class="st" data-cz-s aria-live="polite"></p></div>
+</div>
+</div>
+<div class="fig" id="m5-quiz" style="margin-top:36px;scroll-margin-top:70px">
+<div class="fh"><h4>Quiz Modul 5</h4><span class="mono grey" data-qz-best></span></div>
+<div class="fb"><div class="qz" aria-live="polite"></div></div>
+</div>
+</section>
+
+<!-- 5.12 -->
+<section class="sec" id="m5-check">
+<div class="sh"><span class="sno">5.12</span><h3>Faktencheck</h3><p>Modul 5 nutzt bekannte Modelle aus Psychologie und Organisationsentwicklung. An drei Stellen ist der Kurs vereinfacht. Für die Prüfung merke ich mir beide Versionen.</p></div>
+<table class="fct">
+<thead><tr><th scope="col">Thema</th><th scope="col">Im Kursmaterial</th><th scope="col">Nachgeprüft</th></tr></thead>
+<tbody>
+<tr><th scope="row">3K-Modell nach Kehr</th><td>„Ist eine Komponente null, ist die ganze Motivation null.“</td><td>Kehr nennt es Kompensationsmodell: Fehlt der Bauch, kann der Kopf mit Willenskraft ausgleichen, das kostet aber Energie. Fehlende Fähigkeiten lassen sich durch Lernen ausgleichen. Ideal ist, wenn alle drei zusammenpassen.</td></tr>
+<tr><th scope="row">Team-Uhr nach Tuckman</th><td>fünf Phasen als ein Modell</td><td>Bruce Tuckman beschrieb 1965 vier Phasen. Die fünfte, Adjourning, kam erst 1977 mit Mary Ann Jensen dazu.</td></tr>
+<tr><th scope="row">Grundannahmen im Eisberg</th><td>5.7: „die man nicht verändern kann“</td><td>Nach Schein ändern sie sich sehr langsam, durch gemeinsame Erfahrungen und Führung. Schwer, aber nicht unmöglich. 5.1 sagt es vorsichtiger.</td></tr>
+</tbody>
+</table>
+</section>
+
+</div></div>
+</section>
+
 <!-- placeholder for locked modules, filled by JS -->
 <section class="mod lockp wrap" id="mx-lock" hidden aria-live="polite">
 <div class="in"><div class="box">
@@ -2259,7 +2585,7 @@ var MODS=[
  {n:2,s:'Anwendungen',t:'KI-Anwendungsgebiete im Unternehmen',live:true,checks:['sort','cards','cloze','quiz']},
  {n:3,s:'Daten',t:'Datenmanagement als Basis für erfolgreiche KI-Anwendungen',live:true,checks:['roles','ice','cards','cloze','quiz']},
  {n:4,s:'Strategie',t:'Strategische Implementierung von KI in Unternehmen',live:true,checks:['stacey','risk','swot','cards','cloze','quiz']},
- {n:5,s:'Kultur & Change',t:'Organisatorische und kulturelle Integration von KI'},
+ {n:5,s:'Kultur & Change',t:'Organisatorische und kulturelle Integration von KI',live:true,checks:['tuck','team','glasl','cards','cloze','quiz']},
  {n:6,s:'Ethik & Recht',t:'Ethische und rechtliche Aspekte der KI-Nutzung'},
  {n:7,s:'Sicherheit',t:'Cybersicherheit und KI-Sicherheit'},
  {n:8,s:'KI-VO',t:'Fit für die KI-Verordnung (EU AI Act)'},
@@ -3418,6 +3744,242 @@ initQuiz(4,[
  ['Wie hilft das Ishikawa-Diagramm?',['Es sammelt systematisch Ursachen nach Mensch, Maschine, Methode, Umwelt und mehr','Es zeigt automatisch die wahrscheinlichste Ursache','Es betrachtet nur menschliche Fehler'],'Erst Ursachen sammeln, dann prüfen.'],
  ['Mit welchem Werkzeug priorisiert man Ursachen?',['Pareto: die wenigen Ursachen mit der größten Wirkung zuerst','Ishikawa','PDCA'],'Ishikawa sammelt, Pareto priorisiert.'],
  ['Warum ist Risikomanagement bei KI besonders wichtig?',['Neue Risiken wie Datenabhängigkeit und schneller technischer Wandel','Es gibt nur technische Risiken','Die Risiken sind besser kalkulierbar'],'Zu den üblichen Projektrisiken kommen ständig neue hinzu.']
+]);
+
+
+/* ================= MODUL 5 ================= */
+/* smooth path through points (Catmull-Rom → Bezier) */
+function smooth(pts){var d='M'+pts[0][0]+' '+pts[0][1];for(var i=0;i<pts.length-1;i++){var p0=pts[i-1]||pts[i],p1=pts[i],p2=pts[i+1],p3=pts[i+2]||p2;
+  d+=' C'+(p1[0]+(p2[0]-p0[0])/6).toFixed(1)+' '+(p1[1]+(p2[1]-p0[1])/6).toFixed(1)+' '+(p2[0]-(p3[0]-p1[0])/6).toFixed(1)+' '+(p2[1]-(p3[1]-p1[1])/6).toFixed(1)+' '+p2[0]+' '+p2[1]}return d}
+function hitG(svg,label,fn){var g=el('g',{class:'hit',tabindex:0,role:'button','aria-pressed':'false','aria-label':label},svg);g.addEventListener('click',fn);g.addEventListener('keydown',function(ev){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();fn()}});return g}
+
+/* 5.2 3K model */
+var K3=[['Kopf','Verstehe ich, warum?','Das Warum erklären: klares Zielbild, oft und in vielen Formaten wiederholen.'],['Bauch','Fühlt es sich gut an?','Sorgen hören: Workshops, Infoveranstaltungen, mitmachen lassen.'],['Hand','Traue ich es mir zu?','Befähigen: Trainings, Schulungen, Zeit zum Ausprobieren.']],k3=[4,1,2],k3S=$('#k3S');
+function k3Draw(){
+  while(k3S.firstChild)k3S.removeChild(k3S.firstChild);
+  var C=[[122,110],[198,110],[160,176]];
+  K3.forEach(function(k,i){el('circle',{cx:C[i][0],cy:C[i][1],r:74,fill:'rgba(214,0,111,'+(.04+k3[i]*.075)+')',stroke:k3[i]?'#0E0F0C':'#D6006F','stroke-width':k3[i]?1.2:2,'stroke-dasharray':k3[i]?'none':'5 4'},k3S)});
+  [[82,82],[238,82],[160,236]].forEach(function(p,i){var t=el('text',{x:p[0],y:p[1],'text-anchor':'middle',style:'fill:#0E0F0C;font-weight:500;font-size:11px'},k3S);t.textContent=K3[i][0].toUpperCase()+' '+k3[i]});
+  var mn=Math.min.apply(null,k3),lv=mn>=4?'Flow':mn>=2?'mittel':mn>=1?'schwach':'blockiert';
+  var t=el('text',{x:160,y:136,'text-anchor':'middle',style:'fill:#0E0F0C;font-weight:500;font-size:10px'},k3S);t.textContent='MOTIVATION';
+  var t2=el('text',{x:160,y:152,'text-anchor':'middle',style:'fill:#D6006F;font-weight:500;font-size:12px'},k3S);t2.textContent=lv.toUpperCase();
+  var C2=$('#k3C');C2.innerHTML='';
+  K3.forEach(function(k,i){var r=h('div');r.innerHTML='<span>'+k[0]+'<small class="grey" style="display:block;font-weight:400">'+k[1]+'</small></span>';var s=h('div','seg');s.setAttribute('role','group');s.setAttribute('aria-label',k[0]);
+    for(var v=0;v<=5;v++)(function(v){var b=h('button');b.type='button';b.textContent=v;b.setAttribute('aria-pressed',String(k3[i]===v));b.addEventListener('click',function(){k3[i]=v;k3Draw()});s.appendChild(b)})(v);r.appendChild(s);C2.appendChild(r)});
+  var w=k3.indexOf(mn),msg;
+  if(mn>=4)msg='<b>Alle drei passen</b>Verstehen, Wollen und Können greifen ineinander. So entsteht Motivation fast von selbst.';
+  else{msg='<b>Ansetzen bei: '+K3[w][0]+'</b>'+K3[w][2];if(w===1&&k3[0]>=3)msg+=' Der Kopf kann einen schwachen Bauch eine Weile mit Willenskraft ausgleichen, das kostet aber Energie.'}
+  $('#k3V').innerHTML=msg;
+}
+k3Draw();
+
+/* 5.3 change curve */
+var CV=[
+ {t:'Schock',q:'„Was, wir führen KI ein?“',d:'Eine Veränderung trifft auf den gewohnten Alltag. Der Status quo wird infrage gestellt.',h:'Früh und ehrlich informieren, bevor Gerüchte entstehen.'},
+ {t:'Verneinung',q:'„Brauchen wir nicht. Haben wir immer anders gemacht.“',d:'Abwehr. Die gefühlte eigene Kompetenz steigt kurz, weil man am Alten festhält.',h:'Das Warum erklären, Fragen zulassen, nicht überrollen.'},
+ {t:'Rationale Einsicht',q:'„Verstehe ich, aber …“',d:'Der Kopf versteht die Gründe. Das Gefühl ist noch nicht dabei.',h:'Klare Kommunikation, konkrete Beispiele aus dem eigenen Alltag.'},
+ {t:'Emotionale Akzeptanz',q:'„Na gut, vielleicht hilft es mir ja.“',d:'Der Tiefpunkt: Man lässt das Alte los. Hier entscheidet sich, ob es weitergeht.',h:'Sorgen ernst nehmen, Begleitung anbieten, Erfolge anderer zeigen.'},
+ {t:'Ausprobieren',q:'„Ich teste das mal.“',d:'Man nutzt das neue System, lernt Grenzen und Möglichkeiten kennen.',h:'Schulungen, Zeit und Raum für Fehler, Ansprechpersonen.'},
+ {t:'Erkenntnis',q:'„Ah, dafür ist es gut.“',d:'Man versteht, wofür das Neue taugt, und baut es in die eigene Arbeit ein.',h:'Gute Beispiele teilen, Erfahrungen austauschen.'},
+ {t:'Integration',q:'„So arbeiten wir jetzt.“',d:'Der neue Status quo ist erreicht. Das Neue ist selbstverständlich.',h:'Verankern: Prozesse, Rollen, Erfolge feiern.'}
+];
+var CVY=[[.55,.7,.42,.12,.32,.6,.88],[.6,.66,.52,.38,.54,.72,.9]],cvM=0,cvI=3,cvS=$('#cvS');
+function cvDraw(){
+  while(cvS.firstChild)cvS.removeChild(cvS.firstChild);
+  var X0=40,X1=610,Y0=220,Y1=24,n=CV.length,span=cvM?.78:1,xs=CV.map(function(_,i){return X0+30+i*(X1-X0-60)/(n-1)*span});
+  var y=function(v){return Y0-v*(Y0-Y1)};
+  el('line',{x1:X0,y1:Y0,x2:X1,y2:Y0,stroke:'#0E0F0C'},cvS);el('line',{x1:X0,y1:Y1,x2:X0,y2:Y0,stroke:'#0E0F0C'},cvS);
+  var ay=el('text',{x:X0+6,y:Y1+8},cvS);ay.textContent='GEFÜHLTE KOMPETENZ ↑';var ax=el('text',{x:X1,y:Y0+16,'text-anchor':'end'},cvS);ax.textContent='ZEIT →';
+  if(cvM){var g=el('path',{d:smooth(CV.map(function(_,i){return [X0+30+i*(X1-X0-60)/(n-1),y(CVY[0][i])]})),fill:'none',stroke:'#9a9c94','stroke-width':1.5,'stroke-dasharray':'4 4'},cvS);var lg=el('text',{x:X1,y:Y1+8,'text-anchor':'end'},cvS);lg.textContent='GESTRICHELT: OHNE BEGLEITUNG'}
+  var pts=xs.map(function(x,i){return [x,y(CVY[cvM][i])]});
+  el('path',{d:smooth([[X0,y(.7)]].concat(pts)),fill:'none',stroke:'#0E0F0C','stroke-width':2.5},cvS);
+  pts.forEach(function(p,i){var g=hitG(cvS,CV[i].t,function(){cvI=i;cvDraw()});el('rect',{x:p[0]-28,y:Y1,width:56,height:Y0-Y1+30,fill:'transparent'},g);
+    el('circle',{cx:p[0],cy:p[1],r:i===cvI?9:6,fill:i===cvI?'#D6006F':'#F2F3EF',stroke:i===cvI?'#D6006F':'#0E0F0C','stroke-width':2},g);
+    var t=el('text',{x:p[0],y:Y0+(i%2?30:16),'text-anchor':'middle',style:'fill:'+(i===cvI?'#D6006F':'#55584F')},g);t.textContent=(i+1)+' '+CV[i].t.toUpperCase();g.setAttribute('aria-pressed',String(i===cvI))});
+  $$('[data-cv]').forEach(function(b){b.setAttribute('aria-selected',String(+b.dataset.cv===cvM))});
+  var P=CV[cvI];$('#cvK').textContent='Phase '+(cvI+1)+' von 7';$('#cvT').textContent=P.t;$('#cvQ').textContent=P.q;$('#cvD').textContent=P.d;$('#cvH').textContent=P.h;
+}
+$$('[data-cv]').forEach(function(b){b.addEventListener('click',function(){cvM=+b.dataset.cv;cvDraw()})});cvDraw();
+
+/* 5.4 Tuckman */
+var TK=[['Forming','Kennenlernen: Wer ist wer, wer kann was? Leistung steigt leicht, kaum Konflikte.','Orientierung geben: Ziel, Rollen, Raum zum Kennenlernen.'],['Storming','Interessen prallen aufeinander, Rollen werden ausgehandelt. Leistung sinkt, Konflikte steigen.','Konflikte zulassen und moderieren, nicht unterdrücken.'],['Norming','Die Ruhe nach dem Sturm: gemeinsame Regeln, Zuständigkeiten, Tools.','Vereinbarungen festhalten, Verantwortung abgeben.'],['Performing','Alles ist geklärt, das Team liefert. Höchste Leistung, wenig Konflikte.','Freiraum geben, Hindernisse aus dem Weg räumen.'],['Adjourning','Bei Projektteams: Ergebnisse dokumentieren, Erfolge feiern, auseinandergehen.','Abschluss würdigen, Wissen sichern.']];
+var TKP=[.28,.16,.52,.92,.42],TKC=[.18,.88,.42,.14,.04],tkI=1,tkS=$('#tkS');
+function tkDraw(){
+  while(tkS.firstChild)tkS.removeChild(tkS.firstChild);
+  var X0=30,X1=620,Y0=200,Y1=20,w=(X1-X0)/5,y=function(v){return Y0-v*(Y0-Y1)},cx=function(i){return X0+w*i+w/2};
+  TK.forEach(function(t,i){var g=hitG(tkS,t[0],function(){tkI=i;tkDraw()});g.setAttribute('aria-pressed',String(i===tkI));el('rect',{x:X0+w*i+1,y:Y1-10,width:w-2,height:Y0-Y1+40,fill:i===tkI?'rgba(214,0,111,.08)':'transparent',stroke:i===tkI?'#D6006F':'rgba(14,15,12,.1)'},g);
+    var l=el('text',{x:cx(i),y:Y0+20,'text-anchor':'middle',style:'fill:'+(i===tkI?'#D6006F':'#0E0F0C')+';font-weight:500;font-size:11px'},g);l.textContent=(i+1)+' '+t[0].toUpperCase()});
+  el('line',{x1:X0,y1:Y0,x2:X1,y2:Y0,stroke:'#0E0F0C'},tkS);
+  el('path',{d:smooth(TKP.map(function(v,i){return [cx(i),y(v)]})),fill:'none',stroke:'#0E0F0C','stroke-width':2.5},tkS);
+  el('path',{d:smooth(TKC.map(function(v,i){return [cx(i),y(v)]})),fill:'none',stroke:'#D6006F','stroke-width':2.5,'stroke-dasharray':'7 4'},tkS);
+  TKP.forEach(function(v,i){el('circle',{cx:cx(i),cy:y(v),r:4,fill:'#0E0F0C'},tkS);el('circle',{cx:cx(i),cy:y(TKC[i]),r:4,fill:'#D6006F'},tkS)});
+  $('#tkV').innerHTML='<b>'+TK[tkI][0]+'</b>'+TK[tkI][1]+' Führung: '+TK[tkI][2];
+}
+tkDraw();
+initSort({root:'#m5-tk',status:'#m5-team [data-so-s]',mod:5,check:'tuck',label:'Situation',end:'Storming ist normal und kein Zeichen, dass das Team schlecht ist. Es muss nur durch.',buckets:[['f','Forming'],['s','Storming','m'],['n','Norming'],['p','Performing'],['a','Adjourning']],items:[
+ ['Alle sind höflich und noch etwas vorsichtig','f','Kennenlernen: typisch Forming.'],
+ ['„Wer ist hier eigentlich für die Daten zuständig?“','f','Rollen sind noch unklar.'],
+ ['Zwei wollen die Projektleitung, es knirscht','s','Rollen werden ausgehandelt: Storming.'],
+ ['Data Science und Fachabteilung streiten über Prioritäten','s','Interessen prallen aufeinander.'],
+ ['Das Team einigt sich auf feste Sprints und ein Tool','n','Gemeinsame Regeln: Norming.'],
+ ['Zuständigkeiten sind verteilt und aufgeschrieben','n','Vereinbarungen festhalten gehört zum Norming.'],
+ ['Das Team liefert zuverlässig, Meinungsverschiedenheiten sind schnell geklärt','p','Hohe Leistung, wenig Konflikte: Performing.'],
+ ['Projekt fertig: Doku schreiben, Abschlussfeier','a','Auflösen und feiern: Adjourning.']
+]});
+
+/* 5.5 Belbin team builder */
+var BL=[
+ {c:'d',t:'Neuerer',e:'Plant',d:'Kreativ, löst schwierige Probleme mit neuen Ideen.',k:'Entwickelt den Ansatz für die Ausfallvorhersage.'},
+ {c:'d',t:'Beobachter',e:'Monitor Evaluator',d:'Nüchtern, analytisch, wägt Optionen ab.',k:'Prüft, ob das Modell wirklich besser ist als die heutige Wartung.'},
+ {c:'d',t:'Spezialist',e:'Specialist',d:'Bringt tiefes Fachwissen ein.',k:'ML-Expertin für Zeitreihen oder Maschinenbau-Experte.'},
+ {c:'m',t:'Koordinator',e:'Coordinator',d:'Klärt Ziele, verteilt Aufgaben, bindet alle ein.',k:'Bringt KI-Leute und Instandhaltung an einen Tisch.'},
+ {c:'m',t:'Teamarbeiter',e:'Teamworker',d:'Diplomatisch, hält das Team zusammen.',k:'Vermittelt, wenn Data Science und Werkstatt aneinandergeraten.'},
+ {c:'m',t:'Wegbereiter',e:'Resource Investigator',d:'Knüpft Kontakte, holt Wissen und Ressourcen.',k:'Findet eine Hochschule oder einen Dienstleister für fehlendes Know-how.'},
+ {c:'u',t:'Macher',e:'Shaper',d:'Treibt an, hält Tempo und Druck hoch.',k:'Sorgt dafür, dass der Pilot rechtzeitig läuft.'},
+ {c:'u',t:'Umsetzer',e:'Implementer',d:'Macht aus Ideen Pläne und Abläufe.',k:'Baut das System in den Wartungsprozess ein.'},
+ {c:'u',t:'Perfektionist',e:'Completer Finisher',d:'Gründlich, findet Fehler, liefert sauber ab.',k:'Prüft Datenqualität und Fehlalarme vor dem Start.'}
+];
+var BLC={d:'Denken',m:'Mensch',u:'Umsetzung'},blSel=get('bl5',[]);
+(function(){var R=$('#blR');['d','m','u'].forEach(function(c){var col=h('div','blcol');col.appendChild(h('p','mono m',BLC[c]));
+  BL.forEach(function(r,i){if(r.c!==c)return;var b=h('button','blr');b.type='button';b.dataset.i=i;b.innerHTML='<b>'+r.t+'</b><span class="mono grey">'+r.e+'</span><span class="bld">'+r.d+'</span><span class="blk">'+r.k+'</span>';
+    b.addEventListener('click',function(){var k=blSel.indexOf(i);if(k>-1)blSel.splice(k,1);else if(blSel.length<5)blSel.push(i);else{$('#blV').innerHTML='<b>Maximal fünf Rollen</b>Ein kleines Team ist wendiger. Nimm erst eine Rolle heraus.';return}put('bl5',blSel);blDraw()});col.appendChild(b)});R.appendChild(col)})})();
+function blDraw(){
+  $$('#blR .blr').forEach(function(b){b.setAttribute('aria-pressed',String(blSel.indexOf(+b.dataset.i)>-1))});
+  var cnt={d:0,m:0,u:0};blSel.forEach(function(i){cnt[BL[i].c]++});
+  $('#blC').innerHTML=['d','m','u'].map(function(c){return '<div class="stat"><p class="bl"><span>'+BLC[c]+'</span><b>'+cnt[c]+'</b></p><div class="sbar"><i style="width:'+Math.min(100,cnt[c]*50)+'%"></i></div></div>'}).join('');
+  var miss=['d','m','u'].filter(function(c){return !cnt[c]});
+  if(!blSel.length)$('#blV').innerHTML='<b>Wähle Rollen aus</b>Tippe Karten an. Ziel: alle drei Gruppen abdecken, höchstens fünf Rollen.';
+  else if(miss.length)$('#blV').innerHTML='<b>Es fehlt: '+miss.map(function(c){return BLC[c]}).join(', ')+'</b>Ein Team nur aus einer Gruppe denkt viel und setzt wenig um, oder umgekehrt.';
+  else{$('#blV').innerHTML='<b>Ausgewogen</b>Denken, Mensch und Umsetzung sind vertreten. Der Kurs schlägt Koordinator, Neuerer und Macher vor, dazu Paararbeit zwischen KI- und Maschinenbau-Fachleuten.';done(5,'team')}
+}
+blDraw();
+
+/* 5.6 Schulz von Thun */
+var VQ=[
+ {l:'„Es ist grün.“',ctx:'Beispiel aus dem Kurs: Sie sagt das als Beifahrerin an der Ampel.',s:[
+  ['Sachinhalt','Worüber ich informiere','Die Ampel zeigt Grün.','„Stimmt, Grün.“ Kein Problem.'],
+  ['Selbstkundgabe','Was ich von mir zeige','Ich habe es eilig.','„Sie ist gestresst.“'],
+  ['Beziehung','Was ich von dir halte','Ich sehe schneller als du, ich wäre die bessere Fahrerin.','„Sie hält mich für einen schlechten Fahrer.“ Streit.'],
+  ['Appell','Was du tun sollst','Fahr endlich los!','„Fahr ich ja schon!“']]},
+ {l:'„Die Daten sind schon wieder unvollständig.“',ctx:'Die Data Scientist sagt das im Meeting zur Fachabteilung.',s:[
+  ['Sachinhalt','Worüber ich informiere','Im Datensatz fehlen Werte.','„Welche Felder fehlen genau?“ Gute Basis zum Lösen.'],
+  ['Selbstkundgabe','Was ich von mir zeige','Ich bin frustriert, so kann ich nicht weiterarbeiten.','„Sie steht unter Druck.“'],
+  ['Beziehung','Was ich von dir halte','Ihr in der Fachabteilung arbeitet schlampig.','„Die halten uns für unfähig.“ Der Konflikt beginnt.'],
+  ['Appell','Was du tun sollst','Liefert bis morgen vollständige Daten!','„Wir sollen springen, wann sie ruft.“']]}
+];
+var vqI=0,vqJ=0,vqSet=tabsFor($('#vqA'),VQ.map(function(s,i){return i?'KI-Team':'Ampel'}),function(i){vqI=i;vqJ=2;vqDraw()});
+function vqDraw(){vqSet(vqI);var S=VQ[vqI];$('#vqM').textContent=S.l;
+  var D=$('#vqD');D.innerHTML='';
+  var order=[0,1,3,2];['top','left','right','bottom'].forEach(function(pos,k){var j=order[k],b=h('button','sqb sq-'+pos);b.type='button';b.textContent=S.s[j][0];b.setAttribute('aria-pressed',String(j===vqJ));b.addEventListener('click',function(){vqJ=j;vqDraw()});D.appendChild(b)});
+  D.appendChild(h('div','sqc mono',S.l.length>20?'Nachricht':S.l));
+  var Z=S.s[vqJ];$('#vqK').textContent=S.ctx;$('#vqO').textContent=Z[1];$('#vqT').textContent=Z[0];$('#vqX').textContent='Gemeint sein kann: '+Z[2];$('#vqE').textContent=Z[3]}
+vqDraw();
+
+/* 5.7 Glasl */
+var GL=[
+ ['Verhärtung','Standpunkte verhärten sich, man glaubt aber noch an eine Lösung im Gespräch.','Data Science und IT sind uneins, wo das Modell laufen soll.'],
+ ['Debatte','Schwarz-Weiß-Denken, verbaler Schlagabtausch, es geht ums Rechthaben.','Im Meeting beharrt jede Seite nur noch auf den eigenen Argumenten.'],
+ ['Taten statt Worte','Reden bringt nichts mehr, man schafft Fakten.','Die IT richtet einfach ihren Server ein, ohne Absprache.'],
+ ['Koalitionen','Man sucht Verbündete, Feindbilder entstehen.','„Die Datenleute“ gegen „die IT-Leute“, Lager bilden sich.'],
+ ['Gesichtsverlust','Die Gegenseite wird öffentlich bloßgestellt.','Im großen Meeting fällt: „Er kann es einfach nicht.“'],
+ ['Drohstrategien','Drohungen und Ultimaten bestimmen das Gespräch.','„Wenn ihr nicht nachgebt, gehen wir zum Vorstand.“'],
+ ['Begrenzte Vernichtung','Die andere Seite soll Schaden nehmen, eigener Schaden wird in Kauf genommen.','Zugänge werden entzogen, Daten zurückgehalten.'],
+ ['Zersplitterung','Ziel ist, die andere Seite zu zerstören.','Das Projekt der anderen wird gezielt sabotiert.'],
+ ['Gemeinsam in den Abgrund','Hauptsache, die anderen verlieren, auch wenn man selbst untergeht.','Das ganze KI-Projekt wird gemeinsam an die Wand gefahren.']
+];
+var GLV=[['Win-win','beide können noch gewinnen','Selbst klären oder moderieren lassen, die Sache in den Mittelpunkt stellen.'],['Win-lose','einer gewinnt, einer verliert','Neutrale Begleitung von außen, Mediation.'],['Lose-lose','alle verlieren','Nur noch Machteingriff von oben oder ein Schiedsverfahren.']],glI=1;
+(function(){var S=$('#glS');GL.forEach(function(g,i){var b=h('button','glb lv'+Math.floor(i/3));b.type='button';b.style.setProperty('--i',i);b.innerHTML='<span class="mono">'+(i+1)+'</span>'+g[0];b.addEventListener('click',function(){glSel(i)});S.appendChild(b)})})();
+function glSel(i){glI=i;$$('#glS .glb').forEach(function(b,j){b.setAttribute('aria-pressed',String(j===i))});var V=GLV[Math.floor(i/3)];
+  $('#glK').textContent='Stufe '+(i+1)+' von 9 · '+V[0]+', '+V[1];$('#glT').textContent=GL[i][0];$('#glD').textContent=GL[i][1];$('#glE').textContent=GL[i][2];$('#glH').textContent=V[2]}
+glSel(1);
+initSort({root:'#m5-gl',status:'#m5-konflikt [data-so-s]',mod:5,check:'glasl',label:'Situation',end:'Je früher man einen Konflikt anspricht, desto mehr Wege gibt es heraus.',buckets:[['w','Win-win'],['l','Win-lose'],['x','Lose-lose','m']],items:[
+ ['Zwei Kolleginnen streiten sachlich, jede hält an ihrer Lösung fest','w','Verhärtung, Stufe 1: Ein gemeinsamer Weg ist noch offen.'],
+ ['Im Meeting fallen spitze Bemerkungen, es geht ums Rechthaben','w','Debatte, Stufe 2: noch win-win.'],
+ ['Es bilden sich Lager, man redet schlecht über die anderen','l','Koalitionen, Stufe 4.'],
+ ['Jemand wird vor der Geschäftsführung bloßgestellt','l','Gesichtsverlust, Stufe 5.'],
+ ['„Wenn ihr nicht nachgebt, steigen wir aus dem Projekt aus.“','l','Drohstrategie, Stufe 6.'],
+ ['Daten werden zurückgehalten, auch wenn das eigene Projekt leidet','x','Begrenzte Vernichtung, Stufe 7: eigener Schaden wird in Kauf genommen.'],
+ ['Hauptsache, die anderen scheitern, egal was es kostet','x','Gemeinsam in den Abgrund, Stufe 9.']
+]});
+
+/* 5.8 process optimisation */
+var PO=[
+ {t:'Rechnung kommt per Post',m:2,o:'Rechnung kommt als E-Rechnung',om:0,a:'Rechnung kommt als E-Rechnung',am:0},
+ {t:'Scannen',m:3,o:null,a:null},
+ {t:'Ausdrucken für die Prüfung',m:3,o:null,a:null},
+ {t:'Sachlich prüfen',m:5,o:'Sachlich prüfen',om:5,a:'KI gleicht mit Bestellung und Lieferschein ab, ein Mensch prüft nur Abweichungen',am:1.5,ai:1},
+ {t:'Zweite Prüfung durch die Teamleitung, immer',m:6,o:'Zweite Prüfung nur ab 5.000 €',om:.6,a:'Zweite Prüfung nur ab 5.000 €',am:.6},
+ {t:'Werte von Hand ins ERP tippen',m:6,o:'Werte von Hand ins ERP tippen',om:6,a:'KI liest die Rechnung aus und füllt das ERP',am:.4,ai:1},
+ {t:'Freigabe per Unterschrift',m:3,o:'Freigabe per Klick',om:1,a:'Freigabe per Klick',am:1},
+ {t:'Papier ablegen',m:2,o:null,a:null}
+],poI=0;
+function poDraw(){$$('#poT button').forEach(function(b){b.setAttribute('aria-selected',String(+b.dataset.po===poI))});var F=$('#poF');F.innerHTML='';var sum=0;
+  PO.forEach(function(p){var txt=poI===0?p.t:poI===1?p.o:p.a,min=poI===0?p.m:poI===1?p.om:p.am,gone=txt==null,li=h('li',gone?'gone':(poI===2&&p.ai?'ai':(poI&&txt!==p.t?'chg':'')));
+    li.innerHTML='<span>'+(gone?p.t:txt)+'</span><b class="mono">'+(gone?'entfällt':(min<1&&min>0?'&lt; 1':Math.round(min))+' min')+'</b>';if(!gone)sum+=min;F.appendChild(li)});
+  var M=['<b>Heute: rund '+Math.round(sum)+' Minuten pro Rechnung</b>Acht Schritte, davon drei ohne Mehrwert.','<b>Optimiert: rund '+Math.round(sum)+' Minuten, noch ganz ohne KI</b>Ausdruck, Scan und Ablage fallen weg, die zweite Prüfung nur noch bei hohen Beträgen.','<b>Mit KI: rund '+Math.round(sum)+' Minuten</b>Die KI übernimmt Auslesen und Abgleich, der Mensch entscheidet bei Abweichungen. Hätte man den alten Prozess automatisiert, würde die KI auch Ausdruck und Ablage nachbauen.'];
+  $('#poV').innerHTML=M[poI]+' <span class="grey">Modellrechnung.</span>'}
+$$('#poT button').forEach(function(b){b.addEventListener('click',function(){poI=+b.dataset.po;poDraw()})});poDraw();
+
+/* 5.9 personas and touchpoints */
+var TP=['Schaden entdeckt','Infos suchen','Schaden melden','Fotos einreichen','Auf Antwort warten','Gutachter-Termin','Auszahlung'];
+var PS=[
+ {t:'Tim, 25',d:'Softwaretester, wohnt zur Miete in der Stadt, erledigt alles am Handy, ruft ungern an.',m:[-2,-1,1,1,-2,0,2],n:['Wasser in der Küche, Panik.','Findet die Schadenmeldung schnell in der App.','Meldung in drei Minuten in der App erledigt.','Fotos direkt aus der App hochgeladen.','Zehn Tage kein Status. Er weiß nicht, ob etwas passiert.','Termin per Link gebucht, aber nur werktags.','Geld ist da, Push-Nachricht.'],k:['','','','','Automatische Statusmeldungen, KI schätzt die Bearbeitungszeit.','KI-Terminassistent mit Abend- und Samstagsterminen.','']},
+ {t:'Carla, 52',d:'Pflegedienstleiterin, Eigenheim, telefoniert lieber, hat wenig Zeit.',m:[-2,-2,-1,-2,-2,1,2],n:['Wasser im Keller, Panik.','Die Website ist unübersichtlich, die Nummer schwer zu finden.','Hotline: 20 Minuten Warteschleife.','Soll Fotos in einer App hochladen, die sie nicht hat.','Niemand meldet sich, sie ruft dreimal an.','Freundlicher Gutachter vor Ort.','Geld ist da, Brief kommt.'],k:['','KI-Suche, die Fragen in Alltagssprache versteht.','Sprach-KI nimmt den Schaden rund um die Uhr auf, Rückruf statt Warteschleife.','Upload per Link in der SMS, KI erkennt die Schadensart.','Statusanruf oder SMS automatisch bei jedem Schritt.','','']}
+];
+var psI=0,psJ=4,psS=$('#psS'),psSet=tabsFor($('#psT'),PS.map(function(p){return p.t}),function(i){psI=i;psJ=PS[i].m.indexOf(Math.min.apply(null,PS[i].m));psDraw()});
+function psDraw(){psSet(psI);var P=PS[psI];$('#psD').innerHTML='<b>'+P.t+'</b> · '+P.d;
+  while(psS.firstChild)psS.removeChild(psS.firstChild);
+  var X0=30,X1=620,Y0=180,Y1=20,w=(X1-X0)/7,cx=function(i){return X0+w*i+w/2},y=function(v){return Y1+(2-v)/4*(Y0-Y1)};
+  el('line',{x1:X0,y1:y(0),x2:X1,y2:y(0),stroke:'rgba(14,15,12,.25)','stroke-dasharray':'3 4'},psS);
+  var l1=el('text',{x:X0,y:Y1-6},psS);l1.textContent='GUT';var l2=el('text',{x:X0,y:Y0+12},psS);l2.textContent='SCHLECHT';
+  el('path',{d:smooth(P.m.map(function(v,i){return [cx(i),y(v)]})),fill:'none',stroke:'#0E0F0C','stroke-width':2.5},psS);
+  P.m.forEach(function(v,i){var g=hitG(psS,TP[i],function(){psJ=i;psDraw()});g.setAttribute('aria-pressed',String(i===psJ));el('rect',{x:X0+w*i,y:Y1-10,width:w,height:Y0-Y1+44,fill:i===psJ?'rgba(214,0,111,.07)':'transparent'},g);
+    el('circle',{cx:cx(i),cy:y(v),r:i===psJ?10:7,fill:v<0?'#D6006F':v>0?'#0B6B3A':'#F2F3EF',stroke:v===0?'#0E0F0C':'none','stroke-width':2},g);
+    if(P.k[i]){var s=el('text',{x:cx(i),y:y(v)-14,'text-anchor':'middle',style:'fill:#D6006F;font-size:10px'},g);s.textContent='KI'}
+    var t=el('text',{x:cx(i),y:Y0+(i%2?44:30),'text-anchor':'middle',style:'fill:'+(i===psJ?'#D6006F':'#55584F')},g);t.textContent=TP[i].toUpperCase()});
+  $('#psV').innerHTML='<b>'+TP[psJ]+'</b>'+P.n[psJ]+(P.k[psJ]?' <br><span class="m">KI-Chance:</span> '+P.k[psJ]:'');
+}
+psDraw();
+
+/* 5.11 review */
+initCards(5,[
+ ['Kultur','Wie hängen Kultur und KI zusammen?','In beide Richtungen: Kultur ist der Nährboden für KI, und KI verändert die Kultur.'],
+ ['Kultur','Vier Schlüsselfaktoren für den Kulturwandel?','Klares Zielbild mit Warum, offen sagen, was sich für jeden ändert, Führung als Vorbild, Mitarbeitende beteiligen.'],
+ ['3K','Was bedeuten Kopf, Bauch und Hand?','Kopf: verstehen, warum. Bauch: Gefühle, Sorgen, implizite Motive. Hand: sich die Fähigkeiten zutrauen. Hebel: Kommunikation, Beteiligung, Training.'],
+ ['Change','Die sieben Phasen der Change-Kurve?','Schock, Verneinung, rationale Einsicht, emotionale Akzeptanz, Ausprobieren, Erkenntnis, Integration.'],
+ ['Change','Was ist das Ziel von Change Management?','Schneller bei der Integration ankommen, die Tiefs kürzer und flacher halten.'],
+ ['Verankern','Was heißt Institutionalisierung?','KI raus aus dem Projektstatus: feste Verantwortliche, ein festes Team, Standards, Ziele aus der Unternehmensstrategie.'],
+ ['Team','Die Phasen der Team-Uhr nach Tuckman?','Forming, Storming, Norming, Performing, bei Projektteams Adjourning.'],
+ ['Team','Was macht ein KI-fähiges Team aus?','Interdisziplinär, kommunikationsstark, anpassungsfähig, kann Konflikte lösen und zusammenarbeiten.'],
+ ['Belbin','Die drei Rollengruppen nach Belbin?','Denken (Neuerer, Beobachter, Spezialist), Mensch (Koordinator, Teamarbeiter, Wegbereiter), Umsetzung (Macher, Umsetzer, Perfektionist).'],
+ ['Kommunikation','Die vier Seiten einer Nachricht?','Sachinhalt, Selbstkundgabe, Beziehung, Appell. Missverständnisse entstehen, wenn Sender und Empfänger verschiedene Seiten nutzen.'],
+ ['Konflikt','Die drei Ebenen nach Glasl?','Stufen 1 bis 3 win-win, 4 bis 6 win-lose, 7 bis 9 lose-lose. Früh eingreifen.'],
+ ['Prozesse','Warum erst optimieren, dann automatisieren?','Sonst automatisiert man unnötige Schritte. Von außen hilft der Blick der Kundschaft: Empathiekarte, Persona, Touchpoints.']
+]);
+initCloze(5,[
+ ['Eine erfolgreiche {KI-Integration|Prozessoptimierung|Kündigung} führt durch die Phasen der Change-Kurve: vom ersten {Schock|Zweifel|Erfolg} über die Verneinung bis zur Akzeptanz. Wer das gut {begleitet|ignoriert|verschweigt}, kommt schneller ans Ziel.'],
+ ['Je mehr Wissen aus dem {Elfenbeinturm|Kundschaftsbereich|Lager} in die Breite fließt, desto unabhängiger wird das Unternehmen vom KI-Team. Diese {Wissensdiffusion|Datenanalyse|Produktion} ist die Basis für nachhaltige {Innovation|Bürokratie|Hierarchie}.'],
+ ['{Präventives Konfliktmanagement|Effektives Zeitmanagement|Risikovermeidung} ist ein unsichtbarer Erfolgsfaktor: Eine Kultur des offenen {Dialogs|Wettbewerbs|Schweigens} macht aus Meinungsverschiedenheiten eine Chance zur {Weiterentwicklung|Marktanpassung|Kündigung}.'],
+ ['Personas sind {Schlüsselinstrumente|Nebenaspekte|Finanzprognosen} der Produktentwicklung. Sie machen abstrakte {Marktdaten|Trends|Gehälter} greifbar und richten Angebote auf echte {Bedürfnisse|Widerstände|Vorschriften} aus.'],
+ ['Die {Schattenseiten|Potenziale|Kosten} der KI-Integration: Wo Ängste verborgen bleiben und Wissen nicht {gesammelt|ignoriert|gelöscht} wird, scheitert Technik an Menschen. Der Schlüssel ist, {Unsichtbares|Überflüssiges|Teures} sichtbar zu machen.'],
+ ['Im 3K-Modell steht der {Kopf|Bauch|Fuß} für die rationale Einsicht, der {Bauch|Kopf|Rücken} für Gefühle und Sorgen und die {Hand|Stirn|Nase} für die eigenen Fähigkeiten.']
+]);
+initQuiz(5,[
+ ['Was ist laut Edgar Schein die sichtbare Spitze des Eisbergs?',['Die Artefakte, etwa Büros und Kleidung','Die Werte und Normen','Die Grundannahmen'],'Werte liegen unter der Wasserlinie, Grundannahmen ganz unten.'],
+ ['Wie sollten Führungskräfte den Kulturwandel bei KI gestalten?',['Als Vorbild: klare Ziele kommunizieren und zeigen, wie KI sinnvoll genutzt wird','Sich zurückhalten und alles den Mitarbeitenden überlassen','Nur strategisch planen und die Einbindung delegieren'],'Vorbild, Zielbild und Beteiligung gehören zusammen.'],
+ ['Welche Dimension im 3K-Modell steht für die rationale Einsicht?',['Der Kopf','Der Bauch','Die Hand'],'Bauch steht für Gefühle, Hand für Fähigkeiten.'],
+ ['In welcher Tuckman-Phase werden Konflikte im Team ausgehandelt?',['Storming','Forming','Performing'],'Nach dem Kennenlernen prallen die Interessen aufeinander.'],
+ ['Wie hilft interdisziplinäre Zusammenarbeit, KI langfristig zu verankern?',['Sie bringt verschiedene Perspektiven ein und erhöht Akzeptanz und Mehrwert','Das KI-Team kann isoliert arbeiten','Sie verzögert alles durch Abstimmung'],'Fachbereiche, IT und Management gehören an den Tisch.'],
+ ['Sollen KI-Initiativen in die Unternehmensstrategie eingebunden sein?',['Ja, damit die KI-Ziele auf die Geschäftsziele einzahlen','Nein, getrennt geht es schneller','Nein, das hemmt Innovation'],'Ohne strategischen Auftrag fehlt der Mehrwert fürs Geschäft.'],
+ ['Was zeichnet ein KI-fähiges Team aus?',['Interdisziplinäre Mitglieder, die gut zusammenarbeiten und kommunizieren','Nur technische Fachleute','Nur gute Führungskräfte, keine Technik'],'Technik, Domäne, Ethik und Soft Skills gehören zusammen.'],
+ ['Was beschreibt das Modell von Schulz von Thun?',['Jede Nachricht hat vier Seiten: Sachinhalt, Selbstkundgabe, Beziehung, Appell','Kommunikation läuft nur auf der Sachebene','Gute Kommunikation sorgt dafür, dass alle dieselbe Meinung haben'],'Es hilft, Missverständnisse zu verstehen, nicht Meinungen anzugleichen.'],
+ ['Wann können nach Glasl noch beide Seiten gewinnen?',['Auf den ersten Stufen, etwa Verhärtung und Debatte','Beim offenen Angriff','Beim gemeinsamen Gang in den Abgrund'],'Stufen 1 bis 3 sind win-win.'],
+ ['Was leistet eine Touchpoint-Analyse?',['Sie zeigt, wie die Kundschaft an jedem Berührungspunkt mit dem Produkt erlebt und wo man verbessern sollte','Sie zeigt nur, welche internen Prozesse sich automatisieren lassen','Sie hält Kundenfeedback aus der Entwicklung heraus'],'Der Blick von außen ergänzt die Prozessoptimierung von innen.'],
+ ['Wie bewirkt KI positive Veränderungen im Unternehmen?',['Sie schafft Bewusstsein für den Wert der Technik und Offenheit für künftige Veränderungen','Sie verbessert nur die Technik, ohne die Kultur zu berühren','Sie spart Kosten, ohne Mitarbeitende einzubeziehen'],'Neue Artefakte wirken auf die Werte.'],
+ ['Was war das Ziel des KI-Tages der Stadtwerke?',['Aufmerksamkeit schaffen und erste Trainings anbieten','Den ganzen Betrieb sofort automatisieren','Die gesamte Branche analysieren'],'Ein erster Fuß im Wasser.'],
+ ['Wie hilft das Belbin-Modell beim Teamaufbau?',['Es ordnet Rollen in die Gruppen Denken, Mensch und Umsetzung','Es findet technische Schwächen','Es gibt allen dieselben Aufgaben'],'Ein gutes Team deckt alle drei Gruppen ab.'],
+ ['Sollte man Prozesse vor der KI-Automatisierung optimieren?',['Ja, sonst automatisiert man unnötige Schritte','Nein, die KI verbessert ineffiziente Abläufe von selbst','Nein, das kostet nur Zeit'],'Erst aufräumen, dann automatisieren.'],
+ ['Was hilft gegen Widerstände aus Angst vor KI?',['Klare Kommunikation und Beteiligungsformate','Alle Prozesse automatisieren','Kündigungen'],'Kopf und Bauch ansprechen: erklären und zuhören.']
 ]);
 
 })();
