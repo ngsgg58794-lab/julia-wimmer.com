@@ -679,6 +679,99 @@ svg text{font-family:var(--mono);font-size:9px;fill:var(--grey);letter-spacing:.
 .snH mark.n{background:var(--mag-soft);color:var(--mag)}
 .snH u{text-decoration-color:var(--mag);text-decoration-thickness:2px}
 
+/* ---------- module 4 ---------- */
+.scr .mono{margin:0 0 6px}
+.scf{display:flex;flex-wrap:wrap;align-items:center;gap:6px 4px;margin-bottom:14px}
+.scr2{display:flex;flex-wrap:wrap;gap:6px}
+.scb{display:inline-flex;flex-direction:column;align-items:flex-start;gap:1px;padding:7px 10px;border:1px solid var(--ink);background:var(--paper);font-weight:700;font-size:.875rem;line-height:1.2;text-align:left;cursor:pointer;transition:background-color .15s ease,color .15s ease}
+.scb span{font-family:var(--mono);font-size:.625rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--grey)}
+.scb.k-event{border-radius:999px;padding-left:14px;padding-right:14px}
+.scb.k-rolle{border-style:dashed}
+.scb:hover{background:var(--paper-2)}
+.scb[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.scb[aria-pressed="true"] span{color:#ff4fa3}
+.sca{color:var(--mag);font-size:1rem}
+.scl{color:var(--mag);margin-left:6px}
+.usb{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+.usb label{display:flex;flex-direction:column;gap:4px}
+.usb select{appearance:none;-webkit-appearance:none;width:100%;padding:9px 28px 9px 10px;border:1px solid var(--ink);border-radius:0;background:var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%230E0F0C'/%3E%3C/svg%3E") no-repeat right 10px center;font-weight:600;font-size:.9375rem;cursor:pointer}
+@media (max-width:760px){.usb{grid-template-columns:1fr}}
+.mani{display:grid;gap:10px}
+.mvr{display:grid;grid-template-columns:2.4rem minmax(0,1.3fr) auto minmax(0,1fr);gap:4px 14px;align-items:center;padding:14px 16px;border:1px solid var(--ink);background:var(--paper);text-align:left;cursor:pointer;transition:background-color .15s ease}
+.mvr:hover{background:var(--paper-2)}
+.mvn{color:var(--mag)}
+.mvl{font-size:1.25rem;line-height:1.1;font-stretch:72%;font-weight:800;text-transform:uppercase}
+.mvo{color:var(--mag)}
+.mvrr{color:var(--grey);font-weight:600;font-size:.9375rem}
+.mvx{grid-column:2/-1;display:none;margin-top:6px;padding-top:8px;border-top:1px solid var(--line);font-size:.9375rem;line-height:1.45}
+.mvr[aria-expanded="true"]{box-shadow:5px 5px 0 var(--ink)}
+.mvr[aria-expanded="true"] .mvx{display:block}
+@media (max-width:620px){.mvr{grid-template-columns:2rem minmax(0,1fr)}.mvo,.mvrr{grid-column:2}.mvx{grid-column:1/-1}}
+.stc{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:24px;align-items:start}
+.stc svg{display:block;width:100%;max-width:420px;height:auto;margin:0 auto}
+.stc .dec label{display:block}
+@media (max-width:820px){.stc{grid-template-columns:1fr}}
+.sob.s4{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:820px){.sob.s4{grid-template-columns:1fr 1fr}}
+.sob.swg{grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--ink)}
+.sob.swg>div{padding:12px;min-height:120px}
+.sob.swg>div:nth-child(2n){border-left:1px solid var(--ink)}
+.sob.swg>div:nth-child(n+3){border-top:1px solid var(--ink);background:var(--paper-2)}
+.rdw{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:center}
+.rdw svg{display:block;width:100%;max-width:420px;height:auto;margin:0 auto}
+@media (max-width:820px){.rdw{grid-template-columns:1fr}}
+.cmx{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px;align-items:start;margin-top:16px}
+@media (max-width:760px){.cmx{grid-template-columns:1fr}}
+.cmg{display:grid;grid-template-columns:auto 1fr 1fr;border:1px solid var(--ink)}
+.cmg>div{padding:10px 12px;border-left:1px solid var(--line);border-top:1px solid var(--line);font-family:var(--mono);font-size:1.5rem;line-height:1.1}
+.cmg>div.mono{font-size:.6875rem;color:var(--grey);display:flex;align-items:center}
+.cmg>div:nth-child(-n+3){border-top:0}
+.cmg>div:nth-child(3n+1){border-left:0}
+.cmg small{display:block;font-size:.6875rem;color:var(--grey);margin-top:2px}
+.cmg .hit{background:var(--ok-soft);color:var(--ok)}
+.cmg .miss{background:var(--mag-soft);color:var(--mag)}
+.cmg .fa{background:rgba(214,0,111,.06)}
+.rkw{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:28px;align-items:start}
+@media (max-width:900px){.rkw{grid-template-columns:1fr}}
+.rkm{position:relative;display:grid;grid-template-columns:repeat(5,1fr);grid-template-rows:repeat(5,1fr);aspect-ratio:1;margin:0 0 24px 24px;border:1px solid var(--ink);max-width:380px}
+.rkc{position:relative;display:flex;flex-wrap:wrap;align-content:center;justify-content:center;gap:3px;border-left:1px solid var(--line);border-top:1px solid var(--line)}
+.rkd{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:.75rem}
+.rkd.pos,.rkn.pos{background:var(--ok)}
+.rka{position:absolute;font-family:var(--mono);font-size:.625rem;letter-spacing:.06em;text-transform:uppercase;color:var(--grey);white-space:nowrap}
+.rka.x{left:0;right:0;bottom:-20px;text-align:right}
+.rka.y{left:-20px;bottom:0;transform:rotate(-90deg);transform-origin:left bottom;width:0}
+.rkr{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:4px 10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--line)}
+.rkr b{display:block;font-size:.9375rem;line-height:1.25}
+.rkr .mono{text-transform:none;font-size:.6875rem}
+.rkn{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:.75rem}
+.rki{font-family:var(--mono);font-size:1.125rem;color:var(--mag);min-width:2ch;text-align:right}
+.rki.pos{color:var(--ok)}
+.rkx{grid-column:2/-1;display:flex;flex-wrap:wrap;gap:8px}
+.rkx .seg button{width:26px;height:24px}
+.sgl{display:inline-flex;align-items:center;padding:0 6px;border-right:1px solid var(--ink);font-size:.625rem}
+.dph svg{display:block;width:100%;height:auto}
+.mxd.hr{background:var(--mag);border-color:var(--mag);color:#fff}
+.mxd.hy{background:var(--paper);border-color:var(--grey);color:var(--ink)}
+.mxd.hg{background:var(--ok);border-color:var(--ok);color:#fff}
+.mxd[aria-pressed="true"]{box-shadow:0 0 0 3px var(--paper),0 0 0 5px var(--ink);z-index:3}
+.shg .qd.tr{background:var(--mag-soft)}
+.legend i.lr{background:var(--mag);border-color:var(--mag)}
+.legend i.ly{background:var(--paper);border-color:var(--grey)}
+.legend i.lg2{background:var(--ok);border-color:var(--ok)}
+.okc{color:var(--ok)}
+.fish svg{display:block;width:100%;height:auto;margin-top:8px}
+.fbn{cursor:pointer}
+.fbl{stroke:var(--ink);stroke-width:1.5}
+.fbr{fill:var(--paper);stroke:var(--ink)}
+.fbn text{font-family:var(--mono);font-size:9.5px;fill:var(--ink);font-weight:500}
+.fbn:hover .fbr{fill:var(--paper-2)}
+.fbn[aria-pressed="true"] .fbr{fill:var(--mag);stroke:var(--mag)}
+.fbn[aria-pressed="true"] text{fill:#fff}
+.fbn[aria-pressed="true"] .fbl{stroke:var(--mag);stroke-width:2.5}
+.fbn:focus{outline:none}
+.fbn:focus-visible .fbr{stroke:var(--mag);stroke-width:3}
+@media (max-width:620px){#prS text{font-size:15px}#anS text{font-size:14px}}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{transition-duration:.01ms!important;animation:none!important}
@@ -1186,7 +1279,7 @@ svg text{font-family:var(--mono);font-size:9px;fill:var(--grey);letter-spacing:.
 <span class="ax y">Nutzen &#8594;</span><span class="ax x">Machbarkeit &#8594;</span>
 </div>
 <div class="mxp" aria-live="polite">
-<div class="dh"><span class="mono grey" id="mxA"></span><button class="lnk" type="button" id="mxR">Ausgangswerte</button></div>
+<div class="dh"><span class="mono grey" id="mxA"></span><button class="lnk" type="button" id="mxR2">Ausgangswerte</button></div>
 <div class="db">
 <h4 id="mxT"></h4>
 <p class="nt" id="mxN"></p>
@@ -1718,6 +1811,410 @@ svg text{font-family:var(--mono);font-size:9px;fill:var(--grey);letter-spacing:.
 </div></div>
 </section>
 
+<!-- ============ MODUL 4 ============ -->
+<section class="mod" id="m4" data-mod="4" aria-labelledby="m4-t" hidden>
+
+<header class="mh wrap">
+<div class="in">
+<div>
+<p class="mno" aria-hidden="true">04</p>
+<h2 class="mt" id="m4-t">KI-Projekte strategisch umsetzen</h2>
+<p class="lead">Wie man KI-Projekte plant, führt und absichert: agil mit Scrum, mit der Stacey-Matrix, einem Reifegrad-Check, sauberen Kennzahlen, Risikomanagement, Stakeholdern und Qualitätswerkzeugen.</p>
+</div>
+<div class="prog" aria-label="Fortschritt Modul 4">
+<p class="mono grey">Wiederholung · <span data-pc="4">0 / 6</span></p>
+<ul>
+<li data-ck="stacey"><i></i><a href="#m4-stacey">Stacey</a></li>
+<li data-ck="risk"><i></i><a href="#m4-risiken">Risikoarten</a></li>
+<li data-ck="swot"><i></i><a href="#m4-swot">SWOT</a></li>
+<li data-ck="cards"><i></i><a href="#m4-cards">Karteikarten</a></li>
+<li data-ck="cloze"><i></i><a href="#m4-cloze">Lückentext</a></li>
+<li data-ck="quiz"><i></i><a href="#m4-quiz">Quiz</a></li>
+</ul>
+</div>
+</div>
+<nav class="in toc" aria-label="Inhalt Modul 4">
+<a href="#m4-scrum"><span>4.1</span>Scrum</a>
+<a href="#m4-fuehrung"><span>4.2</span>Agile Führung</a>
+<a href="#m4-manifest"><span>4.3</span>Agiles Manifest</a>
+<a href="#m4-stacey"><span>4.4</span>Stacey-Matrix</a>
+<a href="#m4-reife"><span>4.5</span>Reifegrad</a>
+<a href="#m4-kpi"><span>4.6</span>Roadmap &amp; KPIs</a>
+<a href="#m4-steuern"><span>4.7</span>Steuern &amp; Abschluss</a>
+<a href="#m4-skalieren"><span>4.8</span>Skalieren</a>
+<a href="#m4-risiken"><span>4.9</span>Risiken</a>
+<a href="#m4-swot"><span>4.10</span>SWOT &amp; Delphi</a>
+<a href="#m4-stakeholder"><span>4.11</span>Stakeholder</a>
+<a href="#m4-qualitaet"><span>4.12</span>Qualität</a>
+<a href="#m4-repeat"><span>4.13</span>Wiederholen</a>
+<a href="#m4-check"><span>4.14</span>Faktencheck</a>
+</nav>
+</header>
+
+<div class="wrap"><div class="in">
+
+<!-- 4.1 -->
+<section class="sec" id="m4-scrum">
+<div class="sh"><span class="sno">4.1</span><h3>Warum agil, und wie Scrum funktioniert</h3><p>KI-Projekte sind schwer planbar: Modelle lernen aus Daten, Ergebnisse schwanken, die Technik ändert sich ständig. Deshalb arbeitet man in kurzen Zyklen. Scrum ist das bekannteste Rahmenwerk dafür.</p></div>
+<div class="hurd h4">
+<div><span>01</span><b>Unvorhersehbar</b><p>Trainingsergebnisse lassen sich nicht vorab planen</p></div>
+<div><span>02</span><b>Iterativ</b><p>Modelle werden Schritt für Schritt besser</p></div>
+<div><span>03</span><b>Interdisziplinär</b><p>Data Science, Entwicklung, Fachleute und Ethik an einem Tisch</p></div>
+<div><span>04</span><b>Schnelllebig</b><p>Neue Technik kommt ins laufende Projekt statt in den nächsten Plan</p></div>
+</div>
+<div class="fig" style="margin-top:24px">
+<div class="fh"><h4>Ein Sprint im Überblick</h4><span class="mono grey">Abb. 4.1 · tippe ein Element an</span></div>
+<div class="fb">
+<div class="scr" id="scF"></div>
+<div class="area" style="margin-top:16px;box-shadow:none" aria-live="polite">
+<div><p class="mono grey" id="scK"></p><p class="ex" id="scT"></p><p class="d" id="scD"></p></div>
+<dl><div><dt>Im KI-Projekt</dt><dd id="scE"></dd></div></dl>
+</div>
+</div>
+</div>
+<div class="fig" style="margin-top:24px">
+<div class="fh"><h4>User Story bauen</h4><span class="mono grey">Als … möchte ich …, damit …</span></div>
+<div class="fb">
+<p>User Stories beschreiben Anforderungen aus Sicht der Nutzenden. Der Nutzen am Ende ist der wichtigste Teil, ohne ihn lässt sich nichts priorisieren.</p>
+<div class="usb">
+<label><span class="mono grey">Rolle</span><select id="usR"><option>Sachbearbeiterin im Rechnungseingang</option><option>Teamleitung Kundenservice</option><option>Projektleitung</option><option>Vertriebsmitarbeiter</option></select></label>
+<label><span class="mono grey">Ziel</span><select id="usZ"><option>Rechnungen automatisch auslesen lassen</option><option>Kundenanfragen vorsortieren lassen</option><option>ein KI-Tool für Datenanalysen nutzen</option><option>Verkaufsgespräche mit einem KI-Avatar üben</option></select></label>
+<label><span class="mono grey">Nutzen</span><select id="usN"><option value="">… (ohne Nutzen)</option><option>die Bearbeitung um 30 % schneller wird</option><option>dringende Fälle zuerst bearbeitet werden</option><option>wir fundierter entscheiden</option><option>ich ohne Reise zum Seminar trainieren kann</option></select></label>
+</div>
+<p class="quote" id="usO" style="margin-top:16px" aria-live="polite"></p>
+<p class="note" id="usH"></p>
+</div>
+</div>
+</section>
+
+<!-- 4.2 -->
+<section class="sec" id="m4-fuehrung">
+<div class="sh"><span class="sno">4.2</span><h3>Agile Führung</h3><p>Führen ohne Weisungsbefugnis: Das Team entscheidet selbst, wie es arbeitet. Für viele Führungskräfte ist das ein Kulturbruch, der Monate bis Jahre dauert.</p></div>
+<div class="fig"><div class="fb" style="padding-top:6px">
+<table class="cmp">
+<thead><tr><th scope="col">Thema</th><th scope="col">Klassisch</th><th scope="col">Agil</th></tr></thead>
+<tbody>
+<tr><th scope="row">Führung</th><td data-l="Klassisch">über Macht und Anweisung</td><td data-l="Agil">über Überzeugung und Motivation</td></tr>
+<tr><th scope="row">Entscheidungen</th><td data-l="Klassisch">die Führungskraft</td><td data-l="Agil">das Team, wie es arbeitet</td></tr>
+<tr><th scope="row">Planung</th><td data-l="Klassisch">alles vorab, dann umsetzen</td><td data-l="Agil">grob vorab, laufend verfeinern</td></tr>
+<tr><th scope="row">Kundschaft</th><td data-l="Klassisch">sieht das Ergebnis am Ende</td><td data-l="Agil">sieht alle paar Wochen Zwischenstände</td></tr>
+<tr><th scope="row">Verbesserung</th><td data-l="Klassisch">Lessons Learned am Projektende</td><td data-l="Agil">Retrospektive nach jedem Sprint</td></tr>
+</tbody>
+</table>
+</div></div>
+<h4 class="mono m" style="margin:24px 0 10px">Drei Wege in die agile Führung</h4>
+<div class="hurd">
+<div><span>01</span><b>Sorgfältiger Wandel</b><p>Schulen, Wissen vermitteln, alle mitnehmen, oft mit externer Begleitung. Dauert, hält aber.</p></div>
+<div><span>02</span><b>Ausgründung</b><p>Eine neue, von Anfang an agile Einheit neben dem Bestehenden.</p></div>
+<div><span>03</span><b>Hybrid</b><p>Das Beste aus beiden Welten: Zyklen und Anpassung übernehmen, den Rest passend wählen. Heute der Normalfall.</p></div>
+</div>
+</section>
+
+<!-- 4.3 -->
+<section class="sec" id="m4-manifest">
+<div class="sh"><span class="sno">4.3</span><h3>Das Agile Manifest</h3><p>2001 von 17 Software-Fachleuten formuliert, darunter die Scrum-Erfinder Jeff Sutherland und Ken Schwaber. Vier Werte, zwölf Prinzipien. Wichtig: Die rechte Seite bleibt wertvoll, die linke zählt nur mehr.</p></div>
+<div class="mani" id="mnV"></div>
+<details class="ans"><summary>Die zwölf Prinzipien</summary><div class="ab"><ol class="nl">
+<li>Zufriedene Kundschaft durch frühe und laufende Auslieferung</li>
+<li>Änderungen auch spät willkommen heißen</li>
+<li>In kurzen Abständen funktionierende Ergebnisse liefern</li>
+<li>Fachleute und Entwicklung arbeiten täglich zusammen</li>
+<li>Motivierte Menschen, Umfeld und Vertrauen geben</li>
+<li>Am besten persönlich miteinander sprechen</li>
+<li>Funktionierende Ergebnisse sind das Maß für Fortschritt</li>
+<li>Ein Tempo, das sich dauerhaft halten lässt</li>
+<li>Technische Exzellenz und gutes Design</li>
+<li>Einfachheit: unnötige Arbeit weglassen</li>
+<li>Selbstorganisierte Teams liefern die besten Lösungen</li>
+<li>Regelmäßig reflektieren und anpassen</li>
+</ol></div></details>
+</section>
+
+<!-- 4.4 -->
+<section class="sec" id="m4-stacey">
+<div class="sh"><span class="sno">4.4</span><h3>Agil oder klassisch? Die Stacey-Matrix</h3><p>Zwei Fragen entscheiden: Wie klar ist, was gebraucht wird? Und wie bekannt ist der Weg dorthin? Je unklarer beides, desto eher agil. Stell die Regler ein oder wähle ein Beispiel.</p></div>
+<div class="fig">
+<div class="fh"><h4>Wo liegt dein Projekt?</h4><span class="mono grey">Abb. 4.4 · interaktiv</span></div>
+<div class="fb">
+<div class="stc">
+<svg id="stS" viewBox="0 0 320 320" role="img" aria-label="Stacey-Matrix mit dem eingestellten Projekt"></svg>
+<div>
+<div class="chips" id="stP" style="margin-top:0"></div>
+<div class="dec" style="margin-top:16px">
+<label class="mono grey" for="stX">Wie bekannt ist der Lösungsweg?</label>
+<input type="range" id="stX" min="0" max="100" value="20">
+<div class="ends"><span>bekannt</span><span></span><span>völlig neu</span></div>
+<label class="mono grey" for="stY" style="display:block;margin-top:12px">Wie klar sind die Anforderungen?</label>
+<input type="range" id="stY" min="0" max="100" value="20">
+<div class="ends"><span>klar</span><span></span><span>unklar</span></div>
+</div>
+<div class="vd" id="stV" aria-live="polite" style="margin-top:16px"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="fig" style="margin-top:24px">
+<div class="fh"><h4>Übung: Ordne die Projekte ein</h4><span class="mono grey" data-so-s></span></div>
+<div class="fb" id="m4-st"><div class="soc"></div><div class="sob s4"></div></div>
+</div>
+<p class="key"><span class="mono">Kern</span><span>Die meisten KI-Projekte sind komplex: unbekannte Technik und häufige Änderungen. Nur ganz einfache Vorhaben lohnen den agilen Aufwand nicht.</span></p>
+</section>
+
+<!-- 4.5 -->
+<section class="sec" id="m4-reife">
+<div class="sh"><span class="sno">4.5</span><h3>Der KI-Reifegrad-Check</h3><p>Viele Firmen sehen KI als reines IT-Thema. Ein Reifegradmodell schaut rundum: Wo stehen wir, wo sind die Lücken? Bewerte ein Unternehmen, das Netz zeigt die Schwachstellen.</p></div>
+<div class="fig">
+<div class="fh"><h4>Sechs Handlungsfelder</h4><span class="mono grey">Abb. 4.5 · Selbsteinschätzung</span></div>
+<div class="fb">
+<div class="rdw">
+<svg id="rdS" viewBox="0 0 340 320" role="img" aria-label="Netzdiagramm des KI-Reifegrads"></svg>
+<div><div class="cr" id="rdC" style="margin-top:0"></div><p class="vd" id="rdV" aria-live="polite"></p></div>
+</div>
+<p class="note">Online gibt es viele kostenlose Reifegrad-Tests, meist von Beratungen. Danach lohnt laut Kurs ein externer Blick, weil der dem Vorstand unbefangen sagen kann, wo es hakt.</p>
+</div>
+</div>
+<p class="key"><span class="mono">Kern</span><span>KI-Projekte nach Nutzen priorisieren und die Reihenfolge regelmäßig prüfen. KI entwickelt sich in Wochen, nicht in Fünfjahresplänen.</span></p>
+</section>
+
+<!-- 4.6 -->
+<section class="sec" id="m4-kpi">
+<div class="sh"><span class="sno">4.6</span><h3>Roadmap, Ressourcen und Kennzahlen</h3><p>Eine KI-Roadmap reiht die geplanten Projekte nach Priorität auf, meist über vier bis fünf Jahre. Wichtig: Sie wird laufend angepasst, nicht stur abgearbeitet.</p></div>
+<ol class="steps">
+<li><b>Ziele klären</b><p>Was erwarten die Stakeholder?</p></li>
+<li><b>Priorisieren</b><p>Projekte sammeln und nach Nutzen ordnen</p></li>
+<li><b>Ressourcen planen</b><p>Personal, Daten, IT, Budget</p></li>
+<li><b>Risiken prüfen</b><p>mit Stakeholdern, sie sehen oft mehr</p></li>
+</ol>
+<div class="two" style="margin-top:24px;align-items:start">
+<div><h4 class="mono m" style="margin-bottom:8px">Ressourcen</h4><ul class="lst">
+<li><b>Menschen:</b> das Wichtigste. Erst prüfen, ob eigene Leute fortgebildet werden können, dann extern ergänzen.</li>
+<li><b>Daten:</b> oft unterschätzt. Verbessern, ergänzen, Qualität sichern.</li>
+<li><b>IT:</b> intern oder Cloud? Ein großes Sprachmodell läuft besser in der Cloud, eine kleine Qualitätskontrolle auf einem Mini-Computer.</li>
+<li><b>Geld:</b> Budget für alles davon</li>
+</ul></div>
+<div><h4 class="mono m" style="margin-bottom:8px">Gute Ziele sind SMART</h4><ul class="lst">
+<li><b>S</b>pezifisch: Was genau?</li><li><b>M</b>essbar: Woran erkennen wir es?</li><li><b>E</b>rreichbar: realistisch</li><li><b>R</b>elevant: zahlt aufs Unternehmensziel ein</li><li><b>T</b>erminiert: bis wann?</li>
+</ul></div>
+</div>
+<div class="fig" style="margin-top:24px">
+<div class="fh"><h4>Warum 99 % Genauigkeit wenig sagt</h4><span class="mono grey">Abb. 4.6 · KI-spezifische KPIs</span></div>
+<div class="fb">
+<p>1.000 Röntgenbilder, 10 davon mit Befund. Vergleiche zwei Modelle.</p>
+<div class="tabs" role="group" aria-label="Modell" style="margin-top:12px"><button type="button" aria-selected="true" data-cm="0">Modell A: sagt immer „gesund“</button><button type="button" aria-selected="false" data-cm="1">Modell B: echtes Modell</button></div>
+<div class="cmx">
+<div class="cmg" id="cmG" aria-hidden="true"></div>
+<dl class="kv" id="cmK"></dl>
+</div>
+<p class="msg" id="cmM" aria-live="polite" style="font-weight:650;margin-top:12px"></p>
+</div>
+</div>
+<div class="hurd h4" style="margin-top:24px">
+<div><span>01</span><b>Zuverlässigkeit</b><p>Fehlerrate, Treffer und Fehlalarme getrennt messen</p></div>
+<div><span>02</span><b>Halluzinationen</b><p>Wie oft erfindet ein Sprachmodell etwas?</p></div>
+<div><span>03</span><b>Fairness</b><p>Behandelt das Modell alle Gruppen gleich?</p></div>
+<div><span>04</span><b>Geschwindigkeit</b><p>Im Auto zählt jede Millisekunde, etwa beim Notbremsassistenten</p></div>
+</div>
+</section>
+
+<!-- 4.7 -->
+<section class="sec" id="m4-steuern">
+<div class="sh"><span class="sno">4.7</span><h3>Steuern und sauber abschließen</h3><p>Vision, User Stories, Sprints. Ein kleines Team von etwa fünf bis sieben Leuten entscheidet selbst. Datenbeschaffung gehört in jeden Sprint, nicht nur an den Anfang.</p></div>
+<div class="two" style="align-items:start">
+<div class="fig"><div class="fh"><h4>Do's</h4><span class="mono" style="color:var(--ok)">Erfolgsfaktoren</span></div><div class="fb"><ul class="lst">
+<li><b>Kurze Iterationen</b> und schnelles Feedback</li>
+<li><b>Wert zuerst:</b> Features mit größtem Nutzen priorisieren, Fortschritt sichtbar machen (Kanban)</li>
+<li><b>Gemischte Teams:</b> Data Science, Entwicklung, Fachleute, Ethik</li>
+<li><b>Lernkultur:</b> Retrospektiven, Fehler als Lernchance</li>
+<li><b>Ethik und Erklärbarkeit</b> in jedem Sprint prüfen</li>
+</ul></div></div>
+<div class="fig"><div class="fh"><h4>Don'ts</h4><span class="mono m">Fallstricke</span></div><div class="fb"><ul class="lst">
+<li><b>Datenqualität</b> vernachlässigen, technische Schulden anhäufen</li>
+<li><b>Annehmen, dass alles glatt läuft,</b> starre Pläne</li>
+<li><b>Nutzende vergessen:</b> Die beste KI ist wertlos, wenn sie niemand bedienen kann</li>
+<li><b>Unklare Rollen</b> und Mitarbeitende mit der Umstellung allein lassen</li>
+</ul></div></div>
+</div>
+<h4 class="mono m" style="margin:24px 0 10px">Projektabschluss</h4>
+<ol class="steps">
+<li><b>Laufend abnehmen</b><p>jeder Sprint endet mit einem Review</p></li>
+<li><b>Qualität bewerten</b><p>Fehlerrate, Fehlalarme, Halluzinationen</p></li>
+<li><b>Lessons Learned</b><p>dokumentieren, was schief lief und was gut war</p></li>
+<li><b>Übergabe</b><p>an den Betrieb, mit Schulung und Plan fürs Weitertrainieren</p></li>
+</ol>
+</section>
+
+<!-- 4.8 -->
+<section class="sec" id="m4-skalieren">
+<div class="sh"><span class="sno">4.8</span><h3>Vom Pilot zur Skalierung</h3><p>Was im Kleinen läuft, kann im Großen scheitern. Vor dem Hochskalieren drei Fragen: Bringt es echten Wert? Nimmt die Kundschaft es an? Ist es technisch machbar, mit genug Daten?</p></div>
+<div class="two" style="align-items:start">
+<div><h4 class="mono m" style="margin-bottom:8px">So skaliert man</h4><ul class="lst">
+<li><b>Cloud:</b> Rechenleistung zumieten statt selbst aufbauen</li>
+<li><b>DevOps:</b> Entwicklung und IT-Betrieb arbeiten zusammen, laufend integrieren und ausliefern</li>
+<li><b>Datenpipelines:</b> automatisierte Datenflüsse, damit das Modell mit frischen Daten weiterlernt</li>
+<li><b>Markt beobachten:</b> Wettbewerb, Verbände, Szenarien</li>
+</ul></div>
+<div><h4 class="mono m" style="margin-bottom:8px">Zwei Beispiele aus dem Kurs</h4>
+<div class="laws" style="grid-template-columns:1fr">
+<div><span class="mono m">Versicherung</span><b>Avatar-Training</b><p>Ein KI-Avatar spielt die Kundschaft im Verkaufsgespräch und gibt danach Feedback. Ersetzt Präsenzseminare, rund um die Uhr nutzbar.</p></div>
+<div><span class="mono m">NotCo, Chile</span><b>Pflanzliche „Schildkröte“</b><p>Die KI Giuseppe durchsuchte über 300.000 Pflanzen nach einer Kombination, die wie Schildkrötenfleisch schmeckt. Probiert haben am Ende Menschen.</p></div>
+</div></div>
+</div>
+</section>
+
+<!-- 4.9 -->
+<section class="sec" id="m4-risiken">
+<div class="sh"><span class="sno">4.9</span><h3>Risiken erkennen und bewerten</h3><p>Ein Risiko ist ein unsicheres Ereignis, das ein Projekt verschlechtern oder verbessern kann. Ja, es gibt auch positive Risiken. Bewertet wird mit Wahrscheinlichkeit mal Schaden, das ergibt den Risikoindex.</p></div>
+<div class="fig">
+<div class="fh"><h4>Risikomatrix eines KI-Projekts</h4><span class="mono grey">Abb. 4.9 · Werte anpassbar</span></div>
+<div class="fb">
+<div class="rkw">
+<div class="rkm" id="rkM" role="group" aria-label="Risikomatrix"></div>
+<div><div class="rkl" id="rkL"></div></div>
+</div>
+<p class="note">Wahrscheinlichkeit und Schaden je von 1 bis 5. Index = Wahrscheinlichkeit × Schaden. Hohe Werte zuerst angehen. Das grüne Risiko ist eine Chance.</p>
+</div>
+</div>
+<div class="fig" style="margin-top:24px">
+<div class="fh"><h4>Übung: Welche Risikoart?</h4><span class="mono grey">10 Beispiele</span></div>
+<div class="fb" id="m4-assign"><ol class="mx"></ol><div class="score"><p class="st" data-as-s aria-live="polite"></p><button class="btn ghost" type="button" data-as-r>Neu starten</button></div></div>
+</div>
+<h4 class="mono m" style="margin:28px 0 10px">Risiken mindern</h4>
+<div class="hurd h4">
+<div><span>T</span><b>Technisch</b><p>Redundante Systeme, Backups, Cloud, testen und Vorfälle simulieren</p></div>
+<div><span>O</span><b>Organisatorisch</b><p>Schulungen, Fachleute, Verantwortliche fürs Risiko, offene Fehlerkultur</p></div>
+<div><span>P</span><b>Prozessual</b><p>Prozesse festhalten und dokumentieren, die DSGVO verlangt das ohnehin</p></div>
+<div><span>R</span><b>Rechtlich &amp; ethisch</b><p>KI-Richtlinie im Unternehmen: Was ist erlaubt? Eine Managementaufgabe.</p></div>
+</div>
+</section>
+
+<!-- 4.10 -->
+<section class="sec" id="m4-swot">
+<div class="sh"><span class="sno">4.10</span><h3>SWOT, Brainstorming und Delphi</h3><p>Die SWOT-Analyse liefert früh einen groben Überblick: Stärken und Schwächen sind intern, Chancen und Risiken kommen von außen. Danach geht man mit Brainstorming und Fachleuten in die Tiefe.</p></div>
+<div class="fig">
+<div class="fh"><h4>Übung: SWOT sortieren</h4><span class="mono grey" data-so-s></span></div>
+<div class="fb" id="m4-sw"><div class="soc"></div><div class="sob s4 swg"></div></div>
+</div>
+<div class="fig" style="margin-top:24px">
+<div class="fh"><h4>Die Delphi-Methode</h4><span class="mono grey">Abb. 4.10 · Schätzung: Wahrscheinlichkeit eines Datenlecks</span></div>
+<div class="fb">
+<p>Fünf Fachleute schätzen anonym. Nach jeder Runde sehen alle die zusammengefasste Auswertung, aber nicht, wer was gesagt hat. Gruppendruck fällt weg, die Meinungen nähern sich an.</p>
+<div class="dph"><svg id="dpS" viewBox="0 0 600 120" role="img" aria-label="Schätzungen von fünf Fachleuten auf einer Skala von 0 bis 100 Prozent"></svg></div>
+<div class="row" style="margin-top:10px"><button class="btn" type="button" id="dpB">Nächste Runde</button><p class="st" id="dpS2" aria-live="polite"></p></div>
+</div>
+</div>
+</section>
+
+<!-- 4.11 -->
+<section class="sec" id="m4-stakeholder">
+<div class="sh"><span class="sno">4.11</span><h3>Stakeholder einbinden</h3><p>Stakeholder haben Interesse am Projekt und Einfluss darauf. Bei KI fehlt vielen das Wissen, das erzeugt Abwehr, oft aus Angst um den Job. Beispiel: ein KI-Assistent im Kundenservice. Tippe eine Gruppe an.</p></div>
+<div class="fig">
+<div class="fh"><h4>Stakeholder-Matrix</h4><span class="mono grey">Abb. 4.11 · Farbe = Haltung</span></div>
+<div class="fb">
+<div class="mtx">
+<div class="mxw">
+<div class="mxg shg" id="shG" role="group" aria-label="Stakeholder-Matrix">
+<span class="qd tl">Informieren</span><span class="qd tr">Eng einbinden</span><span class="qd bl">Beobachten</span><span class="qd br">Zufrieden&shy;stellen</span>
+</div>
+<span class="ax y">Interesse &#8594;</span><span class="ax x">Einfluss &#8594;</span>
+</div>
+<div class="mxp" aria-live="polite">
+<div class="dh"><span class="mono grey" id="shA"></span><span class="mono" id="shH"></span></div>
+<div class="db"><h4 id="shT"></h4><p class="nt" id="shN"></p><p class="vd" id="shV"></p>
+<div class="tabs" role="group" aria-label="Haltung ändern" id="shB" style="margin-top:12px"><button type="button" data-h="r">kritisch</button><button type="button" data-h="y">neutral</button><button type="button" data-h="g">positiv</button></div>
+</div>
+</div>
+</div>
+<div class="legend" style="margin-top:12px"><span><i class="lr"></i>kritisch</span><span><i class="ly"></i>neutral</span><span><i class="lg2"></i>positiv</span></div>
+</div>
+</div>
+<div class="fig" style="margin-top:24px"><div class="fb" style="padding-top:6px">
+<table class="cmp">
+<thead><tr><th scope="col">Widerstand aus …</th><th scope="col">Was dahintersteckt</th><th scope="col">Was hilft</th></tr></thead>
+<tbody>
+<tr><th scope="row">Angst</th><td data-l="Dahinter">„Die KI nimmt mir den Job weg.“</td><td data-l="Hilft">Informieren, schulen, den eigenen Nutzen zeigen</td></tr>
+<tr><th scope="row">Kränkung</th><td data-l="Dahinter">Jemand Wichtiges wurde nicht gefragt</td><td data-l="Hilft">Nachträglich einbinden, Bedeutung anerkennen</td></tr>
+<tr><th scope="row">Werte</th><td data-l="Dahinter">Das Projekt widerspricht dem, was jemandem wichtig ist</td><td data-l="Hilft">Mitwirken lassen, Sinn und Bedeutung betonen</td></tr>
+</tbody>
+</table>
+</div></div>
+<p class="key"><span class="mono">Kern</span><span>Vertrauen ist das wichtigste Gut. Offen kommunizieren, nichts zurückhalten, Fehler einräumen. Und den Betriebsrat früh einbinden, nicht am Schluss überraschen.</span></p>
+</section>
+
+<!-- 4.12 -->
+<section class="sec" id="m4-qualitaet">
+<div class="sh"><span class="sno">4.12</span><h3>Qualität laufend verbessern</h3><p>Weil Erfahrungswerte fehlen, muss bei KI ständig geprüft werden, ob die Ziele erreicht werden. Klassische Werkzeuge aus dem Qualitätsmanagement passen dafür gut.</p></div>
+<div class="two" style="align-items:start">
+<div class="fig"><div class="fh"><h4>PDCA-Zyklus</h4><span class="mono grey">Shewhart, Deming</span></div><div class="fb">
+<div class="cyc"><svg viewBox="0 0 300 300" role="img" aria-label="Kreislauf Plan, Do, Check, Act">
+<circle cx="150" cy="150" r="100" fill="none" stroke="#0E0F0C" stroke-width="1.5" stroke-dasharray="4 5"/>
+<g class="spin"><circle cx="150" cy="50" r="7" fill="#D6006F"/></g>
+<g class="st">
+<rect x="104" y="34" width="92" height="32" fill="#F2F3EF" stroke="#0E0F0C"/><text x="150" y="55" text-anchor="middle">Plan</text>
+<rect x="204" y="134" width="92" height="32" fill="#F2F3EF" stroke="#0E0F0C"/><text x="250" y="155" text-anchor="middle">Do</text>
+<rect x="104" y="234" width="92" height="32" fill="#F2F3EF" stroke="#0E0F0C"/><text x="150" y="255" text-anchor="middle">Check</text>
+<rect x="4" y="134" width="92" height="32" fill="#F2F3EF" stroke="#0E0F0C"/><text x="50" y="155" text-anchor="middle">Act</text>
+</g>
+<text x="150" y="146" text-anchor="middle" style="font-size:10px;fill:#D6006F">VERBESSERN</text>
+<text x="150" y="162" text-anchor="middle" style="font-size:10px">und von vorn</text>
+</svg></div>
+<p style="margin-top:8px">Verbesserung planen, ausprobieren, prüfen, dann übernehmen oder verwerfen. Und von vorn. Verwandt: Kaizen und Lean Management.</p>
+</div></div>
+<div class="fig"><div class="fh"><h4>Ishikawa: Ursachen suchen</h4><span class="mono grey">Fischgrät-Diagramm</span></div><div class="fb">
+<p>Problem: <b>Die KI bevorzugt bestimmte Bewerbungen.</b> Tippe eine Gräte an.</p>
+<div class="fish"><svg id="fsS" viewBox="0 0 420 220" role="group" aria-label="Fischgrät-Diagramm mit sechs Ursachenfeldern"></svg></div>
+<div class="vd" id="fsV" aria-live="polite"></div>
+</div></div>
+</div>
+<div class="fig" style="margin-top:24px">
+<div class="fh"><h4>Pareto: die wichtigsten Ursachen zuerst</h4><span class="mono grey">Abb. 4.12 · Fehlerfälle nach Ursache</span></div>
+<div class="fb">
+<div class="ana"><svg id="prS" viewBox="0 0 620 250" role="img" aria-label="Pareto-Diagramm"></svg></div>
+<p class="note">Ursachen: einseitige Daten, fehlender Bias-Test, falsche Merkmale, Messfehler, fehlende Updates, Zeitdruck. Wenige Ursachen erklären die meisten Fehler, oft gilt grob 80 zu 20. Hier stecken zwei von sechs hinter rund drei Vierteln der Fälle. Erst Ishikawa sammelt, dann Pareto priorisiert.</p>
+</div>
+</div>
+</section>
+
+<!-- 4.13 -->
+<section class="sec" id="m4-repeat">
+<div class="sh"><span class="sno">4.13</span><h3>Wiederholen</h3><p>Erst Karteikarten, dann Lückentext, dann das Quiz. Dein Fortschritt bleibt in diesem Browser gespeichert.</p></div>
+<div id="m4-cards" style="scroll-margin-top:70px">
+<div class="row" style="justify-content:space-between;margin-bottom:12px"><h4 class="mono m">Karteikarten · antippen zum Umdrehen</h4><span class="mono grey" data-cd-s></span></div>
+<div class="cards"></div>
+</div>
+<div class="fig" id="m4-cloze" style="margin-top:36px;scroll-margin-top:70px">
+<div class="fh"><h4>Lückentext</h4><span class="mono grey">aus den Kursaufgaben, in meinen Worten</span></div>
+<div class="fb">
+<ol class="cz"></ol>
+<div class="row" style="margin-top:16px"><button class="btn" type="button" data-cz-go>Prüfen</button><button class="btn ghost" type="button" data-cz-r>Zurücksetzen</button><p class="st" data-cz-s aria-live="polite"></p></div>
+</div>
+</div>
+<div class="fig" id="m4-quiz" style="margin-top:36px;scroll-margin-top:70px">
+<div class="fh"><h4>Quiz Modul 4</h4><span class="mono grey" data-qz-best></span></div>
+<div class="fb"><div class="qz" aria-live="polite"></div></div>
+</div>
+</section>
+
+<!-- 4.14 -->
+<section class="sec" id="m4-check">
+<div class="sh"><span class="sno">4.14</span><h3>Faktencheck</h3><p>Modul 4 widerspricht sich an ein paar Stellen selbst, und einige Beispiele sind zugespitzt. Das habe ich nachgeprüft. Für die Prüfung merke ich mir beide Versionen.</p></div>
+<table class="fct">
+<thead><tr><th scope="col">Thema</th><th scope="col">Im Kursmaterial</th><th scope="col">Nachgeprüft</th></tr></thead>
+<tbody>
+<tr><th scope="row">Sprintlänge</th><td>„3 bis 4 Wochen“, „2 bis 4 Wochen“, im Leitfaden „1 bis 2 Wochen“</td><td>Laut Scrum Guide höchstens ein Monat. Üblich sind zwei Wochen.</td></tr>
+<tr><th scope="row">Daily Scrum</th><td>„etwa 10 Minuten“</td><td>Laut Scrum Guide höchstens 15 Minuten.</td></tr>
+<tr><th scope="row">Agil ist schneller</th><td>4.1: „schneller und kostengünstiger, das kann man pauschal sagen“</td><td>In 4.2 sagt derselbe Sprecher: „nicht unbedingt schneller“, eher effektiver. Pauschal belegt ist „schneller“ nicht.</td></tr>
+<tr><th scope="row">Agiles Manifest</th><td>„Hauptsache Ziel erreicht, egal wie“</td><td>Das Manifest sagt ausdrücklich: Die Werte rechts (Dokumentation, Pläne, Verträge) bleiben wichtig, die linken zählen nur mehr.</td></tr>
+<tr><th scope="row">PDCA-Zyklus</th><td>„Anfang des 20. Jahrhunderts, über 100 Jahre alt“</td><td>Der Kreislauf geht auf Walter Shewhart (1939) zurück, Deming machte ihn ab den 1950ern bekannt. Gut 85 Jahre alt.</td></tr>
+<tr><th scope="row">Kaizen und Lean</th><td>„zwei Methoden aus dem Agilen“</td><td>Umgekehrt: Sie stammen aus dem japanischen Qualitätsmanagement, etwa bei Toyota, und sind älter als das Agile Manifest. Agil hat von Lean gelernt.</td></tr>
+<tr><th scope="row">Amazon-Recruiting-KI</th><td>bevorzugte Männer und europäischstämmige Bewerber, es wurden mehr Männer eingestellt</td><td>Reuters (2018) berichtete von Benachteiligung von Frauen, nicht von Herkunft. Laut Amazon wurde das Tool nie zur Bewertung von Bewerbungen genutzt, das Projekt endete 2017.</td></tr>
+<tr><th scope="row">NotCo „NotTurtle“</th><td>Beispiel für Skalierung</td><td>Gibt es (2024), ist aber eine Aufklärungskampagne zum Schutz der Meeresschildkröten, kein verkauftes Produkt. 260 „Trillionen“ ist richtig übersetzt (englisch quintillion).</td></tr>
+</tbody>
+</table>
+</section>
+
+</div></div>
+</section>
+
 <!-- placeholder for locked modules, filled by JS -->
 <section class="mod lockp wrap" id="mx-lock" hidden aria-live="polite">
 <div class="in"><div class="box">
@@ -1761,7 +2258,7 @@ var MODS=[
  {n:1,s:'Grundlagen',t:'Grundlagen der KI-Technologien',live:true,checks:['match','cards','cloze','quiz']},
  {n:2,s:'Anwendungen',t:'KI-Anwendungsgebiete im Unternehmen',live:true,checks:['sort','cards','cloze','quiz']},
  {n:3,s:'Daten',t:'Datenmanagement als Basis für erfolgreiche KI-Anwendungen',live:true,checks:['roles','ice','cards','cloze','quiz']},
- {n:4,s:'Strategie',t:'Strategische Implementierung von KI in Unternehmen'},
+ {n:4,s:'Strategie',t:'Strategische Implementierung von KI in Unternehmen',live:true,checks:['stacey','risk','swot','cards','cloze','quiz']},
  {n:5,s:'Kultur & Change',t:'Organisatorische und kulturelle Integration von KI'},
  {n:6,s:'Ethik & Recht',t:'Ethische und rechtliche Aspekte der KI-Nutzung'},
  {n:7,s:'Sicherheit',t:'Cybersicherheit und KI-Sicherheit'},
@@ -2217,7 +2714,7 @@ function mxSel(i){
     r.appendChild(s);C.appendChild(r)});
   var q=QD[quad(it.c)];$('#mxV').innerHTML='<b>'+q[0]+'</b>'+q[1];
 }
-$('#mxR').addEventListener('click',function(){IDEAS.forEach(function(it,i){it.c=START[i].slice()});mxPlace();mxSel(mxI)});
+$('#mxR2').addEventListener('click',function(){IDEAS.forEach(function(it,i){it.c=START[i].slice()});mxPlace();mxSel(mxI)});
 mxPlace();mxSel(0);
 
 /* 2.5 sort */
@@ -2661,6 +3158,266 @@ initQuiz(3,[
  ['Was braucht eine transparente Data Governance?',['Klare Rollen und Verantwortung, Kommunikation und Dokumentation','Nur das Management hat Zugriff','Eine KI trifft alle Datenentscheidungen'],'Governance heißt: Wer ist wofür verantwortlich, und alle wissen es.'],
  ['Wie hilft Sentimentanalyse im Krisenmanagement?',['Sie erkennt negative Stimmung in Social Media früh','Sie zählt Kundenanfragen','Sie ersetzt die Pressestelle'],'Wer Stimmung früh sieht, kann reagieren, bevor sich Kritik ausbreitet.'],
  ['Welche Ebene im Eisbergmodell sollte man ansprechen, um Datenkultur zu verankern?',['Werte und Normen','Nur die Artefakte','Die Grundannahmen direkt'],'Artefakte ändern allein wenig, Grundannahmen sind kaum erreichbar.']
+]);
+
+
+/* ================= MODUL 4 ================= */
+/* 4.1 scrum explorer */
+var SC=[
+ {k:'Artefakt',t:'Product Backlog',d:'Priorisierte Liste aller Anforderungen, meist als User Stories. Der Product Owner pflegt und ordnet sie laufend.',e:'„Rechnungsdaten aus dem Archiv beschaffen“, „Modell an echten Belegen testen“'},
+ {k:'Event',t:'Sprint Planning',d:'Team und Product Owner legen das Sprint-Ziel fest und wählen die Einträge für diesen Sprint.',e:'Sprint-Ziel: Der Prototyp liest 80 % der Rechnungen richtig aus.'},
+ {k:'Artefakt',t:'Sprint Backlog',d:'Die Aufgaben, die sich das Team für diesen Sprint vorgenommen hat, samt Plan.',e:'Trainingsdaten bereinigen, Modell trainieren, Fehlerquote messen.'},
+ {k:'Event',t:'Sprint',d:'Fester Zeitraum von höchstens einem Monat. Am Ende steht ein nutzbares Ergebnis.',e:'Zwei Wochen Arbeit am Prototyp.'},
+ {k:'Event',t:'Daily Scrum',d:'Kurzes tägliches Treffen: Fortschritt, Hindernisse, Plan für die nächsten 24 Stunden.',e:'„Die Testdaten fehlen noch. Wer fragt beim Datenschutz nach?“'},
+ {k:'Artefakt',t:'Increment',d:'Das fertige, potenziell auslieferbare Ergebnis eines Sprints.',e:'Ein Prototyp, den der Rechnungseingang ausprobieren kann.'},
+ {k:'Event',t:'Sprint Review',d:'Das Team zeigt das Ergebnis den Stakeholdern und sammelt Feedback. Das Product Backlog wird angepasst.',e:'Die Buchhaltung testet und wünscht sich eine Prüfansicht für unsichere Fälle.'},
+ {k:'Event',t:'Retrospektive',d:'Das Team reflektiert: Was lief gut, was verbessern wir? Dann startet der nächste Sprint.',e:'„Datenzugriff früher klären“ wird ab dem nächsten Sprint umgesetzt.'},
+ {k:'Rolle',t:'Product Owner',d:'Verantwortet den Wert des Produkts und priorisiert das Product Backlog.',e:'Bündelt die Wünsche aus Buchhaltung, IT und Management.'},
+ {k:'Rolle',t:'Development Team',d:'Das fachübergreifende Team, das das Ergebnis baut. Organisiert sich selbst. Im aktuellen Scrum Guide heißen sie Developers.',e:'Data Scientist, Entwickler, eine Fachexpertin aus der Buchhaltung.'},
+ {k:'Rolle',t:'Scrum Master',d:'Sorgt dafür, dass Scrum funktioniert, räumt Hindernisse aus dem Weg und coacht das Team.',e:'Klärt mit dem Datenschutz, warum die Daten noch fehlen.'}
+];
+var scF=$('#scF'),scB=[];
+(function(){
+  var flow=h('div','scf'),roles=h('div','scr2');
+  SC.forEach(function(s,i){
+    var b=h('button','scb k-'+s.k.toLowerCase());b.type='button';b.setAttribute('aria-pressed','false');b.innerHTML='<span>'+s.k+'</span>'+s.t;b.addEventListener('click',function(){scSel(i)});scB.push(b);
+    if(s.k==='Rolle')roles.appendChild(b);else{flow.appendChild(b);if(i<7)flow.appendChild(h('span','sca','&#8594;'))}
+  });
+  flow.appendChild(h('span','scl mono','&#8634; nächster Sprint'));
+  scF.appendChild(h('p','mono grey','Ablauf'));scF.appendChild(flow);scF.appendChild(h('p','mono grey','Rollen'));scF.appendChild(roles);
+})();
+function scSel(i){var S=SC[i];scB.forEach(function(b,j){b.setAttribute('aria-pressed',String(j===i))});$('#scK').textContent=S.k;$('#scT').textContent=S.t;$('#scD').textContent=S.d;$('#scE').textContent=S.e}
+scSel(0);
+
+/* 4.1 user story builder */
+function usRun(){var r=$('#usR').value,z=$('#usZ').value,n=$('#usN').value;
+  $('#usO').textContent='„Als '+r+' möchte ich '+z+(n?', damit '+n:'')+'.“';
+  $('#usH').textContent=n?'Rolle, Ziel und Nutzen sind drin. So lässt sich die Story verstehen, schätzen und priorisieren.':'Ohne Nutzen fehlt das Warum. Woran soll der Product Owner erkennen, wie wichtig die Story ist?';
+  $('#usH').style.color=n?'':'var(--mag)'}
+['#usR','#usZ','#usN'].forEach(function(s){$(s).addEventListener('change',usRun)});$('#usN').selectedIndex=1;usRun();
+
+/* 4.3 manifesto */
+var MV=[
+ ['Individuen und Interaktionen','Prozesse und Werkzeuge','Menschen und ihr Austausch zählen mehr als das perfekte Tool. Statt wochenlang über Software zu diskutieren: mit dem arbeiten, womit das Team gut kann.'],
+ ['Funktionierende Software','umfassende Dokumentation','Ein Ergebnis, das läuft, ist mehr wert als ein dicker Ordner. Gilt heute weit über die IT hinaus.'],
+ ['Zusammenarbeit mit der Kundschaft','Vertragsverhandlungen','Bei Problemen zusammensetzen, statt auf 500 Seiten Vertrag zu pochen.'],
+ ['Reagieren auf Veränderung','Befolgen eines Plans','Planen ja, aber anpassen, sobald es einen besseren Weg gibt.']
+];
+MV.forEach(function(v,i){var b=h('button','mvr');b.type='button';b.setAttribute('aria-expanded','false');
+  b.innerHTML='<span class="mvn mono">0'+(i+1)+'</span><span class="mvl">'+v[0]+'</span><span class="mvo mono">über</span><span class="mvrr">'+v[1]+'</span><span class="mvx">'+v[2]+'</span>';
+  b.addEventListener('click',function(){var o=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',String(o))});$('#mnV').appendChild(b)});
+
+/* 4.4 stacey */
+var stS=$('#stS'),SX0=40,SY0=290,SW=262;
+(function(){
+  var cp=el('clipPath',{id:'stcp'},el('defs',{},stS));el('rect',{x:SX0,y:SY0-SW,width:SW,height:SW},cp);
+  var g=el('g',{'clip-path':'url(#stcp)'},stS);
+  [[1.5,'rgba(214,0,111,.28)'],[1.08,'rgba(214,0,111,.14)'],[.74,'rgba(14,15,12,.07)'],[.4,'#F2F3EF']].forEach(function(z){el('circle',{cx:SX0,cy:SY0,r:z[0]*SW,fill:z[1],stroke:'rgba(14,15,12,.25)'},g)});
+  el('rect',{x:SX0,y:SY0-SW,width:SW,height:SW,fill:'none',stroke:'#0E0F0C'},stS);
+  [['EINFACH',.12,.12],['KOMPLIZIERT',.42,.38],['KOMPLEX',.66,.66],['CHAOS',.88,.9]].forEach(function(l){var t=el('text',{x:SX0+l[1]*SW,y:SY0-l[2]*SW,'text-anchor':'middle',style:'font-weight:500;fill:#0E0F0C'},stS);t.textContent=l[0]});
+  var ax=el('text',{x:SX0+SW,y:SY0+18,'text-anchor':'end'},stS);ax.textContent='LÖSUNGSWEG UNBEKANNT →';
+  var ay=el('text',{x:SX0-10,y:SY0,'text-anchor':'start',transform:'rotate(-90 '+(SX0-10)+' '+SY0+')'},stS);ay.textContent='ANFORDERUNGEN UNKLAR →';
+  el('circle',{id:'stcD',r:9,fill:'#D6006F',stroke:'#fff','stroke-width':2,style:'transition:cx .3s ease,cy .3s ease'},stS);
+})();
+var STP=[['Monatsabschluss in der Buchhaltung',10,8],['ERP-Modul nach Lastenheft',48,22],['KI-Assistent im Kundenservice',72,64],['Cyberangriff legt alles lahm',94,92]];
+var STZ=[['Einfach','Klassisch planen und abarbeiten. Best Practices reichen, agiler Aufwand lohnt nicht.'],['Kompliziert','Fachleute hinzuziehen, sorgfältig analysieren und planen. Klassisch oder hybrid.'],['Komplex','Agil arbeiten: iterativ, experimentieren, anpassen. Hier liegen die meisten KI-Projekte.'],['Chaos','Sofort handeln und stabilisieren, danach eine längerfristige Lösung finden.']];
+STP.forEach(function(p){var b=h('button','chip');b.type='button';b.textContent=p[0];b.addEventListener('click',function(){$('#stX').value=p[1];$('#stY').value=p[2];stRun()});$('#stP').appendChild(b)});
+function stRun(){var x=+$('#stX').value/100,y=+$('#stY').value/100,r=Math.sqrt(x*x+y*y),z=r<.4?0:r<.74?1:r<1.08?2:3;
+  var d=$('#stcD');d.setAttribute('cx',SX0+x*SW);d.setAttribute('cy',SY0-y*SW);$('#stV').innerHTML='<b>'+STZ[z][0]+'</b>'+STZ[z][1]}
+['#stX','#stY'].forEach(function(s){$(s).addEventListener('input',stRun)});stRun();
+initSort({root:'#m4-st',status:'#m4-stacey [data-so-s]',mod:4,check:'stacey',label:'Projekt',end:'Faustregel: Je unklarer Was und Wie, desto agiler.',buckets:[['e','Einfach'],['k','Kompliziert'],['x','Komplex','m'],['c','Chaos','m']],items:[
+ ['Eingangsrechnungen nach festem Schema verbuchen','e','Klare Anforderung, bekannter Weg: Routine.'],
+ ['Standardpräsentation mit Firmenvorlage','e','Alles klar und schon oft gemacht.'],
+ ['Komplexes Excel-Modell mit vielen Formeln','k','Anforderungen klar, aber Expertenwissen nötig.'],
+ ['ERP-Modul nach detailliertem Lastenheft','k','Viele Faktoren, aber Ursache und Wirkung sind bekannt.'],
+ ['KI-Chatbot für den Kundenservice einführen','x','Neue Technik, Anforderungen ändern sich unterwegs.'],
+ ['Marketingstrategie für einen ganz neuen Markt','x','Viele Unbekannte, man lernt erst beim Ausprobieren.'],
+ ['Unerwarteter IT-Ausfall im ganzen Unternehmen','c','Nichts ist klar, erst handeln und stabilisieren.'],
+ ['Hackerangriff mit Lösegeldforderung','c','Krise: sofort reagieren, später aufarbeiten.']
+]});
+
+/* 4.5 maturity radar */
+var RD=[['Daten','Datenquellen erfassen, Qualität messen, Lücken schließen'],['Mitarbeitende','Schulungen und Pilotgruppen, Know-how gezielt aufbauen'],['Führung','Führungskräfte schulen, KI-Strategie gemeinsam entwickeln'],['IT-Infrastruktur','Cloud oder eigene Infrastruktur prüfen, Schnittstellen schaffen','IT'],['Compliance & KPIs','KI-Richtlinie aufsetzen, Kennzahlen für KI-Projekte festlegen','Compliance'],['Strategie','Anwendungsfälle sammeln und nach Nutzen priorisieren']];
+var rdVal=get('rd4',[3,2,2,3,1,2]),rdS=$('#rdS'),RCX=170,RCY=160,RR=94;
+function rdPt(i,v){var a=(-90+i*60)*Math.PI/180,r=RR*v/5;return [RCX+r*Math.cos(a),RCY+r*Math.sin(a)]}
+function rdDraw(){
+  while(rdS.firstChild)rdS.removeChild(rdS.firstChild);
+  [1,2,3,4,5].forEach(function(l){el('polygon',{points:RD.map(function(_,i){return rdPt(i,l).join(',')}).join(' '),fill:l===5?'#F2F3EF':'none',stroke:'rgba(14,15,12,'+(l===5?.5:.15)+')'},rdS)});
+  RD.forEach(function(d,i){var p=rdPt(i,5);el('line',{x1:RCX,y1:RCY,x2:p[0],y2:p[1],stroke:'rgba(14,15,12,.15)'},rdS);var q=rdPt(i,5.9);var t=el('text',{x:q[0],y:q[1]+3,'text-anchor':q[0]<RCX-5?'end':q[0]>RCX+5?'start':'middle',style:'fill:#0E0F0C;font-weight:500'},rdS);t.textContent=(d[2]||d[0]).toUpperCase()});
+  el('polygon',{points:rdVal.map(function(v,i){return rdPt(i,v).join(',')}).join(' '),fill:'rgba(214,0,111,.22)',stroke:'#D6006F','stroke-width':2},rdS);
+  rdVal.forEach(function(v,i){var p=rdPt(i,v);el('circle',{cx:p[0],cy:p[1],r:4,fill:'#D6006F'},rdS)});
+  var C=$('#rdC');C.innerHTML='';
+  RD.forEach(function(d,k){var r=h('div');r.innerHTML='<span>'+d[0]+'</span>';var s=h('div','seg');s.setAttribute('role','group');s.setAttribute('aria-label',d[0]);
+    for(var v=1;v<=5;v++)(function(v){var b=h('button');b.type='button';b.textContent=v;b.setAttribute('aria-pressed',String(rdVal[k]===v));b.addEventListener('click',function(){rdVal[k]=v;put('rd4',rdVal);rdDraw()});s.appendChild(b)})(v);
+    r.appendChild(s);C.appendChild(r)});
+  var mn=Math.min.apply(null,rdVal),avg=rdVal.reduce(function(a,b){return a+b},0)/6,lv=['Einsteiger','Erste Schritte','Im Aufbau','Fortgeschritten','Vorreiter'][Math.min(4,Math.round(avg)-1)];
+  var gaps=RD.filter(function(_,i){return rdVal[i]===mn});
+  $('#rdV').innerHTML='<b>Reifegrad Ø '+avg.toFixed(1).replace('.',',')+' · '+lv+'</b>Größte Lücke: '+gaps.map(function(g){return g[0]}).join(', ')+'. Erster Schritt: '+gaps[0][1]+'.';
+}
+rdDraw();
+
+/* 4.6 confusion matrix */
+var CM=[{tp:0,fn:10,fp:0,tn:990,m:'Modell A hat 99 % Genauigkeit und findet trotzdem keinen einzigen Befund. Bei seltenen Fällen täuscht die Genauigkeit.'},{tp:9,fn:1,fp:40,tn:950,m:'Modell B ist „nur“ zu 95,9 % genau, findet aber 9 von 10 Befunden. Dafür gibt es 40 Fehlalarme, die Fachleute prüfen müssen.'}];
+function cmRun(i){$$('[data-cm]').forEach(function(b){b.setAttribute('aria-selected',String(+b.dataset.cm===i))});var c=CM[i],acc=(c.tp+c.tn)/10;
+  $('#cmG').innerHTML='<div></div><div class="mono">KI: Befund</div><div class="mono">KI: gesund</div><div class="mono">wirklich Befund</div><div class="hit">'+c.tp+'<small>erkannt</small></div><div class="miss">'+c.fn+'<small>übersehen</small></div><div class="mono">wirklich gesund</div><div class="fa">'+c.fp+'<small>Fehlalarm</small></div><div class="ok2">'+c.tn+'<small>richtig gesund</small></div>';
+  $('#cmK').innerHTML='<div><dt>Genauigkeit</dt><dd>'+acc.toFixed(1).replace('.',',')+' %</dd></div><div><dt>Trefferquote (Sensitivität)</dt><dd>'+(c.tp*10)+' % der Befunde gefunden</dd></div><div><dt>Fehlalarme</dt><dd>'+c.fp+' gesunde Bilder als auffällig markiert</dd></div>';
+  $('#cmM').textContent=c.m}
+$$('[data-cm]').forEach(function(b){b.addEventListener('click',function(){cmRun(+b.dataset.cm)})});cmRun(0);
+
+/* 4.9 risk matrix */
+var RK=get('rk4',null)||[
+ {t:'KI-Plattform fällt zwei Tage aus',c:'technisch',p:2,s:4},
+ {t:'Trainingsdaten sind zu schlecht',c:'technisch',p:4,s:4},
+ {t:'Zu wenig Kapazität im Team',c:'operativ',p:3,s:3},
+ {t:'Neue Rechtslage macht die Anwendung unzulässig',c:'rechtlich',p:2,s:5},
+ {t:'Modell benachteiligt Gruppen',c:'ethisch',p:3,s:5},
+ {t:'Auf bald veraltete Technik gesetzt',c:'Markt',p:3,s:3},
+ {t:'Förderprogramm für KI kommt',c:'Chance',p:3,s:4,pos:1}
+];
+function rkDraw(){
+  var M=$('#rkM');M.innerHTML='';
+  for(var p=5;p>=1;p--)for(var s=1;s<=5;s++){var c=h('div','rkc');var ix=p*s;c.style.background=ix>=15?'rgba(214,0,111,.38)':ix>=8?'rgba(214,0,111,.16)':'transparent';c.dataset.p=p;c.dataset.s=s;M.appendChild(c)}
+  RK.forEach(function(r,i){var cell=$('.rkc[data-p="'+r.p+'"][data-s="'+r.s+'"]',M);var d=h('span','rkd'+(r.pos?' pos':''),i+1);d.title=r.t;cell.appendChild(d)});
+  M.insertAdjacentHTML('beforeend','<span class="rka y">Wahrscheinlichkeit →</span><span class="rka x">Schaden bzw. Nutzen →</span>');
+  var L=$('#rkL');L.innerHTML='';
+  RK.map(function(r,i){return {r:r,i:i}}).sort(function(a,b){return b.r.p*b.r.s-a.r.p*a.r.s}).forEach(function(o){
+    var r=o.r,row=h('div','rkr');row.innerHTML='<span class="rkn'+(r.pos?' pos':'')+'">'+(o.i+1)+'</span><div><b>'+r.t+'</b><span class="mono grey">'+r.c+'</span></div><span class="rki'+(r.pos?' pos':'')+'">'+(r.p*r.s)+'</span>';
+    var ctl=h('div','rkx');[['p','W'],['s',r.pos?'N':'S']].forEach(function(f){var s=h('div','seg');s.setAttribute('role','group');s.setAttribute('aria-label',(f[0]==='p'?'Wahrscheinlichkeit':'Schaden')+' '+r.t);s.insertAdjacentHTML('beforeend','<span class="mono grey sgl">'+f[1]+'</span>');
+      for(var v=1;v<=5;v++)(function(v){var b=h('button');b.type='button';b.textContent=v;b.setAttribute('aria-pressed',String(r[f[0]]===v));b.addEventListener('click',function(){r[f[0]]=v;put('rk4',RK);rkDraw()});s.appendChild(b)})(v);ctl.appendChild(s)});
+    row.appendChild(ctl);L.appendChild(row)});
+}
+rkDraw();
+initAssign({root:'#m4-assign',key:'as4',mod:4,check:'risk',opts:[['t','Technisch'],['o','Operativ'],['r','Rechtlich'],['e','Ethisch'],['m','Markt']],items:[
+ {t:'Die KI ist zu langsam für Anfragen in Echtzeit',b:'t',w:'Performance ist ein technisches Risiko.'},
+ {t:'Angreifer nutzen eine Schwachstelle der Schnittstelle',b:'t',w:'Sicherheitslücken und Hackerangriffe zählen zu den technischen Risiken.'},
+ {t:'Die Ressourcen sind falsch geplant, es fehlen Leute',b:'o',w:'Planung und Kapazität: operative Risiken.'},
+ {t:'Das Modell wird nicht gewartet und wird ungenauer',b:'o',ok:['t'],w:'Mangelnde Wartung führt der Kurs als operatives Risiko.'},
+ {t:'Generierte Inhalte verletzen Urheberrechte',b:'r',w:'Copyright ist ein rechtliches Risiko.'},
+ {t:'Trainingsdaten wurden ohne Einwilligung genutzt',b:'r',ok:['e'],w:'Ein Datenschutzverstoß ist vor allem ein rechtliches Risiko.'},
+ {t:'Vorurteile in den Trainingsdaten bleiben unerkannt',b:'e',w:'Bias und Diskriminierung: ethische Risiken.'},
+ {t:'Niemand kann die Entscheidung der KI erklären',b:'e',ok:['r'],w:'Fehlende Erklärbarkeit nennt der Kurs als ethisches Risiko. Der EU AI Act macht es teils auch zu einem rechtlichen.'},
+ {t:'Viel Geld steckt in Technik, die bald überholt ist',b:'m',w:'Aufs falsche Pferd setzen: ein Markt- und Geschäftsrisiko.'},
+ {t:'Die Konkurrenz ist mit KI schneller und günstiger',b:'m',w:'Wettbewerb gehört zu den Markt- und Geschäftsrisiken.'}
+]});
+
+/* 4.10 SWOT sort + Delphi */
+initSort({root:'#m4-sw',status:'#m4-swot [data-so-s]',mod:4,check:'swot',label:'Faktor',end:'Stärken und Schwächen liegen im Unternehmen, Chancen und Bedrohungen kommen von außen.',buckets:[['s','S · Stärke'],['w','W · Schwäche'],['o','O · Chance'],['t','T · Bedrohung','m']],items:[
+ ['Wir haben viele gut strukturierte Daten','s','Intern und positiv: eine Stärke.'],
+ ['Das Team ist gut ausgebildet','s','Eine interne Stärke.'],
+ ['Keine eigene IT-Infrastruktur','w','Intern und hinderlich: eine Schwäche.'],
+ ['Die Geschäftsführung blockiert KI-Projekte','w','Eine interne Schwäche, die man selbst angehen kann.'],
+ ['Der Markt wächst stark','o','Extern und günstig: eine Chance.'],
+ ['Ein neues Förderprogramm für KI','o','Von außen und hilfreich: eine Chance.'],
+ ['Hackerangriffe nehmen zu','t','Extern und gefährlich: eine Bedrohung.'],
+ ['Ein Wettbewerber hat einen KI-Vorsprung','t','Von außen, nicht beeinflussbar: eine Bedrohung.'],
+ ['Der AI Act verbietet einen geplanten Einsatz','t','Regulierung ist ein externer Faktor.']
+]});
+var DP0=[10,25,35,60,80],dp,dpR,dpS=$('#dpS');
+function med(a){var s=a.slice().sort(function(x,y){return x-y});return s[2]}
+function dpDraw(){
+  while(dpS.firstChild)dpS.removeChild(dpS.firstChild);
+  var X=function(v){return 30+v/100*540};
+  el('line',{x1:30,y1:70,x2:570,y2:70,stroke:'#0E0F0C'},dpS);
+  [0,25,50,75,100].forEach(function(v){el('line',{x1:X(v),y1:66,x2:X(v),y2:74,stroke:'#0E0F0C'},dpS);var t=el('text',{x:X(v),y:92,'text-anchor':'middle'},dpS);t.textContent=v+' %'});
+  var lo=Math.min.apply(null,dp),hi=Math.max.apply(null,dp);el('rect',{x:X(lo),y:58,width:X(hi)-X(lo),height:24,fill:'rgba(214,0,111,.12)'},dpS);
+  var m=med(dp);el('line',{x1:X(m),y1:30,x2:X(m),y2:84,stroke:'#D6006F','stroke-width':2,'stroke-dasharray':'4 3'},dpS);var mt=el('text',{x:X(m),y:24,'text-anchor':'middle',style:'fill:#D6006F'},dpS);mt.textContent='MEDIAN '+Math.round(m)+' %';
+  dp.forEach(function(v,i){var g=el('g',{},dpS);el('circle',{cx:X(v),cy:70,r:9,fill:'#0E0F0C',style:'transition:cx .6s ease'},g);var t=el('text',{x:X(v),y:73.5,'text-anchor':'middle',style:'fill:#fff;font-size:8px'},g);t.textContent='?'});
+  $('#dpS2').textContent='Runde '+dpR+' · Spannweite '+Math.round(hi-lo)+' Prozentpunkte'+(dpR>=3?' · stabiles Bild: rund '+Math.round(m)+' %':'');
+  $('#dpB').textContent=dpR>=3?'Von vorn':'Nächste Runde';
+}
+function dpStart(){dp=DP0.slice();dpR=1;dpDraw()}
+$('#dpB').addEventListener('click',function(){if(dpR>=3){dpStart();return}var m=med(dp);dp=dp.map(function(v){return v+(m-v)*.5});dpR++;dpDraw()});
+dpStart();
+
+/* 4.11 stakeholder matrix */
+var SH=[
+ {t:'Geschäftsführung',e:4.8,i:4.2,h:'g',n:'Gibt Budget frei und setzt Prioritäten.'},
+ {t:'Betriebsrat',e:4.2,i:4.8,h:'r',n:'Hat bei Technik, die Leistung oder Verhalten überwachen kann, ein Mitbestimmungsrecht. Früh einbinden, nicht am Ende überraschen.'},
+ {t:'Datenschutzbeauftragte',e:3.8,i:3.3,h:'y',n:'Prüft, ob Kundendaten rechtmäßig verarbeitet werden.'},
+ {t:'IT',e:4.3,i:2.6,h:'y',n:'Integriert und betreibt die Lösung, Interesse eher technisch.'},
+ {t:'Team Kundenservice',e:2.2,i:4.8,h:'r',n:'Arbeitet täglich mit dem Assistenten. Sorgt sich um die eigenen Jobs.'},
+ {t:'Kundschaft',e:2.9,i:3.9,h:'y',n:'Will schnelle, richtige Antworten. Ihre Akzeptanz entscheidet über den Erfolg.'},
+ {t:'Controlling',e:3.4,i:2,h:'y',n:'Achtet auf Kosten und den Business Case.'},
+ {t:'Marketing',e:1.8,i:2.4,h:'g',n:'Will den Assistenten als Innovation zeigen.'},
+ {t:'KI-Dienstleister',e:3.3,i:4.6,h:'g',n:'Baut die Lösung und will einen Referenzkunden.'},
+ {t:'Aufsichtsbehörde',e:3.6,i:1.2,h:'y',n:'Setzt den rechtlichen Rahmen, kümmert sich kaum um Details.'}
+];
+var SHQ={tr:['Eng einbinden','regelmäßig sprechen, mitentscheiden lassen'],br:['Zufriedenstellen','gezielt informieren, Bedenken früh klären'],tl:['Informieren','transparent auf dem Laufenden halten, Feedback einholen'],bl:['Beobachten','mit wenig Aufwand im Blick behalten']};
+var HL={r:['kritisch','m'],y:['neutral','grey'],g:['positiv','okc']},shI=0,shG=$('#shG');
+SH.forEach(function(s,i){var b=h('button','mxd');b.type='button';b.textContent=i+1;b.setAttribute('aria-label',(i+1)+': '+s.t);b.addEventListener('click',function(){shSel(i)});shG.appendChild(b);s.b=b});
+function shPaint(){SH.forEach(function(s){s.b.className='mxd h'+s.h;s.b.style.left=pos(s.e)+'%';s.b.style.top=(100-pos(s.i))+'%'})}
+function shSel(i){shI=i;var S=SH[i],q=(S.i>3?'t':'b')+(S.e>3?'r':'l'),Q=SHQ[q];SH.forEach(function(s,j){s.b.setAttribute('aria-pressed',String(j===i))});
+  $('#shA').textContent='Gruppe '+(i+1);$('#shT').textContent=S.t;$('#shN').textContent=S.n;var hl=HL[S.h];$('#shH').textContent=hl[0];$('#shH').className='mono '+hl[1];
+  $('#shV').innerHTML='<b>'+Q[0]+'</b>'+Q[1]+(S.h==='r'&&q==='tr'?'. Achtung: Hier sitzt Widerstand mit viel Macht. Ursache klären und zuerst gewinnen.':S.h==='r'?'. Haltung kritisch: Ursache des Widerstands klären.':'.');
+  $$('#shB button').forEach(function(b){b.setAttribute('aria-selected',String(b.dataset.h===S.h))})}
+$$('#shB button').forEach(function(b){b.addEventListener('click',function(){SH[shI].h=b.dataset.h;shPaint();shSel(shI)})});
+shPaint();shSel(1);
+
+/* 4.12 fishbone + pareto */
+var FB=[['Mensch',95,'Entwickler wählen einseitige Trainingsdaten, niemand prüft auf Bias.',1],['Methode',190,'Der Algorithmus nutzt Merkmale, die mit Geschlecht oder Herkunft zusammenhängen.',1],['Messung',285,'Erfolg wird nur an der Genauigkeit gemessen, nicht an Fairness je Gruppe.',1],['Maschine',95,'Veraltete Modellversion, fehlende Updates.',0],['Material',190,'Die Daten selbst: Frühere Einstellungen spiegeln alte Vorurteile.',0],['Mitwelt',285,'Keine KI-Richtlinie, Zeitdruck im Projekt.',0]];
+var fsS=$('#fsS'),fsN=[];
+el('line',{x1:20,y1:110,x2:330,y2:110,stroke:'#0E0F0C','stroke-width':2.5},fsS);
+var hd=el('g',{},fsS);el('path',{d:'M330 80 L410 80 L410 140 L330 140 Z',fill:'#0E0F0C'},hd);var h1=el('text',{x:370,y:106,'text-anchor':'middle',style:'fill:#fff;font-size:10px'},hd);h1.textContent='BIAS IM';var h2=el('text',{x:370,y:121,'text-anchor':'middle',style:'fill:#fff;font-size:10px'},hd);h2.textContent='RECRUITING';
+FB.forEach(function(f,i){var top=f[3],y2=top?30:190,x1=f[1]+40,g=el('g',{class:'fbn',tabindex:0,role:'button','aria-pressed':'false','aria-label':f[0]},fsS);
+  el('rect',{x:f[1]-46,y:top?6:110,width:92+40,height:104,fill:'transparent'},g);
+  el('line',{x1:x1,y1:110,x2:f[1],y2:y2,class:'fbl'},g);el('rect',{x:f[1]-40,y:top?8:192,width:80,height:22,class:'fbr'},g);var t=el('text',{x:f[1],y:top?23:207,'text-anchor':'middle'},g);t.textContent=f[0].toUpperCase();
+  g.addEventListener('click',function(){fsSel(i)});g.addEventListener('keydown',function(ev){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();fsSel(i)}});fsN.push(g)});
+function fsSel(i){fsN.forEach(function(g,j){g.setAttribute('aria-pressed',String(j===i))});$('#fsV').innerHTML='<b>'+FB[i][0]+'</b>'+FB[i][2]}
+fsSel(4);
+(function(){
+  var P=[['Daten',46],['Bias-Test',28],['Merkmale',10],['Messung',7],['Updates',5],['Zeitdruck',4]],S=$('#prS'),X0=44,X1=574,Y0=210,Y1=20,bw=(X1-X0)/P.length,cum=0,pts=[];
+  var y=function(v){return Y0-v/50*(Y0-Y1)},yc=function(v){return Y0-v/100*(Y0-Y1)};
+  el('line',{x1:X0,y1:Y0,x2:X1,y2:Y0,stroke:'#0E0F0C'},S);
+  [0,25,50].forEach(function(v){var t=el('text',{x:X0-8,y:y(v)+3,'text-anchor':'end'},S);t.textContent=v});
+  [50,80,100].forEach(function(v){var t=el('text',{x:X1+6,y:yc(v)+3,style:'fill:#D6006F'},S);t.textContent=v+'%';el('line',{x1:X0,y1:yc(v),x2:X1,y2:yc(v),stroke:'rgba(214,0,111,.15)','stroke-dasharray':v===80?'5 4':'2 4'},S)});
+  P.forEach(function(p,k){var x=X0+k*bw+bw*.15,w=bw*.7;cum+=p[1];el('rect',{x:x,y:y(p[1]),width:w,height:Y0-y(p[1]),fill:k<2?'#0E0F0C':'#9a9c94'},S);var t=el('text',{x:x+w/2,y:Y0+14,'text-anchor':'middle'},S);t.textContent=p[0].toUpperCase();var v=el('text',{x:x+w/2,y:y(p[1])-5,'text-anchor':'middle',style:'fill:#0E0F0C'},S);v.textContent=p[1];pts.push((x+w/2)+','+yc(cum))});
+  el('polyline',{points:pts.join(' '),fill:'none',stroke:'#D6006F','stroke-width':2},S);
+  pts.forEach(function(p){var c=p.split(',');el('circle',{cx:c[0],cy:c[1],r:3.5,fill:'#D6006F'},S)});
+})();
+
+/* 4.13 review data */
+initCards(4,[
+ ['Agil','Warum passt agiles Arbeiten zu KI-Projekten?','Ergebnisse sind schwer planbar, Modelle werden schrittweise besser, viele Disziplinen arbeiten zusammen und die Technik ändert sich ständig.'],
+ ['Scrum','Die drei Scrum-Rollen?','Product Owner (Wert, Priorisierung), Development Team (baut, organisiert sich selbst), Scrum Master (Regeln, Hindernisse, Coaching).'],
+ ['Scrum','Artefakte und Events?','Artefakte: Product Backlog, Sprint Backlog, Increment. Events: Sprint, Sprint Planning, Daily Scrum, Sprint Review, Retrospektive.'],
+ ['Story','Wie ist eine User Story aufgebaut?','Als [Rolle] möchte ich [Ziel], damit [Nutzen]. Aus Sicht der Nutzenden.'],
+ ['Manifest','Die vier Werte des Agilen Manifests?','Individuen und Interaktionen, funktionierende Software, Zusammenarbeit mit der Kundschaft, Reagieren auf Veränderung. Jeweils mehr als Prozesse, Dokumentation, Verträge, Pläne.'],
+ ['Stacey','Was zeigt die Stacey-Matrix?','Wie klar Anforderungen und Lösungsweg sind. Einfach, kompliziert, komplex, chaotisch. KI-Projekte sind meist komplex, also agil.'],
+ ['Reife','Handlungsfelder im KI-Reifegrad?','Daten, Mitarbeitende, Führung, IT-Infrastruktur, Compliance und KPIs, dazu individuelle Felder. Meist acht bis neun.'],
+ ['KPI','Welche KPIs sind KI-spezifisch?','Zuverlässigkeit und Fehlerrate, Halluzinationen, Fairness, Verarbeitungsgeschwindigkeit. Genauigkeit allein täuscht bei seltenen Fällen.'],
+ ['Risiko','Wie berechnet man den Risikoindex?','Eintrittswahrscheinlichkeit mal Schaden. Es gibt auch positive Risiken, also Chancen.'],
+ ['Risiko','Fünf Risikoarten in KI-Projekten?','Technisch, operativ, rechtlich, ethisch, Markt und Geschäft.'],
+ ['SWOT','Was ist intern, was extern?','Stärken und Schwächen sind intern, Chancen (Opportunities) und Bedrohungen (Threats) extern.'],
+ ['Delphi','Wie funktioniert die Delphi-Methode?','Fachleute schätzen anonym über mehrere Runden, sehen dazwischen die Auswertung und nähern sich an. Kein Gruppendruck.'],
+ ['Stakeholder','Wie ist die Stakeholder-Matrix aufgebaut?','Einfluss und Interesse als Achsen, Haltung als Farbe. Rechts oben eng einbinden, kritische Stakeholder dort zuerst gewinnen.'],
+ ['Qualität','PDCA, Ishikawa, Pareto?','PDCA: planen, umsetzen, prüfen, handeln. Ishikawa: Ursachen sammeln nach Mensch, Maschine, Methode, Material, Mitwelt, Messung. Pareto: die wichtigsten Ursachen zuerst.']
+]);
+initCloze(4,[
+ ['Im agilen Projektmanagement wird das Projekt {dynamisch|hierarchisch|einmalig} angepasst. Gearbeitet wird in Zyklen, den {Sprints|Phasen|Meilensteinen}. Danach reflektiert das Team in der {Retrospektive|Planung|Vision}.'],
+ ['Das Agile Manifest hat vier zentrale {Werte|Gesetze|Prozesse}: Individuen und Interaktionen über {Prozesse|Archivierung|Verträge} und Werkzeuge, funktionierende Software über umfassende {Dokumentation|Motivation|Planung}.'],
+ ['Ein KI-Reifegradmodell bewertet auch organisatorische {Handlungsfelder|Erfahrungsberichte|Abteilungen}, etwa die {Kompetenzen|Gehälter|Urlaube} der Mitarbeitenden.'],
+ ['KPIs zeigen, ob die vorher definierten {Ziele|Rekorde|Budgets} erreicht werden und wie weit ein Projekt im {Plan|Rückstand|Markt} liegt. In der Medizin wäre ein KPI die {Zuverlässigkeit|Geschwindigkeit|Farbe} der Diagnose.'],
+ ['Am Projektende steht die {Übergabe|Verhandlung|Archivierung} an den Betrieb. Dazu gehören eine saubere {Dokumentation|Motivation|Pause} und die {Schulung|Kündigung|Beförderung} der Mitarbeitenden.'],
+ ['Gegen Ausfälle helfen {redundante|kreative|hierarchische} Systeme. Dazu kommen regelmäßige {Schulungen|Pausen|Feiern} und eine offene {Kommunikationskultur|Hierarchie|Ablage}.'],
+ ['Um rechtliche und {ethische|praktische|optische} Risiken zu senken, braucht es klare {Richtlinien|Marketingstrategien|Werbung} und ein {Compliance|Marketing|Design}-Werk für den Umgang mit KI.']
+]);
+initQuiz(4,[
+ ['Was sind User Stories?',['Anforderungen aus Sicht der Endnutzenden','Erfahrungsberichte aus alten Projekten','Ein Meeting-Format mit der Kundschaft'],'Als Rolle möchte ich Ziel, damit Nutzen.'],
+ ['Wer entscheidet in agilen Teams, wie gearbeitet wird?',['Das Team selbst, die Führung schafft den Rahmen','Allein die Führungskraft','Der Kunde'],'Agile Teams organisieren sich selbst.'],
+ ['Warum sind KI-Projekte nach der Stacey-Matrix meist komplex?',['Die Technik ist oft unbekannt und es gibt häufig Änderungen','Sie brauchen immer viele Leute','Sie haben immer hohe Budgets'],'Unklares Was und unklares Wie: komplex, also agil.'],
+ ['Wie priorisiert man KI-Projekte sinnvoll?',['Nach dem Nutzen für das Unternehmen, mit regelmäßiger Überprüfung','Nach dem Innovationsgrad','Nach dem, was in der Branche am meisten Aufmerksamkeit bekommt'],'Der Nutzen zählt, und die Reihenfolge wird immer wieder geprüft.'],
+ ['Sollen Stakeholder in die Risikoanalyse der Roadmap?',['Ja, sie kennen ihr Fach und sehen Risiken, die dem Team entgehen','Nein, das verunsichert sie','Nein, das ist allein Sache der Projektleitung'],'Stakeholder erweitern den Blick auf Risiken.'],
+ ['Unklar, ob die Fähigkeiten im Haus reichen. Was zuerst?',['Vorhandene Mitarbeitende gezielt fortbilden','Nur noch externe Spezialisten einstellen','Den Personalbedarf ignorieren'],'Der Kurs empfiehlt, zuerst das eigene Know-how auszubauen.'],
+ ['Wie plant man die Datenbeschaffung in einem agilen KI-Projekt?',['In jedem Sprint prüfen und bei Bedarf anpassen','Komplett vor dem ersten Sprint abschließen','Spontan, wenn Daten fehlen'],'Daten sind laufend nötig, also gehören sie in jeden Sprint.'],
+ ['Welche Rolle spielen Cloud-Anbieter beim Skalieren?',['Sie liefern Infrastruktur und Rechenleistung, die man selbst nicht hat','Sie ersetzen skeptische Mitarbeitende','Keine, man sollte nur eigene Server nutzen'],'Rechenleistung zumieten macht Skalierung erst möglich.'],
+ ['„Risikomanagement heißt, alle Risiken zu vermeiden.“ Stimmt das?',['Nein: erkennen, bewerten, steuern und auch Chancen nutzen','Ja, sonst scheitert das Projekt','Ja, bei KI ganz besonders'],'Manche Risiken trägt man bewusst, positive Risiken nutzt man.'],
+ ['Wie hilft die SWOT-Analyse im Risikomanagement?',['Interne Stärken nutzen, um externe Bedrohungen zu mindern','Sie betrachtet nur interne Faktoren','Sie behandelt nur technische Risiken'],'S und W sind intern, O und T extern. Beides zusammen ergibt Strategien.'],
+ ['Wie verhindert die Delphi-Methode Gruppendruck?',['Durch Anonymität und mehrere Runden mit Rückmeldung','Durch eine offene Diskussion aller Fachleute','Durch eine einzige schnelle Umfrage'],'Niemand weiß, wer was geschätzt hat.'],
+ ['Wie gehst du mit Widerstand von Stakeholdern um?',['Ursachen klären, informieren, einbinden und Vertrauen aufbauen','Die Personen nicht mehr beteiligen','Abwarten, bis es sich legt'],'Widerstand hat Gründe: Angst, Kränkung oder Werte.'],
+ ['Wie nutzt man PDCA, um die Genauigkeit eines Algorithmus zu verbessern?',['Verbesserung planen, umsetzen, Ergebnis prüfen, übernehmen oder verwerfen','Sofort einsetzen und Fehler sammeln','Einmal testen und nur bei großen Problemen anpassen'],'Plan, Do, Check, Act, dann von vorn.'],
+ ['Wie hilft das Ishikawa-Diagramm?',['Es sammelt systematisch Ursachen nach Mensch, Maschine, Methode, Umwelt und mehr','Es zeigt automatisch die wahrscheinlichste Ursache','Es betrachtet nur menschliche Fehler'],'Erst Ursachen sammeln, dann prüfen.'],
+ ['Mit welchem Werkzeug priorisiert man Ursachen?',['Pareto: die wenigen Ursachen mit der größten Wirkung zuerst','Ishikawa','PDCA'],'Ishikawa sammelt, Pareto priorisiert.'],
+ ['Warum ist Risikomanagement bei KI besonders wichtig?',['Neue Risiken wie Datenabhängigkeit und schneller technischer Wandel','Es gibt nur technische Risiken','Die Risiken sind besser kalkulierbar'],'Zu den üblichen Projektrisiken kommen ständig neue hinzu.']
 ]);
 
 })();
