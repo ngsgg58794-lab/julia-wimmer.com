@@ -1435,7 +1435,7 @@ function setLang(l){
   ['aria-label','alt'].forEach(function(a){Array.prototype.forEach.call(document.querySelectorAll('['+a+']'),function(e){var v=e.getAttribute(a);if(d[v]!=null){trs.push({n:e,a:a,v:v});e.setAttribute(a,d[v]);}});});
 }
 function wantLang(l){if(l===LANG)return;if(l!=='de'||window.JW_DE){setLang(l);return;}
-  var sc=document.createElement('script');sc.src='de.js?v=33';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
+  var sc=document.createElement('script');sc.src='de.js?v=34';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
 Array.prototype.forEach.call(lgb,function(b){b.addEventListener('click',function(){wantLang(b.getAttribute('data-lang'));});});
 if(/[?&]lang=de\b/.test(location.search))wantLang('de');
 })();

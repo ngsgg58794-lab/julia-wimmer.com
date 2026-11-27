@@ -582,4 +582,9 @@ window.JW_DE={
 "Brand & visual identity": "Marke & visuelle Identität",
 "AI agents & RAG": "KI-Agenten & RAG",
 "Go-to-market & launch": "Go-to-Market & Launch",
+"User research": "User Research",
+"Customer journey": "Customer Journey",
+"UX writing": "UX Writing",
+"Agile delivery": "Agile Delivery",
+"Developer handover": "Developer Handover",
 };
