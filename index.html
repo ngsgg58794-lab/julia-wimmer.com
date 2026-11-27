@@ -330,6 +330,15 @@ html:has(.dlg[open]){overflow:hidden}
 .wsub{scroll-margin-top:4.5rem;margin:64px 0 34px;padding-top:26px;border-top:1px solid var(--ink)}
 .wsub h3{font-size:clamp(1.3rem,2.2vw,1.8rem);line-height:.95;font-stretch:68%;font-weight:850;text-transform:uppercase}
 .wsub p{margin-top:8px;color:var(--grey)}
+.wkx{margin-top:52px;padding-top:20px;border-top:1px dashed var(--ink);max-width:46rem}
+.wkx .wkxl{font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mag)}
+.wkx h4{margin:6px 0 0;font-size:1.125rem;font-weight:800}
+.wkx>p:not(.wkxl){margin-top:6px;font-size:.9375rem;line-height:1.5;max-width:60ch}
+.wkx .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.wkx summary{display:inline-flex;align-items:center;gap:8px;margin-top:14px;min-height:40px;cursor:pointer;list-style:none;font-size:.75rem;letter-spacing:.04em;text-transform:uppercase}
+.wkx summary::-webkit-details-marker{display:none}
+.wkx summary::after{content:"+";font-size:1rem}.wkx details[open] summary::after{content:"\2212"}
+.wkx .aps{margin-top:6px}
 .pi.pia{display:grid;place-items:center;background-image:linear-gradient(rgba(14,15,12,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(14,15,12,.07) 1px,transparent 1px);background-size:16px 16px}
 .pi.pia img{width:40%;height:auto;aspect-ratio:1;border-radius:22%;box-shadow:0 10px 22px -10px rgba(14,15,12,.45)}
 .apl{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
@@ -907,6 +916,15 @@ html[lang="de"] .hv5{--ft:calc(var(--pt) + var(--fs,10vw)*.66)}
 <button class="ph rv" type="button" id="a-05" data-dlg="da-05" aria-haspopup="dialog"><span class="pi"><img src="img/lerncockpit-thumb.webp" alt="" loading="lazy"></span><span class="pc"><span class="pn mono">A-05</span><span class="ttl">Learning Cockpit</span><span class="tags"><span class="tag">HTML + JS</span><span class="tag">Browser</span><span class="tag">Learning design</span></span></span></button>
 <button class="ph rv" type="button" id="a-06" data-dlg="da-06" aria-haspopup="dialog"><span class="pi"><img src="img/ki-lernlog-thumb.webp" alt="" loading="lazy"></span><span class="pc"><span class="pn mono">A-06</span><span class="ttl">AI Learning Log</span><span class="tags"><span class="tag">HTML + JS</span><span class="tag">Browser</span><span class="tag">In progress</span></span></span></button>
 </div>
+<div class="wkx rv" id="todos">
+<p class="mono wkxl">Side project · private, not in the stores</p>
+<h4>ToDos, an iOS app with widgets</h4>
+<p>My to-do list showed what to do, but not when. I added dates and a timeline to my web checklist, then built an iOS app with widgets with Claude. From my first request to app and widget on my iPhone: 43 minutes.</p>
+<div class="tags"><span class="tag" translate="no">SwiftUI</span><span class="tag" translate="no">WidgetKit</span><span class="tag" translate="no">App Intents</span><span class="tag" translate="no">Claude</span></div>
+<details><summary class="mono">Details</summary>
+<dl class="aps"><div><dt>Stack</dt><dd>SwiftUI · WidgetKit · App Intents · iOS 17+</dd></div><div><dt>Features</dt><dd>Time groups, an “Important” flag, topics, swipe for today or tomorrow, JSON import</dd></div><div><dt>Widgets</dt><dd>Small, medium, large, iPad extra large and lock screen (rectangular, circular, inline). Tasks can be ticked off right in the home screen widget</dd></div><div><dt>Order</dt><dd>Due first, then important, then by date</dd></div><div><dt>Data</dt><dd>On the device only (App Group). No server, no sync with the web list</dd></div><div><dt>Roles</dt><dd>I set the requirements, kept the dates and set up signing and installation. Claude wrote the code and proposed the layout and the order</dd></div><div><dt>Tested</dt><dd>Only on my iPhone so far. iPad and other sizes not checked yet</dd></div></dl>
+</details>
+</div>
 <div class="wkp"><span class="wkd" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="wkt mono" role="status">0 / 10 opened</span><a class="wka mono" href="#contact" hidden>All seen. Let&#8217;s talk &#8594;</a></div>
 </div></div></div>
 <dialog id="dp-01" class="dlg" aria-labelledby="dp-01-t"><div class="din">
@@ -1417,7 +1435,7 @@ function setLang(l){
   ['aria-label','alt'].forEach(function(a){Array.prototype.forEach.call(document.querySelectorAll('['+a+']'),function(e){var v=e.getAttribute(a);if(d[v]!=null){trs.push({n:e,a:a,v:v});e.setAttribute(a,d[v]);}});});
 }
 function wantLang(l){if(l===LANG)return;if(l!=='de'||window.JW_DE){setLang(l);return;}
-  var sc=document.createElement('script');sc.src='de.js?v=34';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
+  var sc=document.createElement('script');sc.src='de.js?v=35';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
 Array.prototype.forEach.call(lgb,function(b){b.addEventListener('click',function(){wantLang(b.getAttribute('data-lang'));});});
 if(/[?&]lang=de\b/.test(location.search))wantLang('de');
 })();
