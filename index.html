@@ -1090,7 +1090,7 @@ html[lang="de"] .hv5{--ft:calc(var(--pt) + var(--fs,10vw)*.66)}
 <div class="tags"><span class="tag">Learning design</span><span class="tag">Information design</span><span class="tag">Interactive</span><span class="tag">Claude Code</span><span class="tag">In progress</span></div>
 <p class="dsum">I am taking the IHK course on applied AI transformation. After each module I build one interactive page with what matters most: diagrams to click, exercises, a quiz and a fact check. I use it to revise, and it shows how I learn.</p>
 <div class="apl"><span class="mono">Link on request</span></div>
-<dl class="aps"><div><dt>Course</dt><dd>Manager for Applied AI Transformation (IHK), thekey.ACADEMY, 8 modules and an IHK assessment</dd></div><div><dt>Status</dt><dd>Modules 1 to 6 online, one page per module as I go</dd></div><div><dt>Interactive</dt><dd>Diagrams to click and small tools in every module, e.g. a neural network, a bias simulator, a price simulator, a priority matrix, a data-cleaning station, SQL to click</dd></div><div><dt>Revision</dt><dd>Exercises, flashcards, cloze tests and a quiz per module, progress saved in the browser</dd></div><div><dt>Language</dt><dd>German, like the course</dd></div></dl>
+<dl class="aps"><div><dt>Course</dt><dd>Manager for Applied AI Transformation (IHK), thekey.ACADEMY, 8 modules and an IHK assessment</dd></div><div><dt>Status</dt><dd>Modules 1 to 7 online, one page per module as I go</dd></div><div><dt>Interactive</dt><dd>Diagrams to click and small tools in every module, e.g. a neural network, a bias simulator, a price simulator, a priority matrix, a data-cleaning station, SQL to click</dd></div><div><dt>Revision</dt><dd>Exercises, flashcards, cloze tests and a quiz per module, progress saved in the browser</dd></div><div><dt>Language</dt><dd>German, like the course</dd></div></dl>
 <div class="apb"><h4 class="mono">How I made it</h4><p>Built with Claude Code from the course workbook. I chose what to keep, rewrote it in my own words, set the concept and the look, and checked dates against other sources.</p></div>
 <figure class="dg lcs">
 <figcaption class="dgh"><h4>Inside the log</h4><span class="mono">Fig. 06.1 · Module 1, German</span></figcaption>
@@ -1101,7 +1101,7 @@ html[lang="de"] .hv5{--ft:calc(var(--pt) + var(--fs,10vw)*.66)}
 <div><span class="lbl">Context &amp; problem</span><p>The course comes with a PDF workbook: text, a few charts and blank lines to write on. Fine for a first read, not for revising before the exam.</p></div>
 <div><span class="lbl">My role</span><p>Personal project, for my own learning. Content selection, concept, learning and information design, built with Claude Code.</p></div>
 <div><span class="lbl">Key decision</span><p>Every concept gets something to do. You tap through the layers of AI, run a learning method, send a signal through a network or switch the training data and watch bias appear.</p></div>
-<div><span class="lbl">Outcome</span><p>Modules 1 to 6 are live, the others follow as I finish them. Unlike the Learning Cockpit, the text is my own, so I can publish it.</p></div>
+<div><span class="lbl">Outcome</span><p>Modules 1 to 7 are live, the others follow as I finish them. Unlike the Learning Cockpit, the text is my own, so I can publish it.</p></div>
 <div><span class="lbl">Learnings</span><p>Checking sources is part of learning. The workbook dates AlphaGo&#8217;s win over Lee Sedol to 2015. It was March 2016.</p></div>
 </div>
 </div></dialog>
@@ -1417,7 +1417,7 @@ function setLang(l){
   ['aria-label','alt'].forEach(function(a){Array.prototype.forEach.call(document.querySelectorAll('['+a+']'),function(e){var v=e.getAttribute(a);if(d[v]!=null){trs.push({n:e,a:a,v:v});e.setAttribute(a,d[v]);}});});
 }
 function wantLang(l){if(l===LANG)return;if(l!=='de'||window.JW_DE){setLang(l);return;}
-  var sc=document.createElement('script');sc.src='de.js?v=35';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
+  var sc=document.createElement('script');sc.src='de.js?v=36';sc.onload=function(){setLang('de');};document.head.appendChild(sc);}
 Array.prototype.forEach.call(lgb,function(b){b.addEventListener('click',function(){wantLang(b.getAttribute('data-lang'));});});
 if(/[?&]lang=de\b/.test(location.search))wantLang('de');
 })();
