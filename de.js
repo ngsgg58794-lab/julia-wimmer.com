@@ -566,4 +566,12 @@ window.JW_DE={
 "Nothing is forced. You can drive and collect boxes or open the list of all stations right away. The test report at the end shows the facts at a glance, with a button to write me.": "Nichts ist Pflicht. Du kannst fahren und Kisten sammeln oder sofort die Liste aller Stationen öffnen. Der Prüfbericht am Ende zeigt die Fakten auf einen Blick, mit einem Button, um mir zu schreiben.",
 "Live on this site in English and German, linked from the top of the page.": "Live auf dieser Website, auf Englisch und Deutsch, verlinkt ganz oben auf der Seite.",
 "thekey.ACADEMY · recognised by IHK-Projektgesellschaft Ostbrandenburg · AI strategy, data, change, ethics, security and the EU AI Act, with IHK assessment ·": "thekey.ACADEMY · anerkannt von der IHK-Projektgesellschaft Ostbrandenburg · KI-Strategie, Daten, Change, Ethik, Sicherheit und EU AI Act, mit IHK-Leistungsüberprüfung ·",
+"Brand & visual identity": "Marke & visuelle Identität",
+"AI agents & RAG": "KI-Agenten & RAG",
+"Go-to-market & launch": "Go-to-Market & Launch",
+"User research": "User Research",
+"Customer journey": "Customer Journey",
+"UX writing": "UX Writing",
+"Agile delivery": "Agile Delivery",
+"Developer handover": "Developer Handover",
 };
