@@ -830,6 +830,138 @@ svg text{font-family:var(--mono);font-size:9px;fill:var(--grey);letter-spacing:.
 .lad p{font-size:.8125rem;line-height:1.4}
 @media (max-width:900px){.lad{grid-template-columns:1fr}.lad li{min-height:0!important}}
 
+/* ---------- module 6 ---------- */
+.z6g{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--ink);border:1px solid var(--ink)}
+.z6g>div{background:var(--paper);padding:14px 16px}
+.z6g.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.z6g.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.z6g .mono{font-size:.75rem}
+.z6g b{display:block;margin-top:4px;font-weight:800;line-height:1.2}
+.z6g p{font-size:.875rem;color:var(--grey);margin-top:4px;line-height:1.45}
+@media (max-width:900px){.z6g.g4{grid-template-columns:1fr 1fr}}
+@media (max-width:820px){.z6g{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.z6g,.z6g.g4,.z6g.g2{grid-template-columns:1fr}}
+.z6fli{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px;margin-top:12px}
+.z6fli li{padding:10px 12px;border:1px solid var(--ink);background:var(--paper);font-size:.875rem;line-height:1.4}
+.z6fli li span{font-family:var(--mono);font-size:.75rem;color:var(--mag);margin-right:6px}
+.z6fli li b{font-weight:750}
+.z6fli li p{color:var(--grey);margin-top:2px}
+.z6py svg{max-width:460px}
+.z6py .lv polygon{stroke:var(--ink);stroke-width:1.2;transition:stroke-width .15s ease}
+.z6py .lv text{font-family:var(--sans);font-size:14px;font-weight:800;letter-spacing:.02em;pointer-events:none}
+.z6py .lv text.s{font-family:var(--mono);font-size:11px;font-weight:400;letter-spacing:0}
+.z6py .lv:hover polygon{stroke-width:2.5}
+.z6py .lv[aria-pressed="true"] polygon{stroke:var(--ink);stroke-width:4}
+.z6py .lv:focus-visible polygon{stroke:var(--mag);stroke-width:4}
+.z6py .lv.gp polygon{stroke-dasharray:5 4}
+.z6py .lv.gp[aria-pressed="true"] polygon{stroke-dasharray:none}
+.z6tl{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:6px;margin-top:20px}
+.z6tl li{position:relative;padding:10px 10px 10px;border:1px solid var(--ink);background:var(--paper);font-size:.8125rem;line-height:1.35}
+.z6tl li b{display:block;font-family:var(--mono);font-weight:500;font-size:.75rem;color:var(--mag);margin-bottom:2px}
+.z6tl li.on{background:var(--ink);color:var(--paper)}
+.z6tl li.on b{color:#ff4fa3}
+.z6tl li.nx{box-shadow:4px 4px 0 var(--mag)}
+.z6tl li.nx::after{content:"als Nächstes";position:absolute;right:8px;top:9px;font-family:var(--mono);font-size:.625rem;text-transform:uppercase;letter-spacing:.06em;color:var(--grey)}
+@media (max-width:900px){.z6tl{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:520px){.z6tl{grid-template-columns:1fr 1fr}}
+.z6t{width:100%;border-collapse:collapse;font-size:.9375rem}
+.z6t th,.z6t td{padding:9px 10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;line-height:1.4}
+.z6t thead th{font-family:var(--mono);font-size:.6875rem;letter-spacing:.06em;text-transform:uppercase;color:var(--grey);font-weight:500;border-bottom:1px solid var(--ink)}
+.z6t tbody th{font-weight:750}
+@media (max-width:520px){.z6t th,.z6t td{padding:8px 6px}.z6ps td{font-size:.75rem}}
+.z6ps{margin-top:14px}
+.z6ps td{font-family:var(--mono);font-size:.8125rem}
+.z6ps td.ch{background:var(--mag-soft)}
+.z6ps td.gn{color:var(--grey)}
+.z6rib{display:flex;align-items:baseline;gap:10px;margin-top:14px}
+.z6rib b{font-family:var(--mono);font-weight:500;font-size:clamp(2rem,6vw,3rem);line-height:1;color:var(--mag)}
+.z6rib span{font-size:.9375rem;font-weight:650}
+#z6RiS{display:block;width:100%;height:auto;margin-top:8px}
+.z6chp{display:flex;flex-wrap:wrap;gap:6px}
+.z6chp button{padding:7px 11px;border:1px solid var(--ink);background:var(--paper);font-size:.8125rem;font-weight:650;cursor:pointer;transition:background-color .15s ease,color .15s ease}
+.z6chp button:hover{background:var(--paper-2)}
+.z6chp button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.z6chp button small{font-family:var(--mono);font-weight:400;font-size:.6875rem;margin-left:6px;opacity:.75}
+.z6px svg{display:block;width:100%;max-width:860px;height:auto;margin:0 auto}
+.z6px .dot{transition:transform .6s cubic-bezier(.4,.1,.2,1)}
+.z6px .dot circle{stroke:var(--ink);stroke-width:1.2;fill:var(--paper);transition:fill .3s ease,stroke .3s ease}
+.z6px .dot text{font-family:var(--mono);font-size:10px;fill:var(--ink);pointer-events:none}
+.z6px .dot.sel circle{fill:var(--mag);stroke:var(--mag)}
+.z6px .dot.sel text{fill:#fff}
+.z6px .thr{transition:transform .6s cubic-bezier(.4,.1,.2,1)}
+.z6pxs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:14px}
+.z6pxs .stat+.stat{margin-top:0}
+@media (max-width:620px){.z6pxs{grid-template-columns:1fr}}
+.z6cmp .stat .bl{font-size:.875rem}
+.z6cmp .stat .bl b{font-size:1rem}
+.z6cmp .sbar i.g{background:var(--grey)}
+.z6cl{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}
+@media (max-width:760px){.z6cl{grid-template-columns:1fr}}
+.z6cg{border:1px solid var(--ink);background:var(--paper)}
+.z6cg h5{margin:0;display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:8px 12px;border-bottom:1px solid var(--ink);background:var(--paper-2);font-size:.9375rem;font-weight:800;line-height:1.25}
+.z6cg h5 span{font-family:var(--mono);font-weight:500;font-size:.6875rem;color:var(--grey);white-space:nowrap}
+.z6cg.full h5{background:var(--ok-soft)}
+.z6cg.full h5 span{color:var(--ok)}
+.z6ci{display:grid;grid-template-columns:18px minmax(0,1fr);gap:10px;align-items:start;width:100%;padding:8px 12px;border:0;border-top:1px solid var(--line);background:transparent;text-align:left;font-size:.875rem;line-height:1.4;cursor:pointer;transition:background-color .15s ease}
+.z6ci:first-of-type{border-top:0}
+.z6ci::before{content:"";width:16px;height:16px;margin-top:2px;border:1.5px solid var(--ink);background:var(--paper)}
+.z6ci:hover{background:var(--paper-2)}
+.z6ci[aria-pressed="true"]{color:var(--grey)}
+.z6ci[aria-pressed="true"]::before{background:var(--ok) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3.2 3L13 4.5' fill='none' stroke='%23fff' stroke-width='2.2'/%3E%3C/svg%3E") center/14px no-repeat;border-color:var(--ok)}
+.z6tk svg{display:block;width:100%;max-width:560px;height:auto;margin:14px auto 0}
+.z6tk text{font-family:var(--mono);font-size:11px}
+.z6tk .heat{transition:opacity .4s ease}
+.z6am{max-width:640px;margin:0 auto}
+.z6am .q{padding:16px 18px;border:1px solid var(--ink);background:var(--paper);box-shadow:5px 5px 0 var(--ink)}
+.z6am .q .it{margin-top:6px;font-size:1.25rem;font-weight:750;line-height:1.3}
+.z6am .q .row{margin-top:14px}
+.z6amp{display:grid;gap:6px;margin-bottom:14px}
+.z6amp li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:baseline;padding:7px 12px;border:1px solid var(--line);font-size:.875rem;line-height:1.35}
+.z6amp li b{font-family:var(--mono);font-weight:500;font-size:.75rem;text-transform:uppercase}
+.z6amr{padding:16px 18px;border:2px solid var(--ink);background:var(--paper)}
+.z6amr .mono{font-size:.75rem}
+.z6amr .it{margin-top:4px;font-size:1.375rem;font-weight:800;line-height:1.2}
+.z6amr p{margin-top:8px;line-height:1.45}
+.z6amr.r{border-color:var(--mag);background:var(--mag-soft)}
+.z6amr.o{border-color:var(--mag)}
+.z6amr.g{border-color:var(--ok);background:var(--ok-soft)}
+.z6amr.n{border-color:var(--grey);background:var(--paper-2)}
+.z6fa{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+.z6fa>div{padding:12px 14px;border:1px solid var(--ink);background:var(--paper)}
+.z6fa>div:last-child{background:var(--ok-soft);border-color:var(--ok)}
+.z6fa .mono{font-size:.75rem}
+.z6fa ul{margin-top:6px}
+.z6fa li{position:relative;padding:4px 0 4px 16px;font-size:.875rem;line-height:1.4}
+.z6fa li::before{content:"";position:absolute;left:0;top:.85em;width:8px;height:1px;background:var(--mag)}
+@media (max-width:760px){.z6fa{grid-template-columns:1fr}}
+.z6job{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.z6job>div{padding:14px 16px;border:1px solid var(--ink);background:var(--paper)}
+.z6job>div:first-child{background:var(--mag-soft)}
+.z6job>div:last-child{background:var(--ok-soft)}
+.z6job b{display:block;margin-top:4px;font-size:1.125rem;line-height:1.1;font-stretch:72%;font-weight:800;text-transform:uppercase}
+@media (max-width:760px){.z6job{grid-template-columns:1fr}}
+.z6qa svg{display:block;width:100%;max-width:780px;height:auto;margin:0 auto}
+.z6qa input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:36px;background:transparent;cursor:pointer;margin:6px 0 0}
+.z6qa input[type=range]::-webkit-slider-runnable-track{height:10px;border:1px solid var(--ink);background:var(--paper)}
+.z6qa input[type=range]::-moz-range-track{height:10px;border:1px solid var(--ink);background:var(--paper)}
+.z6qa input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;height:26px;margin-top:-9px;border:2px solid var(--ink);background:var(--mag);border-radius:0;transform:rotate(45deg)}
+.z6qa input[type=range]::-moz-range-thumb{width:22px;height:22px;border:2px solid var(--ink);background:var(--mag);border-radius:0;transform:rotate(45deg)}
+.z6qas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:12px}
+.z6qas .stat+.stat{margin-top:0}
+@media (max-width:620px){.z6qas{grid-template-columns:1fr}}
+.z6tp{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
+.z6tp>div{border:1px solid var(--ink);background:var(--paper)}
+.z6tp h5{margin:0;padding:8px 12px;border-bottom:1px solid var(--ink);background:var(--ink);color:var(--paper);font-size:.9375rem;font-weight:800;display:flex;justify-content:space-between;gap:8px}
+.z6tp h5 span{font-family:var(--mono);font-weight:500;font-size:.6875rem;color:#ff4fa3}
+.z6tps{padding:10px 12px;border-top:1px solid var(--line)}
+.z6tps:first-of-type{border-top:0}
+.z6tps .mono{font-size:.6875rem;color:var(--grey)}
+.z6tps .z6chp{margin-top:6px}
+.z6tps .z6chp button{padding:5px 8px;font-size:.75rem}
+.z6tps .ki{margin-top:8px;font-size:.8125rem;line-height:1.4;color:var(--grey)}
+.z6tps .ki b{font-family:var(--mono);font-weight:500;font-size:.6875rem;color:var(--mag);margin-right:4px}
+@media (max-width:900px){.z6tp{grid-template-columns:1fr}}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{transition-duration:.01ms!important;animation:none!important}
@@ -2412,6 +2544,13 @@ svg text{font-family:var(--mono);font-size:9px;fill:var(--grey);letter-spacing:.
 <li>Eine offene Kommunikations- und Konfliktkultur schaffen</li>
 </ol></div>
 </div>
+<div class="fig" style="margin-top:24px">
+<div class="fh"><h4>Arbeitsblatt: eigenes KI-Team planen</h4><span class="mono grey" id="z5CkS"></span></div>
+<div class="fb">
+<div class="row" style="justify-content:space-between"><p style="font-size:.9375rem;max-width:60ch">Aus dem Kursmaterial zum Abhaken: erst die Fähigkeiten, dann die Rollen. Der Stand bleibt in diesem Browser.</p><button class="btn ghost" type="button" id="z5CkR">Liste leeren</button></div>
+<div class="z6cl" id="z5CkL"></div>
+</div>
+</div>
 </section>
 
 <!-- 5.6 -->
@@ -2487,6 +2626,13 @@ svg text{font-family:var(--mono);font-size:9px;fill:var(--grey);letter-spacing:.
 <div><span class="mono m">03</span><b>Touchpoints</b><p>Jeder Berührungspunkt mit Stimmung. Die Tiefpunkte zeigen, wo KI am meisten bringt.</p></div>
 <div><span class="mono m">04</span><b>Produktdenken</b><p>Lebenszyklus, Kundenfeedback, User Experience statt nur interner Effizienz.</p></div>
 </div>
+<div class="fig" style="margin-top:24px">
+<div class="fh"><h4>Arbeitsblatt: Touchpoints sammeln</h4><span class="mono grey" id="z5TpS"></span></div>
+<div class="fb">
+<div class="row" style="justify-content:space-between"><p style="font-size:.9375rem;max-width:62ch">Wo kommt deine Kundschaft mit dir in Kontakt, von der ersten Wahrnehmung bis zur Weiterempfehlung? Tippe an, was für dein Produkt zählt. Die KI-Ideen sind meine Ergänzung.</p><button class="btn ghost" type="button" id="z5TpR">Auswahl leeren</button></div>
+<div class="z6tp" id="z5Tp"></div>
+</div>
+</div>
 </section>
 
 <!-- 5.10 -->
@@ -2541,6 +2687,342 @@ svg text{font-family:var(--mono);font-size:9px;fill:var(--grey);letter-spacing:.
 </div></div>
 </section>
 
+<!-- ============ MODUL 6 ============ -->
+<section class="mod" id="m6" data-mod="6" aria-labelledby="m6-t" hidden>
+
+<header class="mh wrap">
+<div class="in">
+<div>
+<p class="mno" aria-hidden="true">06</p>
+<h2 class="mt" id="m6-t">Ethik und Recht bei KI</h2>
+<p class="lead">Was KI darf und was sie soll: Werte, AI Act, DSGVO, Bias und Risiken. Wann man lieber keine KI einsetzt und was sich für die Arbeit ändert. Mit zwei Checklisten zum Abhaken für echte Projekte.</p>
+</div>
+<div class="prog" aria-label="Fortschritt Modul 6">
+<p class="mono grey">Wiederholung · <span data-pc="6">0 / 7</span></p>
+<ul>
+<li data-ck="risk"><i></i><a href="#m6-recht">Risikostufen</a></li>
+<li data-ck="anon"><i></i><a href="#m6-datenschutz">Anonymität</a></li>
+<li data-ck="proxy"><i></i><a href="#m6-bias">Proxy-Falle</a></li>
+<li data-ck="qa"><i></i><a href="#m6-arbeit">Fehlalarme</a></li>
+<li data-ck="cards"><i></i><a href="#m6-cards">Karteikarten</a></li>
+<li data-ck="cloze"><i></i><a href="#m6-cloze">Lückentext</a></li>
+<li data-ck="quiz"><i></i><a href="#m6-quiz">Quiz</a></li>
+</ul>
+</div>
+</div>
+<nav class="in toc" aria-label="Inhalt Modul 6">
+<a href="#m6-ethik"><span>6.1</span>Ethik</a>
+<a href="#m6-recht"><span>6.2</span>AI Act</a>
+<a href="#m6-gesetze"><span>6.3</span>Haftung &amp; Gesetze</a>
+<a href="#m6-datenschutz"><span>6.4</span>Datenschutz</a>
+<a href="#m6-bias"><span>6.5</span>Bias</a>
+<a href="#m6-listen"><span>6.6</span>Checklisten</a>
+<a href="#m6-risiken"><span>6.7</span>Risiken</a>
+<a href="#m6-grenzen"><span>6.8</span>Keine KI?</a>
+<a href="#m6-faelle"><span>6.9</span>Fallstudien</a>
+<a href="#m6-arbeit"><span>6.10</span>Arbeit</a>
+<a href="#m6-repeat"><span>6.11</span>Wiederholen</a>
+<a href="#m6-check"><span>6.12</span>Faktencheck</a>
+</nav>
+</header>
+
+<div class="wrap"><div class="in">
+
+<!-- 6.1 -->
+<section class="sec" id="m6-ethik">
+<div class="sh"><span class="sno">6.1</span><h3>Werte, die KI nicht von selbst hat</h3><p>Heutige KI wird nicht mit Regeln programmiert, sie lernt Muster aus Daten. Dabei lernt sie auch Vorurteile mit, oft ohne dass es jemand merkt. KI-Ethik sorgt dafür, dass Systeme unsere Werte abbilden. Tippe einen Wert an.</p></div>
+<div class="eco">
+<svg id="z6EtS" viewBox="0 0 440 400" role="group" aria-label="Acht Werte der KI-Ethik rund um Vertrauen"></svg>
+<div class="det" style="position:static" aria-live="polite">
+<div class="dh"><span class="mono grey">Abb. 6.1 · Wert <span id="z6EtN">1</span> von 8</span><span class="mono m" id="z6EtK"></span></div>
+<div class="db"><h4 id="z6EtT"></h4><p class="d" id="z6EtD"></p><p class="ex"><b>Warum schwer</b><span id="z6EtH"></span></p><p class="ex"><b>Beispiel</b><span id="z6EtE"></span></p></div>
+</div>
+</div>
+<h4 class="mono m" style="margin:32px 0 0">Asilomar-Prinzipien des Future of Life Institute · Nr. 6 bis 16</h4>
+<ul class="z6fli">
+<li><span>06</span><b>Sicherheit</b><p>über die ganze Laufzeit sicher und, wo möglich, überprüfbar</p></li>
+<li><span>07</span><b>Fehlertransparenz</b><p>Richtet KI Schaden an, muss sich klären lassen, warum</p></li>
+<li><span>08</span><b>Justiz</b><p>Urteile mit KI-Beteiligung erklärbar und von Menschen prüfbar</p></li>
+<li><span>09</span><b>Verantwortung</b><p>Wer KI baut, trägt Verantwortung für Nutzung und Missbrauch</p></li>
+<li><span>10</span><b>Wertausrichtung</b><p>Ziele autonomer Systeme passen zu menschlichen Werten</p></li>
+<li><span>11</span><b>Menschliche Werte</b><p>Würde, Rechte, Freiheiten und kulturelle Vielfalt achten</p></li>
+<li><span>12</span><b>Privatsphäre</b><p>Zugriff auf und Kontrolle über die eigenen Daten</p></li>
+<li><span>13</span><b>Freiheit</b><p>KI auf persönlichen Daten darf Freiheit nicht unangemessen einschränken</p></li>
+<li><span>14</span><b>Gemeinsamer Nutzen</b><p>möglichst vielen Menschen nützen und sie befähigen</p></li>
+<li><span>15</span><b>Geteilter Wohlstand</b><p>den Wohlstand durch KI breit teilen</p></li>
+<li><span>16</span><b>Menschliche Kontrolle</b><p>selbst wählen, ob und was man an KI abgibt</p></li>
+</ul>
+<p class="note">Die 23 Asilomar-Prinzipien entstanden 2017 auf einer Konferenz des Future of Life Institute. Volltext auf futureoflife.org.</p>
+</section>
+
+<!-- 6.2 -->
+<section class="sec" id="m6-recht">
+<div class="sh"><span class="sno">6.2</span><h3>Der AI Act: Regeln nach Risiko</h3><p>Die KI-Verordnung der EU gilt für alle, die KI in der EU entwickeln, anbieten oder einsetzen. Je größer die Gefahr für Sicherheit und Grundrechte, desto strenger die Regeln. Entscheidend ist der Einsatzzweck, nicht die Technik. Tippe eine Stufe an.</p></div>
+<div class="eco z6py">
+<svg id="z6PyS" viewBox="0 0 440 372" role="group" aria-label="Risikopyramide des AI Act mit vier Stufen und Basismodellen"></svg>
+<div class="det" style="position:static" aria-live="polite">
+<div class="dh"><span class="mono grey">Abb. 6.2 · AI Act</span><span class="mono m" id="z6PyK"></span></div>
+<div class="db"><h4 id="z6PyT"></h4><p class="d" id="z6PyD"></p><p class="ex"><b>Beispiele</b><span id="z6PyB"></span></p><p class="ex"><b>Pflichten</b><span id="z6PyP"></span></p><p class="ex"><b>Gilt</b><span id="z6PyZ"></span></p></div>
+</div>
+</div>
+<ol class="z6tl" id="z6Tl" aria-label="Zeitplan des AI Act">
+<li data-d="2024-08"><b>Aug 2024</b>in Kraft getreten</li>
+<li data-d="2025-02"><b>Feb 2025</b>Verbote</li>
+<li data-d="2025-08"><b>Aug 2025</b>Basismodelle (GPAI)</li>
+<li data-d="2026-08"><b>Aug 2026</b>Transparenz: Chatbots, Deepfakes</li>
+<li data-d="2027-12"><b>Dez 2027</b>Hochrisiko (Anhang III)</li>
+<li data-d="2028-08"><b>Aug 2028</b>Hochrisiko in Produkten</li>
+</ol>
+<p class="note">Die Hochrisiko-Fristen hat der KI-Omnibus 2026 nach hinten verschoben, ursprünglich war August 2026 geplant.</p>
+<div class="fig" style="margin-top:24px">
+<div class="fh"><h4>Übung: Welche Stufe?</h4><span class="mono grey" data-so-s></span></div>
+<div class="fb" id="m6-ri"><div class="soc"></div><div class="sob s4"></div></div>
+</div>
+</section>
+
+<!-- 6.3 -->
+<section class="sec" id="m6-gesetze">
+<div class="sh"><span class="sno">6.3</span><h3>Wer haftet und was sonst noch gilt</h3><p>Neben dem AI Act gelten alle Gesetze, die es schon gibt. Wer für einen KI-Fehler haftet, ist noch nicht abschließend geklärt. Deshalb lohnt es sich, bei jedem Einsatz zu fragen: Was kann schiefgehen und wie verhindere ich es?</p></div>
+<div class="z6g">
+<div><span class="mono m">01</span><b>Entwickelnde</b><p>bauen und trainieren das Modell, etwa OpenAI oder Anthropic</p></div>
+<div><span class="mono m">02</span><b>Anbietende</b><p>bauen KI in ein eigenes Produkt ein und erweitern sie, etwa den Chatbot auf der Firmenwebsite. Das wird man schneller, als man denkt.</p></div>
+<div><span class="mono m">03</span><b>Nutzende</b><p>setzen KI ein. „Ich wusste es nicht“ schützt in der Regel nicht.</p></div>
+</div>
+<div class="two" style="margin-top:24px;align-items:start">
+<div class="fig"><div class="fh"><h4>Urheberrecht</h4><span class="mono m">Risiko</span></div><div class="fb"><p>Bild- und Textgeneratoren erzeugen manchmal Werke, die geschützten Vorlagen zu ähnlich sind. Wer sie nutzt, haftet meist trotzdem, prüfen kann man es kaum. Deshalb ist zum Beispiel die Filmbranche vorsichtig.</p></div></div>
+<div class="fig"><div class="fh"><h4>International</h4><span class="mono m">Beispiel China</span></div><div class="fb"><p>Strenger Datenschutz, Daten sollen im Land bleiben, und Ausgaben generativer KI müssen der staatlichen Zensur entsprechen. Wer international arbeitet, muss jedes Land einzeln prüfen.</p></div></div>
+</div>
+<p class="key"><span class="mono">Bußgelder</span><span>AI Act: bis 35 Mio. € oder 7 % des weltweiten Jahresumsatzes bei verbotener KI, bis 15 Mio. € oder 3 % bei anderen Pflichten. DSGVO: bis 20 Mio. € oder 4 %. Es zählt jeweils der höhere Betrag.</span></p>
+</section>
+
+<!-- 6.4 -->
+<section class="sec" id="m6-datenschutz">
+<div class="sh"><span class="sno">6.4</span><h3>Datenschutz: anonym ist schwer</h3><p>KI braucht Daten, zum Training und im Betrieb. Dabei geht es um personenbezogene Daten und um eigenes geistiges Eigentum. Was in ChatGPT landet, liegt bei einem Anbieter in den USA und kann im schlimmsten Fall bei anderen wieder auftauchen.</p></div>
+<div class="two" style="align-items:start">
+<div class="fig">
+<div class="fh"><h4>Personaldaten schützen</h4><span class="mono grey">Abb. 6.4a</span></div>
+<div class="fb">
+<div class="tabs" role="tablist" aria-label="Schutzstufe" id="z6PsT"></div>
+<table class="z6t z6ps"><thead><tr><th scope="col">Person</th><th scope="col">PLZ</th><th scope="col">Jahrgang</th><th scope="col">Fehltage wegen</th></tr></thead><tbody id="z6PsB"></tbody></table>
+<p class="vd" id="z6PsN" aria-live="polite"></p>
+</div>
+</div>
+<div class="fig">
+<div class="fh"><h4>Wie anonym ist anonym?</h4><span class="mono grey">Abb. 6.4b · Merkmale antippen</span></div>
+<div class="fb">
+<p style="font-size:.9375rem">Ein Datensatz ohne Namen aus einer Stadt mit 1 Mio. Menschen. Wie viele passen noch, wenn man ein paar Merkmale kennt?</p>
+<div class="z6chp" id="z6RiC" style="margin-top:12px" role="group" aria-label="Bekannte Merkmale"></div>
+<div class="z6rib"><b id="z6RiN">1.000.000</b><span id="z6RiU">Menschen passen</span></div>
+<svg id="z6RiS" viewBox="0 0 400 62" role="img" aria-label="Logarithmische Skala der passenden Personen"></svg>
+<p class="vd" id="z6RiV" aria-live="polite"></p>
+</div>
+</div>
+</div>
+<p class="note">Latanya Sweeney zeigte im Jahr 2000: Postleitzahl, Geburtsdatum und Geschlecht reichen, um 87 % der Menschen in den USA eindeutig zu erkennen. KI und Big Data verknüpfen solche Quellen noch leichter.</p>
+<h4 class="mono m" style="margin:28px 0 10px">Was die DSGVO verlangt</h4>
+<div class="z6g">
+<div><span class="mono m">01</span><b>Datensparsamkeit</b><p>Nur erheben, speichern und verarbeiten, was der Zweck braucht. „Vielleicht brauchen wir es noch“ zählt nicht.</p></div>
+<div><span class="mono m">02</span><b>Zweckbindung</b><p>Für einen Zweck erhobene Daten nicht einfach für andere Entscheidungen weiterverwenden.</p></div>
+<div><span class="mono m">03</span><b>Information</b><p>Betroffene erfahren, was gesammelt wird, wofür, wie lange und wer Ansprechperson ist.</p></div>
+<div><span class="mono m">04</span><b>Einwilligung</b><p>Freiwillig und widerrufbar. Einen Dienst an alle Daten zu koppeln, ist nur erlaubt, wenn er ohne sie wirklich nicht funktioniert.</p></div>
+<div><span class="mono m">05</span><b>Auskunft</b><p>Auf Anfrage sagen können, welche Daten man über eine Person hat.</p></div>
+<div><span class="mono m">06</span><b>Sicherheit &amp; Meldepflicht</b><p>Sicher speichern und übertragen. Bei einer Datenpanne binnen 72 Stunden die Aufsichtsbehörde informieren, auch wenn Kriminelle schuld sind.</p></div>
+</div>
+<p class="key"><span class="mono">Mitarbeitende</span><span>Wer die Produktion mit Kameras und Sensoren überwacht, überwacht schnell auch Menschen. Das kann gegen die DSGVO verstoßen und kostet Vertrauen. Wo es einen Betriebsrat gibt, bestimmt er bei technischer Überwachung mit.</span></p>
+<h4 class="mono m" style="margin:28px 0 10px">Daten nutzen, ohne sie herzugeben</h4>
+<div class="z6g">
+<div><span class="mono m">Lokal</span><b>Selbst betreiben</b><p>Ein Open-Source-Modell auf dem eigenen Server, ohne Internet. Geschäftsgeheimnisse verlassen das Haus nicht.</p></div>
+<div><span class="mono m">Verteilt</span><b>Federated Learning</b><p>Das Modell lernt auf den Geräten, nur Modell-Updates werden geteilt. Die Rohdaten bleiben, wo sie sind.</p></div>
+<div><span class="mono m">Verrauscht</span><b>Differential Privacy</b><p>Gezieltes Rauschen in Daten oder Ergebnissen, damit sich Einzelne nicht herausrechnen lassen. Der Kurs verwechselt das mit Federated Learning.</p></div>
+</div>
+</section>
+
+<!-- 6.5 -->
+<section class="sec" id="m6-bias">
+<div class="sh"><span class="sno">6.5</span><h3>Bias: wenn die KI Vorurteile erbt</h3><p>Bias heißt Verzerrung: Die KI übernimmt Benachteiligungen aus historischen Daten und gibt sie als scheinbar objektive Entscheidung weiter. Zwei echte Fälle aus den USA zeigen, wie schnell das passiert, auch ohne böse Absicht.</p></div>
+<div class="fig z6px">
+<div class="fh"><h4>Die Proxy-Falle: Wer bekommt Extra-Betreuung?</h4><span class="mono grey">Abb. 6.5 · vereinfachtes Modell</span></div>
+<div class="fb">
+<p style="font-size:.9375rem;margin-bottom:12px">Eine Krankenversicherung will die kränksten 25 % in ein Betreuungsprogramm aufnehmen. Beide Gruppen sind gleich krank, die Zahl im Kreis ist die Krankheitslast. Aber was soll die KI vorhersagen?</p>
+<div class="tabs" role="tablist" aria-label="Zielgröße" id="z6PxT"></div>
+<svg id="z6PxS" viewBox="0 0 600 236" role="img" aria-label="Zwei Gruppen von Patientinnen und Patienten, sortiert nach Vorhersage"></svg>
+<div class="z6pxs"><div class="stat"><div class="bl">Gruppe A im Programm<b id="z6PxA"></b></div><div class="sbar"><i id="z6PxAb"></i></div></div><div class="stat"><div class="bl">Gruppe B im Programm<b id="z6PxB"></b></div><div class="sbar"><i id="z6PxBb"></i></div></div></div>
+<p class="vd" id="z6PxV" aria-live="polite"></p>
+</div>
+</div>
+<p class="note">Echter Fall: Obermeyer u. a., Science 2019. Ein in den USA weit verbreiteter Algorithmus nutzte Kosten als Ersatz für Bedarf. Bei gleichem Risikowert waren schwarze Patient:innen deutlich kränker. Mit besserer Zielgröße stieg ihr Anteil im Programm von 17,7 auf 46,5 %.</p>
+<div class="two" style="margin-top:24px;align-items:start">
+<div class="fig z6cmp"><div class="fh"><h4>Fall COMPAS: Rückfallprognose vor Gericht</h4><span class="mono grey">ProPublica 2016</span></div><div class="fb">
+<p style="font-size:.9375rem;margin-bottom:12px">Die Software schätzt, ob Angeklagte rückfällig werden. Hautfarbe war kein Eingabewert, die Fehler waren trotzdem ungleich verteilt.</p>
+<p class="mono grey" style="margin-bottom:6px">Hohes Risiko vorhergesagt, aber nicht rückfällig</p>
+<div class="stat"><div class="bl">Schwarze Angeklagte<b>45 %</b></div><div class="sbar"><i style="width:45%"></i></div></div>
+<div class="stat"><div class="bl">Weiße Angeklagte<b>23 %</b></div><div class="sbar"><i class="g" style="width:23%"></i></div></div>
+<p class="mono grey" style="margin:14px 0 6px">Niedriges Risiko vorhergesagt, aber rückfällig</p>
+<div class="stat"><div class="bl">Weiße Angeklagte<b>48 %</b></div><div class="sbar"><i class="g" style="width:48%"></i></div></div>
+<div class="stat"><div class="bl">Schwarze Angeklagte<b>28 %</b></div><div class="sbar"><i style="width:28%"></i></div></div>
+</div></div>
+<div><h4 class="mono m" style="margin-bottom:8px">So kommt man Bias auf die Spur</h4><ol class="nl">
+<li><b>Nicht die KI fragen.</b> Sie sagt, sie sei neutral. Das stimmt nachweislich nicht, sie kennt das Konzept Vorurteil gar nicht.</li>
+<li><b>Gesunder Menschenverstand:</b> Für wen könnte es schiefgehen? Wer ist in den Daten anders vertreten als in der Wirklichkeit?</li>
+<li><b>Flip-Test:</b> Viele Anfragen, nur ein Merkmal ändern, etwa das Geschlecht. Ändert sich das Ergebnis, steckt Bias drin.</li>
+<li><b>Fehlerraten vergleichen:</b> Fairness-Metriken zeigen, ob eine Gruppe öfter falsch eingestuft wird. Regelmäßig, nicht einmal.</li>
+<li><b>Mitarbeitende schulen:</b> verstehen, woher Bias kommt, und den eigenen Kopf eingeschaltet lassen.</li>
+</ol></div>
+</div>
+</section>
+
+<!-- 6.6 -->
+<section class="sec" id="m6-listen">
+<div class="sh"><span class="sno">6.6</span><h3>Zwei Checklisten für echte Projekte</h3><p>Die DSGVO-Liste bringt konkrete Maßnahmen, die Ethik-Liste stellt Fragen zum Nachdenken. Sie überschneiden sich und ergänzen sich. Geh sie für ein konkretes Projekt durch, etwa ein KI-Tool zur Personalauswahl. Der Stand bleibt in diesem Browser.</p></div>
+<div class="fig">
+<div class="fh"><h4>Checkliste abhaken</h4><span class="mono grey" id="z6CkS"></span></div>
+<div class="fb">
+<div class="row" style="justify-content:space-between"><div class="tabs" role="tablist" aria-label="Checkliste" id="z6CkT"></div><button class="btn ghost" type="button" id="z6CkR">Liste leeren</button></div>
+<div class="z6cl" id="z6CkL"></div>
+</div>
+</div>
+<table class="z6t" style="margin-top:24px">
+<thead><tr><th scope="col">Blick</th><th scope="col">DSGVO-Liste</th><th scope="col">Ethik-Liste</th></tr></thead>
+<tbody>
+<tr><th scope="row">Perspektive</th><td>rechtliche Compliance</td><td>geht über das Gesetz hinaus</td></tr>
+<tr><th scope="row">Form</th><td>konkrete Maßnahmen</td><td>Reflexionsfragen</td></tr>
+<tr><th scope="row">Fokus</th><td>technische Umsetzung</td><td>Folgen für die Gesellschaft</td></tr>
+<tr><th scope="row">Zeit</th><td>kurzfristig, jetzt erfüllen</td><td>langfristige Folgen</td></tr>
+<tr><th scope="row">Haltung</th><td>prozessorientiert</td><td>werteorientiert</td></tr>
+</tbody>
+</table>
+</section>
+
+<!-- 6.7 -->
+<section class="sec" id="m6-risiken">
+<div class="sh"><span class="sno">6.7</span><h3>Risiken: was die KI wirklich gelernt hat</h3><p>Das größte Risiko ist, die Schwächen der KI nicht zu kennen. Sie findet Muster, auch solche, die nur zufällig in den Daten stecken. Klassisches Lehrbeispiel: eine KI, die Panzer auf Fotos erkennen soll.</p></div>
+<div class="fig z6tk">
+<div class="fh"><h4>Panzer oder Wetter?</h4><span class="mono grey">Abb. 6.7 · drei Schritte</span></div>
+<div class="fb">
+<div class="tabs" role="tablist" aria-label="Schritt" id="z6TkT"></div>
+<svg id="z6TkS" viewBox="0 0 420 252" role="img" aria-label="Sechs Fotos mit Vorhersage der KI"></svg>
+<p class="vd" id="z6TkV" aria-live="polite"></p>
+</div>
+</div>
+<p class="note">Die Panzer-Geschichte ist vermutlich eine Legende. Das Prinzip ist belegt und heißt Shortcut Learning: In einem Versuch von 2016 unterschied ein Modell Husky und Wolf am Schnee im Hintergrund, 2018 erkannten Röntgen-Modelle die Klinik am Bild statt die Krankheit.</p>
+<h4 class="mono m" style="margin:28px 0 10px">Risiken im KI-Projekt</h4>
+<div class="z6g">
+<div><span class="mono m">01</span><b>Fehlschlüsse</b><p>Halluzinationen und Scheinkorrelationen. KI versteht nichts, sie rechnet Wahrscheinlichkeiten.</p></div>
+<div><span class="mono m">02</span><b>Angriffe</b><p>Kleine gezielte Änderungen, etwa Aufkleber auf einem Stoppschild, täuschen die Bilderkennung. Fehlerhafte Daten können denselben Effekt zufällig haben.</p></div>
+<div><span class="mono m">03</span><b>Reputation</b><p>Fällt die eigene KI auf einen Fehler herein, sehen es Kundschaft und Öffentlichkeit.</p></div>
+<div><span class="mono m">04</span><b>Datenverlust</b><p>Daten liegen versehentlich offen im Netz oder werden gestohlen.</p></div>
+<div><span class="mono m">05</span><b>Abhängigkeit</b><p>Fällt ein Anbieter wie ChatGPT aus, steht die Arbeit. Backup-Anbieter oder Plan B einplanen.</p></div>
+<div><span class="mono m">06</span><b>Weltuntergang?</b><p>Dafür bräuchte KI einen eigenen Willen. Die Debatte lenkt oft von heutigen Problemen wie Bias ab.</p></div>
+</div>
+<p class="key"><span class="mono">Gegenmittel</span><span>Schwächen kennen, einen Prozess zur Prüfung von KI-Entscheidungen festlegen, Erkläralgorithmen nutzen, Systeme regelmäßig warten. Cybersicherheit folgt in Modul 7.</span></p>
+</section>
+
+<!-- 6.8 -->
+<section class="sec" id="m6-grenzen">
+<div class="sh"><span class="sno">6.8</span><h3>Wann lieber keine KI?</h3><p>Die wichtigste Frage wird viel zu selten gestellt. Fast jede Technik hat gute und schlechte Anwendungen (Dual Use), im Extrem autonome Waffen. Unternehmen müssen aktiv entscheiden, was sie nicht machen. Geh einen eigenen Anwendungsfall durch.</p></div>
+<div class="fig">
+<div class="fh"><h4>KI-Ampel</h4><span class="mono grey">Abb. 6.8 · fünf Fragen</span></div>
+<div class="fb"><div class="z6am" id="z6Am" aria-live="polite"></div></div>
+</div>
+<div class="two" style="margin-top:24px">
+<p class="key" style="margin-top:0"><span class="mono">Deepfakes</span><span>Ein Avatar von sich selbst spart Drehzeit. Aber billige Deepfakes wirken unecht, gute sind teuer und veralten schnell. Dazu kommt der Vertrauensverlust, wenn niemand mehr weiß, was echt ist.</span></p>
+<p class="key" style="margin-top:0"><span class="mono">Empfehlungen</span><span>„Kund:innen wie du kaufen auch …“ ist nützlich. Zu weit getrieben wird daraus Manipulation, und das kostet Vertrauen.</span></p>
+</div>
+</section>
+
+<!-- 6.9 -->
+<section class="sec" id="m6-faelle">
+<div class="sh"><span class="sno">6.9</span><h3>Drei Fallstudien</h3><p>Aus den Kursaufgaben: Was ist das ethische Problem, was folgt daraus und was wäre besser? Es gibt nicht die eine richtige Lösung.</p></div>
+<div class="fig">
+<div class="fh"><h4>Fallstudie wählen</h4><span class="mono grey">Abb. 6.9</span></div>
+<div class="fb">
+<div class="tabs" role="tablist" aria-label="Fallstudie" id="z6FaT"></div>
+<p class="pst" id="z6FaD"></p>
+<div class="z6fa" id="z6FaP"></div>
+<p class="note" id="z6FaN"></p>
+</div>
+</div>
+<p class="key"><span class="mono">Gemeinsam</span><span>In allen drei Fällen geht es um Vertrauen, Transparenz und einen Menschen, der am Ende entscheidet. Regeln und Leitlinien ziehen Grenzen, die die Technik allein nicht zieht.</span></p>
+</section>
+
+<!-- 6.10 -->
+<section class="sec" id="m6-arbeit">
+<div class="sh"><span class="sno">6.10</span><h3>KI und Arbeit</h3><p>KI verschiebt Arbeit mehr, als dass sie sie nur ersetzt. Ehrlich bleiben: Manche Jobs fallen weg, und die neuen brauchen oft andere Qualifikationen. Ängste ernst nehmen, schulen und genau prüfen, wo Automatisierung wirklich Sinn ergibt.</p></div>
+<div class="z6job">
+<div><span class="mono m">stark betroffen</span><b>Repetitiv und datenreich</b><p style="margin-top:6px;font-size:.9375rem">Routineaufgaben, Mustererkennung in großen Datenmengen, Callcenter, Computerarbeit aus der Ferne. Längst nicht mehr nur Jobs mit wenig Qualifikation.</p></div>
+<div><span class="mono m">Zusammenarbeit</span><b>Mensch und Maschine</b><p style="margin-top:6px;font-size:.9375rem">Roboter in der Werkshalle, Qualitätssicherung. Wenige Menschen, viel KI, und der Mensch bleibt wachsam.</p></div>
+<div><span class="mono" style="color:var(--ok)">relativ sicher</span><b>Nähe vor Ort</b><p style="margin-top:6px;font-size:.9375rem">Pflege, Kinderbetreuung, Erziehung. Roboter und Menschen passen hier technisch noch nicht zusammen, und die Wärme wollen wir von Menschen.</p></div>
+</div>
+<div class="fig z6qa" style="margin-top:24px">
+<div class="fh"><h4>Qualitätssicherung: Wie empfindlich soll die KI sein?</h4><span class="mono grey">Abb. 6.10 · Regler ziehen</span></div>
+<div class="fb">
+<p style="font-size:.9375rem">1.000 Werkstücke am Tag, 3 % davon fehlerhaft. Sensoren liefern einen Wert, ab einer Schwelle schlägt die KI Alarm und das Band stoppt. Ein Fehlalarm kostet 10 € für Stopp und Prüfung, ein übersehenes Fehlteil 200 € für die Reklamation.</p>
+<svg id="z6QaS" viewBox="0 0 600 200" role="img" aria-label="Verteilung guter und fehlerhafter Teile mit Alarmschwelle" style="margin-top:12px"></svg>
+<p class="note" style="margin-top:2px">Beide Kurven auf gleiche Höhe skaliert. In Wirklichkeit sind Fehlteile 32-mal seltener.</p>
+<label class="mono grey" for="z6QaR" style="display:block;margin-top:8px">Alarm ab Sensorwert <span id="z6QaL" class="m"></span></label>
+<input type="range" id="z6QaR" min="20" max="90" value="30">
+<div class="z6qas">
+<div class="stat"><div class="bl">Fehlalarme pro Tag<b id="z6QaF"></b></div><div class="sbar"><i id="z6QaFb" style="background:var(--grey)"></i></div></div>
+<div class="stat"><div class="bl">übersehene Fehler<b id="z6QaM"></b></div><div class="sbar"><i id="z6QaMb"></i></div></div>
+<div class="stat"><div class="bl">Kosten pro Tag<b id="z6QaC"></b></div><div class="sbar"><i id="z6QaCb" style="background:var(--ink)"></i></div></div>
+</div>
+<p class="vd" id="z6QaV" aria-live="polite"></p>
+</div>
+</div>
+<div class="two" style="margin-top:24px;align-items:start">
+<div><h4 class="mono m" style="margin-bottom:8px">Gute Zusammenarbeit mit KI</h4><ul class="lst">
+<li><b>Sicherheit zuerst:</b> Roboter haben starke Kräfte. Not-Stopp, Sensoren und Alarmzeichen einbauen.</li>
+<li><b>Schulen:</b> Ungewöhnlich viele Fehlermeldungen oder eine plötzlich häufige Tätigkeit sind Warnsignale.</li>
+<li><b>Kameradaten:</b> Beschäftigte informieren, nur Nötiges aufzeichnen, schnell löschen, gut sichern.</li>
+<li><b>Ehrlich rechnen:</b> Zu frühe Automatisierung kostet viel. Manchmal ist das bestehende Team die bessere Lösung.</li>
+</ul></div>
+<div><h4 class="mono m" style="margin-bottom:8px">Wird KI bald schlauer als wir?</h4><p style="font-size:.9375rem;line-height:1.5">Der Kurs sagt nein: In Versuchen mit dem Plan eines Hauses mit zehn Räumen fanden Sprachmodelle oft nicht den kürzesten Weg und liefen im Kreis. Eine innere Karte, ein Weltmodell, entstehe nicht. Frey und Osborne schätzten 2013, dass 47 % der US-Jobs stark automatisierbar sind. Bei Taxis lagen sie daneben, bei Callcentern richtig. Beides ist umstrittener, als der Kurs es darstellt, siehe Faktencheck.</p></div>
+</div>
+</section>
+
+<!-- 6.11 -->
+<section class="sec" id="m6-repeat">
+<div class="sh"><span class="sno">6.11</span><h3>Wiederholen</h3><p>Erst Karteikarten, dann Lückentext, dann das Quiz. Dein Fortschritt bleibt in diesem Browser gespeichert.</p></div>
+<div id="m6-cards" style="scroll-margin-top:70px">
+<div class="row" style="justify-content:space-between;margin-bottom:12px"><h4 class="mono m">Karteikarten · antippen zum Umdrehen</h4><span class="mono grey" data-cd-s></span></div>
+<div class="cards"></div>
+</div>
+<div class="fig" id="m6-cloze" style="margin-top:36px;scroll-margin-top:70px">
+<div class="fh"><h4>Lückentext</h4><span class="mono grey">aus den Kursaufgaben, in meinen Worten</span></div>
+<div class="fb">
+<ol class="cz"></ol>
+<div class="row" style="margin-top:16px"><button class="btn" type="button" data-cz-go>Prüfen</button><button class="btn ghost" type="button" data-cz-r>Zurücksetzen</button><p class="st" data-cz-s aria-live="polite"></p></div>
+</div>
+</div>
+<div class="fig" id="m6-quiz" style="margin-top:36px;scroll-margin-top:70px">
+<div class="fh"><h4>Quiz Modul 6</h4><span class="mono grey" data-qz-best></span></div>
+<div class="fb"><div class="qz" aria-live="polite"></div></div>
+</div>
+</section>
+
+<!-- 6.12 -->
+<section class="sec" id="m6-check">
+<div class="sh"><span class="sno">6.12</span><h3>Faktencheck</h3><p>Modul 6 ist das juristischste Modul, hier zählt Genauigkeit. An mehreren Stellen ist der Kurs vereinfacht oder vom Stand überholt. Für die Prüfung merke ich mir beide Versionen. Stand: November 2026, keine Rechtsberatung.</p></div>
+<table class="fct">
+<thead><tr><th scope="col">Thema</th><th scope="col">Im Kursmaterial</th><th scope="col">Nachgeprüft</th></tr></thead>
+<tbody>
+<tr><th scope="row">Risikoklassen im AI Act</th><td>drei Klassen, Chatbots für harmlose Zwecke ohne Auflagen</td><td>Die EU-Kommission beschreibt vier Stufen: unannehmbar, hoch, begrenzt, minimal. Chatbots und Deepfakes haben seit August 2026 eine Transparenzpflicht (Art. 50). Basismodelle wie GPT oder Claude haben seit August 2025 eigene Pflichten.</td></tr>
+<tr><th scope="row">Gesichtserkennung</th><td>„biometrische Überwachung ist verboten“, Ausnahme für Behörden bei Terror</td><td>Verboten ist die Echtzeit-Fernidentifizierung im öffentlichen Raum zur Strafverfolgung, mit engen Ausnahmen: Opfersuche, akute Terrorgefahr, schwere Straftaten. Nachträgliche Identifizierung ist Hochrisiko. Für Unternehmen zieht meist schon die DSGVO die Grenze (biometrische Daten, Art. 9).</td></tr>
+<tr><th scope="row">Meldepflicht bei Datenpannen</th><td>„vielleicht ein paar Tage“</td><td>72 Stunden, nachdem die Panne bekannt wurde (Art. 33 DSGVO). Bei hohem Risiko müssen auch die Betroffenen informiert werden.</td></tr>
+<tr><th scope="row">Differential Privacy</th><td>Daten bleiben auf dem Gerät, das System stellt nur Fragen an sie</td><td>Das beschreibt Federated Learning. Differential Privacy fügt gezielt Rauschen hinzu, damit sich Einzelne nicht herausrechnen lassen. Beides wird oft kombiniert.</td></tr>
+<tr><th scope="row">Bias prüfen</th><td>„keine systematische Lösung“, man könne Bias nur erahnen</td><td>Bias lässt sich messen: Fairness-Metriken vergleichen Fehlerraten je Gruppe, so wurde COMPAS überführt. Unmöglich ist nur, alle Fairness-Definitionen gleichzeitig zu erfüllen (Kleinberg u. a. 2016). Die Kurs-Checkliste empfiehlt selbst Fairness-Metriken.</td></tr>
+<tr><th scope="row">COMPAS</th><td>entscheidet über vorzeitige Entlassung, lernte „Menschen lassen Schwarze länger in Haft“</td><td>COMPAS schätzt die Rückfallwahrscheinlichkeit aus einem Fragebogen und wird vor allem bei Haftprüfung und Strafmaß genutzt. Hautfarbe war kein Eingabewert, die Verzerrung kam über andere Merkmale.</td></tr>
+<tr><th scope="row">Panzer-Geschichte</th><td>als echter Fall einer Werbefirma erzählt</td><td>Vermutlich eine Legende, eine Originalquelle ist nicht auffindbar. Das Phänomen ist echt und gut belegt (Shortcut Learning, siehe 6.7).</td></tr>
+<tr><th scope="row">Frey und Osborne</th><td>„47 % aller Arbeitsplätze werden wegfallen“</td><td>Die Studie von 2013 schätzte 47 % der US-Jobs als technisch stark automatisierbar ein, in den nächsten ein bis zwei Jahrzehnten. Eine Prognose über wegfallende Stellen war das nicht.</td></tr>
+<tr><th scope="row">Weltmodell</th><td>„Es entsteht überhaupt kein Modell“, KI hat ein Plateau erreicht</td><td>In der Forschung umstritten. Gemeint ist vermutlich CogEval (Momennejad u. a. 2023), die Planungsfehler zeigt. Andere Arbeiten finden interne Weltrepräsentationen, etwa Othello-GPT (2023). Neuere Reasoning-Modelle planen deutlich besser.</td></tr>
+<tr><th scope="row">Deepfakes von anderen</th><td>„in Deutschland nicht erlaubt“</td><td>Ein pauschales Verbot gibt es nicht, aber enge Grenzen: Persönlichkeitsrecht und Recht am eigenen Bild, je nach Inhalt Straf- und Urheberrecht. Satire kann erlaubt sein. Seit August 2026 müssen Deepfakes gekennzeichnet werden.</td></tr>
+</tbody>
+</table>
+</section>
+
+</div></div>
+</section>
+
 <!-- placeholder for locked modules, filled by JS -->
 <section class="mod lockp wrap" id="mx-lock" hidden aria-live="polite">
 <div class="in"><div class="box">
@@ -2586,7 +3068,7 @@ var MODS=[
  {n:3,s:'Daten',t:'Datenmanagement als Basis für erfolgreiche KI-Anwendungen',live:true,checks:['roles','ice','cards','cloze','quiz']},
  {n:4,s:'Strategie',t:'Strategische Implementierung von KI in Unternehmen',live:true,checks:['stacey','risk','swot','cards','cloze','quiz']},
  {n:5,s:'Kultur & Change',t:'Organisatorische und kulturelle Integration von KI',live:true,checks:['tuck','team','glasl','cards','cloze','quiz']},
- {n:6,s:'Ethik & Recht',t:'Ethische und rechtliche Aspekte der KI-Nutzung'},
+ {n:6,s:'Ethik & Recht',t:'Ethische und rechtliche Aspekte der KI-Nutzung',live:true,checks:['risk','anon','proxy','qa','cards','cloze','quiz']},
  {n:7,s:'Sicherheit',t:'Cybersicherheit und KI-Sicherheit'},
  {n:8,s:'KI-VO',t:'Fit für die KI-Verordnung (EU AI Act)'},
  {n:9,s:'IHK-Prüfung',t:'IHK-Leistungsüberprüfung'}
@@ -3981,6 +4463,339 @@ initQuiz(5,[
  ['Sollte man Prozesse vor der KI-Automatisierung optimieren?',['Ja, sonst automatisiert man unnötige Schritte','Nein, die KI verbessert ineffiziente Abläufe von selbst','Nein, das kostet nur Zeit'],'Erst aufräumen, dann automatisieren.'],
  ['Was hilft gegen Widerstände aus Angst vor KI?',['Klare Kommunikation und Beteiligungsformate','Alle Prozesse automatisieren','Kündigungen'],'Kopf und Bauch ansprechen: erklären und zuhören.']
 ]);
+
+/* ================= MODUL 6 ================= */
+function deN(v,d){return v.toLocaleString('de-DE',{maximumFractionDigits:d||0})}
+/* generic checklist with groups, optional tabs */
+function ckList(cfg){
+  var L=$(cfg.list),S=$(cfg.status),cur=0,set=null;if(!L)return;
+  if(cfg.tabs)set=tabsFor($(cfg.tabs),cfg.lists.map(function(x){return x.l}),function(i){cur=i;render()});
+  function stat(){var li=cfg.lists[cur],st=get(li.k,{}),tot=0,on=0;li.g.forEach(function(g,gi){g[1].forEach(function(_,ii){tot++;if(st[gi+'.'+ii])on++})});S.textContent=on+' von '+tot+' erledigt'}
+  function render(){
+    if(set)set(cur);
+    var li=cfg.lists[cur],st=get(li.k,{});L.innerHTML='';
+    li.g.forEach(function(g,gi){
+      var box=h('div','z6cg'),hd=h('h5'),n=0;box.appendChild(hd);
+      function head(){n=0;g[1].forEach(function(_,ii){if(st[gi+'.'+ii])n++});hd.innerHTML=(gi<9?'0':'')+(gi+1)+' · '+g[0]+'<span>'+n+' / '+g[1].length+'</span>';box.classList.toggle('full',n===g[1].length)}
+      g[1].forEach(function(t,ii){var id=gi+'.'+ii,b=h('button','z6ci');b.type='button';b.appendChild(document.createTextNode(t));b.setAttribute('aria-pressed',String(!!st[id]));
+        b.addEventListener('click',function(){if(st[id])delete st[id];else st[id]=1;put(li.k,st);b.setAttribute('aria-pressed',String(!!st[id]));head();stat()});box.appendChild(b)});
+      head();L.appendChild(box);
+    });
+    stat();
+  }
+  $(cfg.reset).addEventListener('click',function(){if(window.confirm('Alle Haken dieser Liste entfernen?')){put(cfg.lists[cur].k,{});render()}});
+  render();
+}
+
+/* 6.1 ethics ring */
+var ET=[
+ {l:'Fairness',s:'gleich behandeln',t:'Fairness',d:'KI darf Menschen nicht wegen Herkunft, Geschlecht oder Alter benachteiligen. Verzerrungen aus den Trainingsdaten, sogenannter Bias, schleichen sich oft unbemerkt ein.',hd:'Wer selbst privilegiert ist, bemerkt Rassismus oder Sexismus in den Daten oft gar nicht.',e:'Ein Kreditmodell lernt aus alten Daten, dass Frauen seltener Kredite bekamen, und macht weiter so.'},
+ {l:'Sicherheit',s:'kein Schaden',t:'Sicherheit',d:'Schutz vor böswilligen Angriffen und vor Schaden ohne Absicht: körperlich, wenn KI Roboter steuert, und durch Diskriminierung. Angriffe müssen bemerkt und abgewehrt werden.',hd:'Schaden entsteht auch, wenn niemand ihn will.',e:'Ein Roboter in der Werkshalle braucht Not-Stopp und Sensoren, die Menschen erkennen.'},
+ {l:'Robustheit',s:'nicht täuschbar',t:'Robustheit',d:'KI erkennt manchmal Zusammenhänge, die gar nicht da sind, und lässt sich gezielt täuschen. Robust heißt: zuverlässig, auch wenn die Eingabe gestört ist.',hd:'Manipulationen sind für Menschen oft unsichtbar.',e:'Ein paar Aufkleber, und die Bilderkennung hält ein Stoppschild für ein Tempolimit.'},
+ {l:'Transparenz',s:'offenlegen',t:'Transparenz',d:'Nutzer:innen sollten wissen, dass Verzerrungen möglich sind, woher die Trainingsdaten stammen und welche Filter eingebaut sind. Nicht jedes Detail, aber genug, um Risiken einzuschätzen.',hd:'Wie beim Auto: Niemand versteht jedes Bauteil, aber die Warnlampen muss man kennen.',e:'Der Hinweis „Diese Antwort wurde von einer KI erstellt“.'},
+ {l:'Erklärbarkeit',s:'nachvollziehen',t:'Erklärbarkeit',d:'Warum kam diese Entscheidung heraus? Sprachmodelle sagen das wahrscheinlichste nächste Wort voraus, eine echte Begründung gibt es nicht. Erklärbarkeit ist ein ungelöstes Problem.',hd:'Fragt man die KI nach dem Grund, erfindet sie eine plausible Antwort.',e:'Kredit abgelehnt: Lag es am Einkommen oder am Geschlecht?'},
+ {l:'Kontrolle',s:'Mensch prüft',t:'Menschliche Kontrolle',d:'Menschen müssen KI-Entscheidungen überprüfen können. Aber wir sind maschinengläubig: „Der Computer hat keine Vorurteile.“ Wer kontrolliert, muss skeptisch bleiben.',hd:'Was sich nicht erklären lässt, lässt sich auch kaum prüfen.',e:'Die KI schlägt vor, die Richterin entscheidet und hinterfragt den Vorschlag.'},
+ {l:'Datenschutz',s:'eigene Daten',t:'Datenschutz',d:'Wer mit KI spricht, liefert Daten, die meist ausgewertet werden. Man muss wissen, welche Daten wohin gehen und was damit passiert, und zustimmen können.',hd:'Die Einwilligung versteckt sich oft im Kleingedruckten.',e:'Chatverläufe können ins Training künftiger Modelle einfließen.'},
+ {l:'Verteilung',s:'wer profitiert?',t:'Gerechte Verteilung',d:'Neue Technik nützt oft denen, die schon Macht und Geld haben. Dazu kommt harte Arbeit im Hintergrund: Menschen in ärmeren Ländern sichten Gewalt und Hassrede, damit Modelle sie erkennen lernen.',hd:'Die Kosten sind unsichtbar, der Nutzen landet woanders.',e:'Clickworker labeln verstörende Inhalte, oft für wenige Dollar pro Stunde.'}
+];
+var etS=$('#z6EtS');
+var etC=el('g',{class:'nd ctr'},etS);el('rect',{x:160,y:174,width:120,height:52},etC);
+var et1=el('text',{x:220,y:195,'text-anchor':'middle',class:'s',style:'fill:#F2F3EF'},etC);et1.textContent='Ziel';
+var et2=el('text',{x:220,y:214,'text-anchor':'middle'},etC);et2.textContent='Vertrauen';
+var etN=ringNodes(etS,220,200,158,156,ET,etSel,{w:116});
+function etSel(i){var P=ET[i];etN.forEach(function(g,j){g.setAttribute('aria-pressed',String(j===i))});$('#z6EtN').textContent=i+1;$('#z6EtK').textContent=P.s;$('#z6EtT').textContent=P.t;$('#z6EtD').textContent=P.d;$('#z6EtH').textContent=P.hd;$('#z6EtE').textContent=P.e}
+etSel(0);
+
+/* 6.2 AI Act pyramid */
+var PY=[
+ {n:'UNANNEHMBAR',s:'verboten',k:'verboten',t:'Unannehmbares Risiko',f:'#D6006F',c:'#fff',d:'Systeme, die Sicherheit oder Grundrechte zu stark gefährden, sind in der EU verboten.',b:'Social Scoring, Manipulation, die Menschen schadet, Ausnutzen von Schwächen, Emotionserkennung am Arbeitsplatz und in Schulen, ungezieltes Sammeln von Gesichtsbildern, Echtzeit-Gesichtserkennung durch die Polizei im öffentlichen Raum (enge Ausnahmen)',p:'Einsatz verboten. Bußgeld bis 35 Mio. € oder 7 % des weltweiten Jahresumsatzes.',z:'seit Februar 2025'},
+ {n:'HOCH',s:'strenge Auflagen',k:'Auflagen',t:'Hohes Risiko',f:'rgba(214,0,111,.42)',c:'#0E0F0C',d:'Erlaubt, aber nur mit strengen Auflagen, weil diese Systeme über Chancen, Geld oder Freiheit von Menschen mitentscheiden.',b:'Bewerbungen vorsortieren, Kreditwürdigkeit prüfen, Risiko und Preis bei Lebens- und Krankenversicherungen, Prüfungen bewerten, Grenzkontrollen, kritische Infrastruktur',p:'Risikomanagement, gute Trainingsdaten, Dokumentation, Protokolle, menschliche Aufsicht, Bias minimieren. Betroffene haben ein Recht auf Erklärung. Bußgeld bis 15 Mio. € oder 3 %.',z:'ab Dezember 2027 nach dem KI-Omnibus, in regulierten Produkten wie Medizingeräten ab August 2028'},
+ {n:'BEGRENZT',s:'Transparenzpflicht',k:'Transparenz',t:'Begrenztes Risiko',f:'rgba(214,0,111,.15)',c:'#0E0F0C',d:'Menschen müssen erkennen können, dass sie es mit KI zu tun haben.',b:'Chatbots, KI-generierte Bilder, Videos und Texte, Deepfakes',p:'Offenlegen („Sie chatten mit einer KI“), Deepfakes kennzeichnen, KI-Inhalte maschinenlesbar markieren.',z:'seit August 2026'},
+ {n:'MINIMAL',s:'keine Pflichten',k:'frei',t:'Minimales Risiko',f:'#F2F3EF',c:'#0E0F0C',d:'Der Großteil aller Anwendungen. Kein nennenswertes Risiko für Sicherheit oder Grundrechte.',b:'Spamfilter, KI in Videospielen, Lieferketten optimieren',p:'Keine besonderen Pflichten, freiwillige Verhaltenskodizes. Die DSGVO und andere Gesetze gelten trotzdem.',z:'keine Frist'},
+ {n:'BASISMODELLE (GPAI)',s:'quer zu allen Stufen',k:'eigene Pflichten',t:'Basismodelle',f:'#E7E9E3',c:'#0E0F0C',gp:1,d:'Große Modelle, auf denen viele Anwendungen aufbauen. Für sie gelten eigene Regeln, egal in welcher Stufe die spätere Anwendung landet.',b:'GPT, Claude, Gemini, Llama',p:'Technische Dokumentation, Urheberrecht beachten, Zusammenfassung der Trainingsdaten veröffentlichen. Sehr große Modelle mit systemischem Risiko: zusätzlich Tests, Vorfallmeldungen und Cybersicherheit.',z:'seit August 2025'}
+];
+var pyS=$('#z6PyS'),pyG=[];
+function pyHW(y){return 56+(y-14)/296*150}
+PY.forEach(function(L,i){
+  var pts,cy;
+  if(L.gp){pts=[[16,318],[424,318],[424,362],[16,362]];cy=340}
+  else{var y0=14+i*74,y1=y0+70,a=pyHW(y0),b=pyHW(y1);pts=[[220-a,y0],[220+a,y0],[220+b,y1],[220-b,y1]];cy=(y0+y1)/2}
+  var g=el('g',{class:'lv'+(L.gp?' gp':''),tabindex:0,role:'button','aria-pressed':'false','aria-label':L.t},pyS);
+  el('polygon',{points:pts.map(function(p){return p[0].toFixed(1)+','+p[1]}).join(' '),fill:L.f},g);
+  var t=el('text',{x:220,y:cy-1,'text-anchor':'middle',style:'fill:'+L.c},g);t.textContent=L.n;
+  var t2=el('text',{x:220,y:cy+15,'text-anchor':'middle',class:'s',style:'fill:'+L.c},g);t2.textContent=L.s;
+  g.addEventListener('click',function(){pySel(i)});g.addEventListener('keydown',function(ev){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();pySel(i)}});
+  pyG.push(g);
+});
+function pySel(i){var L=PY[i];pyG.forEach(function(g,j){g.setAttribute('aria-pressed',String(j===i))});$('#z6PyK').textContent=L.k;$('#z6PyT').textContent=L.t;$('#z6PyD').textContent=L.d;$('#z6PyB').textContent=L.b;$('#z6PyP').textContent=L.p;$('#z6PyZ').textContent=L.z}
+pySel(1);
+(function(){var d=new Date(),ym=d.getFullYear()*12+d.getMonth()+1,nx=0;$$('#z6Tl li').forEach(function(li){var p=li.dataset.d.split('-'),v=(+p[0])*12+(+p[1]);if(v<=ym)li.classList.add('on');else if(!nx){li.classList.add('nx');nx=1}})})();
+initSort({root:'#m6-ri',status:'#m6-recht [data-so-s]',mod:6,check:'risk',label:'Fall',end:'Die Stufe hängt vom Einsatzzweck ab, nicht von der Technik. Dasselbe Modell kann Spam filtern oder Bewerbungen sortieren.',buckets:[['v','Verboten','m'],['h','Hoch'],['b','Transparenz'],['n','Minimal']],items:[
+ ['Eine Stadt vergibt Punkte für „gutes Verhalten“ und Wohnungen nach Punktestand','v','Social Scoring ist verboten.'],
+ ['Eine Software liest über die Webcam die Gefühle der Beschäftigten aus','v','Emotionserkennung am Arbeitsplatz ist verboten, außer aus medizinischen oder Sicherheitsgründen.'],
+ ['Die Polizei gleicht live alle Gesichter am Bahnhof mit einer Datenbank ab','v','Echtzeit-Fernidentifizierung im öffentlichen Raum ist verboten, bis auf enge Ausnahmen wie die Suche nach Entführungsopfern.'],
+ ['Ein Tool sortiert Bewerbungen vor und lädt nur die besten ein','h','Personalauswahl entscheidet über Berufschancen: Hochrisiko.'],
+ ['Eine Bank prüft die Kreditwürdigkeit mit KI','h','Kreditscoring ist Hochrisiko. Reine Betrugserkennung dagegen nicht.'],
+ ['Eine Hochschule lässt Prüfungen automatisch bewerten','h','Bildung und Prüfungen gehören zu den Hochrisiko-Bereichen.'],
+ ['Ein Chatbot berät auf der Website zu Produkten','b','Erlaubt, aber die Kundschaft muss wissen, dass sie mit einer KI spricht.'],
+ ['Ein Werbespot lässt eine echte Person etwas sagen, das sie nie gesagt hat','b','Deepfakes müssen gekennzeichnet werden. Ob man die Person überhaupt zeigen darf, regeln andere Gesetze.'],
+ ['Der Spamfilter sortiert E-Mails aus','n','Minimales Risiko, keine besonderen Pflichten.'],
+ ['KI plant die interne Lieferkette','n','Kein nennenswertes Risiko für Grundrechte: minimal.']
+]});
+
+/* 6.4 pseudonym tabs */
+var PS=[
+ {l:'Original',r:[['Lena Fischer','50667','1984','Migräne'],['Tom Berger','50668','1991','Rückenschmerzen'],['Aylin Kaya','50667','1984','Grippe']],ch:[],n:'<b>Klartext</b>Name, Wohnort, Alter und Gesundheit in einer Tabelle. Gesundheitsdaten gehören zu den besonders geschützten Daten der DSGVO.'},
+ {l:'Pseudonym',r:[['P-4711','50667','1984','Migräne'],['P-0815','50668','1991','Rückenschmerzen'],['P-2302','50667','1984','Grippe']],ch:[0],n:'<b>Pseudonymisiert</b>Der Name ist durch eine ID ersetzt. Die ID ist in allen Tabellen gleich, also lassen sich Quellen zusammenführen. Mit der Zuordnungstabelle ist der Name sofort zurück. Für die DSGVO bleiben das personenbezogene Daten.'},
+ {l:'Anonym',r:[['–','506**','1980–89','Kopfschmerz'],['–','506**','1990–99','Rücken'],['–','506**','1980–89','Infekt']],ch:[0,1,2,3],n:'<b>Anonymisiert</b>Kein Name, PLZ und Alter vergröbert, Diagnosen zusammengefasst. Erst wenn kein Rückschluss auf eine Person mehr möglich ist, gilt die DSGVO nicht mehr. Das ist schwerer, als es aussieht: daneben ausprobieren.'}
+];
+var psSet=tabsFor($('#z6PsT'),PS.map(function(p){return p.l}),psSel);
+function psSel(i){psSet(i);var P=PS[i],B=$('#z6PsB');B.innerHTML='';P.r.forEach(function(r){var tr=h('tr');r.forEach(function(c,ci){var td=h('td',(P.ch.indexOf(ci)>-1?'ch':'')+(c==='–'?' gn':''));td.textContent=c;tr.appendChild(td)});B.appendChild(tr)});$('#z6PsN').innerHTML=P.n}
+psSel(0);
+
+/* 6.4 re-identification */
+var RI=[['Geschlecht',2],['Geburtsjahr',80],['Geburtstag',365],['Postleitzahl',50],['Beruf',300],['Automarke',20]],riOn={},riS=$('#z6RiS');
+RI.forEach(function(r,i){var b=h('button');b.type='button';b.innerHTML=r[0]+'<small>÷'+r[1]+'</small>';b.setAttribute('aria-pressed','false');b.addEventListener('click',function(){riOn[i]=!riOn[i];b.setAttribute('aria-pressed',String(!!riOn[i]));riDraw()});$('#z6RiC').appendChild(b)});
+function riDraw(){
+  var n=1e6,k=0;RI.forEach(function(r,i){if(riOn[i]){n/=r[1];k++}});
+  var c=Math.max(1,Math.round(n)),X=function(v){return 10+v/6*380};
+  $('#z6RiN').textContent=(c>1&&k?'≈ ':'')+deN(c);$('#z6RiU').textContent=c===1?'Mensch passt: eindeutig':'Menschen passen';
+  while(riS.firstChild)riS.removeChild(riS.firstChild);
+  el('rect',{x:10,y:8,width:380,height:16,fill:'#F2F3EF',stroke:'#0E0F0C'},riS);
+  var lg=Math.log10(Math.max(n,1));el('rect',{x:10,y:8,width:(lg/6*380).toFixed(1),height:16,fill:c===1?'#0B6B3A':'#D6006F'},riS);
+  el('path',{d:'M'+X(lg).toFixed(1)+' 2 l-5 -0 l5 6 l5 -6z',fill:'#0E0F0C'},riS);
+  ['1','','100','','10 Tsd.','','1 Mio.'].forEach(function(l,i){el('line',{x1:X(i),x2:X(i),y1:24,y2:30,stroke:'#0E0F0C'},riS);if(!l)return;var t=el('text',{x:X(i),y:44,'text-anchor':i===0?'start':i===6?'end':'middle',style:'font-family:var(--mono);font-size:10px;fill:#55584F'},riS);t.textContent=l});
+  var v;
+  if(!k)v='<b>Niemand erkennbar</b>Ohne Merkmale steckt jede Person in der Menge. Tippe an, was man über jemanden wissen könnte.';
+  else if(c>100)v='<b>Noch in der Menge</b>Mit jedem Merkmal schrumpft die Gruppe um ein Vielfaches.';
+  else if(c>1)v='<b>Fast erkannt</b>Nur noch etwa '+c+' Menschen. Ein weiteres Merkmal aus einer anderen Quelle, etwa einem Social-Media-Profil, reicht.';
+  else{v='<b>Eindeutig</b>Kein Name im Datensatz, und trotzdem ist die Person identifiziert. So werden „anonyme“ Daten de-anonymisiert.';done(6,'anon')}
+  $('#z6RiV').innerHTML=v;
+}
+riDraw();
+
+/* 6.5 proxy trap */
+var PXA=[9.2,8.4,7.9,7.1,6.6,6.0,5.5,5.0,4.4,3.9,3.3,2.8,2.2,1.7,1.1,0.6],PXB=[9.0,8.6,7.7,7.3,6.4,6.2,5.3,5.2,4.6,3.7,3.4,2.6,2.3,1.5,1.2,0.5];
+var pxS=$('#z6PxS'),pxD=[],pxSeen={},pxM=0,z6MQ=window.matchMedia?window.matchMedia('(max-width:640px)'):{matches:false},pxW,PXX;
+function pxBuild(){
+  var nar=z6MQ.matches,fs=nar?9:10;pxW=nar?360:600;var x0=nar?24:40,x1=pxW-(nar?20:20);PXX=function(v){return x0+v*(x1-x0)/10};
+  pxS.setAttribute('viewBox','0 0 '+pxW+' 236');while(pxS.firstChild)pxS.removeChild(pxS.firstChild);pxD=[];
+  var L=[['GRUPPE A · GUT VERSICHERT',44],['GRUPPE B · '+(nar?'WENIGER VERSORGT':'SCHLECHTERER ZUGANG ZUR VERSORGUNG'),136]];
+  pxS.thr=el('g',{class:'thr'},pxS);el('rect',{x:0,y:28,width:pxW+20,height:178,fill:'rgba(214,0,111,.07)'},pxS.thr);el('line',{x1:0,x2:0,y1:28,y2:206,stroke:'#D6006F','stroke-width':2,'stroke-dasharray':'5 4'},pxS.thr);
+  var pt=el('text',{x:6,y:22,style:'font-family:var(--mono);font-size:'+fs+'px;fill:#D6006F'},pxS.thr);pt.textContent=nar?'PROGRAMM →':'BETREUUNGSPROGRAMM →';
+  L.forEach(function(l){var t=el('text',{x:x0,y:l[1],style:'font-family:var(--mono);font-size:'+fs+'px;fill:#55584F'},pxS);t.textContent=l[0]});
+  el('line',{x1:x0,x2:x1,y1:212,y2:212,stroke:'#0E0F0C'},pxS);
+  for(var v=0;v<=10;v++){el('line',{x1:PXX(v),x2:PXX(v),y1:212,y2:217,stroke:'#0E0F0C'},pxS)}
+  pxS.ax=el('text',{x:x1,y:231,'text-anchor':'end',style:'font-family:var(--mono);font-size:'+fs+'px;fill:#0E0F0C'},pxS);
+  [[PXA,'a'],[PXB,'b']].forEach(function(G){G[0].forEach(function(s){var g=el('g',{class:'dot'},pxS);el('circle',{r:nar?8:9},g);var t=el('text',{y:3.5,'text-anchor':'middle'},g);t.textContent=Math.round(s);pxD.push({s:s,g:g,grp:G[1]})})});
+}
+var pxSet=tabsFor($('#z6PxT'),['Ziel: Kosten','Ziel: Krankheitslast'],pxSel);
+function pxSel(m){
+  pxM=m;pxSet(m);pxSeen[m]=1;
+  pxD.forEach(function(d){d.v=m===0&&d.grp==='b'?d.s*.62:d.s});
+  var sorted=pxD.slice().sort(function(a,b){return b.v-a.v}),thr=(sorted[7].v+sorted[8].v)/2;
+  pxD.forEach(function(d){d.sel=d.v>thr});
+  ['a','b'].forEach(function(gr,gi){pxD.filter(function(d){return d.grp===gr}).sort(function(a,b){return b.v-a.v}).forEach(function(d,i){
+    var y=(gi?172:80)+[-19,0,19][i%3];d.g.style.transform='translate('+PXX(d.v).toFixed(1)+'px,'+y+'px)';d.g.classList.toggle('sel',d.sel)})});
+  pxS.thr.style.transform='translate('+PXX(thr).toFixed(1)+'px,0)';
+  pxS.ax.textContent=(m?'vorhergesagte Krankheitslast':'vorhergesagte Kosten')+' →';
+  var na=pxD.filter(function(d){return d.sel&&d.grp==='a'}).length,nb=8-na;
+  $('#z6PxA').textContent=na+' von 8';$('#z6PxB').textContent=nb+' von 8';$('#z6PxAb').style.width=(na/8*100)+'%';$('#z6PxBb').style.width=(nb/8*100)+'%';
+  if(m===0){var mx=Math.max.apply(null,pxD.filter(function(d){return d.grp==='b'&&!d.sel}).map(function(d){return Math.round(d.s)})),mn=Math.min.apply(null,pxD.filter(function(d){return d.grp==='a'&&d.sel}).map(function(d){return Math.round(d.s)}));
+    $('#z6PxV').innerHTML='<b>Gruppe B fällt durch</b>Gleich krank, aber seltener behandelt, also billiger. Die KI lernt: wenig Kosten heißt wenig Bedarf. Wer in B Krankheitslast '+mx+' hat, bleibt draußen, aus A reicht schon eine '+mn+'.'}
+  else $('#z6PxV').innerHTML='<b>Fair verteilt</b>Mit der richtigen Zielgröße kommen aus beiden Gruppen die Kränksten ins Programm. Der Fehler lag nicht im Rechenweg, sondern in der Frage, was die KI vorhersagen soll.';
+  if(pxSeen[0]&&pxSeen[1])done(6,'proxy');
+}
+pxBuild();pxSel(0);
+
+/* 6.6 checklists */
+ckList({list:'#z6CkL',status:'#z6CkS',tabs:'#z6CkT',reset:'#z6CkR',lists:[
+ {k:'cl6d',l:'DSGVO · Maßnahmen',g:[
+  ['Transparenz',['Entscheidungsweg des Systems dokumentieren','Betroffenen verständlich erklären, wie die KI mitwirkt','Modell, Trainingsdaten und Entscheidungsfaktoren nennen','KI-Einsatz offenlegen, etwa mit einem KI-Label']],
+  ['Bias und Fairness',['Regelmäßige Audits auf Verzerrungen','Fairness-Metriken einführen','Maßnahmen zur Bias-Korrektur planen']],
+  ['Datenminimierung',['Prüfen, welche Daten Training und Betrieb wirklich brauchen','Differential Privacy oder k-Anonymität einsetzen','Daten regelmäßig bereinigen']],
+  ['Erklärbarkeit',['Methoden für erklärbare KI (XAI) auswählen','Einzelne KI-Entscheidungen protokollieren','Entscheidungen in einer verständlichen Oberfläche erklären']],
+  ['Menschliche Kontrolle',['Eskalationswege für KI-Entscheidungen festlegen','Human in the Loop bei kritischen Entscheidungen','Beschäftigte zur KI-Überwachung schulen']],
+  ['Risikobewertung',['KI-spezifische Datenschutz-Folgenabschätzung (DSFA)','Risikomatrix für mögliche KI-Fehler','Notfallplan für Ausfälle und Fehlfunktionen']],
+  ['Datensicherheit',['Schutz gegen Adversarial Attacks','Modelle sicher speichern','Regelmäßige Penetrationstests']],
+  ['Überwachung',['Dashboard für die laufende KI-Performance','Datenschutzmaßnahmen regelmäßig überprüfen','System nach Feedback und neuen Erkenntnissen anpassen']]]},
+ {k:'cl6e',l:'Ethik · Fragen',g:[
+  ['Transparenz und Erklärbarkeit',['Kann ich die Entscheidung in einfachen Worten erklären?','Gibt es einen Prozess, um Entscheidungen zu hinterfragen?','Wie sage ich den Nutzenden, was die KI nicht kann?']],
+  ['Fairness',['Habe ich auf Bias geprüft, über den Datenschutz hinaus?','Was sorgt für faire Ergebnisse für alle Gruppen?','Wie gehe ich mit historischen Ungleichheiten in den Daten um?']],
+  ['Autonomie und Kontrolle',['Wo braucht es einen Menschen im Prozess?','Wie können Betroffene eine Entscheidung anfechten?','Welche Grenzen setze ich dem autonomen Handeln der KI?']],
+  ['Gesellschaftlicher Nutzen',['Was trägt das Projekt zum Gemeinwohl bei?','Welche negativen Folgen für die Gesellschaft sind denkbar?','Wie verstärke ich das Positive und mindere das Negative?']],
+  ['Verantwortung',['Wer trägt ethisch und rechtlich welche Entscheidung?','Wie bewerte ich KI-Entscheidungen ethisch?','Wie mache ich Verantwortlichkeiten nach außen klar?']],
+  ['Nachhaltigkeit',['Wie viel Energie verbraucht das System?','Wie senke ich den ökologischen Fußabdruck?','Kann die KI bei Umweltproblemen helfen?']],
+  ['Folgenabschätzung',['Welche langfristigen ethischen Folgen sind möglich?','Wie überwache ich ethische Risiken laufend?','Welche Stakeholder gehören in die Bewertung?']],
+  ['Weiterentwicklung',['Wie bleibe ich bei ethischen Entwicklungen auf dem Laufenden?','Wie verbessere ich das System ethisch weiter?','Wie fördere ich ethische Reflexion im Team?']]]}
+]});
+
+/* 6.7 tank or weather */
+var tkSv=$('#z6TkS'),TKT=[[1,1],[0,0],[1,1],[0,0],[1,1],[0,0]],TKR=[[1,0],[0,1],[1,1],[0,0],[1,0],[0,1]];
+(function(){var df=el('defs',{},tkSv),rg=el('radialGradient',{id:'z6heat'},df);for(var i=0;i<6;i++){var cp=el('clipPath',{id:'z6tc'+i},df);el('rect',{x:6+(i%3)*138,y:6+Math.floor(i/3)*124,width:128,height:88},cp)}el('stop',{offset:'0','stop-color':'#D6006F','stop-opacity':'.75'},rg);el('stop',{offset:'1','stop-color':'#D6006F','stop-opacity':'0'},rg)})();
+function tkTile(x,y,T,step,i){
+  var w=128,hh=88,tank=T[0],sun=T[1],g0=el('g',{},tkSv),g=el('g',{'clip-path':'url(#z6tc'+i+')'},g0);
+  el('rect',{x:x,y:y,width:w,height:hh,fill:sun?'#F2F3EF':'#C3C6BD'},g);
+  el('rect',{x:x,y:y+hh-22,width:w,height:22,fill:sun?'#D9DBD3':'#A9ACA3'},g);
+  if(sun){var cx=x+w-26,cy=y+22;el('circle',{cx:cx,cy:cy,r:9,fill:'#fff',stroke:'#0E0F0C','stroke-width':1.4},g);for(var a=0;a<8;a++){var r=a*Math.PI/4;el('line',{x1:(cx+Math.cos(r)*12).toFixed(1),y1:(cy+Math.sin(r)*12).toFixed(1),x2:(cx+Math.cos(r)*16).toFixed(1),y2:(cy+Math.sin(r)*16).toFixed(1),stroke:'#0E0F0C','stroke-width':1.4},g)}}
+  else{[[x+30,y+24,20,8],[x+46,y+17,15,8],[x+92,y+28,22,8],[x+104,y+21,13,7]].forEach(function(c){el('ellipse',{cx:c[0],cy:c[1],rx:c[2],ry:c[3],fill:'#E7E9E3',stroke:'#55584F','stroke-width':.8},g)})}
+  var b=y+hh-22;
+  if(tank){el('rect',{x:x+30,y:b-12,width:62,height:13,rx:6.5,fill:'#0E0F0C'},g);el('rect',{x:x+36,y:b-22,width:50,height:11,fill:'#0E0F0C'},g);el('rect',{x:x+48,y:b-32,width:24,height:11,rx:3,fill:'#0E0F0C'},g);el('line',{x1:x+70,y1:b-27,x2:x+104,y2:b-31,stroke:'#0E0F0C','stroke-width':3},g)}
+  else{el('rect',{x:x+60,y:b-18,width:5,height:18,fill:'#55584F'},g);el('circle',{cx:x+62.5,cy:b-27,r:13,fill:'#55584F'},g);el('rect',{x:x+82,y:b-10,width:16,height:10,fill:'#55584F'},g)}
+  if(step===2)el('circle',{class:'heat',cx:x+w-26,cy:y+22,r:34,fill:'url(#z6heat)'},g);
+  el('rect',{x:x,y:y,width:w,height:hh,fill:'none',stroke:'#0E0F0C'},g0);
+  var pred=sun,ok=pred===tank,t=el('text',{x:x+w/2,y:y+hh+16,'text-anchor':'middle',style:'fill:'+(ok?'#0B6B3A':'#D6006F')},g0);
+  t.textContent='KI: '+(pred?'Panzer':'kein Panzer')+' '+(ok?'✓':'✗');
+}
+var tkSet=tabsFor($('#z6TkT'),['1 · Training','2 · Echte Welt','3 · Worauf schaut sie?'],tkSel);
+function tkSel(s){
+  tkSet(s);$$('g',tkSv).forEach(function(g){if(g.parentNode===tkSv)tkSv.removeChild(g)});
+  (s?TKR:TKT).forEach(function(T,i){tkTile(6+(i%3)*138,6+Math.floor(i/3)*124,T,s,i)});
+  $('#z6TkV').innerHTML=[
+   '<b>Im Test: 6 von 6 richtig</b>Auf den Testbildern erkennt die KI jeden Panzer. Fällt dir auf, was alle Panzerbilder gemeinsam haben?',
+   '<b>In der echten Welt: 2 von 6 richtig</b>Plötzlich liegt sie meist daneben. Bei Sonne sagt sie „Panzer“, bei Wolken „kein Panzer“, egal was auf dem Bild ist.',
+   '<b>Gelernt hat sie das Wetter</b>Ein Erkläralgorithmus zeigt, wohin die KI schaut: auf den hellen Himmel, nicht auf den Panzer. Alle Panzerfotos im Training waren bei Sonne aufgenommen.'][s];
+}
+tkSel(0);
+
+/* 6.8 KI-Ampel */
+var AM=[
+ {q:'Fällt der Einsatz unter die Verbote des AI Act?',h:'Social Scoring, Manipulation, die schadet, Emotionserkennung im Job, biometrische Massenüberwachung',y:['r','Rot','Nicht einsetzen','Verboten. Da hilft auch kein guter Zweck.']},
+ {q:'Überwacht die KI Menschen, etwa Beschäftigte?',h:'Tastatur, Bildschirm, Kameras, Bewegungsprofile',y:['o','Gelb','Sehr kritisch prüfen','DSGVO, Betriebsrat und Vertrauen stehen auf dem Spiel. Meist gibt es bessere Wege: Ergebnisse statt Mausklicks messen, Feedbackgespräche führen.']},
+ {q:'Kann der Einsatz Vertrauen kosten?',h:'Deepfake-Avatare, stark personalisierte Beeinflussung, verdeckter KI-Einsatz',y:['o','Gelb','Abwägen und offenlegen','Verlorenes Vertrauen ist teuer. Wenn, dann klar kennzeichnen und vorher ehrlich rechnen, ob sich das lohnt.']},
+ {q:'Lässt sich die Aufgabe mit festen Regeln lösen?',h:'„Wenn X, dann Y“: immer gleiche Eingaben, immer gleiche Ausgaben',y:['n','Grau','Regelbasiert reicht','Ein klassisches Programm ist einfacher, schneller und vorhersagbar. Man weiß genau, welche Eingabe zu welcher Ausgabe führt.']},
+ {q:'Lohnt sich der Aufwand für KI?',h:'KI muss geprüft, gewartet und aktuell gehalten werden. Diese Kosten werden oft übersehen.',n:['n','Grau','Lieber von Hand','Wenn die Aufgabe kaum Mühe macht: nicht auf den Hype hereinfallen.'],y:['g','Grün','Guter Kandidat für KI','Mit Mensch im Prozess, Bias-Prüfung, Datenschutz von Anfang an und einem Plan B, falls der Anbieter ausfällt.']}
+];
+var amP=[];
+function amDraw(){
+  var R=$('#z6Am');R.innerHTML='';
+  if(amP.length){var ol=h('ol','z6amp');amP.forEach(function(a,i){ol.appendChild(h('li','','<span>'+AM[i].q+'</span><b class="'+(a?'m':'grey')+'">'+(a?'ja':'nein')+'</b>'))});R.appendChild(ol)}
+  var i=amP.length,last=amP[i-1],res=null;
+  if(i&&last===1)res=AM[i-1].y;else if(i===AM.length&&!last)res=AM[i-1].n;
+  if(res){var d=h('div','z6amr '+res[0]);d.innerHTML='<p class="mono">Ampel: '+res[1]+'</p><p class="it">'+res[2]+'</p><p>'+res[3]+'</p>';var b=h('button','btn ghost');b.type='button';b.style.marginTop='12px';b.textContent='Neuer Fall';b.addEventListener('click',function(){amP=[];amDraw();$('#z6Am .q .btn').focus({preventScroll:true})});d.appendChild(b);R.appendChild(d);return}
+  var Q=AM[i],q=h('div','q');q.innerHTML='<p class="mono grey">Frage '+(i+1)+' von '+AM.length+'</p><p class="it">'+Q.q+'</p><p class="note">'+Q.h+'</p>';
+  var row=h('div','row');[['Ja',1],['Nein',0]].forEach(function(o,k){var b=h('button','btn'+(k?' ghost':''));b.type='button';b.textContent=o[0];b.addEventListener('click',function(){amP.push(o[1]);amDraw();var f=$('#z6Am .q .btn')||$('#z6Am .z6amr .btn');if(f)f.focus({preventScroll:true})});row.appendChild(b)});
+  q.appendChild(row);R.appendChild(q);
+}
+amDraw();
+
+/* 6.9 case studies */
+var FA=[
+ {l:'Überwachung',d:'Ein Tech-Konzern will Tastatureingaben, Mausbewegungen und Bildschirme seiner Beschäftigten mit KI auswerten, um die Produktivität zu messen.',p:['Eingriff in die Privatsphäre','Misstrauen gegenüber der Belegschaft','Missbrauch der gesammelten Daten','Stress durch Dauerkontrolle'],f:['Weniger Motivation und Kreativität','Mehr Stress, höheres Burnout-Risiko','Schlechteres Betriebsklima','Gute Leute kündigen'],b:['Vertrauensarbeitszeit','Ergebnisse messen statt Klicks','Regelmäßige Feedbackgespräche','Weiterbildung und bessere Arbeitsbedingungen'],n:'Rechtlich heikel: Technische Leistungs- und Verhaltenskontrolle ist mitbestimmungspflichtig, und die DSGVO verlangt Datensparsamkeit.'},
+ {l:'Politik',d:'Eine Partei will mit KI personalisierte Wahlwerbung in sozialen Medien schalten, um mehr Stimmen zu holen.',p:['Gezielte Beeinflussung Einzelner','Filterblasen und Echokammern','Falschinformationen verbreiten sich','Psychologische Schwächen werden ausgenutzt'],f:['Verzerrter politischer Diskurs','Mehr Polarisierung','Schlecht informierte Wahlentscheidungen','Im Extrem manipulierte Wahlen'],b:['Neutrale KI-Infoplattformen','Falschinformationen erkennen und kennzeichnen','Interaktive politische Bildung','Wahlprogramme transparent vergleichen'],n:'Seit Oktober 2025 gilt in der EU eine eigene Verordnung für politische Werbung: Transparenzpflichten, und gezieltes Ausspielen mit sensiblen Daten ist verboten.'},
+ {l:'Kredit',d:'Eine Bank will Kreditanträge vollautomatisch von einer KI entscheiden lassen, weil das effizienter und „objektiver“ sei.',p:['Einzelfälle zählen nicht','Kein Ermessen, keine Empathie','Entscheidungen schwer zu erklären','Technische Fehler und Ausfälle'],f:['Historische Benachteiligung wird fortgeschrieben','Korrelationen treffen ganze Gruppen','Bias ist schwer zu finden und zu korrigieren'],b:['KI als Assistenz für Menschen','Mensch prüft und entscheidet','KI für Auffälligkeiten und Risikofaktoren','System regelmäßig überprüfen und anpassen'],n:'Kreditscoring ist nach AI Act Hochrisiko. Nach Art. 22 DSGVO muss sich niemand einer rein automatisierten Entscheidung mit erheblicher Wirkung unterwerfen, mit Ausnahmen. Laut EuGH (SCHUFA, 2023) kann schon ein Score so eine Entscheidung sein.'}
+];
+var faSet=tabsFor($('#z6FaT'),FA.map(function(f){return f.l}),faSel);
+function faSel(i){faSet(i);var F=FA[i],ul=function(a){return '<ul>'+a.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>'};
+  $('#z6FaD').textContent=F.d;
+  $('#z6FaP').innerHTML='<div><span class="mono m">Problem</span>'+ul(F.p)+'</div><div><span class="mono m">Folgen</span>'+ul(F.f)+'</div><div><span class="mono" style="color:var(--ok)">Besser</span>'+ul(F.b)+'</div>';
+  $('#z6FaN').textContent=F.n}
+faSel(0);
+
+/* 6.10 quality assurance threshold */
+function z6erf(x){var s=x<0?-1:1;x=Math.abs(x);var t=1/(1+.3275911*x);return s*(1-((((1.061405429*t-1.453152027)*t+1.421413741)*t-.284496736)*t+.254829592)*t*Math.exp(-x*x))}
+function z6Phi(z){return .5*(1+z6erf(z/Math.SQRT2))}
+function qaCalc(t){var fa=970*(1-z6Phi((t-40)/10)),mi=30*z6Phi((t-70)/10);return {fa:fa,mi:mi,c:fa*10+mi*200}}
+var qaOpt=20;(function(){var best=1e9;for(var t=20;t<=90;t+=.5){var c=qaCalc(t).c;if(c<best){best=c;qaOpt=t}}})();
+var qaMax=qaCalc(20).c,qaS=$('#z6QaS'),qaU=0,qaW=600,QX=function(s){return 20+s*(qaW-40)/100};
+function qaArea(mu,from,to){var d='M'+QX(from).toFixed(1)+' 170';for(var s=from;s<=to+1e-9;s+=1){d+=' L'+QX(s).toFixed(1)+' '+(170-130*Math.exp(-(s-mu)*(s-mu)/200)).toFixed(1)}return d+' L'+QX(to).toFixed(1)+' 170Z'}
+function qaDraw(){
+  var t=+$('#z6QaR').value,r=qaCalc(t),nar=z6MQ.matches,fs=nar?9:10,tx=function(x,y,a,c,s){var e=el('text',{x:x,y:y,'text-anchor':a,style:'font-family:var(--mono);font-size:'+fs+'px;fill:'+c},qaS);e.textContent=s;return e};
+  qaW=nar?360:600;qaS.setAttribute('viewBox','0 0 '+qaW+' 200');
+  while(qaS.firstChild)qaS.removeChild(qaS.firstChild);
+  el('path',{d:qaArea(40,0,100),fill:'rgba(14,15,12,.08)',stroke:'#0E0F0C','stroke-width':1.4},qaS);
+  el('path',{d:qaArea(70,0,100),fill:'rgba(214,0,111,.10)',stroke:'#D6006F','stroke-width':1.4},qaS);
+  el('path',{d:qaArea(40,t,100),fill:'rgba(14,15,12,.38)'},qaS);
+  el('path',{d:qaArea(70,0,t),fill:'rgba(214,0,111,.6)'},qaS);
+  el('line',{x1:QX(0),x2:QX(100),y1:170,y2:170,stroke:'#0E0F0C'},qaS);
+  tx(QX(0),184,'start','#55584F','0');tx(QX(50),184,'middle','#55584F','50');tx(QX(100),184,'end','#55584F','100');
+  tx(QX(40),34,'middle','#0E0F0C','GUTE TEILE');tx(QX(70),34,'middle','#D6006F','FEHLERHAFT');
+  el('path',{d:'M'+QX(qaOpt).toFixed(1)+' 172 l-5 8 h10z',fill:'#0B6B3A'},qaS);
+  tx(QX(qaOpt),196,'middle','#0B6B3A','günstigster Punkt');
+  el('line',{x1:QX(t),x2:QX(t),y1:20,y2:170,stroke:'#0E0F0C','stroke-width':2},qaS);
+  tx(Math.min(Math.max(QX(t),44),qaW-44),14,'middle','#0E0F0C','ALARM AB '+t);
+  $('#z6QaL').textContent=t;
+  $('#z6QaF').textContent=deN(r.fa);$('#z6QaM').textContent=deN(r.mi,1);$('#z6QaC').textContent=deN(r.c)+' €';
+  $('#z6QaFb').style.width=(r.fa/970*100).toFixed(1)+'%';$('#z6QaMb').style.width=(r.mi/30*100).toFixed(1)+'%';$('#z6QaCb').style.width=(r.c/qaMax*100).toFixed(1)+'%';
+  var v;
+  if(t<qaOpt-6)v='<b>Zu empfindlich</b>Ständig stoppt das Band für intakte Teile. Das kostet Geld, und irgendwann ignorieren die Leute die Alarme.';
+  else if(t>qaOpt+6)v='<b>Zu lasch</b>Kaum Fehlalarme, aber Fehlteile rutschen durch. Eine Reklamation ist viel teurer als ein Stopp.';
+  else{v='<b>Guter Kompromiss</b>Hier sind die Gesamtkosten am niedrigsten, bei etwa '+Math.round(qaOpt)+'. Trotzdem wachsam bleiben: Häufen sich Alarme plötzlich, stimmt etwas mit Maschine oder KI nicht.';if(qaU)done(6,'qa')}
+  $('#z6QaV').innerHTML=v;
+}
+$('#z6QaR').addEventListener('input',function(){qaU=1;qaDraw()});
+qaDraw();
+if(z6MQ.addEventListener)z6MQ.addEventListener('change',function(){pxBuild();pxSel(pxM);qaDraw()});
+
+/* 6.11 review */
+initCards(6,[
+ ['Ethik','Warum lernt KI Vorurteile, obwohl niemand sie einprogrammiert?','Heutige KI lernt Muster aus Daten statt fester Regeln. Stecken Verzerrungen in den Daten, übernimmt sie diese, oft unbemerkt.'],
+ ['Ethik','Zentrale Werte der KI-Ethik?','Fairness, Sicherheit und Robustheit, Transparenz, Erklärbarkeit, menschliche Kontrolle, Datenschutz, gerechte Verteilung des Nutzens.'],
+ ['Ethik','Warum ist Erklärbarkeit so schwer?','Sprachmodelle sagen das wahrscheinlichste nächste Wort voraus. Eine echte Begründung, nach der man fragen könnte, gibt es nicht.'],
+ ['Recht','Die Stufen des AI Act?','Unannehmbar (verboten), hoch (strenge Auflagen), begrenzt (Transparenz, etwa Chatbots und Deepfakes), minimal (keine Pflichten). Dazu eigene Regeln für Basismodelle.'],
+ ['Recht','Beispiele für Hochrisiko-KI?','Bewerbungen sortieren, Kreditscoring, Lebens- und Krankenversicherung, Prüfungen bewerten, Grenzkontrollen.'],
+ ['Recht','Wer haftet für KI-Fehler?','Noch nicht abschließend geklärt: Entwickelnde, Anbietende oder Nutzende. Wer ein System erweitert, wird schnell selbst Anbieter. Nichtwissen schützt meist nicht.'],
+ ['Datenschutz','Anonymisierung oder Pseudonymisierung?','Anonym: kein Personenbezug mehr, die DSGVO gilt nicht. Pseudonym: Name durch eine ID ersetzt, Daten bleiben verknüpfbar und personenbezogen.'],
+ ['Datenschutz','Warum ist Anonymisieren so schwer?','Wenige Merkmale zusammen machen Menschen eindeutig, etwa PLZ, Geburtsdatum und Geschlecht. KI und Big Data verknüpfen Quellen leicht.'],
+ ['Datenschutz','Was gilt bei einer Datenpanne?','Meldung an die Aufsichtsbehörde binnen 72 Stunden, auch wenn Kriminelle die Daten gestohlen haben.'],
+ ['Bias','Was ist die Proxy-Falle?','Die KI optimiert eine Ersatzgröße, etwa Kosten statt Krankheit. Wer schlechteren Zugang zur Versorgung hat, wirkt gesünder und wird übersehen.'],
+ ['Risiko','Was zeigt die Panzer-Geschichte?','KI lernt, was die Bilder gemeinsam haben, hier schönes Wetter statt Panzer. Erkläralgorithmen helfen, solche Abkürzungen zu finden.'],
+ ['Arbeit','Welche Arbeit übernimmt KI, welche bleibt?','Repetitive Tätigkeiten und Mustererkennung in großen Datenmengen, auch am Rechner. Relativ sicher: Pflege, Betreuung, Erziehung.']
+]);
+initCloze(6,[
+ ['In der KI-Entwicklung steckt ein {ethisches|technisches|finanzielles} Dilemma: Scheinbar objektive Algorithmen können gesellschaftliche {Ungleichheiten|Fortschritte|Trends} fortschreiben. Gesucht ist eine KI, die nicht nur effizient, sondern auch {fair|innovativ|schnell} entscheidet.'],
+ ['Klare {Rahmenbedingungen|Marktanteile|Algorithmen} sorgen dafür, dass KI bei Versicherungen oder Krediten {gerecht|profitabel|schneller} entscheidet, ohne bestehende {Ungleichheiten|Preise|Abläufe} zu verstärken.'],
+ ['Kritisches menschliches {Urteilsvermögen|Vertrauen|Tempo} bleibt unerlässlich: Es ist das Korrektiv, um {Verzerrungen|Trends|Kosten} in Algorithmen zu erkennen.'],
+ ['Die {Abhängigkeit|Kooperation|Unabhängigkeit} von einem einzigen Anbieter ist ein Geschäftsrisiko: Fällt der {Dienst|Strom|Vertrieb} aus, stehen Prozesse still. Deshalb Backups einplanen und die {Technologienutzung|Personalplanung|Werbung} breiter aufstellen.'],
+ ['Bei {Kameradaten|Wetterdaten|Umsatzdaten} in der Produktion steht der Schutz der Menschen an erster Stelle. Sie sollen vor {Gefahren|Ablenkungen|Pausen} wie starken Kräften von Robotern schützen. Verantwortungsvoll heißt: Technik {zum Wohle|zur Kontrolle|zum Sparen} der Menschen einsetzen.'],
+ ['Die DSGVO verlangt {Datensparsamkeit|Datenvielfalt|Datenhandel}: nur erheben, was der {Zweck|Wettbewerb|Zufall} braucht. Bei einer Datenpanne muss die Behörde binnen {72 Stunden|zwei Wochen|eines Monats} informiert werden.']
+]);
+initQuiz(6,[
+ ['Warum ist Transparenz bei KI wichtig?',['Nutzer:innen verstehen das Risiko von Verzerrungen und können nach den Trainingsdaten fragen','Sie erklärt jedes technische Detail','Sie verhindert, dass KI eingesetzt wird'],'Nicht jedes Detail, aber genug, um Risiken einzuschätzen.'],
+ ['Warum gelten Kreditvergabe oder Prüfungsbewertung als Hochrisiko?',['Sie treffen sensible Entscheidungen mit großer Wirkung auf das Leben von Menschen','Sie funktionieren ganz ohne Menschen','Sie nutzen keine persönlichen Daten'],'Es geht um Chancen und Freiheit der Betroffenen.'],
+ ['Brauchen Hochrisiko-Systeme etwa bei Grenzkontrollen eine besondere Überwachung?',['Ja, sie müssen streng überwacht und die Risikominderung dokumentiert werden','Nein, ausführliche Tests vorab reichen','Nur wenn es Beschwerden gibt'],'Dokumentation und menschliche Aufsicht gehören zu den Pflichten.'],
+ ['Welche Pflicht hat ein Chatbot auf der Website nach dem AI Act?',['Er muss erkennbar machen, dass man mit einer KI spricht','Keine, er hat minimales Risiko','Er braucht eine behördliche Zulassung'],'Transparenzpflicht seit August 2026. Der Kurs sagt hier noch: keine Auflagen.'],
+ ['Was droht, wenn sensible Firmendaten in ChatGPT landen?',['Vertrauliches kann unbeabsichtigt an andere weitergegeben werden','Nichts, externe KI speichert keine Daten','Die Daten werden sofort gelöscht'],'Alternative: ein Open-Source-Modell auf dem eigenen Server.'],
+ ['Was unterscheidet Anonymisierung von Pseudonymisierung?',['Anonyme Daten lassen sich keiner Person zuordnen, pseudonyme hängen an einer eindeutigen ID','Pseudonyme Daten sind sicherer','Es gibt keinen Unterschied'],'Pseudonyme Daten bleiben personenbezogen.'],
+ ['Warum ist Anonymisierung eine Herausforderung?',['Mehrere Datenpunkte zusammen können eine Person verraten','Anonyme Daten sind für KI wertlos','Sie ist in der EU verboten'],'PLZ, Geburtsdatum und Geschlecht reichen oft.'],
+ ['Wie kann KI bei Versicherungen oder Krediten ungerecht werden?',['Sie lernt aus historischen Daten, in denen Gruppen benachteiligt wurden','Sie rechnet nur mit Technik und ignoriert alles Soziale','Gar nicht, Algorithmen sind objektiv'],'Siehe die Proxy-Falle in 6.5.'],
+ ['Wie verhindern Unternehmen benachteiligende KI-Entscheidungen?',['Mit Erklärbarkeit und Transparenz und indem sie regelmäßig auf Ungerechtigkeit prüfen','Gar nicht, Bias lässt sich nicht beeinflussen','Indem sie KI grundsätzlich meiden'],'Prüfen, messen, Mensch im Prozess.'],
+ ['Was antwortet eine KI auf die Frage nach ihren Vorurteilen?',['Eine wahrscheinliche Antwort, ohne das Konzept Vorurteil zu verstehen','Eine korrekte Selbstanalyse','Gar nichts, sie wechselt das Thema'],'Sie sagt, sie sei neutral. Nachweislich falsch.'],
+ ['Warum ist Robustheit wichtig?',['Sie macht Systeme zuverlässig und schwerer zu manipulieren','Sie steigert die Rechenleistung','Robuste Systeme brauchen keine Wartung mehr'],'Auch robuste Systeme brauchen Updates und Prüfung.'],
+ ['Welches Risiko haben personalisierte Empfehlungen?',['Übertrieben eingesetzt, können sie manipulieren und Vertrauen kosten','Keins, Empfehlungen passen immer','Sie sind technisch zu ungenau'],'Nützlich, bis sie zu weit gehen.'],
+ ['Welche Tätigkeiten kann KI besonders gut übernehmen?',['Repetitive Aufgaben und Mustererkennung in großen Datenmengen','Aufgaben mit viel menschlicher Nähe','Kreative Arbeit ohne Datenbasis'],'Pflege und Betreuung gelten als relativ sicher.'],
+ ['Warum kann zu frühe Automatisierung problematisch sein?',['Hohe Investitionen und Hürden, manchmal ist das bestehende Team die bessere Lösung','KI ist immer effizienter, es gibt kein Risiko','Der Zeitpunkt spielt keine Rolle'],'Erst prüfen, ob es funktioniert und sich lohnt.'],
+ ['Kann eine KI in der Qualitätssicherung zu oft Alarm schlagen?',['Ja, die Empfindlichkeit muss man zwischen Fehlalarmen und übersehenen Fehlern abwägen','Nein, sie erkennt nur die wichtigsten Fehler','Nein, bei Sensordaten irrt KI nie'],'Beides kostet: Stopps und Reklamationen.'],
+ ['Warum braucht die Arbeit mit Robotern Sicherheitsmechanismen?',['Um Menschen vor starken Kräften und falschen Bewegungen zu schützen','Damit die Produktivität nicht leidet','Damit Roboter unabhängig von Menschen arbeiten'],'Not-Stopp, Sensoren, Alarmzeichen und Schulung.']
+]);
+
+/* ================= MODUL 5 · Arbeitsblätter ================= */
+ckList({list:'#z5CkL',status:'#z5CkS',reset:'#z5CkR',lists:[{k:'cl5t',l:'KI-Team',g:[
+ ['Technik',['Expertise in maschinellem Lernen benennen','Kenntnisse in Datenanalyse festlegen','Nötige Programmierkenntnisse definieren']],
+ ['Domäne',['Branchenwissen auflisten','Anwendungsbereiche im eigenen Unternehmen finden']],
+ ['Analyse',['Wer kann komplexe Daten interpretieren?']],
+ ['Soft Skills',['Kommunikation','Teamarbeit','Probleme lösen']],
+ ['Ethik und Compliance',['Wissen zu ethischen Fragen','Kenntnisse zu rechtlichen Rahmenbedingungen (Modul 6)']],
+ ['Belbin-Rollen',['Mensch und Zusammenarbeit: Koordinator, Teamarbeiter, Wegbereiter','Denken: Neuerer, Beobachter, Spezialist','Umsetzung: Macher, Umsetzer, Perfektionist']],
+ ['Zusammenspiel',['Alle drei Fokusbereiche ausgewogen besetzt','Strategien, wie die Rollen zusammenarbeiten','Feste Formate für regelmäßigen Austausch']]
+]}]});
+var TP=[
+ {l:'Vor dem Kauf',s:[['Bewusstsein',['Werbung','Presse','Empfehlungen','Social Media','Influencer'],'Zielgruppen verstehen, Kampagnen texten und bebildern'],['Überlegung',['Bewertungen','Website','E-Mail-Marketing','Demos & Proben','Messen & Events'],'Produktberatung per Chatbot, persönliche Empfehlungen']]},
+ {l:'Beim Kauf',s:[['Auswahl',['Onlineshop','Laden','Telefonvertrieb','Katalog'],'Suche, die Fragen in Alltagssprache versteht'],['Bezahlung',['Kasse','Online-Bezahlung','App','Drittanbieter'],'Betrugserkennung']]},
+ {l:'Nach dem Kauf',s:[['Nutzung',['Anleitung','Tutorials & Webinare','Community-Forum'],'Hilfe-Assistent, der die Anleitung kennt'],['Support',['Hotline','Online-Chat','E-Mail','FAQ','Social Media'],'Chatbot für Standardfragen, Anliegen vorsortieren'],['Bindung',['Treueprogramm','Umfragen','Newsletter','Empfehlungsprogramm'],'Feedback auswerten, Abwanderung früh erkennen']]}
+];
+function tpDraw(){
+  var R=$('#z5Tp'),st=get('tp5',{}),heads=[];if(!R)return;R.innerHTML='';
+  function count(){var all=0;TP.forEach(function(P,pi){var n=0;Object.keys(st).forEach(function(k){if(k.split('.')[0]===String(pi))n++});heads[pi].innerHTML=P.l+'<span>'+n+' gewählt</span>';all+=n});$('#z5TpS').textContent=all?all+' Touchpoints gewählt':'noch nichts gewählt'}
+  TP.forEach(function(P,pi){var col=h('div'),hd=h('h5');heads.push(hd);col.appendChild(hd);
+    P.s.forEach(function(S,si){var box=h('div','z6tps');box.innerHTML='<p class="mono">'+S[0]+'</p>';var c=h('div','z6chp');c.setAttribute('role','group');c.setAttribute('aria-label',S[0]);
+      S[1].forEach(function(t,ti){var id=pi+'.'+si+'.'+ti,b=h('button');b.type='button';b.textContent=t;b.setAttribute('aria-pressed',String(!!st[id]));b.addEventListener('click',function(){if(st[id])delete st[id];else st[id]=1;put('tp5',st);b.setAttribute('aria-pressed',String(!!st[id]));count()});c.appendChild(b)});
+      box.appendChild(c);box.appendChild(h('p','ki','<b>KI</b>'+S[2]));col.appendChild(box)});
+    R.appendChild(col)});
+  count();
+}
+tpDraw();
+$('#z5TpR').addEventListener('click',function(){if(window.confirm('Alle Touchpoints abwählen?')){put('tp5',{});tpDraw()}});
 
 })();
 </script>
