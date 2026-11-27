@@ -286,7 +286,7 @@ window.JW_DE={
 "In progress": "Läuft",
 "Manager for Applied AI Transformation (IHK)": "Manager:in für angewandte KI-Transformation (IHK)",
 "thekey.ACADEMY · recognised by IHK-Projektgesellschaft Ostbrandenburg · AI strategy, data, change, ethics, security and the EU AI Act, with IHK assessment": "thekey.ACADEMY · anerkannt von der IHK-Projektgesellschaft Ostbrandenburg · KI-Strategie, Daten, Change, Ethik, Sicherheit und EU AI Act, mit IHK-Leistungsüberprüfung",
-"INU – Innovative University of Applied Sciences · responsible use of AI at work, with final test · KI Snack Week 2026": "INU – Innovative University of Applied Sciences · verantwortungsvoller Einsatz von KI im Beruf, mit Abschlusstest · KI Snack Week 2026",
+"INU – Innovative University of Applied Sciences · AI literacy module under Art. 4 EU AI Act · responsible use, output quality and transfer to work, with final test": "INU – Innovative University of Applied Sciences · KI-Kompetenz-Baustein nach Art. 4 EU AI Act · verantwortungsvolle Anwendung, Ergebnisqualität und beruflicher Transfer, mit Abschlusstest",
 "verify": "prüfen",
 "Online courses": "Online-Kurse",
 "Udemy: Accessibility & WCAG, UX Design Critique, Responsive UX/UI in Figma, UX/UI Design Principles, UX Writing": "Udemy: Barrierefreiheit & WCAG, UX Design Critique, Responsive UX/UI in Figma, UX/UI-Designprinzipien, UX Writing",
