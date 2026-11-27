@@ -579,4 +579,7 @@ window.JW_DE={
 "I set the requirements, kept the dates and set up signing and installation. Claude wrote the code and proposed the layout and the order": "Ich habe die Anforderungen vorgegeben, die Termine gepflegt und Signierung und Installation eingerichtet. Claude hat den Code geschrieben und Layout und Rangfolge vorgeschlagen",
 "Tested": "Getestet",
 "Only on my iPhone so far. iPad and other sizes not checked yet": "Bisher nur auf meinem iPhone. iPad und andere Größen noch nicht geprüft",
+"Brand & visual identity": "Marke & visuelle Identität",
+"AI agents & RAG": "KI-Agenten & RAG",
+"Go-to-market & launch": "Go-to-Market & Launch",
 };
