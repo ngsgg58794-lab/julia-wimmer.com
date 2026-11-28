@@ -1038,6 +1038,63 @@ svg text{font-family:var(--mono);font-size:9px;fill:var(--grey);letter-spacing:.
 .z7tri .z6chp button{display:flex;flex-direction:column;align-items:flex-start;width:100%;text-align:left}
 .z7tri .z6chp button small{margin-left:0;margin-top:2px}
 
+/* ---------- module 8 ---------- */
+.z8st{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px;margin-bottom:14px}
+.z8st button{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-height:64px;padding:8px 10px;border:1px solid var(--ink);background:var(--paper);text-align:left;font-size:.8125rem;font-weight:700;line-height:1.2;cursor:pointer;transition:background-color .15s ease,color .15s ease}
+.z8st button span{font-family:var(--mono);font-weight:500;font-size:.6875rem;color:var(--mag)}
+.z8st button:hover{background:var(--paper-2)}
+.z8st button[aria-selected="true"]{background:var(--ink);color:var(--paper)}
+.z8st button[aria-selected="true"] span{color:#ff4fa3}
+@media (max-width:900px){.z8st{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:520px){.z8st{grid-template-columns:1fr 1fr}}
+.z8res{margin-top:14px;padding:14px 16px;border:2px solid var(--ink);background:var(--paper)}
+.z8res .it{margin-top:4px;font-size:1.25rem;font-weight:800;line-height:1.2}
+.z8res p{margin-top:6px;line-height:1.45}
+.z8res.i{border-color:var(--ok);background:var(--ok-soft)}
+.z8res.n,.z8res.p{border-color:var(--mag);background:var(--mag-soft)}
+.z8res.x{border-color:var(--grey);background:var(--paper-2)}
+.z8dr{max-width:680px;margin:0 auto}
+.z8dr .q{padding:16px 18px;border:1px solid var(--ink);background:var(--paper);box-shadow:5px 5px 0 var(--ink)}
+.z8dr .q .it{margin-top:6px;font-size:1.125rem;font-weight:750;line-height:1.3}
+.z8dr .opts2{display:grid;gap:6px;margin-top:12px}
+.z8dr .opts2 button{padding:10px 12px;border:1px solid var(--ink);background:var(--paper);text-align:left;font-size:.9375rem;line-height:1.35;cursor:pointer}
+.z8dr .opts2 button:hover:not(:disabled){background:var(--paper-2)}
+.z8dr .opts2 button:disabled{cursor:default;color:var(--ink)}
+.z8dr .opts2 button.best{background:var(--ok);border-color:var(--ok);color:#fff}
+.z8dr .opts2 button.bad{background:var(--mag-soft);border-color:var(--mag)}
+.z8ph{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;margin-bottom:14px}
+.z8ph li{padding:8px 10px;border:1px solid var(--ink);background:var(--paper);font-size:.8125rem;font-weight:700;line-height:1.2}
+.z8ph li span{display:block;font-family:var(--mono);font-weight:500;font-size:.6875rem;color:var(--mag)}
+.z8ph li.on{background:var(--ink);color:var(--paper)}
+.z8ph li.on span{color:#ff4fa3}
+@media (max-width:520px){.z8ph{grid-template-columns:1fr 1fr}}
+.z8ex{display:grid;gap:8px;margin-top:12px}
+.z8ex button{padding:12px 14px;border:1px solid var(--ink);background:#fff;text-align:left;font-size:.9375rem;line-height:1.45;cursor:pointer;transition:background-color .15s ease}
+.z8ex button:hover:not(:disabled){background:var(--paper-2)}
+.z8ex button:disabled{cursor:default;color:var(--ink)}
+.z8ex button.best{border:2px solid var(--ok);background:var(--ok-soft)}
+.z8ex button.bad{border-color:var(--mag);background:var(--mag-soft)}
+.z8ex button small{display:block;margin-top:6px;font-size:.8125rem;color:var(--grey)}
+.z8ch6{grid-template-columns:repeat(6,minmax(0,1fr))}
+@media (max-width:760px){.z8ch6{grid-template-columns:1fr}}
+.z8cs details{margin-top:8px;border-top:1px solid var(--line);padding-top:8px}
+.z8cs summary{cursor:pointer;font-family:var(--mono);font-size:.75rem;text-transform:uppercase;color:var(--mag)}
+.z8cs details p{margin-top:6px;font-size:.875rem;line-height:1.45}
+.z8cs>div>p{font-size:.9375rem;line-height:1.45;margin-top:6px}
+.z8acc td{text-align:center;font-family:var(--mono)}
+.z8acc td.y{color:var(--ok);font-weight:700}
+.z8acc td.n{color:var(--grey)}
+.z8acc tbody th small{display:block;font-weight:400;color:var(--grey);font-size:.75rem}
+.z8tw{overflow-x:auto}
+.z8ex+.vd:empty{display:none}
+@media (max-width:560px){.z8gb thead{display:none}.z8gb tr{display:block;padding:8px 0;border-bottom:1px solid var(--line)}.z8gb th,.z8gb td{display:block;border:0;padding:2px 0}.z8gb td:nth-child(2)::before{content:"Schlecht: ";font-family:var(--mono);font-size:.6875rem;text-transform:uppercase;color:var(--mag)}.z8gb td:nth-child(3)::before{content:"Gut: ";font-family:var(--mono);font-size:.6875rem;text-transform:uppercase;color:var(--ok)}}
+.z8rl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:20px;align-items:start}
+@media (max-width:860px){.z8rl{grid-template-columns:1fr}}
+.z8rl label.f{display:block;font-family:var(--mono);font-size:.6875rem;text-transform:uppercase;letter-spacing:.06em;color:var(--grey)}
+.z8rl input[type=text]{width:100%;margin-top:4px;padding:9px 11px;border:1px solid var(--ink);background:#fff;font:inherit}
+.z8rl textarea{width:100%;min-height:420px;padding:12px;border:1px solid var(--ink);background:#fff;font-family:var(--mono);font-size:.75rem;line-height:1.55;resize:vertical}
+.z8rl input:focus,.z8rl textarea:focus{outline:2px solid var(--mag);outline-offset:1px}
+
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{transition-duration:.01ms!important;animation:none!important}
@@ -3297,14 +3354,13 @@ svg text{font-family:var(--mono);font-size:9px;fill:var(--grey);letter-spacing:.
 <div class="z6cl" id="z7CkL"></div>
 </div>
 </div>
-<h4 class="mono m" style="margin:28px 0 8px">KI-Sicherheit für Nicht-Techies</h4>
-<ol class="nl">
-<li><b>Spezialisieren:</b> eine IT-Sicherheitsperson einstellen oder intern benennen, bei Bedarf unabhängige Audits von außen</li>
-<li><b>Messen:</b> Sicherheits-KPIs festlegen lassen, etwa behobene Schwachstellen und Reaktionszeit bei Vorfällen</li>
-<li><b>Ansprechen:</b> regelmäßige Sicherheitsrunden und eine Fehlerkultur ohne Angst vor Strafe</li>
-<li><b>Berichten lassen:</b> verständliche Berichte und Klartext-Zusammenfassungen technischer Audits</li>
-<li><b>Trainieren:</b> regelmäßige Schulungen für alle, auch für sich selbst</li>
-</ol>
+<div class="fig" style="margin-top:24px">
+<div class="fh"><h4>Guide: KI-Sicherheit für Nicht-Techies</h4><span class="mono grey" id="z7GuS"></span></div>
+<div class="fb">
+<div class="row" style="justify-content:space-between"><p style="font-size:.9375rem;max-width:62ch">Ohne technischen Hintergrund die Kontrolle behalten, eine Sicherheitskultur fördern und auf Kurs bleiben. Fünf Bereiche aus dem Kursmaterial zum Abhaken.</p><button class="btn ghost" type="button" id="z7GuR">Liste leeren</button></div>
+<div class="z6cl" id="z7GuL"></div>
+</div>
+</div>
 </section>
 
 <!-- 7.9 -->
@@ -3341,6 +3397,299 @@ svg text{font-family:var(--mono);font-size:9px;fill:var(--grey);letter-spacing:.
 <tr><th scope="row">KI-Code</th><td>Studien zeigen überdurchschnittlich unsichere Programme</td><td>Bestätigt, etwa Stanford 2022: weniger sicherer Code, aber mehr Vertrauen in ihn.</td></tr>
 <tr><th scope="row">Meldepflichten</th><td>Behörden einschalten, DSGVO beachten</td><td>DSGVO: Datenpanne binnen 72 Stunden melden. Seit Ende 2025 gilt in Deutschland zudem NIS2 für viele mittlere und große Unternehmen: erhebliche Vorfälle binnen 24 Stunden als Frühwarnung ans BSI, nach 72 Stunden die Meldung.</td></tr>
 <tr><th scope="row">Deepfake-Konferenz</th><td>ein Fall „in Hongkong vor Kurzem“</td><td>Bestätigt: Arup, Anfang 2024, rund 25 Mio. US-Dollar in 15 Überweisungen.</td></tr>
+</tbody>
+</table>
+</section>
+
+</div></div>
+</section>
+
+<!-- ============ MODUL 8 ============ -->
+<section class="mod" id="m8" data-mod="8" aria-labelledby="m8-t" hidden>
+
+<header class="mh wrap">
+<div class="in">
+<div>
+<p class="mno" aria-hidden="true">08</p>
+<h2 class="mt" id="m8-t">Fit für die KI-Verordnung</h2>
+<p class="lead">Die Praxis zum AI Act: wer welche Rolle hat, wie eine Konformitätsbewertung läuft, wie man KI überwacht, erklärt und dokumentiert, wer haftet und wie eine KI-Richtlinie entsteht. Die Grundlagen zu den Risikostufen stehen in Modul 6.</p>
+</div>
+<div class="prog" aria-label="Fortschritt Modul 8">
+<p class="mono grey">Wiederholung · <span data-pc="8">0 / 7</span></p>
+<ul>
+<li data-ck="rolle"><i></i><a href="#m8-rollen">Rollen</a></li>
+<li data-ck="stelle"><i></i><a href="#m8-konform">Prüfweg</a></li>
+<li data-ck="drill"><i></i><a href="#m8-aufsicht">Notfall-Drill</a></li>
+<li data-ck="kennz"><i></i><a href="#m8-transparenz">Kennzeichnung</a></li>
+<li data-ck="cards"><i></i><a href="#m8-cards">Karteikarten</a></li>
+<li data-ck="cloze"><i></i><a href="#m8-cloze">Lückentext</a></li>
+<li data-ck="quiz"><i></i><a href="#m8-quiz">Quiz</a></li>
+</ul>
+</div>
+</div>
+<nav class="in toc" aria-label="Inhalt Modul 8">
+<a href="#m8-rollen"><span>8.1</span>Rollen &amp; Strafen</a>
+<a href="#m8-konform"><span>8.2</span>Konformität</a>
+<a href="#m8-aufsicht"><span>8.3</span>Aufsicht</a>
+<a href="#m8-transparenz"><span>8.4</span>Transparenz</a>
+<a href="#m8-daten"><span>8.5</span>Daten</a>
+<a href="#m8-haftung"><span>8.6</span>Haftung</a>
+<a href="#m8-richtlinie"><span>8.7</span>KI-Richtlinie</a>
+<a href="#m8-repeat"><span>8.8</span>Wiederholen</a>
+<a href="#m8-check"><span>8.9</span>Faktencheck</a>
+</nav>
+</header>
+
+<div class="wrap"><div class="in">
+
+<!-- 8.1 -->
+<section class="sec" id="m8-rollen">
+<div class="sh"><span class="sno">8.1</span><h3>Wer bist du laut KI-VO?</h3><p>Die Pflichten hängen von zwei Dingen ab: der Risikostufe des Systems (siehe <a href="#m6-recht">Modul 6</a>) und deiner Rolle. Anbietende entwickeln ein System und bringen es unter eigenem Namen auf den Markt oder in Betrieb. Betreibende setzen es beruflich ein. Eine Firma kann beides zugleich sein.</p></div>
+<div class="fig">
+<div class="fh"><h4>Übung: Welche Rolle ist das?</h4><span class="mono grey">8 Fälle</span></div>
+<div class="fb" id="m8-as"><ol class="mx"></ol><div class="score"><p class="st" data-as-s aria-live="polite"></p><button class="btn ghost" type="button" data-as-r>Neu starten</button></div></div>
+</div>
+<div class="two" style="margin-top:24px;align-items:start">
+<div><h4 class="mono m" style="margin-bottom:8px">Anbietende (Hochrisiko)</h4><ul class="lst">
+<li>Risikomanagement und Daten-Governance</li>
+<li>Technische Dokumentation und automatische Logs</li>
+<li>Qualitätsmanagement, Konformitätsbewertung, CE-Kennzeichen</li>
+<li>Registrierung in der EU-Datenbank</li>
+<li>Beobachtung nach dem Marktstart, schwere Vorfälle melden</li>
+</ul></div>
+<div><h4 class="mono m" style="margin-bottom:8px">Betreibende (Hochrisiko)</h4><ul class="lst">
+<li>Einsatz nach Gebrauchsanweisung</li>
+<li>Menschliche Aufsicht durch geschulte Leute</li>
+<li>Eingabedaten passend und repräsentativ halten</li>
+<li>Betrieb überwachen, Logs mindestens sechs Monate aufbewahren</li>
+<li>Beschäftigte und Betroffene informieren, Vorfälle sofort dem Anbieter melden</li>
+</ul></div>
+</div>
+<p class="key"><span class="mono">Rollenwechsel</span><span>Wer ein fremdes System unter eigenem Namen vertreibt, es wesentlich verändert oder seinen Zweck so ändert, dass es Hochrisiko wird, wird selbst Anbieter (Art. 25).</span></p>
+<h4 class="mono m" style="margin:28px 0 10px">Was bei Verstößen droht</h4>
+<div class="z6g">
+<div><span class="mono m">verbotene KI</span><b>35 Mio. € oder 7 %</b><p>des weltweiten Jahresumsatzes, der höhere Betrag zählt</p></div>
+<div><span class="mono m">andere Pflichten</span><b>15 Mio. € oder 3 %</b><p>etwa fehlende Doku, Aufsicht oder Transparenz</p></div>
+<div><span class="mono m">falsche Angaben</span><b>7,5 Mio. € oder 1 %</b><p>gegenüber Behörden und benannten Stellen</p></div>
+</div>
+<p class="note">Für kleine und mittlere Unternehmen gilt jeweils der niedrigere Betrag. Lektion 8.1 ist in meinem Skript leer, Rollen und Bußgelder habe ich aus dem Verordnungstext ergänzt.</p>
+</section>
+
+<!-- 8.2 -->
+<section class="sec" id="m8-konform">
+<div class="sh"><span class="sno">8.2</span><h3>Konformitätsbewertung</h3><p>Wer ein Hochrisiko-System entwickelt, muss vor dem Einsatz nachweisen, dass es sicher, nachvollziehbar und gesetzeskonform ist. Das gilt auch, wenn es nur intern genutzt wird. Typisch: Bewerbungsauswahl, Kreditbewertung, medizinische Entscheidungshilfe, sicherheitsrelevante Steuerung.</p></div>
+<div class="fig">
+<div class="fh"><h4>Fahrplan für ein Hochrisiko-System</h4><span class="mono grey">Abb. 8.2 · Schritt antippen</span></div>
+<div class="fb">
+<div class="z8st" role="tablist" aria-label="Schritte" id="z8KfT"></div>
+<div class="det" style="position:static;box-shadow:none" aria-live="polite">
+<div class="dh"><span class="mono grey">Schritt <span id="z8KfN">1</span> von 7</span><span class="mono m" id="z8KfK"></span></div>
+<div class="db"><h4 id="z8KfH"></h4><p class="d" id="z8KfD"></p><p class="ex"><b>Dokument</b><span id="z8KfP"></span></p></div>
+</div>
+</div>
+</div>
+<div class="fig" style="margin-top:24px">
+<div class="fh"><h4>Wer prüft? Interne Kontrolle oder benannte Stelle</h4><span class="mono grey" id="z8PwS">System wählen</span></div>
+<div class="fb">
+<div class="z6chp" id="z8PwC" role="group" aria-label="KI-Systeme"></div>
+<div class="z8res x" id="z8PwR" aria-live="polite"><p class="mono grey">Prüfweg</p><p class="it">Wähle ein System</p><p>Die Antwort weicht teils vom Kurs ab, siehe Faktencheck.</p></div>
+</div>
+</div>
+<div class="two" style="margin-top:24px;align-items:start">
+<div><h4 class="mono m" style="margin-bottom:8px">Pflichtdokumente</h4><ul class="lst">
+<li>Risikobewertungsbericht</li><li>Technische Dokumentation</li><li>Beschreibung des Qualitätsmanagements</li><li>EU-Konformitätserklärung</li><li>Logbuch über Änderungen und Tests</li>
+</ul></div>
+<div><h4 class="mono m" style="margin-bottom:8px">Zusätzlich hilfreich</h4><ul class="lst">
+<li>Nachweise zur Erklärbarkeit</li><li>Transparenzhinweise für Nutzer:innen</li><li>Übersicht der beteiligten Rollen</li>
+</ul><p class="note">Bei begrenztem Risiko reicht eine kleine Checkliste für die Transparenz, bei minimalem Risiko eine freiwillige Selbstverpflichtung.</p></div>
+</div>
+<div class="fig" style="margin-top:24px">
+<div class="fh"><h4>Arbeitsblatt: Konformitätsbewertung für dein Projekt</h4><span class="mono grey" id="z8KwS"></span></div>
+<div class="fb">
+<div class="row" style="justify-content:space-between;align-items:flex-start"><div><p class="mono m" style="margin-bottom:6px">Teil 1 · Dein Projekt</p><ol class="nl" style="max-width:62ch"><li>Welches KI-System nutzt oder entwickelst du?</li><li>Welche Aufgaben übernimmt die KI?</li><li>Könnte es Hochrisiko sein? Warum?</li></ol></div><button class="btn ghost" type="button" id="z8KwR">Liste leeren</button></div>
+<p class="mono m" style="margin-top:18px">Teil 2 · Was du dokumentieren solltest</p>
+<div class="z6cl" id="z8KwL"></div>
+<p class="note">Teil 3 · Reflexion: Was ist schon geklärt, was fehlt noch, und wen musst du im Unternehmen einbeziehen?</p>
+</div>
+</div>
+</section>
+
+<!-- 8.3 -->
+<section class="sec" id="m8-aufsicht">
+<div class="sh"><span class="sno">8.3</span><h3>Überwachen und eingreifen</h3><p>Ein Hochrisiko-System ist nie fertig. Betreibende müssen den Betrieb überwachen, Ergebnisse von Menschen prüfen lassen und vorher festlegen, was im Fehlerfall passiert: schriftlich und umsetzbar. Probier den Ernstfall durch.</p></div>
+<div class="fig">
+<div class="fh"><h4>Notfall-Drill: Die Antrags-KI lehnt alles ab</h4><span class="mono grey">Abb. 8.3 · vier Entscheidungen</span></div>
+<div class="fb">
+<ol class="z8ph" id="z8DrP"><li><span>1</span>Erkennen</li><li><span>2</span>Eingreifen</li><li><span>3</span>Dokumentieren</li><li><span>4</span>Nachbessern</li></ol>
+<div class="z8dr" id="z8Dr" aria-live="polite"></div>
+</div>
+</div>
+<h4 class="mono m" style="margin:28px 0 10px">Wie viel Mensch muss sein?</h4>
+<div class="z6g">
+<div><span class="mono m">in the loop</span><b>Mensch bestätigt</b><p>Jede Entscheidung wird geprüft, bevor sie wirkt. Etwa bei Kündigungen oder Krediten sinnvoll.</p></div>
+<div><span class="mono m">on the loop</span><b>Mensch überwacht</b><p>Das System entscheidet, ein Mensch beobachtet, prüft Stichproben und kann jederzeit stoppen.</p></div>
+<div><span class="mono m">in command</span><b>Mensch bestimmt</b><p>Menschen entscheiden, ob und wofür das System überhaupt eingesetzt wird.</p></div>
+</div>
+<p class="key"><span class="mono">KI-VO</span><span>Art. 14 verlangt wirksame Aufsicht: das System verstehen, Ergebnisse nicht blind übernehmen, übersteuern und stoppen können. Bei biometrischer Identifizierung müssen zwei Personen das Ergebnis prüfen. Schwere Vorfälle melden Betreibende sofort dem Anbieter, der meldet sie der Behörde.</span></p>
+</section>
+
+<!-- 8.4 -->
+<section class="sec" id="m8-transparenz">
+<div class="sh"><span class="sno">8.4</span><h3>Transparenz und Erklärbarkeit</h3><p>Menschen sollen erkennen, wann sie mit einer Maschine zu tun haben. Bei Hochrisiko-Entscheidungen müssen Betroffene zusätzlich verstehen können, wie das Ergebnis zustande kam. Im Zweifel offenlegen: Das ist einfacher als gedacht und stärkt die Glaubwürdigkeit.</p></div>
+<div class="fig">
+<div class="fh"><h4>Übung: Muss sichtbar gekennzeichnet werden?</h4><span class="mono grey" data-so-s></span></div>
+<div class="fb" id="m8-kz"><div class="soc"></div><div class="sob"></div></div>
+</div>
+<div class="fig" style="margin-top:24px">
+<div class="fh"><h4>Gut erklären: Welche Antwort würdest du schicken?</h4><span class="mono grey">Abb. 8.4</span></div>
+<div class="fb">
+<p style="font-size:.9375rem">Eine Kundin fragt, warum ihre Anfrage nicht als „dringend“ eingestuft wurde. Das System sortiert Anfragen automatisch.</p>
+<div class="z8ex" id="z8Ex"></div>
+<p class="vd" id="z8ExV" aria-live="polite"></p>
+</div>
+</div>
+<div class="two" style="margin-top:24px;align-items:start">
+<div><h4 class="mono m" style="margin-bottom:8px">Erklärbar machen</h4><ol class="nl">
+<li><b>Einflussfaktoren:</b> zeigen, was den Ausschlag gab, etwa Einkommen und Zahlungsverhalten, nicht Alter oder Wohnort</li>
+<li><b>Visualisieren:</b> Balken, Risikoanzeigen, einfache Entscheidungsbäume</li>
+<li><b>Regeln formulieren:</b> vereinfacht sagen, unter welchen Bedingungen was herauskommt</li>
+<li><b>Werkzeuge:</b> Erklär-Tools für interne Prüfungen und Behörden, ohne Trainingsdaten offenzulegen</li>
+<li><b>Grenzen benennen:</b> Was nicht erklärbar ist, offen sagen</li>
+</ol></div>
+<div><h4 class="mono m" style="margin-bottom:8px">Wer wissen will, was</h4><ul class="lst">
+<li><b>Kundschaft:</b> Wie bin ich betroffen, kann ich mich darauf verlassen?</li>
+<li><b>Führung:</b> Nutzen, Risiken, Rechtssicherheit</li>
+<li><b>Aufsicht:</b> nachvollziehbar, dokumentiert, gesetzeskonform?</li>
+</ul><p class="note" style="font-size:.9375rem;color:var(--ink)">Drei Regeln: ohne Fachbegriffe sprechen, Unsicherheiten nicht verschweigen, Verantwortung sichtbar machen („Die finale Entscheidung trifft eine Mitarbeiterin“).</p></div>
+</div>
+<h4 class="mono m" style="margin:28px 0 10px">Gute und schlechte Erklärung auf einen Blick</h4>
+<div class="z8tw"><table class="z6t z8gb"><thead><tr><th scope="col">Kriterium</th><th scope="col">Schlecht</th><th scope="col">Gut</th></tr></thead><tbody>
+<tr><th scope="row">Sprache</th><td>Fachbegriffe, unverständliche Modelle</td><td>Einfach: „Das System achtet vor allem auf aktuelle Berufserfahrung.“</td></tr>
+<tr><th scope="row">Bezug</th><td>vage: „Die KI hat das so bewertet.“</td><td>konkrete Merkmale: „Weil das Gehalt fehlte, wurde abgewertet.“</td></tr>
+<tr><th scope="row">Zielgruppe</th><td>nur für Technik-Teams verständlich</td><td>auch für Kundschaft und nicht-technische Rollen</td></tr>
+<tr><th scope="row">Zugang</th><td>nur intern oder schwer auffindbar</td><td>leicht zu finden, auf Anfrage oder automatisch</td></tr>
+<tr><th scope="row">Nachvollziehbar</th><td>wirkt wie eine Blackbox</td><td>Schritte, Einflussfaktoren oder Regeln werden gezeigt</td></tr>
+</tbody></table></div>
+<p class="note">Zum Selbsttest: Wie gut ist unsere Erklärung wirklich? Könnten wir sie so in einem Meeting zeigen?</p>
+<div class="fig" style="margin-top:24px">
+<div class="fh"><h4>Checkliste: interne Nachvollziehbarkeit</h4><span class="mono grey" id="z8NvS"></span></div>
+<div class="fb">
+<div class="row" style="justify-content:space-between"><p style="font-size:.9375rem;max-width:62ch">Aus dem Kursmaterial, besonders für Hochrisiko-Systeme. Auch wenn nicht jede Entscheidung technisch erklärbar ist, hilft oft eine gute Kommunikationsstrategie.</p><button class="btn ghost" type="button" id="z8NvR">Liste leeren</button></div>
+<div class="z6cl" id="z8NvL"></div>
+</div>
+</div>
+</section>
+
+<!-- 8.5 -->
+<section class="sec" id="m8-daten">
+<div class="sh"><span class="sno">8.5</span><h3>Daten: DSGVO trifft KI-VO</h3><p>Die DSGVO regelt den Umgang mit personenbezogenen Daten, die KI-VO das System, das mit ihnen entscheidet. Wer beides tut, muss beide im Blick haben. Drei typische Fehler aus dem Kurs:</p></div>
+<div class="z6fa z8cs">
+<div><span class="mono m">Fall 1</span><p>Marketing trainiert eine Text-KI mit allen Chat-Protokollen aus dem Support. Die Kundschaft wurde nur über die Service-Auswertung informiert.</p><details><summary>Lösung</summary><p>Training ist ein neuer Zweck. Es braucht eine neue Einwilligung oder eine tragfähige Rechtsgrundlage, etwa berechtigtes Interesse mit Abwägung.</p></details></div>
+<div><span class="mono m">Fall 2</span><p>Ein Entwickler löscht den Text aus Support-Tickets, behält aber Zeitstempel, Browser-Typ und IP-Segment. Anonym?</p><details><summary>Lösung</summary><p>Nein. Aus solchen Kombinationen lassen sich Personen mit vertretbarem Aufwand wiedererkennen. Das ist höchstens Pseudonymisierung, die DSGVO gilt weiter.</p></details></div>
+<div style="background:var(--paper);border-color:var(--ink)"><span class="mono m">Fall 3</span><p>Data Science lädt Trainingsdaten mit Kunden-IDs auf einen günstigen US-Cloud-Dienst.</p><details><summary>Lösung</summary><p>Zuerst einen Vertrag zur Auftragsverarbeitung schließen und die Übermittlung absichern: Angemessenheitsbeschluss oder Standardvertragsklauseln.</p></details></div>
+</div>
+<h4 class="mono m" style="margin:28px 0 10px">Wer darf was? Ein Zugriffskonzept</h4>
+<div class="z8tw"><table class="z6t z8acc">
+<thead><tr><th scope="col">Rolle</th><th scope="col">Echtdaten</th><th scope="col">Pseudonym</th><th scope="col">Testdaten</th><th scope="col">Logs</th><th scope="col">Überblick</th></tr></thead>
+<tbody>
+<tr><th scope="row">Projektleitung<small>steuert, gibt frei</small></th><td class="n">–</td><td class="n">–</td><td class="n">–</td><td class="n">–</td><td class="y">✓</td></tr>
+<tr><th scope="row">Data Engineer<small>bereitet Trainingsdaten auf</small></th><td class="n">–</td><td class="y">✓</td><td class="n">–</td><td class="n">–</td><td class="n">–</td></tr>
+<tr><th scope="row">Entwickler:in<small>baut und testet</small></th><td class="n">–</td><td class="n">–</td><td class="y">✓</td><td class="n">–</td><td class="n">–</td></tr>
+<tr><th scope="row">Datenschutz<small>prüft, gibt Zugriffe frei</small></th><td class="n">–</td><td class="n">–</td><td class="n">–</td><td class="y">lesen</td><td class="n">–</td></tr>
+<tr><th scope="row">Betriebsrat, Compliance<small>nur bei Bedarf, dokumentiert</small></th><td class="n">–</td><td class="n">–</td><td class="n">–</td><td class="n">–</td><td class="y">Prozess</td></tr>
+</tbody></table></div>
+<p class="note">Jeder Zugriff wird protokolliert: wer, worauf, wann, wozu und was geändert wurde. Am besten automatisch über Logs, Rechteverwaltung und Freigabe-Tickets.</p>
+<h4 class="mono m" style="margin:24px 0 8px">Fünf Minuten im Team</h4>
+<ol class="nl"><li>Welche Daten nutzen wir?</li><li>Wofür wurden sie erhoben?</li><li>Was ist die Rechtsgrundlage?</li><li>Wie lange speichern wir?</li><li>Wer darf was, und warum?</li></ol>
+<div class="fig" style="margin-top:24px">
+<div class="fh"><h4>Checkliste: fünf Datenschutzpflichten bei KI</h4><span class="mono grey" id="z8DsS"></span></div>
+<div class="fb">
+<div class="row" style="justify-content:space-between"><p style="font-size:.9375rem;max-width:62ch">Interner Audit-Leitfaden aus dem Kursmaterial, besonders für Projekte mit personenbezogenen Daten.</p><button class="btn ghost" type="button" id="z8DsR">Liste leeren</button></div>
+<div class="z6cl" id="z8DsL"></div>
+</div>
+</div>
+</section>
+
+<!-- 8.6 -->
+<section class="sec" id="m8-haftung">
+<div class="sh"><span class="sno">8.6</span><h3>Haftung absichern</h3><p>Die Rolle allein schützt nicht: Man muss nachweisen können, dass man seine Pflichten erfüllt hat. Wer ein zugekauftes System einsetzt, kann sich nicht einfach auf den Anbieter berufen. Beispiel aus dem Kurs: Eine zugekaufte Bild-KI übersieht Mängel, ein Kunde klagt, im Vertrag steht nichts zur Haftung. Den Schaden trägt zuerst der Betreiber.</p></div>
+<div class="fig">
+<div class="fh"><h4>Checkliste Haftungsrisiken</h4><span class="mono grey" id="z8HaS"></span></div>
+<div class="fb">
+<div class="row" style="justify-content:space-between"><p style="font-size:.9375rem;max-width:60ch">Die Checkliste aus dem Kursmaterial: als Review vor dem Livegang oder vor dem Vertragsabschluss. Sie ersetzt keine Rechtsberatung.</p><button class="btn ghost" type="button" id="z8HaR">Liste leeren</button></div>
+<div class="z6cl" id="z8HaL"></div>
+</div>
+</div>
+<p class="key"><span class="mono">Gut zu wissen</span><span>Die geplante KI-Haftungsrichtlinie hat die EU-Kommission 2025 zurückgezogen. Dafür zählt die neue Produkthaftungsrichtlinie Software einschließlich KI als Produkt. Sie muss bis 9. Dezember 2026 umgesetzt sein.</span></p>
+</section>
+
+<!-- 8.7 -->
+<section class="sec" id="m8-richtlinie">
+<div class="sh"><span class="sno">8.7</span><h3>Eine KI-Richtlinie schreiben</h3><p>„Brauchen wir dafür eine Freigabe, oder ist das Sache der IT?“ Wer darauf keine klare Antwort hat, braucht eine KI-Richtlinie. Sie setzt Recht um, steuert Risiken und klärt Verantwortung. Und sie wirkt nur, wenn alle sie kennen.</p></div>
+<ol class="z7ch z8ch6">
+<li><span>01</span><b>Ziel</b>Wofür, für welche Systeme?</li>
+<li><span>02</span><b>Bestand</b>Was regeln Datenschutz, IT, Einkauf schon?</li>
+<li><span>03</span><b>Gliedern</b>neun Kapitel, siehe unten</li>
+<li><span>04</span><b>Zuständig</b>Freigaben, Risiko, Schulung als Matrix</li>
+<li><span>05</span><b>Feedback</b>Datenschutz, Fachbereiche, IT, HR</li>
+<li><span>06</span><b>Leben</b>Führung, Schulung, regelmäßig prüfen</li>
+</ol>
+<div class="fig" style="margin-top:24px">
+<div class="fh"><h4>Baukasten: deine KI-Richtlinie</h4><span class="mono grey">Abb. 8.7 · Entwurf zum Kopieren</span></div>
+<div class="fb">
+<div class="tabs" role="tablist" aria-label="Vorlage" id="z8RlM" style="margin-bottom:16px"></div>
+<div class="z8rl">
+<div><label class="f" for="z8RlN">Unternehmen</label><input type="text" id="z8RlN" value="Muster GmbH" maxlength="60"><p class="mono grey" style="margin:14px 0 6px">Kapitel aufnehmen</p><div class="z7ms" id="z8RlK" role="group" aria-label="Kapitel"></div></div>
+<div><label class="f" for="z8RlO">Entwurf</label><textarea id="z8RlO" spellcheck="false" style="margin-top:4px"></textarea><div class="row" style="margin-top:10px"><button class="btn" type="button" id="z8RlC">Entwurf kopieren</button><span class="st" id="z8RlS" aria-live="polite"></span></div></div>
+</div>
+</div>
+</div>
+<div class="fig" style="margin-top:24px">
+<div class="fh"><h4>Selbstcheck KI-Kompetenz</h4><span class="mono grey" id="z8SkS"></span></div>
+<div class="fb">
+<div class="row" style="justify-content:space-between"><p style="font-size:.9375rem;max-width:60ch">Mehr als zwei offene Punkte heißt laut Kurs: Handlungsbedarf.</p><button class="btn ghost" type="button" id="z8SkR">Liste leeren</button></div>
+<div class="z6cl" id="z8SkL"></div>
+</div>
+</div>
+<p class="key"><span class="mono">Formate</span><span>Mini-Trainings von 10 bis 15 Minuten, Checklisten zur Selbstprüfung, KI-Einstieg im Onboarding, Poster und Erinnerungskarten, Übungen mit Fallentscheidungen. Abwechslungsreich, passend zur Zielgruppe, niedrigschwellig.</span></p>
+</section>
+
+<!-- 8.8 -->
+<section class="sec" id="m8-repeat">
+<div class="sh"><span class="sno">8.8</span><h3>Wiederholen</h3><p>Erst Karteikarten, dann Lückentext, dann das Quiz. Dein Fortschritt bleibt in diesem Browser gespeichert.</p></div>
+<div id="m8-cards" style="scroll-margin-top:70px">
+<div class="row" style="justify-content:space-between;margin-bottom:12px"><h4 class="mono m">Karteikarten · antippen zum Umdrehen</h4><span class="mono grey" data-cd-s></span></div>
+<div class="cards"></div>
+</div>
+<div class="fig" id="m8-cloze" style="margin-top:36px;scroll-margin-top:70px">
+<div class="fh"><h4>Lückentext</h4><span class="mono grey">in meinen Worten</span></div>
+<div class="fb">
+<ol class="cz"></ol>
+<div class="row" style="margin-top:16px"><button class="btn" type="button" data-cz-go>Prüfen</button><button class="btn ghost" type="button" data-cz-r>Zurücksetzen</button><p class="st" data-cz-s aria-live="polite"></p></div>
+</div>
+</div>
+<div class="fig" id="m8-quiz" style="margin-top:36px;scroll-margin-top:70px">
+<div class="fh"><h4>Quiz Modul 8</h4><span class="mono grey" data-qz-best></span></div>
+<div class="fb"><div class="qz" aria-live="polite"></div></div>
+</div>
+</section>
+
+<!-- 8.9 -->
+<section class="sec" id="m8-check">
+<div class="sh"><span class="sno">8.9</span><h3>Faktencheck</h3><p>Modul 8 ist ein guter Praxisleitfaden, juristisch aber an mehreren Stellen ungenau. Für die Prüfung merke ich mir beide Versionen. Stand: November 2026, keine Rechtsberatung.</p></div>
+<table class="fct">
+<thead><tr><th scope="col">Thema</th><th scope="col">Im Kursmaterial</th><th scope="col">Nachgeprüft</th></tr></thead>
+<tbody>
+<tr><th scope="row">Benannte Stelle</th><td>nötig etwa bei Kreditwürdigkeit, Arbeitsmarktzugang, Strafverfolgung</td><td>Für fast alle Systeme aus Anhang III, auch Personal, Kredit und Bildung, prüft der Anbieter selbst (interne Kontrolle, Anhang VI). Eine benannte Stelle braucht es bei biometrischen Systemen ohne vollständig angewandte Normen und bei KI in Produkten wie Medizingeräten nach dem jeweiligen Produktrecht.</td></tr>
+<tr><th scope="row">Wer bewertet?</th><td>Quiz: „alle, die das System einsetzen“</td><td>Die Konformitätsbewertung ist Pflicht des Anbieters. Betreibende haben eigene Pflichten: Einsatz nach Anleitung, Aufsicht, Logs, Information der Beschäftigten.</td></tr>
+<tr><th scope="row">Registrierung</th><td>nur bestimmte Hochrisiko-Systeme, etwa Biometrie im öffentlichen Raum</td><td>Alle Hochrisiko-Systeme aus Anhang III kommen vor dem Marktstart in die EU-Datenbank, kritische Infrastruktur national. Öffentliche Stellen registrieren zusätzlich ihre Nutzung. Im Kurs fehlt außerdem das CE-Kennzeichen.</td></tr>
+<tr><th scope="row">Human in the Loop</th><td>Hochrisiko-KI darf nie autonom arbeiten, ein Mensch ist immer aktiv eingebunden</td><td>Art. 14 verlangt wirksame Aufsicht: verstehen, richtig deuten, übersteuern, stoppen können. Dass jede Einzelentscheidung bestätigt wird, schreibt er nicht vor. Ausnahme biometrische Identifizierung: zwei Personen prüfen.</td></tr>
+<tr><th scope="row">Kennzeichnung</th><td>jeder vollständig KI-erzeugte Inhalt, etwa Produktbeschreibungen und Social-Media-Posts, braucht einen sichtbaren Hinweis</td><td>Sichtbar kennzeichnen müssen Betreibende Deepfakes und KI-Texte zu Themen öffentlichen Interesses ohne redaktionelle Prüfung. Alle KI-Inhalte markiert der Tool-Anbieter maschinenlesbar. Ein sichtbarer Hinweis ist sonst freiwillig, oft aber sinnvoll.</td></tr>
+<tr><th scope="row">Schulungspflicht</th><td>„Art. [Nummer fehlt] und 54“</td><td>KI-Kompetenz regelt Art. 4, Art. 54 betrifft Bevollmächtigte von Basismodell-Anbietern. Der KI-Omnibus 2026 hat Art. 4 abgeschwächt: Unternehmen müssen Maßnahmen ergreifen, ein bestimmtes Niveau ist nicht mehr vorgeschrieben.</td></tr>
+<tr><th scope="row">US-Cloud</th><td>Auftragsverarbeitung plus Standardvertragsklauseln und Transfer-Folgenabschätzung</td><td>Der Vertrag zur Auftragsverarbeitung stimmt. Für US-Anbieter mit Zertifizierung nach dem EU-US Data Privacy Framework gilt seit 2023 ein Angemessenheitsbeschluss, dann braucht es keine Standardvertragsklauseln. Er wird gerichtlich angegriffen, gilt aber.</td></tr>
+<tr><th scope="row">Vorfälle melden</th><td>„Meldepflichten bei Vorfällen“ ohne Fristen</td><td>Schwere Vorfälle meldet der Anbieter der Marktüberwachung: spätestens nach 15 Tagen, bei einem Todesfall nach 10, bei breiten Störungen oder kritischer Infrastruktur nach 2 Tagen. Betreibende informieren sofort den Anbieter.</td></tr>
+<tr><th scope="row">Haftung</th><td>Haftung nach KI-VO</td><td>Die KI-VO regelt Bußgelder, nicht Schadensersatz. Die KI-Haftungsrichtlinie wurde 2025 zurückgezogen, Schadensersatz läuft über Vertrags-, Delikts- und Produkthaftungsrecht. Die neue Produkthaftungsrichtlinie erfasst Software und KI ab Dezember 2026.</td></tr>
+<tr><th scope="row">Lektion 8.1</th><td>im Skript-PDF leer</td><td>Rollen, Pflichten und Bußgelder in 8.1 habe ich aus dem Verordnungstext ergänzt.</td></tr>
 </tbody>
 </table>
 </section>
@@ -3395,7 +3744,7 @@ var MODS=[
  {n:5,s:'Kultur & Change',t:'Organisatorische und kulturelle Integration von KI',live:true,checks:['tuck','team','glasl','cards','cloze','quiz']},
  {n:6,s:'Ethik & Recht',t:'Ethische und rechtliche Aspekte der KI-Nutzung',live:true,checks:['risk','anon','proxy','qa','cards','cloze','quiz']},
  {n:7,s:'Sicherheit',t:'Cybersicherheit und KI-Sicherheit',live:true,checks:['schutz','inject','anomalie','cards','cloze','quiz']},
- {n:8,s:'KI-VO',t:'Fit für die KI-Verordnung (EU AI Act)'},
+ {n:8,s:'KI-VO',t:'Fit für die KI-Verordnung (EU AI Act)',live:true,checks:['rolle','stelle','drill','kennz','cards','cloze','quiz']},
  {n:9,s:'IHK-Prüfung',t:'IHK-Leistungsüberprüfung'}
 ];
 var rail=$('#rail');
@@ -5313,6 +5662,191 @@ initQuiz(7,[
  ['Welche Gefahr droht, wenn Schulungen nur auf das Verhalten zielen?',['Die technische Sicherheit wird vernachlässigt','Die Beschäftigten werden übervorsichtig','Cyberversicherungen werden überflüssig'],'Menschen machen Fehler, die Technik muss halten.'],
  ['Welche Botschaft gehört in jede Sicherheitsschulung?',['Es kann jedem passieren, melde dich sofort, du bekommst keinen Ärger','Wer klickt, wird entlassen','Ignorieren, die IT regelt das'],'Je schneller gemeldet, desto weniger Schaden.'],
  ['Verändert KI die Bedrohung durch staatliche Hacker?',['Ja, sie finden Schwachstellen schneller und greifen automatisierter an','Nein, nur menschliche Expertise zählt','Nein, Staaten nutzen keine KI'],'KI macht alle Angreifer effizienter.']
+]);
+
+/* ================= MODUL 7 · Guide für Nicht-Techies ================= */
+ckList({list:'#z7GuL',status:'#z7GuS',reset:'#z7GuR',lists:[{k:'cl7g',l:'Guide',g:[
+ ['Spezialisieren: Expertise holen',['Qualifizierte IT-Sicherheitsperson einstellen oder interne Verantwortliche benennen','Bei Bedarf externe Sicherheitsberatung für unabhängige Audits beauftragen']],
+ ['Messen: KPIs festlegen',['Messbare Sicherheits-KPIs definieren lassen, etwa behobene Schwachstellen und Reaktionszeit bei Vorfällen','Regelmäßige Berichte zu diesen KPIs einfordern']],
+ ['Ansprechen: offen kommunizieren',['Kultur schaffen, in der Sicherheitsbedenken offen angesprochen werden','Regelmäßige Sicherheitsbesprechungen im Team','Fehlerkultur: Fehler ohne Angst vor Strafe sofort ansprechen']],
+ ['Berichten: Berichtssystem',['Regelmäßige, leicht verständliche Sicherheitsberichte vorlegen lassen','Klartext-Zusammenfassungen technischer Audits verlangen']],
+ ['Trainieren: Weiterbildung',['Regelmäßige Schulungen zur KI-Sicherheit für alle Mitarbeitenden','Selbst an grundlegenden KI-Sicherheitskursen teilnehmen']]
+]}]});
+
+/* ================= MODUL 8 ================= */
+/* 8.1 roles */
+initAssign({root:'#m8-as',key:'as8',mod:8,check:'rolle',opts:[['a','Anbieter'],['b','Betreiber'],['i','Importeur'],['h','Händler']],items:[
+ {t:'Ein Start-up entwickelt eine Bewerbungs-KI und verkauft sie unter eigenem Namen',b:'a',w:'Wer ein System entwickelt und unter eigenem Namen auf den Markt bringt, ist Anbieter.'},
+ {t:'Eine Bank setzt ein zugekauftes Kreditscoring-Tool ein',b:'b',w:'Wer ein fremdes System beruflich einsetzt, ist Betreiber.'},
+ {t:'Ein Konzern baut eine HR-KI nur für die eigene Personalabteilung',b:'a',ok:['b'],w:'Auch bei Eigennutzung ist man Anbieter, weil man das System selbst in Betrieb nimmt. Zugleich ist man Betreiber.'},
+ {t:'Eine Firma bringt ein US-KI-System erstmals auf den EU-Markt',b:'i',w:'Importeure prüfen vor dem Marktstart, ob Konformitätsbewertung, Doku und CE-Kennzeichen vorliegen.'},
+ {t:'Ein Softwarehaus verkauft ein in der EU bereits erhältliches KI-Tool weiter',b:'h',w:'Händler machen ein System verfügbar und prüfen CE-Kennzeichen und Unterlagen.'},
+ {t:'Ein Unternehmen baut ein Sprachmodell per Schnittstelle in den eigenen Website-Chat ein',b:'a',ok:['b'],w:'Wer ein Basismodell in ein eigenes System einbaut und unter eigenem Namen betreibt, gilt als Anbieter dieses Systems. Bei einem einfachen Chatbot heißt das vor allem: Transparenz.'},
+ {t:'Ein Betreiber nutzt seinen Chatbot plötzlich, um Bewerbungen vorzusortieren',b:'a',w:'Wer den Zweck so ändert, dass ein Hochrisiko-System entsteht, wird selbst Anbieter (Art. 25).'},
+ {t:'Eine Arztpraxis nutzt eine KI-Software zur Befundung',b:'b',w:'Die Praxis setzt das System ein. Anbieter ist der Hersteller.'}
+]});
+
+/* 8.2 conformity roadmap */
+var KF=[
+ ['Einstufung','Risikoeinstufung','Fällt das System unter Anhang I (Produkte) oder Anhang III (etwa Personal, Kredit, Bildung)? Wenn ja, gelten alle folgenden Schritte, auch bei rein interner Nutzung.','Einstufungsvermerk'],
+ ['Risiko','Risikomanagement','Risiken wie Diskriminierung oder Fehlentscheidungen analysieren und Gegenmaßnahmen planen, technisch und organisatorisch. Über den ganzen Lebenszyklus, nicht einmalig.','Risikobewertungsbericht'],
+ ['Doku','Technische Dokumentation','Trainingsdaten, Modelllogik, Entscheidungswege, Eingriffsmöglichkeiten und Logging klar und strukturiert beschreiben.','Technische Dokumentation nach Anhang IV'],
+ ['Qualität','Qualitätsmanagement','Feste Prozesse für Entwicklung, Tests, Änderungen und Vorfälle. Im Kurs steckt das in der Dokumentenliste.','QM-Beschreibung, Logbuch über Änderungen und Tests'],
+ ['Prüfung','Validierung und Prüfung','Ausreichend getestet, zuverlässig, ohne Bias? Tests und Ergebnisse dokumentieren. Meist prüft der Anbieter selbst, in einigen Fällen eine benannte Stelle.','Testprotokolle, gegebenenfalls Bescheinigung der benannten Stelle'],
+ ['Erklärung','Konformitätserklärung und CE','Formell erklären, dass das System die Anforderungen erfüllt, ähnlich einer Selbstzertifizierung. Dazu kommt das CE-Kennzeichen, das im Kurs fehlt.','EU-Konformitätserklärung (Art. 47), CE-Kennzeichen'],
+ ['Register','Registrierung und Beobachtung','Hochrisiko-Systeme aus Anhang III in die EU-Datenbank eintragen. Danach: Betrieb beobachten, schwere Vorfälle melden, Doku aktuell halten.','Eintrag in der EU-Datenbank, Plan zur Beobachtung nach dem Marktstart']
+];
+var kfSet=tabsFor($('#z8KfT'),KF.map(function(k){return k[0]}),kfSel);
+$$('#z8KfT button').forEach(function(b,i){b.innerHTML='<span>'+(i+1)+'</span>'+KF[i][0]});
+function kfSel(i){kfSet(i);var K=KF[i];$('#z8KfN').textContent=i+1;$('#z8KfK').textContent=i<6?'Pflicht':'Pflicht bei Anhang III';$('#z8KfH').textContent=K[1];$('#z8KfD').textContent=K[2];$('#z8KfP').textContent=K[3]}
+kfSel(0);
+var PW=[
+ ['Bewerbungs-KI','i','Interne Kontrolle','Anhang III, Beschäftigung: Der Anbieter bewertet selbst nach Anhang VI. Eine benannte Stelle ist nicht nötig, anders als der Kurs sagt.'],
+ ['Kreditscoring','i','Interne Kontrolle','Anhang III, Kreditwürdigkeit: ebenfalls interne Kontrolle durch den Anbieter.'],
+ ['Prüfungen bewerten','i','Interne Kontrolle','Anhang III, Bildung: interne Kontrolle.'],
+ ['Biometrische Fernidentifizierung','n','Benannte Stelle möglich','Anhang III, Biometrie: Interne Kontrolle nur, wenn harmonisierte Normen vollständig angewendet werden. Sonst prüft eine benannte Stelle wie TÜV oder DEKRA.'],
+ ['KI in einem Medizinprodukt','p','Nach Produktrecht','Anhang I: Die Prüfung läuft im bestehenden Verfahren nach der Medizinprodukte-Verordnung, meist mit benannter Stelle. Die KI-Anforderungen werden dort mitgeprüft.'],
+ ['KI in einer Maschinensteuerung','p','Nach Produktrecht','Anhang I: Maschinenverordnung. Je nach Maschine mit benannter Stelle.'],
+ ['Chatbot im Kundenservice','x','Keine Konformitätsbewertung','Kein Hochrisiko, es gilt nur die Transparenzpflicht.']
+];
+var pwSeen={};
+PW.forEach(function(p,i){var b=h('button');b.type='button';b.textContent=p[0];b.setAttribute('aria-pressed','false');b.addEventListener('click',function(){
+  $$('#z8PwC button').forEach(function(x,j){x.setAttribute('aria-pressed',String(j===i))});pwSeen[i]=1;
+  var R=$('#z8PwR');R.className='z8res '+p[1];R.innerHTML='<p class="mono grey">Prüfweg · '+p[0]+'</p><p class="it">'+p[2]+'</p><p>'+p[3]+'</p>';
+  var n=Object.keys(pwSeen).length;$('#z8PwS').textContent=n+' von '+PW.length+' angesehen';if(n>=3)done(8,'stelle')});$('#z8PwC').appendChild(b)});
+
+/* 8.3 incident drill */
+var DR=[
+ ['Eine Kollegin aus dem Service meldet: Seit zwei Tagen lehnt die Antrags-KI jeden Antrag ab. Technisch läuft alles. Was tust du zuerst?',['Die Meldung aufnehmen, prüfen und absichern','Das System sofort stoppen und eine neue Version einspielen','Eine Fehleranalyse im Code starten'],'Erst erkennen und bestätigen, dann handeln. Sonst stoppt man womöglich wegen eines Missverständnisses.'],
+ ['Der Fehler ist bestätigt. Was jetzt?',['Den automatischen Ablauf pausieren und die betroffenen Teams informieren','Den Vorfall nur dokumentieren und an die Entwicklung geben','Direkt mit der Ursachenforschung beginnen'],'Eingreifen kommt vor der Analyse: Solange das System läuft, entsteht weiter Schaden.'],
+ ['Was gehört in die Dokumentation des Vorfalls?',['Alle Schritte, Entscheidungen und Beteiligten','Nur das technische Problem','Nichts, bis die Lösung da ist'],'Die Doku ist Pflicht: für Nachvollziehbarkeit, Lernen und mögliche Prüfungen.'],
+ ['Wie geht ihr bei der Nachbesserung vor?',['Ursache analysieren, Korrektur testen, im Team freigeben','Schnell einen Workaround bauen und wieder live gehen','Eine neue KI kaufen'],'Gezielt, getestet und kontrolliert. Lessons Learned festhalten.']
+];
+var drI=0,drOk=0;
+function drDraw(){
+  var R=$('#z8Dr');R.innerHTML='';$$('#z8DrP li').forEach(function(li,i){li.classList.toggle('on',i<drI||(i===drI&&drI<4))});
+  if(drI>=DR.length){var d=h('div','z8res '+(drOk===4?'i':'n'));d.innerHTML='<p class="mono grey">Auswertung</p><p class="it">'+drOk+' von 4 richtig</p><p>Erkennen, Eingreifen, Dokumentieren, Nachbessern. Die KI-VO verlangt, dass dieser Plan vorher schriftlich steht. Im Kurs-Beispiel bevorzugte eine Bewerbungs-KI ältere Bewerbende: gleicher Ablauf.</p>';var b=h('button','btn ghost');b.type='button';b.style.marginTop='12px';b.textContent='Nochmal';b.addEventListener('click',function(){drI=0;drOk=0;drDraw()});d.appendChild(b);R.appendChild(d);done(8,'drill');return}
+  var Q=DR[drI],q=h('div','q');q.innerHTML='<p class="mono grey">Schritt '+(drI+1)+' von 4</p><p class="it">'+Q[0]+'</p>';
+  var o=h('div','opts2');shuffle(Q[1].map(function(t,k){return [t,k]})).forEach(function(x){var b=h('button');b.type='button';b.textContent=x[0];b.addEventListener('click',function(){
+    var good=x[1]===0;if(good)drOk++;$$('button',o).forEach(function(y){y.disabled=true;if(y.textContent===Q[1][0])y.classList.add('best')});if(!good)b.classList.add('bad');
+    q.appendChild(h('p','vd','<b>'+(good?'Richtig.':'Besser: '+Q[1][0]+'.')+'</b>'+Q[2]));
+    var n=h('button','btn');n.type='button';n.style.marginTop='12px';n.textContent=drI<3?'Weiter':'Auswertung';n.addEventListener('click',function(){drI++;drDraw();var f=$('#z8Dr button');if(f)f.focus({preventScroll:true})});q.appendChild(n);n.focus({preventScroll:true})});o.appendChild(b)});
+  q.appendChild(o);R.appendChild(q);
+}
+drDraw();
+
+/* 8.4 labelling + explanation */
+initSort({root:'#m8-kz',status:'#m8-transparenz [data-so-s]',mod:8,check:'kennz',label:'Fall',end:'Sichtbar kennzeichnen heißt: Chatbots, Deepfakes, Texte zu öffentlichen Themen ohne redaktionelle Prüfung. Der Kurs ist strenger, siehe Faktencheck. Freiwillig offenlegen ist trotzdem oft klug.',buckets:[['j','Pflicht','m'],['n','keine Pflicht']],items:[
+ ['Chatbot im Kundenportal','j','Menschen müssen erkennen, dass sie mit KI sprechen, außer es ist offensichtlich.'],
+ ['Video, in dem die Chefin täuschend echt etwas sagt, das sie nie gesagt hat','j','Deepfake: Die Betreiberin muss das kennzeichnen.'],
+ ['KI-geschriebener Nachrichtenartikel ohne redaktionelle Prüfung','j','Texte zu Themen öffentlichen Interesses müssen gekennzeichnet werden, außer ein Mensch hat sie geprüft und verantwortet.'],
+ ['Sprachassistent an der Telefon-Hotline','j','Auch Stimme ist Interaktion: Anrufende müssen erfahren, dass sie mit KI sprechen.'],
+ ['KI-Produktbeschreibung im Onlineshop','n','Keine sichtbare Pflicht für Betreibende. Das Text-Tool muss die Inhalte aber maschinenlesbar markieren. Der Kurs sieht das strenger.'],
+ ['Spamfilter im Postfach','n','Keine Interaktion, kein erzeugter Inhalt.'],
+ ['Von KI übersetzte Mail, die ein Mensch geprüft hat','n','Unterstützende Bearbeitung ohne wesentliche Änderung fällt nicht darunter.'],
+ ['KI-Bild einer erfundenen Fantasielandschaft im Blog','n','Kein Deepfake, weil nichts Echtes vorgetäuscht wird.']
+]});
+var EX=[
+ ['Unser Klassifikationsmodell hat Ihrer Anfrage anhand gewichteter Merkmale einen Score unterhalb des Dringlichkeits-Schwellenwerts zugewiesen.',0,'Fachbegriffe statt Erklärung. Die Kundin weiß danach nicht mehr als vorher.'],
+ ['Das System hat Ihre Anfrage als „normal“ eingestuft, weil darin kein Ausfall und keine Frist genannt waren. Wenn es doch eilt, antworten Sie einfach mit „dringend“: Dann schaut sich sofort eine Kollegin Ihre Anfrage an.',1,'Ohne Fachbegriffe, mit Bezug auf das, was das System gesehen hat, und mit menschlicher Zweitprüfung.'],
+ ['Das entscheidet die KI automatisch, darauf haben wir leider keinen Einfluss.',0,'Schiebt die Verantwortung auf die Maschine. Genau das soll nicht passieren: Verantwortlich bleibt das Unternehmen.']
+];
+shuffle(EX).forEach(function(e){var b=h('button');b.type='button';b.textContent=e[0];b.addEventListener('click',function(){
+  $$('#z8Ex button').forEach(function(x){x.disabled=true});
+  $$('#z8Ex button').forEach(function(x){var E=EX.filter(function(y){return y[0]===x.firstChild.textContent})[0];x.classList.add(E[1]?'best':'bad');x.appendChild(h('small','',E[2]))});
+  $('#z8ExV').innerHTML=e[1]?'<b>Gute Wahl</b>Drei Regeln: keine Fachbegriffe, Grenzen offen nennen, Verantwortung sichtbar machen.':'<b>Lieber die grün markierte</b>Drei Regeln: keine Fachbegriffe, Grenzen offen nennen, Verantwortung sichtbar machen.'});$('#z8Ex').appendChild(b)});
+
+/* 8.6 liability checklist */
+ckList({list:'#z8HaL',status:'#z8HaS',reset:'#z8HaR',lists:[{k:'cl8h2',l:'Haftung',g:[
+ ['Vertragliche Regelungen',['Ist geregelt, wer bei Fehlern im System haftet?','Gibt es Pflichten zur Fehlerkorrektur und Modellpflege?','Ist die Einhaltung der KI-VO im Vertrag zugesichert?','Wurde eine angemessene Haftungsgrenze festgelegt?']],
+ ['Technische Absicherung',['Wird dokumentiert, wie Entscheidungen zustande kommen?','Gibt es manipulationssichere Logs oder Protokolle?','Sind regelmäßige Funktionstests vorgesehen?','Gibt es einen dokumentierten Prüfprozess vor dem Einsatz?']],
+ ['Geklärte Verantwortlichkeiten',['Ist festgelegt, wer Freigaben erteilt und Systeme prüft?','Gibt es eine Ansprechperson bei Vorfällen?','Sind Zuständigkeiten im Team kommuniziert und dokumentiert?']],
+ ['Versicherungsfragen',['Besteht eine Produkt- oder Betriebshaftpflicht?','Deckt die Versicherung KI-Systeme ausdrücklich ab?','Ist mit dem Versicherer geklärt, was versichert ist und was nicht?']]
+]}]});
+ckList({list:'#z8KwL',status:'#z8KwS',reset:'#z8KwR',lists:[{k:'cl8k',l:'Konformität',g:[
+ ['System und Daten',['Beschreibung des KI-Systems und seines Zwecks','Beschreibung der Trainings-, Validierungs- und Testdaten','Dokumentation der Risikomanagementprozesse','Maßnahmen für Fairness, Nichtdiskriminierung und Nachvollziehbarkeit']],
+ ['Betrieb und Erklärung',['Technische Sicherheitsmaßnahmen und Monitoring','Verantwortlichkeiten: Wer überwacht, wer greift ein?','Erklärbarkeit der Ergebnisse gegenüber Nutzenden und Betroffenen','Entwurf der Konformitätserklärung']]
+]}]});
+ckList({list:'#z8NvL',status:'#z8NvS',reset:'#z8NvR',lists:[{k:'cl8n',l:'Nachvollziehbarkeit',g:[
+ ['Überblick behalten',['Dokumentiert, welche Aufgaben das System erfüllt und wer es verantwortet','Verständliche Übersicht zur Funktionsweise, auch für Nicht-Techniker:innen','Alle Beteiligten kennen die rechtlichen Anforderungen zur Erklärbarkeit']],
+ ['Entscheidungen erklären',['Zentrale Einflussfaktoren jeder Entscheidung lassen sich benennen oder anzeigen','Es gibt Beispielentscheidungen mit sichtbar gemachter Logik','Tools zur lokalen Erklärbarkeit im Einsatz']],
+ ['Kommunikation und Verantwortung',['Das Support-Team kann Entscheidungen nachvollziehbar erklären','Zentrale Kontaktstelle für Rückfragen von Nutzenden oder Behörden','Rückfragen werden dokumentiert und regelmäßig ausgewertet']]
+]}]});
+ckList({list:'#z8DsL',status:'#z8DsS',reset:'#z8DsR',lists:[{k:'cl8d',l:'Datenschutz',g:[
+ ['Einwilligung oder Rechtsgrundlage',['Gültige Einwilligung oder andere Rechtsgrundlage liegt vor','Zweck der Verarbeitung klar kommuniziert','KI-Einsatz ausdrücklich genannt, etwa in der Einwilligung']],
+ ['Datenminimierung',['Nur Daten erhoben, die das System unbedingt braucht','Sensible Daten wie Gesundheitsdaten besonders geschützt oder ausgeschlossen']],
+ ['Rollen und Zugriffe',['Festgelegt, wer auf welche Daten zugreifen darf und warum','Zugriffe dokumentiert und geprüft','Zugriffe regelmäßig überprüft und angepasst']],
+ ['Speicherdauer',['Löschfristen für Daten in Training und Betrieb','Verantwortliche Person für die regelmäßige Prüfung']],
+ ['Dokumentation',['Datenflüsse, Modelle und Zwecke dokumentiert','Nachvollziehbar, wie die KI entscheidet, etwa Modellbeschreibung und Einflussfaktoren']]
+]}]});
+
+/* 8.7 policy builder */
+var RL=[
+ ['Ziel und Geltungsbereich','Diese Richtlinie gilt für alle KI-Systeme, die bei {U} in Personalabteilung, Kundenservice und Produktentwicklung eingesetzt werden, unabhängig davon, ob sie selbst entwickelt oder zugekauft sind.'],
+ ['Begriffe','KI im Sinne dieser Richtlinie sind softwaregestützte Systeme, die mit maschinellem Lernen oder Logikregeln Entscheidungen vorbereiten oder treffen. Hochrisiko-Systeme sind Systeme nach Anhang I und III der KI-Verordnung.'],
+ ['Ethische Grundsätze','KI-Systeme bei {U} dürfen nicht diskriminieren und folgen den Werten Fairness, Transparenz und Nichtdiskriminierung.'],
+ ['Risikobewertung und Dokumentation','Vor dem Einsatz jedes neuen KI-Systems prüfen wir die Risikostufe. Ergebnisse, Bewertungen und Maßnahmen halten wir in einem Prüfprotokoll fest.'],
+ ['Datenschutz und Zugriffsrechte','Auf personenbezogene Daten greifen nur Beschäftigte mit festgelegtem Bedarf zu. Jeder Zugriff wird protokolliert. Es gelten Datenminimierung und Zweckbindung nach DSGVO.'],
+ ['Transparenz und Erklärbarkeit','KI im Kontakt mit Kundinnen und Kunden machen wir kenntlich. Bei Entscheidungen im Personalbereich erhalten Betroffene auf Wunsch eine verständliche Erklärung.'],
+ ['Rollen und Zuständigkeiten','Die Projektleitung verantwortet die Risikoeinschätzung und die Einhaltung dieser Richtlinie im Fachbereich. Freigaben für Hochrisiko-Systeme erteilt [Funktion].'],
+ ['Meldungen und Reaktion','Fehlfunktionen oder unerwartete Entscheidungen melden Beschäftigte sofort an [KI-Verantwortliche Person]. Der Vorfall wird dokumentiert, der Betrieb bis zur Klärung pausiert.'],
+ ['Schulung und Awareness','Neue Beschäftigte erhalten im Onboarding eine Einführung in diese Richtlinie. Einmal jährlich gibt es ein Update zu rechtlichen Änderungen.']
+];
+var RLF=['Wofür ist die Richtlinie da? Für welche KI-Systeme und Bereiche gilt sie konkret?','Welche Begriffe müssen erklärt werden, damit alle dieselbe Sprache sprechen, etwa KI, Hochrisiko, Transparenz?','Welche ethischen Grundsätze gelten für Entwicklung und Nutzung, und woran zeigt sich das konkret?','Wie stuft ihr KI-Systeme ein, nach welchen Kriterien? Wer dokumentiert die Ergebnisse und wo?','Welche DSGVO-Anforderungen gelten? Wer darf unter welchen Bedingungen auf welche Daten zugreifen?','Wie stellt ihr sicher, dass Entscheidungen nachvollziehbar und KI-Inhalte gekennzeichnet sind?','Wer übernimmt welche Aufgaben im Lebenszyklus, von der Auswahl über den Betrieb bis zum Monitoring?','Was gilt bei Vorfällen oder Beschwerden? Wer ist Ansprechperson, wie läuft die Eskalation?','Wie erfahren Beschäftigte von der Richtlinie, wie werden sie regelmäßig geschult, und wer ist dafür zuständig?'],rlMode=0;
+var rlOn=get('rl8',null)||RL.map(function(){return 1});
+var rlSet=tabsFor($('#z8RlM'),['Mit Beispieltexten','Leere Vorlage mit Leitfragen'],function(i){rlMode=i;rlDraw()});
+RL.forEach(function(r,i){var b=h('button');b.type='button';b.innerHTML='<span><b>'+(i+1)+'. '+r[0]+'</b></span>';b.addEventListener('click',function(){rlOn[i]=rlOn[i]?0:1;put('rl8',rlOn);rlDraw()});$('#z8RlK').appendChild(b)});
+function rlDraw(){rlSet(rlMode);var U=($('#z8RlN').value||'').trim()||'[Unternehmen]',n=0,t='KI-Richtlinie · '+U+'\nStand: [Datum] · Verantwortlich: [Name]\n';
+  $$('#z8RlK button').forEach(function(b,i){b.setAttribute('aria-pressed',String(!!rlOn[i]))});
+  RL.forEach(function(r,i){if(rlOn[i]){n++;t+='\n'+n+'. '+r[0]+'\n'+(rlMode?'Leitfrage: '+RLF[i]+'\n→ \n':r[1].replace(/\{U\}/g,U)+'\n')}});
+  $('#z8RlO').value=t+'\nEntwurf auf Basis des IHK-Lehrgangs, vor Gebrauch rechtlich prüfen lassen.'}
+$('#z8RlN').addEventListener('input',rlDraw);
+$('#z8RlC').addEventListener('click',function(){var o=$('#z8RlO'),s=$('#z8RlS');var ok=function(){s.textContent='kopiert';s.className='st good'};
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(o.value).then(ok,function(){o.select();s.textContent='markiert, mit Strg+C kopieren';s.className='st'});else{o.select();s.textContent='markiert, mit Strg+C kopieren';s.className='st'}});
+rlDraw();
+ckList({list:'#z8SkL',status:'#z8SkS',reset:'#z8SkR',lists:[{k:'cl8s',l:'KI-Kompetenz',g:[
+ ['Selbstcheck',['Wir wissen, welche Rollen geschult werden müssen','Es gibt feste Schulungsformate zu KI-VO und Verantwortung','Schulungen sind dokumentiert und nachvollziehbar','Neue Beschäftigte erhalten ein KI-Onboarding','Inhalte werden regelmäßig aktualisiert']],
+ ['Zuständigkeiten',['Wer erstellt die Schulungsinhalte?','Wer plant den Turnus: jährlich, anlassbezogen, je Rolle?','Wer dokumentiert Teilnahme und Inhalte?']]
+]}]});
+
+/* 8.8 review */
+initCards(8,[
+ ['Rollen','Anbieter oder Betreiber?','Anbieter entwickeln ein System und bringen es unter eigenem Namen auf den Markt oder in Betrieb. Betreiber setzen es beruflich ein. Eigenentwicklung für den Eigenbedarf: beides.'],
+ ['Rollen','Wann wird ein Betreiber zum Anbieter?','Bei eigenem Namen oder eigener Marke, wesentlicher Änderung oder wenn er den Zweck so ändert, dass Hochrisiko entsteht (Art. 25).'],
+ ['Strafen','Die drei Bußgeldstufen?','Verbotene KI bis 35 Mio. € oder 7 %, andere Pflichten bis 15 Mio. € oder 3 %, falsche Angaben bis 7,5 Mio. € oder 1 %. Für KMU der niedrigere Betrag.'],
+ ['Konformität','Wann ist eine Konformitätsbewertung Pflicht?','Bei Hochrisiko-Systemen, bevor sie auf den Markt kommen oder in Betrieb gehen, auch bei rein interner Nutzung. Verantwortlich ist der Anbieter.'],
+ ['Konformität','Schritte zur Konformität?','Einstufen, Risikomanagement, technische Doku, Qualitätsmanagement, Prüfung, Konformitätserklärung mit CE-Kennzeichen, Registrierung und Beobachtung.'],
+ ['Konformität','Wann prüft eine benannte Stelle?','Selten: bei biometrischen Systemen ohne vollständig angewandte Normen und bei KI in regulierten Produkten wie Medizingeräten. Sonst interne Kontrolle.'],
+ ['Aufsicht','Die vier Schritte bei Fehlverhalten?','Erkennen, Eingreifen, Dokumentieren, Nachbessern. Der Plan muss vorher schriftlich stehen.'],
+ ['Transparenz','Was muss sichtbar gekennzeichnet werden?','Interaktion mit KI wie Chatbots, Deepfakes und KI-Texte zu öffentlichen Themen ohne redaktionelle Prüfung.'],
+ ['Transparenz','Drei Regeln für gute Erklärungen?','Ohne Fachbegriffe, Unsicherheiten offen nennen, Verantwortung sichtbar machen.'],
+ ['Daten','DSGVO und KI-VO: wer regelt was?','DSGVO den Umgang mit personenbezogenen Daten, KI-VO das System. Training mit alten Daten ist ein neuer Zweck und braucht eine Rechtsgrundlage.'],
+ ['Haftung','Wie sichert man Haftungsrisiken ab?','Verträge, technische Dokumentation und Logs, klare Zuständigkeiten, Versicherung mit ausdrücklichem KI-Schutz.'],
+ ['Richtlinie','Die neun Kapitel einer KI-Richtlinie?','Ziel, Begriffe, Ethik, Risiko und Doku, Datenschutz, Transparenz, Rollen, Meldewege, Schulung.']
+]);
+initCloze(8,[
+ ['Eine Konformitätsbewertung ist auch bei {interner|keiner|seltener} Nutzung Pflicht, wenn es sich um ein {Hochrisiko|Minimalrisiko|Test}-System handelt.'],
+ ['Bei Fehlverhalten gilt: {Erkennen|Ignorieren|Löschen}, Eingreifen, {Dokumentieren|Verkaufen|Verschweigen}, Nachbessern.'],
+ ['Wer mit einem {Chatbot|Taschenrechner|Spamfilter} spricht, muss erkennen können, dass es eine KI ist. {Deepfakes|Tabellen|Rechnungen} müssen gekennzeichnet werden.'],
+ ['Die {DSGVO|KI-VO|ISO-Norm} regelt personenbezogene Daten, die {KI-VO|DSGVO|StVO} das System, das mit ihnen entscheidet.'],
+ ['Eine KI-Richtlinie wirkt nur, wenn sie {bekannt|geheim|teuer} ist. Deshalb gehören {Schulungen|Preise|Werbekampagnen} hinein.']
+]);
+initQuiz(8,[
+ ['Wann ist eine Konformitätsbewertung Pflicht?',['Bei Hochrisiko-Systemen, auch bei rein interner Nutzung','Nur ab einer bestimmten Unternehmensgröße','Nur beim Verkauf ins Ausland'],'Auch die Inbetriebnahme für den Eigenbedarf zählt.'],
+ ['Wer ist für die Konformitätsbewertung verantwortlich?',['Der Anbieter des Systems','Nur die Datenschutzbeauftragten','Jede Person, die das System nutzt'],'Betreiber haben eigene Pflichten, aber nicht diese. Der Kurs ist hier ungenau.'],
+ ['Wann braucht es eine benannte Stelle?',['Bei bestimmten Hochrisiko-Systemen, etwa Biometrie oder KI in Medizinprodukten','Bei jeder KI-Anwendung','Nie, alles läuft in Eigenverantwortung'],'Für die meisten Anhang-III-Systeme reicht die interne Kontrolle.'],
+ ['Du leitest eine HR-KI kurz vor dem internen Test, ohne Einstufung und Doku. Was tust du?',['Sofort klären, ob es Hochrisiko ist, und mit der technischen Doku starten','Erst mal intern testen, Bewertung erst beim Livegang','Intern besprechen, aber ohne formale Doku'],'Personal-KI ist typischerweise Hochrisiko.'],
+ ['Wann musst du ein KI-System laut KI-VO überwachen?',['Wenn es als Hochrisiko-System Grundrechte, Gesundheit oder Sicherheit beeinträchtigen kann','Sobald sich Kundschaft beschwert','Nur wenn es vollautomatisch entscheidet'],'Überwachung ist eine Daueraufgabe der Betreibenden.'],
+ ['Was gehört in einen Reaktionsplan?',['Rollenverteilung, Kommunikationsplan, Backup-Lösungen','Marketingfreigaben und Revisionsberichte','Nichts, KI regelt sich selbst'],'Wer entscheidet, wer informiert wird, wie es weitergeht.'],
+ ['Reicht es, einen KI-Fehler nur intern zu besprechen?',['Nein, er muss dokumentiert werden','Ja, wenn niemand geschädigt wurde','Ja, Dokumentation ist freiwillig'],'Doku dient Nachvollziehbarkeit und Prüfungen.'],
+ ['Welche Methoden verbessern die Erklärbarkeit?',['Einflussfaktoren nennen, visualisieren, Regeln verständlich machen','Abläufe nur intern für Fachabteilungen dokumentieren','Gar keine, KI ist eine Black Box'],'Grenzen offen benennen gehört dazu.'],
+ ['Euer System lernt aus Support-Anfragen, 1:1 als Trainingsdaten. Problematisch?',['Ja, darin können personenbezogene Daten stecken, das braucht Prüfung oder Einwilligung','Nein, es sind Arbeitsdaten','Nein, solange die Daten im Haus bleiben'],'Training ist ein neuer Zweck.'],
+ ['Wann darfst du Daten aus einem alten System weiterverwenden?',['Wenn der ursprüngliche Zweck passt oder eine neue Rechtsgrundlage vorliegt','Wenn sie schon lange gespeichert sind','Wenn die Betroffenen nicht mehr erreichbar sind'],'Zweckbindung nach DSGVO.'],
+ ['Kann sich ein Betreiber bei einem Vorfall ganz auf den Anbieter berufen?',['Nein, er muss seine eigenen Pflichten nachweisen','Ja, der Anbieter hat geliefert','Ja, wenn der Vertrag das sagt'],'Geteilte Verantwortung.'],
+ ['Was stimmt zur Rolle von Importeuren?',['Sie prüfen vor dem Marktstart, ob das System die Vorgaben erfüllt','Für importierte Systeme gelten keine EU-Vorgaben','Die Haftung liegt automatisch beim ausländischen Anbieter'],'Konformität, Doku, CE-Kennzeichen.'],
+ ['Eine Recruiting-KI benachteiligt Frauen über Schlagwörter. Wer ist verantwortlich?',['Anbieter und Betreiber gemeinsam','Niemand, es war ein Versehen','Nur der Anbieter'],'Der Anbieter prüft Daten und Logik, der Betreiber testet und überwacht.'],
+ ['Was gehört nicht in eine KI-Richtlinie?',['Preisgestaltung von KI-Lösungen','Risikomanagement und Dokumentation','Zuständigkeiten und Meldewege'],'Neun Kapitel: Ziel, Begriffe, Ethik, Risiko, Datenschutz, Transparenz, Rollen, Meldewege, Schulung.'],
+ ['Sollte eine KI-Richtlinie Schulungen festlegen?',['Ja, sonst kennt sie niemand','Nein, das ist Sache der Personalabteilung','Nur bei Hochrisiko-KI'],'Wiederkehrend, nicht einmalig.']
 ]);
 
 })();
