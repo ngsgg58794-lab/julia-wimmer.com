@@ -1118,9 +1118,9 @@ svg text{font-family:var(--mono);font-size:9px;fill:var(--grey);letter-spacing:.
 <section class="hero wrap" id="top">
 <div class="in">
 <div>
-<p class="kick mono">Lernlog · IHK-Lehrgang · seit November 2026</p>
+<p class="kick mono">Lernlog · IHK-Lehrgang · November 2026 · bestanden</p>
 <h1>KI-Transformation <span class="m">Modul für Modul</span></h1>
-<p class="lead">Ich mache gerade den Lehrgang Manager:in für angewandte KI-Transformation (IHK). Nach jedem Modul baue ich hier eine Seite mit dem Wichtigsten: als Grafik, zum Ausprobieren und zum Abfragen. Für meine eigene Wiederholung und als Einblick, wie ich lerne.</p>
+<p class="lead">Ich habe den Lehrgang Manager:in für angewandte KI-Transformation (IHK) abgeschlossen und die IHK-Leistungsüberprüfung bestanden. Nach jedem Modul habe ich hier eine Seite mit dem Wichtigsten gebaut: als Grafik, zum Ausprobieren und zum Abfragen. Für meine eigene Wiederholung und als Einblick, wie ich lerne.</p>
 </div>
 <dl class="spec">
 <div><dt>Lehrgang</dt><dd>Manager:in für angewandte KI-Transformation (IHK)</dd></div>
@@ -3745,12 +3745,12 @@ var MODS=[
  {n:6,s:'Ethik & Recht',t:'Ethische und rechtliche Aspekte der KI-Nutzung',live:true,checks:['risk','anon','proxy','qa','cards','cloze','quiz']},
  {n:7,s:'Sicherheit',t:'Cybersicherheit und KI-Sicherheit',live:true,checks:['schutz','inject','anomalie','cards','cloze','quiz']},
  {n:8,s:'KI-VO',t:'Fit für die KI-Verordnung (EU AI Act)',live:true,checks:['rolle','stelle','drill','kennz','cards','cloze','quiz']},
- {n:9,s:'IHK-Prüfung',t:'IHK-Leistungsüberprüfung'}
+ {n:9,s:'IHK-Prüfung',t:'IHK-Leistungsüberprüfung',passed:true}
 ];
 var rail=$('#rail');
 MODS.forEach(function(m){
-  var li=h('li');var a=h('a',m.live?'':'lock');a.href='#m'+m.n;a.dataset.m=m.n;
-  a.innerHTML='<span class="n">'+(m.n<10?'0':'')+m.n+(m.live?'':' · folgt')+'</span><b>'+m.s+'</b>'+(m.live?'<span class="bar"><i></i></span>':'');
+  var li=h('li');var a=h('a',m.live||m.passed?'':'lock');a.href='#m'+m.n;a.dataset.m=m.n;
+  a.innerHTML='<span class="n">'+(m.n<10?'0':'')+m.n+(m.live?'':m.passed?' · bestanden':' · folgt')+'</span><b>'+m.s+'</b>'+(m.live?'<span class="bar"><i></i></span>':'');
   li.appendChild(a);rail.appendChild(li);
 });
 function showMod(n){
@@ -3758,10 +3758,10 @@ function showMod(n){
   $$('.rail a').forEach(function(a){a.setAttribute('aria-current',String(+a.dataset.m===m.n))});
   $$('section.mod[data-mod]').forEach(function(s){s.hidden=+s.dataset.mod!==m.n});
   var lk=$('#mx-lock');
-  if(m.live){lk.hidden=true}else{lk.hidden=false;$('#lkN').textContent='Modul '+(m.n<10?'0':'')+m.n+' · folgt';$('#lkT').textContent=m.t}
+  if(m.live){lk.hidden=true}else{lk.hidden=false;$('#lkN').textContent='Modul '+(m.n<10?'0':'')+m.n+(m.passed?' · bestanden':' · folgt');$('#lkT').textContent=m.t;$('#lkD').textContent=m.passed?'Bestanden im November 2026. Eine eigene Seite gibt es dafür nicht, der Stoff steht in Modul 1 bis 8.':'Diese Seite entsteht, sobald ich das Modul bearbeitet habe. Bis dahin: das letzte Modul wiederholen.'}
 }
 var LATEST=MODS.filter(function(m){return m.live}).pop().n;
-$('#tbMod').textContent='Modul '+LATEST+' von 9';
+$('#tbMod').textContent=MODS[8].passed?'Abgeschlossen, bestanden':'Modul '+LATEST+' von 9';
 $('#lkB').href='#m'+LATEST;$('#lkB').textContent='Zu Modul '+LATEST;
 function route(){
   var hs=location.hash.slice(1),mm=/^m(\d)$/.exec(hs),inner=/^m(\d)-/.exec(hs);
